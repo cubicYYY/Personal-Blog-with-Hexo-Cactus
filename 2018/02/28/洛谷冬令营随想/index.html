@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="洛谷春令营结束不久，就我个人而言实在是收益良多。课后与洛谷的讲师们略有交谈，并且稍微接触了别地的信竞生，顿感弱小……决定把一些了解到的信息和感想放在这里。比较杂，将就着看吧。    首先说下近年竞赛的发展吧。近年信息学竞赛带来的升学优势增大了不少，机会增加了，这是好事。但这同样也意味着竞争将激烈许多。举几个例子：    浙江小学便培育“种子选手”，浙江初赛分数线一度达到90分。   著名的南山中学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷冬令营随想">
+<meta property="og:url" content="http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/index.html">
+<meta property="og:site_name" content="Cubic Y³">
+<meta property="og:description" content="洛谷春令营结束不久，就我个人而言实在是收益良多。课后与洛谷的讲师们略有交谈，并且稍微接触了别地的信竞生，顿感弱小……决定把一些了解到的信息和感想放在这里。比较杂，将就着看吧。    首先说下近年竞赛的发展吧。近年信息学竞赛带来的升学优势增大了不少，机会增加了，这是好事。但这同样也意味着竞争将激烈许多。举几个例子：    浙江小学便培育“种子选手”，浙江初赛分数线一度达到90分。   著名的南山中学">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1335480/201802/1335480-20180228225459264-75959639.png">
+<meta property="article:published_time" content="2018-02-28T14:56:00.000Z">
+<meta property="article:modified_time" content="2023-07-03T12:27:43.018Z">
+<meta property="article:author" content="Cubic Y^3">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1335480/201802/1335480-20180228225459264-75959639.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+        
+      
+    
+    <!-- title -->
+    <title>洛谷冬令营随想</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2018/03/15/%E5%8F%A4%E7%B1%8D%E7%A0%94%E7%A9%B6%E7%A4%BE%E7%B3%BB%E5%88%97%E7%AC%AC6%E9%83%A8%E3%80%8A%E8%BF%9F%E6%9D%A5%E7%9A%84%E7%BF%85%E8%86%80%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F%E2%80%A6%E2%80%A6%E5%90%97%EF%BC%9F/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20%5BHNOI2002%5D%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&text=洛谷冬令营随想"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&is_video=false&description=洛谷冬令营随想"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=洛谷冬令营随想&body=Check out this article: http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&name=洛谷冬令营随想&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&t=洛谷冬令营随想"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        洛谷冬令营随想
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Cubic Y^3</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-02-28T14:56:00.000Z" class="dt-published" itemprop="datePublished">2018-02-28</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>洛谷春令营结束不久，就我个人而言实在是收益良多。<br>课后与洛谷的讲师们略有交谈，并且稍微接触了别地的信竞生，顿感弱小……决定把一些了解到的信息和感想放在这里。比较杂，将就着看吧。  </p>
+<hr>
+<p>首先说下近年竞赛的发展吧。<br>近年信息学竞赛带来的升学优势增大了不少，机会增加了，这是好事。但这同样也意味着竞争将激烈许多。<br>举几个例子：  </p>
+<ul>
+<li>浙江小学便培育“种子选手”，浙江初赛分数线一度达到90分。  </li>
+<li>著名的南山中学，C类买不停，此处不细说。  </li>
+<li>很大一部分选手以完全停课备战比赛。</li>
+</ul>
+<p>切实参与到竞赛中，能感觉到许多学校已经为此疯狂了。究其原因是签约机会变多了。  </p>
+<ul>
+<li>NOIP获得极高分有几率提前签  </li>
+<li>冬令营&#x2F;夏令营（WC&#x2F;SC）  </li>
+<li>APIO  </li>
+<li>省选  </li>
+<li>NOI  </li>
+<li>……</li>
+</ul>
+<p>C9大学竞相甩出了不少一本线录取的约。相比于裸考省TOP100（福建）才有希望进PKU&#x2F;THU，降至一本线录取无疑是捷径。难怪众多学校为其“疯狂”……<br>在我看到了雅礼中学、南山中学、福师大附中、福州三中、长郡中学、杭州二中等等强校的成绩后，我才发现我们已经落后太多了。好在初一起步，现在冲刺还有很大希望。  </p>
+<hr>
+<p>于是要注意什么呢？  </p>
+<ol>
+<li>持之以恒的练习。中考在即，许多人完全将C++甩开，全力备战中考。个人认为此举不妥。中考在6月下旬，然而11月份便是新一次NOIp了。如果3月~6月整整一个季度不写代码，绝对会手生了。此时想要回到从前的状态可能要很久。因此学业压力不大的可以考虑每天抽出时间想题、做题，周末打比赛。学习成绩不甚稳定的，每周也应该做个2、3题，保持感觉。其实现在看来我们只剩下2次NOIp的机会了，必须好好把握。  </li>
+<li>有明确的TODO-List。信息学知识点比较繁杂，难度差异大，各种算法、数据结构比赛出现频率差距悬殊。于是在学习完某些内容之后，重点、热点趁热打铁，简单的运用几次。但是学习什么呢？可以参考《算法竞赛入门经典——训练指南》的目录。列出清单，逐一击破，此时再去刷综合题，效果一定好不少。  </li>
+<li>多打比赛。一次次的比赛中，我们可以练好心态，学好骗分，把握节奏。随便去问一个大牛“去哪里打比赛好？”，95%的都会告诉你：Codeforces。其特色的赛制很能达到以上目的。如果没空怎么办呢（CF比赛多在深夜）？可以打洛谷的月赛，经过审核的公开赛。平常做题时，对于每道题，都应该使劲动脑，试着去使劲骗分，看看能得到多少（优秀的骗分往往能拿到70分以上，非常重要！比如模拟退火、爬山算法）。之后试图编写正解，30min没有明确思路，再去看题解。  </li>
+<li>懂得总结套路。尤其是DP状态设计、DP优化、搜索剪枝……等等。刷题多了自然有经验，但是要善于总结。  </li>
+<li>多接触他地市的选手、神犇，他们会很乐意帮助的。你甚至可以迅速的得到短期计划、大量内部材料……  </li>
+<li>……</li>
+</ol>
+<hr>
+<p>竞赛具体内容相关：<br>联赛常考：<br><img src="https://images2018.cnblogs.com/blog/1335480/201802/1335480-20180228225459264-75959639.png">  </p>
+<p>模拟题多是理所当然。但是DP的位置如此重要之前确实没想到，DP很看刷题量。数论需要一定的知识积累，初中生学起来可能较难，但是简单的手动找规律很有帮助。大部分比赛搜索枚举暴力写的好，剪枝剪得多就能直接Au。练好基本功很重要（所以多打比赛！）。<br>计算几何在省选、NOI中考的较多，不可不学。三维几何什么的就算了吧目前……<br>学会静态调试。先别急着输出中间变量，肉眼先仔细找找有没有错误，考场这样能有效提高效率，防止心态崩。<br>搜索枚举使劲剪枝，保证结果正确的情况下并且有充足时间使劲常数优化。竞赛中，好的常数优化有时胜过理论复杂度下降一个等级。<br>先写暴力，再写一般正解。这样还可以拿着2个程序挂后台对拍，既保证了基础得分，又为效率更高的方法提供了正确性保障。注意边界数据手动检验。<br>技巧可能有许多许多，此处是说不完的。在此推荐几个网站：<br>Codeforces.com<br>hzwer.com<br>顺带一提，洛谷的题解常常讲的比博客还好……<br>信息学竞赛贵在坚持，没有题量一切都是空谈，在机房里打游戏、逛知乎都是不妥的。<br>时间不多了。</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&text=洛谷冬令营随想"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&is_video=false&description=洛谷冬令营随想"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=洛谷冬令营随想&body=Check out this article: http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&title=洛谷冬令营随想"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&name=洛谷冬令营随想&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/&t=洛谷冬令营随想"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    Cubic Y^3
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cubicy';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+</body>
+</html>
