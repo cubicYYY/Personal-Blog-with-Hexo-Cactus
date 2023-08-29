@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://cubicy.icu</id>
+    <title>Cubic Y³ • Posts by &#34;晚安短信&#34; tag</title>
+    <link href="http://cubicy.icu" />
+    <updated>2023-07-04T13:58:48.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
+    <category term="CISCN" />
+    <category term="web" />
+    <category term="Hackergame" />
+    <category term="SchoolBus" />
+    <category term="Foo" />
+    <category term="Bar" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
+    <category term="晚安短信" />
+    <category term="Treap" />
+    <category term="BST" />
+    <category term="Stack" />
+    <category term="图论" />
+    <category term="Kruskal" />
+    <category term="Splay" />
+    <category term="数链剖分" />
+    <category term="持久化" />
+    <category term="线段树" />
+    <category term="树状数组" />
+    <category term="LCA" />
+    <category term="分块" />
+    <category term="哈希" />
+    <category term="Phar" />
+    <category term="反序列化" />
+    <category term="PHP" />
+    <category term="Life" />
+    <entry>
+        <id>http://cubicy.icu/wadx_day2/</id>
+        <title>我们仍未知道那年上了个啥高中</title>
+        <link rel="alternate" href="http://cubicy.icu/wadx_day2/"/>
+        <content type="html">&lt;h1 id=&#34;我们仍未知道那年上了个啥高中&#34;&gt;&lt;a href=&#34;#我们仍未知道那年上了个啥高中&#34; class=&#34;headerlink&#34; title=&#34;我们仍未知道那年上了个啥高中&#34;&gt;&lt;/a&gt;我们仍未知道那年上了个啥高中&lt;/h1&gt;&lt;p&gt;昨天的像是碎碎念……那么今天来点故事分享吧，当然，还是碎片化的。对不起，我不会写长文了；；&lt;/p&gt;
+&lt;h2 id=&#34;荒废，荒谬，荒诞的三年&#34;&gt;&lt;a href=&#34;#荒废，荒谬，荒诞的三年&#34; class=&#34;headerlink&#34; title=&#34;荒废，荒谬，荒诞的三年&#34;&gt;&lt;/a&gt;荒废，荒谬，荒诞的三年&lt;/h2&gt;&lt;p&gt;书接上文。  &lt;/p&gt;
+&lt;h3 id=&#34;竞赛？Osu！&#34;&gt;&lt;a href=&#34;#竞赛？Osu！&#34; class=&#34;headerlink&#34; title=&#34;竞赛？Osu！&#34;&gt;&lt;/a&gt;竞赛？Osu！&lt;/h3&gt;&lt;p&gt;从初中升至高中以后，我开始全心投入算法竞赛中去。当然，毕竟是沿海的经济特区，学校也算不错，管的松的很，于是时不时就一机房的人停课准备比赛。&lt;br&gt;可惜过度的放养、欠缺的竞赛教练、政策的变化、以及我啥也不会的事实让我逐渐不想耗死在竞赛的路子上。&lt;br&gt;其实那时机房不少人已经开始搞“部分停课”：来机房只是为了写作业和翘不喜欢的课。&lt;br&gt;但是众所周知我是摸鱼高手，在机房放纵的机会我怎么会错过？&lt;br&gt;于是我前前后后加起来有接近一年的时间是这么度过的：&lt;br&gt;懒觉睡到9点，提着SHP9500和Wacom CTL472去机房打osu，吃个午饭继续打，打到下午5点回家吃晚饭，然后在家里打到晚上12点。&lt;br&gt;然后全机房的人be like:&lt;br&gt;&lt;img src=&#34;/wadx_day2/osu.jpg&#34; alt=&#34;osu&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;最终打到了4600pp似乎。那时算法还没改。 &lt;a href=&#34;https://osu.ppy.sh/users/11767753&#34;&gt;osu主页&lt;/a&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day2/osuscore.jpg&#34; alt=&#34;osuscore&#34; loading=&#34;lazy&#34;&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;虽然大学再看这个两三百小时的时长根本不算啥啦。  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;雀魂的话，主打一个科学日麻：涉川难波的作品、讲何切题的书都看了几本吧也许。但还是打的一般——倒是被我拉进坑的同学打到现在，还在日日精进中。&lt;br&gt;&lt;del&gt;由于让机房同学全体打雀魂被家长举办了，可惜这位告状家长一瞬就被老师卖了，令人感叹&lt;/del&gt;&lt;br&gt;要说高一还干了啥，可能就是打wota艺，打邦邦，玩Va11-Hall A之类的。你问我学习？我啥也没干！&lt;br&gt;作为新高考的省份，我早就放弃了非选考科目的学习；主科不是啃老本就是学校教的在应试上一点用也没有，所以其实我好像也没什么损失？  &lt;/p&gt;
+&lt;h3 id=&#34;疫情&#34;&gt;&lt;a href=&#34;#疫情&#34; class=&#34;headerlink&#34; title=&#34;疫情&#34;&gt;&lt;/a&gt;疫情&lt;/h3&gt;&lt;p&gt;然后COVID-19，他来了。在一开始，我就没信一些人的话，于是早早的购买了口罩（1月29日就到货了）。&lt;br&gt;事后看来这个决定是正确的：毕竟，不听劝的亲戚事后在恐惧中花费2000元（大写：贰仟元）人民币购买了40个3M的口罩。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;他（作者）是班里第一个戴口罩的，也是第一个摘口罩的。——生物老师&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;网课开始了，我彻底疯狂！我**就是一个睡睡睡，不然怎么对得起我&lt;em&gt;特困生&lt;/em&gt;的这一称号？&lt;br&gt;作业哐哐应付完了，但是人总是要找事干的（确实太闲了，不然谁会通两遍Getting Over It with Bennett Foddy(A.K.A. 掘地求升)？），于是我开始研究基金之类的。&lt;br&gt;但是什么ETF QDII基金这种大爷大妈都知道的东西实在不够coooool，那么在哪里可以低门槛的尝试那些新鲜的金融衍生品呢？&lt;br&gt;当然有，而且这个市场是24h运作的——&lt;code&gt;Crypto Currencies&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;炒币&#34;&gt;&lt;a href=&#34;#炒币&#34; class=&#34;headerlink&#34; title=&#34;炒币&#34;&gt;&lt;/a&gt;炒币&lt;/h3&gt;&lt;p&gt;毕竟本金也不是很多，随便造。期权、期货都整了点，有的仓上10倍杠杆、-5倍（做空）杠杆都有。&lt;br&gt;最逆天的是我还搞的是&lt;strong&gt;短线&amp;#x2F;超短线&lt;/strong&gt;。整天上课把手机埋书包里盯盘，&lt;del&gt;晚自习跑小角落炒币撞上偷偷抽烟的老师&lt;/del&gt;。&lt;br&gt;&lt;img src=&#34;/wadx_day2/ETH.jpg&#34; alt=&#34;ETH&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;每天光顾着惦记这个，年幼无知的我不知道何为持仓不过夜，于是偶尔早上起来看见爆仓强制平仓的短信人都麻了。&lt;br&gt;所以有次ETH插针赌中，大捞一波之后我就收手了。&lt;br&gt;但我怎么会轻易放弃呢？炒可能亏，挖还能亏不成？  &lt;/p&gt;
+&lt;h3 id=&#34;迫真垃圾佬&#34;&gt;&lt;a href=&#34;#迫真垃圾佬&#34; class=&#34;headerlink&#34; title=&#34;迫真垃圾佬&#34;&gt;&lt;/a&gt;迫真垃圾佬&lt;/h3&gt;&lt;p&gt;说干就干，我开始学习装机知识，最终选定LGA775的古董平台组建我的小机子。&lt;br&gt;板子可以通过PCIE转接线外接2张显卡RX580+2060，算力合计大约60MH&amp;#x2F;s.&lt;br&gt;每周末回家，没别的，就装机子去。&lt;br&gt;然后这玩意长这样：&lt;br&gt;&lt;img src=&#34;/wadx_day2/miner.jpg&#34; alt=&#34;miner&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;手动裁剪的苹果箱子。&lt;br&gt;然后安全保证是由一个防火球和自制的报警模块构成的：&lt;br&gt;&lt;img src=&#34;/wadx_day2/alarm.jpg&#34; alt=&#34;alarm&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;事后算算其实盈利也没多少。有没有可能那时病态的市场下，显卡本身就是一种实体的期权呢？&lt;br&gt;好吧，这个Idea被我拿来水了通识课的大作业论文。&lt;br&gt;后面搞了很多好玩的小东西，比如开关电源+半导体制冷片做的水冷小冰箱：&lt;br&gt;&lt;img src=&#34;/wadx_day2/diy_cooling.jpg&#34; alt=&#34;diy_cooling&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day2/coolingsys.jpg&#34; alt=&#34;coolingsys&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;高考的三天买了不少硬件，考后回家直接装机，然后开始超频。&lt;br&gt;&lt;img src=&#34;/wadx_day2/pc.jpg&#34; alt=&#34;pc&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;一些小爱好&#34;&gt;&lt;a href=&#34;#一些小爱好&#34; class=&#34;headerlink&#34; title=&#34;一些小爱好&#34;&gt;&lt;/a&gt;一些小爱好&lt;/h3&gt;&lt;h4 id=&#34;写字&#34;&gt;&lt;a href=&#34;#写字&#34; class=&#34;headerlink&#34; title=&#34;写字&#34;&gt;&lt;/a&gt;写字&lt;/h4&gt;&lt;p&gt;我喜欢用各种笔写作业。&lt;br&gt;换着墨水写，换着颜色写。&lt;br&gt;用钢笔写，用羽毛笔写，用玻璃笔写。&lt;br&gt;用色彩雫写，用蓝黑墨水写，用荧光墨水写。&lt;br&gt;“差生文具多”，还真是，字还丑，不过管他呢，写的开心就好^_^&lt;br&gt;四季织-明月:&lt;br&gt;&lt;img src=&#34;/wadx_day2/meigetsu.jpg&#34; alt=&#34;四季织-明月&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;玻璃笔：&lt;br&gt;&lt;img src=&#34;/wadx_day2/glasspen.jpg&#34; alt=&#34;glasspen&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;紫外线下的荧光墨水，平时是隐形的：&lt;br&gt;&lt;img src=&#34;/wadx_day2/lumino.jpg&#34; alt=&#34;lumino&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;（歌词来自罪恶王冠OP，「The Everlasting Guilty Crown」）　　&lt;br&gt;&lt;img src=&#34;/wadx_day2/katachinonai.jpg&#34; alt=&#34;katachinonai&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;邦邦&#34;&gt;&lt;a href=&#34;#邦邦&#34; class=&#34;headerlink&#34; title=&#34;邦邦&#34;&gt;&lt;/a&gt;邦邦&lt;/h4&gt;&lt;p&gt;Roselia的专辑：&lt;br&gt;&lt;img src=&#34;/wadx_day2/roselia.png&#34; alt=&#34;roselia&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;少女歌剧&#34;&gt;&lt;a href=&#34;#少女歌剧&#34; class=&#34;headerlink&#34; title=&#34;少女歌剧&#34;&gt;&lt;/a&gt;少女歌剧&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;/wadx_day2/sngj1.png&#34; alt=&#34;sngj1&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day2/sngj2.png&#34; alt=&#34;sngj2&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;高考前夕的小插曲&#34;&gt;&lt;a href=&#34;#高考前夕的小插曲&#34; class=&#34;headerlink&#34; title=&#34;高考前夕的小插曲&#34;&gt;&lt;/a&gt;高考前夕的小插曲&lt;/h5&gt;&lt;p&gt;虽然并不是很适合&amp;#x2F;很能讲的。&lt;br&gt;总之班上有一对情侣（下称A、B），事后大家知道是A在pua B;&lt;br&gt;B察觉到不对想脱身的时候，A用了各种手段威胁：甚至包括仗着自己是化竞生可以获取剧毒化学品，对B发出人身威胁（我草，地雷系）&lt;br&gt;A还说，分了就告诉B家长这场恋情；可是B并不想让家里人知道，于是忍受着。&lt;br&gt;但同学看不下去了，因为A的恶行有目共睹：不仅同时和小学弟暧昧，在宿舍举行吃鸡大赛，还对班里同学有意无意地制造身体接触揩油……A最终还是被正义善雅人士一瞬举办。&lt;br&gt;这件事深深伤害了B，至于A，&lt;strong&gt;早就保送了，对他来讲又有什么关系呢？&lt;/strong&gt;&lt;br&gt;没想到A的家长反咬一口，要对B“采取法律手段”，&lt;strong&gt;半夜3点&lt;/strong&gt;去电给班主任要求处理此事。&lt;br&gt;A的家长倒是啥都清楚，把所有事都抖出来了，很难想象一个刚师范毕业的姑娘刚接手竞赛班当班主任就遇上这事会是怎样的精神状态。&lt;br&gt;最终这个荒谬的事件被冷处理，但是全年段都知道竞赛班出了个大乐子，二模前一晚的晚自习我不知口述了几千字为带着求知欲的其他班同学们提供口述史。&lt;br&gt;哦，我是不是忘了说A和B都是男的？  &lt;/p&gt;
+&lt;h3 id=&#34;回归正轨，感谢恩师&#34;&gt;&lt;a href=&#34;#回归正轨，感谢恩师&#34; class=&#34;headerlink&#34; title=&#34;回归正轨，感谢恩师&#34;&gt;&lt;/a&gt;回归正轨，感谢恩师&lt;/h3&gt;&lt;p&gt;最终我还是认真开始学习，用大量的教辅代替课内作业（领先版本的大学式复习法）把成绩补到了还算能看的水平，恰逢ZJU扩招，就踩线进来了。&lt;br&gt;谢谢那些和学生用真心换真心的老师们。我永远记得化学考前开放实验室一起做铝热实验的快乐！&lt;br&gt;听说……其他地方是不会让学生自己做的。我做了3遍起步吧？&lt;br&gt;&lt;img src=&#34;/wadx_day2/thermite.jpg&#34; alt=&#34;thermite&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;高三的体育课，玩飞盘、棒球（球速当时扔出过110km&amp;#x2F;h）。&lt;br&gt;晚餐后在操场丢泡沫飞机、放风筝。&lt;br&gt;课间，一群人在楼上鼓掌，莫名其妙成为一种风气，人称鼓掌社。&lt;br&gt;……&lt;br&gt;这难道是传说中的玫瑰色的校园生活？  &lt;/p&gt;
+&lt;h2 id=&#34;ZJU：正确的摸鱼&#34;&gt;&lt;a href=&#34;#ZJU：正确的摸鱼&#34; class=&#34;headerlink&#34; title=&#34;@ZJU：正确的摸鱼&#34;&gt;&lt;/a&gt;@ZJU：正确的摸鱼&lt;/h2&gt;&lt;p&gt;高考后的暑假，继续捣鼓电脑。&lt;br&gt;我很早就认为课内教的这些几乎没眼看（更不用说ZJU尤其喜欢在大一塞一堆通识课，上了1年除了一门C什么专业课也没有），能应付就应付了。&lt;br&gt;具体而言，对完全不想搭理的课就在课堂睡觉，老师提问就回答，回答完继续睡。有小组合作的就揽PPT的活，拯救一下他们悲剧般的PPT。&lt;br&gt;考前刷刷历年卷，把年级群当ChatGPT询问（当然那时还没有）。&lt;br&gt;然后就祈祷老师捞吧。&lt;br&gt;对于感兴趣的课，大作业沾点边的，就全力开卷！想学啥就写啥，直到把课内要求覆盖为止，你就得到了一份完美的大作业。&lt;br&gt;省下的时间，大一是在打CTF，大二全在打Apex Legends🤬🤬🤬&lt;br&gt;混了个大师，好像也不亏（笑）。  &lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;好像我从来没变过：在能挽救的最迟时刻开始全力冲刺。高考也好，大学也罢。&lt;br&gt;中考我用1个月冲刺，高考我用了6个月冲刺；&lt;br&gt;以此类推，如今我也许该在大四的前一年——大三开始认真起来了吧？&lt;br&gt;那么就共勉，晚安吧。&lt;br&gt;月色真美。&lt;br&gt;&lt;img src=&#34;/wadx_day2/tsukigakirei.jpg&#34; alt=&#34;tsukigakirei&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;后记：一件难过的事&#34;&gt;&lt;a href=&#34;#后记：一件难过的事&#34; class=&#34;headerlink&#34; title=&#34;后记：一件难过的事&#34;&gt;&lt;/a&gt;后记：一件难过的事&lt;/h2&gt;&lt;p&gt;高三那年一个很好的THU学长跳楼自杀了。那个晚上我无声地在楼道的尽头哭了好久。&lt;br&gt;我也很生气，他没有信守承诺在THU等我，不过我也没考上对吧。&lt;br&gt;反正，从那时开始我就觉得世界是虚假的。这层隔膜感也从未消失。&lt;br&gt;&lt;img src=&#34;/wadx_day2/sorry.jpg&#34; alt=&#34;sorry&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="晚安短信" />
+        <category term="Life" />
+        <updated>2023-07-04T13:58:48.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://cubicy.icu/wadx_day1/</id>
+        <title>晚安，紫金港</title>
+        <link rel="alternate" href="http://cubicy.icu/wadx_day1/"/>
+        <content type="html">&lt;h1 id=&#34;晚安，紫金港&#34;&gt;&lt;a href=&#34;#晚安，紫金港&#34; class=&#34;headerlink&#34; title=&#34;晚安，紫金港&#34;&gt;&lt;/a&gt;晚安，紫金港&lt;/h1&gt;&lt;p&gt;现在是2023年7月4日的凌晨两点，按照计划我应当负责7.1-7.4的晚安短信——但毕竟现在才动笔，只能是爽约了：总之十分抱歉。至于原因……我不知道。好像熬夜考完试就穿越到了轰趴，熬了个头痛的夜，再大睡一觉就到现在了。&lt;br&gt;不过四天并做两天的话，希望能写一些不是垃圾话的长文，大家看个开心就好。&lt;br&gt;那么今天我想聊聊我的从前（高中往前），想起啥就写啥好了。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;年少时许多看似不起眼的小事，你以为简单选择的岔路口，其实多年以后张望，都会发现，不经意间，它竟然改变你往后的人生。  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这鸡汤是真的土，可是回头看看却是真切无比。&lt;br&gt;好了，苯堡下面开始要figuratively亚一点（梗来源：大破进击&amp;#x2F;小破不入渠）。  &lt;/p&gt;
+&lt;h2 id=&#34;我是？&#34;&gt;&lt;a href=&#34;#我是？&#34; class=&#34;headerlink&#34; title=&#34;我是？&#34;&gt;&lt;/a&gt;我是？&lt;/h2&gt;&lt;p&gt;我是yyy，因为我的名字缩写就是yyy。&lt;br&gt;如果你想要看我的博客(A.K.A. 黑历史)：&lt;br&gt;&lt;a href=&#34;http://cnblogs.com/yyy2015c01&#34;&gt;http://cnblogs.com/yyy2015c01&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;http://cubicy.icu/&#34;&gt;http://cubicy.icu&lt;/a&gt;&lt;br&gt;问就是没备案。  &lt;/p&gt;
+&lt;h2 id=&#34;迁徙&#34;&gt;&lt;a href=&#34;#迁徙&#34; class=&#34;headerlink&#34; title=&#34;迁徙&#34;&gt;&lt;/a&gt;迁徙&lt;/h2&gt;&lt;p&gt;我来自闽东的三线小城市，但这几年因为某家电池企业的缘故，这座城市还算小有名气。&lt;br&gt;家长在很小的时候以不小的付出把我带到了厦门，母上从此每周往返两座城市，一头工作一头是家庭——我觉得高铁应该为她的卓越贡献发奖。&lt;br&gt;总之，事实证明这是无比正确的一个选择，有远见的父母们总是知道（抑或是歪打正着）大城市为孩子带来的是一个好得多的未来。  &lt;/p&gt;
+&lt;h2 id=&#34;编程&#34;&gt;&lt;a href=&#34;#编程&#34; class=&#34;headerlink&#34; title=&#34;编程&#34;&gt;&lt;/a&gt;编程&lt;/h2&gt;&lt;p&gt;小学的时候因为“数学好”被拉去学校编程小组学PC Logo小海龟画图了。不知道大伙那边有没有呢？&lt;br&gt;&lt;img src=&#34;/wadx_day1/pclogo1.png&#34; alt=&#34;PC Logo&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day1/pclogo2.png&#34; alt=&#34;PC Logo2&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;就是不知道小学的我知道长大后高考数学还没语文高会有啥想法。&lt;br&gt;那时候机房还是CRT显示器，进机房要穿鞋套……据说这是90后的经历？好吧，的确很早就接触了电脑。&lt;br&gt;好像是数学老师在某一个平常下午想起来为我引荐的？感觉人生轨迹从此被彻底改变了。&lt;br&gt;六年级参加了市里的比赛，运气比较好拿到了全市第一。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;得，这下彻底进坑了。——编者注&lt;br&gt;但是再怎么样也比练梵婀玲轻松多了，不是吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;顺带一提，后来初中为我提前在校训练分配的学号是按这次比赛的名次给的，名为&lt;code&gt;2015c01&lt;/code&gt;，于是我把他当作荣誉称号拼进了ID里——这就是&lt;code&gt;yyy2015c01&lt;/code&gt;的由来。现在看来蠢到不行。但是人不装逼活着有什么意思？  &lt;/p&gt;
+&lt;h2 id=&#34;初中&#34;&gt;&lt;a href=&#34;#初中&#34; class=&#34;headerlink&#34; title=&#34;初中&#34;&gt;&lt;/a&gt;初中&lt;/h2&gt;&lt;p&gt;六年级到初中的这段时间我转而学习C++，准确的来说应该是C with STL。&lt;br&gt;于是每逢放学便组团冲向机房。&lt;br&gt;于是别人军训时我在吹空调，俨然感觉自己是人上人。&lt;br&gt;于是过度膨胀的自信心让我在校内评测网站上和学长打嘴炮，一举成名。&lt;br&gt;后来鉴于我认错态度良好，那个网站的学长许诺我认真学习便赐予&lt;code&gt;管理员&lt;/code&gt;尊贵身份。&lt;br&gt;我选择跟随他，在皈依者狂热的驱动下用Notepad++跟着写PHP、MySQL……这或许就是我的Web启蒙？&lt;br&gt;&lt;del&gt;在一机房人被题目折磨的不清时，我偶尔会滥用职权把题目数据改水了&lt;/del&gt;&lt;br&gt;后来，这位学长向我传教东舰L三大教（東方Project、艦隊これくしょん「艦これ」、Love Live!「ラブライブ！」），于是从此以后时常和妹子或者男同学中午翻进机房玩艦これ（这经历现在看看多少有点奇妙深刻了）。&lt;br&gt;这位学长的合作伙伴向我讲述MySQL注入等基础的安全知识，这或许就是我的信息安全启蒙？ &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其实可能不是。小学为了从家长手上拿到iPad密码，用橡皮擦擦屏幕留下白印，再让家长解锁观察指纹位置，然后排列组合了两次就拿到了PIN（什么社工）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;……你知道的，每个写程序的大男孩都有个骇客梦——这些大男孩不出意外的先成了脚本小子。&lt;br&gt;这些东西未曾丢失过，我甚至现在就能翻出来当时玩的LOIC……虽然最正经的用途是给老师学校主页刷访问量。&lt;br&gt;&lt;img src=&#34;/wadx_day1/LOIC.png&#34; alt=&#34;LOIC&#34; loading=&#34;lazy&#34;&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据不丢失多亏了我从小学开始执行的数据备份3-2-1原则，虽然那时的“异地”对我来讲可能只是两个不同房间吧……  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;哦我是不是忘说了，那个网站许多OIer（自称）听过用过：就是&lt;a href=&#34;https://www.luogu.com.cn/&#34;&gt;洛谷&lt;/a&gt;。从早年两个人路边发黑白传单一路做到今天的规模着实令人敬佩。  &lt;/p&gt;
+&lt;h3 id=&#34;番外：老二刺螈了&#34;&gt;&lt;a href=&#34;#番外：老二刺螈了&#34; class=&#34;headerlink&#34; title=&#34;番外：老二刺螈了&#34;&gt;&lt;/a&gt;番外：老二刺螈了&lt;/h3&gt;&lt;p&gt;那时候开始在b站追番——甚至蹭的小区物业WiFi。当时A站还活着，逸帝也在位，我在几百KB&amp;#x2F;s的网速下努力为御坂美琴刷着“你指尖跃动的电光是我此生不灭的信仰”这种比“立于浮华之世，奏响天籁之音”还中二的弹幕。&lt;br&gt;好吧，我还挺怀念的——当然不是指喧闹的蝉鸣与过时笔记本怼着桌面的扬声器，近热带热浪与降频工作的中央处理器。  &lt;/p&gt;
+&lt;h2 id=&#34;荒废与荒诞的高中生活-amp-ZJU摸鱼记&#34;&gt;&lt;a href=&#34;#荒废与荒诞的高中生活-amp-ZJU摸鱼记&#34; class=&#34;headerlink&#34; title=&#34;荒废与荒诞的高中生活&amp;amp;ZJU摸鱼记&#34;&gt;&lt;/a&gt;荒废与荒诞的高中生活&amp;amp;ZJU摸鱼记&lt;/h2&gt;&lt;p&gt;累了，天也亮了。我明天会再回来的！&lt;br&gt;除了班里gay的恩怨情仇，炒币大失败，迫真短线交易员，杠杆中级高手，996专攻osu和雀魂的迫真算法竞赛选手外也没啥好讲的嘛！&lt;br&gt;不过应该还是比大部分人的高中生活离谱的多。  &lt;/p&gt;
+&lt;h2 id=&#34;我是？-1&#34;&gt;&lt;a href=&#34;#我是？-1&#34; class=&#34;headerlink&#34; title=&#34;我是？&#34;&gt;&lt;/a&gt;我是？&lt;/h2&gt;&lt;p&gt;我是幸运的，在每个关键时间节点都遇到了对的人推我一把：或是开明的家长，或是授人以渔的先辈；&lt;br&gt;又或者我还是被宿命支配着的，这种幸运只是来自于信息差，是“随蝴蝶消逝的旧日的幻影”。&lt;br&gt;不过即使是后者，对我而言至多是还原论&amp;#x2F;决定论：我始终相信自身的努力也是宿命的一部分。&lt;br&gt;总之我其实没变过，如果真有thoughtcrime我早该被枪毙一万次，让我更好地压制住自己的被动攻击型人格吧。&lt;br&gt;像这篇补交的晚安短信一样，我很惭愧时常不能回应他人的期待，所以希望日后能用自己的力量创造这种“幸运”。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;掴んで見せます、自分星！&lt;br&gt;——星見純那&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也希望所有在山区里，在高原上，处在信息茧房里的人儿能拥有看到比自己更高境界的幸运吧。&lt;br&gt;现在是4点44分，我时常在紫金港充满雾气而寂静的夜里胡思乱想；这次我把它写出来了而已。天亮了，我也该睡了。&lt;br&gt;&lt;strong&gt;早安，紫金港。晚安，紫金港！&lt;/strong&gt;  &lt;/p&gt;
+</content>
+        <category term="晚安短信" />
+        <category term="Life" />
+        <updated>2023-07-03T18:02:33.000Z</updated>
+    </entry>
+</feed>
