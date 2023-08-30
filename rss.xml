@@ -12,8 +12,8 @@
  ✔✔✔ Independent thinking
  Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
         <language>zh-CN</language>
-        <pubDate>Tue, 29 Aug 2023 15:05:06 +0800</pubDate>
-        <lastBuildDate>Tue, 29 Aug 2023 15:05:06 +0800</lastBuildDate>
+        <pubDate>Thu, 31 Aug 2023 06:47:53 +0800</pubDate>
+        <lastBuildDate>Thu, 31 Aug 2023 06:47:53 +0800</lastBuildDate>
         <category>Misc</category>
         <category>Write-Up</category>
         <category>出题</category>
@@ -43,6 +43,59 @@
         <category>反序列化</category>
         <category>PHP</category>
         <category>Life</category>
+        <item>
+            <guid isPermalink="true">http://cubicy.icu/2023/08/31/%E5%8D%81%E5%AD%97%E8%B7%AF%E5%8F%A3%EF%BC%9F-%E9%9A%8F%E7%AC%9420230831/</guid>
+            <title>十字路口？ 随笔20230831</title>
+            <link>http://cubicy.icu/2023/08/31/%E5%8D%81%E5%AD%97%E8%B7%AF%E5%8F%A3%EF%BC%9F-%E9%9A%8F%E7%AC%9420230831/</link>
+            <pubDate>Thu, 31 Aug 2023 06:47:53 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;十字路口？&#34;&gt;&lt;a href=&#34;#十字路口？&#34; class=&#34;headerlink&#34; title=&#34;十字路口？&#34;&gt;&lt;/a&gt;十字路口？&lt;/h1&gt;&lt;p&gt;现在是2023年8月31日清晨6时许。&lt;/p&gt;
+&lt;p&gt;杭州很少有如此舒适的天气：21度，和风细雨。我以清醒的状态度过了一个夜晚，思考了在关键的一年乃至往后数年应当何去何从。我不会画饼（但我经常干这事）（但不是这次），因此以下是一些非常务实的待办事项，供现在和未来一段时间参考。&lt;/p&gt;
+&lt;h2 id=&#34;学业&#34;&gt;&lt;a href=&#34;#学业&#34; class=&#34;headerlink&#34; title=&#34;学业&#34;&gt;&lt;/a&gt;学业&lt;/h2&gt;&lt;p&gt;现在我的面前有2条路可选择：PhD&amp;#x2F;Master. 尽管以前从未考虑过学术方向，但现在看来真正让我感到无聊的是工业界的那些东西——并且学术也并不意味着空中楼阁、高屋建瓴。&lt;/p&gt;
+&lt;p&gt;美&amp;#x2F;日&amp;#x2F;欧深造是最优先的选项，但本校保研仍然是一个非常可能的选项：我不排斥。&lt;/p&gt;
+&lt;p&gt;不论哪个选项，都需要我进一步提高GPA，以及进一步提高语言水平。&lt;/p&gt;
+&lt;p&gt;至于方向，SDE与安全都是可以的，但细分方向仍不确定，&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;必须尽快定下，有种预感最后要follow my heart。&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我希望能在大三这一年争取到一个research assistant, 需要对自己建立信心；如果有publication作为副产物是最好的，但即使没有也是一种极好的锻炼&lt;/li&gt;
+&lt;li&gt;认真对待课堂，将获取更高绩点作为第一优先级：因为事实上，本身就很难在课程框架内学到什么有价值的新东西，本科教育如此&lt;/li&gt;
+&lt;li&gt;最好的结果是美国全奖PhD，可能性也许不是特别高但要敢拼；也可以考虑申东京大学的修士&lt;/li&gt;
+&lt;li&gt;明确方向：多问问自己，多问问别人；多读读新闻，多读读论文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;个人能力&#34;&gt;&lt;a href=&#34;#个人能力&#34; class=&#34;headerlink&#34; title=&#34;个人能力&#34;&gt;&lt;/a&gt;个人能力&lt;/h2&gt;&lt;p&gt;主要在CTF和编码能力上。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提升对常用环境、工具链的使用熟练度&lt;/li&gt;
+&lt;li&gt;积极参与CTF赛事，目标是能够作为主力的web输出&lt;/li&gt;
+&lt;li&gt;拓展技术栈，使用更多工业界常用的框架，建立一个general view&lt;/li&gt;
+&lt;li&gt;算法这块还是不能放下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;语言&#34;&gt;&lt;a href=&#34;#语言&#34; class=&#34;headerlink&#34; title=&#34;语言&#34;&gt;&lt;/a&gt;语言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;英语：托福必须达到够高的分数，GRE可以日后考虑&lt;ul&gt;
+&lt;li&gt;每日单词、听力的加强练习不应少于45分钟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;日语：暂缓。即使日本修士也并没有很高的要求；但是希望有时间直接冲刺N1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;精神食粮&#34;&gt;&lt;a href=&#34;#精神食粮&#34; class=&#34;headerlink&#34; title=&#34;精神食粮&#34;&gt;&lt;/a&gt;精神食粮&lt;/h2&gt;&lt;p&gt;对大一大二两年的反思，得到一些亡羊补牢的措施。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;减少对抗性、竞技性游戏的强度：使人筋疲力尽&lt;/li&gt;
+&lt;li&gt;多接受优秀的文艺作品：这包含优秀的番剧、电影等，并不局限于书籍；补番以弥补初中以来的一些小遗憾&lt;/li&gt;
+&lt;li&gt;多输出长文论点，减少碎片化的情绪宣泄：影评、观后感、一些思考都是值得记录的，单纯记录下来就已经足够&lt;/li&gt;
+&lt;li&gt;自己聚合RSS获得更高效、纯净的信息流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h2&gt;&lt;p&gt;一些七七八八但值得记录&amp;#x2F;执行的事项。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;身体健康：也许应该去体检了，并且不要再老像今天这样熬夜了，即使天气真的很好很舒服&lt;ul&gt;
+&lt;li&gt;认真跑步！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;开销：多吃食堂少点外卖；不乱买东西&lt;/li&gt;
+&lt;li&gt;乐器：买了电吉他就好好练，闲置的surface book恰好可以专门用来看乐谱&lt;/li&gt;
+&lt;li&gt;博客：持续更新，“形成一套可复用的物理资料”&lt;/li&gt;
+&lt;li&gt;直播：摄手直播，主要监督自己；当然也可以是游戏！&lt;/li&gt;
+&lt;li&gt;人际关系：拒绝被动攻击，把时间和善意留给身边的人；多换位思考，不背后黑屁&lt;/li&gt;
+&lt;li&gt;多喝水，多看花花草草，早睡早起，打理干净周遭&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2023/08/29/CODEGATE2023/</guid>
             <title>Codegate 2023 Partial Write-Up (Web/Misc)</title>
