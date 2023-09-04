@@ -14,7 +14,7 @@
 <meta property="og:description" content="Rust类型系统中的生命周期Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-04T16:14:45.000Z">
-<meta property="article:modified_time" content="2023-09-04T17:06:17.563Z">
+<meta property="article:modified_time" content="2023-09-04T17:12:54.345Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Rust">
 <meta property="article:tag" content="Lifetime">
@@ -188,7 +188,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据现代Rust自带的一些约束推导规则，~95%的情况下生命周期注解能被编译器自动推断。但手动的注解有时无法避免：尤其是结构体中。  </span><br></pre></td></tr></table></figure>
 <p>在这个例子中，由于这个if的存在，Rust编译器无法判断返回值的有效期到底和x一样还是和y一样。<br>我们要添加类型推断（是的，生命周期也是一种泛型），x、y具有同名的生命周期注解’a，根据规则’a取x和y生命周期的交集：x,y都有效时，返回值一定有效！这样就避免了C&#x2F;C++中悬垂指针带来的危险。  </p>
 <hr>
-<p>也许有人会问，为什么调用该函数时，如果传入的参数生命周期不同，会取较短的？<br>我们要在集合论的角度考虑：我们说想要一只动物，那么给一只可爱小猫是可以接受的，因为猫属于动物。事实上，属于（∈）<strong>是</strong>一种偏序关系。而生命周期也<strong>存在</strong>一种偏序关系：我们把<strong>这种关系叫subtype</strong>。假设对于两个生命周期L1和生命周期L2，且有L1是L2的subtype，那我们就记作L1&lt;:L2，<em>vice versa</em>.<br><strong>显然，生命周期越长越“好”。所以一开始我们就知道<code>&#39;long&lt;:&#39;short</code>，也就是长寿的可以自裁(cast过去)变成短命的，但是短命的没法强行续命变成长命的。</strong><br>什么意思呢？<strong>简而言之，L1的约束比L2更松</strong>。我们看一个例子，讨论<strong>函数间</strong>的偏序关系：</p>
+<p>也许有人会问，为什么调用该函数时，如果传入的参数生命周期不同，会取较短的？<br>我们要在集合论的角度考虑：我们说想要一只动物，那么给一只可爱小猫是可以接受的，因为猫属于动物。事实上，属于（∈）<strong>是</strong>一种偏序关系。而生命周期也<strong>存在</strong>一种偏序关系：我们把<strong>这种关系叫subtype</strong>。假设对于两个生命周期L1和生命周期L2，且有L1是L2的subtype，那我们就记作L1&lt;:L2，<em>vice versa</em>.<br><strong>显然，生命周期越长越“好”。所以一开始我们就知道<code>&#39;long&lt;:&#39;short</code>，也就是长寿的可以自裁(cast过去)变成短命的，但是短命的没法强行续命变成长命的。</strong><br>当然，还有一个显然的是所有类型都是<code>&#39;static</code>的subtype.<br>什么意思呢？<strong>简而言之，L1的约束比L2更松</strong>。我们看一个例子，讨论<strong>函数间</strong>的偏序关系：</p>
 <ul>
 <li>假设有函数f1(x)和f2(x)，唯一的区别是f1对x的生命周期的要求更长，那么能用f1的地方就能用f2，但能用f2的地方不一定能用f1，因此f2≼f1，长是短的一种subtype</li>
 <li>假设有函数f1()-&gt;x和f2()-&gt;x，唯一的区别是f1的返回值x的已知生命周期比f2长，那么能用f2返回值的地方就能用f1的返回值，但能用f1的地方不一定能用f2，因此f1≼f2，短是长的一种subtype</li>
