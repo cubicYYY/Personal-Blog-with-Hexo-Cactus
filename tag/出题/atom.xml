@@ -33,6 +33,10 @@
     <category term="反序列化" />
     <category term="PHP" />
     <category term="Life" />
+    <category term="Rust" />
+    <category term="Lifetime" />
+    <category term="Code" />
+    <category term="ProgrammingLanguage" />
     <entry>
         <id>http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</id>
         <title>ACTF2022 - FFSK - Official WriteUp</title>
