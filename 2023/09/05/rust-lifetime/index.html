@@ -14,7 +14,7 @@
 <meta property="og:description" content="Rust类型系统中的生命周期Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-04T16:14:45.000Z">
-<meta property="article:modified_time" content="2023-09-04T18:18:25.155Z">
+<meta property="article:modified_time" content="2023-09-04T18:24:53.362Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Rust">
 <meta property="article:tag" content="Lifetime">
@@ -201,7 +201,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">颠倒了的就是contravariant，不变就是covariant，根本没法推出关系的就是invariant.</span><br></pre></td></tr></table></figure>
 <p>invariant就是上面思考题那种。至于原因，最后一节会有个特别轻松易懂的解释<code>:)</code>  </p>
 <hr>
-<p>为什么要搞得这么离散数学？因为当类型系统的偏序关系浮出水面，系统里隐含的约束也就能被自然推导。<br>例如上面那段代码为两个参数都标注<code>&#39;a</code>其实等效于在a、b固有的、不受约束的生命周期（远古版本反人体工程学rust必须写明所有生命周期，现在能自动推导绝大部分）中添加了两条约束：</p>
+<p>为什么要搞得这么离散数学？因为当类型系统的偏序关系网浮出水面，系统里隐含的约束也就能被自然推导。<br><strong>如果对于用到的类型，这个偏序集合是格（有上下确界），那么编译器会开心的帮你标记好一切生命周期</strong>；<br><strong>如果没有办法cast导致编译器在约束求解中无法找出某些类型的上下确界，甚至出现了环——不好意思，还是得另请高明（程序员）来标清楚。</strong><br>例如上面那段代码为两个参数都标注<code>&#39;a</code>其实等效于在a、b固有的、不受约束的生命周期（远古版本反人体工程学rust必须写明所有生命周期，现在能自动推导绝大部分）中添加了两条约束：</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">longer</span>&lt;<span class="symbol">&#x27;a</span>, <span class="symbol">&#x27;b</span>&gt;(s1: &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span>, s2: &amp;<span class="symbol">&#x27;b</span> <span class="type">str</span>) <span class="punctuation">-&gt;</span> &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span> <span class="keyword">where</span> <span class="symbol">&#x27;a</span>:<span class="symbol">&#x27;b</span>, <span class="symbol">&#x27;b</span>:<span class="symbol">&#x27;a</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> s2.<span class="title function_ invoke__">len</span>() &gt; s1.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">        s2</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        s1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>也就是对x和y分别绑定的值，其生命周期’a与’b有{‘a≼’b,’b≼’a}，也就是{‘a:’b, ‘b:’a}（显然可以推出’a&#x3D;&#x3D;’b）。<br>因此在手动指定后，在需要用到生命周期的地方，这两个参数以及返回值的生命周期就可以被推导啦：为了让他们相等，编译器要根据基本法把长的生命周期cast到短的上。<br>最终效果就是取传参生命周期较短者。注意这时我们在谈论的是参数，不是整个函数发生了什么质变。<br>……是的，其实日常根本就没有多少情况需要你操心函数参数的那个contravariant！可以松口气了。<br>当然，根据上文所述，这样<strong>推导出来的生命周期约束是怎么严格怎么来</strong>，但记住：<strong>如果你被搞晕了，那就相信你的直觉；程序是人设计为人服务的，因此绝大部分情况下生命周期的限制是符合直觉的</strong>（也就是你可以使用“显然”这一词）。<br>What a relief.</p>
 <hr>
