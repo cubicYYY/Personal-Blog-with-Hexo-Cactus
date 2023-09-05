@@ -14,7 +14,7 @@
 <meta property="og:description" content="Rust类型系统中的生命周期Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-04T16:14:45.000Z">
-<meta property="article:modified_time" content="2023-09-04T18:24:53.362Z">
+<meta property="article:modified_time" content="2023-09-05T09:43:12.864Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Rust">
 <meta property="article:tag" content="Lifetime">
@@ -188,7 +188,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据现代Rust自带的一些约束推导规则，~95%的情况下生命周期注解能被编译器自动推断。但手动的注解有时无法避免：尤其是结构体中。  </span><br></pre></td></tr></table></figure>
 <p>在这个例子中，由于这个if的存在，Rust编译器无法判断返回值的有效期到底和x一样还是和y一样。<br>我们要添加类型推断（是的，生命周期也是一种泛型），x、y具有同名的生命周期注解’a，根据规则’a取x和y生命周期的交集：x,y都有效时，返回值一定有效！这样就避免了C&#x2F;C++中悬垂指针带来的危险。  </p>
 <hr>
-<p>也许有人会问，为什么调用该函数时，如果传入的参数生命周期不同，会取较短的？<br>我们要在集合论的角度考虑：我们说想要一只动物，那么给一只可爱小猫是可以接受的，因为猫属于动物。事实上，属于（∈）<strong>是</strong>一种偏序关系。而生命周期也<strong>存在</strong>一种偏序关系：我们把<strong>这种关系叫subtype</strong>。假设对于两个生命周期L1和生命周期L2，且有L1是L2的subtype，那我们就记作<code>L1&lt;:L2</code>，<em>vice versa</em>.<br>显然，生命周期越长越“好”（也就是泛用）。所以一开始我们就知道<code>&#39;long &lt;: &#39;short</code>，也就是长寿的可以自裁(cast过去)变成短命的，但是短命的没法强行续命变成长命的。<br>当然，还有一个显然：<code>&#39;static</code>是所有类型的subtype.<br>(不用太纠结为什么是<code>&#39;long &lt;: &#39;short</code>，偏序关系倒过来没有本质区别，这边只是强调<code>&#39;long</code>更好，物以稀为贵，所以“更少”就放左边了)<br>什么意思呢？<strong>简而言之，L1的约束比L2更松</strong>。我们看一个例子，讨论<strong>函数间</strong>的偏序关系：</p>
+<p>也许有人会问，为什么调用该函数时，如果传入的参数生命周期不同，会取较短的？<br>我们要在集合论的角度考虑：我们说想要一只动物，那么给与可爱的猫是可以接受的，因为猫是动物的子集。事实上，子集（$\subseteq$）<strong>是</strong>一种偏序关系。而生命周期也<strong>存在</strong>一种偏序关系：我们把<strong>这种关系叫subtype</strong>。假设对于两个生命周期L1和生命周期L2，且有L1是L2的subtype，那我们就记作<code>&#39;L1&lt;:&#39;L2</code>，<em>vice versa</em>.<br>显然，生命周期越长越“好”（也就是泛用）。所以一开始我们就知道<code>&#39;long &lt;: &#39;short</code>，也就是长寿的可以自裁(cast过去)变成短命的，但是短命的没法强行续命变成长命的。<br>当然，还有一个显然：<code>&#39;static</code>是所有类型的subtype.<br>(不用太纠结为什么是<code>&#39;long &lt;: &#39;short</code>，偏序关系倒过来没有本质区别，这边只是强调<code>&#39;long</code>更好，物以稀为贵，所以“更少”就放左边了)<br>什么意思呢？<strong>简而言之，L1的约束比L2更松</strong>。我们看一个例子，讨论<strong>函数间</strong>的偏序关系：</p>
 <ul>
 <li>假设有函数f1(x)和f2(x)，唯一的区别是f1对传进来的x的生命周期的最低要求更长，那么能用f1的地方就能用f2，但能用f2的地方不一定能用f1，因此f2更泛用，f2≼f1</li>
 <li>假设有函数f1()-&gt;x和f2()-&gt;x，唯一的区别是f1的返回值x的已知生命周期比f2的长，那么需要返回值的地方能用f2就一定能用f1，反之则不然，因此f1更泛用，f1≼f2</li>
@@ -197,7 +197,7 @@
 <li>因此，约束关系推导出来的最终生命周期是最严格的，宁可错杀一千也不会放过一个；就是可能有些人工检查过，可以保证安全的操作会被笨笨的生命周期约束拦下：这时就需要你动用unsafe黑魔法了</li>
 </ul>
 <hr>
-<p>所以现在我们要把生命周期理解为类型系统的一部分时，困惑可能来源于为什么不像整形一样规则简单（小int永远是大int的subtype），而包含生命周期的类型系统则有时并不如此：可能不存在这个偏序关系，也可能反过来下克上。<br><strong>我们要明确，函数签名之类的是对类型进行的一种运算</strong>。你可以理解为函数对值运算，而函数签名对类型进行运算。是不是有点像物理上的<strong>量纲分析！</strong>。<br>因此，我们可以把上一节的<code>f1</code> <code>f2</code>都拆开来看，当作一种运算，看看他对生命周期做了什么。<br>例如，对于函数参数，参数受较短生命周期的约束——如上一节分析的那样——我们发现<code>&#39;long &lt;: &#39;short</code> &#x3D;&gt; <code>F(&#39;short) &lt;: F(&#39;long)</code> (颠倒了！)，而长寿者可以降级为短命者；而对返回值来说，恰恰相反：我们只知道至少可以活多么久，活更长对于使用返回值的表达式来说也一定可以接受，此时<code>&#39;long &lt;: &#39;short</code> &#x3D;&gt; <code>(F()-&gt;&#39;long) &lt;: (F()-&gt;&#39;short)</code>（关系保持！）……其中，<code>&lt;:</code>左右两侧的表达式——或者说函数签名——正对应上一节的<code>f1</code> <code>f2</code>，我们只是把<code>≼</code>换成了<code>&lt;:</code>。  </p>
+<p>所以现在我们要把生命周期理解为类型系统的一部分时，困惑可能来源于为什么不像整形一样规则简单（小int永远是大int的subtype），而包含生命周期的类型系统则有时并不如此：可能不存在这个偏序关系，也可能反过来下克上。<br><strong>我们要明确，函数签名之类的是对类型进行的一种运算</strong>。你可以理解为函数对值运算，而函数签名对类型进行运算。是不是有点像物理上的<strong>量纲分析！</strong>。<br>换言之，这些带泛型或者生命周期的东西（不管是<code>Vec&lt;T&gt;</code>还是<code>&lt;T&gt;T-&gt;T</code>，别忘了函数也是类型一种类型，也属于<code>T</code>），本质上是类型之间的Functor.<br>因此，我们可以把上一节的<code>f1</code> <code>f2</code>都拆开来看，当作一种运算，看看他对生命周期做了什么。<br>例如，对于函数参数，参数受较短生命周期的约束——如上一节分析的那样——我们发现<code>&#39;long &lt;: &#39;short</code> &#x3D;&gt; <code>F(&#39;short) &lt;: F(&#39;long)</code> (颠倒了！)，而长寿者可以降级为短命者；而对返回值来说，恰恰相反：我们只知道至少可以活多么久，活更长对于使用返回值的表达式来说也一定可以接受，此时<code>&#39;long &lt;: &#39;short</code> &#x3D;&gt; <code>(F()-&gt;&#39;long) &lt;: (F()-&gt;&#39;short)</code>（关系保持！）……其中，<code>&lt;:</code>左右两侧的表达式——或者说函数签名——正对应上一节的<code>f1</code> <code>f2</code>，我们只是把<code>≼</code>换成了<code>&lt;:</code>。  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">颠倒了的就是contravariant，不变就是covariant，根本没法推出关系的就是invariant.</span><br></pre></td></tr></table></figure>
 <p>invariant就是上面思考题那种。至于原因，最后一节会有个特别轻松易懂的解释<code>:)</code>  </p>
 <hr>
