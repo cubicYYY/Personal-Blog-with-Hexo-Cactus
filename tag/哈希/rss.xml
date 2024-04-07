@@ -3,10 +3,10 @@
     <channel>
         <title>Cubic Y³ • Posts by &#34;哈希&#34; tag</title>
         <link>http://cubicy.icu</link>
-        <description>CTF, life, thoughts and waifus.
+        <description>Notes, CTF, DIY, thoughts and waifus.
 
 I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
-Learning: Violin and electric guitar
+Learning: Electric guitar
 ❤❤❤ CTF, toy projects, anime
 ✖✖✖ Technological supremacy
 ✔✔✔ Independent thinking
@@ -39,11 +39,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
-        <category>Life</category>
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
         <category>ProgrammingLanguage</category>
+        <category>Math</category>
+        <category>Translation</category>
+        <category>Theorem</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/</guid>
             <title>洛谷:P5072 [Ynoi2015]盼君勿忘</title>

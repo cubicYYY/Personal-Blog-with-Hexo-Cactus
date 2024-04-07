@@ -29,11 +29,13 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
-    <category term="Life" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
     <category term="ProgrammingLanguage" />
+    <category term="Math" />
+    <category term="Translation" />
+    <category term="Theorem" />
     <entry>
         <id>http://cubicy.icu/2023/07/07/CISCN-Write-Up-Tricks/</id>
         <title>CISCN 2023 Write-Up &amp; Tricks</title>
