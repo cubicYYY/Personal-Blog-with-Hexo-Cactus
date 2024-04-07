@@ -5,12 +5,12 @@
         <link>http://cubicy.icu</link>
         <description>CTF, life, thoughts and waifus.
 
- I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
- Learning: Violin and electric guitar
- ❤❤❤ CTF, toy projects, anime
- ✖✖✖ Technological supremacy
- ✔✔✔ Independent thinking
- Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
+Learning: Violin and electric guitar
+❤❤❤ CTF, toy projects, anime
+✖✖✖ Technological supremacy
+✔✔✔ Independent thinking
+Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
         <language>zh-CN</language>
         <pubDate>Sun, 28 Oct 2018 20:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 28 Oct 2018 20:00:00 +0800</lastBuildDate>
@@ -21,11 +21,8 @@
         <category>web</category>
         <category>Hackergame</category>
         <category>SchoolBus</category>
-        <category>Foo</category>
-        <category>Bar</category>
         <category>冰菓</category>
         <category>古籍研究社</category>
-        <category>晚安短信</category>
         <category>Treap</category>
         <category>BST</category>
         <category>Stack</category>

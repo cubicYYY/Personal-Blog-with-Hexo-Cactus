@@ -3,7 +3,7 @@
     <id>http://cubicy.icu</id>
     <title>Cubic Y³</title>
     <link href="http://cubicy.icu" />
-    <updated>2023-09-04T16:14:45.000Z</updated>
+    <updated>2023-11-22T09:53:42.000Z</updated>
     <category term="Misc" />
     <category term="Write-Up" />
     <category term="出题" />
@@ -11,11 +11,8 @@
     <category term="web" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
-    <category term="Foo" />
-    <category term="Bar" />
     <category term="冰菓" />
     <category term="古籍研究社" />
-    <category term="晚安短信" />
     <category term="Treap" />
     <category term="BST" />
     <category term="Stack" />
@@ -37,6 +34,27 @@
     <category term="Lifetime" />
     <category term="Code" />
     <category term="ProgrammingLanguage" />
+    <entry>
+        <id>http://cubicy.icu/2023/11/22/Sound-Output-Broken-Due-to-a-Windows-Update-Corrupted-Audio-Drivers-and-How-I-Fix-It/</id>
+        <title>Sound Output Broken Due to a Windows Update (Corrupted Audio Drivers) and How I Fix It</title>
+        <link rel="alternate" href="http://cubicy.icu/2023/11/22/Sound-Output-Broken-Due-to-a-Windows-Update-Corrupted-Audio-Drivers-and-How-I-Fix-It/"/>
+        <content type="html"></content>
+        <updated>2023-11-22T09:53:42.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://cubicy.icu/2023/11/22/%E6%8A%98%E8%85%BEJAVA%E9%9D%99%E6%80%81%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%84%E4%BC%B0%E5%B7%A5%E5%85%B7OPAL-Hermes/</id>
+        <title>折腾JAVA静态测试数据集评估工具OPAL/Hermes</title>
+        <link rel="alternate" href="http://cubicy.icu/2023/11/22/%E6%8A%98%E8%85%BEJAVA%E9%9D%99%E6%80%81%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AF%84%E4%BC%B0%E5%B7%A5%E5%85%B7OPAL-Hermes/"/>
+        <content type="html"></content>
+        <updated>2023-11-22T09:48:42.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://cubicy.icu/2023/11/22/%E5%AF%B9%E6%9C%A8%E9%A9%ACLummaC-Stealer%E6%A0%B7%E6%9C%AC%E6%9E%81%E7%AE%80%E7%9A%84%E4%B8%80%E6%AC%A1%E5%88%86%E6%9E%90/</id>
+        <title>对木马LummaC Stealer样本极简的一次分析</title>
+        <link rel="alternate" href="http://cubicy.icu/2023/11/22/%E5%AF%B9%E6%9C%A8%E9%A9%ACLummaC-Stealer%E6%A0%B7%E6%9C%AC%E6%9E%81%E7%AE%80%E7%9A%84%E4%B8%80%E6%AC%A1%E5%88%86%E6%9E%90/"/>
+        <content type="html"></content>
+        <updated>2023-11-22T09:47:43.000Z</updated>
+    </entry>
     <entry>
         <id>http://cubicy.icu/2023/09/05/rust-lifetime/</id>
         <title>Rust类型系统中的生命周期</title>
@@ -73,61 +91,6 @@
         <category term="Code" />
         <category term="ProgrammingLanguage" />
         <updated>2023-09-04T16:14:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://cubicy.icu/2023/08/31/%E5%8D%81%E5%AD%97%E8%B7%AF%E5%8F%A3%EF%BC%9F-%E9%9A%8F%E7%AC%9420230831/</id>
-        <title>十字路口？ 随笔20230831</title>
-        <link rel="alternate" href="http://cubicy.icu/2023/08/31/%E5%8D%81%E5%AD%97%E8%B7%AF%E5%8F%A3%EF%BC%9F-%E9%9A%8F%E7%AC%9420230831/"/>
-        <content type="html">&lt;h1 id=&#34;十字路口？&#34;&gt;&lt;a href=&#34;#十字路口？&#34; class=&#34;headerlink&#34; title=&#34;十字路口？&#34;&gt;&lt;/a&gt;十字路口？&lt;/h1&gt;&lt;p&gt;现在是2023年8月31日清晨6时许。&lt;/p&gt;
-&lt;p&gt;杭州很少有如此舒适的天气：21度，和风细雨。我以清醒的状态度过了一个夜晚，思考了在关键的一年乃至往后数年应当何去何从。我不会画饼（但我经常干这事）（但不是这次），因此以下是一些非常务实的待办事项，供现在和未来一段时间参考。&lt;/p&gt;
-&lt;h2 id=&#34;学业&#34;&gt;&lt;a href=&#34;#学业&#34; class=&#34;headerlink&#34; title=&#34;学业&#34;&gt;&lt;/a&gt;学业&lt;/h2&gt;&lt;p&gt;现在我的面前有2条路可选择：PhD&amp;#x2F;Master. 尽管以前从未考虑过学术方向，但现在看来真正让我感到无聊的是工业界的那些东西——并且学术也并不意味着空中楼阁、高屋建瓴。&lt;/p&gt;
-&lt;p&gt;美&amp;#x2F;日&amp;#x2F;欧深造是最优先的选项，但本校保研仍然是一个非常可能的选项：我不排斥。&lt;/p&gt;
-&lt;p&gt;不论哪个选项，都需要我进一步提高GPA，以及进一步提高语言水平。&lt;/p&gt;
-&lt;p&gt;至于方向，SDE与安全都是可以的，但细分方向仍不确定，&lt;strong&gt;必须尽快定下，有种预感最后要follow my heart。&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;我希望能在大三这一年争取到一个research assistant, 需要对自己建立信心；如果有publication作为副产物是最好的，但即使没有也是一种极好的锻炼&lt;/li&gt;
-&lt;li&gt;认真对待课堂，将获取更高绩点作为第一优先级：因为事实上，本身就很难在课程框架内学到什么有价值的新东西，本科教育如此&lt;/li&gt;
-&lt;li&gt;最好的结果是美国全奖PhD，可能性也许不是特别高但要敢拼；也可以考虑申东京大学的修士&lt;/li&gt;
-&lt;li&gt;明确方向：多问问自己，多问问别人；多读读新闻，多读读论文&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;个人能力&#34;&gt;&lt;a href=&#34;#个人能力&#34; class=&#34;headerlink&#34; title=&#34;个人能力&#34;&gt;&lt;/a&gt;个人能力&lt;/h2&gt;&lt;p&gt;主要在CTF和编码能力上。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;提升对常用环境、工具链的使用熟练度&lt;/li&gt;
-&lt;li&gt;积极参与CTF赛事，目标是能够作为主力的web输出&lt;/li&gt;
-&lt;li&gt;拓展技术栈，使用更多工业界常用的框架，建立一个general view&lt;/li&gt;
-&lt;li&gt;算法这块还是不能放下&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;语言&#34;&gt;&lt;a href=&#34;#语言&#34; class=&#34;headerlink&#34; title=&#34;语言&#34;&gt;&lt;/a&gt;语言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;英语：托福必须达到够高的分数，GRE可以日后考虑&lt;ul&gt;
-&lt;li&gt;每日单词、听力的加强练习不应少于45分钟&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;日语：暂缓。即使日本修士也并没有很高的要求；但是希望有时间直接冲刺N1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;精神食粮&#34;&gt;&lt;a href=&#34;#精神食粮&#34; class=&#34;headerlink&#34; title=&#34;精神食粮&#34;&gt;&lt;/a&gt;精神食粮&lt;/h2&gt;&lt;p&gt;对大一大二两年的反思，得到一些亡羊补牢的措施。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;减少对抗性、竞技性游戏的强度：使人筋疲力尽&lt;/li&gt;
-&lt;li&gt;多接受优秀的文艺作品：这包含优秀的番剧、电影等，并不局限于书籍；补番以弥补初中以来的一些小遗憾&lt;/li&gt;
-&lt;li&gt;多输出长文论点，减少碎片化的情绪宣泄：影评、观后感、一些思考都是值得记录的，单纯记录下来就已经足够&lt;/li&gt;
-&lt;li&gt;自己聚合RSS获得更高效、纯净的信息流&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h2&gt;&lt;p&gt;一些七七八八但值得记录&amp;#x2F;执行的事项。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;身体健康：也许应该去体检了，并且不要再老像今天这样熬夜了，即使天气真的很好很舒服&lt;ul&gt;
-&lt;li&gt;认真跑步！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;开销：多吃食堂少点外卖；不乱买东西&lt;/li&gt;
-&lt;li&gt;乐器：买了电吉他就好好练，闲置的surface book恰好可以专门用来看乐谱&lt;/li&gt;
-&lt;li&gt;博客：持续更新，“形成一套可复用的物理资料”&lt;/li&gt;
-&lt;li&gt;直播：摄手直播，主要监督自己；当然也可以是游戏！&lt;/li&gt;
-&lt;li&gt;人际关系：拒绝被动攻击，把时间和善意留给身边的人；多换位思考，不背后黑屁&lt;/li&gt;
-&lt;li&gt;节能：少开空调&lt;/li&gt;
-&lt;li&gt;形势感知：积极主动了解形势变化做出应对，减少投机&lt;/li&gt;
-&lt;li&gt;多喝水，多看花花草草，早睡早起，打理干净周遭&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <updated>2023-08-30T22:47:53.000Z</updated>
     </entry>
     <entry>
         <id>http://cubicy.icu/2023/08/29/CODEGATE2023/</id>
@@ -206,84 +169,6 @@
         <updated>2023-07-06T16:28:12.000Z</updated>
     </entry>
     <entry>
-        <id>http://cubicy.icu/wadx_day2/</id>
-        <title>我们仍未知道那年上了个啥高中</title>
-        <link rel="alternate" href="http://cubicy.icu/wadx_day2/"/>
-        <content type="html">&lt;h1 id=&#34;我们仍未知道那年上了个啥高中&#34;&gt;&lt;a href=&#34;#我们仍未知道那年上了个啥高中&#34; class=&#34;headerlink&#34; title=&#34;我们仍未知道那年上了个啥高中&#34;&gt;&lt;/a&gt;我们仍未知道那年上了个啥高中&lt;/h1&gt;&lt;p&gt;昨天的像是碎碎念……那么今天来点故事分享吧，当然，还是碎片化的。对不起，我不会写长文了；；&lt;/p&gt;
-&lt;h2 id=&#34;荒废，荒谬，荒诞的三年&#34;&gt;&lt;a href=&#34;#荒废，荒谬，荒诞的三年&#34; class=&#34;headerlink&#34; title=&#34;荒废，荒谬，荒诞的三年&#34;&gt;&lt;/a&gt;荒废，荒谬，荒诞的三年&lt;/h2&gt;&lt;p&gt;书接上文。  &lt;/p&gt;
-&lt;h3 id=&#34;竞赛？Osu！&#34;&gt;&lt;a href=&#34;#竞赛？Osu！&#34; class=&#34;headerlink&#34; title=&#34;竞赛？Osu！&#34;&gt;&lt;/a&gt;竞赛？Osu！&lt;/h3&gt;&lt;p&gt;从初中升至高中以后，我开始全心投入算法竞赛中去。当然，毕竟是沿海的经济特区，学校也算不错，管的松的很，于是时不时就一机房的人停课准备比赛。&lt;br&gt;可惜过度的放养、欠缺的竞赛教练、政策的变化、以及我啥也不会的事实让我逐渐不想耗死在竞赛的路子上。&lt;br&gt;其实那时机房不少人已经开始搞“部分停课”：来机房只是为了写作业和翘不喜欢的课。&lt;br&gt;但是众所周知我是摸鱼高手，在机房放纵的机会我怎么会错过？&lt;br&gt;于是我前前后后加起来有接近一年的时间是这么度过的：&lt;br&gt;懒觉睡到9点，提着SHP9500和Wacom CTL472去机房打osu，吃个午饭继续打，打到下午5点回家吃晚饭，然后在家里打到晚上12点。&lt;br&gt;然后全机房的人be like:&lt;br&gt;&lt;img src=&#34;/wadx_day2/osu.jpg&#34; alt=&#34;osu&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;最终打到了4600pp似乎。那时算法还没改。 &lt;a href=&#34;https://osu.ppy.sh/users/11767753&#34;&gt;osu主页&lt;/a&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day2/osuscore.jpg&#34; alt=&#34;osuscore&#34; loading=&#34;lazy&#34;&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;虽然大学再看这个两三百小时的时长根本不算啥啦。  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;雀魂的话，主打一个科学日麻：涉川难波的作品、讲何切题的书都看了几本吧也许。但还是打的一般——倒是被我拉进坑的同学打到现在，还在日日精进中。&lt;br&gt;&lt;del&gt;由于让机房同学全体打雀魂被家长举办了，可惜这位告状家长一瞬就被老师卖了，令人感叹&lt;/del&gt;&lt;br&gt;要说高一还干了啥，可能就是打wota艺，打邦邦，玩Va11-Hall A之类的。你问我学习？我啥也没干！&lt;br&gt;作为新高考的省份，我早就放弃了非选考科目的学习；主科不是啃老本就是学校教的在应试上一点用也没有，所以其实我好像也没什么损失？  &lt;/p&gt;
-&lt;h3 id=&#34;疫情&#34;&gt;&lt;a href=&#34;#疫情&#34; class=&#34;headerlink&#34; title=&#34;疫情&#34;&gt;&lt;/a&gt;疫情&lt;/h3&gt;&lt;p&gt;然后COVID-19，他来了。在一开始，我就没信一些人的话，于是早早的购买了口罩（1月29日就到货了）。&lt;br&gt;事后看来这个决定是正确的：毕竟，不听劝的亲戚事后在恐惧中花费2000元（大写：贰仟元）人民币购买了40个3M的口罩。  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;他（作者）是班里第一个戴口罩的，也是第一个摘口罩的。——生物老师&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;网课开始了，我彻底疯狂！我**就是一个睡睡睡，不然怎么对得起我&lt;em&gt;特困生&lt;/em&gt;的这一称号？&lt;br&gt;作业哐哐应付完了，但是人总是要找事干的（确实太闲了，不然谁会通两遍Getting Over It with Bennett Foddy(A.K.A. 掘地求升)？），于是我开始研究基金之类的。&lt;br&gt;但是什么ETF QDII基金这种大爷大妈都知道的东西实在不够coooool，那么在哪里可以低门槛的尝试那些新鲜的金融衍生品呢？&lt;br&gt;当然有，而且这个市场是24h运作的——&lt;code&gt;Crypto Currencies&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;炒币&#34;&gt;&lt;a href=&#34;#炒币&#34; class=&#34;headerlink&#34; title=&#34;炒币&#34;&gt;&lt;/a&gt;炒币&lt;/h3&gt;&lt;p&gt;毕竟本金也不是很多，随便造。期权、期货都整了点，有的仓上10倍杠杆、-5倍（做空）杠杆都有。&lt;br&gt;最逆天的是我还搞的是&lt;strong&gt;短线&amp;#x2F;超短线&lt;/strong&gt;。整天上课把手机埋书包里盯盘，&lt;del&gt;晚自习跑小角落炒币撞上偷偷抽烟的老师&lt;/del&gt;。&lt;br&gt;&lt;img src=&#34;/wadx_day2/ETH.jpg&#34; alt=&#34;ETH&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;每天光顾着惦记这个，年幼无知的我不知道何为持仓不过夜，于是偶尔早上起来看见爆仓强制平仓的短信人都麻了。&lt;br&gt;所以有次ETH插针赌中，大捞一波之后我就收手了。&lt;br&gt;但我怎么会轻易放弃呢？炒可能亏，挖还能亏不成？  &lt;/p&gt;
-&lt;h3 id=&#34;迫真垃圾佬&#34;&gt;&lt;a href=&#34;#迫真垃圾佬&#34; class=&#34;headerlink&#34; title=&#34;迫真垃圾佬&#34;&gt;&lt;/a&gt;迫真垃圾佬&lt;/h3&gt;&lt;p&gt;说干就干，我开始学习装机知识，最终选定LGA775的古董平台组建我的小机子。&lt;br&gt;板子可以通过PCIE转接线外接2张显卡RX580+2060，算力合计大约60MH&amp;#x2F;s.&lt;br&gt;每周末回家，没别的，就装机子去。&lt;br&gt;然后这玩意长这样：&lt;br&gt;&lt;img src=&#34;/wadx_day2/miner.jpg&#34; alt=&#34;miner&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;手动裁剪的苹果箱子。&lt;br&gt;然后安全保证是由一个防火球和自制的报警模块构成的：&lt;br&gt;&lt;img src=&#34;/wadx_day2/alarm.jpg&#34; alt=&#34;alarm&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;事后算算其实盈利也没多少。有没有可能那时病态的市场下，显卡本身就是一种实体的期权呢？&lt;br&gt;好吧，这个Idea被我拿来水了通识课的大作业论文。&lt;br&gt;后面搞了很多好玩的小东西，比如开关电源+半导体制冷片做的水冷小冰箱：&lt;br&gt;&lt;img src=&#34;/wadx_day2/diy_cooling.jpg&#34; alt=&#34;diy_cooling&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day2/coolingsys.jpg&#34; alt=&#34;coolingsys&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;高考的三天买了不少硬件，考后回家直接装机，然后开始超频。&lt;br&gt;&lt;img src=&#34;/wadx_day2/pc.jpg&#34; alt=&#34;pc&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;一些小爱好&#34;&gt;&lt;a href=&#34;#一些小爱好&#34; class=&#34;headerlink&#34; title=&#34;一些小爱好&#34;&gt;&lt;/a&gt;一些小爱好&lt;/h3&gt;&lt;h4 id=&#34;写字&#34;&gt;&lt;a href=&#34;#写字&#34; class=&#34;headerlink&#34; title=&#34;写字&#34;&gt;&lt;/a&gt;写字&lt;/h4&gt;&lt;p&gt;我喜欢用各种笔写作业。&lt;br&gt;换着墨水写，换着颜色写。&lt;br&gt;用钢笔写，用羽毛笔写，用玻璃笔写。&lt;br&gt;用色彩雫写，用蓝黑墨水写，用荧光墨水写。&lt;br&gt;“差生文具多”，还真是，字还丑，不过管他呢，写的开心就好^_^&lt;br&gt;四季织-明月:&lt;br&gt;&lt;img src=&#34;/wadx_day2/meigetsu.jpg&#34; alt=&#34;四季织-明月&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;玻璃笔：&lt;br&gt;&lt;img src=&#34;/wadx_day2/glasspen.jpg&#34; alt=&#34;glasspen&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;紫外线下的荧光墨水，平时是隐形的：&lt;br&gt;&lt;img src=&#34;/wadx_day2/lumino.jpg&#34; alt=&#34;lumino&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;（歌词来自罪恶王冠OP，「The Everlasting Guilty Crown」）　　&lt;br&gt;&lt;img src=&#34;/wadx_day2/katachinonai.jpg&#34; alt=&#34;katachinonai&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;邦邦&#34;&gt;&lt;a href=&#34;#邦邦&#34; class=&#34;headerlink&#34; title=&#34;邦邦&#34;&gt;&lt;/a&gt;邦邦&lt;/h4&gt;&lt;p&gt;Roselia的专辑：&lt;br&gt;&lt;img src=&#34;/wadx_day2/roselia.png&#34; alt=&#34;roselia&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;少女歌剧&#34;&gt;&lt;a href=&#34;#少女歌剧&#34; class=&#34;headerlink&#34; title=&#34;少女歌剧&#34;&gt;&lt;/a&gt;少女歌剧&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;/wadx_day2/sngj1.png&#34; alt=&#34;sngj1&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day2/sngj2.png&#34; alt=&#34;sngj2&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h5 id=&#34;高考前夕的小插曲&#34;&gt;&lt;a href=&#34;#高考前夕的小插曲&#34; class=&#34;headerlink&#34; title=&#34;高考前夕的小插曲&#34;&gt;&lt;/a&gt;高考前夕的小插曲&lt;/h5&gt;&lt;p&gt;虽然并不是很适合&amp;#x2F;很能讲的。&lt;br&gt;总之班上有一对情侣（下称A、B），事后大家知道是A在pua B;&lt;br&gt;B察觉到不对想脱身的时候，A用了各种手段威胁：甚至包括仗着自己是化竞生可以获取剧毒化学品，对B发出人身威胁（我草，地雷系）&lt;br&gt;A还说，分了就告诉B家长这场恋情；可是B并不想让家里人知道，于是忍受着。&lt;br&gt;但同学看不下去了，因为A的恶行有目共睹：不仅同时和小学弟暧昧，在宿舍举行吃鸡大赛，还对班里同学有意无意地制造身体接触揩油……A最终还是被正义善雅人士一瞬举办。&lt;br&gt;这件事深深伤害了B，至于A，&lt;strong&gt;早就保送了，对他来讲又有什么关系呢？&lt;/strong&gt;&lt;br&gt;没想到A的家长反咬一口，要对B“采取法律手段”，&lt;strong&gt;半夜3点&lt;/strong&gt;去电给班主任要求处理此事。&lt;br&gt;A的家长倒是啥都清楚，把所有事都抖出来了，很难想象一个刚师范毕业的姑娘刚接手竞赛班当班主任就遇上这事会是怎样的精神状态。&lt;br&gt;最终这个荒谬的事件被冷处理，但是全年段都知道竞赛班出了个大乐子，二模前一晚的晚自习我不知口述了几千字为带着求知欲的其他班同学们提供口述史。&lt;br&gt;哦，我是不是忘了说A和B都是男的？  &lt;/p&gt;
-&lt;h3 id=&#34;回归正轨，感谢恩师&#34;&gt;&lt;a href=&#34;#回归正轨，感谢恩师&#34; class=&#34;headerlink&#34; title=&#34;回归正轨，感谢恩师&#34;&gt;&lt;/a&gt;回归正轨，感谢恩师&lt;/h3&gt;&lt;p&gt;最终我还是认真开始学习，用大量的教辅代替课内作业（领先版本的大学式复习法）把成绩补到了还算能看的水平，恰逢ZJU扩招，就踩线进来了。&lt;br&gt;谢谢那些和学生用真心换真心的老师们。我永远记得化学考前开放实验室一起做铝热实验的快乐！&lt;br&gt;听说……其他地方是不会让学生自己做的。我做了3遍起步吧？&lt;br&gt;&lt;img src=&#34;/wadx_day2/thermite.jpg&#34; alt=&#34;thermite&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;高三的体育课，玩飞盘、棒球（球速当时扔出过110km&amp;#x2F;h）。&lt;br&gt;晚餐后在操场丢泡沫飞机、放风筝。&lt;br&gt;课间，一群人在楼上鼓掌，莫名其妙成为一种风气，人称鼓掌社。&lt;br&gt;……&lt;br&gt;这难道是传说中的玫瑰色的校园生活？  &lt;/p&gt;
-&lt;h2 id=&#34;ZJU：正确的摸鱼&#34;&gt;&lt;a href=&#34;#ZJU：正确的摸鱼&#34; class=&#34;headerlink&#34; title=&#34;@ZJU：正确的摸鱼&#34;&gt;&lt;/a&gt;@ZJU：正确的摸鱼&lt;/h2&gt;&lt;p&gt;高考后的暑假，继续捣鼓电脑。&lt;br&gt;我很早就认为课内教的这些几乎没眼看（更不用说ZJU尤其喜欢在大一塞一堆通识课，上了1年除了一门C什么专业课也没有），能应付就应付了。&lt;br&gt;具体而言，对完全不想搭理的课就在课堂睡觉，老师提问就回答，回答完继续睡。有小组合作的就揽PPT的活，拯救一下他们悲剧般的PPT。&lt;br&gt;考前刷刷历年卷，把年级群当ChatGPT询问（当然那时还没有）。&lt;br&gt;然后就祈祷老师捞吧。&lt;br&gt;对于感兴趣的课，大作业沾点边的，就全力开卷！想学啥就写啥，直到把课内要求覆盖为止，你就得到了一份完美的大作业。&lt;br&gt;省下的时间，大一是在打CTF，大二全在打Apex Legends🤬🤬🤬&lt;br&gt;混了个大师，好像也不亏（笑）。  &lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;好像我从来没变过：在能挽救的最迟时刻开始全力冲刺。高考也好，大学也罢。&lt;br&gt;中考我用1个月冲刺，高考我用了6个月冲刺；&lt;br&gt;以此类推，如今我也许该在大四的前一年——大三开始认真起来了吧？&lt;br&gt;那么就共勉，晚安吧。&lt;br&gt;月色真美。&lt;br&gt;&lt;img src=&#34;/wadx_day2/tsukigakirei.jpg&#34; alt=&#34;tsukigakirei&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;后记：一件难过的事&#34;&gt;&lt;a href=&#34;#后记：一件难过的事&#34; class=&#34;headerlink&#34; title=&#34;后记：一件难过的事&#34;&gt;&lt;/a&gt;后记：一件难过的事&lt;/h2&gt;&lt;p&gt;高三那年一个很好的THU学长跳楼自杀了。那个晚上我无声地在楼道的尽头哭了好久。&lt;br&gt;我也很生气，他没有信守承诺在THU等我，不过我也没考上对吧。&lt;br&gt;反正，从那时开始我就觉得世界是虚假的。这层隔膜感也从未消失。&lt;br&gt;&lt;img src=&#34;/wadx_day2/sorry.jpg&#34; alt=&#34;sorry&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-</content>
-        <category term="晚安短信" />
-        <category term="Life" />
-        <updated>2023-07-04T13:58:48.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://cubicy.icu/wadx_day1/</id>
-        <title>晚安，紫金港</title>
-        <link rel="alternate" href="http://cubicy.icu/wadx_day1/"/>
-        <content type="html">&lt;h1 id=&#34;晚安，紫金港&#34;&gt;&lt;a href=&#34;#晚安，紫金港&#34; class=&#34;headerlink&#34; title=&#34;晚安，紫金港&#34;&gt;&lt;/a&gt;晚安，紫金港&lt;/h1&gt;&lt;p&gt;现在是2023年7月4日的凌晨两点，按照计划我应当负责7.1-7.4的晚安短信——但毕竟现在才动笔，只能是爽约了：总之十分抱歉。至于原因……我不知道。好像熬夜考完试就穿越到了轰趴，熬了个头痛的夜，再大睡一觉就到现在了。&lt;br&gt;不过四天并做两天的话，希望能写一些不是垃圾话的长文，大家看个开心就好。&lt;br&gt;那么今天我想聊聊我的从前（高中往前），想起啥就写啥好了。  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;年少时许多看似不起眼的小事，你以为简单选择的岔路口，其实多年以后张望，都会发现，不经意间，它竟然改变你往后的人生。  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这鸡汤是真的土，可是回头看看却是真切无比。&lt;br&gt;好了，苯堡下面开始要figuratively亚一点（梗来源：大破进击&amp;#x2F;小破不入渠）。  &lt;/p&gt;
-&lt;h2 id=&#34;我是？&#34;&gt;&lt;a href=&#34;#我是？&#34; class=&#34;headerlink&#34; title=&#34;我是？&#34;&gt;&lt;/a&gt;我是？&lt;/h2&gt;&lt;p&gt;我是yyy，因为我的名字缩写就是yyy。&lt;br&gt;如果你想要看我的博客(A.K.A. 黑历史)：&lt;br&gt;&lt;a href=&#34;http://cnblogs.com/yyy2015c01&#34;&gt;http://cnblogs.com/yyy2015c01&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;http://cubicy.icu/&#34;&gt;http://cubicy.icu&lt;/a&gt;&lt;br&gt;问就是没备案。  &lt;/p&gt;
-&lt;h2 id=&#34;迁徙&#34;&gt;&lt;a href=&#34;#迁徙&#34; class=&#34;headerlink&#34; title=&#34;迁徙&#34;&gt;&lt;/a&gt;迁徙&lt;/h2&gt;&lt;p&gt;我来自闽东的三线小城市，但这几年因为某家电池企业的缘故，这座城市还算小有名气。&lt;br&gt;家长在很小的时候以不小的付出把我带到了厦门，母上从此每周往返两座城市，一头工作一头是家庭——我觉得高铁应该为她的卓越贡献发奖。&lt;br&gt;总之，事实证明这是无比正确的一个选择，有远见的父母们总是知道（抑或是歪打正着）大城市为孩子带来的是一个好得多的未来。  &lt;/p&gt;
-&lt;h2 id=&#34;编程&#34;&gt;&lt;a href=&#34;#编程&#34; class=&#34;headerlink&#34; title=&#34;编程&#34;&gt;&lt;/a&gt;编程&lt;/h2&gt;&lt;p&gt;小学的时候因为“数学好”被拉去学校编程小组学PC Logo小海龟画图了。不知道大伙那边有没有呢？&lt;br&gt;&lt;img src=&#34;/wadx_day1/pclogo1.png&#34; alt=&#34;PC Logo&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/wadx_day1/pclogo2.png&#34; alt=&#34;PC Logo2&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;就是不知道小学的我知道长大后高考数学还没语文高会有啥想法。&lt;br&gt;那时候机房还是CRT显示器，进机房要穿鞋套……据说这是90后的经历？好吧，的确很早就接触了电脑。&lt;br&gt;好像是数学老师在某一个平常下午想起来为我引荐的？感觉人生轨迹从此被彻底改变了。&lt;br&gt;六年级参加了市里的比赛，运气比较好拿到了全市第一。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;得，这下彻底进坑了。——编者注&lt;br&gt;但是再怎么样也比练梵婀玲轻松多了，不是吗？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;顺带一提，后来初中为我提前在校训练分配的学号是按这次比赛的名次给的，名为&lt;code&gt;2015c01&lt;/code&gt;，于是我把他当作荣誉称号拼进了ID里——这就是&lt;code&gt;yyy2015c01&lt;/code&gt;的由来。现在看来蠢到不行。但是人不装逼活着有什么意思？  &lt;/p&gt;
-&lt;h2 id=&#34;初中&#34;&gt;&lt;a href=&#34;#初中&#34; class=&#34;headerlink&#34; title=&#34;初中&#34;&gt;&lt;/a&gt;初中&lt;/h2&gt;&lt;p&gt;六年级到初中的这段时间我转而学习C++，准确的来说应该是C with STL。&lt;br&gt;于是每逢放学便组团冲向机房。&lt;br&gt;于是别人军训时我在吹空调，俨然感觉自己是人上人。&lt;br&gt;于是过度膨胀的自信心让我在校内评测网站上和学长打嘴炮，一举成名。&lt;br&gt;后来鉴于我认错态度良好，那个网站的学长许诺我认真学习便赐予&lt;code&gt;管理员&lt;/code&gt;尊贵身份。&lt;br&gt;我选择跟随他，在皈依者狂热的驱动下用Notepad++跟着写PHP、MySQL……这或许就是我的Web启蒙？&lt;br&gt;&lt;del&gt;在一机房人被题目折磨的不清时，我偶尔会滥用职权把题目数据改水了&lt;/del&gt;&lt;br&gt;后来，这位学长向我传教东舰L三大教（東方Project、艦隊これくしょん「艦これ」、Love Live!「ラブライブ！」），于是从此以后时常和妹子或者男同学中午翻进机房玩艦これ（这经历现在看看多少有点奇妙深刻了）。&lt;br&gt;这位学长的合作伙伴向我讲述MySQL注入等基础的安全知识，这或许就是我的信息安全启蒙？ &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;其实可能不是。小学为了从家长手上拿到iPad密码，用橡皮擦擦屏幕留下白印，再让家长解锁观察指纹位置，然后排列组合了两次就拿到了PIN（什么社工）。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;……你知道的，每个写程序的大男孩都有个骇客梦——这些大男孩不出意外的先成了脚本小子。&lt;br&gt;这些东西未曾丢失过，我甚至现在就能翻出来当时玩的LOIC……虽然最正经的用途是给老师学校主页刷访问量。&lt;br&gt;&lt;img src=&#34;/wadx_day1/LOIC.png&#34; alt=&#34;LOIC&#34; loading=&#34;lazy&#34;&gt;  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;数据不丢失多亏了我从小学开始执行的数据备份3-2-1原则，虽然那时的“异地”对我来讲可能只是两个不同房间吧……  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;哦我是不是忘说了，那个网站许多OIer（自称）听过用过：就是&lt;a href=&#34;https://www.luogu.com.cn/&#34;&gt;洛谷&lt;/a&gt;。从早年两个人路边发黑白传单一路做到今天的规模着实令人敬佩。  &lt;/p&gt;
-&lt;h3 id=&#34;番外：老二刺螈了&#34;&gt;&lt;a href=&#34;#番外：老二刺螈了&#34; class=&#34;headerlink&#34; title=&#34;番外：老二刺螈了&#34;&gt;&lt;/a&gt;番外：老二刺螈了&lt;/h3&gt;&lt;p&gt;那时候开始在b站追番——甚至蹭的小区物业WiFi。当时A站还活着，逸帝也在位，我在几百KB&amp;#x2F;s的网速下努力为御坂美琴刷着“你指尖跃动的电光是我此生不灭的信仰”这种比“立于浮华之世，奏响天籁之音”还中二的弹幕。&lt;br&gt;好吧，我还挺怀念的——当然不是指喧闹的蝉鸣与过时笔记本怼着桌面的扬声器，近热带热浪与降频工作的中央处理器。  &lt;/p&gt;
-&lt;h2 id=&#34;荒废与荒诞的高中生活-amp-ZJU摸鱼记&#34;&gt;&lt;a href=&#34;#荒废与荒诞的高中生活-amp-ZJU摸鱼记&#34; class=&#34;headerlink&#34; title=&#34;荒废与荒诞的高中生活&amp;amp;ZJU摸鱼记&#34;&gt;&lt;/a&gt;荒废与荒诞的高中生活&amp;amp;ZJU摸鱼记&lt;/h2&gt;&lt;p&gt;累了，天也亮了。我明天会再回来的！&lt;br&gt;除了班里gay的恩怨情仇，炒币大失败，迫真短线交易员，杠杆中级高手，996专攻osu和雀魂的迫真算法竞赛选手外也没啥好讲的嘛！&lt;br&gt;不过应该还是比大部分人的高中生活离谱的多。  &lt;/p&gt;
-&lt;h2 id=&#34;我是？-1&#34;&gt;&lt;a href=&#34;#我是？-1&#34; class=&#34;headerlink&#34; title=&#34;我是？&#34;&gt;&lt;/a&gt;我是？&lt;/h2&gt;&lt;p&gt;我是幸运的，在每个关键时间节点都遇到了对的人推我一把：或是开明的家长，或是授人以渔的先辈；&lt;br&gt;又或者我还是被宿命支配着的，这种幸运只是来自于信息差，是“随蝴蝶消逝的旧日的幻影”。&lt;br&gt;不过即使是后者，对我而言至多是还原论&amp;#x2F;决定论：我始终相信自身的努力也是宿命的一部分。&lt;br&gt;总之我其实没变过，如果真有thoughtcrime我早该被枪毙一万次，让我更好地压制住自己的被动攻击型人格吧。&lt;br&gt;像这篇补交的晚安短信一样，我很惭愧时常不能回应他人的期待，所以希望日后能用自己的力量创造这种“幸运”。  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;掴んで見せます、自分星！&lt;br&gt;——星見純那&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;也希望所有在山区里，在高原上，处在信息茧房里的人儿能拥有看到比自己更高境界的幸运吧。&lt;br&gt;现在是4点44分，我时常在紫金港充满雾气而寂静的夜里胡思乱想；这次我把它写出来了而已。天亮了，我也该睡了。&lt;br&gt;&lt;strong&gt;早安，紫金港。晚安，紫金港！&lt;/strong&gt;  &lt;/p&gt;
-</content>
-        <category term="晚安短信" />
-        <category term="Life" />
-        <updated>2023-07-03T18:02:33.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://cubicy.icu/2023/07/03/hello-world/</id>
-        <title>-菫時-单推人</title>
-        <link rel="alternate" href="http://cubicy.icu/2023/07/03/hello-world/"/>
-        <content type="html">&lt;p&gt;这是个测试页面。&lt;br&gt;又是一个我的新博客^_^希望这次认真对待。&lt;br&gt;我是杠杠！&lt;br&gt;&lt;img src=&#34;/2023/07/03/hello-world/image.png&#34; alt=&#34;Alt text&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="Foo" />
-        <category term="Bar" />
-        <updated>2023-07-03T07:58:13.788Z</updated>
-    </entry>
-    <entry>
         <id>http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</id>
         <title>ACTF2022 - FFSK - Official WriteUp</title>
         <link rel="alternate" href="http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/"/>
@@ -351,19 +236,6 @@
         <category term="Write-Up" />
         <category term="出题" />
         <updated>2022-07-03T15:43:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://cubicy.icu/2022/01/21/%E5%9B%9E%E6%9C%9B2021%EF%BC%8C%E5%B9%B6%E5%B0%8F%E5%B0%8F%E5%B1%95%E6%9C%9B2022/</id>
-        <title>回望2021，并小小展望2022</title>
-        <link rel="alternate" href="http://cubicy.icu/2022/01/21/%E5%9B%9E%E6%9C%9B2021%EF%BC%8C%E5%B9%B6%E5%B0%8F%E5%B0%8F%E5%B1%95%E6%9C%9B2022/"/>
-        <content type="html">&lt;p&gt;这时候写这东西总显得不太赶趟。然而私以为“年度总结”这类东西只有一年完全结束了才算数。虽然以前也并没怎么写过，不过毕竟2021对我来讲还算是一个转折点，有更特殊的一些……意义？不如就试着写写流水账吧。&lt;br&gt;前半年其实没啥好说的，无非就是在备战高考。可惜我没有那样的毅力认真学习，就像我把高一高二彻底荒废在打游戏上一样，高三我依旧贯彻“小考小摸大考大摸”的作风。无论是成人礼还是高考誓师学校都没搞出什么激情，也许本省就是这么佛系吧。周末就捣鼓二手电子原件，平时就玩笔。自习的时候总是一刻也坐不住，自己溜到六楼的楼梯间边听歌边看Kindle顺带在黑暗中观察小情侣。一点压力也没有是不现实的，毕竟那是高考。各类教辅买了不少，尽管完成度堪忧，不过毕竟断断续续做了也不少，收获还是比较丰富的——但是我高考前一天还在炒币（亏了500）是怎么回事呢？所以某种意义上我的学习就是一种表演，本色还是摸鱼🐟。然而这种行事风格不完全是坏处，至少性价比很高：因为我花费的精力少，于是就不得不更精准、功利、高考导向一些。最后的高考语文考得出奇优秀（至少对我这个肚子里搜刮不出半点墨水的来说，毕竟我完全抛弃校内材料而是寻求各类出版物的现成知识），反而是数学炸了。尽管个例不能说明什么，但我想熟悉我的人中也许有不少会认同这个情况正是本届语文&amp;amp;数学教学失败的一个缩影。还好，我很险地被浙江某倒数第一211（仅仅高于最低录取分数线1分）录取，实在是幸运，不过这是后话了。高三没能好好学习，倒是认识了不少佼佼者，作为一名竞赛班混子我对此感到无比荣幸：每日埋头猛书以至于课间都跑步去卫生间的，在操场活动或是体育课拿着板夹赶作业的，如此种种能人志士每每目击之总令我心生愧疚，此时再看一眼我被没收了4次甚至3次的手机上的高考倒计时，不由得心生焦虑。有时想到马上高考，竟忍不住大哭，再红着眼回教室继续该干啥干啥。可惜本人没有化压力为动力的体质，自然也没有化摆烂为神奇的态度进行高考冲刺，只是嗟叹良久而复摸大鱼，在和同学的谈笑风生中消磨宝贵的、在文艺作品中被描述为“美好青春尾声”（迫真）的高三备考时间。但绝大部分同学都人很好还很强！能够认识实在是很幸运。此外借由竞赛这一渠道在网上也认识了许多大佬，高兴高兴。不过也希望能珍惜这样的经历，有时候失去真的是很突然的，不可挽回的。&lt;br&gt;高考结束，那个暑假疯狂地联机游戏，在家里造各种东西，以前没有精力、没有条件的很多事情终于能在这个假期放肆地玩一把了。除此以外就是和机房的各位到处吃吃吃，猫咖什么的都走起。自己组了台机子，学学焊板子，玩玩Arduino。然后很突然地就得知自己被ZJU录取了（几乎压线），之前只想着不是SJTU就是NJU从没想过是这个结果（笑，现在看来是最好的选择，毕竟没有hnx那样的勤奋，收获÷努力的性价比已经很高了）。时间过得太快，转眼就要开学了了，我根本没做好成为大学生的准备！还没从对最长暑假的怀念中走出，恁蔗就给整了一堆幺蛾子出来，延迟到校不说，终于抵达后在校的第一天还被踢皮球，从早到晚硬是走了几万步。只能说，第一印象很重要……（痛苦的）军训结束后，大学生活算是正式开始了。这后半年总体我还是很开心的。&lt;br&gt;首先我的舍友们基本都睡得很晚，完美契合本人猫头鹰派作息：“灿若星辰的浙大人”当然应该在星空下干活，白天留给暖洋洋的睡眠才是正道，早八乃邪恶之物。舍友都很正常，还可以一起联机游戏，学业上也有良性互动。我几个月后才感受到这是多么宝贵和幸运——和部分高中同学的在大学住宿的悲惨经历对比而言（希望人没事）。说到幸运，我觉得最幸运的是加入了AAA，认识了各位师傅。其实我是暑假开始打了成电的招新赛，愈发觉得CTF有意思。来了大学后在楼下看见招新横幅一下就被吸引了。后来的某一周我几乎整天沉迷打中科大的hackergame，确实过于上头了。借此认识了某知识领域优秀up主和某密码学大师，认识了队里的学长们，然后就进去了。感觉就……很突然，我真心觉得自己还是太菜了，可是依然跟着队里的大佬们蹭饭化学泡温泉……还是要提高自己姿势水平，不辜负无论是家长还是老师还是队里各位的期待才是最佳的回报方法。  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There should be one– and preferably only one –obvious way to do it.&lt;br&gt;——Tim Peters, The Zen of Python&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;感谢贵校的分流制度，我去了CS专业，按照高考成绩来说这实在是十足的捡漏了。虽然大家都有光明的未来，学数学的将来指不定就和学商科的同学强强联合，quant们横扫业界走上人生巅峰；不过我确实喜欢着coding之类的，当个臭写代码的也不是不可以嘛。总之喜欢就好了，知足常乐.jpg&lt;br&gt;这学期结束的绩点……嗯……差强人意吧，希望之后能够用专业课拉一拉。&lt;br&gt;然后不得不提的就是拉拉群，在群里缺德真是太有意思了，人才辈出，解答各种疑问的同时还能给予我十足的peer pressure，实在是十分感谢了&amp;#x3D;_&amp;#x3D;&lt;br&gt;此外加入F社也很兴奋！&amp;#x2F;&amp;#x2F;虽然社团课摸了&lt;br&gt;我的2021大概就是这样，没有很特别的，但是真的挺幸运的。难道说在大多数时候用“没有什么大不了”的心态去面对那些烦人的事情，就会更幸运？&lt;br&gt;那么2022呢？我许几个小小的愿望。&lt;br&gt;我希望我能把小提琴捡起来，兑现以前放弃学习时的承诺（笑）；&lt;br&gt;然后就是好好学web&amp;#x2F;misc方向，给队里做出更大贡献；&lt;br&gt;我希望2022我可以对未来看得更清，对接下来的道路拟定方向；&lt;br&gt;新的一年不要再摆烂，认真对待专业课；&lt;br&gt;最后，我希望大家身体健康，希望所有人好好活下去，有心理健康上的问题能够积极寻求帮助。&lt;br&gt;新年快乐。&lt;/p&gt;
-</content>
-        <category term="Life" />
-        <updated>2022-01-21T13:22:00.000Z</updated>
     </entry>
     <entry>
         <id>http://cubicy.icu/2021/11/28/%E6%B5%85%E8%B0%88Phar%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%EF%BC%9AN1CTF%202021%20easyphp%20&amp;%20%E5%AE%89%E6%B4%B5%E6%9D%AF2021%20EZ_TP/</id>
@@ -627,15 +499,6 @@ sf.write(&amp;#39;newnew.wav&amp;#39;, audio_signal, sample_rate)
         <category term="Write-Up" />
         <category term="Hackergame" />
         <updated>2021-10-30T08:11:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://cubicy.icu/2021/06/24/%E6%88%91%E8%83%A1%E6%B1%89%E4%B8%89%E5%8F%88%E5%9B%9E%E6%9D%A5%E4%BA%86%EF%BC%81/</id>
-        <title>我胡汉三又回来了！</title>
-        <link rel="alternate" href="http://cubicy.icu/2021/06/24/%E6%88%91%E8%83%A1%E6%B1%89%E4%B8%89%E5%8F%88%E5%9B%9E%E6%9D%A5%E4%BA%86%EF%BC%81/"/>
-        <content type="html">&lt;p&gt;高考结束忽然想起这玩意。成绩没出前赶紧写写证明我还活着。当然远古时期的中二透顶又矫揉造作的文章还是得留着，毕竟人还是需要中二一点。古人卧薪尝胆，我没那能力也没文采，只能以中二之文章警醒自我实现中二之事业。&lt;br&gt;希望可以成为像冈部伦太郎那样的人！&lt;br&gt;可是他也是现充。自闭了。&lt;/p&gt;
-</content>
-        <category term="Life" />
-        <updated>2021-06-24T15:56:00.000Z</updated>
     </entry>
     <entry>
         <id>http://cubicy.icu/2020/01/17/%E9%9A%8F%E7%AC%942020.1.17/</id>
