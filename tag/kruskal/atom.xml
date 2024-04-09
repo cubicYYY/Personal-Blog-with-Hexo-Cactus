@@ -4,38 +4,38 @@
     <title>Cubic Y³ • Posts by &#34;kruskal&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2018-09-28T05:48:00.000Z</updated>
-    <category term="Write-Up" />
     <category term="Misc" />
+    <category term="Write-Up" />
     <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="SchoolBus" />
     <category term="Hackergame" />
-    <category term="冰菓" />
-    <category term="古籍研究社" />
+    <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
     <category term="ProgrammingLanguage" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
     <category term="Treap" />
     <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Stack" />
     <category term="Splay" />
+    <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="分块" />
-    <category term="哈希" />
-    <category term="数链剖分" />
     <category term="树状数组" />
     <category term="LCA" />
-    <category term="Math" />
-    <category term="Translation" />
-    <category term="Theorem" />
+    <category term="分块" />
+    <category term="哈希" />
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
+    <category term="Math" />
+    <category term="Translation" />
+    <category term="Theorem" />
     <entry>
         <id>http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/</id>
         <title>洛谷:P1967 货车运输</title>
