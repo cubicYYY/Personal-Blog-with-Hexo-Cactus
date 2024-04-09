@@ -14,38 +14,38 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Tue, 09 Nov 2021 11:08:00 +0800</pubDate>
         <lastBuildDate>Tue, 09 Nov 2021 11:08:00 +0800</lastBuildDate>
-        <category>Misc</category>
         <category>Write-Up</category>
+        <category>Misc</category>
         <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Hackergame</category>
         <category>SchoolBus</category>
+        <category>Hackergame</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
         <category>ProgrammingLanguage</category>
-        <category>冰菓</category>
-        <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>Stack</category>
         <category>Splay</category>
-        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
-        <category>树状数组</category>
-        <category>LCA</category>
         <category>分块</category>
         <category>哈希</category>
-        <category>Phar</category>
-        <category>反序列化</category>
-        <category>PHP</category>
+        <category>数链剖分</category>
+        <category>树状数组</category>
+        <category>LCA</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Theorem</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2021/11/09/WriteUp%20%E6%97%A5%E5%93%ADschool-bus%20%E4%B8%8A%E4%BA%86%E9%82%A3%E4%B8%AAwriteup/</guid>
             <title>WriteUp 日哭school-bus 上了那个writeup</title>

@@ -4,38 +4,38 @@
     <title>Cubic Y³ • Posts by &#34;theorem&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-07T18:38:20.000Z</updated>
-    <category term="Misc" />
     <category term="Write-Up" />
+    <category term="Misc" />
     <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Hackergame" />
     <category term="SchoolBus" />
+    <category term="Hackergame" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
     <category term="ProgrammingLanguage" />
-    <category term="冰菓" />
-    <category term="古籍研究社" />
     <category term="Treap" />
     <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="Stack" />
     <category term="Splay" />
-    <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="树状数组" />
-    <category term="LCA" />
     <category term="分块" />
     <category term="哈希" />
-    <category term="Phar" />
-    <category term="反序列化" />
-    <category term="PHP" />
+    <category term="数链剖分" />
+    <category term="树状数组" />
+    <category term="LCA" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Theorem" />
+    <category term="Phar" />
+    <category term="反序列化" />
+    <category term="PHP" />
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
         <title>[译]Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
@@ -50,19 +50,23 @@
 &lt;/ul&gt;
 &lt;p&gt;如果在重新阅读时有迷路的感觉（尤其是第三部分），不知文章行文脉络时，这里有几条锦囊能帮你快速抓住核心，不妨届时试着阅读一番，&lt;strong&gt;如果是初次阅读就请跳过吧&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;熟悉群论的读者可能会想到凯莱定理(Caylay’s theorem)，也即所有群 G 同构于在 G 上的对称群(即 Sym(G))的子群。事实上，可以认为这个定理是米田引理的一个特例。&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;熟悉群论的读者可能会想到凯莱定理(Caylay’s theorem)，也即所有群 G 同构于在 G 上的对称群(即 Sym(G))的子群。事实上，可以认为这个定理是米田引理的一个特例。&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;在群作用语言下的等效表述：如果群作用子 $\sigma_g: G\rightarrow \text{Aut}_{\text{set}}(S)$ (也就是每个元素对应到一个自同构上)是单射的（也就是单同态），群作用 $G\times S\rightarrow S$在某个集合 S（S 可以来自 G 本身）上是忠实的&lt;/li&gt;
 &lt;li&gt;为什么&lt;strong&gt;这样的&lt;/strong&gt;群作用是忠实的(faithful)？只需要关注单位元在集合 S 中对应的元素 u：此时在不同的自同构下 u 一定被发送(send)到不同元素上。（参见&lt;a href=&#34;https://www.youtube.com/watch?v=sNX3txN9zc4&amp;&#34;&gt;Chapter 7: Group actions, symmetric group and Cayley’s theorem | Essence of Group Theory&lt;/a&gt;）&lt;/li&gt;
 &lt;li&gt;接下来你会看到米田引理证明过程中也是通过关注恒等映射这样的“单位元”被发送至何处（这单位元其实如同一个“凝结核”，确定了其被发送至何方后将引发连锁反应，使得所有其他对象的去向被一一确定，后文会详细阐述），从而得出米田嵌入的忠实性。这不是巧合。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;米田引理（更准确的说，是推论 1）本质上可以理解为：“人是一切社会关系的总和。”&lt;/li&gt;
-&lt;li&gt;对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。 f描述了T类型如何转化为其他类型（严格来讲，转为T类型自己也可以），所有的handler则枚举了所有和T类型相关的运算（为了简便起见，我们这里只考虑从T类型出发，而没有转为T类型的操作）。也可以理解为这个类型像那些内联函数一样被“内联”进handler了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都保留了下来。&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;米田引理（更准确的说，是推论 1）本质上可以理解为：“人是一切社会关系的总和。”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Haskell表述： &lt;code&gt;forall x . (t -&amp;gt; x) -&amp;gt; F x ≅ F t&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;一种理解：我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x包起来而已（意思就是我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身）。假设容器一开始只能装x类型的，但是你能够提供handler: t-&amp;gt;x，且x取遍所有类型，对于每个类型都成立，所以t类型依托这些handler活在了大家心中。虽然你可能没有t类型可用，但事实上左边这个“多态函数”让你明白，既然你定义了t到所有类型等效于你可以装t类型的，或者说左右两侧信息量是一样的，t可以就此安心离去了。&lt;/li&gt;
+&lt;li&gt;一种&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;来自Bartosz Milewski的理解&lt;/a&gt;：我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/trackback/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x装起来变成可以装x类型的容器而已（我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身）。假设容器一开始只能装x类型的，但是如果你能够提供handler: t-&amp;gt;x，且x取遍所有类型，就等效于你可以装t类型的。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;分别取定F和A，会发现Yoneda引理这个同构关系对于F、t都是自然同构（参见&lt;a href=&#34;https://www.bilibili.com/video/BV1AN4y1V7mH&#34;&gt;【范畴论】第5讲，Yoneda引理&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;分别取定F和A，会发现Yoneda引理这个同构关系对于F、t都是自然同构（参见&lt;a href=&#34;https://www.bilibili.com/video/BV1AN4y1V7mH&#34;&gt;【范畴论】第5讲，Yoneda引理&lt;/a&gt;）&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;每日更新！&lt;/p&gt;
 &lt;h2 id=&#34;1-x2F-3：米田视角-The-Yoneda-Perspective&#34;&gt;&lt;a href=&#34;#1-x2F-3：米田视角-The-Yoneda-Perspective&#34; class=&#34;headerlink&#34; title=&#34;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&#34;&gt;&lt;/a&gt;&lt;a name=&#34;1&#34;&gt;&lt;/a&gt;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本节翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-perspective&#34;&gt;https://www.math3ma.com/blog/the-yoneda-perspective&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
