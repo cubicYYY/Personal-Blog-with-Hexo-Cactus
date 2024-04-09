@@ -38,9 +38,9 @@
     <category term="Theorem" />
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
-        <title>[译]Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
+        <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
         <link rel="alternate" href="http://cubicy.icu/yoneda/"/>
-        <content type="html">&lt;h1 id=&#34;米田视角-→-米田嵌入-→-米田引理&#34;&gt;&lt;a href=&#34;#米田视角-→-米田嵌入-→-米田引理&#34; class=&#34;headerlink&#34; title=&#34;米田视角 → 米田嵌入 → 米田引理&#34;&gt;&lt;/a&gt;米田视角 → 米田嵌入 → 米田引理&lt;/h1&gt;&lt;p&gt;&lt;em&gt;注：本标题为译者将三篇文章合而为一后添加。&lt;/em&gt;&lt;br&gt;原作者： &lt;a href=&#34;https://www.math3ma.com/about&#34;&gt;Tai-Danae Bradley&lt;/a&gt;&lt;br&gt;翻译： CubicY&lt;br&gt;部分图片与启发来源：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;Bartosz Milewski&lt;/a&gt;&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;米田视角-→-米田嵌入-→-米田引理&#34;&gt;&lt;a href=&#34;#米田视角-→-米田嵌入-→-米田引理&#34; class=&#34;headerlink&#34; title=&#34;米田视角 → 米田嵌入 → 米田引理&#34;&gt;&lt;/a&gt;米田视角 → 米田嵌入 → 米田引理&lt;/h1&gt;&lt;p&gt;&lt;em&gt;注：本标题为译者添加。&lt;/em&gt;&lt;br&gt;原作者： &lt;a href=&#34;https://www.math3ma.com/about&#34;&gt;Tai-Danae Bradley&lt;/a&gt;&lt;br&gt;翻译： CubicY&lt;br&gt;部分图片与启发来源：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;Bartosz Milewski&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;译者序&#34;&gt;&lt;a href=&#34;#译者序&#34; class=&#34;headerlink&#34; title=&#34;译者序&#34;&gt;&lt;/a&gt;&lt;a name=&#34;prelude&#34;&gt;&lt;/a&gt;译者序&lt;/h2&gt;&lt;p&gt;米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过优秀而无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了想译为中文的想法。尽管如此，我仍然推荐读者阅读原文，或者至少尽量使用英文的术语（例如，自然变换(natural transformation)）以减少歧义。&lt;/p&gt;
 &lt;p&gt;为了消除歧义，将本文使用的范畴论记号与称呼列举在此：&lt;/p&gt;
 &lt;ul&gt;

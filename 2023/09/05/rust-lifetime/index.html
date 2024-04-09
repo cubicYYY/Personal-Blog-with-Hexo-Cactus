@@ -186,6 +186,8 @@
   
 
   <div class="content e-content" itemprop="articleBody">
+      <span class="post-count">Word count: 2.5k</span>
+      <span class="post-count">~ 9 min</span>
     <h1 id="Rust类型系统中的生命周期"><a href="#Rust类型系统中的生命周期" class="headerlink" title="Rust类型系统中的生命周期"></a>Rust类型系统中的生命周期</h1><p>Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！<br>以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？<br><strong>提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”</strong></p>
 <hr>
 <p>一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什么运算，生命周期指明某一值在什么区间内才有效、才可以参与运算。既然能接受泛型加入类型系统并参与类型的运算，生命周期也应同理。<br>贴段代码大伙大概感受一下：</p>
