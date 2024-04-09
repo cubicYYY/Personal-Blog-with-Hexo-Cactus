@@ -11,6 +11,10 @@
     <category term="web" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
+    <category term="Rust" />
+    <category term="Lifetime" />
+    <category term="Code" />
+    <category term="ProgrammingLanguage" />
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
@@ -29,10 +33,6 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
-    <category term="Rust" />
-    <category term="Lifetime" />
-    <category term="Code" />
-    <category term="ProgrammingLanguage" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Theorem" />
