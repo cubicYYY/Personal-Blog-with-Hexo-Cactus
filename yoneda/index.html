@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片来源：Bartosz Milewski 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管">
+    <meta name="description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片与启发来源：Bartosz Milewski 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[译]Tai-Danae Bradley: 米田视角→米田嵌入→米田引理">
 <meta property="og:url" content="http://cubicy.icu/yoneda/index.html">
 <meta property="og:site_name" content="Cubic Y³">
-<meta property="og:description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片来源：Bartosz Milewski 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管">
+<meta property="og:description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片与启发来源：Bartosz Milewski 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cubicy.icu/yoneda/yoneda.jpg">
 <meta property="og:image" content="http://cubicy.icu/yoneda/discrete.jpg">
@@ -188,7 +188,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者将三篇文章合而为一后添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>部分图片来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/">Bartosz Milewski</a></p>
+    <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者将三篇文章合而为一后添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a></p>
 <h2 id="译者序"><a href="#译者序" class="headerlink" title="译者序"></a><a name="prelude"></a>译者序</h2><p>米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过优秀而无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了想译为中文的想法。尽管如此，我仍然推荐读者阅读原文，或者至少尽量使用英文的术语以减少歧义。</p>
 <p>为了消除歧义，将本文使用的范畴论记号与称呼列举在此：</p>
 <ul>
@@ -203,8 +203,9 @@
 </ul>
 </li>
 <li>米田引理（更准确的说，是推论 1）本质上可以理解为：“人是一切社会关系的总和。”</li>
-<li>对于程序员，可以这么理解：任何数据类型 t 都可以被一些接受 T 类型的函数族 f 所取代。f 接受 t（t 是 T 中的某个值）并执行其余计算——在这个意义上来说，f 即是续延（Continuation）。或者说，f 将所有涉及 T 类型的运算细节封装了起来，因此在外部看来，原本涉及 T 类型的每一次操作只是其他类型之间通过 f(t)进行直接运算（跳过 t）。你也可以理解为这个类型像那些内联函数一样被“内联”了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都通过这些 f(t)保留了下来。<ul>
-<li>如果你觉得更抽象了，可以更片面地理解一下：假设你需要做一个操作将 double 截断取整为 int 后再转为 double，这是一个 Double-&gt;Int，再 Int-&gt;Double 的过程。但对于 Double 类型来说，这完全可以通过 floor()函数完成：它是 Double-&gt;Double 的。尽管内部可能仍然有截断为 int 的具体细节，但我们并不关心。那么——假使截断和转为 Double 就是两种类型间所有可能的转换关系（不如直接叫他“态射”吧）——在 Double 类型看来，“我有一个 Int 数 n”和“我有一个函数 f(n):&#x3D;把所有大于等于”n.000”小于”(n+1).000”的 Double 数转为”n.0””这两种说法是等价的，因为这是 Int 类型对 Double 的全部意义（如果你有更多态射，那么就不止有 f(n)，还有 g(n)、h(n)…）。Int 类型内部的运算也保留了：例如 f(5)*f(6)&#x3D;f(30)，显然这是良定义的，这样的替换完全行得通！</li>
+<li>对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。而这个数据类型里具体的元素，其实就对应一个个handler。或者说，f所有涉及 T 类型的运算细节封装进了handler，因此在外部看来，只要遇到T类型，就把剩下的计算打包成handler丢给f即可，而所有的handler枚举了所有T类型相关的运算。你也可以理解为这个类型像那些内联函数一样被“内联”进handler了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都通过这些 handler保留了下来。<ul>
+<li><code>forall x . (t -&gt; x) -&gt; F x ≅ F t</code></li>
+<li>如果你觉得更抽象了，可以更片面地理解一下：假设你需要做一个操作将 double 截断取整为 int 后乘2，这是一个 Double-&gt;Int的过程。在 Int 类型看来，“一个 Double 数 114.514”和“有一个函数f，给它一个Double-&gt;Int的handler他就能完成Int类型内部剩下的运算(*2)；刚好，手边有这样的handler（floor()就是一个合法的候选者）能把114.514截断成114”这两种说法是等价的，因为这是 Int 类型看来 Double 类型存在的所有价值（也就是从Double类型到Int的全部关系）。所以Double替换成f，相当于Int要求Double这个陌生的类型在运算前一定要经过handler变成自己这个认识的类型，在Int类型的视点看这样的替换完全行得通。</li>
 </ul>
 </li>
 </ul>
