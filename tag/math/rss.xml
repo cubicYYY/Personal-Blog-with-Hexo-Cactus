@@ -54,11 +54,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <category>Translation</category>
             <category>Theorem</category>
             <pubDate>Mon, 08 Apr 2024 02:38:20 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;米田视角-→-米田嵌入-→-米田引理&#34;&gt;&lt;a href=&#34;#米田视角-→-米田嵌入-→-米田引理&#34; class=&#34;headerlink&#34; title=&#34;米田视角 → 米田嵌入 → 米田引理&#34;&gt;&lt;/a&gt;米田视角 → 米田嵌入 → 米田引理&lt;/h1&gt;&lt;p&gt;&lt;em&gt;注：本标题为译者将三篇文章合而为一后添加。&lt;/em&gt;&lt;br&gt;原作者： &lt;a href=&#34;https://www.math3ma.com/about&#34;&gt;Tai-Danae Bradley&lt;/a&gt;&lt;br&gt;部分图片与启发来源：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;Bartosz Milewski&lt;/a&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;米田视角-→-米田嵌入-→-米田引理&#34;&gt;&lt;a href=&#34;#米田视角-→-米田嵌入-→-米田引理&#34; class=&#34;headerlink&#34; title=&#34;米田视角 → 米田嵌入 → 米田引理&#34;&gt;&lt;/a&gt;米田视角 → 米田嵌入 → 米田引理&lt;/h1&gt;&lt;p&gt;&lt;em&gt;注：本标题为译者将三篇文章合而为一后添加。&lt;/em&gt;&lt;br&gt;原作者： &lt;a href=&#34;https://www.math3ma.com/about&#34;&gt;Tai-Danae Bradley&lt;/a&gt;&lt;br&gt;部分图片与启发来源：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;Bartosz Milewski&lt;/a&gt;&lt;br&gt;强烈建议读一读！↑&lt;/p&gt;
 &lt;h2 id=&#34;译者序&#34;&gt;&lt;a href=&#34;#译者序&#34; class=&#34;headerlink&#34; title=&#34;译者序&#34;&gt;&lt;/a&gt;&lt;a name=&#34;prelude&#34;&gt;&lt;/a&gt;译者序&lt;/h2&gt;&lt;p&gt;米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过优秀而无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了想译为中文的想法。尽管如此，我仍然推荐读者阅读原文，或者至少尽量使用英文的术语以减少歧义。&lt;/p&gt;
 &lt;p&gt;为了消除歧义，将本文使用的范畴论记号与称呼列举在此：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;(TODO)&lt;/li&gt;
+&lt;li&gt;co-Yoneda 引理&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如果在重新阅读时有迷路的感觉（尤其是第三部分），不知文章行文脉络时，这里有几条锦囊能帮你快速抓住核心，不妨届时试着阅读一番，&lt;strong&gt;如果是初次阅读就请跳过吧&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
@@ -69,11 +71,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;米田引理（更准确的说，是推论 1）本质上可以理解为：“人是一切社会关系的总和。”&lt;/li&gt;
-&lt;li&gt;对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。而这个数据类型里具体的元素，其实就对应一个个handler。或者说，f所有涉及 T 类型的运算细节封装进了handler，因此在外部看来，只要遇到T类型，就把剩下的计算打包成handler丢给f即可，而所有的handler枚举了所有T类型相关的运算。你也可以理解为这个类型像那些内联函数一样被“内联”进handler了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都通过这些 handler保留了下来。&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;forall x . (t -&amp;gt; x) -&amp;gt; F x ≅ F t&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果你觉得更抽象了，可以更片面地理解一下：假设你需要做一个操作将 double 截断取整为 int 后乘2，这是一个 Double-&amp;gt;Int的过程。在 Int 类型看来，“一个 Double 数 114.514”和“有一个函数f，给它一个Double-&amp;gt;Int的handler他就能完成Int类型内部剩下的运算(*2)；刚好，手边有这样的handler（floor()就是一个合法的候选者）能把114.514截断成114”这两种说法是等价的，因为这是 Int 类型看来 Double 类型存在的所有价值（也就是从Double类型到Int的全部关系）。所以Double替换成f，相当于Int要求Double这个陌生的类型在运算前一定要经过handler变成自己这个认识的类型，在Int类型的视点看这样的替换完全行得通。&lt;/li&gt;
+&lt;li&gt;对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。 f描述了T类型如何转化为其他类型（严格来讲，转为T类型自己也可以），所有的handler则枚举了所有和T类型相关的运算（为了简便起见，我们这里只考虑从T类型出发，而没有转为T类型的操作）。也可以理解为这个类型像那些内联函数一样被“内联”进handler了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都保留了下来。&lt;ul&gt;
+&lt;li&gt;Haskell表述： &lt;code&gt;forall x . (t -&amp;gt; x) -&amp;gt; F x ≅ F t&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;一种理解：我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x包起来而已（意思就是我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身）。假设容器一开始只能装x类型的，但是你能够提供handler: t-&amp;gt;x，且x取遍所有类型，对于每个类型都成立，所以t类型依托这些handler活在了大家心中。虽然你可能没有t类型可用，但事实上左边这个“多态函数”让你明白，既然你定义了t到所有类型等效于你可以装t类型的，或者说左右两侧信息量是一样的，t可以就此安心离去了。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;分别取定F和A，会发现Yoneda引理这个同构关系对于F、t都是自然同构（参见&lt;a href=&#34;https://www.bilibili.com/video/BV1AN4y1V7mH&#34;&gt;【范畴论】第5讲，Yoneda引理&lt;/a&gt;）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;每日更新！&lt;/p&gt;
 &lt;h2 id=&#34;1-x2F-3：米田视角-The-Yoneda-Perspective&#34;&gt;&lt;a href=&#34;#1-x2F-3：米田视角-The-Yoneda-Perspective&#34; class=&#34;headerlink&#34; title=&#34;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&#34;&gt;&lt;/a&gt;&lt;a name=&#34;1&#34;&gt;&lt;/a&gt;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本节翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-perspective&#34;&gt;https://www.math3ma.com/blog/the-yoneda-perspective&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;

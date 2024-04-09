@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片与启发来源：Bartosz Milewski 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）">
+    <meta name="description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片与启发来源：Bartosz Milewski强烈建议读一读！↑ 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[译]Tai-Danae Bradley: 米田视角→米田嵌入→米田引理">
 <meta property="og:url" content="http://cubicy.icu/yoneda/index.html">
 <meta property="og:site_name" content="Cubic Y³">
-<meta property="og:description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片与启发来源：Bartosz Milewski 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）">
+<meta property="og:description" content="米田视角 → 米田嵌入 → 米田引理注：本标题为译者将三篇文章合而为一后添加。原作者： Tai-Danae Bradley部分图片与启发来源：Bartosz Milewski强烈建议读一读！↑ 译者序米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cubicy.icu/yoneda/yoneda.jpg">
 <meta property="og:image" content="http://cubicy.icu/yoneda/discrete.jpg">
@@ -188,11 +188,13 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者将三篇文章合而为一后添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a></p>
+    <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者将三篇文章合而为一后添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a><br>强烈建议读一读！↑</p>
 <h2 id="译者序"><a href="#译者序" class="headerlink" title="译者序"></a><a name="prelude"></a>译者序</h2><p>米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过优秀而无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了想译为中文的想法。尽管如此，我仍然推荐读者阅读原文，或者至少尽量使用英文的术语以减少歧义。</p>
 <p>为了消除歧义，将本文使用的范畴论记号与称呼列举在此：</p>
 <ul>
 <li>(TODO)</li>
+<li>co-Yoneda 引理</li>
+<li>……</li>
 </ul>
 <p>如果在重新阅读时有迷路的感觉（尤其是第三部分），不知文章行文脉络时，这里有几条锦囊能帮你快速抓住核心，不妨届时试着阅读一番，<strong>如果是初次阅读就请跳过吧</strong>：</p>
 <ul>
@@ -203,11 +205,12 @@
 </ul>
 </li>
 <li>米田引理（更准确的说，是推论 1）本质上可以理解为：“人是一切社会关系的总和。”</li>
-<li>对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。而这个数据类型里具体的元素，其实就对应一个个handler。或者说，f所有涉及 T 类型的运算细节封装进了handler，因此在外部看来，只要遇到T类型，就把剩下的计算打包成handler丢给f即可，而所有的handler枚举了所有T类型相关的运算。你也可以理解为这个类型像那些内联函数一样被“内联”进handler了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都通过这些 handler保留了下来。<ul>
-<li><code>forall x . (t -&gt; x) -&gt; F x ≅ F t</code></li>
-<li>如果你觉得更抽象了，可以更片面地理解一下：假设你需要做一个操作将 double 截断取整为 int 后乘2，这是一个 Double-&gt;Int的过程。在 Int 类型看来，“一个 Double 数 114.514”和“有一个函数f，给它一个Double-&gt;Int的handler他就能完成Int类型内部剩下的运算(*2)；刚好，手边有这样的handler（floor()就是一个合法的候选者）能把114.514截断成114”这两种说法是等价的，因为这是 Int 类型看来 Double 类型存在的所有价值（也就是从Double类型到Int的全部关系）。所以Double替换成f，相当于Int要求Double这个陌生的类型在运算前一定要经过handler变成自己这个认识的类型，在Int类型的视点看这样的替换完全行得通。</li>
+<li>对于程序员，可以这么理解：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。 f描述了T类型如何转化为其他类型（严格来讲，转为T类型自己也可以），所有的handler则枚举了所有和T类型相关的运算（为了简便起见，我们这里只考虑从T类型出发，而没有转为T类型的操作）。也可以理解为这个类型像那些内联函数一样被“内联”进handler了：尽管不再有 T 类型，但对其它类型来说，和 T 类型相关的操作都保留了下来。<ul>
+<li>Haskell表述： <code>forall x . (t -&gt; x) -&gt; F x ≅ F t</code></li>
+<li>一种理解：我们可以把函子看成一种广义的容器（参见：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2014/01/14/functors-are-containers/">Functors are Containers</a>），所以左边就是把t转成x，然后变成F x这一步只是把x包起来而已（意思就是我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身）。假设容器一开始只能装x类型的，但是你能够提供handler: t-&gt;x，且x取遍所有类型，对于每个类型都成立，所以t类型依托这些handler活在了大家心中。虽然你可能没有t类型可用，但事实上左边这个“多态函数”让你明白，既然你定义了t到所有类型等效于你可以装t类型的，或者说左右两侧信息量是一样的，t可以就此安心离去了。</li>
 </ul>
 </li>
+<li>分别取定F和A，会发现Yoneda引理这个同构关系对于F、t都是自然同构（参见<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1AN4y1V7mH">【范畴论】第5讲，Yoneda引理</a>）</li>
 </ul>
 <p>每日更新！</p>
 <h2 id="1-x2F-3：米田视角-The-Yoneda-Perspective"><a href="#1-x2F-3：米田视角-The-Yoneda-Perspective" class="headerlink" title="1&#x2F;3：米田视角(The Yoneda Perspective)"></a><a name="1"></a>1&#x2F;3：米田视角(The Yoneda Perspective)</h2><p><em>本节翻译自 <a target="_blank" rel="noopener" href="https://www.math3ma.com/blog/the-yoneda-perspective">https://www.math3ma.com/blog/the-yoneda-perspective</a></em></p>
