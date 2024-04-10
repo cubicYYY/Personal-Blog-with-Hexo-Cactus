@@ -9,7 +9,6 @@ I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zheji
 Learning: Electric guitar
 ❤❤❤ CTF, toy projects, anime
 ✖✖✖ Technological supremacy
-✔✔✔ Independent thinking
 Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
         <language>zh-CN</language>
         <pubDate>Sun, 28 Nov 2021 13:35:00 +0800</pubDate>
@@ -28,18 +27,18 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
         <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
+        <category>BST</category>
         <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
-        <category>树状数组</category>
-        <category>LCA</category>
         <category>分块</category>
         <category>哈希</category>
+        <category>树状数组</category>
+        <category>LCA</category>
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
