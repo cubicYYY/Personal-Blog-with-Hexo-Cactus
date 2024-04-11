@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Rust类型系统中的生命周期Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什">
+    <meta name="description" content="Rust类型系统中的生命周期[2024-04-11 更新] 修正了一些错误，采纳了一些读者反馈可以增加的解释，在此表示感谢。 Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rust类型系统中的生命周期">
 <meta property="og:url" content="http://cubicy.icu/2023/09/05/rust-lifetime/index.html">
 <meta property="og:site_name" content="Cubic Y³">
-<meta property="og:description" content="Rust类型系统中的生命周期Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什">
+<meta property="og:description" content="Rust类型系统中的生命周期[2024-04-11 更新] 修正了一些错误，采纳了一些读者反馈可以增加的解释，在此表示感谢。 Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”  一开始看到">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-04T16:14:45.000Z">
-<meta property="article:modified_time" content="2024-04-11T07:38:05.633Z">
+<meta property="article:modified_time" content="2024-04-11T07:37:45.000Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Rust">
 <meta property="article:tag" content="Lifetime">
@@ -166,7 +166,7 @@
       
         <time datetime="2023-09-04T16:14:45.000Z" class="dt-published" itemprop="datePublished">2023-09-05</time>
         
-        (Updated: <time datetime="2024-04-11T07:38:05.633Z" class="dt-updated" itemprop="dateModified">2024-04-11</time>)
+        (Updated: <time datetime="2024-04-11T07:37:45.000Z" class="dt-updated" itemprop="dateModified">2024-04-11</time>)
         
       
     </div>
@@ -197,10 +197,11 @@
         <span id="busuanzi_value_page_pv"></span>views
       </div>
       <span class="post-count">
-        Word count: 2.6k
+        Word count: 2.7k
           (~9 mins to read)
       </span>
-      <h1 id="Rust类型系统中的生命周期"><a href="#Rust类型系统中的生命周期" class="headerlink" title="Rust类型系统中的生命周期"></a>Rust类型系统中的生命周期</h1><p>Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！<br>以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？<br><strong>提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”</strong></p>
+      <h1 id="Rust类型系统中的生命周期"><a href="#Rust类型系统中的生命周期" class="headerlink" title="Rust类型系统中的生命周期"></a>Rust类型系统中的生命周期</h1><p><em>[2024-04-11 更新] 修正了一些错误，采纳了一些读者反馈可以增加的解释，在此表示感谢。</em></p>
+<p>Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！<br>以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？<br><strong>提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”</strong></p>
 <hr>
 <p>一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什么运算，生命周期指明某一值在什么区间内才有效、才可以参与运算。既然能接受泛型加入类型系统并参与类型的运算，生命周期也应同理。<br>贴段代码大伙大概感受一下：</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::fmt::Display;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">longest_with_an_announcement</span>&lt;<span class="symbol">&#x27;a</span>, T&gt;(x: &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span>, y: &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span>, ann: T) <span class="punctuation">-&gt;</span> &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span></span><br><span class="line">    <span class="keyword">where</span> T: Display</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Announcement! &#123;&#125;&quot;</span>, ann);</span><br><span class="line">    <span class="keyword">if</span> x.<span class="title function_ invoke__">len</span>() &gt; y.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">        x</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
