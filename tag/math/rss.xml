@@ -16,9 +16,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>CISCN</category>
         <category>web</category>
         <category>Write-Up</category>
+        <category>Hackergame</category>
         <category>Misc</category>
         <category>出题</category>
-        <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -80,7 +80,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;这里有几条锦囊也许能帮你快速抓住核心，如有错漏欢迎斧正！如果在重新阅读时有晕头转向之感（尤其是第三部分），不妨试着阅读一番（&lt;strong&gt;如果是初次阅读不妨跳过&lt;/strong&gt;）：&lt;/p&gt;
+&lt;p&gt;这里有几条锦囊也许能帮你快速抓住核心，如有错漏欢迎斧正！如果在重新阅读时有晕头转向之感（尤其是第三部分），不妨试着阅读一番（&lt;strong&gt;如果是初次阅读不妨跳过，可以看完文章再回头看&lt;/strong&gt;）：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;笔者认为，对于Yoneda引理（更准确的说，是推论 1）最精炼的总结是：“人是一切社会关系的总和。”&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -93,6 +93,24 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;在群作用语言下的等效表述：如果群作用子 $\sigma_g: G\rightarrow \text{Aut}_{\text{set} }(S)$ (也就是每个元素对应到一个自同构上)是单射的（也就是单同态），群作用 $G\times S\rightarrow S$在某个集合 S（S 可以来自 G 本身）上是忠实的&lt;/li&gt;
 &lt;li&gt;为什么&lt;strong&gt;这样的&lt;/strong&gt;群作用是忠实的(faithful)？只需要关注单位元在集合 S 中对应的元素 u：此时在不同的自同构下 u 一定被发送(send)到不同元素上。（参见&lt;a href=&#34;https://www.youtube.com/watch?v=sNX3txN9zc4&amp;&#34;&gt;Chapter 7: Group actions, symmetric group and Cayley’s theorem | Essence of Group Theory&lt;/a&gt;）&lt;/li&gt;
 &lt;li&gt;接下来你会看到米田引理证明过程中也是通过关注恒等映射这样的“单位元”被发送至何处（这单位元其实如同一个“凝结核”，确定了其被发送至何方后将引发连锁反应，使得所有其他对象的去向被一一确定，后文会详细阐述），从而得出米田嵌入的忠实性。这不是巧合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;译者这里给出一个例子帮助读者梳理第一推论想表达的：假设现有Int(I), Double(D), Float(F)三种类型，这个定理告诉我们Float类型的意义就是如下几句陈述的总和：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于任何F-&amp;gt;I的函数，我们可以：&lt;ul&gt;
+&lt;li&gt;将f: F-&amp;gt;I转化为f’: I-&amp;gt;I&lt;/li&gt;
+&lt;li&gt;将f: F-&amp;gt;D转化为f’: I-&amp;gt;D&lt;/li&gt;
+&lt;li&gt;将f: F-&amp;gt;F转化为f’: I-&amp;gt;F&lt;br&gt;以及&lt;/li&gt;
+&lt;li&gt;将g: I-&amp;gt;I转化为g’: F-&amp;gt;I &lt;/li&gt;
+&lt;li&gt;将g: I-&amp;gt;D转化为g’: F-&amp;gt;D&lt;/li&gt;
+&lt;li&gt;将g: I-&amp;gt;F转化为g’: F-&amp;gt;F&lt;br&gt;六种转化的具体方式确定下来。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对于任何F-&amp;gt;D的函数，我们可以…&lt;/li&gt;
+&lt;li&gt;对于任何F-&amp;gt;F的函数，我们可以…&lt;br&gt;（如果你觉得怪怪的，那也许是因为协变与逆变的小问题）&lt;br&gt;例如，对于函数downcast: Double-&amp;gt;Float，我们能将取整函数floorF: Float-&amp;gt;Int转为取整函数floorD: Double-&amp;gt;Int.&lt;br&gt;所以对于如下两个代码片段，他们是等价的，可以互相转换：&lt;figure class=&#34;highlight java&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Double a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; floorD(a)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//B&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Double a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Float&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; downcast(a)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; floorF(b)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//C&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Double a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; floorF(downcast(a))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+B与C是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义是：Float这种类型可以通过在Double和Int间定义这些函数的转换关系创造出来。&lt;br&gt;B转A是一种缩减，这种缩减的意义是：我们不需要Float类型的具体中间值，也能运算出结果！&lt;br&gt;所以Float这一类型，或者说任何特定类型的本质都是在定义“涉及该特定类型的转换关系”之间的一种特定变换关系（例如Float类型将指导如何复合floorF和downcast得到floorD）.&lt;br&gt;而这种“涉及该特定类型的转换关系”的特定变换关系，和“各种类型的转换关系”是同构的，而众所周知范畴论从不要求相等，只要求同构，&lt;br&gt;&lt;strong&gt;所以一种类型即代表了一种对应该类型的特定变换关系，这种对应该类型的特定变换关系即定义了该类型。&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;（这里是基于co-Yoneda的叙述，但反正本质上没有区别）一种&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;来自Bartosz Milewski的理解&lt;/a&gt;：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。&lt;/p&gt;

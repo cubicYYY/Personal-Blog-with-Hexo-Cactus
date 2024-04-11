@@ -208,8 +208,8 @@
         <span id="busuanzi_value_page_pv"></span>views
       </div>
       <span class="post-count">
-        Word count: 9.7k
-          (~37 mins to read)
+        Word count: 10.3k
+          (~39 mins to read)
       </span>
       <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>翻译： CubicY<br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a></p>
 <h2 id="译者序"><a href="#译者序" class="headerlink" title="译者序"></a><a name="prelude"></a>译者序</h2><p>米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了将其译为中文的想法。尽管如此，我仍然推荐读者阅读原文。</p>
@@ -238,7 +238,7 @@
 </ul>
 </li>
 </ul>
-<p>这里有几条锦囊也许能帮你快速抓住核心，如有错漏欢迎斧正！如果在重新阅读时有晕头转向之感（尤其是第三部分），不妨试着阅读一番（<strong>如果是初次阅读不妨跳过</strong>）：</p>
+<p>这里有几条锦囊也许能帮你快速抓住核心，如有错漏欢迎斧正！如果在重新阅读时有晕头转向之感（尤其是第三部分），不妨试着阅读一番（<strong>如果是初次阅读不妨跳过，可以看完文章再回头看</strong>）：</p>
 <ul>
 <li><p><strong>笔者认为，对于Yoneda引理（更准确的说，是推论 1）最精炼的总结是：“人是一切社会关系的总和。”</strong></p>
 </li>
@@ -251,6 +251,24 @@
 <li>在群作用语言下的等效表述：如果群作用子 $\sigma_g: G\rightarrow \text{Aut}_{\text{set} }(S)$ (也就是每个元素对应到一个自同构上)是单射的（也就是单同态），群作用 $G\times S\rightarrow S$在某个集合 S（S 可以来自 G 本身）上是忠实的</li>
 <li>为什么<strong>这样的</strong>群作用是忠实的(faithful)？只需要关注单位元在集合 S 中对应的元素 u：此时在不同的自同构下 u 一定被发送(send)到不同元素上。（参见<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=sNX3txN9zc4&">Chapter 7: Group actions, symmetric group and Cayley’s theorem | Essence of Group Theory</a>）</li>
 <li>接下来你会看到米田引理证明过程中也是通过关注恒等映射这样的“单位元”被发送至何处（这单位元其实如同一个“凝结核”，确定了其被发送至何方后将引发连锁反应，使得所有其他对象的去向被一一确定，后文会详细阐述），从而得出米田嵌入的忠实性。这不是巧合。</li>
+</ul>
+</li>
+<li><p>译者这里给出一个例子帮助读者梳理第一推论想表达的：假设现有Int(I), Double(D), Float(F)三种类型，这个定理告诉我们Float类型的意义就是如下几句陈述的总和：</p>
+<ul>
+<li>对于任何F-&gt;I的函数，我们可以：<ul>
+<li>将f: F-&gt;I转化为f’: I-&gt;I</li>
+<li>将f: F-&gt;D转化为f’: I-&gt;D</li>
+<li>将f: F-&gt;F转化为f’: I-&gt;F<br>以及</li>
+<li>将g: I-&gt;I转化为g’: F-&gt;I </li>
+<li>将g: I-&gt;D转化为g’: F-&gt;D</li>
+<li>将g: I-&gt;F转化为g’: F-&gt;F<br>六种转化的具体方式确定下来。</li>
+</ul>
+</li>
+<li>对于任何F-&gt;D的函数，我们可以…</li>
+<li>对于任何F-&gt;F的函数，我们可以…<br>（如果你觉得怪怪的，那也许是因为协变与逆变的小问题）<br>例如，对于函数downcast: Double-&gt;Float，我们能将取整函数floorF: Float-&gt;Int转为取整函数floorD: Double-&gt;Int.<br>所以对于如下两个代码片段，他们是等价的，可以互相转换：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line">Double a</span><br><span class="line"><span class="type">Int</span> <span class="variable">c</span> <span class="operator">=</span> floorD(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//B</span></span><br><span class="line">Double a</span><br><span class="line"><span class="type">Float</span> <span class="variable">b</span> <span class="operator">=</span> downcast(a)</span><br><span class="line"><span class="type">Int</span> <span class="variable">c</span> <span class="operator">=</span> floorF(b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C</span></span><br><span class="line">Double a</span><br><span class="line"><span class="type">Int</span> <span class="variable">c</span> <span class="operator">=</span> floorF(downcast(a))</span><br></pre></td></tr></table></figure>
+B与C是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float这种类型可以通过在Double和Int间定义这些函数的转换关系创造出来。<br>B转A是一种缩减，这种缩减的意义是：我们不需要Float类型的具体中间值，也能运算出结果！<br>所以Float这一类型，或者说任何特定类型的本质都是在定义“涉及该特定类型的转换关系”之间的一种特定变换关系（例如Float类型将指导如何复合floorF和downcast得到floorD）.<br>而这种“涉及该特定类型的转换关系”的特定变换关系，和“各种类型的转换关系”是同构的，而众所周知范畴论从不要求相等，只要求同构，<br><strong>所以一种类型即代表了一种对应该类型的特定变换关系，这种对应该类型的特定变换关系即定义了该类型。</strong></li>
 </ul>
 </li>
 <li><p>（这里是基于co-Yoneda的叙述，但反正本质上没有区别）一种<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">来自Bartosz Milewski的理解</a>：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。</p>
