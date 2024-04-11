@@ -4,12 +4,12 @@
     <title>Cubic Y³ • Posts by &#34;programminglanguage&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2023-09-04T16:14:45.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
     <category term="Hackergame" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
@@ -24,10 +24,10 @@
     <category term="Kruskal" />
     <category term="Splay" />
     <category term="数链剖分" />
-    <category term="持久化" />
-    <category term="线段树" />
     <category term="树状数组" />
     <category term="LCA" />
+    <category term="持久化" />
+    <category term="线段树" />
     <category term="分块" />
     <category term="哈希" />
     <category term="Phar" />
@@ -50,24 +50,79 @@
 &lt;/blockquote&gt;
 &lt;p&gt;在这个例子中，由于这个if的存在，Rust编译器无法判断返回值的有效期到底和x一样还是和y一样。&lt;br&gt;我们要添加类型推断（是的，生命周期也是一种泛型），x、y具有同名的生命周期注解’a，根据规则’a取x和y生命周期的交集：x,y都有效时，返回值一定有效！这样就避免了C&amp;#x2F;C++中悬垂指针带来的危险。  &lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;也许有人会问，为什么调用该函数时，如果传入的参数生命周期不同，会取较短的？&lt;br&gt;我们要在集合论的角度考虑：我们说想要一只动物，那么给与可爱的猫是可以接受的，因为猫是动物的子集。事实上，子集（$\subseteq$）&lt;strong&gt;是&lt;/strong&gt;一种偏序关系。而生命周期也&lt;strong&gt;存在&lt;/strong&gt;一种偏序关系：我们把&lt;strong&gt;这种关系叫subtype&lt;/strong&gt;。假设对于两个生命周期L1和生命周期L2，且有L1是L2的subtype，那我们就记作&lt;code&gt;&amp;#39;L1&amp;lt;:&amp;#39;L2&lt;/code&gt;，&lt;em&gt;vice versa&lt;/em&gt;.&lt;br&gt;显然，生命周期越长越“好”（也就是泛用）。所以一开始我们就知道&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt;，也就是长寿的可以自裁(cast过去)变成短命的，但是短命的没法强行续命变成长命的。&lt;br&gt;当然，还有一个显然：&lt;code&gt;&amp;#39;static&lt;/code&gt;是所有类型的subtype.&lt;br&gt;(不用太纠结为什么是&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt;，偏序关系倒过来没有本质区别，这边只是强调&lt;code&gt;&amp;#39;long&lt;/code&gt;更好，物以稀为贵，所以“更少”就放左边了)&lt;br&gt;什么意思呢？&lt;strong&gt;简而言之，L1的约束比L2更松&lt;/strong&gt;。我们看一个例子，讨论&lt;strong&gt;函数间&lt;/strong&gt;的偏序关系：&lt;/p&gt;
+&lt;p&gt;也许有人会问，为什么调用该函数时，如果传入的参数生命周期不同，会取较短的？&lt;br&gt;我们要在集合论的角度考虑：我们说想要一只动物，那么给与可爱的猫是可以接受的，因为猫是动物的子集。事实上，子集（$\subseteq$）&lt;strong&gt;是&lt;/strong&gt;一种偏序关系。而生命周期也&lt;strong&gt;存在&lt;/strong&gt;一种偏序关系：我们把&lt;strong&gt;这种关系叫subtype&lt;/strong&gt;。假设对于两个生命周期L1和生命周期L2，且有L1是L2的subtype，那我们就记作&lt;code&gt;&amp;#39;L1&amp;lt;:&amp;#39;L2&lt;/code&gt;，&lt;em&gt;vice versa&lt;/em&gt;.&lt;br&gt;显然，生命周期越长越“好”（也就是泛用）。所以一开始我们就知道&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt;，也就是长寿的可以自裁(cast过去)变成短命的，但是短命的没法强行续命变成长命的（类比上面猫与动物的例子，我们要求一个参数需要有特定生命周期时，更长的甚至static都是可以接受的，但绝不能更短：否则Rust布道者赖以为生的内存安全要出事了）。&lt;br&gt;当然，还有一个显然：&lt;code&gt;&amp;#39;static&lt;/code&gt;是所有类型的subtype.&lt;br&gt;(不用太纠结为什么是&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt;，偏序关系倒过来没有本质区别，这边只是强调&lt;code&gt;&amp;#39;long&lt;/code&gt;更好，物以稀为贵，所以“更少”就放左边了)&lt;br&gt;什么意思呢？&lt;strong&gt;简而言之，L1的约束比L2更松&lt;/strong&gt;。我们看一个例子，讨论&lt;strong&gt;函数间&lt;/strong&gt;的偏序关系：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;假设有函数f1(x)和f2(x)，唯一的区别是f1对传进来的x的生命周期的最低要求更长，那么能用f1的地方就能用f2，但能用f2的地方不一定能用f1，因此f2更泛用，f2≼f1&lt;/li&gt;
-&lt;li&gt;假设有函数f1()-&amp;gt;x和f2()-&amp;gt;x，唯一的区别是f1的返回值x的已知生命周期比f2的长，那么需要返回值的地方能用f2就一定能用f1，反之则不然，因此f1更泛用，f1≼f2&lt;/li&gt;
+&lt;li&gt;假设有函数f1()-&amp;gt;x和f2()-&amp;gt;x，唯一的区别是f1的返回值x的生命周期比f2的长，那么需要其返回值的地方能用f2就一定能用f1，反之则不然，因此f1更泛用，f1≼f2&lt;/li&gt;
 &lt;li&gt;思考题：那&lt;code&gt;mut&amp;amp;&amp;#39;a T&lt;/code&gt;和&lt;code&gt;T&lt;/code&gt;呢？见下文&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;就像int32可以转int64（数据范围更难满足-&amp;gt;数据范围更易满足）而反之不行一样单向，subtype可以向右侧cast（长命百岁-&amp;gt;至少活10年）；但反之是不安全的。&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;因此，约束关系推导出来的最终生命周期是最严格的，宁可错杀一千也不会放过一个；就是可能有些人工检查过，可以保证安全的操作会被笨笨的生命周期约束拦下：这时就需要你动用unsafe黑魔法了&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;所以现在我们要把生命周期理解为类型系统的一部分时，困惑可能来源于为什么不像整形一样规则简单（小int永远是大int的subtype），而包含生命周期的类型系统则有时并不如此：可能不存在这个偏序关系，也可能反过来下克上。&lt;br&gt;&lt;strong&gt;我们要明确，函数签名之类的是对类型进行的一种运算&lt;/strong&gt;。你可以理解为函数对值运算，而函数签名对类型进行运算。是不是有点像物理上的&lt;strong&gt;量纲分析！&lt;/strong&gt;。&lt;br&gt;换言之，这些带泛型或者生命周期的东西（不管是&lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;还是&lt;code&gt;&amp;lt;T&amp;gt;T-&amp;gt;T&lt;/code&gt;，别忘了函数也是类型一种类型，也属于&lt;code&gt;T&lt;/code&gt;），本质上是类型之间的Functor.&lt;br&gt;因此，我们可以把上一节的&lt;code&gt;f1&lt;/code&gt; &lt;code&gt;f2&lt;/code&gt;都拆开来看，当作一种运算，看看他对生命周期做了什么。&lt;br&gt;例如，对于函数参数，参数受较短生命周期的约束——如上一节分析的那样——我们发现&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;F(&amp;#39;short) &amp;lt;: F(&amp;#39;long)&lt;/code&gt; (颠倒了！)，而长寿者可以降级为短命者；而对返回值来说，恰恰相反：我们只知道至少可以活多么久，活更长对于使用返回值的表达式来说也一定可以接受，此时&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;(F()-&amp;gt;&amp;#39;long) &amp;lt;: (F()-&amp;gt;&amp;#39;short)&lt;/code&gt;（关系保持！）……其中，&lt;code&gt;&amp;lt;:&lt;/code&gt;左右两侧的表达式——或者说函数签名——正对应上一节的&lt;code&gt;f1&lt;/code&gt; &lt;code&gt;f2&lt;/code&gt;，我们只是把&lt;code&gt;≼&lt;/code&gt;换成了&lt;code&gt;&amp;lt;:&lt;/code&gt;。  &lt;/p&gt;
+&lt;p&gt;所以现在我们要把生命周期理解为类型系统的一部分时，困惑可能来源于为什么不像整形一样规则简单（小int永远是大int的subtype），而包含生命周期的类型系统则有时并不如此：可能不存在这个偏序关系，也可能反过来下克上。&lt;br&gt;&lt;strong&gt;我们要明确，函数签名之类的是对类型进行的一种运算&lt;/strong&gt;。你可以理解为函数对值运算，而函数签名对类型进行运算。是不是有点像物理上的&lt;strong&gt;量纲分析！&lt;/strong&gt;。&lt;br&gt;换言之，这些带泛型或者生命周期的东西（不管是&lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;还是&lt;code&gt;&amp;lt;T&amp;gt;T-&amp;gt;T&lt;/code&gt;，别忘了函数也是类型一种类型，也属于&lt;code&gt;T&lt;/code&gt;），本质上是类型之间的Functor.&lt;br&gt;因此，我们可以把上一节的&lt;code&gt;f1&lt;/code&gt; &lt;code&gt;f2&lt;/code&gt;都拆开来看，当作一种运算，看看他对生命周期做了什么。&lt;br&gt;例如，对于函数参数，参数受较短生命周期的约束——如上一节分析的那样——我们发现&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;F(&amp;#39;short) &amp;lt;: F(&amp;#39;long)&lt;/code&gt; (颠倒了！剧透：这叫逆变(contravariance))，而长寿者可以降级为短命者；而对返回值来说，恰恰相反：我们只知道至少可以活多么久，活更长对于使用返回值的表达式来说也一定可以接受，此时&lt;code&gt;&amp;#39;long &amp;lt;: &amp;#39;short&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;(F()-&amp;gt;&amp;#39;long) &amp;lt;: (F()-&amp;gt;&amp;#39;short)&lt;/code&gt;（关系保持！剧透：这叫协变(covariance)）……其中，&lt;code&gt;&amp;lt;:&lt;/code&gt;左右两侧的表达式——或者说函数签名——正对应上一节的&lt;code&gt;f1&lt;/code&gt; &lt;code&gt;f2&lt;/code&gt;，我们只是把&lt;code&gt;≼&lt;/code&gt;换成了&lt;code&gt;&amp;lt;:&lt;/code&gt;。  &lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;颠倒了的就是contravariant，不变就是covariant，根本没法推出关系的就是invariant.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;invariant就是上面思考题那种。至于原因，最后一节会有个特别轻松易懂的解释&lt;code&gt;:)&lt;/code&gt;  &lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;为什么要搞得这么离散数学？因为当类型系统的偏序关系网浮出水面，系统里隐含的约束也就能被自然推导。&lt;br&gt;&lt;strong&gt;如果对于用到的类型，这个偏序集合是格（有上下确界），那么编译器会开心的帮你标记好一切生命周期&lt;/strong&gt;；&lt;br&gt;&lt;strong&gt;如果没有办法cast导致编译器在约束求解中无法找出某些类型的上下确界，甚至出现了环——不好意思，还是得另请高明（程序员）来标清楚。&lt;/strong&gt;&lt;br&gt;例如上面那段代码为两个参数都标注&lt;code&gt;&amp;#39;a&lt;/code&gt;其实等效于在a、b固有的、不受约束的生命周期（远古版本反人体工程学rust必须写明所有生命周期，现在能自动推导绝大部分）中添加了两条约束：&lt;/p&gt;
+&lt;p&gt;为什么要搞得这么数学（离散数学&amp;#x2F;范畴论）？因为当类型系统的偏序关系网浮出水面，系统里隐含的约束也就能被自然推导。&lt;br&gt;&lt;strong&gt;如果对于用到的类型，这个偏序集合是格（有上下确界），那么编译器会开心的帮你标记好一切生命周期&lt;/strong&gt;；&lt;br&gt;&lt;strong&gt;如果没有办法cast导致编译器在约束求解中无法找出某些类型的上下确界，甚至出现了环——不好意思，还是得另请高明（程序员）来标清楚。&lt;/strong&gt;&lt;br&gt;例如上面那段代码为两个参数都标注&lt;code&gt;&amp;#39;a&lt;/code&gt;其实等效于在a、b固有的、不受约束的生命周期（远古版本反人体工程学rust必须写明所有生命周期，现在能自动推导绝大部分）中添加了两条约束：&lt;/p&gt;
 &lt;figure class=&#34;highlight rust&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;longer&lt;/span&gt;&amp;lt;&lt;span class=&#34;symbol&#34;&gt;&amp;#x27;a&lt;/span&gt;, &lt;span class=&#34;symbol&#34;&gt;&amp;#x27;b&lt;/span&gt;&amp;gt;(s1: &amp;amp;&lt;span class=&#34;symbol&#34;&gt;&amp;#x27;a&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;str&lt;/span&gt;, s2: &amp;amp;&lt;span class=&#34;symbol&#34;&gt;&amp;#x27;b&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;str&lt;/span&gt;) &lt;span class=&#34;punctuation&#34;&gt;-&amp;gt;&lt;/span&gt; &amp;amp;&lt;span class=&#34;symbol&#34;&gt;&amp;#x27;a&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;str&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;where&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;&amp;#x27;a&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;&amp;#x27;b&lt;/span&gt;, &lt;span class=&#34;symbol&#34;&gt;&amp;#x27;b&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;&amp;#x27;a&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; s2.&lt;span class=&#34;title function_ invoke__&#34;&gt;len&lt;/span&gt;() &amp;gt; s1.&lt;span class=&#34;title function_ invoke__&#34;&gt;len&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;也就是对x和y分别绑定的值，其生命周期’a与’b有{‘a≼’b,’b≼’a}，也就是{‘a:’b, ‘b:’a}（显然可以推出’a&amp;#x3D;&amp;#x3D;’b）。&lt;br&gt;因此在手动指定后，在需要用到生命周期的地方，这两个参数以及返回值的生命周期就可以被推导啦：为了让他们相等，编译器要根据基本法把长的生命周期cast到短的上。&lt;br&gt;最终效果就是取传参生命周期较短者。注意这时我们在谈论的是参数，不是整个函数发生了什么质变。&lt;br&gt;……是的，其实日常根本就没有多少情况需要你操心函数参数的那个contravariant！可以松口气了。&lt;br&gt;当然，根据上文所述，这样&lt;strong&gt;推导出来的生命周期约束是怎么严格怎么来&lt;/strong&gt;，但记住：&lt;strong&gt;如果你被搞晕了，那就相信你的直觉；程序是人设计为人服务的，因此绝大部分情况下生命周期的限制是符合直觉的&lt;/strong&gt;（也就是你可以使用“显然”这一词）。&lt;br&gt;What a relief.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;有没有想过一些运算过后，偏序关系不一定会保留&amp;#x2F;颠倒，还有可能会直接丢失！&lt;br&gt;那么对这种情况，非常推荐阅读关于subtyping, &lt;strong&gt;variance(covariant, invariant, contravariant)&lt;/strong&gt; 的参考资料：&lt;br&gt;&lt;a href=&#34;https://doc.rust-lang.org/nomicon/subtyping.html&#34;&gt;Subtyping and Variance - The Rustonomicon&lt;/a&gt;&lt;br&gt;然后你会发现倒过来（contravariant, 逆变）的其实&lt;strong&gt;就只有&lt;/strong&gt;这个函数返回值。&lt;br&gt;然后你还会注意到，那些invariant的不变量是不是都提供内部不变性，换言之，本质上都是一种指针？&lt;br&gt;&lt;strong&gt;我可以提供一个绝妙的角度：想想C&amp;#x2F;C++的指针类型定义, 指针本身是不是const，这和指针的内容（指向的对象）是不是const有啥关系吗？当然没有！&lt;/strong&gt;&lt;br&gt;所以某种意义上，&lt;strong&gt;你可以把const理解为很粗糙的生命周期约束，我们Rust更精细的系统里，他叫&lt;code&gt;&amp;#39;static&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有没有想过一些运算过后，偏序关系不一定会保留&amp;#x2F;颠倒，还有可能会直接丢失！&lt;br&gt;那么对这种情况，非常推荐阅读关于subtyping, &lt;strong&gt;variance(covariant, invariant, contravariant)&lt;/strong&gt; 的参考资料：&lt;br&gt;&lt;a href=&#34;https://doc.rust-lang.org/nomicon/subtyping.html&#34;&gt;Subtyping and Variance - The Rustonomicon&lt;/a&gt;&lt;br&gt;我将文中的表格附在此处：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;‘a T&lt;/th&gt;
+&lt;th&gt;U&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&amp;amp;’a T&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;amp;’a mut T&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;invariant&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Box&lt;T&gt;&lt;/T&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Vec&lt;T&gt;&lt;/T&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UnsafeCell&lt;T&gt;&lt;/T&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;invariant&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell&lt;T&gt;&lt;/T&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;invariant&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fn(T) -&amp;gt; U&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;contravariant&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*const T&lt;/td&gt;
+&lt;td&gt;covariant&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*mut T&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;invariant&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;然后你会发现倒过来（contravariant, 逆变）的其实&lt;strong&gt;就只有&lt;/strong&gt;这个函数参数。&lt;br&gt;然后你还会注意到，那些invariant的不变量是不是都提供内部不变性，换言之，本质上都是一种指针？&lt;br&gt;&lt;strong&gt;我可以提供一个绝妙的角度：想想C&amp;#x2F;C++的指针类型定义, 指针本身是不是const，这和指针的内容（指向的对象）是不是const有啥关系吗？当然没有！&lt;/strong&gt;&lt;br&gt;所以某种意义上，&lt;strong&gt;你可以把const理解为很粗糙的生命周期约束，我们Rust更精细的系统里，他叫&lt;code&gt;&amp;#39;static&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Rust" />
         <category term="Lifetime" />

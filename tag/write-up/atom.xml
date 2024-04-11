@@ -4,12 +4,12 @@
     <title>Cubic Y³ • Posts by &#34;write-up&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2023-08-29T07:05:06.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
     <category term="Hackergame" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
@@ -24,10 +24,10 @@
     <category term="Kruskal" />
     <category term="Splay" />
     <category term="数链剖分" />
-    <category term="持久化" />
-    <category term="线段树" />
     <category term="树状数组" />
     <category term="LCA" />
+    <category term="持久化" />
+    <category term="线段树" />
     <category term="分块" />
     <category term="哈希" />
     <category term="Phar" />
@@ -107,9 +107,9 @@
 &lt;/ul&gt;
 &lt;p&gt;相信也可以发现国赛这种patch难度远低于attack的难度。建议&lt;strong&gt;做题的初期当作没有攻击得分，先patch了再说&lt;/strong&gt;。&lt;/p&gt;
 </content>
+        <category term="Write-Up" />
         <category term="CISCN" />
         <category term="web" />
-        <category term="Write-Up" />
         <updated>2023-07-06T16:28:12.000Z</updated>
     </entry>
     <entry>
@@ -176,8 +176,8 @@
 &lt;p&gt; I have made my best to make the solving process more natural. I hope you enjoy digging deep into the problem. You’ll earn much more fun than those who can just use tools written by others without understanding fundamental principles (like me).&lt;/p&gt;
 &lt;p&gt;ご武運を！&lt;/p&gt;
 </content>
-        <category term="Write-Up" />
         <category term="Misc" />
+        <category term="Write-Up" />
         <category term="出题" />
         <updated>2022-07-03T15:43:00.000Z</updated>
     </entry>
