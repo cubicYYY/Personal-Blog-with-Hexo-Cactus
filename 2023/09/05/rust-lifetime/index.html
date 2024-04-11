@@ -154,11 +154,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2023-09-04T16:14:45.000Z" class="dt-published" itemprop="datePublished">2023-09-05</time>
@@ -167,28 +170,35 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/Dev/">Dev</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/Code/" rel="tag">Code</a>, <a class="p-category" href="/tags/Lifetime/" rel="tag">Lifetime</a>, <a class="p-category" href="/tags/ProgrammingLanguage/" rel="tag">ProgrammingLanguage</a>, <a class="p-category" href="/tags/Rust/" rel="tag">Rust</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 2.5k</span>
-      <span class="post-count">~ 9 min</span>
-    <h1 id="Rust类型系统中的生命周期"><a href="#Rust类型系统中的生命周期" class="headerlink" title="Rust类型系统中的生命周期"></a>Rust类型系统中的生命周期</h1><p>Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！<br>以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？<br><strong>提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”</strong></p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 2.5k
+          (~9 mins to read)
+      </span>
+      <h1 id="Rust类型系统中的生命周期"><a href="#Rust类型系统中的生命周期" class="headerlink" title="Rust类型系统中的生命周期"></a>Rust类型系统中的生命周期</h1><p>Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！<br>以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？<br><strong>提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”</strong></p>
 <hr>
 <p>一开始看到生命周期和泛型写在一起也许会感到诧异：但事实上生命周期就是类型系统的一部分，泛型指明某一值能进行什么运算，生命周期指明某一值在什么区间内才有效、才可以参与运算。既然能接受泛型加入类型系统并参与类型的运算，生命周期也应同理。<br>贴段代码大伙大概感受一下：</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::fmt::Display;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">longest_with_an_announcement</span>&lt;<span class="symbol">&#x27;a</span>, T&gt;(x: &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span>, y: &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span>, ann: T) <span class="punctuation">-&gt;</span> &amp;<span class="symbol">&#x27;a</span> <span class="type">str</span></span><br><span class="line">    <span class="keyword">where</span> T: Display</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Announcement! &#123;&#125;&quot;</span>, ann);</span><br><span class="line">    <span class="keyword">if</span> x.<span class="title function_ invoke__">len</span>() &gt; y.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">        x</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -217,7 +227,7 @@
 <hr>
 <p>有没有想过一些运算过后，偏序关系不一定会保留&#x2F;颠倒，还有可能会直接丢失！<br>那么对这种情况，非常推荐阅读关于subtyping, <strong>variance(covariant, invariant, contravariant)</strong> 的参考资料：<br><a target="_blank" rel="noopener" href="https://doc.rust-lang.org/nomicon/subtyping.html">Subtyping and Variance - The Rustonomicon</a><br>然后你会发现倒过来（contravariant, 逆变）的其实<strong>就只有</strong>这个函数返回值。<br>然后你还会注意到，那些invariant的不变量是不是都提供内部不变性，换言之，本质上都是一种指针？<br><strong>我可以提供一个绝妙的角度：想想C&#x2F;C++的指针类型定义, 指针本身是不是const，这和指针的内容（指向的对象）是不是const有啥关系吗？当然没有！</strong><br>所以某种意义上，<strong>你可以把const理解为很粗糙的生命周期约束，我们Rust更精细的系统里，他叫<code>&#39;static</code>.</strong></p>
 
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -225,7 +235,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         

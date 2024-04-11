@@ -152,11 +152,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2018-02-20T15:36:00.000Z" class="dt-published" itemprop="datePublished">2018-02-20</time>
@@ -165,28 +168,35 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/OI/">OI</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/%E6%8C%81%E4%B9%85%E5%8C%96/" rel="tag">持久化</a>, <a class="p-category" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag">线段树</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 612</span>
-      <span class="post-count">~ 3 min</span>
-    <p>原题地址:<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P3919">https://www.luogu.org/problemnew/show/P3919</a></p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 612
+          (~3 mins to read)
+      </span>
+      <p>原题地址:<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P3919">https://www.luogu.org/problemnew/show/P3919</a></p>
 <h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>维护一个长度为N的数组，支持如下几种操作：  </p>
 <ol>
 <li>在某个历史版本上修改某一个位置上的值  </li>
@@ -196,7 +206,7 @@
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先感谢来自<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=2978">@zcysky</a>的模板。写的非常漂亮，封装也很精致。<br>这题是裸题，于是直接上模板就行了。注意此题输入数据大，需要读入优化。<br>关于可持久化线段树的介绍与总结，之后把坑填上。  </p>
 <hr>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1000005</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a[N],n,q,rt[N*<span class="number">20</span>];<span class="comment">//空间复杂度O(mlogn) </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXB 50000000</span></span><br><span class="line"><span class="type">char</span> buf[MAXB],*cp=buf;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> f=<span class="number">1</span>,x=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(*cp&lt;<span class="string">&#x27;0&#x27;</span>||*cp&gt;<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(*cp==<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            f=<span class="number">-1</span>;</span><br><span class="line">        cp++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(*cp&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;*cp&lt;=<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        x=x*<span class="number">10</span>+*cp-<span class="string">&#x27;0&#x27;</span>; </span><br><span class="line">        cp++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Persistable_Segment_Tree</span> &#123;</span><br><span class="line">    <span class="type">int</span> lc[N*<span class="number">20</span>],rc[N*<span class="number">20</span>],val[N*<span class="number">20</span>],cnt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> &amp;o,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">        o=++cnt;</span><br><span class="line">        <span class="keyword">if</span>(l==r) &#123;</span><br><span class="line">            val[o]=a[l];</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">build</span>(lc[o],l,mid);</span><br><span class="line">        <span class="built_in">build</span>(rc[o],mid+<span class="number">1</span>,r);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">ins</span><span class="params">(<span class="type">int</span> &amp;o,<span class="type">int</span> pre,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> q,<span class="type">int</span> v)</span></span>&#123;</span><br><span class="line">        o=++cnt;</span><br><span class="line">        lc[o]=lc[pre];</span><br><span class="line">        rc[o]=rc[pre];</span><br><span class="line">        val[o]=val[pre];</span><br><span class="line">        <span class="keyword">if</span>(l==r) &#123;</span><br><span class="line">            val[o]=v;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(q&lt;=mid)</span><br><span class="line">            <span class="built_in">ins</span>(lc[o],lc[pre],l,mid,q,v);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="built_in">ins</span>(rc[o],rc[pre],mid+<span class="number">1</span>,r,q,v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> o,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> q)</span></span>&#123;<span class="comment">//类似二分的查询 </span></span><br><span class="line">        <span class="keyword">if</span>(l==r)</span><br><span class="line">            <span class="keyword">return</span> val[o];</span><br><span class="line">        <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(q&lt;=mid)</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">query</span>(lc[o],l,mid,q);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">query</span>(rc[o],mid+<span class="number">1</span>,r,q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;T;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fread</span>(buf,<span class="number">1</span>,MAXB,stdin);</span><br><span class="line">    n=<span class="built_in">read</span>();</span><br><span class="line">    <span class="type">int</span> m=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        a[i]=<span class="built_in">read</span>();</span><br><span class="line">    T.<span class="built_in">build</span>(rt[<span class="number">0</span>],<span class="number">1</span>,n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="type">int</span> pre=<span class="built_in">read</span>(),opt=<span class="built_in">read</span>(),x=<span class="built_in">read</span>();</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">1</span>) &#123;<span class="comment">//操作1:在版本pre的基础上将第x个数修改为v </span></span><br><span class="line">            <span class="type">int</span> v=<span class="built_in">read</span>();</span><br><span class="line">            T.<span class="built_in">ins</span>(rt[i],rt[pre],<span class="number">1</span>,n,x,v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">2</span>) &#123;<span class="comment">//操作2:访问版本pre中第x个数的值 </span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,T.<span class="built_in">query</span>(rt[pre],<span class="number">1</span>,n,x));</span><br><span class="line">            rt[i]=rt[pre];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -204,7 +214,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         

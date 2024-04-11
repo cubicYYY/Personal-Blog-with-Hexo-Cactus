@@ -151,11 +151,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2018-02-27T15:58:00.000Z" class="dt-published" itemprop="datePublished">2018-02-27</time>
@@ -164,32 +167,39 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/OI/">OI</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/Treap/" rel="tag">Treap</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 547</span>
-      <span class="post-count">~ 2 min</span>
-    <p>原题地址：<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P2234">https://www.luogu.org/problemnew/show/P2234</a></p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 547
+          (~2 mins to read)
+      </span>
+      <p>原题地址：<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P2234">https://www.luogu.org/problemnew/show/P2234</a></p>
 <h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>给定一个序列，对于每一个数都要查询：序列中在这个数前与这个数最接近的数是什么？然后将最接近的数字与这个数字的差累加。（序列第一个数字直接加自己）  </p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>查询在这个数之前与这个数最接近的数，我们很容易想到用二叉搜索树（BST）来做。<br><del>虽然数据略水暴力排序每次查询从一个数往左右找也能过。</del><br>每次插入一个数字，然后查询，我用Treap实现（还是弱化版的，只有插入查询）。<br>Treap的核心其实就是打乱顺序插入防止被卡（粗糙理解）。具体实现方法不难，请百度。（我之后会写一篇专门介绍下各种BST的。）<br>PS：Treap树完整版之后写。这题用STL的vector也行，vector理论每次插入渐进时间复杂度是O(n)但是听说实际是对数级别的？   </p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">randad</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> seed=<span class="number">114</span>; <span class="comment">//seed可以随便取</span></span><br><span class="line">    <span class="keyword">return</span> seed=<span class="built_in">int</span>(seed*<span class="number">48271LL</span>%<span class="number">2147483647</span>);<span class="comment">//48271使得其有完全周期，即2147483647内取遍不重复 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Treap</span> &#123;</span><br><span class="line">    <span class="type">int</span> key,pri,son[<span class="number">2</span>];</span><br><span class="line">&#125;T[<span class="number">33333</span>];</span><br><span class="line"><span class="type">int</span> cnt=<span class="number">1</span>,rt=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rotate</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> &amp;rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> y=T[rt].son[p];</span><br><span class="line">    T[rt].son[p]=T[y].son[!p];</span><br><span class="line">    T[y].son[!p]=rt;</span><br><span class="line">    rt=y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ins</span><span class="params">(<span class="type">int</span> key,<span class="type">int</span> &amp;rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rt==<span class="number">0</span>)</span><br><span class="line">    	T[rt=cnt++] = (Treap)&#123;key,<span class="built_in">randad</span>()&#125;;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> p=key&gt;T[rt].key;</span><br><span class="line">        <span class="built_in">ins</span>(key,T[rt].son[p]);</span><br><span class="line">        <span class="keyword">if</span>(T[T[rt].son[p]].pri&gt;T[rt].pri)</span><br><span class="line">        	<span class="built_in">rotate</span>(p,rt);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">nowMin</span><span class="params">(<span class="type">int</span> key,<span class="type">int</span> rt)</span><span class="comment">//查询现在最接近key的数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rt==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">666666666</span>;</span><br><span class="line">    <span class="type">int</span> res=<span class="built_in">abs</span>(key-T[rt].key);</span><br><span class="line">    <span class="keyword">if</span>(key&gt;T[rt].key) res=<span class="built_in">min</span>(res,<span class="built_in">nowMin</span>(key,T[rt].son[<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(key&lt;T[rt].key) res=<span class="built_in">min</span>(res,<span class="built_in">nowMin</span>(key,T[rt].son[<span class="number">0</span>]));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> n,tot=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="type">int</span> num;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="keyword">if</span> (i==<span class="number">1</span>) tot+=num;</span><br><span class="line">        <span class="keyword">else</span> tot+=<span class="built_in">nowMin</span>(num,rt);<span class="comment">//rt是当前根</span></span><br><span class="line">        <span class="built_in">ins</span>(num,rt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,tot);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -197,7 +207,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         

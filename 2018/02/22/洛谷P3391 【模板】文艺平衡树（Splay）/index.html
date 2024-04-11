@@ -156,11 +156,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2018-02-22T15:43:00.000Z" class="dt-published" itemprop="datePublished">2018-02-22</time>
@@ -169,28 +172,35 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/OI/">OI</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/Splay/" rel="tag">Splay</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 1.3k</span>
-      <span class="post-count">~ 5 min</span>
-    <p>原题地址:<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P3391">https://www.luogu.org/problemnew/show/P3391</a>  </p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 1.3k
+          (~5 mins to read)
+      </span>
+      <p>原题地址:<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P3391">https://www.luogu.org/problemnew/show/P3391</a>  </p>
 <h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>您需要写一种数据结构（可参考题目标题），来维护一个有序数列，其中需要提供以下操作：<br>翻转一个区间，例如原有序序列是5 4 3 2 1，翻转区间是[2,4]的话，结果是5 2 3 4 1</p>
 <hr>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>Splay是一种二叉搜索树。如果不知道的话……    </p>
@@ -211,7 +221,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Splay可以用来维护序列。这样的话是把Splay当作一棵区间树。  </span><br><span class="line">所谓区间树和权值树的区别，大概就是区间树每个节点代表的是一段区间（典型代表就是一般的线段树）  </span><br><span class="line">权值树好理解一点，就是每个点真的代表一个点。  </span><br><span class="line">至于翻转操作我们可以利用Splay的过程实现。详见代码。(Splay能维护序列反转也是它作为LCT的辅助树的条件之一)</span><br></pre></td></tr></table></figure>
 <p>作为模板题没什么好说的。这边文章主要记录板子用。感谢zcysky的板子。   </p>
 <h2 id><a href="#" class="headerlink" title></a><img src="https://images2018.cnblogs.com/blog/1335480/201802/1335480-20180223172902355-916514534.gif" loading="lazy"></h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,m; </span><br><span class="line"><span class="type">int</span> fa[N],ch[N][<span class="number">2</span>],size[N],rev[N],rt;<span class="comment">//fa[a]表示a的父亲</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> x)</span><span class="comment">//维护节点大小</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    size[x]=size[ch[x][<span class="number">0</span>]]+size[ch[x][<span class="number">1</span>]]+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> x)</span><span class="comment">//标记下传</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rev[x])&#123;<span class="comment">//是否翻转了区间</span></span><br><span class="line">        <span class="built_in">swap</span>(ch[x][<span class="number">0</span>],ch[x][<span class="number">1</span>]);</span><br><span class="line">        rev[ch[x][<span class="number">0</span>]]^=<span class="number">1</span>;rev[ch[x][<span class="number">1</span>]]^=<span class="number">1</span>;rev[x]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">isLeft</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="keyword">return</span> ch[fa[x]][<span class="number">0</span>] == x;&#125;<span class="comment">//判断x是不是左儿子</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rotate</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> &amp;k)</span><span class="comment">//旋转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> y=fa[x],z=fa[y];</span><br><span class="line">	<span class="type">int</span> kind=<span class="built_in">isLeft</span>(x);</span><br><span class="line">    <span class="keyword">if</span>(y==k)</span><br><span class="line">        k=x;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        ch[z][!<span class="built_in">isLeft</span>(y)]=x;</span><br><span class="line">    ch[y][!kind]=ch[x][kind];</span><br><span class="line">    </span><br><span class="line">    fa[ch[y][!kind]]=y;</span><br><span class="line">    ch[x][kind]=y;</span><br><span class="line">    fa[y]=x;fa[x]=z;</span><br><span class="line">    <span class="built_in">pushup</span>(x);<span class="built_in">pushup</span>(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">splay</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> &amp;k)</span><span class="comment">//伸展操作，将x一直旋转直到x就是k</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(x!=k)&#123;</span><br><span class="line">        <span class="type">int</span> y=fa[x],z=fa[y];</span><br><span class="line">        <span class="keyword">if</span>(y!=k)</span><br><span class="line">        	<span class="built_in">isLeft</span>(x)^<span class="built_in">isLeft</span>(y) ? <span class="built_in">rotate</span>(x,k):<span class="built_in">rotate</span>(y,k);</span><br><span class="line">			<span class="comment">//该节点与父亲分别是他们爸的左孩子\右孩子或者是右孩子\左孩子旋转2次x</span></span><br><span class="line">			<span class="comment">//该节点与父亲同是他们爸的左孩子或同是右孩子先旋转一次y再旋转一次x</span></span><br><span class="line">        <span class="built_in">rotate</span>(x,k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> f)</span> <span class="comment">//建立一颗完全平衡的二叉树</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;r)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">    ch[f][!(mid&lt;f)]=mid;</span><br><span class="line">    fa[mid]=f;</span><br><span class="line">    size[mid]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(l==r)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">build</span>(l,mid<span class="number">-1</span>,mid);</span><br><span class="line">    <span class="built_in">build</span>(mid+<span class="number">1</span>,r,mid);</span><br><span class="line">    <span class="built_in">pushup</span>(mid);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span><span class="comment">//寻找以x为根的子树里第k大的</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">pushdown</span>(x);</span><br><span class="line">    <span class="type">int</span> s=size[ch[x][<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">if</span>(k==s+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;=s)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find</span>(ch[x][<span class="number">0</span>],k);</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find</span>(ch[x][<span class="number">1</span>],k-s<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rever</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span><span class="comment">//关于如何从Splay中提取区间请看上文思路中的论文</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="built_in">find</span>(rt,l),y=<span class="built_in">find</span>(rt,r+<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">splay</span>(x,rt);</span><br><span class="line">    <span class="built_in">splay</span>(y,ch[x][<span class="number">1</span>]);</span><br><span class="line">    <span class="type">int</span> z=ch[y][<span class="number">0</span>];</span><br><span class="line">    rev[z]^=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    rt=(n+<span class="number">3</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>,n+<span class="number">2</span>,rt);<span class="comment">//区间左右各多加1个数方便提取区间</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="type">int</span> L,R;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;L,&amp;R);</span><br><span class="line">        <span class="built_in">rever</span>(L,R);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n+<span class="number">1</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,<span class="built_in">find</span>(rt,i)<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -219,7 +229,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         

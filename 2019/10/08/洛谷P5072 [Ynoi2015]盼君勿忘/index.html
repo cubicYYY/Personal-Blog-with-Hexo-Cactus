@@ -152,11 +152,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2019-10-08T12:13:00.000Z" class="dt-published" itemprop="datePublished">2019-10-08</time>
@@ -165,28 +168,35 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/OI/">OI</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/%E5%88%86%E5%9D%97/" rel="tag">分块</a>, <a class="p-category" href="/tags/%E5%93%88%E5%B8%8C/" rel="tag">哈希</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 1.2k</span>
-      <span class="post-count">~ 5 min</span>
-    <p>原题地址:<a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P5072">https://www.luogu.org/problem/P5072</a>  </p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 1.2k
+          (~5 mins to read)
+      </span>
+      <p>原题地址:<a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P5072">https://www.luogu.org/problem/P5072</a>  </p>
 <h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>给定一个序列，每次查询一个区间[l,r]中所有子序列分别去重后的和mod p</p>
 <hr>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们考虑每个数的贡献。即该区间内含有这个数的子序列个数。用补集转化为不含这个数的子序列个数。<br>那么，假设这个数在[l,r]内出现了k次，则一共有2^(r-l+1) -2^(r-l+1-k)个子序列包含这个数。<br>本题可以离线，因此选择使用莫队，过程中维护cnt[k]表示区间内恰好出现k次的数字个数，维护sum[j]表示区间内恰好出现j次的数字之和（区间内出现次数相同的数，对于这些数，区间中包含这些数的子序列个数都相同，因此存数字之和就行）。<br>然而这样时间复杂度为O(询问次数*单次询问复杂度)&#x3D;O(n*max(sqrt(n),n))&#x3D;O(nm)，并不可行。我们发现时间瓶颈不在莫队的sqrt(n)，而是在单次查询中求解的复杂度n。<br>有2个套路可供使用：出现次数大于sqrt(n)的数不超过sqrt(n)个，值不为0的cnt[k]少于2*sqrt(n)个（反证易得，本质类似）。 </p>
@@ -197,7 +207,7 @@
 <p>还没完。我们发现模数是不定的，为了保证单次查询的复杂度压在sqrt(n)以内，我们还有最后一件事情要做：在sqrt(n)的时间内求出2^(r-l+1) 和所有的2^(r-l+1-k)。这里安利一个神奇的方式：每次查询只需要做一次时间复杂度为sqrt(n)的预处理就可以O(1)查询了。<br>假设查询区间长度为len(len&#x3D;r-l+1)，我们记siz&#x3D;sqrt(len)，而后计算2^0 , 2^1 , 2^2 … 2^sqrt(len)，存在数组pow1中；再计算2^sqrt(len) , 2^(2*sqrt(len)) , 2^(3*sqrt(len)) , 2^(4*sqrt(len))… , 2^(sqrt(len)*sqrt(len))，存在数组pow[2]中。以上计算都在mod p意义下进行。<br>这样求2的任意次方都可以O(1)出解:2^k &#x3D;2^(k&#x2F;siz) *2^(k%siz)&#x3D;pow2[k&#x2F;siz]*pow1[k%siz]（记得模p）。</p>
 <hr>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXN 100005 </span></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[MAXN],val[MAXN*<span class="number">2</span>],cnt[MAXN],ans[MAXN];</span><br><span class="line"><span class="type">int</span> tot,blosiz,powsiz;</span><br><span class="line"><span class="type">int</span> bel[MAXN],pow1[MAXN],pow2[MAXN];</span><br><span class="line"><span class="type">bool</span> calced[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> sum[MAXN];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">query</span> &#123;</span><br><span class="line">	<span class="type">int</span> id,l,r,p;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> query &amp;sb) <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> bel[l]!=bel[sb.l] ? bel[l]&lt;bel[sb.l] : (bel[l]&amp;<span class="number">1</span> ? r&lt;sb.r : r&gt;sb.r);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; q[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sum[cnt[x]]-=x;</span><br><span class="line">	cnt[x]++;</span><br><span class="line">	sum[cnt[x]]+=x;</span><br><span class="line">	++tot;</span><br><span class="line">	val[tot]=cnt[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">(<span class="type">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sum[cnt[x]]-=x;</span><br><span class="line">	cnt[x]--;</span><br><span class="line">	sum[cnt[x]]+=x;</span><br><span class="line">	++tot;</span><br><span class="line">	val[tot]=cnt[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">power</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1LL</span>*pow1[x%powsiz]*pow2[x/powsiz]%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">	blosiz=<span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),bel[i]=(i<span class="number">-1</span>)/blosiz;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;q[i].l,&amp;q[i].r,&amp;q[i].p),q[i].id=i;</span><br><span class="line">	<span class="built_in">sort</span>(q+<span class="number">1</span>,q+m+<span class="number">1</span>);</span><br><span class="line">	<span class="type">int</span> l=<span class="number">1</span>,r=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (l&gt;q[i].l) <span class="built_in">add</span>(a[--l]);</span><br><span class="line">        <span class="keyword">while</span> (r&lt;q[i].r) <span class="built_in">add</span>(a[++r]);</span><br><span class="line">        <span class="keyword">while</span> (l&lt;q[i].l) <span class="built_in">del</span>(a[l++]);</span><br><span class="line">        <span class="keyword">while</span> (r&gt;q[i].r) <span class="built_in">del</span>(a[r--]);</span><br><span class="line">        </span><br><span class="line">		<span class="type">int</span> newtot=<span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> len=r-l+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot;j++) </span><br><span class="line">			<span class="keyword">if</span> (val[j]&amp;&amp;sum[val[j]]!=<span class="number">0</span>&amp;&amp;!calced[val[j]]) </span><br><span class="line">				calced[val[j]]=<span class="number">1</span>,val[++newtot]=val[j];</span><br><span class="line">		tot=newtot;</span><br><span class="line">		</span><br><span class="line">		powsiz=<span class="built_in">sqrt</span>(len)+<span class="number">1</span>;</span><br><span class="line">		pow1[<span class="number">0</span>]=pow2[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=powsiz;j++) </span><br><span class="line">			pow1[j]=(pow1[j<span class="number">-1</span>]+pow1[j<span class="number">-1</span>])%q[i].p;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j*powsiz&lt;=len;j++) </span><br><span class="line">			pow2[j]=<span class="number">1LL</span>*pow2[j<span class="number">-1</span>]*pow1[powsiz]%q[i].p;</span><br><span class="line">			</span><br><span class="line">		<span class="type">int</span> powLen=<span class="built_in">power</span>(len,q[i].p);</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot;j++) &#123;</span><br><span class="line">			<span class="type">long</span> <span class="type">long</span> num=sum[val[j]]%q[i].p;</span><br><span class="line">			ans[q[i].id]=(ans[q[i].id]+num*(powLen-<span class="built_in">power</span>(len-val[j],q[i].p)))%q[i].p;</span><br><span class="line">			calced[val[j]]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans[q[i].id]+=q[i].p;</span><br><span class="line">		ans[q[i].id]%=q[i].p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -205,7 +215,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         

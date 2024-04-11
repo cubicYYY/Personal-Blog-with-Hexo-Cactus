@@ -165,11 +165,14 @@
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Cubic Y^3</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2024-04-07T18:38:20.000Z" class="dt-published" itemprop="datePublished">2024-04-08</time>
@@ -178,28 +181,35 @@
     </div>
 
 
-      
+          
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
         <a class="category-link" href="/categories/Category-Theory/">Category Theory</a>
     </div>
 
 
-      
+            
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/Math/" rel="tag">Math</a>, <a class="p-category" href="/tags/Theorem/" rel="tag">Theorem</a>, <a class="p-category" href="/tags/Translation/" rel="tag">Translation</a>
     </div>
 
 
-    </div>
+      </div>
   </header>
   
 
-  <div class="content e-content" itemprop="articleBody">
-      <span class="post-count">Word count: 9.3k</span>
-      <span class="post-count">~ 35 min</span>
-    <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>翻译： CubicY<br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a></p>
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+          Word count: 9.3k
+          (~35 mins to read)
+      </span>
+      <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>翻译： CubicY<br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a></p>
 <h2 id="译者序"><a href="#译者序" class="headerlink" title="译者序"></a><a name="prelude"></a>译者序</h2><p>米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过优秀而无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了想译为中文的想法。尽管如此，我仍然推荐读者阅读原文，或者至少尽量使用英文的术语（例如，自然变换(natural transformation)）以减少歧义。</p>
 <p>为了消除歧义，将本文使用的范畴论记号与称呼列举在此：</p>
 <ul>
@@ -408,7 +418,7 @@
 <h2 id="译后记"><a href="#译后记" class="headerlink" title="译后记 "></a>译后记 <a name="postlude"></a></h2><p>译者的知识水平非常有限，难免有一些错误，希望读者见谅，也欢迎斧正。比如在序言部分对引理的解读是否有失偏颇乃至存在误导？<br>此外，这是我第一次正经翻译文章，所以也期盼在结构、句式、术语上的翻译建议<code>:)</code><br>例如，本文将”vantage point”翻译为“视点”，将”cooked up from”翻译为“由……构造而来”，”gives rise to”翻译为“取决于”，不知是否有更优的选择。<br>欢迎交流探讨^_^</p>
 <h2 id="译者推荐阅读"><a href="#译者推荐阅读" class="headerlink" title="译者推荐阅读"></a>译者推荐阅读</h2><p><a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/trackback/">Category Theory for Programmers: The Preface</a><br><a target="_blank" rel="noopener" href="https://medium.com/@olxc/yoneda-and-coyoneda-trick-f5a0321aeba4">Yoneda and Coyoneda trick</a></p>
 
-  </div>
+    </div>
 </article>
 
     <div class="blog-post-comments">
@@ -416,7 +426,6 @@
             <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
         </div>
     </div>
-
 
 
         
