@@ -159,6 +159,8 @@
       
         <time datetime="2018-08-03T08:53:00.000Z" class="dt-published" itemprop="datePublished">2018-08-03</time>
         
+        (Updated: <time datetime="2023-07-03T13:17:35.214Z" class="dt-updated" itemprop="dateModified">2023-07-03</time>)
+        
       
     </div>
 
@@ -188,7 +190,7 @@
         <span id="busuanzi_value_page_pv"></span>views
       </div>
       <span class="post-count">
-          Word count: 1.3k
+        Word count: 1.3k
           (~6 mins to read)
       </span>
       <p>博客咕咕咕了好久……最近会逐步继续恢复更新博客的。<br>最近又在学习二叉搜索树。实测发现替罪羊树快的飞起(时间约Splay的1&#x2F;2)~写起来还比较简单，决定来一波。<br>（那为什么还要用Splay呢？因为Splay是序列之王！还能维护LCT！（你要用非旋Treap（FHQ-Treap）我也没意见））<br>替罪羊树的主要思想就是当出现重量失衡的时候，<strong>把罪魁祸首的那个子树拎出来，重新按最完美的方式（也就是近似完全二叉树）构造一遍再接回去</strong>。<br>如何定义某个子树不平衡：当这个子树的左右子树其中之一的“重量”（节点个数）超过了整个子树的α*100%时，我们认为这个子树不平衡。<br>举例：α&#x3D;0.75时，如果一个子树左子树有4个节点，右子树有1个，这个子树大小就是4+1+1&#x3D;6，左子树占比超过了α*100%（即75%），这个子树不平衡，需要重构。<br>显然，α取值介于0.5至1.0之间，越小树越平衡但重构次数越多，越大重构次数越少但树越不平衡。太大太小都会出事。<strong>一般而言，α取0.75</strong>。如果题目查询次数远大于插入次数，可略微降低α取值（比如α&#x3D;0.70）；若远小于，则略升高（如α&#x3D;0.80）。<br>下面以<a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P3369">洛谷3369【模板】普通平衡树</a>为例：  </p>
