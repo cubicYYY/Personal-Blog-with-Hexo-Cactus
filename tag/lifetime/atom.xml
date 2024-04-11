@@ -22,8 +22,8 @@
     <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="Splay" />
     <category term="数链剖分" />
+    <category term="Splay" />
     <category term="持久化" />
     <category term="线段树" />
     <category term="树状数组" />
