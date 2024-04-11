@@ -31,7 +31,7 @@
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Math">
 <meta property="article:tag" content="Translation">
-<meta property="article:tag" content="Theorem">
+<meta property="article:tag" content="Yoneda Lemma">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://cubicy.icu/yoneda/yoneda.jpg">
     
@@ -193,7 +193,7 @@
             
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/Math/" rel="tag">Math</a>, <a class="p-category" href="/tags/Theorem/" rel="tag">Theorem</a>, <a class="p-category" href="/tags/Translation/" rel="tag">Translation</a>
+        <a class="p-category" href="/tags/Math/" rel="tag">Math</a>, <a class="p-category" href="/tags/Translation/" rel="tag">Translation</a>, <a class="p-category" href="/tags/Yoneda-Lemma/" rel="tag">Yoneda Lemma</a>
     </div>
 
 
@@ -212,7 +212,7 @@
           (~39 mins to read)
       </span>
       <h1 id="米田视角-→-米田嵌入-→-米田引理"><a href="#米田视角-→-米田嵌入-→-米田引理" class="headerlink" title="米田视角 → 米田嵌入 → 米田引理"></a>米田视角 → 米田嵌入 → 米田引理</h1><p><em>注：本标题为译者添加。</em><br>原作者： <a target="_blank" rel="noopener" href="https://www.math3ma.com/about">Tai-Danae Bradley</a><br>翻译： CubicY<br>部分图片与启发来源：<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">Bartosz Milewski</a></p>
-<h2 id="译者序"><a href="#译者序" class="headerlink" title="译者序"></a><a name="prelude"></a>译者序</h2><p>米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了将其译为中文的想法。尽管如此，我仍然推荐读者阅读原文。</p>
+<h2 id="译者序"><a href="#译者序" class="headerlink" title="译者序"></a><a name="prelude"></a>译者序</h2><p>米田引理(Yoneda Lemma)往往是新手在学习范畴论时遇到的第一个大障碍，犹如五十音图之于日语初学者。然而就译者本人看来，其难度并非来自于思维上的复杂，而更多来自于符号滥用（让人不禁想问数学整个领域是不是都这样）。尽管一些概念嵌套层数过多对思考确实造成了阻碍，但是通过无歧义的符号与生动的图示可以大大降低心智负担。本系列作者在这两点上都做得十分出色，故产生了将其译为中文的想法。我会将一些个人的理解以“译者注”的形式放置在文章各处。尽管如此，我仍然强烈推荐读者阅读原文。</p>
 <p>为了避免歧义，将本文使用的部分记号与约定列举在此：</p>
 <ul>
 <li>我们说“在X意义下等价”(up to X)有如下几种等价表述：<ul>
@@ -268,7 +268,7 @@
 <li>对于任何F-&gt;F的函数，我们可以…<br>（如果你觉得怪怪的，那也许是因为协变与逆变的小问题）<br>例如，对于函数downcast: Double-&gt;Float，我们能将取整函数floorF: Float-&gt;Int转为取整函数floorD: Double-&gt;Int.<br>所以对于如下两个代码片段，他们是等价的，可以互相转换：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line">Double a</span><br><span class="line"><span class="type">Int</span> <span class="variable">c</span> <span class="operator">=</span> floorD(a)</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//B</span></span><br><span class="line">Double a</span><br><span class="line"><span class="type">Float</span> <span class="variable">b</span> <span class="operator">=</span> downcast(a)</span><br><span class="line"><span class="type">Int</span> <span class="variable">c</span> <span class="operator">=</span> floorF(b)</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C</span></span><br><span class="line">Double a</span><br><span class="line"><span class="type">Int</span> <span class="variable">c</span> <span class="operator">=</span> floorF(downcast(a))</span><br></pre></td></tr></table></figure>
-B与C是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float这种类型可以通过在Double和Int间定义这些函数的转换关系创造出来。<br>B转A是一种缩减，这种缩减的意义是：我们不需要Float类型的具体中间值，也能运算出结果！<br>所以Float这一类型，或者说任何特定类型的本质都是在定义“涉及该特定类型的转换关系”之间的一种特定变换关系（例如Float类型将指导如何复合floorF和downcast得到floorD）.<br>而这种“涉及该特定类型的转换关系”的特定变换关系，和“各种类型的转换关系”是同构的，而众所周知范畴论从不要求相等，只要求同构，<br><strong>所以一种类型即代表了一种对应该类型的特定变换关系，这种对应该类型的特定变换关系即定义了该类型。</strong></li>
+B与C显然是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float这种类型可以通过在Double和Int间定义这些函数的转换关系创造出来。<br>B转A是一种缩减，这种缩减的意义是：我们不需要Float类型的具体中间值，也能运算出结果！<br>所以Float这一类型，或者说任何特定类型的本质都是在定义“涉及该特定类型的转换关系”之间的一种特定变换关系（例如Float类型将指导如何复合floorF和downcast得到floorD）.<br>而这种“涉及该特定类型的转换关系”的特定变换关系，和“各种类型的转换关系”是同构的，而众所周知范畴论从不要求相等，只要求同构，<br><strong>所以一种类型即代表了一种对应该类型的特定变换关系，这种对应该类型的特定变换关系即定义了该类型。</strong></li>
 </ul>
 </li>
 <li><p>（这里是基于co-Yoneda的叙述，但反正本质上没有区别）一种<a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/">来自Bartosz Milewski的理解</a>：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。</p>
@@ -307,9 +307,9 @@ B与C是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float�
 <p><strong>所有</strong>的视点会给出<strong>所有</strong>的信息。</p>
 </blockquote>
 <p>这就是上文所述 Yoneda视角 的本质，也是思维清晰的数学家如此重视态射、交换图、普遍性质等的原因之一（不知道你注意到了吗？）。这些都是关于关系的！当然，这只是一种直觉。实际数学形式是什么样的？那两个推论是什么？我所说的“…物体完全被…决定”究竟是什么意思？什么是“两个物体之间的关系”？我们如何看待“范畴中<em>所有对象的视点</em>”？Yoneda 引理<em>具体</em>是如何捕捉到这一点的？</p>
-<p>这些是我们<a href="#2">下周</a>要回答的问题。<br>顺带一提，想复习一下范畴论吗？这里有几个地方可以起步：<br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/17/what-is-category-theory-anyway">What is Category Theory, Anyway?</a><br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/23/what-is-a-category">What’s a Category?</a><br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/31/what-is-a-functor-part-1">What’s a Functor?</a><br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/2/6/what-is-a-natural-transformation">What’s a Natural Transformation?</a></p>
+<p>这些是我们<a href="#2">下周</a>要回答的问题。<br>顺带一提，想复习一下范畴论吗？可以从这几个地方开始：<br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/17/what-is-category-theory-anyway">What is Category Theory, Anyway?</a><br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/23/what-is-a-category">What’s a Category?</a><br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/31/what-is-a-functor-part-1">What’s a Functor?</a><br><a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/2/6/what-is-a-natural-transformation">What’s a Natural Transformation?</a></p>
 <hr>
-<p>*: 所以数学家是 cocomedian? (那<a target="_blank" rel="noopener" href="https://www.instagram.com/p/BLwhFLFgTbE/?taken-by=math3ma">comathematician</a>是什么?)（译者注：co-这一词根前缀在范畴论中被大量应用，用来表达对偶的、相反的等意味。哇，这岂不是可以说明 coconut 其实就是 nut？）<br>**: 参见 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/17/what-is-category-theory-anyway">Exhibit A</a> 和 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2016/9/12/the-most-obvious-secret-in-mathematics">Exhibit B</a> 和 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property">Exhibit C</a> 和 <a target="_blank" rel="noopener" href="https://twitter.com/math3ma/status/894700378792611840">Exhibit D</a> 和 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/2/22/crumbs">Exhibit E</a>, 作为例证</p>
+<p>*: 所以数学家是 cocomedian? (那<a target="_blank" rel="noopener" href="https://www.instagram.com/p/BLwhFLFgTbE/?taken-by=math3ma">comathematician</a>是什么?)（译者注：co-这一词根前缀在范畴论中被大量应用，用来表达“对偶的”“反方向的”等意味。哇，这岂不是可以说明 coconut 其实就是 nut？）<br>**: 参见 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/1/17/what-is-category-theory-anyway">Exhibit A</a> 和 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2016/9/12/the-most-obvious-secret-in-mathematics">Exhibit B</a> 和 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property">Exhibit C</a> 和 <a target="_blank" rel="noopener" href="https://twitter.com/math3ma/status/894700378792611840">Exhibit D</a> 和 <a target="_blank" rel="noopener" href="http://www.math3ma.com/mathema/2017/2/22/crumbs">Exhibit E</a>, 作为例证</p>
 <h2 id="2-x2F-3：米田嵌入-The-Yoneda-Embedding"><a href="#2-x2F-3：米田嵌入-The-Yoneda-Embedding" class="headerlink" title="2&#x2F;3：米田嵌入(The Yoneda Embedding)"></a>2&#x2F;3：<a name="2"></a>米田嵌入(The Yoneda Embedding)</h2><p><em>本部分翻译自 <a target="_blank" rel="noopener" href="https://www.math3ma.com/blog/the-yoneda-embedding">https://www.math3ma.com/blog/the-yoneda-embedding</a></em></p>
 <p><a href="#1">上周</a>我们开始探讨Yoneda引理。然而，我们并没有直接陈述Yoneda引理本身（因为缺乏动机），而是“悠闲地漫步”于其推论之一———Yoneda视角，也就是：</p>
 <blockquote>
@@ -343,7 +343,7 @@ B与C是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float�
 <blockquote>
 <p>“一个对象‘完全由…确定’”意味着你知道它是在同构的意义下等价(up to isomorphism)的。</p>
 </blockquote>
-<p>说“一个对象X完全由…确定”意味着X<a target="_blank" rel="noopener" href="https://www.math3ma.com/blog/up-to-isomorphism">在同构的意义下</a>是唯一由省略号处内容所表征的对象。比如在本部分第一段中，省略号处对应的是“它们与其他对象的关系”。（尽管通常来说省略号处是一个<a target="_blank" rel="noopener" href="https://jeremykun.com/2013/05/24/universal-properties/">普适性质</a>。这很正常。根据<a href="#1">Yoneda视角</a>，这两种填在省略号处的内容没啥区别！（译者注：确实不知道怎么翻译该句”the two addendums go hand in hand”，此处的两种addendums可能指的是追加在省略号处的可以是“对象带有的普适性质&#x2F;对象的定义蕴含的属性”，也可以是上文的“对象与其他对象的关系”，而这两种答案本质上是一样的））重点在于，如果Y与X以<em>相同</em>的方式与C中的<em>所有</em>其他对象联系——也就是说，如果从整个范畴的视点看，Y看起来就像X一样——那么X和Y一定是同构的。</p>
+<p>说“一个对象X完全由…确定”意味着X作为由省略号处内容所表征的对象，其<a target="_blank" rel="noopener" href="https://www.math3ma.com/blog/up-to-isomorphism">在同构的意义下</a>是唯一的。比如在本部分第一段中，省略号处对应的是“它们与其他对象的关系”。（尽管通常来说省略号处是一个<a target="_blank" rel="noopener" href="https://jeremykun.com/2013/05/24/universal-properties/">普适性质</a>。这很正常。根据<a href="#1">Yoneda视角</a>，这两种填在省略号处的内容没啥区别！（译者注：确实不知道怎么翻译该句”the two addendums go hand in hand”，此处的两种addendums可能指的是追加在省略号处的可以是“对象带有的普适性质&#x2F;对象的定义蕴含的属性”，也可以是上文的“对象与其他对象的关系”，而这两种答案本质上是一样的））重点在于，如果Y与X以<em>相同</em>的方式与C中的<em>所有</em>其他对象联系——也就是说，如果从整个范畴的视点看，Y看起来就像X一样——那么X和Y一定是同构的。</p>
 <p>例如，假设X和Y是拓扑空间，令$\cdot$表示单点空间，$I$和$S^1$表示单位区间和圆。那么我们有，</p>
 <ul>
 <li>X和Y具有相同的势(cardinality)当且仅当 $\text{hom}(\bullet,X) \cong \text{hom}(\bullet,Y)$</li>
@@ -355,13 +355,16 @@ B与C是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float�
 <hr>
 <p>在确立这些数学形式之后，“一个对象X完全由X与其他对象的关系所确定”这个说法现在可以明确为两个要点：</p>
 <blockquote>
-<p><strong>要点 #1.</strong> 关于X的一切我们需要知道的东西都被编码在$\text{hom}(-,X)$中。实际上，对象X<strong>表示</strong>了函子$\text{hom}(-,X)$.<br><strong>要点 #2.</strong> 当且仅当它们所表示的函子$\text{hom}(-,X)$和$\text{hom}(-,Y)$同构时，X和Y才是同构的。</p>
+<p><strong>要点 #1.</strong> 关于X的一切我们需要知道的东西都被编码在$\text{hom}(-,X)$中。实际上，对象X<strong>表示</strong>了函子$\text{hom}(-,X)$. </p>
+</blockquote>
+<blockquote>
+<p><strong>要点 #2.</strong> 当且仅当它们所表示的函子$\text{hom}(-,X)$和$\text{hom}(-,Y)$同构时，X和Y才是同构的。</p>
 </blockquote>
 <p>我们现在先考虑第一点，之后再重新审视第二点。所以我们真的能够像第一点说的那样用一个函子来确定一个对象吗？显然存在一个指派<br>$$X \mapsto \text{hom}(-, X)$$<br>这是因为范畴 $\mathbf{C}$ 中的任何对象 $X$ 都对应于一个函子 $\text{hom}(-,X)$，那么这个函子存在于… 呃… 在哪呢？$\text{hom}(-,X)$ 位于哪里？它也存在于一个范畴中！正如我们很久以前提到的，存在一个范畴 $\mathbf{Set}^{ \mathbf{C}^{op} }$ ，它的对象是从 $\mathbf{C}^{op}$ 到 $\mathbf{Set}$ 的函子，而其态射是自然变换。因此，存在一个函子 $\mathscr{Y}: \mathbf{C} \rightarrow \mathbf{Set}^{ \mathbf{C}^{op} }$，它将对象 $X$ 映射到 $\text{hom}(-, X)$，将一个态射 $f: X \rightarrow Y$ 映射到自然变换 $f_*: \text{hom}(-, X) \rightarrow \text{hom}(-, Y)$（你自己应该能验证）。这个自然变换的每个分量都是通过与 $f$ 后合成(postcomposing)得到的。在范畴 $\mathbf{Set}^{ \mathbf{C}^{op} }$ 中的函子被称为预层(presheaf)，我们感兴趣的预层，即形式为 $\text{hom}(-,X)$ 的预层，被称为<strong>可表示函子</strong>(representable functors)。但是我们需要证明这个命名是否合理： $X$ 真正地、忠实地且最大限度地<em>表示</em>函子 $\text{hom}(-, X)$ 吗？</p>
-<p>答案是肯定的，但有一个条件：当 $\mathscr{Y}$ 将 $X$ 发送到预层范畴时，它必须<em>保留</em> $X$ 与 $\mathbf{C}$ 中对象之间的关系。换句话说，对于 $X$ 和 $Y$ 之间的每个关系，应恰好存在<em>一个</em>关系（自然变换）在$\text{hom}(-, X)$ 和 $\text{hom}(-, Y)$ 之间。更正式地说，对于 $\mathbf{C}$ 中的每对 $X$ 和 $Y$，由 $f \mapsto f_*$ 定义的函数<br>$$\text{hom}(X, Y) \rightarrow \mathbf{Nat}(\text{hom}(-, X), \text{hom}(-, Y))$$<br>应该是一个双射。（记号 $\mathbf{Nat}(-,-)$ 表示从 [留空] 到 [留空] 的自然变换集合（译者注：留空即为在该处使用 $-$ 处填入的对象填空）） 。如果 $\mathscr{Y}$ 满足这个条件，则称其为全忠实(fully faithful)*的并且被称它将范畴 $\mathbf{C}$ <strong>嵌入</strong>到 $Set^{C^{op} }$ 中。</p>
+<p>答案是肯定的，但有一个条件：当 $\mathscr{Y}$ 将 $X$ 发送到预层范畴时，它必须<em>保留</em> $X$ 与 $\mathbf{C}$ 中对象之间的关系。换句话说，对于 $X$ 和 $Y$ 之间的每个关系，应恰好存在<em>一个</em>关系（自然变换）在$\text{hom}(-, X)$ 和 $\text{hom}(-, Y)$ 之间。更正式地说，对于 $\mathbf{C}$ 中的每对 $X$ 和 $Y$，由 $f \mapsto f_*$ 定义的函数<br>$$\text{hom}(X, Y) \rightarrow \mathbf{Nat}(\text{hom}(-, X), \text{hom}(-, Y))$$<br>应该是一个双射。（记号 $\mathbf{Nat}(-,-)$ 表示从 [留空] 到 [留空] 的自然变换集合（译者注：留空即为在该处使用 $-$ 处填入的对象填空）） 。如果 $\mathscr{Y}$ 满足这个条件，则称其为全忠实(fully faithful)*的并且称它将范畴 $\mathbf{C}$ <strong>嵌入</strong>到 $Set^{C^{op} }$ 中。</p>
 <p><img src="/yoneda/embed.jpg" loading="lazy"></p>
 <p>但问题来了：</p>
-<p>将 $f$ 映射到 $f_*$ 的函数<br>$$\text{hom}(X, Y) \rightarrow \mathbf{Nat}(\text{hom}(-, X), \text{hom}(-, Y))$$<br>真的是一个双射吗？</p>
+<p>这个把 $f$ 映射到 $f_*$ 的函数<br>$$\text{hom}(X, Y) \rightarrow \mathbf{Nat}(\text{hom}(-, X), \text{hom}(-, Y))$$<br>真的是一个双射吗？</p>
 <p>单射性是显然的：如果 $f, g: X \rightarrow Y$ 是不同的态射，则它们的推出(pushforward) $f_*$ 和 $g_*$ 显然是不同的。但，满射性呢？给定任意的自然变换 $\eta: \text{hom}(-, X) \rightarrow \text{hom}(-, Y)$，是否真的存在一个态射 $f: X \rightarrow Y$ 使得 $\eta &#x3D; f_*$？也就是说，<br><strong><em>每个</em>可表示函子之间的自然变换，是否都来自于表示了它们的对象之间的态射？</strong></p>
 <p>可能存在大量的自然变换 $\text{hom}(-, X)$ 和 $\text{hom}(-, Y)$！似乎不能指望其中的每个都来自于一个 $X \rightarrow Y$ 的态射。</p>
 <p>然而，奇怪的是，真就是这样的！</p>
@@ -379,7 +382,10 @@ B与C是等价的。<br>A转B是一种扩展，这种扩展的意义是：Float�
 <p>欢迎来到关于Yoneda引理的第三部分，也是最后一部分！在过去的几周里，我们慢慢揭示了<a href="#1">Yoneda视角</a>背后的数学，即一个对象完全由其与其他对象的关系所决定这一范畴论里的原则(maxim)。</p>
 <p><a href="#2">上周</a>，我们将这一原则分成了两点：</p>
 <blockquote>
-<p><strong>要点 #1.</strong> 关于X的一切我们需要知道的东西都被编码在$\text{hom}(-,X)$中。实际上，对象X<strong>表示</strong>了函子$\text{hom}(-,X)$.<br><strong>要点 #2.</strong> 当且仅当它们所表示的函子$\text{hom}(-,X)$和$\text{hom}(-,Y)$同构时，X和Y才是同构的。</p>
+<p><strong>要点 #1.</strong> 关于X的一切我们需要知道的东西都被编码在$\text{hom}(-,X)$中。实际上，对象X<strong>表示</strong>了函子$\text{hom}(-,X)$. </p>
+</blockquote>
+<blockquote>
+<p><strong>要点 #2.</strong> 当且仅当它们所表示的函子$\text{hom}(-,X)$和$\text{hom}(-,Y)$同构时，X和Y才是同构的。</p>
 </blockquote>
 <p>注意到第一点其实是在以不那么严谨的方式表达Yoneda嵌入 $\mathscr{Y}: \mathbf{C} \rightarrow \mathbf{Set}^{op}$ （它将一个对象 $X$ 映射到函子 $\text{hom}(-,X)$）是全忠实的。换句话说，从 $\text{hom}(X,Y)$（一组态射的集合）到 $\mathbf{Nat}(\text{hom}(-,X), \text{hom}(-,Y))$（一组自然变换的集合）的函数将 $f$ 映射到 $f_*$，而这是一个双射。（此处 $f_*$ 将任一个态射 $g:Z\rightarrow X$ 映射到这样的复合： $f\circ g:Z\rightarrow Y$（译者注：也就是与f后复合））。</p>
 <p>这意味着对于每个 $f:X\rightarrow Y$，存在<em>恰好一个</em>由 $f$ 自身构造出(cooked up)的自然变换 $\text{hom}(-,X)\rightarrow \text{hom}(-,Y)$. 反过来，如果 $\eta:\text{hom}(-,X)\rightarrow \text{hom}(-,Y)$ 是任一自然变换，则存在<em>恰好一个</em>由 $\eta$ 自身得到的态射 $X\rightarrow Y$. </p>

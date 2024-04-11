@@ -18,8 +18,8 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="Stack" />
     <category term="BST" />
+    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -35,7 +35,7 @@
     <category term="PHP" />
     <category term="Math" />
     <category term="Translation" />
-    <category term="Theorem" />
+    <category term="Yoneda Lemma" />
     <entry>
         <id>http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/</id>
         <title>洛谷:P1967 货车运输</title>
