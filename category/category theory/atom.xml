@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;category theory&#34; category</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-07T18:38:20.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -17,9 +17,9 @@
     <category term="ProgrammingLanguage" />
     <category term="冰菓" />
     <category term="古籍研究社" />
-    <category term="Stack" />
     <category term="Treap" />
     <category term="BST" />
+    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -51,7 +51,7 @@
 &lt;li&gt;（如果X是一种等价关系）按照X关系划分不同等价类，如果对象在一个等价类里则视为相同&lt;br&gt;例如：“在同构意义下等价”指的是在这种视角下，如果两个不同的对象至多只是相差一个同构关系，那么我们认为他们就是一个对象；”up to permutations”可理解为“不考虑置换带来的差异时相同”；5, 8, 11在模3的意义下等价。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;$ \mathbf{Set}^{ \mathbf{C} } $ 表示一个函子范畴，其中的函子是 $ \mathbf{C} \rightarrow { \mathbf{Set} } $. 为了方便书写（$\mathbf{C}$ 所指代的范畴没有什么歧义时），本文有时会如此简写：&lt;br&gt;$$&lt;br&gt;\mathbf{Set} :&amp;#x3D; \mathbf{Set}^{ \mathbf{C} } \&lt;br&gt;\mathbf{Set}^{op} :&amp;#x3D; \mathbf{Set}^{ \mathbf{C}^{op} }&lt;br&gt;$$ 这一记号有时在其他文章中记作 $\mathbf{Funct}(\mathbf{C},\mathbf{Set})$&lt;/li&gt;
+&lt;li&gt;$ \mathbf{Set}^{ \mathbf{C} } $ 表示一个函子范畴，其中的函子是 $ \mathbf{C} \rightarrow { \mathbf{Set} } $. 为了方便书写（$\mathbf{C}$ 所指代的范畴没有什么歧义时），本文有时会如此简写：&lt;br&gt;$$ \mathbf{Set} :&amp;#x3D; \mathbf{Set}^{ \mathbf{C} }&lt;br&gt;$$ $$ \mathbf{Set}^{op} :&amp;#x3D; \mathbf{Set}^{ \mathbf{C}^{op} } $$ 这一记号有时在其他文章中记作 $\mathbf{Funct}(\mathbf{C},\mathbf{Set})$&lt;/li&gt;
 &lt;li&gt;对于范畴C中的态射我们记作 $ \text{hom}_\mathbf{C}(X, Y) $，类似地，对 $\mathbf{C}$ 没有歧义时简写为$ \text{hom}(X, Y) $&lt;ul&gt;
 &lt;li&gt;形如 $ \text{hom}(A, -): \mathbf{Set}^{ \mathbf{C} }$ 的记号代表一个函子，它将A发送到“所有从A出发的态射构成的集合”；这一记号有时在其他文章中记作 $h_A$&lt;/li&gt;
 &lt;li&gt;形如 $ \text{hom}(-, A): \mathbf{Set}^{ \mathbf{C}^{op} } $ 的记号代表一个函子，它将A发送到“所有以A为目标的态射构成的集合”，这一记号有时在其他文章中记作 $h^A$&lt;/li&gt;
