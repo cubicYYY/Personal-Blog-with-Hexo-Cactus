@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;theorem&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-07T18:38:20.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -22,8 +22,8 @@
     <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="数链剖分" />
     <category term="Splay" />
+    <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
     <category term="树状数组" />
@@ -85,7 +85,7 @@
 &lt;li&gt;&lt;p&gt;（这里是基于co-Yoneda的叙述，但反正本质上没有区别）一种&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;来自Bartosz Milewski的理解&lt;/a&gt;：任何数据类型 T 都可以被一个函数 f 所取代。f 接受一个T的“处理器”handler（这个handler会把T转成目标类型） 并执行其余计算——即是续延（Continuation）。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Haskell表述： &lt;code&gt;forall x . (t -&amp;gt; x) -&amp;gt; F x ≅ F t&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/trackback/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x装起来变成可以装x类型的容器而已（我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身）。假设容器一开始只能装x类型的，但是如果对所有可能的类型x，有handler: t-&amp;gt;x可以转化成一个装有x类型的容器，那么这个容器事实上就是可以装t类型的。&lt;/li&gt;
+&lt;li&gt;我们可以把函子看成一种广义的容器（参见：&lt;a href=&#34;https://bartoszmilewski.com/2014/01/14/functors-are-containers/trackback/&#34;&gt;Functors are Containers&lt;/a&gt;），所以左边就是把t转成x，然后变成F x这一步只是把x装起来变成可以装x类型的容器而已（我们并不关心这个F对x做了什么，我们关心的是“F对x的确做了些什么”这个事实本身——所以把F x当作一个容器好了，只需要把x放进去然后盖上盖子，不去理睬里面发生了什么）。假设容器一开始只能装x类型，但是如果对所有可能的类型x，“装入t类型为F t”这事都能通过handler: t-&amp;gt;x转化为“装入x类型为F x”，那么这个容器事实上就是可以装t类型的。&lt;/li&gt;
 &lt;li&gt;译者的理解是，如果不把&lt;code&gt;F x&lt;/code&gt;看作容器，而是看成类型构造器，那么可以这么解释：基于t构造新类型的实质，就是需要从每个t类型值构造新的F t类型值（所以在这种视角下，没有具体的转换细节，我们只知道有一个新类型F t带来新的关系，这些新的关系从旧关系导出）。对任意可能的类型x，每个t类型值都对应一种自己的&lt;em&gt;转换方式&lt;/em&gt;，使得各个handler: t-&amp;gt;x（某种意义上是关系）分别转化为一个值v，v的类型是基于x构造的新类型F x。 &lt;strong&gt;或者说，每个类型x都可以要求一个能把t值转化为x值的handler，而后用构造器F构造新类型时，就可以从handler这些旧有关系导出新类型F t与其他新类型F x之间的新关系；因为这些handler把类型t的运算细节“包办”了。&lt;/strong&gt; 对于任意类型x，任意的handler都有这种&lt;em&gt;转换方式&lt;/em&gt;（共同构成每个x的自然变换）。因此，应用类型构造器F时，类型t的每个值都会指导形如(t-&amp;gt;…)的handler该如何转换为(F t-&amp;gt;F…)，而这些自然变换构成了t类型存在的全部意义。所有和t有关的运算都可以视为一种类型构造，因此类型t的意义只有在运算中才会得到显现，一个不参与运算（不构造新类型）的类型没有任何存在价值，这符合直觉。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
