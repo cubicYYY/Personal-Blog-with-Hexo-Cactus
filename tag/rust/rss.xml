@@ -23,12 +23,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
-        <category>ProgrammingLanguage</category>
+        <category>Programming</category>
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
         <category>Stack</category>
+        <category>BST</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
@@ -42,9 +42,16 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2023/09/05/rust-lifetime/</guid>
             <title>Rust类型系统中的生命周期</title>
@@ -52,7 +59,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <category>Rust</category>
             <category>Lifetime</category>
             <category>Code</category>
-            <category>ProgrammingLanguage</category>
+            <category>Programming</category>
             <pubDate>Tue, 05 Sep 2023 00:14:45 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Rust类型系统中的生命周期&#34;&gt;&lt;a href=&#34;#Rust类型系统中的生命周期&#34; class=&#34;headerlink&#34; title=&#34;Rust类型系统中的生命周期&#34;&gt;&lt;/a&gt;Rust类型系统中的生命周期&lt;/h1&gt;&lt;p&gt;&lt;em&gt;[2024-04-11 更新] 修正了一些错误，采纳了一些读者反馈可以增加的解释，在此表示感谢。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Rust的生命周期应被视为类型系统的一部分。这是我的粗浅理解，理解错误难免，若发现恳请斧正！&lt;br&gt;以下几节试图渐进地、但从不同角度理解该问题；只要看懂一节也许就足够了，所以可以都看看？&lt;br&gt;&lt;strong&gt;提示：如果您有函数式编程基础，这篇文章看起来会很幼稚。“不就是一堆monad吗？”&lt;/strong&gt;&lt;/p&gt;

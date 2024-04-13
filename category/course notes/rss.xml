@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Cubic Y³ • Posts by &#34;course notes&#34; category</title>
+        <link>http://cubicy.icu</link>
+        <description>Notes, CTF, DIY, thoughts and waifus.
+
+I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
+Learning: Electric guitar
+❤❤❤ CTF, toy projects, anime
+✖✖✖ Technological supremacy
+Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
+        <lastBuildDate>Sun, 14 Apr 2024 01:10:20 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
+        <category>CISCN</category>
+        <category>web</category>
+        <category>Hackergame</category>
+        <category>SchoolBus</category>
+        <category>Rust</category>
+        <category>Lifetime</category>
+        <category>Code</category>
+        <category>Programming</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
+        <category>Treap</category>
+        <category>Stack</category>
+        <category>BST</category>
+        <category>图论</category>
+        <category>Kruskal</category>
+        <category>Splay</category>
+        <category>数链剖分</category>
+        <category>持久化</category>
+        <category>线段树</category>
+        <category>树状数组</category>
+        <category>LCA</category>
+        <category>分块</category>
+        <category>哈希</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
+        <category>Math</category>
+        <category>Translation</category>
+        <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
+        <item>
+            <guid isPermalink="true">http://cubicy.icu/compiler-construction-principles/</guid>
+            <title>编译原理课程笔记</title>
+            <link>http://cubicy.icu/compiler-construction-principles/</link>
+            <category>Compiler</category>
+            <category>Computer Science</category>
+            <category>On Going</category>
+            <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
+&lt;p&gt;相关课程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://web.stanford.edu/class/cs143/&#34;&gt;Stanford课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/6035/sp21&#34;&gt;MIT课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://inst.eecs.berkeley.edu/~cs164/fa21/&#34;&gt;UCBerkeley课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;分数构成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;课程作业(课后小型练习题) &amp;#x3D; 10%&lt;/li&gt;
+&lt;li&gt;随堂测验&amp;#x3D; 10%&lt;/li&gt;
+&lt;li&gt;期中考试&amp;#x3D; 15%&lt;/li&gt;
+&lt;li&gt;综合性课程设计&amp;#x3D; 25%&lt;/li&gt;
+&lt;li&gt;期末考试&amp;#x3D; 40%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前置知识：计算理论（笔记参考&lt;a href=&#34;https://note.tonycrane.cc/cs/tcs/toc/&#34;&gt;https://note.tonycrane.cc/cs/tcs/toc/&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;Part-1-简介&#34;&gt;&lt;a href=&#34;#Part-1-简介&#34; class=&#34;headerlink&#34; title=&#34;Part 1: 简介&#34;&gt;&lt;/a&gt;Part 1: 简介&lt;/h2&gt;&lt;p&gt;基本概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中间代码&amp;#x3D;Intermediate Code&lt;/li&gt;
+&lt;li&gt;词法分析&amp;#x3D;Lexing&amp;#x2F;Scanning&amp;#x2F;LexicalAnalysis&lt;/li&gt;
+&lt;li&gt;语法分析&amp;#x3D;Parsing&amp;#x2F;SyntaxAnalysis&lt;/li&gt;
+&lt;li&gt;中间表示&amp;#x3D;IR&amp;#x3D;Intermediate Representation&lt;/li&gt;
+&lt;li&gt;树型中间表示&amp;#x3D;IR Tree&lt;/li&gt;
+&lt;li&gt;前端&amp;#x3D;，后端&amp;#x3D;&lt;br&gt;略。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Part-2-词法分析&#34;&gt;&lt;a href=&#34;#Part-2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析&#34;&gt;&lt;/a&gt;Part 2: 词法分析&lt;/h2&gt;&lt;h3 id=&#34;词法分析概述&#34;&gt;&lt;a href=&#34;#词法分析概述&#34; class=&#34;headerlink&#34; title=&#34;词法分析概述&#34;&gt;&lt;/a&gt;词法分析概述&lt;/h3&gt;&lt;p&gt;将输入字符串识别为有意义的子串。（把基本单元划分好）&lt;br&gt;(Token单词, Lexeme词素(可选)) e.g. (IF, ) (ELSE, ) (BINARY_OP, &amp;gt;&amp;#x3D;) (UNARY_OP, &amp;amp;)&lt;/p&gt;
+&lt;h3 id=&#34;正则表达式&#34;&gt;&lt;a href=&#34;#正则表达式&#34; class=&#34;headerlink&#34; title=&#34;正则表达式&#34;&gt;&lt;/a&gt;正则表达式&lt;/h3&gt;&lt;p&gt;Regex Expression &amp;#x3D; RE&lt;br&gt;运算：连接concatenation + 幂Power&lt;br&gt;e.g.: $ ab(a|b)^3c^* $&lt;br&gt;下略。&lt;/p&gt;
+&lt;h3 id=&#34;有穷自动机&#34;&gt;&lt;a href=&#34;#有穷自动机&#34; class=&#34;headerlink&#34; title=&#34;有穷自动机&#34;&gt;&lt;/a&gt;有穷自动机&lt;/h3&gt;&lt;p&gt;相关概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NFA&amp;#x2F;DFA：略&lt;/li&gt;
+&lt;li&gt;子集构造法subsetconstruction(NFA-&amp;gt;DFA)&lt;ul&gt;
+&lt;li&gt;DFA的每个状态是NFA的状态集合的一个子集&lt;/li&gt;
+&lt;li&gt;读了输入ai后NFA能到达的所有状态：s1,s2,…,sk，则DFA到达一个状态，对应于NFA的{s1,s2,…,sk}&lt;/li&gt;
+&lt;li&gt;NFA状态(集)上的一些操作定义&lt;ul&gt;
+&lt;li&gt;ε-closure(s):&amp;#x3D; NFA状态s的ε-闭包:s经ε转换所能到达的状态集合&lt;/li&gt;
+&lt;li&gt;ε-closure(T):&amp;#x3D; T中所有状态的ε-闭包的并集,即 $ \cup_{s\in T}{\epsilon-closure(s)} $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;过程&lt;ol&gt;
+&lt;li&gt;NFA的初始状态的ε-闭包对应于DFA的初始状态&lt;/li&gt;
+&lt;li&gt;针对每个DFA状态(对应NFA状态子集A)，求输入每个ai后能到达的NFA状态的ε-闭包并集（NFA从状态集A出发，读入ai后能到达的状态集合） $$ S&amp;#x3D;\epsilon-closure(move(A,a_i)) $$&lt;/li&gt;
+&lt;li&gt;该集合S要么对应于DFA中的一个已有状态，要么是一个要新加的DFA状态&lt;/li&gt;
+&lt;li&gt;逐步构造DFA的状态转换表，直到不动点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Thumpson构造法(RE-&amp;gt;NFA)：略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;词法分析器自动生成&#34;&gt;&lt;a href=&#34;#词法分析器自动生成&#34; class=&#34;headerlink&#34; title=&#34;词法分析器自动生成&#34;&gt;&lt;/a&gt;词法分析器自动生成&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;DFA最小化（-&amp;gt;状态最小的DFA，在同构意义下唯一）&lt;/li&gt;
+&lt;li&gt;可区分状态：存在串s使其分别从状态s、t出发，一个接受串s，一个拒绝串s，则s与t可区分&lt;/li&gt;
+&lt;li&gt;步骤：&lt;ol&gt;
+&lt;li&gt;初始等价类里，仅有接受状态集合和非接受状态集合&lt;/li&gt;
+&lt;li&gt;不断用所有可能的输入应用于各个集合。只有集合G的每个状态读入同一字符后，都落入（包含在）相同的某个集合，那么就不用细分&lt;/li&gt;
+&lt;li&gt;不断重复2直到不动点&lt;/li&gt;
+&lt;li&gt;此时等价类中的每个集合即对应最小DFA的一个状态。在其上可以轻松构建min-DFA，该过程是trivial的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;可以每个组中选择一个状态作代表。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Lex工具&#34;&gt;&lt;a href=&#34;#Lex工具&#34; class=&#34;headerlink&#34; title=&#34;Lex工具&#34;&gt;&lt;/a&gt;Lex工具&lt;/h3&gt;&lt;p&gt;通常和Yacc一起使用，生成编译器的前端。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;声明部分&lt;ul&gt;
+&lt;li&gt;常量：常数标识符&lt;/li&gt;
+&lt;li&gt;正则规则定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;转换规则模式{动作}&lt;ul&gt;
+&lt;li&gt;模式&amp;#x3D;正则表达式&lt;/li&gt;
+&lt;li&gt;动作&amp;#x3D;识别到相应模式时应调用的处理函数（一般以C语言代码表示）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;辅助函数：动作中使用的函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解决冲突：最长匹配，较前规则优先&lt;/p&gt;
+&lt;h2 id=&#34;Part-2-词法分析（1）&#34;&gt;&lt;a href=&#34;#Part-2-词法分析（1）&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析（1）&#34;&gt;&lt;/a&gt;Part 2: 词法分析（1）&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -14,12 +14,12 @@
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
-    <category term="ProgrammingLanguage" />
+    <category term="Programming" />
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
     <category term="Stack" />
+    <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -33,9 +33,16 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/2021/11/09/WriteUp%20%E6%97%A5%E5%93%ADschool-bus%20%E4%B8%8A%E4%BA%86%E9%82%A3%E4%B8%AAwriteup/</id>
         <title>WriteUp 日哭school-bus 上了那个writeup</title>

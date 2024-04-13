@@ -23,12 +23,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
-        <category>ProgrammingLanguage</category>
+        <category>Programming</category>
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
         <category>Stack</category>
+        <category>BST</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
@@ -42,9 +42,16 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/yoneda/</guid>
             <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
@@ -283,7 +290,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;hr&gt;
 &lt;p&gt;*证明：设 $h : F(X) \rightarrow F(Y)$ 是具有逆 $h^{-1}$ 的同构。由于 $F$ 是全忠实的，存在唯一的态射 $f : X \rightarrow Y$ 使得 $Ff &amp;#x3D; h$ 。类似地，存在唯一的态射 $g : Y \rightarrow X$ 使得 $Fg &amp;#x3D; h^{-1}$ 。因此，&lt;br&gt;$$ \text{id}_{F(X)} &amp;#x3D; h^{-1} \circ h &amp;#x3D; Fg \circ Ff &amp;#x3D; F(fg). $$&lt;br&gt;但 $F(\text{id}_X)$ 映射到 $ \text{id}_{F(X)} $ ，因此由于 $F$ 是忠实的，有 $fg &amp;#x3D; \text{id}_X$ 。类似的论证可证明 $gf &amp;#x3D; \text{id}_Y$ 。因此， $f$ 是一个同构。&lt;/p&gt;
 &lt;h2 id=&#34;译后记&#34;&gt;&lt;a href=&#34;#译后记&#34; class=&#34;headerlink&#34; title=&#34;译后记 &#34;&gt;&lt;/a&gt;译后记 &lt;a name=&#34;postlude&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;译者的知识水平非常有限，难免有一些错误，希望读者见谅，也欢迎斧正。比如在序言部分对引理的解读是否有失偏颇乃至存在误导？&lt;br&gt;此外，这是我第一次正经翻译文章，所以也期盼在结构、句式、术语上的翻译建议&lt;code&gt;:)&lt;/code&gt;&lt;br&gt;例如，本文将”vantage point”翻译为“视点”，将”cooked up from”翻译为“由……构造而来”，”gives rise to”翻译为“取决于”，不知是否有更优的选择。&lt;br&gt;欢迎交流探讨^_^&lt;/p&gt;
-&lt;h2 id=&#34;译者推荐阅读&#34;&gt;&lt;a href=&#34;#译者推荐阅读&#34; class=&#34;headerlink&#34; title=&#34;译者推荐阅读&#34;&gt;&lt;/a&gt;译者推荐阅读&lt;/h2&gt;&lt;p&gt;如果你喜欢可视化或偏直觉的阐释，请务必读一读：&lt;br&gt;&lt;a href=&#34;https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/trackback/&#34;&gt;Category Theory for Programmers: The Preface&lt;/a&gt; （对应章节：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;The Yoneda Lemma&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;译者推荐阅读&#34;&gt;&lt;a href=&#34;#译者推荐阅读&#34; class=&#34;headerlink&#34; title=&#34;译者推荐阅读&#34;&gt;&lt;/a&gt;译者推荐阅读&lt;/h2&gt;&lt;p&gt;如果你喜欢可视化或偏直觉的阐释，请务必读一读：&lt;br&gt;&lt;a href=&#34;https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/trackback/&#34;&gt;Category Theory for Programmers: The Preface (by Bartosz Milewski)&lt;/a&gt; （本文对应章节：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;The Yoneda Lemma&lt;/a&gt;）&lt;br&gt;偏数学方向的推荐：&lt;br&gt;&lt;a href=&#34;https://www.wwli.asia/downloads/books/Al-jabr-1.pdf&#34;&gt;代数学方法：第一卷（李文威 著）&lt;/a&gt;&lt;br&gt;偏计算机方向的推荐：&lt;br&gt;&lt;a href=&#34;https://people.mpi-sws.org/~dreyer/courses/catlogic/jacobs.pdf&#34;&gt;Categorical Logic and Type Theory (by B. Jacobs)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

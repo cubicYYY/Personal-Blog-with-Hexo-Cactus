@@ -3,7 +3,7 @@
     <id>http://cubicy.icu</id>
     <title>Cubic Y³</title>
     <link href="http://cubicy.icu" />
-    <updated>2024-04-07T18:38:20.000Z</updated>
+    <updated>2024-04-13T17:45:01.000Z</updated>
     <category term="Misc" />
     <category term="Write-Up" />
     <category term="出题" />
@@ -14,12 +14,12 @@
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
-    <category term="ProgrammingLanguage" />
+    <category term="Programming" />
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
     <category term="Stack" />
+    <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -33,9 +33,125 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
+    <entry>
+        <id>http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</id>
+        <title>赛博疑难杂症药方</title>
+        <link rel="alternate" href="http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/"/>
+        <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;ul&gt;
+&lt;li&gt;可能是submodule导致，即使删除子模块的&lt;code&gt;.git&lt;/code&gt;文件夹也不足够，还需要&lt;code&gt;git rm --cached&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;电脑怎样都没有声音，声卡等硬件均无问题，驱动没有更改过&lt;ul&gt;
+&lt;li&gt;检查是否是Windows更新导致，可以回滚&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;远程桌面出现奇奇怪怪的渲染问题&lt;ul&gt;
+&lt;li&gt;可能是由于远程设备没有连接屏幕，需要保持屏幕开启；或者使用虚拟显示器（Virtual display）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="Miscellaneous" />
+        <updated>2024-04-13T17:45:01.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://cubicy.icu/compiler-construction-principles/</id>
+        <title>编译原理课程笔记</title>
+        <link rel="alternate" href="http://cubicy.icu/compiler-construction-principles/"/>
+        <content type="html">&lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
+&lt;p&gt;相关课程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://web.stanford.edu/class/cs143/&#34;&gt;Stanford课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/6035/sp21&#34;&gt;MIT课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://inst.eecs.berkeley.edu/~cs164/fa21/&#34;&gt;UCBerkeley课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;分数构成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;课程作业(课后小型练习题) &amp;#x3D; 10%&lt;/li&gt;
+&lt;li&gt;随堂测验&amp;#x3D; 10%&lt;/li&gt;
+&lt;li&gt;期中考试&amp;#x3D; 15%&lt;/li&gt;
+&lt;li&gt;综合性课程设计&amp;#x3D; 25%&lt;/li&gt;
+&lt;li&gt;期末考试&amp;#x3D; 40%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前置知识：计算理论（笔记参考&lt;a href=&#34;https://note.tonycrane.cc/cs/tcs/toc/&#34;&gt;https://note.tonycrane.cc/cs/tcs/toc/&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;Part-1-简介&#34;&gt;&lt;a href=&#34;#Part-1-简介&#34; class=&#34;headerlink&#34; title=&#34;Part 1: 简介&#34;&gt;&lt;/a&gt;Part 1: 简介&lt;/h2&gt;&lt;p&gt;基本概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中间代码&amp;#x3D;Intermediate Code&lt;/li&gt;
+&lt;li&gt;词法分析&amp;#x3D;Lexing&amp;#x2F;Scanning&amp;#x2F;LexicalAnalysis&lt;/li&gt;
+&lt;li&gt;语法分析&amp;#x3D;Parsing&amp;#x2F;SyntaxAnalysis&lt;/li&gt;
+&lt;li&gt;中间表示&amp;#x3D;IR&amp;#x3D;Intermediate Representation&lt;/li&gt;
+&lt;li&gt;树型中间表示&amp;#x3D;IR Tree&lt;/li&gt;
+&lt;li&gt;前端&amp;#x3D;，后端&amp;#x3D;&lt;br&gt;略。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Part-2-词法分析&#34;&gt;&lt;a href=&#34;#Part-2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析&#34;&gt;&lt;/a&gt;Part 2: 词法分析&lt;/h2&gt;&lt;h3 id=&#34;词法分析概述&#34;&gt;&lt;a href=&#34;#词法分析概述&#34; class=&#34;headerlink&#34; title=&#34;词法分析概述&#34;&gt;&lt;/a&gt;词法分析概述&lt;/h3&gt;&lt;p&gt;将输入字符串识别为有意义的子串。（把基本单元划分好）&lt;br&gt;(Token单词, Lexeme词素(可选)) e.g. (IF, ) (ELSE, ) (BINARY_OP, &amp;gt;&amp;#x3D;) (UNARY_OP, &amp;amp;)&lt;/p&gt;
+&lt;h3 id=&#34;正则表达式&#34;&gt;&lt;a href=&#34;#正则表达式&#34; class=&#34;headerlink&#34; title=&#34;正则表达式&#34;&gt;&lt;/a&gt;正则表达式&lt;/h3&gt;&lt;p&gt;Regex Expression &amp;#x3D; RE&lt;br&gt;运算：连接concatenation + 幂Power&lt;br&gt;e.g.: $ ab(a|b)^3c^* $&lt;br&gt;下略。&lt;/p&gt;
+&lt;h3 id=&#34;有穷自动机&#34;&gt;&lt;a href=&#34;#有穷自动机&#34; class=&#34;headerlink&#34; title=&#34;有穷自动机&#34;&gt;&lt;/a&gt;有穷自动机&lt;/h3&gt;&lt;p&gt;相关概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NFA&amp;#x2F;DFA：略&lt;/li&gt;
+&lt;li&gt;子集构造法subsetconstruction(NFA-&amp;gt;DFA)&lt;ul&gt;
+&lt;li&gt;DFA的每个状态是NFA的状态集合的一个子集&lt;/li&gt;
+&lt;li&gt;读了输入ai后NFA能到达的所有状态：s1,s2,…,sk，则DFA到达一个状态，对应于NFA的{s1,s2,…,sk}&lt;/li&gt;
+&lt;li&gt;NFA状态(集)上的一些操作定义&lt;ul&gt;
+&lt;li&gt;ε-closure(s):&amp;#x3D; NFA状态s的ε-闭包:s经ε转换所能到达的状态集合&lt;/li&gt;
+&lt;li&gt;ε-closure(T):&amp;#x3D; T中所有状态的ε-闭包的并集,即 $ \cup_{s\in T}{\epsilon-closure(s)} $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;过程&lt;ol&gt;
+&lt;li&gt;NFA的初始状态的ε-闭包对应于DFA的初始状态&lt;/li&gt;
+&lt;li&gt;针对每个DFA状态(对应NFA状态子集A)，求输入每个ai后能到达的NFA状态的ε-闭包并集（NFA从状态集A出发，读入ai后能到达的状态集合） $$ S&amp;#x3D;\epsilon-closure(move(A,a_i)) $$&lt;/li&gt;
+&lt;li&gt;该集合S要么对应于DFA中的一个已有状态，要么是一个要新加的DFA状态&lt;/li&gt;
+&lt;li&gt;逐步构造DFA的状态转换表，直到不动点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Thumpson构造法(RE-&amp;gt;NFA)：略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;词法分析器自动生成&#34;&gt;&lt;a href=&#34;#词法分析器自动生成&#34; class=&#34;headerlink&#34; title=&#34;词法分析器自动生成&#34;&gt;&lt;/a&gt;词法分析器自动生成&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;DFA最小化（-&amp;gt;状态最小的DFA，在同构意义下唯一）&lt;/li&gt;
+&lt;li&gt;可区分状态：存在串s使其分别从状态s、t出发，一个接受串s，一个拒绝串s，则s与t可区分&lt;/li&gt;
+&lt;li&gt;步骤：&lt;ol&gt;
+&lt;li&gt;初始等价类里，仅有接受状态集合和非接受状态集合&lt;/li&gt;
+&lt;li&gt;不断用所有可能的输入应用于各个集合。只有集合G的每个状态读入同一字符后，都落入（包含在）相同的某个集合，那么就不用细分&lt;/li&gt;
+&lt;li&gt;不断重复2直到不动点&lt;/li&gt;
+&lt;li&gt;此时等价类中的每个集合即对应最小DFA的一个状态。在其上可以轻松构建min-DFA，该过程是trivial的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;可以每个组中选择一个状态作代表。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Lex工具&#34;&gt;&lt;a href=&#34;#Lex工具&#34; class=&#34;headerlink&#34; title=&#34;Lex工具&#34;&gt;&lt;/a&gt;Lex工具&lt;/h3&gt;&lt;p&gt;通常和Yacc一起使用，生成编译器的前端。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;声明部分&lt;ul&gt;
+&lt;li&gt;常量：常数标识符&lt;/li&gt;
+&lt;li&gt;正则规则定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;转换规则模式{动作}&lt;ul&gt;
+&lt;li&gt;模式&amp;#x3D;正则表达式&lt;/li&gt;
+&lt;li&gt;动作&amp;#x3D;识别到相应模式时应调用的处理函数（一般以C语言代码表示）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;辅助函数：动作中使用的函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解决冲突：最长匹配，较前规则优先&lt;/p&gt;
+&lt;h2 id=&#34;Part-2-词法分析（1）&#34;&gt;&lt;a href=&#34;#Part-2-词法分析（1）&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析（1）&#34;&gt;&lt;/a&gt;Part 2: 词法分析（1）&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+</content>
+        <category term="Compiler" />
+        <category term="Computer Science" />
+        <category term="On Going" />
+        <updated>2024-04-13T17:10:20.000Z</updated>
+    </entry>
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
         <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
@@ -270,7 +386,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;hr&gt;
 &lt;p&gt;*证明：设 $h : F(X) \rightarrow F(Y)$ 是具有逆 $h^{-1}$ 的同构。由于 $F$ 是全忠实的，存在唯一的态射 $f : X \rightarrow Y$ 使得 $Ff &amp;#x3D; h$ 。类似地，存在唯一的态射 $g : Y \rightarrow X$ 使得 $Fg &amp;#x3D; h^{-1}$ 。因此，&lt;br&gt;$$ \text{id}_{F(X)} &amp;#x3D; h^{-1} \circ h &amp;#x3D; Fg \circ Ff &amp;#x3D; F(fg). $$&lt;br&gt;但 $F(\text{id}_X)$ 映射到 $ \text{id}_{F(X)} $ ，因此由于 $F$ 是忠实的，有 $fg &amp;#x3D; \text{id}_X$ 。类似的论证可证明 $gf &amp;#x3D; \text{id}_Y$ 。因此， $f$ 是一个同构。&lt;/p&gt;
 &lt;h2 id=&#34;译后记&#34;&gt;&lt;a href=&#34;#译后记&#34; class=&#34;headerlink&#34; title=&#34;译后记 &#34;&gt;&lt;/a&gt;译后记 &lt;a name=&#34;postlude&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;译者的知识水平非常有限，难免有一些错误，希望读者见谅，也欢迎斧正。比如在序言部分对引理的解读是否有失偏颇乃至存在误导？&lt;br&gt;此外，这是我第一次正经翻译文章，所以也期盼在结构、句式、术语上的翻译建议&lt;code&gt;:)&lt;/code&gt;&lt;br&gt;例如，本文将”vantage point”翻译为“视点”，将”cooked up from”翻译为“由……构造而来”，”gives rise to”翻译为“取决于”，不知是否有更优的选择。&lt;br&gt;欢迎交流探讨^_^&lt;/p&gt;
-&lt;h2 id=&#34;译者推荐阅读&#34;&gt;&lt;a href=&#34;#译者推荐阅读&#34; class=&#34;headerlink&#34; title=&#34;译者推荐阅读&#34;&gt;&lt;/a&gt;译者推荐阅读&lt;/h2&gt;&lt;p&gt;如果你喜欢可视化或偏直觉的阐释，请务必读一读：&lt;br&gt;&lt;a href=&#34;https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/trackback/&#34;&gt;Category Theory for Programmers: The Preface&lt;/a&gt; （对应章节：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;The Yoneda Lemma&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;译者推荐阅读&#34;&gt;&lt;a href=&#34;#译者推荐阅读&#34; class=&#34;headerlink&#34; title=&#34;译者推荐阅读&#34;&gt;&lt;/a&gt;译者推荐阅读&lt;/h2&gt;&lt;p&gt;如果你喜欢可视化或偏直觉的阐释，请务必读一读：&lt;br&gt;&lt;a href=&#34;https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/trackback/&#34;&gt;Category Theory for Programmers: The Preface (by Bartosz Milewski)&lt;/a&gt; （本文对应章节：&lt;a href=&#34;https://bartoszmilewski.com/2015/09/01/the-yoneda-lemma/trackback/&#34;&gt;The Yoneda Lemma&lt;/a&gt;）&lt;br&gt;偏数学方向的推荐：&lt;br&gt;&lt;a href=&#34;https://www.wwli.asia/downloads/books/Al-jabr-1.pdf&#34;&gt;代数学方法：第一卷（李文威 著）&lt;/a&gt;&lt;br&gt;偏计算机方向的推荐：&lt;br&gt;&lt;a href=&#34;https://people.mpi-sws.org/~dreyer/courses/catlogic/jacobs.pdf&#34;&gt;Categorical Logic and Type Theory (by B. Jacobs)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Math" />
         <category term="Translation" />
@@ -428,6 +544,111 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
         <updated>2023-11-22T09:47:43.000Z</updated>
     </entry>
     <entry>
+        <id>http://cubicy.icu/carpet-fuzz/</id>
+        <title>论文精炼：CarpetFuzz</title>
+        <link rel="alternate" href="http://cubicy.icu/carpet-fuzz/"/>
+        <content type="html">&lt;h1 id=&#34;论文精炼：CarpetFuzz&#34;&gt;&lt;a href=&#34;#论文精炼：CarpetFuzz&#34; class=&#34;headerlink&#34; title=&#34;论文精炼：CarpetFuzz&#34;&gt;&lt;/a&gt;论文精炼：CarpetFuzz&lt;/h1&gt;&lt;h1 id=&#34;CarpetFuzz&#34;&gt;&lt;a href=&#34;#CarpetFuzz&#34; class=&#34;headerlink&#34; title=&#34;CarpetFuzz&#34;&gt;&lt;/a&gt;CarpetFuzz&lt;/h1&gt;&lt;h2 id=&#34;Automatic-Program-Option-Constraint-Extraction-from&#34;&gt;&lt;a href=&#34;#Automatic-Program-Option-Constraint-Extraction-from&#34; class=&#34;headerlink&#34; title=&#34;Automatic Program Option Constraint Extraction from&#34;&gt;&lt;/a&gt;Automatic Program Option Constraint Extraction from&lt;/h2&gt;&lt;p&gt;Documentation for Fuzzing&lt;/p&gt;
+&lt;h2 id=&#34;核心Idea&#34;&gt;&lt;a href=&#34;#核心Idea&#34; class=&#34;headerlink&#34; title=&#34;核心Idea&#34;&gt;&lt;/a&gt;核心Idea&lt;/h2&gt;&lt;p&gt;现代的大规模软件项目往往存在大量程序选项。有些漏洞需要特定参数的组合触发。然而我们不能简单地穷举这些参数的排列组合，因为这会导致工作量指数级别的膨胀。我们注意到许多参数之间存在互斥、依赖等关系，而这些关系正记录在Manual中。因此本篇文章通过NLP的手段从文档中提取参数关系并应用于Fuzzing（基于AFL）中（名为CarpetFuzz，&lt;strong&gt;开源&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;关键参数：&lt;/p&gt;
+&lt;p&gt;参数组合准确性？Precision: 96.10%  Recall: 88.85%&lt;/p&gt;
+&lt;p&gt;和暴力排列相比减少的工作量？68%&lt;/p&gt;
+&lt;p&gt;和一般的Fuzz相比，额外的路径？46%&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这篇paper是比较工程性的工作？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;精华所在是对隐式的选项关系进行提炼，而核心思路是找到不同选项描述中结构类似的句子对，从而得出两个选项的冲突关系。&lt;/p&gt;
+&lt;h2 id=&#34;行文逻辑&#34;&gt;&lt;a href=&#34;#行文逻辑&#34; class=&#34;headerlink&#34; title=&#34;行文逻辑&#34;&gt;&lt;/a&gt;行文逻辑&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;大型项目（Kernel&amp;#x2F;Apache&amp;#x2F;…）结构极其复杂，攻击面广，利用链深。人工审阅代码几乎已经不可能。&lt;strong&gt;自动化是所有软件测试方法的大势所趋，&lt;/strong&gt;包括Fuzz在内的自动化技术被官方探索应用。&lt;/li&gt;
+&lt;li&gt;对于Fuzz而言，覆盖率是金标准（之一）。然而许多项目的覆盖率不够理想，文章认为其中一个原因是&lt;strong&gt;忽视了程序命令行参数&lt;/strong&gt;对程序运行的影响。某些代码块只有在特定参数组合下才存在遍历的可能。&lt;/li&gt;
+&lt;li&gt;然而简单的穷举不可行：ImageMagick有242个不同的选项。参数的常见组合也许是个好想法，文章的idea则是只保留&lt;strong&gt;可行&lt;/strong&gt;组合，而非像先前的一些工作直接把参数纳入变异。&lt;/li&gt;
+&lt;li&gt;难点：选项间的依赖关系在文档中以自然语言描述。Solution：&lt;strong&gt;NLP&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;刁钻的示例（强context）&lt;ul&gt;
+&lt;li&gt;依赖：&lt;code&gt;-o在-g启用时将添加额外调试输出&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;冲突：&lt;code&gt;xx选项仅在正式环境中启用……要切换到正式环境请使用—release&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;NLP具体方法&#34;&gt;&lt;a href=&#34;#NLP具体方法&#34; class=&#34;headerlink&#34; title=&#34;NLP具体方法&#34;&gt;&lt;/a&gt;NLP具体方法&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;给定一个程序的文档&lt;/li&gt;
+&lt;li&gt;CarpetFuzz解析“OPTIONS”部分提取出所有选项及其相应的statement&lt;/li&gt;
+&lt;li&gt;CarpetFuzz使用机器学习来确定statement中是否声明了某种关系&lt;ol&gt;
+&lt;li&gt;由于这样的statement在文档中占比小，文章使用基于熵的不确定性采样（主动学习），来减少人工标记训练数据的工作量。&lt;/li&gt;
+&lt;li&gt;针对上述的隐晦的自然语言statement，解决方案是让CarpetFuzz总结一系列“隐含statement”的特征，并利用NLP找到满足这些特征的所有&lt;strong&gt;“sentence pairs”&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;这样依赖关系就可以被确定，从而构建一个依赖树&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CarpetFuzz正向&amp;#x2F;反向遍历依赖树中找到与关系相关的节点&lt;/strong&gt;*&lt;ol&gt;
+&lt;li&gt;（说实话我没看懂这边）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CarpetFuzz基于语言学，利用polarity-based的有限状态机确定具体的关系&lt;/strong&gt;*&lt;ol&gt;
+&lt;li&gt;(其实就是双重否定表肯定这种比较简单的状态机)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;CarpetFuzz最终得以筛选出所有可用参数组合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;背景工作&#34;&gt;&lt;a href=&#34;#背景工作&#34; class=&#34;headerlink&#34; title=&#34;背景工作&#34;&gt;&lt;/a&gt;背景工作&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/process.png&#34; alt=&#34;经典Fuzzing流程，Option预定义好并固定不参与实际执行&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;经典Fuzzing流程，Option预定义好并固定不参与实际执行&lt;/p&gt;
+&lt;h3 id=&#34;关于命令行参数相关Fuzzing的其他工作&#34;&gt;&lt;a href=&#34;#关于命令行参数相关Fuzzing的其他工作&#34; class=&#34;headerlink&#34; title=&#34;关于命令行参数相关Fuzzing的其他工作&#34;&gt;&lt;/a&gt;关于命令行参数相关Fuzzing的其他工作&lt;/h3&gt;&lt;p&gt;&lt;code&gt;AFLargv&lt;/code&gt;：限制命令行参数的数量和范围；&lt;/p&gt;
+&lt;p&gt;Song等 ：通过检查参数对程序运行的影响来判断有效性；&lt;/p&gt;
+&lt;p&gt;Zeller等人 ：通过特定选项解析模块推断。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;局限性：效率低&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ConfigFuzz&lt;/code&gt; ：手动检查，需要熟悉测试的目标软件用法，对测试人员以及大规模测试是无法接受的。&lt;/p&gt;
+&lt;h3 id=&#34;基于NLP的其他工作&#34;&gt;&lt;a href=&#34;#基于NLP的其他工作&#34; class=&#34;headerlink&#34; title=&#34;基于NLP的其他工作&#34;&gt;&lt;/a&gt;基于NLP的其他工作&lt;/h3&gt;&lt;p&gt;主要方向：代码注释+严格格式化文档，局限性强&lt;/p&gt;
+&lt;h2 id=&#34;程序结构&#34;&gt;&lt;a href=&#34;#程序结构&#34; class=&#34;headerlink&#34; title=&#34;程序结构&#34;&gt;&lt;/a&gt;程序结构&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/construction.png&#34; alt=&#34;Untitled&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Overview of CarpetFuzz. &lt;strong&gt;EDR: explicitly declared&lt;br&gt;relationships, IDR: implicitly declared relationships.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;R&amp;#x3D;Relationship&lt;/p&gt;
+&lt;p&gt;数据集来源：&lt;code&gt;man&lt;/code&gt; 命令的说明页面&lt;/p&gt;
+&lt;p&gt;拆分句子→识别包含选项关系的句子（&lt;strong&gt;R句子&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关系：冲突、依赖、（蕴含、相似和取代 &amp;#x3D;冲突，因为复用不能有效增加覆盖率）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/sentence-search.png&#34; alt=&#34;寻找R句子&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;寻找R句子&lt;/p&gt;
+&lt;p&gt;添加主语是为了避免NLP的解析错误。&lt;/p&gt;
+&lt;p&gt;还有一个预处理是把选项名字替换为自定义标识符以免干扰分析（这怎么发现的？）。&lt;/p&gt;
+&lt;p&gt;某个选项的关键是&lt;strong&gt;谓词（效果）与目标（作用对象）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;隐式的冲突参数&#34;&gt;&lt;a href=&#34;#隐式的冲突参数&#34; class=&#34;headerlink&#34; title=&#34;隐式的冲突参数&#34;&gt;&lt;/a&gt;隐式的冲突参数&lt;/h3&gt;&lt;p&gt;实际上，&lt;strong&gt;隐式的描述语句只涉及冲突：例如，-B和-L选项的描述分别是“Force output to be written with Big-Endian byte order”和“Force output to be written with Little-Endian byte order”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;那么这些句子的语法树结构是相同的。因此这些“sentence pairs”很关键，需要被提取识别。&lt;/p&gt;
+&lt;p&gt;同时还有一些常见的冲突写法，例如用&lt;code&gt;|&lt;/code&gt; 分隔。当然这也可能是别名，具体看描述句子中是“这些参数”还是“这个参数”来确定到底是别名还是一些冲突的参数。&lt;/p&gt;
+&lt;h3 id=&#34;极性分析&#34;&gt;&lt;a href=&#34;#极性分析&#34; class=&#34;headerlink&#34; title=&#34;极性分析&#34;&gt;&lt;/a&gt;极性分析&lt;/h3&gt;&lt;p&gt;情感分析常用，这里用来解析参数之间的冲突&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/nlp.png&#34; alt=&#34;Untitled&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;例如主语A对(B&amp;amp;C)呈现negative的极性，我们就可以认为A不能与B&amp;#x2F;C一起使用。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/JackKuo666/NLP_basis/blob/master/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E4%BE%9D%E5%AD%98%E5%8F%A5%E6%B3%95%E5%92%8C%E8%AF%AD%E4%B9%89%E4%BE%9D%E5%AD%98%E5%88%86%E6%9E%90.md&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt;
+💡 个人认为这个做法效果不错的原因可能是文章提到的&#34;combine with&#34;、&#34;imply&#34;、&#34;like&#34;、&#34;ignore”这些关键词，技术文档的语法还是相对好分析的，对复杂的语句可能会有问题。
+所以如果把软件技术讨论社区的相关博文丢进大模型是不是会有更丰富的信息蒸馏出来？
+
+&lt;/aside&gt;
+
+&lt;p&gt;神经网络实现的分类器来判断一个句子有多大可能是R句子。准确率是比较高的，但召回率比我想的多。&lt;/p&gt;
+&lt;h2 id=&#34;实际测试&#34;&gt;&lt;a href=&#34;#实际测试&#34; class=&#34;headerlink&#34; title=&#34;实际测试&#34;&gt;&lt;/a&gt;实际测试&lt;/h2&gt;&lt;p&gt;文章首先认为参数数量超过一定数量没有实际意义（大部分生产环境下也用不到更多的）。测试也表明基本上超过6个参数就很难有新的发现。所以使用6-wise&lt;/p&gt;
+&lt;p&gt;为了找到更有价值的参数组合，测试器会关注参数的变化能够引导出多少新的代码路径覆盖率；对于太低价值的组合会逐渐被剪枝掉。&lt;/p&gt;
+&lt;p&gt;那这边实际上是Song.的工作的Idea了。&lt;/p&gt;
+&lt;h2 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h2&gt;&lt;p&gt;剩下的主要是一些对实现细节（例如模型超参数、预处理工作）的一些描述。&lt;/p&gt;
+&lt;p&gt;然后还有就是有效性度量，主要是准确率和性能速度。&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q1. CarpetFuzz的性能如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q2. 关系识别的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q3. 关系提取的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;**Q4. CarpetFuzz的优先级排序技术的有效性如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	“结果显示，相比随机抽样，我们的剪枝技术可以减少更多组合（&lt;span class=&#34;number&#34;&gt;98.91&lt;/span&gt;%），&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;同时仅略微损失边的覆盖率（&lt;span class=&#34;number&#34;&gt;2.54&lt;/span&gt;%）”**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q5. 与最先进技术相比，CarpetFuzz的模糊测试性能如何？（那必须好，因为前人的工作看起来确实比较粗糙）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q6. CarpetFuzz能否发现真实世界的漏洞？（事实证明可以）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在5次48h的fuzzing中，&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;结果显示，平均有94.59%的CarpetFuzz的唯一边没有被其他模糊器发现，CarpetFuzz平均能够帮助AFL发现多出45.97%的边。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;边指的是构成代码路径的jmp之类的跳转？&lt;/p&gt;
+&lt;p&gt;“唯一边”这个性能指标确实可以展示其能发现新的未被探索过的代码路径。&lt;/p&gt;
+&lt;p&gt;Real-world测试也发现了很多特殊的crash，然后搞到43个0day&lt;/p&gt;
+&lt;h2 id=&#34;局限性&#34;&gt;&lt;a href=&#34;#局限性&#34; class=&#34;headerlink&#34; title=&#34;局限性&#34;&gt;&lt;/a&gt;局限性&lt;/h2&gt;&lt;p&gt;这篇文章也指出局限性主要来自NLP模型的准确率问题（猜到了）。不过好在这基本只会导致跑太多无效的测试，并不怎么漏报。&lt;/p&gt;
+&lt;p&gt;还有一个问题是缺乏人类常识，例如他不知道水平和垂直是反义词。解决方案是知识图谱（是否有点太古典机器学习了）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我怎么觉得这俩问题都是大语言模型最擅长的？&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;p&gt;原文摘抄如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们设计并实现了CarpetFuzz，一种基于自然语言处理的模糊测试辅助技术，用于提取程序选项约束。通过采用主动学习、机器学习和自然语言处理技术，CarpetFuzz能够准确地从文档中提取选项之间的关系，并过滤掉67.91%的组合选项。借助经过修剪的有效组合，CarpetFuzz帮助AFL在20个常用程序中找到了其他模糊器无法发现的路径的增加了45.97%，并发现了57个独特的崩溃，其中30个被分配了CVE ID。此外，CarpetFuzz在之前的基准测试中发现了94个独特的崩溃，是之前工作的1.71倍。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感谢您的阅读🙂&lt;/p&gt;
+</content>
+        <category term="NLP" />
+        <category term="Fuzzing" />
+        <category term="AFL" />
+        <updated>2023-09-22T11:24:29.000Z</updated>
+    </entry>
+    <entry>
         <id>http://cubicy.icu/2023/09/05/rust-lifetime/</id>
         <title>Rust类型系统中的生命周期</title>
         <link rel="alternate" href="http://cubicy.icu/2023/09/05/rust-lifetime/"/>
@@ -519,7 +740,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
         <category term="Rust" />
         <category term="Lifetime" />
         <category term="Code" />
-        <category term="ProgrammingLanguage" />
+        <category term="Programming" />
         <updated>2023-09-04T16:14:45.000Z</updated>
     </entry>
     <entry>

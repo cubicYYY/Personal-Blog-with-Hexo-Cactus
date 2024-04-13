@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Cubic Y³ • Posts by &#34;fuzzing&#34; tag</title>
+        <link>http://cubicy.icu</link>
+        <description>Notes, CTF, DIY, thoughts and waifus.
+
+I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
+Learning: Electric guitar
+❤❤❤ CTF, toy projects, anime
+✖✖✖ Technological supremacy
+Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 22 Sep 2023 19:24:29 +0800</pubDate>
+        <lastBuildDate>Fri, 22 Sep 2023 19:24:29 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
+        <category>CISCN</category>
+        <category>web</category>
+        <category>Hackergame</category>
+        <category>SchoolBus</category>
+        <category>Rust</category>
+        <category>Lifetime</category>
+        <category>Code</category>
+        <category>Programming</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
+        <category>Treap</category>
+        <category>Stack</category>
+        <category>BST</category>
+        <category>图论</category>
+        <category>Kruskal</category>
+        <category>Splay</category>
+        <category>数链剖分</category>
+        <category>持久化</category>
+        <category>线段树</category>
+        <category>树状数组</category>
+        <category>LCA</category>
+        <category>分块</category>
+        <category>哈希</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
+        <category>Math</category>
+        <category>Translation</category>
+        <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
+        <item>
+            <guid isPermalink="true">http://cubicy.icu/carpet-fuzz/</guid>
+            <title>论文精炼：CarpetFuzz</title>
+            <link>http://cubicy.icu/carpet-fuzz/</link>
+            <category>NLP</category>
+            <category>Fuzzing</category>
+            <category>AFL</category>
+            <pubDate>Fri, 22 Sep 2023 19:24:29 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;论文精炼：CarpetFuzz&#34;&gt;&lt;a href=&#34;#论文精炼：CarpetFuzz&#34; class=&#34;headerlink&#34; title=&#34;论文精炼：CarpetFuzz&#34;&gt;&lt;/a&gt;论文精炼：CarpetFuzz&lt;/h1&gt;&lt;h1 id=&#34;CarpetFuzz&#34;&gt;&lt;a href=&#34;#CarpetFuzz&#34; class=&#34;headerlink&#34; title=&#34;CarpetFuzz&#34;&gt;&lt;/a&gt;CarpetFuzz&lt;/h1&gt;&lt;h2 id=&#34;Automatic-Program-Option-Constraint-Extraction-from&#34;&gt;&lt;a href=&#34;#Automatic-Program-Option-Constraint-Extraction-from&#34; class=&#34;headerlink&#34; title=&#34;Automatic Program Option Constraint Extraction from&#34;&gt;&lt;/a&gt;Automatic Program Option Constraint Extraction from&lt;/h2&gt;&lt;p&gt;Documentation for Fuzzing&lt;/p&gt;
+&lt;h2 id=&#34;核心Idea&#34;&gt;&lt;a href=&#34;#核心Idea&#34; class=&#34;headerlink&#34; title=&#34;核心Idea&#34;&gt;&lt;/a&gt;核心Idea&lt;/h2&gt;&lt;p&gt;现代的大规模软件项目往往存在大量程序选项。有些漏洞需要特定参数的组合触发。然而我们不能简单地穷举这些参数的排列组合，因为这会导致工作量指数级别的膨胀。我们注意到许多参数之间存在互斥、依赖等关系，而这些关系正记录在Manual中。因此本篇文章通过NLP的手段从文档中提取参数关系并应用于Fuzzing（基于AFL）中（名为CarpetFuzz，&lt;strong&gt;开源&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;关键参数：&lt;/p&gt;
+&lt;p&gt;参数组合准确性？Precision: 96.10%  Recall: 88.85%&lt;/p&gt;
+&lt;p&gt;和暴力排列相比减少的工作量？68%&lt;/p&gt;
+&lt;p&gt;和一般的Fuzz相比，额外的路径？46%&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这篇paper是比较工程性的工作？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;精华所在是对隐式的选项关系进行提炼，而核心思路是找到不同选项描述中结构类似的句子对，从而得出两个选项的冲突关系。&lt;/p&gt;
+&lt;h2 id=&#34;行文逻辑&#34;&gt;&lt;a href=&#34;#行文逻辑&#34; class=&#34;headerlink&#34; title=&#34;行文逻辑&#34;&gt;&lt;/a&gt;行文逻辑&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;大型项目（Kernel&amp;#x2F;Apache&amp;#x2F;…）结构极其复杂，攻击面广，利用链深。人工审阅代码几乎已经不可能。&lt;strong&gt;自动化是所有软件测试方法的大势所趋，&lt;/strong&gt;包括Fuzz在内的自动化技术被官方探索应用。&lt;/li&gt;
+&lt;li&gt;对于Fuzz而言，覆盖率是金标准（之一）。然而许多项目的覆盖率不够理想，文章认为其中一个原因是&lt;strong&gt;忽视了程序命令行参数&lt;/strong&gt;对程序运行的影响。某些代码块只有在特定参数组合下才存在遍历的可能。&lt;/li&gt;
+&lt;li&gt;然而简单的穷举不可行：ImageMagick有242个不同的选项。参数的常见组合也许是个好想法，文章的idea则是只保留&lt;strong&gt;可行&lt;/strong&gt;组合，而非像先前的一些工作直接把参数纳入变异。&lt;/li&gt;
+&lt;li&gt;难点：选项间的依赖关系在文档中以自然语言描述。Solution：&lt;strong&gt;NLP&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;刁钻的示例（强context）&lt;ul&gt;
+&lt;li&gt;依赖：&lt;code&gt;-o在-g启用时将添加额外调试输出&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;冲突：&lt;code&gt;xx选项仅在正式环境中启用……要切换到正式环境请使用—release&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;NLP具体方法&#34;&gt;&lt;a href=&#34;#NLP具体方法&#34; class=&#34;headerlink&#34; title=&#34;NLP具体方法&#34;&gt;&lt;/a&gt;NLP具体方法&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;给定一个程序的文档&lt;/li&gt;
+&lt;li&gt;CarpetFuzz解析“OPTIONS”部分提取出所有选项及其相应的statement&lt;/li&gt;
+&lt;li&gt;CarpetFuzz使用机器学习来确定statement中是否声明了某种关系&lt;ol&gt;
+&lt;li&gt;由于这样的statement在文档中占比小，文章使用基于熵的不确定性采样（主动学习），来减少人工标记训练数据的工作量。&lt;/li&gt;
+&lt;li&gt;针对上述的隐晦的自然语言statement，解决方案是让CarpetFuzz总结一系列“隐含statement”的特征，并利用NLP找到满足这些特征的所有&lt;strong&gt;“sentence pairs”&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;这样依赖关系就可以被确定，从而构建一个依赖树&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CarpetFuzz正向&amp;#x2F;反向遍历依赖树中找到与关系相关的节点&lt;/strong&gt;*&lt;ol&gt;
+&lt;li&gt;（说实话我没看懂这边）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CarpetFuzz基于语言学，利用polarity-based的有限状态机确定具体的关系&lt;/strong&gt;*&lt;ol&gt;
+&lt;li&gt;(其实就是双重否定表肯定这种比较简单的状态机)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;CarpetFuzz最终得以筛选出所有可用参数组合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;背景工作&#34;&gt;&lt;a href=&#34;#背景工作&#34; class=&#34;headerlink&#34; title=&#34;背景工作&#34;&gt;&lt;/a&gt;背景工作&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/process.png&#34; alt=&#34;经典Fuzzing流程，Option预定义好并固定不参与实际执行&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;经典Fuzzing流程，Option预定义好并固定不参与实际执行&lt;/p&gt;
+&lt;h3 id=&#34;关于命令行参数相关Fuzzing的其他工作&#34;&gt;&lt;a href=&#34;#关于命令行参数相关Fuzzing的其他工作&#34; class=&#34;headerlink&#34; title=&#34;关于命令行参数相关Fuzzing的其他工作&#34;&gt;&lt;/a&gt;关于命令行参数相关Fuzzing的其他工作&lt;/h3&gt;&lt;p&gt;&lt;code&gt;AFLargv&lt;/code&gt;：限制命令行参数的数量和范围；&lt;/p&gt;
+&lt;p&gt;Song等 ：通过检查参数对程序运行的影响来判断有效性；&lt;/p&gt;
+&lt;p&gt;Zeller等人 ：通过特定选项解析模块推断。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;局限性：效率低&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ConfigFuzz&lt;/code&gt; ：手动检查，需要熟悉测试的目标软件用法，对测试人员以及大规模测试是无法接受的。&lt;/p&gt;
+&lt;h3 id=&#34;基于NLP的其他工作&#34;&gt;&lt;a href=&#34;#基于NLP的其他工作&#34; class=&#34;headerlink&#34; title=&#34;基于NLP的其他工作&#34;&gt;&lt;/a&gt;基于NLP的其他工作&lt;/h3&gt;&lt;p&gt;主要方向：代码注释+严格格式化文档，局限性强&lt;/p&gt;
+&lt;h2 id=&#34;程序结构&#34;&gt;&lt;a href=&#34;#程序结构&#34; class=&#34;headerlink&#34; title=&#34;程序结构&#34;&gt;&lt;/a&gt;程序结构&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/construction.png&#34; alt=&#34;Untitled&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Overview of CarpetFuzz. &lt;strong&gt;EDR: explicitly declared&lt;br&gt;relationships, IDR: implicitly declared relationships.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;R&amp;#x3D;Relationship&lt;/p&gt;
+&lt;p&gt;数据集来源：&lt;code&gt;man&lt;/code&gt; 命令的说明页面&lt;/p&gt;
+&lt;p&gt;拆分句子→识别包含选项关系的句子（&lt;strong&gt;R句子&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关系：冲突、依赖、（蕴含、相似和取代 &amp;#x3D;冲突，因为复用不能有效增加覆盖率）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/sentence-search.png&#34; alt=&#34;寻找R句子&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;寻找R句子&lt;/p&gt;
+&lt;p&gt;添加主语是为了避免NLP的解析错误。&lt;/p&gt;
+&lt;p&gt;还有一个预处理是把选项名字替换为自定义标识符以免干扰分析（这怎么发现的？）。&lt;/p&gt;
+&lt;p&gt;某个选项的关键是&lt;strong&gt;谓词（效果）与目标（作用对象）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;隐式的冲突参数&#34;&gt;&lt;a href=&#34;#隐式的冲突参数&#34; class=&#34;headerlink&#34; title=&#34;隐式的冲突参数&#34;&gt;&lt;/a&gt;隐式的冲突参数&lt;/h3&gt;&lt;p&gt;实际上，&lt;strong&gt;隐式的描述语句只涉及冲突：例如，-B和-L选项的描述分别是“Force output to be written with Big-Endian byte order”和“Force output to be written with Little-Endian byte order”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;那么这些句子的语法树结构是相同的。因此这些“sentence pairs”很关键，需要被提取识别。&lt;/p&gt;
+&lt;p&gt;同时还有一些常见的冲突写法，例如用&lt;code&gt;|&lt;/code&gt; 分隔。当然这也可能是别名，具体看描述句子中是“这些参数”还是“这个参数”来确定到底是别名还是一些冲突的参数。&lt;/p&gt;
+&lt;h3 id=&#34;极性分析&#34;&gt;&lt;a href=&#34;#极性分析&#34; class=&#34;headerlink&#34; title=&#34;极性分析&#34;&gt;&lt;/a&gt;极性分析&lt;/h3&gt;&lt;p&gt;情感分析常用，这里用来解析参数之间的冲突&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/carpet-fuzz/nlp.png&#34; alt=&#34;Untitled&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;例如主语A对(B&amp;amp;C)呈现negative的极性，我们就可以认为A不能与B&amp;#x2F;C一起使用。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/JackKuo666/NLP_basis/blob/master/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E4%BE%9D%E5%AD%98%E5%8F%A5%E6%B3%95%E5%92%8C%E8%AF%AD%E4%B9%89%E4%BE%9D%E5%AD%98%E5%88%86%E6%9E%90.md&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt;
+💡 个人认为这个做法效果不错的原因可能是文章提到的&#34;combine with&#34;、&#34;imply&#34;、&#34;like&#34;、&#34;ignore”这些关键词，技术文档的语法还是相对好分析的，对复杂的语句可能会有问题。
+所以如果把软件技术讨论社区的相关博文丢进大模型是不是会有更丰富的信息蒸馏出来？
+
+&lt;/aside&gt;
+
+&lt;p&gt;神经网络实现的分类器来判断一个句子有多大可能是R句子。准确率是比较高的，但召回率比我想的多。&lt;/p&gt;
+&lt;h2 id=&#34;实际测试&#34;&gt;&lt;a href=&#34;#实际测试&#34; class=&#34;headerlink&#34; title=&#34;实际测试&#34;&gt;&lt;/a&gt;实际测试&lt;/h2&gt;&lt;p&gt;文章首先认为参数数量超过一定数量没有实际意义（大部分生产环境下也用不到更多的）。测试也表明基本上超过6个参数就很难有新的发现。所以使用6-wise&lt;/p&gt;
+&lt;p&gt;为了找到更有价值的参数组合，测试器会关注参数的变化能够引导出多少新的代码路径覆盖率；对于太低价值的组合会逐渐被剪枝掉。&lt;/p&gt;
+&lt;p&gt;那这边实际上是Song.的工作的Idea了。&lt;/p&gt;
+&lt;h2 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h2&gt;&lt;p&gt;剩下的主要是一些对实现细节（例如模型超参数、预处理工作）的一些描述。&lt;/p&gt;
+&lt;p&gt;然后还有就是有效性度量，主要是准确率和性能速度。&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q1. CarpetFuzz的性能如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q2. 关系识别的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q3. 关系提取的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;**Q4. CarpetFuzz的优先级排序技术的有效性如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	“结果显示，相比随机抽样，我们的剪枝技术可以减少更多组合（&lt;span class=&#34;number&#34;&gt;98.91&lt;/span&gt;%），&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;同时仅略微损失边的覆盖率（&lt;span class=&#34;number&#34;&gt;2.54&lt;/span&gt;%）”**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q5. 与最先进技术相比，CarpetFuzz的模糊测试性能如何？（那必须好，因为前人的工作看起来确实比较粗糙）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q6. CarpetFuzz能否发现真实世界的漏洞？（事实证明可以）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在5次48h的fuzzing中，&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;结果显示，平均有94.59%的CarpetFuzz的唯一边没有被其他模糊器发现，CarpetFuzz平均能够帮助AFL发现多出45.97%的边。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;边指的是构成代码路径的jmp之类的跳转？&lt;/p&gt;
+&lt;p&gt;“唯一边”这个性能指标确实可以展示其能发现新的未被探索过的代码路径。&lt;/p&gt;
+&lt;p&gt;Real-world测试也发现了很多特殊的crash，然后搞到43个0day&lt;/p&gt;
+&lt;h2 id=&#34;局限性&#34;&gt;&lt;a href=&#34;#局限性&#34; class=&#34;headerlink&#34; title=&#34;局限性&#34;&gt;&lt;/a&gt;局限性&lt;/h2&gt;&lt;p&gt;这篇文章也指出局限性主要来自NLP模型的准确率问题（猜到了）。不过好在这基本只会导致跑太多无效的测试，并不怎么漏报。&lt;/p&gt;
+&lt;p&gt;还有一个问题是缺乏人类常识，例如他不知道水平和垂直是反义词。解决方案是知识图谱（是否有点太古典机器学习了）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我怎么觉得这俩问题都是大语言模型最擅长的？&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;p&gt;原文摘抄如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们设计并实现了CarpetFuzz，一种基于自然语言处理的模糊测试辅助技术，用于提取程序选项约束。通过采用主动学习、机器学习和自然语言处理技术，CarpetFuzz能够准确地从文档中提取选项之间的关系，并过滤掉67.91%的组合选项。借助经过修剪的有效组合，CarpetFuzz帮助AFL在20个常用程序中找到了其他模糊器无法发现的路径的增加了45.97%，并发现了57个独特的崩溃，其中30个被分配了CVE ID。此外，CarpetFuzz在之前的基准测试中发现了94个独特的崩溃，是之前工作的1.71倍。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感谢您的阅读🙂&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

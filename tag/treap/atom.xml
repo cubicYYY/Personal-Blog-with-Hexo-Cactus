@@ -14,12 +14,12 @@
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
-    <category term="ProgrammingLanguage" />
+    <category term="Programming" />
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
     <category term="Stack" />
+    <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -33,9 +33,16 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/2018/08/03/%E6%9B%BF%E7%BD%AA%E7%BE%8A%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
         <title>替罪羊树学习笔记</title>

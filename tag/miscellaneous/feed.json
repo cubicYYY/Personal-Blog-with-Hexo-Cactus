@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Cubic Y³ • All posts by \"miscellaneous\" tag",
+    "description": "Notes, CTF, DIY, thoughts and waifus.\n\nI'm CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.\nLearning: Electric guitar\n❤❤❤ CTF, toy projects, anime\n✖✖✖ Technological supremacy\nResume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&target=resume.tex&command=xelatex).",
+    "home_page_url": "http://cubicy.icu",
+    "items": [
+        {
+            "id": "http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/",
+            "url": "http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/",
+            "title": "赛博疑难杂症药方",
+            "date_published": "2024-04-13T17:45:01.000Z",
+            "content_html": "<ul>\n<li><code>git add .</code> 仍有文件无法加入<ul>\n<li>可能是submodule导致，即使删除子模块的<code>.git</code>文件夹也不足够，还需要<code>git rm --cached</code></li>\n</ul>\n</li>\n<li>电脑怎样都没有声音，声卡等硬件均无问题，驱动没有更改过<ul>\n<li>检查是否是Windows更新导致，可以回滚</li>\n</ul>\n</li>\n<li>远程桌面出现奇奇怪怪的渲染问题<ul>\n<li>可能是由于远程设备没有连接屏幕，需要保持屏幕开启；或者使用虚拟显示器（Virtual display）</li>\n</ul>\n</li>\n</ul>\n",
+            "tags": [
+                "Miscellaneous"
+            ]
+        }
+    ]
+}

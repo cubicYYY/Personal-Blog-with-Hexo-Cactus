@@ -23,12 +23,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
-        <category>ProgrammingLanguage</category>
+        <category>Programming</category>
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
         <category>Stack</category>
+        <category>BST</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
@@ -42,9 +42,16 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2018/10/28/%E6%B4%9B%E8%B0%B7P3950%20%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81/</guid>
             <title>洛谷:P3950 部落冲突</title>

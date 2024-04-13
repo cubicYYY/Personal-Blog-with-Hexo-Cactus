@@ -14,12 +14,12 @@
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
-    <category term="ProgrammingLanguage" />
+    <category term="Programming" />
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
     <category term="Stack" />
+    <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -33,9 +33,16 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/2023/09/05/rust-lifetime/</id>
         <title>Rust类型系统中的生命周期</title>
@@ -128,7 +135,7 @@
         <category term="Rust" />
         <category term="Lifetime" />
         <category term="Code" />
-        <category term="ProgrammingLanguage" />
+        <category term="Programming" />
         <updated>2023-09-04T16:14:45.000Z</updated>
     </entry>
 </feed>

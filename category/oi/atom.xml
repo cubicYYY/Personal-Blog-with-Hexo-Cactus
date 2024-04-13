@@ -14,12 +14,12 @@
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
-    <category term="ProgrammingLanguage" />
+    <category term="Programming" />
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
     <category term="Stack" />
+    <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -33,9 +33,16 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/</id>
         <title>洛谷:P5072 [Ynoi2015]盼君勿忘</title>
