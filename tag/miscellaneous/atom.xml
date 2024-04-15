@@ -3,7 +3,7 @@
     <id>http://cubicy.icu</id>
     <title>Cubic Y³ • Posts by &#34;miscellaneous&#34; tag</title>
     <link href="http://cubicy.icu" />
-    <updated>2024-04-13T17:45:01.000Z</updated>
+    <updated>2024-04-11T17:45:01.000Z</updated>
     <category term="Misc" />
     <category term="Write-Up" />
     <category term="出题" />
@@ -18,8 +18,8 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="Stack" />
     <category term="BST" />
+    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -39,14 +39,14 @@
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
+    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="Miscellaneous" />
     <entry>
-        <id>http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</id>
+        <id>http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</id>
         <title>赛博疑难杂症药方</title>
-        <link rel="alternate" href="http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/"/>
+        <link rel="alternate" href="http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/"/>
         <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;ul&gt;
 &lt;li&gt;可能是submodule导致，即使删除子模块的&lt;code&gt;.git&lt;/code&gt;文件夹也不足够，还需要&lt;code&gt;git rm --cached&lt;/code&gt;&lt;/li&gt;
@@ -56,13 +56,13 @@
 &lt;li&gt;检查是否是Windows更新导致，可以回滚&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;远程桌面出现奇奇怪怪的渲染问题&lt;ul&gt;
+&lt;li&gt;远程桌面出现奇奇怪怪的渲染问题$$&lt;ul&gt;
 &lt;li&gt;可能是由于远程设备没有连接屏幕，需要保持屏幕开启；或者使用虚拟显示器（Virtual display）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="Miscellaneous" />
-        <updated>2024-04-13T17:45:01.000Z</updated>
+        <updated>2024-04-11T17:45:01.000Z</updated>
     </entry>
 </feed>

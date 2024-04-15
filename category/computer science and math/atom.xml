@@ -18,8 +18,8 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="Stack" />
     <category term="BST" />
+    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Splay" />
@@ -39,10 +39,10 @@
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
+    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
         <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>

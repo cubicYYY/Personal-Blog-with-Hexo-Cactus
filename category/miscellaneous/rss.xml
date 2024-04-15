@@ -11,8 +11,8 @@ Learning: Electric guitar
 ✖✖✖ Technological supremacy
 Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
         <language>zh-CN</language>
-        <pubDate>Sun, 14 Apr 2024 01:45:01 +0800</pubDate>
-        <lastBuildDate>Sun, 14 Apr 2024 01:45:01 +0800</lastBuildDate>
+        <pubDate>Fri, 12 Apr 2024 01:45:01 +0800</pubDate>
+        <lastBuildDate>Fri, 12 Apr 2024 01:45:01 +0800</lastBuildDate>
         <category>Misc</category>
         <category>Write-Up</category>
         <category>出题</category>
@@ -27,8 +27,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>Stack</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
@@ -48,16 +48,16 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
+        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
-        <category>Miscellaneous</category>
         <item>
-            <guid isPermalink="true">http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</guid>
+            <guid isPermalink="true">http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</guid>
             <title>赛博疑难杂症药方</title>
-            <link>http://cubicy.icu/2024/04/14/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</link>
+            <link>http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</link>
             <category>Miscellaneous</category>
-            <pubDate>Sun, 14 Apr 2024 01:45:01 +0800</pubDate>
+            <pubDate>Fri, 12 Apr 2024 01:45:01 +0800</pubDate>
             <description><![CDATA[ &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;ul&gt;
 &lt;li&gt;可能是submodule导致，即使删除子模块的&lt;code&gt;.git&lt;/code&gt;文件夹也不足够，还需要&lt;code&gt;git rm --cached&lt;/code&gt;&lt;/li&gt;
@@ -67,7 +67,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;检查是否是Windows更新导致，可以回滚&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;远程桌面出现奇奇怪怪的渲染问题&lt;ul&gt;
+&lt;li&gt;远程桌面出现奇奇怪怪的渲染问题$$&lt;ul&gt;
 &lt;li&gt;可能是由于远程设备没有连接屏幕，需要保持屏幕开启；或者使用虚拟显示器（Virtual display）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
