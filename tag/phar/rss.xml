@@ -13,11 +13,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Sun, 28 Nov 2021 13:35:00 +0800</pubDate>
         <lastBuildDate>Sun, 28 Nov 2021 13:35:00 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Write-Up</category>
-        <category>Misc</category>
-        <category>出题</category>
         <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
@@ -27,10 +27,10 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>BST</category>
+        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -45,13 +45,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
         <category>Miscellaneous</category>
-        <category>NLP</category>
-        <category>Fuzzing</category>
-        <category>AFL</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2021/11/28/%E6%B5%85%E8%B0%88Phar%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%EF%BC%9AN1CTF%202021%20easyphp%20&amp;%20%E5%AE%89%E6%B4%B5%E6%9D%AF2021%20EZ_TP/</guid>
             <title>浅谈Phar反序列化漏洞利用：N1CTF 2021 easyphp &amp; 安洵杯2021 EZ_TP</title>
@@ -108,7 +108,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;在上面的程序执行之后，我们会发现它输出了“Destruct called”.这是由于phar被解析的时候，metadata被反序列化了，于是该实例被析构时调用__destruct函数。这便是反序列化漏洞的来由。&lt;/p&gt;
 &lt;p&gt;PHP ≥5.3默认支持phar文件；而在PHP8中，该漏洞被修复：metadata不会自动被反序列化了。（来源请求）&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;phar-x2F-x2F-是什么&#34;&gt;&lt;a href=&#34;#phar-x2F-x2F-是什么&#34; class=&#34;headerlink&#34; title=&#34;phar:&amp;#x2F;&amp;#x2F;是什么&#34;&gt;&lt;/a&gt;&lt;strong&gt;phar:&amp;#x2F;&amp;#x2F;是什么&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;前面提到，我们解析phar文件常常使用phar:&amp;#x2F;&amp;#x2F;伪协议。CTF中，由于伪协议提供了一系列对于文件的封装协议，使得当源程序有可控的文件包含函数时，我们有机会利用这些协议控制其返回值或是完成一些预料外操作（例如反序列化）。作为伪协议的一种，由于phar本质上就是一个特殊的压缩文件，所以phar:&amp;#x2F;&amp;#x2F;和zip:&amp;#x2F;&amp;#x2F;其实有很多相似之处，都可以访问压缩包中的子文件，并且zip:&amp;#x2F;&amp;#x2F;需要文件绝对路径，phar:&amp;#x2F;&amp;#x2F;并不需要。（来源请求）&lt;/p&gt;
+&lt;h2 id=&#34;phar-是什么&#34;&gt;&lt;a href=&#34;#phar-是什么&#34; class=&#34;headerlink&#34; title=&#34;phar:&amp;#x2F;&amp;#x2F;是什么&#34;&gt;&lt;/a&gt;&lt;strong&gt;phar:&amp;#x2F;&amp;#x2F;是什么&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;前面提到，我们解析phar文件常常使用phar:&amp;#x2F;&amp;#x2F;伪协议。CTF中，由于伪协议提供了一系列对于文件的封装协议，使得当源程序有可控的文件包含函数时，我们有机会利用这些协议控制其返回值或是完成一些预料外操作（例如反序列化）。作为伪协议的一种，由于phar本质上就是一个特殊的压缩文件，所以phar:&amp;#x2F;&amp;#x2F;和zip:&amp;#x2F;&amp;#x2F;其实有很多相似之处，都可以访问压缩包中的子文件，并且zip:&amp;#x2F;&amp;#x2F;需要文件绝对路径，phar:&amp;#x2F;&amp;#x2F;并不需要。（来源请求）&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;小tricks&#34;&gt;&lt;a href=&#34;#小tricks&#34; class=&#34;headerlink&#34; title=&#34;小tricks&#34;&gt;&lt;/a&gt;&lt;strong&gt;小tricks&lt;/strong&gt;&lt;/h2&gt;&lt;h3 id=&#34;绕过前缀过滤&#34;&gt;&lt;a href=&#34;#绕过前缀过滤&#34; class=&#34;headerlink&#34; title=&#34;绕过前缀过滤&#34;&gt;&lt;/a&gt;绕过前缀过滤&lt;/h3&gt;&lt;p&gt;队里师傅的几个example可以类比使用，都是在前缀非phar:&amp;#x2F;&amp;#x2F;的情况下调用了phar:&amp;#x2F;&amp;#x2F;&lt;/p&gt;
 &lt;p&gt;compress.bzip2和compress.zlib&lt;/p&gt;

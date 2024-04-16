@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;math&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-07T18:38:20.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -18,10 +18,10 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="BST" />
+    <category term="Stack" />
     <category term="Splay" />
     <category term="数链剖分" />
     <category term="持久化" />
@@ -36,13 +36,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
     <category term="Miscellaneous" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
         <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
@@ -118,7 +118,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;每日更新！&lt;/p&gt;
-&lt;h2 id=&#34;1-x2F-3：米田视角-The-Yoneda-Perspective&#34;&gt;&lt;a href=&#34;#1-x2F-3：米田视角-The-Yoneda-Perspective&#34; class=&#34;headerlink&#34; title=&#34;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&#34;&gt;&lt;/a&gt;&lt;a name=&#34;1&#34;&gt;&lt;/a&gt;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本部分翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-perspective&#34;&gt;https://www.math3ma.com/blog/the-yoneda-perspective&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1-3：米田视角-The-Yoneda-Perspective&#34;&gt;&lt;a href=&#34;#1-3：米田视角-The-Yoneda-Perspective&#34; class=&#34;headerlink&#34; title=&#34;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&#34;&gt;&lt;/a&gt;&lt;a name=&#34;1&#34;&gt;&lt;/a&gt;1&amp;#x2F;3：米田视角(The Yoneda Perspective)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本部分翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-perspective&#34;&gt;https://www.math3ma.com/blog/the-yoneda-perspective&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://blog.sigfpe.com/2006/11/yoneda-lemma.html?m=1&#34;&gt;Dan Piponi&lt;/a&gt; 说这是“数学中最难的 trivial 玩意”；&lt;a href=&#34;https://ncatlab.org/nlab/show/Yoneda+lemma&#34;&gt;nLab&lt;/a&gt; 对它的看法是“初等的，深刻的，核心的”；而 &lt;a href=&#34;http://www.math.jhu.edu/~eriehl/context.pdf&#34;&gt;Emily Riehl&lt;/a&gt; 则将其提名为“可以说是范畴论中最重要的结果”。然而，正如 &lt;a href=&#34;http://www.maths.ed.ac.uk/~tl/categories/yoneda.ps&#34;&gt;Tom Leinster&lt;/a&gt; 所指出的，“许多人觉得它非常令人困惑。”&lt;br&gt;他们谈论的是什么？&lt;br&gt;&lt;strong&gt;正是米田引理(Yoneda lemma)。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/yoneda/yoneda.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;“但……”你问道，“米田引理是啥？如果它还只是一个引理，那么……天哪……定理是什么？”&lt;/p&gt;
@@ -146,7 +146,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;p&gt;这些是我们&lt;a href=&#34;#2&#34;&gt;下周&lt;/a&gt;要回答的问题。&lt;br&gt;顺带一提，想复习一下范畴论吗？可以从这几个地方开始：&lt;br&gt;&lt;a href=&#34;http://www.math3ma.com/mathema/2017/1/17/what-is-category-theory-anyway&#34;&gt;What is Category Theory, Anyway?&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;http://www.math3ma.com/mathema/2017/1/23/what-is-a-category&#34;&gt;What’s a Category?&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;http://www.math3ma.com/mathema/2017/1/31/what-is-a-functor-part-1&#34;&gt;What’s a Functor?&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;http://www.math3ma.com/mathema/2017/2/6/what-is-a-natural-transformation&#34;&gt;What’s a Natural Transformation?&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;*: 所以数学家是 cocomedian? (那&lt;a href=&#34;https://www.instagram.com/p/BLwhFLFgTbE/?taken-by=math3ma&#34;&gt;comathematician&lt;/a&gt;是什么?)（译者注：co-这一词根前缀在范畴论中被大量应用，用来表达“对偶的”“反方向的”等意味。哇，这岂不是可以说明 coconut 其实就是 nut？）&lt;br&gt;**: 参见 &lt;a href=&#34;http://www.math3ma.com/mathema/2017/1/17/what-is-category-theory-anyway&#34;&gt;Exhibit A&lt;/a&gt; 和 &lt;a href=&#34;http://www.math3ma.com/mathema/2016/9/12/the-most-obvious-secret-in-mathematics&#34;&gt;Exhibit B&lt;/a&gt; 和 &lt;a href=&#34;http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property&#34;&gt;Exhibit C&lt;/a&gt; 和 &lt;a href=&#34;https://twitter.com/math3ma/status/894700378792611840&#34;&gt;Exhibit D&lt;/a&gt; 和 &lt;a href=&#34;http://www.math3ma.com/mathema/2017/2/22/crumbs&#34;&gt;Exhibit E&lt;/a&gt;, 作为例证&lt;/p&gt;
-&lt;h2 id=&#34;2-x2F-3：米田嵌入-The-Yoneda-Embedding&#34;&gt;&lt;a href=&#34;#2-x2F-3：米田嵌入-The-Yoneda-Embedding&#34; class=&#34;headerlink&#34; title=&#34;2&amp;#x2F;3：米田嵌入(The Yoneda Embedding)&#34;&gt;&lt;/a&gt;2&amp;#x2F;3：&lt;a name=&#34;2&#34;&gt;&lt;/a&gt;米田嵌入(The Yoneda Embedding)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本部分翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-embedding&#34;&gt;https://www.math3ma.com/blog/the-yoneda-embedding&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-3：米田嵌入-The-Yoneda-Embedding&#34;&gt;&lt;a href=&#34;#2-3：米田嵌入-The-Yoneda-Embedding&#34; class=&#34;headerlink&#34; title=&#34;2&amp;#x2F;3：米田嵌入(The Yoneda Embedding)&#34;&gt;&lt;/a&gt;2&amp;#x2F;3：&lt;a name=&#34;2&#34;&gt;&lt;/a&gt;米田嵌入(The Yoneda Embedding)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本部分翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-embedding&#34;&gt;https://www.math3ma.com/blog/the-yoneda-embedding&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;#1&#34;&gt;上周&lt;/a&gt;我们开始探讨Yoneda引理。然而，我们并没有直接陈述Yoneda引理本身（因为缺乏动机），而是“悠闲地漫步”于其推论之一———Yoneda视角，也就是：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;一个对象完全由其与其他对象的“关系”确定，&lt;/p&gt;
@@ -214,7 +214,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;hr&gt;
 &lt;p&gt;* 更一般地，对于任意函子 $F: \mathbf{C} \rightarrow \mathbf{D}$，存在一个函数 $\text{hom}_{\mathbf{C} }(X, Y) \rightarrow \text{hom}_{\mathbf{D} }(F(X), F(Y))$，由 $f \mapsto F(f)$ 给出。如果这个映射是单射，我们说 $F$ 忠实(faithful)；如果它是满射，我们说 $F$ 全射(full)；如果它是双射，我们说 $F$ 全忠实(fully faithful)（译者注：相当于此时我们只关心态射在F作用下的变化情况）。以下是一个方便的&lt;a href=&#34;http://www.math3ma.com/mathema/2017/7/30/naming-functors&#34;&gt;表格&lt;/a&gt;，用于命名其他类型的函子。&lt;/p&gt;
 &lt;p&gt;(译者注：我将这个有趣的表格直接附在此处↓)&lt;br&gt;&lt;img src=&#34;/yoneda/naming.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-x2F-3：米田引理-The-Yoneda-Lemma&#34;&gt;&lt;a href=&#34;#3-x2F-3：米田引理-The-Yoneda-Lemma&#34; class=&#34;headerlink&#34; title=&#34;3&amp;#x2F;3：米田引理(The Yoneda Lemma)&#34;&gt;&lt;/a&gt;3&amp;#x2F;3：&lt;a name=&#34;3&#34;&gt;&lt;/a&gt;米田引理(The Yoneda Lemma)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本部分翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-lemma&#34;&gt;https://www.math3ma.com/blog/the-yoneda-lemma&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-3：米田引理-The-Yoneda-Lemma&#34;&gt;&lt;a href=&#34;#3-3：米田引理-The-Yoneda-Lemma&#34; class=&#34;headerlink&#34; title=&#34;3&amp;#x2F;3：米田引理(The Yoneda Lemma)&#34;&gt;&lt;/a&gt;3&amp;#x2F;3：&lt;a name=&#34;3&#34;&gt;&lt;/a&gt;米田引理(The Yoneda Lemma)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;本部分翻译自 &lt;a href=&#34;https://www.math3ma.com/blog/the-yoneda-lemma&#34;&gt;https://www.math3ma.com/blog/the-yoneda-lemma&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;欢迎来到关于Yoneda引理的第三部分，也是最后一部分！在过去的几周里，我们慢慢揭示了&lt;a href=&#34;#1&#34;&gt;Yoneda视角&lt;/a&gt;背后的数学，即一个对象完全由其与其他对象的关系所决定这一范畴论里的原则(maxim)。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;#2&#34;&gt;上周&lt;/a&gt;，我们将这一原则分成了两点：&lt;/p&gt;
 &lt;blockquote&gt;

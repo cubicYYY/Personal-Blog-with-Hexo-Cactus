@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;misc&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2022-07-03T15:43:00.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -18,10 +18,10 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="BST" />
+    <category term="Stack" />
     <category term="Splay" />
     <category term="数链剖分" />
     <category term="持久化" />
@@ -36,13 +36,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
     <category term="Miscellaneous" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</id>
         <title>ACTF2022 - FFSK - Official WriteUp</title>
@@ -107,8 +107,8 @@
 &lt;p&gt; I have made my best to make the solving process more natural. I hope you enjoy digging deep into the problem. You’ll earn much more fun than those who can just use tools written by others without understanding fundamental principles (like me).&lt;/p&gt;
 &lt;p&gt;ご武運を！&lt;/p&gt;
 </content>
-        <category term="Write-Up" />
         <category term="Misc" />
+        <category term="Write-Up" />
         <category term="出题" />
         <updated>2022-07-03T15:43:00.000Z</updated>
     </entry>

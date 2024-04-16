@@ -13,11 +13,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
         <lastBuildDate>Sun, 14 Apr 2024 01:10:20 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Write-Up</category>
-        <category>Misc</category>
-        <category>出题</category>
         <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
@@ -27,10 +27,10 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>BST</category>
+        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -45,13 +45,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
         <category>Miscellaneous</category>
-        <category>NLP</category>
-        <category>Fuzzing</category>
-        <category>AFL</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/compiler-construction-principles/</guid>
             <title>编译原理课程笔记</title>
@@ -60,7 +60,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <category>Computer Science</category>
             <category>On Going</category>
             <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;p&gt;文中全部图片与部分文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
+&lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://web.stanford.edu/class/cs143/&#34;&gt;Stanford课程主页&lt;/a&gt;&lt;/li&gt;
@@ -152,13 +153,14 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;辅助函数：动作中使用的函数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;解决冲突：最长匹配，较前规则优先&lt;/p&gt;
-&lt;h2 id=&#34;Part-3-语法分析-CFG-amp-Parsing&#34;&gt;&lt;a href=&#34;#Part-3-语法分析-CFG-amp-Parsing&#34; class=&#34;headerlink&#34; title=&#34;Part 3: 语法分析 - CFG &amp;amp; Parsing&#34;&gt;&lt;/a&gt;Part 3: 语法分析 - CFG &amp;amp; Parsing&lt;/h2&gt;&lt;h3 id=&#34;语法分析器概述&#34;&gt;&lt;a href=&#34;#语法分析器概述&#34; class=&#34;headerlink&#34; title=&#34;语法分析器概述&#34;&gt;&lt;/a&gt;语法分析器概述&lt;/h3&gt;&lt;p&gt;从词法分析器获得Token序列，确认该序列是否可以由语言的文法生成&lt;/p&gt;
+&lt;h2 id=&#34;Part-3-语法分析-CFG-Parsing&#34;&gt;&lt;a href=&#34;#Part-3-语法分析-CFG-Parsing&#34; class=&#34;headerlink&#34; title=&#34;Part 3: 语法分析 - CFG &amp;amp; Parsing&#34;&gt;&lt;/a&gt;Part 3: 语法分析 - CFG &amp;amp; Parsing&lt;/h2&gt;&lt;h3 id=&#34;语法分析器概述&#34;&gt;&lt;a href=&#34;#语法分析器概述&#34; class=&#34;headerlink&#34; title=&#34;语法分析器概述&#34;&gt;&lt;/a&gt;语法分析器概述&lt;/h3&gt;&lt;p&gt;从词法分析器获得Token序列，确认该序列是否可以由语言的文法生成&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;对于语法错误的程序，报告错误信息&lt;/li&gt;
 &lt;li&gt;对于语法正确的程序，生成语法分析树(简称语法树) e.g. 抽象语法树AST&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;实现：手动 or 自动(使用Parse generator&amp;#x3D;{Yacc, Bison, ANTLR, mehir…})&lt;/p&gt;
-&lt;h3 id=&#34;上下文无关文法CFG-x3D-Context-Free-Language&#34;&gt;&lt;a href=&#34;#上下文无关文法CFG-x3D-Context-Free-Language&#34; class=&#34;headerlink&#34; title=&#34;上下文无关文法CFG&amp;#x3D;Context Free Language&#34;&gt;&lt;/a&gt;上下文无关文法CFG&amp;#x3D;Context Free Language&lt;/h3&gt;&lt;p&gt;$$ G&amp;#x3D;(T,N,P,S) $$&lt;br&gt;T：终结符集合(Terminals)&lt;br&gt;N：非终结符集合(Non-terminals)&lt;br&gt;P：产生式集合(Productions) $ A\rightarrow a, A \in N, a \in (T \cup N)^*$&lt;br&gt;S：开始符号(Startsymbol): $ S \in N $&lt;/p&gt;
+&lt;h3 id=&#34;上下文无关文法CFG&#34;&gt;&lt;a href=&#34;#上下文无关文法CFG&#34; class=&#34;headerlink&#34; title=&#34;上下文无关文法CFG&#34;&gt;&lt;/a&gt;上下文无关文法CFG&lt;/h3&gt;&lt;p&gt;CFG &amp;#x3D; Context Free Language&lt;/p&gt;
+&lt;p&gt;$$ G&amp;#x3D;(T,N,P,S) $$&lt;br&gt;T：终结符集合(Terminals)&lt;br&gt;N：非终结符集合(Non-terminals)&lt;br&gt;P：产生式集合(Productions) $ A\rightarrow a, A \in N, a \in (T \cup N)^*$&lt;br&gt;S：开始符号(Startsymbol): $ S \in N $&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;📕“上下文无关”体现在：产生式左侧只有一个非终结符，因此类似 $xAy\rightarrow xay$这样，需要关心符号前后别的符号是什么才能应用的产生式是不能在CFG里的。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -261,7 +263,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;问题：太慢！&lt;/li&gt;
 &lt;li&gt;该过程类似NFA，能否构造类似DFA的分析方法？&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;LL-1-和预测分析法-Predictive-parsing&#34;&gt;&lt;a href=&#34;#LL-1-和预测分析法-Predictive-parsing&#34; class=&#34;headerlink&#34; title=&#34;LL(1)和预测分析法(Predictive parsing)&#34;&gt;&lt;/a&gt;LL(1)和预测分析法(Predictive parsing)&lt;/h3&gt;&lt;p&gt;预测分析法：接受LL(k)文法&lt;/p&gt;
+&lt;h3 id=&#34;LL-1-和预测分析法&#34;&gt;&lt;a href=&#34;#LL-1-和预测分析法&#34; class=&#34;headerlink&#34; title=&#34;LL(1)和预测分析法&#34;&gt;&lt;/a&gt;LL(1)和预测分析法&lt;/h3&gt;&lt;p&gt;预测分析法(Predictive parsing)：接受LL(k)文法&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;第一个L: “left to right” 从左到右扫描&lt;/li&gt;
 &lt;li&gt;第二个L: “left-most derivation” 最左推导&lt;/li&gt;
@@ -424,7 +426,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;“k”: 向前看的字符的个数(k省略时取1)&lt;/li&gt;
 &lt;li&gt;子集（详见&lt;a href=&#34;#grammars-set&#34;&gt;该图&lt;/a&gt;）：LR(1), LALR(1), SLR, LR(0), …&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;LR-k-Parsing-的一般模式：移进-规约-Shift-Reduce&#34;&gt;&lt;a href=&#34;#LR-k-Parsing-的一般模式：移进-规约-Shift-Reduce&#34; class=&#34;headerlink&#34; title=&#34;LR(k) Parsing 的一般模式：移进-规约 Shift-Reduce&#34;&gt;&lt;/a&gt;LR(k) Parsing 的一般模式：移进-规约 Shift-Reduce&lt;/h3&gt;&lt;p&gt;核心思想：将字符串一分为二，&lt;/p&gt;
+&lt;h3 id=&#34;移进-规约-Shift-Reduce&#34;&gt;&lt;a href=&#34;#移进-规约-Shift-Reduce&#34; class=&#34;headerlink&#34; title=&#34;移进-规约 Shift-Reduce&#34;&gt;&lt;/a&gt;移进-规约 Shift-Reduce&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;这是LR(k) Parsing 的一般模式。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;核心思想：将字符串一分为二，&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;右侧是未被parser检查过的&lt;/li&gt;
 &lt;li&gt;左侧包含终结符与非终结符&lt;br&gt;我们接下来会使用”|”标记分割点。&lt;/li&gt;
@@ -440,7 +443,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;输入流：包含剩余未处理的右侧字符串&lt;/li&gt;
 &lt;li&gt;操作：&lt;ul&gt;
 &lt;li&gt;Shift: 从输入读入一个Terminal压入栈&lt;/li&gt;
-&lt;li&gt;Reduce: 栈顶的几个元素满足某条生成式的&lt;strong&gt;RHS(Right hand side)&lt;/strong&gt;, 则pop这些元素并压入生成式的&lt;strong&gt;LHS(Left hand side)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Reduce: 栈顶的几个元素满足某条产生式的&lt;strong&gt;RHS(Right hand side)&lt;/strong&gt;, 则pop这些元素并压入产生式的&lt;strong&gt;LHS(Left hand side)&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Error&lt;/li&gt;
 &lt;li&gt;Accept: shift “$” 并且栈中只剩下文法的开始符号&lt;/li&gt;
 &lt;/ul&gt;
@@ -451,7 +454,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;几个文法的包含关系（仍然是详见&lt;a href=&#34;#grammars-set&#34;&gt;该图&lt;/a&gt;）:&lt;br&gt;$ LR(0) \in SLR(1) \in LALR(1) \in LR(1) $&lt;/p&gt;
-&lt;h3 id=&#34;LR-0-Parsing&#34;&gt;&lt;a href=&#34;#LR-0-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LR(0) Parsing&#34;&gt;&lt;/a&gt;LR(0) Parsing&lt;/h3&gt;&lt;p&gt;核心思想：因为需要凑出生成式RHS，维护栈顶内容对于所有生成式右侧的“进度”。&lt;br&gt;项(Item):&amp;#x3D; 一个产生式加上在其中某处的一个点&lt;/p&gt;
+&lt;h3 id=&#34;LR-0-Parsing&#34;&gt;&lt;a href=&#34;#LR-0-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LR(0) Parsing&#34;&gt;&lt;/a&gt;LR(0) Parsing&lt;/h3&gt;&lt;p&gt;核心思想：因为需要凑出产生式RHS，维护栈顶内容对于所有产生式右侧的“进度”。&lt;br&gt;项(Item):&amp;#x3D; 一个产生式加上在其中某处的一个点&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;产生式 $A\rightarrow XYZ$ 有4个Item: &lt;ul&gt;
 &lt;li&gt;$A\rightarrow \bullet XYZ $ &lt;/li&gt;
@@ -486,9 +489,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;h4 id=&#34;LR-0-Parsing的DFA与分析表&#34;&gt;&lt;a href=&#34;#LR-0-Parsing的DFA与分析表&#34; class=&#34;headerlink&#34; title=&#34;LR(0)Parsing的DFA与分析表&#34;&gt;&lt;/a&gt;LR(0)Parsing的DFA与分析表&lt;/h4&gt;&lt;h5 id=&#34;DFA构造&#34;&gt;&lt;a href=&#34;#DFA构造&#34; class=&#34;headerlink&#34; title=&#34;DFA构造&#34;&gt;&lt;/a&gt;DFA构造&lt;/h5&gt;&lt;p&gt;项集闭包CLOSURE:&amp;#x3D; a &lt;strong&gt;set&lt;/strong&gt; of &lt;strong&gt;items&lt;/strong&gt;, 记为I&lt;br&gt;任意符号记为X&lt;br&gt;对任意项集Closure(I)求法（其实就是ε-closure）：&lt;br&gt;Closure(I) &amp;#x3D; &lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;repeat&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  for any item A→ α•Xβ in I&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for any production X→ γ&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      I ← I + &amp;#123;X→ •γ&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;until I does not change. &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;return I&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
-&lt;p&gt;TL;DR: 如果”·”的右边是非终结符X，就把X为LHS的生成式对应的初始项加入。&lt;/p&gt;
+&lt;p&gt;TL;DR: 如果”·”的右边是非终结符X，就把X为LHS的产生式对应的初始项加入。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;接下来的构造方式通过类比NFA-&amp;gt;DFA的子集构造法是显然的：&lt;br&gt;GOTO(I,X):&amp;#x3D; I是一个项集，X是一个文法符号，则GOTO(I,X)定义为I中所有形如 $A\rightarrow \bullet X \beta$ 的项所对应的新项 $A\rightarrow X \bullet \beta$ 构成的新集合生成的闭包（I是状态，X是转移，I里符合要求（也就是下一个符号是X）的生成式前移一位越过X加入转移到的新状态，不符合的被丢弃；当然考虑到ε-moves要再求一遍新状态的闭包）&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr-dfa.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr-dfa-eg.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来的构造方式通过类比NFA-&amp;gt;DFA的子集构造法是显然的：&lt;br&gt;GOTO(I,X):&amp;#x3D; I是一个项集，X是一个文法符号，则GOTO(I,X)定义为I中所有形如 $A\rightarrow \bullet X \beta$ 的项所对应的新项 $A\rightarrow X \bullet \beta$ 构成的新集合生成的闭包（I是状态，X是转移，I里符合要求（也就是下一个符号是X）的产生式前移一位越过X加入转移到的新状态，不符合的被丢弃；当然考虑到ε-moves要再求一遍新状态的闭包）&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr-dfa.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr-dfa-eg.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;DFA到分析表&#34;&gt;&lt;a href=&#34;#DFA到分析表&#34; class=&#34;headerlink&#34; title=&#34;DFA到分析表&#34;&gt;&lt;/a&gt;DFA到分析表&lt;/h5&gt;&lt;p&gt;分析表T类似LL(1)中的表M，但是行列的含义与内容都发生了很大变化：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Action表项：&lt;ul&gt;
@@ -523,9 +526,62 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;blockquote&gt;
 &lt;p&gt;LR实际实现只有状态栈，符号信息可从相应状态中获取&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;用法：每次根据状态栈顶的那个状态与输入流的符号决定一系列操作。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr0-stack-table.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;Part-6-抽象语法&#34;&gt;&lt;a href=&#34;#Part-6-抽象语法&#34; class=&#34;headerlink&#34; title=&#34;Part 6: 抽象语法&#34;&gt;&lt;/a&gt;Part 6: 抽象语法&lt;/h2&gt;&lt;h2 id=&#34;Part-7-语义分析&#34;&gt;&lt;a href=&#34;#Part-7-语义分析&#34; class=&#34;headerlink&#34; title=&#34;Part 7: 语义分析&#34;&gt;&lt;/a&gt;Part 7: 语义分析&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
- ]]></description>
+&lt;p&gt;以下是一个例子：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr0-stack-table.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如何理解”LR(0)”中的”0”: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Item中没有Lookahead terminal等信息，不关心后面的token&lt;/li&gt;
+&lt;li&gt;是否规约&amp;#x2F;使用何产生式规约完全取决于栈顶状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;局限性：由于只要有产生式能规约就立刻规约，很容易产生冲突（也就是表中一格有多个$s_n$,$r_n$，不知道应该直接规约还是需要接受更多符号来完成另一个产生式，这被称作&lt;strong&gt;shift-reduce conflict&lt;/strong&gt;）&lt;br&gt;我们引入新的文法，放宽一些限制。&lt;/p&gt;
+&lt;h3 id=&#34;SLR-1-Parsing&#34;&gt;&lt;a href=&#34;#SLR-1-Parsing&#34; class=&#34;headerlink&#34; title=&#34;SLR(1) Parsing&#34;&gt;&lt;/a&gt;SLR(1) Parsing&lt;/h3&gt;&lt;p&gt;SLR(1) &amp;#x3D; Simple LR(1)&lt;/p&gt;
+&lt;p&gt;我们说过k省略时默认为1，所以称为SLR文法即可。其实就是LR(0)稍微改改。&lt;/p&gt;
+&lt;p&gt;考虑每次规约，都会使用一个产生式 $E\rightarrow \alpha$&lt;br&gt;“LR分析是最右推导的逆过程”，因此每步归约都应该满足：&lt;br&gt;$$ t \in \text{Follow}(E) $$其中t指的是&lt;strong&gt;输入流中下一个token&lt;/strong&gt;, E指的是用于&lt;strong&gt;此规约用到的产生式的左部(LHS)&lt;/strong&gt;.&lt;br&gt;因此对于SLR文法来说，SLR的DFA和LR(0)一样；但LR(0)的分析表中有一些rn&amp;#x2F;sn是非法的，需要删去。&lt;br&gt;在生成分析表的具体步骤上：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LR(0)的某些状态包含可规约的Item，那么这个状态I在对应的Action表中T[I,_]这一行的每一个格子（无论终结符t是什么）无论如何都会有对应的$r_n$项&lt;/li&gt;
+&lt;li&gt;SLR会关心后面的终结符是什么，因此如果t不在Follow集中，这不能是一个合法的规约，Action表对应的t列就不会有这个$r_n$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，图中被划去的部分即为从LR(0)分析表到SLR分析表的变化：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/slr-table.png&#34; alt=&#34;SLR分析表：删去了部分规约项&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;规约的条件更严格，也就“自动”消除了一些冲突，也就允许了更多语言被纳入该文法，因此 $\text{LR(0)} \in \text{SLR}$&lt;/p&gt;
+&lt;p&gt;局限性：显然不能消除所有shift-reduce冲突。如果产生冲突对应的终结符t恰好在Follow集里，就无法消除。例如考虑如下文法：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;S’ -&amp;gt; S$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;S -&amp;gt; L=R | R&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L -&amp;gt; *R | id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;R -&amp;gt; L&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于&lt;code&gt;R-&amp;gt;L&lt;/code&gt;这一产生式，容易看出Follow(R)&amp;#x3D;Follow(L)&lt;br&gt;然而’&amp;#x3D;’在Follow(L)中，因此我们遇到’L&amp;#x3D;…’时仍然不知道应该接受等于号进行shift(这样就可以进一步在&lt;code&gt;S-&amp;gt;L=R&lt;/code&gt;这个产生式中前进)，还是直接使用&lt;code&gt;R-&amp;gt;L&lt;/code&gt;进行reduce.&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/slr-conflict.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们需要更多、更精确的限制才能进一步降低冲突的可能。&lt;/p&gt;
+&lt;h3 id=&#34;LR-1-Parsing&#34;&gt;&lt;a href=&#34;#LR-1-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LR(1) Parsing&#34;&gt;&lt;/a&gt;LR(1) Parsing&lt;/h3&gt;&lt;p&gt;包含更多信息（后继token）来消除一些归约动作。&lt;br&gt;相当于“分裂”一些LR(0)状态，精确指明何时应该归约。&lt;/p&gt;
+&lt;p&gt;LR(1)项(item)的形式：$ A \rightarrow \alpha \bullet \beta,\ a$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;逗号后的a是**向前看符号(lookahead symbol)**即表明向前看一个终结符，可以是$&lt;/li&gt;
+&lt;li&gt;和LR(0)对比，处理ε-move时记录合法的向前看符号w.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;计算Closure&#34;&gt;&lt;a href=&#34;#计算Closure&#34; class=&#34;headerlink&#34; title=&#34;计算Closure&#34;&gt;&lt;/a&gt;计算Closure&lt;/h4&gt;&lt;p&gt;对于状态I中的一个item $$A\rightarrow \alpha X \beta,\ z$$ 以及一个产生式 $$X\rightarrow \gamma$$&lt;br&gt;我们寻找所有 $w\in \text{First}(\beta z)$ 然后加入I：$I\leftarrow I \cup {(X\rightarrow \bullet \gamma,\ w)}$&lt;br&gt;起始状态 $S’\rightarrow \bullet S $,\ ?$ 的闭包里不关心”?”处是什么，因为我们不会移进$&lt;/p&gt;
+&lt;h4 id=&#34;计算Goto表&#34;&gt;&lt;a href=&#34;#计算Goto表&#34; class=&#34;headerlink&#34; title=&#34;计算Goto表&#34;&gt;&lt;/a&gt;计算Goto表&lt;/h4&gt;&lt;p&gt;基本和LR(0)算法保持相同，移入动作不考虑向前看符号z&lt;br&gt;也就是对于转移X，转移前后项的变换是：&lt;br&gt;$$A \rightarrow \alpha \bullet X \beta,\ z \ \ \Rightarrow\ \ A \rightarrow \alpha X \bullet \beta,\ z$$&lt;/p&gt;
+&lt;h4 id=&#34;计算Action表：Reduce操作&#34;&gt;&lt;a href=&#34;#计算Action表：Reduce操作&#34; class=&#34;headerlink&#34; title=&#34;计算Action表：Reduce操作&#34;&gt;&lt;/a&gt;计算Action表：Reduce操作&lt;/h4&gt;&lt;p&gt;规约操作是变换较大的部分。&lt;br&gt;在LR(1)中，Action表项形如$(I, z, A\rightarrow \alpha)$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I: 代表状态I对应的行&lt;/li&gt;
+&lt;li&gt;z: 代表向前看符号&lt;/li&gt;
+&lt;li&gt;$ A\rightarrow \alpha $ 为规约所采用的产生式&lt;br&gt;这就限制了从某个可规约项规约时，必须向前看一个符号以确保它是lookahead symbol.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-items.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;局限性：这样的操作限制过少，过于灵活，导致状态数量过多，状态表过于庞大。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-con.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;因此我们在SLR(1)&amp;#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).&lt;/p&gt;
+&lt;h3 id=&#34;LALR-1-Parsing&#34;&gt;&lt;a href=&#34;#LALR-1-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LALR(1) Parsing&#34;&gt;&lt;/a&gt;LALR(1) Parsing&lt;/h3&gt;&lt;p&gt;动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LALR(1): 把LR(1)中只有lookahead symbol不同的item合并。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;定义：把LR(1)中item的集合里所有lookahead symbol去掉，剩下的称为&lt;strong&gt;核(core)&lt;/strong&gt;&lt;br&gt;把LR(1)中所有核相同的状态两两合并为一个状态。每次合并都删除两个旧状态，新增一个新状态，入边出边的连接方式是显然的，直接接在新状态上即可。&lt;br&gt;新状态的item是两个旧状态的item的并（其实就是把每个item的lookahead symbol合并一下）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-lalr1.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样得到的表将会小很多：与SLR的分析表&lt;strong&gt;一样大&lt;/strong&gt;！通常状态数只有LR(1)的十分之一。付出的微小代价：规约-规约冲突(reduce-reduce conflict)&lt;br&gt;例如对于如下文法：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;S -&amp;gt; a E c&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   | a F d&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   | b F c&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   | b E d&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;E -&amp;gt; e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;F -&amp;gt; e&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在LALR分析表中有两个状态会被合并成一个。而之后的下个字符将会出现歧义。这个冲突对应的状态：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;E -&amp;gt; e, &amp;#123;c,d&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;F -&amp;gt; e, &amp;#123;c,d&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;LR(1)分析器：将产生两个不同的状态，不会产生冲突&lt;/li&gt;
+&lt;li&gt;LALR(1)分析器：只会产生一个状态，产生冲突&lt;ul&gt;
+&lt;li&gt;若下个输入字符为c或d，可以归约成E或F&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，上述文法对于LALR(1)是二义的。&lt;br&gt;但这是可以接受的：LALR(1)足以处理绝大部分程序设计语言。&lt;/p&gt;
+&lt;h2 id=&#34;Part-6-语法分析杂项与小结&#34;&gt;&lt;a href=&#34;#Part-6-语法分析杂项与小结&#34; class=&#34;headerlink&#34; title=&#34;Part 6: 语法分析杂项与小结&#34;&gt;&lt;/a&gt;Part 6: 语法分析杂项与小结&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;语法分析器的生成器：YACC&#34;&gt;&lt;a href=&#34;#语法分析器的生成器：YACC&#34; class=&#34;headerlink&#34; title=&#34;语法分析器的生成器：YACC&#34;&gt;&lt;/a&gt;语法分析器的生成器：YACC&lt;/h3&gt;&lt;h3 id=&#34;错误恢复-1&#34;&gt;&lt;a href=&#34;#错误恢复-1&#34; class=&#34;headerlink&#34; title=&#34;错误恢复&#34;&gt;&lt;/a&gt;错误恢复&lt;/h3&gt;&lt;h4 id=&#34;局部错误恢复&#34;&gt;&lt;a href=&#34;#局部错误恢复&#34; class=&#34;headerlink&#34; title=&#34;局部错误恢复&#34;&gt;&lt;/a&gt;局部错误恢复&lt;/h4&gt;&lt;h4 id=&#34;全局错误恢复&#34;&gt;&lt;a href=&#34;#全局错误恢复&#34; class=&#34;headerlink&#34; title=&#34;全局错误恢复&#34;&gt;&lt;/a&gt;全局错误恢复&lt;/h4&gt;&lt;h4 id=&#34;语法分析小结&#34;&gt;&lt;a href=&#34;#语法分析小结&#34; class=&#34;headerlink&#34; title=&#34;语法分析小结&#34;&gt;&lt;/a&gt;语法分析小结&lt;/h4&gt;&lt;h2 id=&#34;Part-7-抽象语法&#34;&gt;&lt;a href=&#34;#Part-7-抽象语法&#34; class=&#34;headerlink&#34; title=&#34;Part 7: 抽象语法&#34;&gt;&lt;/a&gt;Part 7: 抽象语法&lt;/h2&gt;&lt;h2 id=&#34;Part-8-语义分析&#34;&gt;&lt;a href=&#34;#Part-8-语义分析&#34; class=&#34;headerlink&#34; title=&#34;Part 8: 语义分析&#34;&gt;&lt;/a&gt;Part 8: 语义分析&lt;/h2&gt;&lt;h2 id=&#34;Part-9-活动记录Activation-Record&#34;&gt;&lt;a href=&#34;#Part-9-活动记录Activation-Record&#34; class=&#34;headerlink&#34; title=&#34;Part 9: 活动记录Activation Record&#34;&gt;&lt;/a&gt;Part 9: 活动记录Activation Record&lt;/h2&gt; ]]></description>
         </item>
     </channel>
 </rss>
