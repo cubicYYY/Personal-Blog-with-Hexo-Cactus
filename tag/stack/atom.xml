@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;stack&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2018-09-28T05:11:00.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -36,13 +36,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
-    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1901%20%E5%8F%91%E5%B0%84%E7%AB%99/</id>
         <title>洛谷:P1901 发射站</title>

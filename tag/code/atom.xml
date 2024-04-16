@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;code&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2023-09-04T16:14:45.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -36,13 +36,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
-    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/2023/09/05/rust-lifetime/</id>
         <title>Rust类型系统中的生命周期</title>

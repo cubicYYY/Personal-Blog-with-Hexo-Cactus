@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;translation&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-07T18:38:20.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -36,13 +36,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
-    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
         <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
