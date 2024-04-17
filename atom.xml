@@ -18,10 +18,10 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="图论" />
-    <category term="Kruskal" />
     <category term="BST" />
     <category term="Stack" />
+    <category term="图论" />
+    <category term="Kruskal" />
     <category term="Splay" />
     <category term="数链剖分" />
     <category term="持久化" />
@@ -47,7 +47,7 @@
         <id>http://cubicy.icu/compiler-construction-principles/</id>
         <title>编译原理课程笔记</title>
         <link rel="alternate" href="http://cubicy.icu/compiler-construction-principles/"/>
-        <content type="html">&lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;p&gt;文中全部图片与部分文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;p&gt;文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
@@ -71,7 +71,7 @@
 &lt;li&gt;语法分析&amp;#x3D;Parsing&amp;#x2F;SyntaxAnalysis&lt;/li&gt;
 &lt;li&gt;中间表示&amp;#x3D;IR&amp;#x3D;Intermediate Representation&lt;/li&gt;
 &lt;li&gt;树型中间表示&amp;#x3D;IR Tree&lt;/li&gt;
-&lt;li&gt;前端&amp;#x3D;，后端&amp;#x3D;&lt;br&gt;略。&lt;/li&gt;
+&lt;li&gt;前端，后端&lt;br&gt;略。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Part-2-词法分析&#34;&gt;&lt;a href=&#34;#Part-2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析&#34;&gt;&lt;/a&gt;Part 2: 词法分析&lt;/h2&gt;&lt;h3 id=&#34;词法分析概述&#34;&gt;&lt;a href=&#34;#词法分析概述&#34; class=&#34;headerlink&#34; title=&#34;词法分析概述&#34;&gt;&lt;/a&gt;词法分析概述&lt;/h3&gt;&lt;p&gt;将输入字符串识别为有意义的子串。（把基本单元划分好）&lt;br&gt;(Token单词, Lexeme词素(可选)) e.g. (IF, ) (ELSE, ) (BINARY_OP, &amp;gt;&amp;#x3D;) (UNARY_OP, &amp;amp;)&lt;/p&gt;
 &lt;h3 id=&#34;正则表达式&#34;&gt;&lt;a href=&#34;#正则表达式&#34; class=&#34;headerlink&#34; title=&#34;正则表达式&#34;&gt;&lt;/a&gt;正则表达式&lt;/h3&gt;&lt;p&gt;Regex Expression &amp;#x3D; RE&lt;br&gt;运算：连接concatenation + 幂Power&lt;br&gt;e.g.: $ ab(a|b)^3c^* $&lt;br&gt;下略。&lt;/p&gt;
@@ -218,7 +218,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;编程语言的文法设计&#34;&gt;&lt;a href=&#34;#编程语言的文法设计&#34; class=&#34;headerlink&#34; title=&#34;编程语言的文法设计&#34;&gt;&lt;/a&gt;编程语言的文法设计&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;核心：无二义性&lt;/strong&gt;&lt;br&gt;二义性来源：某些句子存在不止一棵分析树&amp;#x3D;有两个不同的最左推导&amp;#x3D;&lt;strong&gt;多种可选推导处于文法同一层&lt;/strong&gt;&lt;br&gt;例如：$$E \Rightarrow E&lt;em&gt;E \Rightarrow id&lt;/em&gt;E \Rightarrow id&lt;em&gt;E+E$$ 与 $$E \Rightarrow E+E \Rightarrow E&lt;/em&gt;E+E \Rightarrow id&lt;em&gt;E+E $$&lt;br&gt;对于”3*4+5”，前者给出3*(4+5)&amp;#x3D;27（错误），后者给出3&lt;/em&gt;4+5&amp;#x3D;17（正确）。&lt;/p&gt;
+&lt;h4 id=&#34;编程语言的文法设计&#34;&gt;&lt;a href=&#34;#编程语言的文法设计&#34; class=&#34;headerlink&#34; title=&#34;编程语言的文法设计&#34;&gt;&lt;/a&gt;编程语言的文法设计&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;核心：无二义性&lt;/strong&gt;&lt;br&gt;二义性来源：某些句子存在不止一棵分析树&amp;#x3D;有两个不同的最左推导&amp;#x3D;&lt;strong&gt;多种可选推导处于文法同一层&lt;/strong&gt;&lt;br&gt;例如：$$E \Rightarrow E*E \Rightarrow id*E \Rightarrow id*E+E$$ 与 $$E \Rightarrow E+E \Rightarrow E*E+E \Rightarrow id*E+E $$&lt;br&gt;对于”3*4+5”，前者给出3*(4+5)&amp;#x3D;27（错误），后者给出3*4+5&amp;#x3D;17（正确）。&lt;/p&gt;
 &lt;p&gt;解决办法：确保只有一种最左推导&amp;#x3D;将同一层文法分层&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;规定符号优先级（”*“” &amp;gt; “+”,”-“）&lt;ul&gt;
@@ -539,9 +539,9 @@
 &lt;li&gt;逗号后的a是**向前看符号(lookahead symbol)**即表明向前看一个终结符，可以是$&lt;/li&gt;
 &lt;li&gt;和LR(0)对比，处理ε-move时记录合法的向前看符号w.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;计算Closure&#34;&gt;&lt;a href=&#34;#计算Closure&#34; class=&#34;headerlink&#34; title=&#34;计算Closure&#34;&gt;&lt;/a&gt;计算Closure&lt;/h4&gt;&lt;p&gt;对于状态I中的一个item $$A\rightarrow \alpha X \beta,\ z$$ 以及一个产生式 $$X\rightarrow \gamma$$&lt;br&gt;我们寻找所有 $w\in \text{First}(\beta z)$ 然后加入I：$I\leftarrow I \cup {(X\rightarrow \bullet \gamma,\ w)}$&lt;br&gt;起始状态 $S’\rightarrow \bullet S $,\ ?$ 的闭包里不关心”?”处是什么，因为我们不会移进$&lt;/p&gt;
+&lt;h4 id=&#34;计算Closure&#34;&gt;&lt;a href=&#34;#计算Closure&#34; class=&#34;headerlink&#34; title=&#34;计算Closure&#34;&gt;&lt;/a&gt;计算Closure&lt;/h4&gt;&lt;p&gt;对于状态I中的一个item $$A\rightarrow \alpha X \beta,\ z$$ 以及一个产生式 $$X\rightarrow \gamma$$&lt;br&gt;我们寻找所有 $w\in \text{First}(\beta z)$ 然后加入I：$I\leftarrow I \cup {(X\rightarrow \bullet \gamma,\ w)}$&lt;br&gt;起始状态 $S’\rightarrow \bullet S $,\ ?$ 的闭包里不关心”?”处是什么，因为我们不会移进$&lt;br&gt;（所以一种可行的表示是把$都移到产生式外部，而非真的要产生一个”$“符号： $S’\rightarrow \bullet S,\ $$）&lt;/p&gt;
 &lt;h4 id=&#34;计算Goto表&#34;&gt;&lt;a href=&#34;#计算Goto表&#34; class=&#34;headerlink&#34; title=&#34;计算Goto表&#34;&gt;&lt;/a&gt;计算Goto表&lt;/h4&gt;&lt;p&gt;基本和LR(0)算法保持相同，移入动作不考虑向前看符号z&lt;br&gt;也就是对于转移X，转移前后项的变换是：&lt;br&gt;$$A \rightarrow \alpha \bullet X \beta,\ z \ \ \Rightarrow\ \ A \rightarrow \alpha X \bullet \beta,\ z$$&lt;/p&gt;
-&lt;h4 id=&#34;计算Action表：Reduce操作&#34;&gt;&lt;a href=&#34;#计算Action表：Reduce操作&#34; class=&#34;headerlink&#34; title=&#34;计算Action表：Reduce操作&#34;&gt;&lt;/a&gt;计算Action表：Reduce操作&lt;/h4&gt;&lt;p&gt;规约操作是变换较大的部分。&lt;br&gt;在LR(1)中，Action表项形如$(I, z, A\rightarrow \alpha)$&lt;/p&gt;
+&lt;h4 id=&#34;计算Action表：Reduce操作&#34;&gt;&lt;a href=&#34;#计算Action表：Reduce操作&#34; class=&#34;headerlink&#34; title=&#34;计算Action表：Reduce操作&#34;&gt;&lt;/a&gt;计算Action表：Reduce操作&lt;/h4&gt;&lt;p&gt;规约操作是变换较大的部分。&lt;br&gt;在LR(1)中，Action表项中Reduce操作形如$(I, z, A\rightarrow \alpha)$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I: 代表状态I对应的行&lt;/li&gt;
 &lt;li&gt;z: 代表向前看符号&lt;/li&gt;
@@ -549,7 +549,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-items.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;局限性：这样的操作限制过少，过于灵活，导致状态数量过多，状态表过于庞大。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-con.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;局限性：这样的文法限制过少，过于灵活，导致状态数量过多，状态表过于庞大。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-con.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;因此我们在SLR(1)&amp;#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).&lt;/p&gt;
 &lt;h3 id=&#34;LALR-1-Parsing&#34;&gt;&lt;a href=&#34;#LALR-1-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LALR(1) Parsing&#34;&gt;&lt;/a&gt;LALR(1) Parsing&lt;/h3&gt;&lt;p&gt;动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LALR(1): 把LR(1)中只有lookahead symbol不同的item合并。&lt;/strong&gt;&lt;/p&gt;
@@ -560,7 +560,7 @@
 &lt;p&gt;在LALR分析表中有两个状态会被合并成一个。而之后的下个字符将会出现歧义。这个冲突对应的状态：&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;E -&amp;gt; e, &amp;#123;c,d&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;F -&amp;gt; e, &amp;#123;c,d&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ul&gt;
-&lt;li&gt;LR(1)分析器：将产生两个不同的状态，不会产生冲突&lt;/li&gt;
+&lt;li&gt;LR(1)分析器：将产生两个不同的状态(图中的状态#6与#9)，不会产生冲突：&lt;img src=&#34;/compiler-construction-principles/lr1-eg.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;LALR(1)分析器：只会产生一个状态，产生冲突&lt;ul&gt;
 &lt;li&gt;若下个输入字符为c或d，可以归约成E或F&lt;/li&gt;
 &lt;/ul&gt;

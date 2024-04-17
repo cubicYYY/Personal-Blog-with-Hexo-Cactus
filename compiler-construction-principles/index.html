@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="编译原理文中全部图片与部分文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn) Part 0: 课程信息使用教材：Modern Compiler Implementation in C, Andrew W. Appel （A.K.A 虎书） 相关课程：  Stanford课程主页 MIT课程主页 UCBerkeley课程主页  分数构成：  课程作业(课后小型练习题) &amp;#x3D">
+    <meta name="description" content="编译原理文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn) Part 0: 课程信息使用教材：Modern Compiler Implementation in C, Andrew W. Appel （A.K.A 虎书） 相关课程：  Stanford课程主页 MIT课程主页 UCBerkeley课程主页  分数构成：  课程作业(课后小型练习题) &#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理课程笔记">
 <meta property="og:url" content="http://cubicy.icu/compiler-construction-principles/index.html">
 <meta property="og:site_name" content="Cubic Y³">
-<meta property="og:description" content="编译原理文中全部图片与部分文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn) Part 0: 课程信息使用教材：Modern Compiler Implementation in C, Andrew W. Appel （A.K.A 虎书） 相关课程：  Stanford课程主页 MIT课程主页 UCBerkeley课程主页  分数构成：  课程作业(课后小型练习题) &amp;#x3D">
+<meta property="og:description" content="编译原理文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn) Part 0: 课程信息使用教材：Modern Compiler Implementation in C, Andrew W. Appel （A.K.A 虎书） 相关课程：  Stanford课程主页 MIT课程主页 UCBerkeley课程主页  分数构成：  课程作业(课后小型练习题) &#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/nfa2dfa.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/DFA-simplify-diverge.png">
@@ -31,8 +31,9 @@
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/lr1-items.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/lr1-con.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/lr1-lalr1.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/lr1-eg.png">
 <meta property="article:published_time" content="2024-04-13T17:10:20.000Z">
-<meta property="article:modified_time" content="2024-04-16T16:09:39.532Z">
+<meta property="article:modified_time" content="2024-04-17T01:17:34.293Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Compiler">
 <meta property="article:tag" content="Computer Science">
@@ -182,7 +183,7 @@
       
         <time datetime="2024-04-13T17:10:20.000Z" class="dt-published" itemprop="datePublished">2024-04-14</time>
         
-        (Updated: <time datetime="2024-04-16T16:09:39.532Z" class="dt-updated" itemprop="dateModified">2024-04-17</time>)
+        (Updated: <time datetime="2024-04-17T01:17:34.293Z" class="dt-updated" itemprop="dateModified">2024-04-17</time>)
         
       
     </div>
@@ -216,7 +217,7 @@
         Word count: 7.2k
           (~28 mins to read)
       </span>
-      <h1 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h1><p>文中全部图片与部分文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)</p>
+      <h1 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h1><p>文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)</p>
 <h2 id="Part-0-课程信息"><a href="#Part-0-课程信息" class="headerlink" title="Part 0: 课程信息"></a>Part 0: 课程信息</h2><p>使用教材：<em>Modern Compiler Implementation in C</em>, Andrew W. Appel （A.K.A 虎书）</p>
 <p>相关课程：</p>
 <ul>
@@ -240,7 +241,7 @@
 <li>语法分析&#x3D;Parsing&#x2F;SyntaxAnalysis</li>
 <li>中间表示&#x3D;IR&#x3D;Intermediate Representation</li>
 <li>树型中间表示&#x3D;IR Tree</li>
-<li>前端&#x3D;，后端&#x3D;<br>略。</li>
+<li>前端，后端<br>略。</li>
 </ul>
 <h2 id="Part-2-词法分析"><a href="#Part-2-词法分析" class="headerlink" title="Part 2: 词法分析"></a>Part 2: 词法分析</h2><h3 id="词法分析概述"><a href="#词法分析概述" class="headerlink" title="词法分析概述"></a>词法分析概述</h3><p>将输入字符串识别为有意义的子串。（把基本单元划分好）<br>(Token单词, Lexeme词素(可选)) e.g. (IF, ) (ELSE, ) (BINARY_OP, &gt;&#x3D;) (UNARY_OP, &amp;)</p>
 <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>Regex Expression &#x3D; RE<br>运算：连接concatenation + 幂Power<br>e.g.: $ ab(a|b)^3c^* $<br>下略。</p>
@@ -387,7 +388,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="编程语言的文法设计"><a href="#编程语言的文法设计" class="headerlink" title="编程语言的文法设计"></a>编程语言的文法设计</h4><p><strong>核心：无二义性</strong><br>二义性来源：某些句子存在不止一棵分析树&#x3D;有两个不同的最左推导&#x3D;<strong>多种可选推导处于文法同一层</strong><br>例如：$$E \Rightarrow E<em>E \Rightarrow id</em>E \Rightarrow id<em>E+E$$ 与 $$E \Rightarrow E+E \Rightarrow E</em>E+E \Rightarrow id<em>E+E $$<br>对于”3*4+5”，前者给出3*(4+5)&#x3D;27（错误），后者给出3</em>4+5&#x3D;17（正确）。</p>
+<h4 id="编程语言的文法设计"><a href="#编程语言的文法设计" class="headerlink" title="编程语言的文法设计"></a>编程语言的文法设计</h4><p><strong>核心：无二义性</strong><br>二义性来源：某些句子存在不止一棵分析树&#x3D;有两个不同的最左推导&#x3D;<strong>多种可选推导处于文法同一层</strong><br>例如：$$E \Rightarrow E*E \Rightarrow id*E \Rightarrow id*E+E$$ 与 $$E \Rightarrow E+E \Rightarrow E*E+E \Rightarrow id*E+E $$<br>对于”3*4+5”，前者给出3*(4+5)&#x3D;27（错误），后者给出3*4+5&#x3D;17（正确）。</p>
 <p>解决办法：确保只有一种最左推导&#x3D;将同一层文法分层</p>
 <ul>
 <li>规定符号优先级（”*“” &gt; “+”,”-“）<ul>
@@ -708,9 +709,9 @@
 <li>逗号后的a是**向前看符号(lookahead symbol)**即表明向前看一个终结符，可以是$</li>
 <li>和LR(0)对比，处理ε-move时记录合法的向前看符号w.</li>
 </ul>
-<h4 id="计算Closure"><a href="#计算Closure" class="headerlink" title="计算Closure"></a>计算Closure</h4><p>对于状态I中的一个item $$A\rightarrow \alpha X \beta,\ z$$ 以及一个产生式 $$X\rightarrow \gamma$$<br>我们寻找所有 $w\in \text{First}(\beta z)$ 然后加入I：$I\leftarrow I \cup {(X\rightarrow \bullet \gamma,\ w)}$<br>起始状态 $S’\rightarrow \bullet S $,\ ?$ 的闭包里不关心”?”处是什么，因为我们不会移进$</p>
+<h4 id="计算Closure"><a href="#计算Closure" class="headerlink" title="计算Closure"></a>计算Closure</h4><p>对于状态I中的一个item $$A\rightarrow \alpha X \beta,\ z$$ 以及一个产生式 $$X\rightarrow \gamma$$<br>我们寻找所有 $w\in \text{First}(\beta z)$ 然后加入I：$I\leftarrow I \cup {(X\rightarrow \bullet \gamma,\ w)}$<br>起始状态 $S’\rightarrow \bullet S $,\ ?$ 的闭包里不关心”?”处是什么，因为我们不会移进$<br>（所以一种可行的表示是把$都移到产生式外部，而非真的要产生一个”$“符号： $S’\rightarrow \bullet S,\ $$）</p>
 <h4 id="计算Goto表"><a href="#计算Goto表" class="headerlink" title="计算Goto表"></a>计算Goto表</h4><p>基本和LR(0)算法保持相同，移入动作不考虑向前看符号z<br>也就是对于转移X，转移前后项的变换是：<br>$$A \rightarrow \alpha \bullet X \beta,\ z \ \ \Rightarrow\ \ A \rightarrow \alpha X \bullet \beta,\ z$$</p>
-<h4 id="计算Action表：Reduce操作"><a href="#计算Action表：Reduce操作" class="headerlink" title="计算Action表：Reduce操作"></a>计算Action表：Reduce操作</h4><p>规约操作是变换较大的部分。<br>在LR(1)中，Action表项形如$(I, z, A\rightarrow \alpha)$</p>
+<h4 id="计算Action表：Reduce操作"><a href="#计算Action表：Reduce操作" class="headerlink" title="计算Action表：Reduce操作"></a>计算Action表：Reduce操作</h4><p>规约操作是变换较大的部分。<br>在LR(1)中，Action表项中Reduce操作形如$(I, z, A\rightarrow \alpha)$</p>
 <ul>
 <li>I: 代表状态I对应的行</li>
 <li>z: 代表向前看符号</li>
@@ -718,7 +719,7 @@
 </ul>
 <p><img src="/compiler-construction-principles/lr1-items.png" loading="lazy"></p>
 <hr>
-<p>局限性：这样的操作限制过少，过于灵活，导致状态数量过多，状态表过于庞大。<br><img src="/compiler-construction-principles/lr1-con.png" loading="lazy"></p>
+<p>局限性：这样的文法限制过少，过于灵活，导致状态数量过多，状态表过于庞大。<br><img src="/compiler-construction-principles/lr1-con.png" loading="lazy"></p>
 <p>因此我们在SLR(1)&#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).</p>
 <h3 id="LALR-1-Parsing"><a href="#LALR-1-Parsing" class="headerlink" title="LALR(1) Parsing"></a>LALR(1) Parsing</h3><p>动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？</p>
 <p><strong>LALR(1): 把LR(1)中只有lookahead symbol不同的item合并。</strong></p>
@@ -729,7 +730,7 @@
 <p>在LALR分析表中有两个状态会被合并成一个。而之后的下个字符将会出现歧义。这个冲突对应的状态：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E -&gt; e, &#123;c,d&#125;</span><br><span class="line">F -&gt; e, &#123;c,d&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>LR(1)分析器：将产生两个不同的状态，不会产生冲突</li>
+<li>LR(1)分析器：将产生两个不同的状态(图中的状态#6与#9)，不会产生冲突：<img src="/compiler-construction-principles/lr1-eg.png" loading="lazy"></li>
 <li>LALR(1)分析器：只会产生一个状态，产生冲突<ul>
 <li>若下个输入字符为c或d，可以归约成E或F</li>
 </ul>
