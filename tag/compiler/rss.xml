@@ -27,10 +27,10 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>Stack</category>
+        <category>BST</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -42,12 +42,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
-        <category>Compiler</category>
-        <category>Computer Science</category>
-        <category>On Going</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
@@ -60,7 +60,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <category>Computer Science</category>
             <category>On Going</category>
             <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;p&gt;文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的。&lt;br&gt;文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
@@ -543,7 +543,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;例如，图中被划去的部分即为从LR(0)分析表到SLR分析表的变化：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/slr-table.png&#34; alt=&#34;SLR分析表：删去了部分规约项&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;规约的条件更严格，也就“自动”消除了一些冲突，也就允许了更多语言被纳入该文法，因此 $\text{LR(0)} \in \text{SLR}$&lt;/p&gt;
 &lt;p&gt;局限性：显然不能消除所有shift-reduce冲突。如果产生冲突对应的终结符t恰好在Follow集里，就无法消除。例如考虑如下文法：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;S’ -&amp;gt; S$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;S -&amp;gt; L=R | R&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L -&amp;gt; *R | id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;R -&amp;gt; L&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;S&amp;#x27; -&amp;gt; S$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;S -&amp;gt; L=R | R&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L -&amp;gt; *R | id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;R -&amp;gt; L&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;由于&lt;code&gt;R-&amp;gt;L&lt;/code&gt;这一产生式，容易看出Follow(R)&amp;#x3D;Follow(L)&lt;br&gt;然而’&amp;#x3D;’在Follow(L)中，因此我们遇到’L&amp;#x3D;…’时仍然不知道应该接受等于号进行shift(这样就可以进一步在&lt;code&gt;S-&amp;gt;L=R&lt;/code&gt;这个产生式中前进)，还是直接使用&lt;code&gt;R-&amp;gt;L&lt;/code&gt;进行reduce.&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/slr-conflict.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们需要更多、更精确的限制才能进一步降低冲突的可能。&lt;/p&gt;
 &lt;h3 id=&#34;LR-1-Parsing&#34;&gt;&lt;a href=&#34;#LR-1-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LR(1) Parsing&#34;&gt;&lt;/a&gt;LR(1) Parsing&lt;/h3&gt;&lt;p&gt;包含更多信息（后继token）来消除一些归约动作。&lt;br&gt;相当于“分裂”一些LR(0)状态，精确指明何时应该归约。&lt;/p&gt;
@@ -580,8 +580,235 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;因此，上述文法对于LALR(1)是二义的。&lt;br&gt;但这是可以接受的：LALR(1)足以处理绝大部分程序设计语言。&lt;/p&gt;
-&lt;h2 id=&#34;Part-6-语法分析杂项与小结&#34;&gt;&lt;a href=&#34;#Part-6-语法分析杂项与小结&#34; class=&#34;headerlink&#34; title=&#34;Part 6: 语法分析杂项与小结&#34;&gt;&lt;/a&gt;Part 6: 语法分析杂项与小结&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;语法分析器的生成器：YACC&#34;&gt;&lt;a href=&#34;#语法分析器的生成器：YACC&#34; class=&#34;headerlink&#34; title=&#34;语法分析器的生成器：YACC&#34;&gt;&lt;/a&gt;语法分析器的生成器：YACC&lt;/h3&gt;&lt;h3 id=&#34;错误恢复-1&#34;&gt;&lt;a href=&#34;#错误恢复-1&#34; class=&#34;headerlink&#34; title=&#34;错误恢复&#34;&gt;&lt;/a&gt;错误恢复&lt;/h3&gt;&lt;h4 id=&#34;局部错误恢复&#34;&gt;&lt;a href=&#34;#局部错误恢复&#34; class=&#34;headerlink&#34; title=&#34;局部错误恢复&#34;&gt;&lt;/a&gt;局部错误恢复&lt;/h4&gt;&lt;h4 id=&#34;全局错误恢复&#34;&gt;&lt;a href=&#34;#全局错误恢复&#34; class=&#34;headerlink&#34; title=&#34;全局错误恢复&#34;&gt;&lt;/a&gt;全局错误恢复&lt;/h4&gt;&lt;h4 id=&#34;语法分析小结&#34;&gt;&lt;a href=&#34;#语法分析小结&#34; class=&#34;headerlink&#34; title=&#34;语法分析小结&#34;&gt;&lt;/a&gt;语法分析小结&lt;/h4&gt;&lt;h2 id=&#34;Part-7-抽象语法&#34;&gt;&lt;a href=&#34;#Part-7-抽象语法&#34; class=&#34;headerlink&#34; title=&#34;Part 7: 抽象语法&#34;&gt;&lt;/a&gt;Part 7: 抽象语法&lt;/h2&gt;&lt;h2 id=&#34;Part-8-语义分析&#34;&gt;&lt;a href=&#34;#Part-8-语义分析&#34; class=&#34;headerlink&#34; title=&#34;Part 8: 语义分析&#34;&gt;&lt;/a&gt;Part 8: 语义分析&lt;/h2&gt;&lt;h2 id=&#34;Part-9-活动记录Activation-Record&#34;&gt;&lt;a href=&#34;#Part-9-活动记录Activation-Record&#34; class=&#34;headerlink&#34; title=&#34;Part 9: 活动记录Activation Record&#34;&gt;&lt;/a&gt;Part 9: 活动记录Activation Record&lt;/h2&gt; ]]></description>
+&lt;h2 id=&#34;Part-6-语法分析杂项&#34;&gt;&lt;a href=&#34;#Part-6-语法分析杂项&#34; class=&#34;headerlink&#34; title=&#34;Part 6: 语法分析杂项&#34;&gt;&lt;/a&gt;Part 6: 语法分析杂项&lt;/h2&gt;&lt;h3 id=&#34;语法分析器的生成器：YACC&#34;&gt;&lt;a href=&#34;#语法分析器的生成器：YACC&#34; class=&#34;headerlink&#34; title=&#34;语法分析器的生成器：YACC&#34;&gt;&lt;/a&gt;语法分析器的生成器：YACC&lt;/h3&gt;&lt;p&gt;Yacc &amp;#x3D; yet another compiler-compiler&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于LALR(1)&lt;/li&gt;
+&lt;li&gt;BNF(Backus Naur Form)范式&lt;/li&gt;
+&lt;li&gt;GNU版本名为&lt;em&gt;Bison&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;流程：&lt;ol&gt;
+&lt;li&gt;Yacc源程序(*.y) &amp;gt;&amp;gt; Yacc Compiler &amp;gt;&amp;gt; C语言实现的LALR分析器(y.tab.c)&lt;/li&gt;
+&lt;li&gt;y.tab.c &amp;gt;&amp;gt; C Compiler &amp;gt;&amp;gt; 分析器可执行文件(&lt;em&gt;.exe&amp;#x2F;&lt;/em&gt;.out)&lt;/li&gt;
+&lt;li&gt;输入 &amp;gt;&amp;gt; 分析器可执行文件 &amp;gt;&amp;gt; 输出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lex: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一种词法分析器的生成器，将词法转化为词法解析器yylex()&lt;/li&gt;
+&lt;li&gt;Yacc生成的yyparse()可以接受yylex()进而生成语法分析器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;Yacc源程序结构&#34;&gt;&lt;a href=&#34;#Yacc源程序结构&#34; class=&#34;headerlink&#34; title=&#34;Yacc源程序结构&#34;&gt;&lt;/a&gt;Yacc源程序结构&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;声明&lt;ul&gt;
+&lt;li&gt;C语言的声明&lt;/li&gt;
+&lt;li&gt;词法单元的声明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;翻译规则&lt;ul&gt;
+&lt;li&gt;产生式&lt;/li&gt;
+&lt;li&gt;产生式相关语义动作（例如编译时计算）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;辅助性C语言例程&lt;ul&gt;
+&lt;li&gt;直接拷贝到生成的*.tab.c中&lt;/li&gt;
+&lt;li&gt;可以在语义动作中调用&lt;/li&gt;
+&lt;li&gt;Lex生成的yylex()就是其中之一，可以返回词法单元&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于示例文法：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;exp → exp addop term | term&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;addop → + | -&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;term → term mulop factor | factor&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mulop → *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;factor → ( exp ) | number&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;有示例程序：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;%&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#include &amp;lt;ctype.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;int yylex(void);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;int yyerror (char * s);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%token NUMBER&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;command: exp &amp;#123;printf(&amp;quot;%d\n&amp;quot;, $1);&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;exp: exp &amp;#x27;+&amp;#x27; term &amp;#123;$$ = $1 + $3;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   | exp &amp;#x27;-&amp;#x27; term &amp;#123;$$ = $1 - $3;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   | term &amp;#123;$$ = $1&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;term: term &amp;#x27;*&amp;#x27; factor &amp;#123;$$ = $1 * $3;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    | factor &amp;#123;$$ = $1;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;factor: NUMBER &amp;#123;$$ = $1;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      | &amp;#x27;(&amp;#x27; exp &amp;#x27;)&amp;#x27; &amp;#123;$$ = $2;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中翻译规则Rule的格式为 &lt;code&gt;Rule &amp;#123;Action Code&amp;#125;&lt;/code&gt;，使用规则规约后Action Code就会被执行&lt;br&gt;语义动作形如 &lt;code&gt;$$ = $1 + $3&lt;/code&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$$&lt;/code&gt; 表示和产生式头(LHS)相关的属性值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$i&lt;/code&gt; 表示产生式体中第i个文法符号（终结符&amp;#x2F;非终结符）的属性值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;消除二义性与冲突解决&#34;&gt;&lt;a href=&#34;#消除二义性与冲突解决&#34; class=&#34;headerlink&#34; title=&#34;消除二义性与冲突解决&#34;&gt;&lt;/a&gt;消除二义性与冲突解决&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;消除二义性：&lt;ul&gt;
+&lt;li&gt;指定运算符优先级：先出现的优先&lt;/li&gt;
+&lt;li&gt;指定运算符结合律：&lt;code&gt;%left&lt;/code&gt;（左结合，例如乘法加法） &lt;code&gt;%right&lt;/code&gt;（右结合，例如一元运算符负号）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;冲突解决&lt;ul&gt;
+&lt;li&gt;规约-规约冲突：先出现的产生式优先采用&lt;/li&gt;
+&lt;li&gt;移进-规约冲突：移进优先采用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更通用的办法：通过改写文法，可以在消除冲突的同时减少二义性&lt;/p&gt;
+&lt;h3 id=&#34;错误恢复-1&#34;&gt;&lt;a href=&#34;#错误恢复-1&#34; class=&#34;headerlink&#34; title=&#34;错误恢复&#34;&gt;&lt;/a&gt;错误恢复&lt;/h3&gt;&lt;p&gt;动机：一次性报告所有错误，而非遇到第一个就停下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;局部错误恢复：调整Parse过程的栈，使其恢复到正常从而继续进行Parsing&lt;/li&gt;
+&lt;li&gt;全局错误恢复：删除&amp;#x2F;插入尽可能少的字符，使得源字符串成为合法的字符串&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局部错误恢复&#34;&gt;&lt;a href=&#34;#局部错误恢复&#34; class=&#34;headerlink&#34; title=&#34;局部错误恢复&#34;&gt;&lt;/a&gt;局部错误恢复&lt;/h4&gt;&lt;p&gt;Yacc中的一个方法：使用特殊的&lt;code&gt;error&lt;/code&gt;符号（终结符）控制恢复过程。&lt;br&gt;例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;exp -&amp;gt; ( error )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;exp -&amp;gt; error ; exp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;于是通过这样的产生式，我们可以把错误的影响范围控制在右括号处&amp;#x2F;分号处。如果语法处理时遇到错误，可以一路跳过直到右括号和分号，然后继续处理。&lt;br&gt;分号、右括号这样的符号就被叫做synchronizing token.&lt;/p&gt;
+&lt;p&gt;当语法分析器遇到错误时&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不断弹出栈中状态，直到栈顶状态包含项 $ A \rightarrow \bullet error\ \alpha$&lt;/li&gt;
+&lt;li&gt;分析器将error移入栈中&lt;/li&gt;
+&lt;li&gt;如果α为空，分析器直接执行归约，并调用相关的语义&lt;br&gt;动作；否则跳过一些符号，找到可以归约为α的串为止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;流程示例：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/local-recovery.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;全局错误恢复&#34;&gt;&lt;a href=&#34;#全局错误恢复&#34; class=&#34;headerlink&#34; title=&#34;全局错误恢复&#34;&gt;&lt;/a&gt;全局错误恢复&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;br&gt;Burke-Fisher 错误恢复: 对于在发生错误处之前的K个token，每一处都允许插入&amp;#x2F;删除&amp;#x2F;修改一个token，直到修复成功。&lt;br&gt;优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不引入新产生式，不改变文法&lt;/li&gt;
+&lt;li&gt;也不改变分析表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如何判定修复是否成功：修复后，在报告错误处继续Parsing直到下一个错误发生的距离最长（一般来说，修复后能从本来由于错误卡住的地方继续前进4个token就算成功了）。&lt;/p&gt;
+&lt;p&gt;实现：维护K个token前的旧栈，以及K个token组成的队列。遇到错误后基于旧栈和增删改后的token队列（不一定是K个了）试图parse. 尝试不同的增删改方案直到修复成功：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/burke-fisher.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;语义动作需要延迟到进入旧栈中（进入旧栈说明在解析流程中已经确定了）再进行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;否则如果遇到错误，错误恢复发现原来的parsing方式不对时，文法符号的属性已经按照错误的方式运算了，回天乏术。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;语法分析小结：文法对比&#34;&gt;&lt;a href=&#34;#语法分析小结：文法对比&#34; class=&#34;headerlink&#34; title=&#34;语法分析小结：文法对比&#34;&gt;&lt;/a&gt;语法分析小结：文法对比&lt;/h2&gt;&lt;h3 id=&#34;SLR-与-LR-1&#34;&gt;&lt;a href=&#34;#SLR-与-LR-1&#34; class=&#34;headerlink&#34; title=&#34;SLR 与 LR(1)&#34;&gt;&lt;/a&gt;SLR 与 LR(1)&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;SLR&lt;/th&gt;
+&lt;th&gt;LR(1)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;移   进&lt;/td&gt;
+&lt;td&gt;$ A\rightarrow \alpha \bullet a \beta \in I_i \\ \text{Goto}(I_i,a)&amp;#x3D;I_j \\ \text{Action}[i,a]&amp;#x3D;s_j $&lt;/td&gt;
+&lt;td&gt;$ A\rightarrow \alpha \bullet a \beta \in I_i \\ \text{Goto}(I_i,a)&amp;#x3D;I_j \\ \text{Action}[i,a]&amp;#x3D;s_j $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;规   约&lt;/td&gt;
+&lt;td&gt;$ A\rightarrow \alpha \bullet \in I_i \\ \alpha \in \text{Follow}(A) \\ \text{Action}[i,a]&amp;#x3D;r_j$&lt;/td&gt;
+&lt;td&gt;$ A\rightarrow \alpha \bullet \in I_i \\ \text{Action}[i,a]&amp;#x3D;r_j $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;可见唯一的区别就是SLR在规约时要求后继token是在Follow集里的。&lt;/p&gt;
+&lt;h3 id=&#34;LL-1-与-LR-1&#34;&gt;&lt;a href=&#34;#LL-1-与-LR-1&#34; class=&#34;headerlink&#34; title=&#34;LL(1) 与 LR(1)&#34;&gt;&lt;/a&gt;LL(1) 与 LR(1)&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;LR(1)&lt;/th&gt;
+&lt;th&gt;LL(1)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;建立分析树&lt;/td&gt;
+&lt;td&gt;自底而上&lt;/td&gt;
+&lt;td&gt;自顶而下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;归约or推导&lt;/td&gt;
+&lt;td&gt;规范归约(最右推导的逆)&lt;/td&gt;
+&lt;td&gt;最左推导&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;分析表（行x列）&lt;/td&gt;
+&lt;td&gt;状态×文法符号，大&lt;/td&gt;
+&lt;td&gt;非终结符×终结符，小&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;分析栈&lt;/td&gt;
+&lt;td&gt;状态栈，信息更多&lt;/td&gt;
+&lt;td&gt;文法符号栈&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;LL(1): 对于多个可选产生式 $A\rightarrow \alpha_1|\alpha_2|…$ 向前看下一个输入根据First,Follow确定使用哪条产生式推导&lt;/li&gt;
+&lt;li&gt;LR(1): 对于多个可选产生式 $A\rightarrow \alpha,\ B\rightarrow \alpha,… $ 在识别出整个$\alpha$后，再往前看1个符号，然后确定使用哪条产生式归约&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;LL-1-LR-1-SLR&#34;&gt;&lt;a href=&#34;#LL-1-LR-1-SLR&#34; class=&#34;headerlink&#34; title=&#34;LL(1) LR(1) SLR&#34;&gt;&lt;/a&gt;LL(1) LR(1) SLR&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/grammar-compare.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-7-抽象语法&#34;&gt;&lt;a href=&#34;#Part-7-抽象语法&#34; class=&#34;headerlink&#34; title=&#34;Part 7: 抽象语法&#34;&gt;&lt;/a&gt;Part 7: 抽象语法&lt;/h2&gt;&lt;p&gt;编程语言 &amp;#x3D; 语法（识别一个合法的程序） + 语义（这个合法的程序对应的实际行为）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;语法：已经在之前章节讨论过。&lt;/li&gt;
+&lt;li&gt;语义：&lt;ul&gt;
+&lt;li&gt;操作语义：如何执行程序？&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;公理语义：我们可以证明程序的那些性质？&lt;/del&gt;（该部分不在本课讨论）&lt;/li&gt;
+&lt;li&gt;指称语义：程序是做什么的？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;属性文法Attribute-Grammar&#34;&gt;&lt;a href=&#34;#属性文法Attribute-Grammar&#34; class=&#34;headerlink&#34; title=&#34;属性文法Attribute Grammar&#34;&gt;&lt;/a&gt;属性文法Attribute Grammar&lt;/h3&gt;&lt;p&gt;属性文法&amp;#x3D;&lt;strong&gt;上下文无关文法+属性+属性计算规则&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;属性:&amp;#x3D; 描述文法符号的语义特征，比如表达式E的值我们可以记为E.val&lt;/li&gt;
+&lt;li&gt;属性计算规则(语义规则):&amp;#x3D; 与产生式相关联、反映文法符号属性之间关系的规则，比如在乘法表达式中左侧的E.val要如何计算&lt;ul&gt;
+&lt;li&gt;仅表明属性间“抽象”关系，不涉及计算次序等具体实现细节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用：&lt;ul&gt;
+&lt;li&gt;“推导类”：例如很多语言的&lt;strong&gt;编译期求值&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;“生成类”：生成AST， 中间代码等&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;实现：例如在先前章节中Yacc等Parser生成器的&lt;strong&gt;语义动作&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;语义动作Semantic-Action&#34;&gt;&lt;a href=&#34;#语义动作Semantic-Action&#34; class=&#34;headerlink&#34; title=&#34;语义动作Semantic Action&#34;&gt;&lt;/a&gt;语义动作Semantic Action&lt;/h3&gt;&lt;p&gt;我们可以给产生式绑定一个语义动作，使得按照这个产生式规约时&amp;#x2F;推导时完成特定操作。&lt;/p&gt;
+&lt;p&gt;每个token都可能有独属于自己的**语义值(Semantic Value)**。每种token的语义值类型可以不同，我们把A的语义值的类型称为“A的关联类型”。&lt;br&gt;例如对于产生式 $A\rightarrow B\ C\ D$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;语义动作返回值必须是&lt;em&gt;A的关联类型&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;这个值可以通过B C D各自的语义值进行运算得出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如我们通过如下语义动作可以在编译期直接evaluate表达式的值：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;E-&amp;gt;E1 + T   &amp;#123; E.val= E1.val + T.val &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;E-&amp;gt;E1 – T   &amp;#123; E.val= E1.val -T.val &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;E-&amp;gt;T        &amp;#123; E.val= T.val &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;T-&amp;gt;(E)      &amp;#123; T.val= E.val &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;T-&amp;gt;num      &amp;#123; T.val= num.val &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在递归下降法中，语义动作体现为每个符号对应的parsing函数。这里我们同时关心函数的&lt;strong&gt;返回值&lt;/strong&gt;与&lt;strong&gt;副作用&lt;/strong&gt;。&lt;br&gt;因此假设T和F两个token的关联类型都是&lt;code&gt;int&lt;/code&gt;，对于表达式 $T\rightarrow T * F$ 我们可以如此实现语义动作：&lt;/p&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; a= T();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;eat(TIMES); &lt;span class=&#34;comment&#34;&gt;// &amp;#x27;*&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; b= F();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; a*b;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;而对于Parser生成器来说，其实现方式有所不同，以Yacc为例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用一个栈储存语义值，这个栈和状态栈是同步的&lt;/li&gt;
+&lt;li&gt;当进行&lt;strong&gt;规约&lt;/strong&gt;操作时，需要执行相应的语义动作（C语言实现）&lt;ul&gt;
+&lt;li&gt;可能用到的值一定可以通过多次pop语义值栈获得（和状态栈pop同步）&lt;/li&gt;
+&lt;li&gt;pop完毕后运算得到的新值压入该栈（和状态栈压入新状态同步）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;抽象解析树Abstract-Parse-Tree&#34;&gt;&lt;a href=&#34;#抽象解析树Abstract-Parse-Tree&#34; class=&#34;headerlink&#34; title=&#34;抽象解析树Abstract Parse Tree&#34;&gt;&lt;/a&gt;抽象解析树Abstract Parse Tree&lt;/h3&gt;&lt;p&gt;语义动作的一种应用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠和抽象语法树(Abstract Syntax Tree)的区别请参阅&lt;a href=&#34;https://stackoverflow.com/questions/5026517/whats-the-difference-between-parse-trees-and-abstract-syntax-trees-asts&#34;&gt;https://stackoverflow.com/questions/5026517/whats-the-difference-between-parse-trees-and-abstract-syntax-trees-asts&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;能否&lt;strong&gt;通过描述语义动作直接实现整个编译器&lt;/strong&gt;？可以，但是难以维护，且必须保证这些语义值的计算顺序和Parsing顺序完全一致。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;考虑分离语法解析（Parsing）和语义动作：一个可行方案是Parsing得到树，而后遍历以进行语义相关的操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以很容易得到一棵树：叶节点对应输入的token，内部节点对应一个语法规则。这被称为&lt;strong&gt;concrete parse tree&lt;/strong&gt;.&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/concrete-pt.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;缺点：太“啰嗦”。例如括号相关产生式只是为了解析顺序正确才有的，没必要放进树里。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;抽象语法树Abstract-Syntax-Tree&#34;&gt;&lt;a href=&#34;#抽象语法树Abstract-Syntax-Tree&#34; class=&#34;headerlink&#34; title=&#34;抽象语法树Abstract Syntax Tree&#34;&gt;&lt;/a&gt;抽象语法树Abstract Syntax Tree&lt;/h3&gt;&lt;p&gt;可以提供一个&lt;em&gt;干净的&lt;/em&gt;（不包含Parsing的那些繁文缛节）接口用于后续编译流程的实现或优化（编译器后端）。&lt;br&gt;生成方式：用&lt;strong&gt;具体语法&lt;/strong&gt;（Parser生成器能懂的）为&lt;strong&gt;抽象语法&lt;/strong&gt;（我们想要的、更可读的）生成抽象语法树&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/AST.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;实现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为每一个非终结符定义一个类型声明，用于表示其关联类型&lt;/li&gt;
+&lt;li&gt;产生式统一放进一个union（如果是Rust就是Option直接解决，&lt;del&gt;C语言太坏了&lt;/del&gt;）里，每一个产生式就是union里的一个结构体，这个结构体用于储存其子节点 &lt;img src=&#34;/compiler-construction-principles/AST-def.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;为每个产生式定义一个函数，除了计算需要的语义值返回以外，还将申请空间、分配新的树节点并设置好其子节点 &lt;img src=&#34;/compiler-construction-principles/AST-impl.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;以Yacc为例，把这些函数放入对应产生式的语义动作块中即可在规约时自动调用。随着Parsing的逐步推进，每次规约都可以产生一个新的内部节点，最终逐步构建出整颗AST&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此外，通过遍历AST还能做很多：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过一些“变形”缩小树的规模，减少最终代码的大小&lt;/li&gt;
+&lt;li&gt;通过一些“变形”优化树的结构，提高最终代码的性能&lt;/li&gt;
+&lt;li&gt;代码内联优化&lt;/li&gt;
+&lt;li&gt;静态分析，编译期推导值&lt;/li&gt;
+&lt;li&gt;类型系统检查等安全检查&lt;/li&gt;
+&lt;li&gt;翻译到中间表示，虽然&lt;strong&gt;AST也常被视作一种“中间表示”&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;位置Position&#34;&gt;&lt;a href=&#34;#位置Position&#34; class=&#34;headerlink&#34; title=&#34;位置Position&#34;&gt;&lt;/a&gt;位置Position&lt;/h3&gt;&lt;p&gt;在one-pass编译器中，词法分析、语法分析、语义分析是同步进行的。而错误发生时，&lt;strong&gt;词法分析器lexer&lt;/strong&gt;的位置可以用来作为错误发生位置的合理估计反馈给用户。所以，lexer存有一个全局变量维护当前位置信息。&lt;/p&gt;
+&lt;p&gt;然而，对于使用AST的编译器，词法分析结束后才开始语法分析，因此这是不可行的。&lt;br&gt;解决方案：AST每个节点记录自己在源文件中的&lt;strong&gt;位置&lt;/strong&gt;，标记自己是具体哪几个字符派生而来的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lexer把每个token的起始位置、结束位置传递给parser&lt;/li&gt;
+&lt;li&gt;parser维护&lt;em&gt;位置栈&lt;/em&gt;与&lt;em&gt;语义值栈&lt;/em&gt;，这样语义操作就知道位置信息了&lt;ul&gt;
+&lt;li&gt;不是所有的Parser生成器都可以做到这一点：例如Bison可以但Yacc不行&lt;/li&gt;
+&lt;li&gt;对于Yacc等无法直接实现的，可以引入新的非终结符pos（其语义值包含需要的位置信息）并改写文法。例如我们可以如此改写PLUS表达式以利用位置信息：&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;%&amp;#123; extern A_OpExp(A_exp, A_binop, A_exp, position); %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%union &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int num;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    string id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    position pos;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%type &amp;lt;pos&amp;gt; pos&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;pos: &amp;#123; $$ = EM_tokpos; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;exp: exp PLUS pos exp &amp;#123; $$ = A_OpExp($1, A_plus, $4, $3); &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Part-8-语义分析&#34;&gt;&lt;a href=&#34;#Part-8-语义分析&#34; class=&#34;headerlink&#34; title=&#34;Part 8: 语义分析&#34;&gt;&lt;/a&gt;Part 8: 语义分析&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;符号表Symbol-Table&#34;&gt;&lt;a href=&#34;#符号表Symbol-Table&#34; class=&#34;headerlink&#34; title=&#34;符号表Symbol Table&#34;&gt;&lt;/a&gt;符号表Symbol Table&lt;/h3&gt;&lt;h3 id=&#34;Tiger编译器的符号&#34;&gt;&lt;a href=&#34;#Tiger编译器的符号&#34; class=&#34;headerlink&#34; title=&#34;Tiger编译器的符号&#34;&gt;&lt;/a&gt;Tiger编译器的符号&lt;/h3&gt;&lt;h3 id=&#34;类型检查&#34;&gt;&lt;a href=&#34;#类型检查&#34; class=&#34;headerlink&#34; title=&#34;类型检查&#34;&gt;&lt;/a&gt;类型检查&lt;/h3&gt;&lt;p&gt;&lt;em&gt;以上所有内容为期中考覆盖范围&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;Part-9-活动记录Activation-Record&#34;&gt;&lt;a href=&#34;#Part-9-活动记录Activation-Record&#34; class=&#34;headerlink&#34; title=&#34;Part 9: 活动记录Activation Record&#34;&gt;&lt;/a&gt;Part 9: 活动记录Activation Record&lt;/h2&gt; ]]></description>
         </item>
     </channel>
 </rss>
