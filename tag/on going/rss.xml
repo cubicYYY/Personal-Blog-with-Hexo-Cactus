@@ -27,10 +27,10 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
+        <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
-        <category>BST</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -42,12 +42,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
-        <category>NLP</category>
-        <category>Fuzzing</category>
-        <category>AFL</category>
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
@@ -801,13 +801,144 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;lexer把每个token的起始位置、结束位置传递给parser&lt;/li&gt;
 &lt;li&gt;parser维护&lt;em&gt;位置栈&lt;/em&gt;与&lt;em&gt;语义值栈&lt;/em&gt;，这样语义操作就知道位置信息了&lt;ul&gt;
 &lt;li&gt;不是所有的Parser生成器都可以做到这一点：例如Bison可以但Yacc不行&lt;/li&gt;
-&lt;li&gt;对于Yacc等无法直接实现的，可以引入新的非终结符pos（其语义值包含需要的位置信息）并改写文法。例如我们可以如此改写PLUS表达式以利用位置信息：&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;%&amp;#123; extern A_OpExp(A_exp, A_binop, A_exp, position); %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%union &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int num;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    string id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    position pos;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%type &amp;lt;pos&amp;gt; pos&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;pos: &amp;#123; $$ = EM_tokpos; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;exp: exp PLUS pos exp &amp;#123; $$ = A_OpExp($1, A_plus, $4, $3); &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;对于Yacc等无法直接实现的，可以引入新的非终结符pos（其语义值包含需要的位置信息）并改写文法。例如我们可以如此改写PLUS表达式以利用位置信息：&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;%&amp;#123; extern A_OpExp(A_exp, A_binop, A_exp, position); %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%union &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int num;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    string id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    position pos;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%type &amp;lt;pos&amp;gt; pos&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;pos: &amp;#123; $$ = EM_tokpos; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;exp: exp PLUS pos exp &amp;#123; $$ = A_OpExp($1, A_plus, $4, $3); &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-8-语义分析&#34;&gt;&lt;a href=&#34;#Part-8-语义分析&#34; class=&#34;headerlink&#34; title=&#34;Part 8: 语义分析&#34;&gt;&lt;/a&gt;Part 8: 语义分析&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;符号表Symbol-Table&#34;&gt;&lt;a href=&#34;#符号表Symbol-Table&#34; class=&#34;headerlink&#34; title=&#34;符号表Symbol Table&#34;&gt;&lt;/a&gt;符号表Symbol Table&lt;/h3&gt;&lt;h3 id=&#34;Tiger编译器的符号&#34;&gt;&lt;a href=&#34;#Tiger编译器的符号&#34; class=&#34;headerlink&#34; title=&#34;Tiger编译器的符号&#34;&gt;&lt;/a&gt;Tiger编译器的符号&lt;/h3&gt;&lt;h3 id=&#34;类型检查&#34;&gt;&lt;a href=&#34;#类型检查&#34; class=&#34;headerlink&#34; title=&#34;类型检查&#34;&gt;&lt;/a&gt;类型检查&lt;/h3&gt;&lt;p&gt;&lt;em&gt;以上所有内容为期中考覆盖范围&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-8-语义分析&#34;&gt;&lt;a href=&#34;#Part-8-语义分析&#34; class=&#34;headerlink&#34; title=&#34;Part 8: 语义分析&#34;&gt;&lt;/a&gt;Part 8: 语义分析&lt;/h2&gt;&lt;p&gt;我们注意到上述的属性文法等内容只适用于上下文无关文法CFG.&lt;br&gt;然而CFG有很多不足，例如我们不可能完成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查数组引用的维度是否匹配&lt;/li&gt;
+&lt;li&gt;检查数组越界&lt;/li&gt;
+&lt;li&gt;确定变量应储存于栈上还是堆上&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是因为，这些检查和值有关（涉及语义），而非语法本身。因此我们需要通过检查、遍历&lt;strong&gt;程序表示(Program Representation)&lt;strong&gt;来完成&lt;/strong&gt;（广义的）语义分析&lt;/strong&gt;。&lt;br&gt;常用的程序表示：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;abstract syntax tree (AST)&lt;/li&gt;
+&lt;li&gt;control flow graph (CFG)&lt;/li&gt;
+&lt;li&gt;programdependence graph (PDG)&lt;/li&gt;
+&lt;li&gt;valueflowgraph (VFG)&lt;/li&gt;
+&lt;li&gt;single static assignment (SSA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后我们就可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型检查&lt;/li&gt;
+&lt;li&gt;代码生成&lt;/li&gt;
+&lt;li&gt;去除dead code&lt;/li&gt;
+&lt;li&gt;寄存器分配&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在本课中，我们重点关注的（狭义的）语义分析指的是通过检查AST获知程序的静态属性，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作用域(Scope)与变量可见性&lt;/li&gt;
+&lt;li&gt;变量、函数、表达式的类型&lt;br&gt;以及将AST转为中间代码(Intermediate Code)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;符号表Symbol-Table&#34;&gt;&lt;a href=&#34;#符号表Symbol-Table&#34; class=&#34;headerlink&#34; title=&#34;符号表Symbol Table&#34;&gt;&lt;/a&gt;符号表Symbol Table&lt;/h3&gt;&lt;p&gt;Binding:&amp;#x3D; 把类型、值等信息绑定到一个identifier上&lt;br&gt;Environment:&amp;#x3D; 一些绑定的集合，体现了程序当前环境下已声明的一些变量&amp;#x2F;函数&amp;#x2F;…&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;符号表&lt;/strong&gt;就是Environment的一种实现方式。我们在遍历AST的过程中可以维护一个符号表用于语义分析。&lt;br&gt;符号表中的重要组成部分就是各个局部变量及其作用域。当退出作用域时，自然就需要丢弃内部的一些binding.&lt;br&gt;变量在scope内重新定义时需要覆盖（屏蔽）掉更大作用域的，退出时则还原。&lt;br&gt;因此可见我们需要为符号表实现的接口包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;insert: 将名称绑定到相关信息(type, value, …), 且将覆盖已有的绑定关系（如果存在）&lt;/li&gt;
+&lt;li&gt;lookup: 用名称查找信息&lt;/li&gt;
+&lt;li&gt;beginScope: 进入作用域&lt;/li&gt;
+&lt;li&gt;endScope: 退出作用域，将符号表恢复到进入之前的状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在Java等语言中，可能有多个环境同时活跃（对应不同的module, class等），他们都需要一个符号表。这被称为多符号表。&lt;/p&gt;
+&lt;h4 id=&#34;符号表的实现：Imperative-Style-Functional-Style&#34;&gt;&lt;a href=&#34;#符号表的实现：Imperative-Style-Functional-Style&#34; class=&#34;headerlink&#34; title=&#34;符号表的实现：Imperative Style &amp;amp; Functional Style&#34;&gt;&lt;/a&gt;符号表的实现：Imperative Style &amp;amp; Functional Style&lt;/h4&gt;&lt;p&gt;绑定时，如果遇到了符号已经存在的情况，我们有两种策略：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Imperative Style: 直接覆盖旧的绑定，这样我们不可能lookup到旧的信息。当这个新的绑定不再有效时，需要复原旧的绑定。&lt;ul&gt;
+&lt;li&gt;如何快速lookup且支持删除和复原(restore): 使用哈希表套链表储存每对binding. 我们称哈希表中的元素为bucket&lt;/li&gt;
+&lt;li&gt;insert: 直接插入对应bucket的链表头。如果已经存在，由于这使得新的binding关系更靠前，这样做可以成功覆盖&lt;/li&gt;
+&lt;li&gt;restore: 对应bucket的链表头弹出头部的一些元素&lt;/li&gt;
+&lt;li&gt;我们会发现需要维护一些必要的额外信息（比如scope变化时应该要弹出几次）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Functional Style: 永远保留老的，只是查询时做一些额外处理（可以理解为只是renaming）。这样还原更简单。&lt;ul&gt;
+&lt;li&gt;直接使用BST（红黑树等）实现查找&lt;/li&gt;
+&lt;li&gt;可以使用可持久化数据结构完成删除、复原等操作，进一步降低单次操作的空间复杂度，非常方便&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;两种方法均可使用。&lt;/p&gt;
+&lt;h3 id=&#34;Tiger编译器符号相关的实现&#34;&gt;&lt;a href=&#34;#Tiger编译器符号相关的实现&#34; class=&#34;headerlink&#34; title=&#34;Tiger编译器符号相关的实现&#34;&gt;&lt;/a&gt;Tiger编译器符号相关的实现&lt;/h3&gt;&lt;p&gt;在哈希表中的链表进行lookup时，不断进行字符串比较是很耗时的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解决办法：使用新的数据结构将符号对象关联到一个整数上（哈希值）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tiger编译器的environment是destructive-update的。也就是说，我们有两个函数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;S_beginScope&lt;/code&gt;: 记下当前符号表的状态&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;S_endScope&lt;/code&gt;: 恢复到最近的、还未被恢复的&lt;code&gt;S_beginScope&lt;/code&gt;记下的状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们引入一个**辅助栈(Auxiliary stack)**来维护上文提到的必要的额外信息:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;符号入栈时，会将binding联动地插入对应bucket的链表头&lt;/li&gt;
+&lt;li&gt;弹出栈顶符号时，对应bucket的链表头也会联动地被移除&lt;/li&gt;
+&lt;li&gt;beginScope: 压入一个特殊标记到辅助栈中&lt;/li&gt;
+&lt;li&gt;endScope: 一直弹出符号直到弹出了一个特殊标记&lt;ul&gt;
+&lt;li&gt;我们可以由此标记推断：此次因为退出scope引发的restore操作可以就此结束&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;类型检查&#34;&gt;&lt;a href=&#34;#类型检查&#34; class=&#34;headerlink&#34; title=&#34;类型检查&#34;&gt;&lt;/a&gt;类型检查&lt;/h3&gt;&lt;h4 id=&#34;类型及其作用&#34;&gt;&lt;a href=&#34;#类型及其作用&#34; class=&#34;headerlink&#34; title=&#34;类型及其作用&#34;&gt;&lt;/a&gt;类型及其作用&lt;/h4&gt;&lt;p&gt;类型限定了变量的取值范围以及部分运算规则。&lt;br&gt;可以大致把编程语言分为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型化的(typed): C&amp;#x2F;C++ Java Go&lt;/li&gt;
+&lt;li&gt;非类型化的(untyped): LISP JavaScript&lt;ul&gt;
+&lt;li&gt;不是没有类型，而是类型可变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作用：提高开发效率（高层抽象&amp;amp;指称语义），提高运行性能（指导编译优化），提高安全性（内存安全等）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;事实上，我们可以理解为每引入一种类型就能&lt;strong&gt;完全&lt;/strong&gt;消除某一类特定错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;形式化的类型系统可用于数学领域，参见Coq以及&lt;a href=&#34;https://leanprover-community.github.io/&#34;&gt;LEAN&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;Tiger的类型系统&#34;&gt;&lt;a href=&#34;#Tiger的类型系统&#34; class=&#34;headerlink&#34; title=&#34;Tiger的类型系统&#34;&gt;&lt;/a&gt;Tiger的类型系统&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;原始类型(primitive type): &lt;code&gt;int&lt;/code&gt;和&lt;code&gt;string&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;构造类型(constructed type): &lt;code&gt;record&lt;/code&gt;（类似结构体） 和&lt;code&gt;array&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据不同的判别法，&lt;strong&gt;类型等价&lt;/strong&gt;这一关系分为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name equivalence (NE): 必须声明是同一个类型才是同一类型&lt;/li&gt;
+&lt;li&gt;Structure equivalence (SE): “长得一样”（内部结构一样）就是同一类型&lt;br&gt;显然前者被广泛采用，Tiger语言也不例外。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tiger存在两个独立的命名空间，不同命名空间的同名identifier不会互相遮蔽(hide)对方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Types&lt;/li&gt;
+&lt;li&gt;Functions and variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;Tiger的类型检查&#34;&gt;&lt;a href=&#34;#Tiger的类型检查&#34; class=&#34;headerlink&#34; title=&#34;Tiger的类型检查&#34;&gt;&lt;/a&gt;Tiger的类型检查&lt;/h4&gt;&lt;p&gt;Tiger的语义分析需要两个环境：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Type&lt;/code&gt;: 把类型符号映射到其表示的具体类型对应的数据结构&lt;ul&gt;
+&lt;li&gt;初始时包含primitive type对应的映射 int $\mapsto$ Ty_int, string $\mapsto$ Ty_string,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Value&lt;/code&gt;: 把变量名映射到具体类型，把函数名映射到(参数类型, 返回值类型)（也就是函数签名）&lt;ul&gt;
+&lt;li&gt;初始时包含Tiger中预定义的一些函数定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;semant&lt;/code&gt;模块包含类型检查等语义分析相关操作。类型检查分为两部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type-checking expressions&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;transExp&lt;/code&gt;可以在给定的两个环境下将输入的表达式标记上type（如果发现非法则报错）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Type-checking declarations&lt;ul&gt;
+&lt;li&gt;在Tiger语言中声明只可能在&lt;code&gt;let&lt;/code&gt;语句中出现&lt;/li&gt;
+&lt;li&gt;变量声明：如果提供了变量类型，则检查初始化表达式类型是否匹配；否则直接通过初始化表达式类型获得变量类型&lt;/li&gt;
+&lt;li&gt;类型声明：&lt;strong&gt;递归地&lt;/strong&gt;获取类型别名对应的实际类型。&lt;ul&gt;
+&lt;li&gt;Q: 如何处理递归声明 &lt;code&gt;type list = &amp;#123;first: int, rest: list&amp;#125;&lt;/code&gt;？A: 不使用one-pass而是two-pass: pass#1: 记录声明头部（左侧）放入环境；pass#2: 完成&lt;/li&gt;
+&lt;li&gt;不允许类型的直接循环引用(&lt;code&gt;type a=b;type b=a&lt;/code&gt;)：必须通过record或array完成(&lt;code&gt;type a=b;type b=&amp;#123;i:a&amp;#125;&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;函数声明：检查形参、返回值与函数体&lt;ul&gt;
+&lt;li&gt;Q: 如何处理递归声明？A: 不使用one-pass而是two-pass: pass#1: 记录函数声明（签名）放入环境；pass#2: 处理函数题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;以上所有内容为期中考覆盖范围&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
+&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;Part-9-活动记录Activation-Record&#34;&gt;&lt;a href=&#34;#Part-9-活动记录Activation-Record&#34; class=&#34;headerlink&#34; title=&#34;Part 9: 活动记录Activation Record&#34;&gt;&lt;/a&gt;Part 9: 活动记录Activation Record&lt;/h2&gt; ]]></description>
         </item>
     </channel>
