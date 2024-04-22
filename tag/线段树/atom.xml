@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;线段树&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2018-02-20T15:36:00.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -26,10 +26,10 @@
     <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="分块" />
-    <category term="哈希" />
     <category term="树状数组" />
     <category term="LCA" />
+    <category term="分块" />
+    <category term="哈希" />
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
@@ -39,10 +39,10 @@
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
+    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/2018/02/20/%E6%B4%9B%E8%B0%B7P3919%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E6%95%B0%E7%BB%84/</id>
         <title>洛谷:P3919 【模板】可持久化数组（可持久化线段树/平衡树）</title>

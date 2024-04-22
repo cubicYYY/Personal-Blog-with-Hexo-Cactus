@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/AST-def.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/AST-impl.png">
 <meta property="article:published_time" content="2024-04-13T17:10:20.000Z">
-<meta property="article:modified_time" content="2024-04-22T13:14:32.921Z">
+<meta property="article:modified_time" content="2024-04-22T14:56:42.389Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Compiler">
 <meta property="article:tag" content="Computer Science">
@@ -193,7 +193,7 @@
       
         <time datetime="2024-04-13T17:10:20.000Z" class="dt-published" itemprop="datePublished">2024-04-14</time>
         
-        (Updated: <time datetime="2024-04-22T13:14:32.921Z" class="dt-updated" itemprop="dateModified">2024-04-22</time>)
+        (Updated: <time datetime="2024-04-22T14:56:42.389Z" class="dt-updated" itemprop="dateModified">2024-04-22</time>)
         
       
     </div>
@@ -224,7 +224,7 @@
         <span id="busuanzi_value_page_pv"></span>views
       </div>
       <span class="post-count">
-        Word count: 12.2k
+        Word count: 12.3k
           (~47 mins to read)
       </span>
       <h1 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h1><p>以<strong>快速复习</strong>为目的。<br>文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)</p>
@@ -711,7 +711,7 @@
 <p>规约的条件更严格，也就“自动”消除了一些冲突，也就允许了更多语言被纳入该文法，因此 $\text{LR(0)} \in \text{SLR}$</p>
 <p>局限性：显然不能消除所有shift-reduce冲突。如果产生冲突对应的终结符t恰好在Follow集里，就无法消除。例如考虑如下文法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">S&#x27; -&gt; S $</span><br><span class="line">S -&gt; L = R</span><br><span class="line">S -&gt; R</span><br><span class="line">L -&gt; id</span><br><span class="line">L -&gt; * R</span><br><span class="line">R -&gt; L</span><br></pre></td></tr></table></figure>
-<p>容易看出恰好有Follow(R)&#x3D;Follow(L)<br>然而’&#x3D;’在Follow(L)中，因此我们遇到’L&#x3D;…’时仍然不知道应该接受等于号进行shift(这样就可以进一步在<code>S-&gt;L=R</code>这个产生式中前进)，还是直接使用<code>R-&gt;L</code>进行reduce.<br><img src="/compiler-construction-principles/slr-conflict.png" loading="lazy"><br><img src="/compiler-construction-principles/slr-conflict-table.png" loading="lazy"></p>
+<p>由最后两条规则<code>L -&gt; * R</code> <code>R -&gt; L</code>可以看出Follow(R)与Follow(L)两个集合互相包含，即相等，即Follow(R)&#x3D;Follow(L)<br>然而’&#x3D;’在Follow(L)&#x3D;{<code>=</code>,<code>$</code>}中，因此我们遇到’L&#x3D;…’时仍然不知道应该接受等于号进行shift(这样就可以进一步在<code>S-&gt;L=R</code>这个产生式中前进)，还是直接使用<code>R-&gt;L</code>进行reduce.<br><img src="/compiler-construction-principles/slr-conflict.png" loading="lazy"><br><img src="/compiler-construction-principles/slr-conflict-table.png" loading="lazy"></p>
 <p>我们需要更多、更精确的限制才能进一步降低冲突的可能。</p>
 <h3 id="LR-1-Parsing"><a href="#LR-1-Parsing" class="headerlink" title="LR(1) Parsing"></a>LR(1) Parsing</h3><p>包含更多信息（后继token）来消除一些归约动作。<br>相当于“分裂”一些LR(0)状态，精确指明何时应该归约。</p>
 <p>LR(1)项(item)的形式：$ A \rightarrow \alpha \bullet \beta,\ a$</p>
@@ -736,8 +736,7 @@
 </ul>
 <p><img src="/compiler-construction-principles/lr1-items.png" loading="lazy"></p>
 <hr>
-<p>局限性：这样的文法限制过少，过于灵活，导致状态数量过多，状态表过于庞大。<br><img src="/compiler-construction-principles/lr1-con.png" loading="lazy"><br><img src="/compiler-construction-principles/lr1-dfa.png" loading="lazy"></p>
-<p>因此我们在SLR(1)&#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).</p>
+<p>局限性：这样的文法限制过少，过于灵活，导致状态数量过多，状态表过于庞大。<br><img src="/compiler-construction-principles/lr1-con.png" loading="lazy"><br><img src="/compiler-construction-principles/lr1-dfa.png" loading="lazy"><br><strong>话虽如此，文法仍然可能因为R-R冲突与S-R冲突从而导致不是LR(1)的！这样的例子可以在LR(k)且k&gt;1的文法中大量找到。</strong><br>因此我们在SLR(1)&#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).</p>
 <h3 id="LALR-1-Parsing"><a href="#LALR-1-Parsing" class="headerlink" title="LALR(1) Parsing"></a>LALR(1) Parsing</h3><p>动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？</p>
 <p><strong>LALR(1): 把LR(1)中只有lookahead symbol不同的item合并。</strong></p>
 <p>定义：把LR(1)中item的集合里所有lookahead symbol去掉，剩下的称为<strong>核(core)</strong><br>把LR(1)中所有核相同的状态两两合并为一个状态。每次合并都删除两个旧状态，新增一个新状态，入边出边的连接方式是显然的，直接接在新状态上即可。<br>新状态的item是两个旧状态的item的并（其实就是把每个item的lookahead symbol合并一下）。</p>
