@@ -4,11 +4,11 @@
     <title>Cubic Y³ • Posts by &#34;on going&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-13T17:10:20.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Write-Up" />
-    <category term="Misc" />
-    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -19,9 +19,9 @@
     <category term="古籍研究社" />
     <category term="Treap" />
     <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="Stack" />
     <category term="Splay" />
     <category term="数链剖分" />
     <category term="持久化" />
@@ -39,10 +39,10 @@
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
-    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/compiler-construction-principles/</id>
         <title>编译原理课程笔记</title>
@@ -556,7 +556,11 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-items.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;局限性：这样的文法限制过少，过于灵活，导致状态数量过多，状态表过于庞大。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-con.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-dfa.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;strong&gt;话虽如此，文法仍然可能因为R-R冲突与S-R冲突从而导致不是LR(1)的！这样的例子可以在LR(k)且k&amp;gt;1的文法中大量找到。&lt;/strong&gt;&lt;br&gt;因此我们在SLR(1)&amp;#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).&lt;/p&gt;
+&lt;p&gt;局限性：这样的文法限制过少，过于灵活，导致状态数量过多，状态表过于庞大。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-con.png&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/lr1-dfa.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：话虽如此，文法仍然可能因为R-R冲突与S-R冲突从而导致不是LR(1)的！这样的例子可以在LR(k)且k&amp;gt;1的文法中大量找到。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此我们在SLR(1)&amp;#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).&lt;/p&gt;
 &lt;h3 id=&#34;LALR-1-Parsing&#34;&gt;&lt;a href=&#34;#LALR-1-Parsing&#34; class=&#34;headerlink&#34; title=&#34;LALR(1) Parsing&#34;&gt;&lt;/a&gt;LALR(1) Parsing&lt;/h3&gt;&lt;p&gt;动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LALR(1): 把LR(1)中只有lookahead symbol不同的item合并。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;定义：把LR(1)中item的集合里所有lookahead symbol去掉，剩下的称为&lt;strong&gt;核(core)&lt;/strong&gt;&lt;br&gt;把LR(1)中所有核相同的状态两两合并为一个状态。每次合并都删除两个旧状态，新增一个新状态，入边出边的连接方式是显然的，直接接在新状态上即可。&lt;br&gt;新状态的item是两个旧状态的item的并（其实就是把每个item的lookahead symbol合并一下）。&lt;/p&gt;

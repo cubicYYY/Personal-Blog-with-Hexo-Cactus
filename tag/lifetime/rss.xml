@@ -13,11 +13,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Tue, 05 Sep 2023 00:14:45 +0800</pubDate>
         <lastBuildDate>Tue, 05 Sep 2023 00:14:45 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Write-Up</category>
-        <category>Misc</category>
-        <category>出题</category>
         <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
@@ -28,9 +28,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -48,10 +48,10 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
-        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2023/09/05/rust-lifetime/</guid>
             <title>Rust类型系统中的生命周期</title>
