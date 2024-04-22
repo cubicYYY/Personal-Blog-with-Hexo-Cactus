@@ -26,10 +26,10 @@
     <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="树状数组" />
-    <category term="LCA" />
     <category term="分块" />
     <category term="哈希" />
+    <category term="树状数组" />
+    <category term="LCA" />
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
@@ -267,13 +267,13 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;我们至此可以使用两个条件保证产生式的选择是唯一的：&lt;/p&gt;
+&lt;p&gt;我们至此可以使用两个条件保证产生式的选择是唯一的：&lt;br&gt;对于产生式 $ A\rightarrow \alpha|\beta $ ,&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$ \text{First}(\alpha)\cap \text{First}(\beta)&amp;#x3D; \emptyset $ （α和β推导不出以同一个单词为首的串）&lt;ul&gt;
 &lt;li&gt;意义：显然的。这样看终结符是哪个就知道应该用哪个产生式。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;对于产生式 $ A\rightarrow \alpha|\beta $ , 若$\beta \Rightarrow^* \epsilon$，那么$\alpha \nRightarrow^* \epsilon$，且 $ \text{First}(\alpha) \cap Follow(A) &amp;#x3D; \emptyset $ （α和β不能同时推出$\epsilon$;First(α)不应在Follow(A) 中）&lt;ul&gt;
+&lt;li&gt;若$\beta \Rightarrow^* \epsilon$，那么$\alpha \nRightarrow^* \epsilon$，且 $ \text{First}(\alpha) \cap Follow(A) &amp;#x3D; \emptyset $ （α和β不能同时推出$\epsilon$;First(α)不应在Follow(A) 中）&lt;ul&gt;
 &lt;li&gt;意义：其实就是考虑如果可以推导出空串时，后继终结符因为是空串所以暂时还没法确定，得从Follow集中寻找（再向后看），最终做出哪个产生式的选择。&lt;br&gt;在&lt;strong&gt;满足这条要求的情况下&lt;/strong&gt;，假设下一个输入是b,且$\beta \Rightarrow^* \epsilon$&lt;ul&gt;
 &lt;li&gt;如果b∈First(α)，则选择A → α(属于上面1的情况)&lt;/li&gt;
 &lt;li&gt;如果b∈Follow(A)，则选择A → β ,这对应A最终到达了$\epsilon$而且后面紧跟着终结符b的情况&lt;/li&gt;

@@ -26,10 +26,10 @@
     <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="树状数组" />
-    <category term="LCA" />
     <category term="分块" />
     <category term="哈希" />
+    <category term="树状数组" />
+    <category term="LCA" />
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
