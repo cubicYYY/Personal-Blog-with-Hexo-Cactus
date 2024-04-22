@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/AST-def.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/AST-impl.png">
 <meta property="article:published_time" content="2024-04-13T17:10:20.000Z">
-<meta property="article:modified_time" content="2024-04-22T14:59:24.286Z">
+<meta property="article:modified_time" content="2024-04-22T15:23:21.365Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Compiler">
 <meta property="article:tag" content="Computer Science">
@@ -193,7 +193,7 @@
       
         <time datetime="2024-04-13T17:10:20.000Z" class="dt-published" itemprop="datePublished">2024-04-14</time>
         
-        (Updated: <time datetime="2024-04-22T14:59:24.286Z" class="dt-updated" itemprop="dateModified">2024-04-22</time>)
+        (Updated: <time datetime="2024-04-22T15:23:21.365Z" class="dt-updated" itemprop="dateModified">2024-04-22</time>)
         
       
     </div>
@@ -741,7 +741,8 @@
 <p>注：话虽如此，文法仍然可能因为R-R冲突与S-R冲突从而导致其不属于LR(1)！这样的例子可以在LR(k)且k&gt;1的文法中大量找到。</p>
 </blockquote>
 <p>因此我们在SLR(1)&#x3D;Simple LR(1)与LR(1)之间折中，可以得到一个新文法LALR(1).</p>
-<h3 id="LALR-1-Parsing"><a href="#LALR-1-Parsing" class="headerlink" title="LALR(1) Parsing"></a>LALR(1) Parsing</h3><p>动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？</p>
+<h3 id="LALR-1-Parsing"><a href="#LALR-1-Parsing" class="headerlink" title="LALR(1) Parsing"></a>LALR(1) Parsing</h3><p>LALR &#x3D; Look-Ahead LR</p>
+<p>动机：发现很多LR(1)中的状态都只有lookahead symbol的区别。能否合并？</p>
 <p><strong>LALR(1): 把LR(1)中只有lookahead symbol不同的item合并。</strong></p>
 <p>定义：把LR(1)中item的集合里所有lookahead symbol去掉，剩下的称为<strong>核(core)</strong><br>把LR(1)中所有核相同的状态两两合并为一个状态。每次合并都删除两个旧状态，新增一个新状态，入边出边的连接方式是显然的，直接接在新状态上即可。<br>新状态的item是两个旧状态的item的并（其实就是把每个item的lookahead symbol合并一下）。</p>
 <p><img src="/compiler-construction-principles/lr1-lalr1.png" loading="lazy"></p>
