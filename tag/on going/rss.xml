@@ -13,38 +13,38 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
         <lastBuildDate>Sun, 14 Apr 2024 01:10:20 +0800</lastBuildDate>
-        <category>Misc</category>
-        <category>Write-Up</category>
-        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Write-Up</category>
+        <category>Misc</category>
+        <category>出题</category>
         <category>Hackergame</category>
         <category>SchoolBus</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
         <category>Programming</category>
-        <category>冰菓</category>
-        <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>BST</category>
+        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
-        <category>持久化</category>
-        <category>线段树</category>
-        <category>树状数组</category>
-        <category>LCA</category>
         <category>分块</category>
         <category>哈希</category>
-        <category>Phar</category>
-        <category>反序列化</category>
-        <category>PHP</category>
+        <category>树状数组</category>
+        <category>LCA</category>
+        <category>持久化</category>
+        <category>线段树</category>
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
@@ -239,7 +239,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;规定符号结合性（左结合&amp;#x2F;右结合）&lt;ul&gt;
-&lt;li&gt;递归非终结符在终结符左边，运算就左结合&lt;/li&gt;
+&lt;li&gt;递归非终结符（也就是这个终结符在产生式左部右部都出现）在终结符（也就是这个运算符，比如&lt;code&gt;*&lt;/code&gt;,&lt;code&gt;+&lt;/code&gt;）左边，运算就左结合&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;/compiler-construction-principles/priority.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

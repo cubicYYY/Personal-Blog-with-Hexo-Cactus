@@ -4,38 +4,38 @@
     <title>Cubic Y³</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-13T17:10:20.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
     <category term="Hackergame" />
     <category term="SchoolBus" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
     <category term="Programming" />
-    <category term="冰菓" />
-    <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="BST" />
+    <category term="Stack" />
     <category term="Splay" />
     <category term="数链剖分" />
-    <category term="持久化" />
-    <category term="线段树" />
-    <category term="树状数组" />
-    <category term="LCA" />
     <category term="分块" />
     <category term="哈希" />
-    <category term="Phar" />
-    <category term="反序列化" />
-    <category term="PHP" />
+    <category term="树状数组" />
+    <category term="LCA" />
+    <category term="持久化" />
+    <category term="线段树" />
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="Phar" />
+    <category term="反序列化" />
+    <category term="PHP" />
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
@@ -226,7 +226,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;规定符号结合性（左结合&amp;#x2F;右结合）&lt;ul&gt;
-&lt;li&gt;递归非终结符在终结符左边，运算就左结合&lt;/li&gt;
+&lt;li&gt;递归非终结符（也就是这个终结符在产生式左部右部都出现）在终结符（也就是这个运算符，比如&lt;code&gt;*&lt;/code&gt;,&lt;code&gt;+&lt;/code&gt;）左边，运算就左结合&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;/compiler-construction-principles/priority.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1616,9 +1616,9 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;/ul&gt;
 &lt;p&gt;相信也可以发现国赛这种patch难度远低于attack的难度。建议&lt;strong&gt;做题的初期当作没有攻击得分，先patch了再说&lt;/strong&gt;。&lt;/p&gt;
 </content>
-        <category term="Write-Up" />
         <category term="CISCN" />
         <category term="web" />
+        <category term="Write-Up" />
         <updated>2023-07-06T16:28:12.000Z</updated>
     </entry>
     <entry>
@@ -1685,8 +1685,8 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
 &lt;p&gt; I have made my best to make the solving process more natural. I hope you enjoy digging deep into the problem. You’ll earn much more fun than those who can just use tools written by others without understanding fundamental principles (like me).&lt;/p&gt;
 &lt;p&gt;ご武運を！&lt;/p&gt;
 </content>
-        <category term="Misc" />
         <category term="Write-Up" />
+        <category term="Misc" />
         <category term="出题" />
         <updated>2022-07-03T15:43:00.000Z</updated>
     </entry>
