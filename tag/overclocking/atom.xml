@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://cubicy.icu</id>
+    <title>Cubic Y³ • Posts by &#34;overclocking&#34; tag</title>
+    <link href="http://cubicy.icu" />
+    <updated>2024-04-26T17:36:26.000Z</updated>
+    <category term="Misc" />
+    <category term="Write-Up" />
+    <category term="出题" />
+    <category term="CISCN" />
+    <category term="web" />
+    <category term="Hackergame" />
+    <category term="SchoolBus" />
+    <category term="Rust" />
+    <category term="Lifetime" />
+    <category term="Code" />
+    <category term="Programming" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
+    <category term="Treap" />
+    <category term="BST" />
+    <category term="图论" />
+    <category term="Kruskal" />
+    <category term="Stack" />
+    <category term="Splay" />
+    <category term="数链剖分" />
+    <category term="持久化" />
+    <category term="线段树" />
+    <category term="树状数组" />
+    <category term="LCA" />
+    <category term="分块" />
+    <category term="哈希" />
+    <category term="Phar" />
+    <category term="反序列化" />
+    <category term="PHP" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
+    <category term="Math" />
+    <category term="Translation" />
+    <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
+    <category term="Overclocking" />
+    <entry>
+        <id>http://cubicy.icu/2024/04/27/Overclocking-AMD-Zen-3-Done-Right-Ryzen-5600X-5800X-5950X/</id>
+        <title>Overclocking AMD Zen3 with PBO2 Done Right - Ryzen 5600X/5800X/5900X/5950X overclocking FULL GUIDE</title>
+        <link rel="alternate" href="http://cubicy.icu/2024/04/27/Overclocking-AMD-Zen-3-Done-Right-Ryzen-5600X-5800X-5950X/"/>
+        <content type="html">&lt;h1 id=&#34;Overclocking-AMD-Zen3-Series-with-PBO2&#34;&gt;&lt;a href=&#34;#Overclocking-AMD-Zen3-Series-with-PBO2&#34; class=&#34;headerlink&#34; title=&#34;Overclocking AMD Zen3 Series with PBO2&#34;&gt;&lt;/a&gt;Overclocking AMD Zen3 Series with PBO2&lt;/h1&gt;&lt;p&gt;This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in single-core score(about &lt;strong&gt;5% - 15%&lt;/strong&gt;) while maintaining or even increasing the multi-cores score. The solution may also apply to Zen4 series, but the args cannot be a valid reference.&lt;/p&gt;
+&lt;h2 id=&#34;Before-the-overcloking&#34;&gt;&lt;a href=&#34;#Before-the-overcloking&#34; class=&#34;headerlink&#34; title=&#34;Before the overcloking&#34;&gt;&lt;/a&gt;Before the overcloking&lt;/h2&gt;&lt;h3 id=&#34;Mindset&#34;&gt;&lt;a href=&#34;#Mindset&#34; class=&#34;headerlink&#34; title=&#34;Mindset&#34;&gt;&lt;/a&gt;Mindset&lt;/h3&gt;&lt;p&gt;Zen3 series is super hot, so you lower the voltage, you lower the temperature, and more performance can be obtained under the temperature limit. The heat &lt;em&gt;stucks&lt;/em&gt; inside the chip, so &lt;strong&gt;a good cooler can help a lot!&lt;/strong&gt;&lt;br&gt;Ideal idle temperatur: 40-60 Celsius&lt;/p&gt;
+&lt;p&gt;Although you always overclock with own risks, here’s a point worth mentioning: &lt;strong&gt;PBO2 itself is SAFE,&lt;/strong&gt; since it never actually changes the voltage for different cores under different frequencies(the CPU requires a voltage from the motherboard, so it physically cannot allocate different voltage for each core precisely). Instead, it changes the frequency of each core under a certain voltage (i.e. changes the frequency-voltage &lt;em&gt;curve&lt;/em&gt;)! We’ll see how to adjust the &lt;em&gt;curve&lt;/em&gt; later.&lt;/p&gt;
+&lt;h3 id=&#34;Know-the-quality-of-your-chip&#34;&gt;&lt;a href=&#34;#Know-the-quality-of-your-chip&#34; class=&#34;headerlink&#34; title=&#34;Know the quality of your chip&#34;&gt;&lt;/a&gt;Know the quality of your chip&lt;/h3&gt;&lt;p&gt;A specific CPU chip has its own quality, indicating the potential performance gain from overclocking. If you are using a ASUS motherboard, try this before the overclocking to know your silicon quality: &lt;a href=&#34;https://www.cybermania.ws/apps/amd-ryzen-silicon-tester-amd-v-f/&#34;&gt;AMD Ryzen Silicon Tester (AMD V&amp;#x2F;F)&lt;/a&gt;. Remember to have everything in &lt;strong&gt;default(no overclocking, no PBO2).&lt;/strong&gt; and have as few background tasks as possible.&lt;br&gt;Reference table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Score&lt;/th&gt;
+&lt;th&gt;Quality&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&amp;lt;110&lt;/td&gt;
+&lt;td&gt;Bad&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;110-115&lt;/td&gt;
+&lt;td&gt;Normal&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;115-125&lt;/td&gt;
+&lt;td&gt;Good&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;gt;125&lt;/td&gt;
+&lt;td&gt;Excellent&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h3 id=&#34;All-in-One-Solution&#34;&gt;&lt;a href=&#34;#All-in-One-Solution&#34; class=&#34;headerlink&#34; title=&#34;All in One Solution&#34;&gt;&lt;/a&gt;All in One Solution&lt;/h3&gt;&lt;p&gt;Go to check &lt;a href=&#34;https://www.techpowerup.com/download/amd-ryzen-clock-tuner-ctr-1usmus/&#34;&gt;Clock Tuner&lt;/a&gt; !&lt;/p&gt;
+&lt;h3 id=&#34;Software-Tools-to-Prepare&#34;&gt;&lt;a href=&#34;#Software-Tools-to-Prepare&#34; class=&#34;headerlink&#34; title=&#34;Software&amp;#x2F;Tools to Prepare&#34;&gt;&lt;/a&gt;Software&amp;#x2F;Tools to Prepare&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sp00n/corecycler/releases/tag/v0.9.4.2&#34;&gt;Corecycler&lt;/a&gt; (To test the stability of your overclock settings)&lt;/li&gt;
+&lt;li&gt;AMD Ryzen Master (provided by the AMD)&lt;/li&gt;
+&lt;li&gt;CPU-Z or other benchmark tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Detailed-Steps&#34;&gt;&lt;a href=&#34;#Detailed-Steps&#34; class=&#34;headerlink&#34; title=&#34;Detailed Steps&#34;&gt;&lt;/a&gt;Detailed Steps&lt;/h2&gt;&lt;p&gt;Platform used: ASUS TUF B550M&lt;/p&gt;
+&lt;h3 id=&#34;Set-BIOS-args&#34;&gt;&lt;a href=&#34;#Set-BIOS-args&#34; class=&#34;headerlink&#34; title=&#34;Set BIOS args&#34;&gt;&lt;/a&gt;Set BIOS args&lt;/h3&gt;&lt;p&gt;Reboot and enter the BIOS, here’s some key settings. The actual path may varies from different motherboards&amp;#x2F;BIOS. So if an item cannot be found, just ignore it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ai Overclock Tuner: Manual or DOCP if XMP for the RAM enabled&lt;/li&gt;
+&lt;li&gt;Performance Enhancer: &lt;code&gt;Auto&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CPU Core Ratio: &lt;code&gt;Auto&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fmax Enhancer: ALWAYS OFF!&lt;/li&gt;
+&lt;li&gt;Spread Spectrum: ALWAYS OFF!&lt;/li&gt;
+&lt;li&gt;Ai Tweaker&amp;#x2F;DIGI+ VRM&lt;ul&gt;
+&lt;li&gt;VDDCR CPU Current Capability: &lt;code&gt;130%&lt;/code&gt; or &lt;code&gt;140%&lt;/code&gt; or more, as high as possible&lt;/li&gt;
+&lt;li&gt;CPU Current Capability (if exists, maybe in a different path): &lt;code&gt;130%&lt;/code&gt; or &lt;code&gt;140%&lt;/code&gt; or more, as high as possible&lt;/li&gt;
+&lt;li&gt;Set all to &lt;code&gt;Extreme&lt;/code&gt; if possible, if you are in a cybermania like me&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;… Loadline Calibration: ALL &lt;code&gt;Auto&lt;/code&gt; ! It’s almost meaningless to change it unless you have a fixed frequency and CPU voltage, or you always get BSoD after every tries in PBO2.&lt;/li&gt;
+&lt;li&gt;CPPC: ON! √√√&lt;/li&gt;
+&lt;li&gt;CPPC preferred cores:  ON&amp;#x2F;OFF, not sure. (I leave it ENABLED, but Windows scheduler sucks so it may make applications stuttery when switching between cores. Test it by yourself after everything is done, if you like!)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PBO settings under “Ai Tweaker” tab (if exists): ALL &lt;code&gt;Auto&lt;/code&gt; !&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;PBO settings under “Advanced” tab:&lt;ul&gt;
+&lt;li&gt;Precision Boost Overdrive: &lt;code&gt;Manual&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;PBO Limits: &lt;code&gt;Manual&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;PPT&amp;#x2F;TDC&amp;#x2F;&lt;strong&gt;EDC&lt;/strong&gt; (this is an important arg)&lt;ul&gt;
+&lt;li&gt;reference for 5600X&amp;#x2F;5800X: 350&amp;#x2F;140&amp;#x2F;160&lt;/li&gt;
+&lt;li&gt;reference for 5900X&amp;#x2F;5950X: 350&amp;#x2F;150&amp;#x2F;190&lt;/li&gt;
+&lt;li&gt;PPT makes little difference, set it to a reasonable high number (300 is enough, I take 350 here)&lt;/li&gt;
+&lt;li&gt;TDC should always be lower than EDC about 20~45.&lt;/li&gt;
+&lt;li&gt;EDC is important! If it is too low, no enough energy to feed the chip; if it is too high, the PBO2 algorithm can be extremely aggressive so the CPU are always thermal throttling, leading to worse performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PBO Scalar: Manual &amp;#x2F; 10X (If your cooler sucks, make this arg lower)&lt;/li&gt;
+&lt;li&gt;Max CPU Boost Clock Override: 200MHz (If your cooler sucks, make this arg lower too)&lt;/li&gt;
+&lt;li&gt;Thermal limit: auto or a high value. This arg can only lower the temperature limit set by the manufacturer, so it actually makes no difference&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Curve Optimizer: Per Core, and the NEGATIVE values for each core is all we have to determine in the next step. Leave it all 0 now.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Advanced&amp;#x2F;CPU Configuration&amp;#x2F;PSS Support: ON! With some cores sleeping, the working cores can boost more since the chip is cooler.&lt;/li&gt;
+&lt;li&gt;Advanced&amp;#x2F;AMD CBS&amp;#x2F;Global C-State Control: ON! For the same reason.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;F10&lt;/code&gt; or the key to save BIOS setting and enter the system to ensure your settings worked.&lt;/p&gt;
+&lt;h3 id=&#34;Curve-Optimizer-Settings&#34;&gt;&lt;a href=&#34;#Curve-Optimizer-Settings&#34; class=&#34;headerlink&#34; title=&#34;Curve Optimizer Settings&#34;&gt;&lt;/a&gt;Curve Optimizer Settings&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;The key idea: lower the voltage curve (for each frequency) to have more thermal and power space for boosting.&lt;/strong&gt;&lt;br&gt;So we need negative values here.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter the system, open the Ryzen Master and check for the 1st and 2nd fastest core and remember the core number (start from 1. e.g. #1 and #5)&lt;/li&gt;
+&lt;li&gt;Restart and enter the BIOS, find &lt;code&gt;Advanced/PBO/Curve Optimizer&lt;/code&gt; or another path if you are using a different motherboard&lt;/li&gt;
+&lt;li&gt;Set all the cores to negative &lt;code&gt;-30&lt;/code&gt; (if your chip score is not so good, set it to &lt;code&gt;-25&lt;/code&gt; or something) except for the 1st and 2nd fastest core. &lt;/li&gt;
+&lt;li&gt;For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case please do a trivial convert for the number. e.g. #1-&amp;gt;#0 and #5-&amp;gt;#4), set the value to &lt;code&gt;-20&lt;/code&gt;: they need higher voltage to boost higher.&lt;/li&gt;
+&lt;li&gt;Apply changes and restart, try to enter the system&lt;ul&gt;
+&lt;li&gt;Can even not enter the system: Unstable, lower the negative value (increase the voltage) of all cores&lt;/li&gt;
+&lt;li&gt;Entered the system and getting BSoD: Restart and try to finish these steps before a BSoD again: &lt;ol&gt;
+&lt;li&gt;Open the Windows Event Viewer, go to System, look for errors from WHEA-logger with ID:18.&lt;/li&gt;
+&lt;li&gt;If found, check the APIC ID in details. APIC ID is the number of the logic core that failed. For example, my 5800X have 2 threads per core, so APIC ID 9 means CPU core #floor(9&amp;#x2F;2)&amp;#x3D;#4 (start from #0) failed&lt;/li&gt;
+&lt;li&gt;Restart and enter the BIOS, lower the negative value (increase the voltage) of this specific core&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Do a fast verification via CoreCycler(with runtimePerCore&amp;#x3D;60, maxIterations&amp;#x3D;3), lower the negative value (increase the voltage) of cores reporting errors&lt;/li&gt;
+&lt;li&gt;Everything is ok and passed the CoreCycler: can be more aggressive, raise the negative value (decrease the voltage) of all cores by &lt;code&gt;5&lt;/code&gt; or &lt;code&gt;3&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;, up to you&lt;ul&gt;
+&lt;li&gt;Tips: If you hit the bottom (typically &lt;code&gt;-30&lt;/code&gt;), you can change &lt;code&gt;VDDCR CPU Voltage&lt;/code&gt; from &lt;code&gt;Auto&lt;/code&gt; to &lt;code&gt;Offset&lt;/code&gt;, and set negative values for your CPU. In this way you can decrease the voltage even more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Repeat step 5 until you find the best args!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;Check-Stability-for-Daily-Usage&#34;&gt;&lt;a href=&#34;#Check-Stability-for-Daily-Usage&#34; class=&#34;headerlink&#34; title=&#34;Check Stability for Daily Usage&#34;&gt;&lt;/a&gt;Check Stability for Daily Usage&lt;/h3&gt;&lt;p&gt;If the following condition meets, then you made it!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leave the computer idle (low workload), and open a webpage normally&lt;/li&gt;
+&lt;li&gt;Run corecycler for like 4 hours with no error:&lt;ul&gt;
+&lt;li&gt;runtimePerCore &amp;#x3D; 360&lt;/li&gt;
+&lt;li&gt;maxIterations &amp;#x3D; 10000&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Run CPU-Z for a score! &lt;/li&gt;
+&lt;li&gt;Run a benchmark tool and see the args changing on Ryzen Master panel&lt;/li&gt;
+&lt;li&gt;Play a game or do what you want without BSoD and WHEA 18 event in your event viewer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If any error occured, you know what to do from the paragraph above.&lt;/p&gt;
+&lt;h2 id=&#34;References&#34;&gt;&lt;a href=&#34;#References&#34; class=&#34;headerlink&#34; title=&#34;References&#34;&gt;&lt;/a&gt;References&lt;/h2&gt;&lt;p&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1R7EV/&#34;&gt;AMD RYZEN5000系列体质测试工具分享&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv16285050/&#34;&gt;5800X PBO和Curve Optimizer的测试与优化&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv13796433/&#34;&gt;AMD 5000系Ryzen平台锐龙处理器 全面超频快速调教指南&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv10267893/&#34;&gt;关于EDC对Ryzen5000系列CPU效能的影响&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=QCyZ-QYwsFY&#34;&gt;AMD. What’s New with Precision Boost Overdrive 2.&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="Overclocking" />
+        <updated>2024-04-26T17:36:26.000Z</updated>
+    </entry>
+</feed>
