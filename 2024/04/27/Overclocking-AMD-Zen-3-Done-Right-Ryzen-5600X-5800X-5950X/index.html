@@ -14,7 +14,7 @@
 <meta property="og:description" content="Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&#x2F;5800X&#x2F;5900X&#x2F;5950X overclockingThis guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performan">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-26T17:36:26.000Z">
-<meta property="article:modified_time" content="2024-04-26T19:50:45.038Z">
+<meta property="article:modified_time" content="2024-04-26T19:53:33.671Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Overclocking">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
       
         <time datetime="2024-04-26T17:36:26.000Z" class="dt-published" itemprop="datePublished">2024-04-27</time>
         
-        (Updated: <time datetime="2024-04-26T19:50:45.038Z" class="dt-updated" itemprop="dateModified">2024-04-27</time>)
+        (Updated: <time datetime="2024-04-26T19:53:33.671Z" class="dt-updated" itemprop="dateModified">2024-04-27</time>)
         
       
     </div>
@@ -276,15 +276,15 @@
 <li>Set all the cores to negative <code>-30</code> (if your chip score is not so good, set it to <code>-25</code> or something) except for the 1st and 2nd fastest core. </li>
 <li>For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case please do a trivial convert for the number. e.g. #1-&gt;#0 and #5-&gt;#4), set the value to <code>-25</code>(if your chip score is not so good, set it to <code>-20</code> or something): they need higher voltage to boost higher.</li>
 <li>Apply changes and restart, try to enter the system<ul>
-<li>Can even not enter the system: Unstable, lower the negative value (increase the voltage) of all cores</li>
-<li>Entered the system and getting BSoD: Restart and try to finish these steps before a BSoD again: <ol>
+<li>Unstable - Can even not enter the system: lower the negative value (increase the voltage) of all cores</li>
+<li>Unstable - Entered the system and getting BSoD: Restart and try to finish these steps before a BSoD again: <ol>
 <li>Open the Windows Event Viewer, go to System, look for errors from WHEA-logger with ID:18.</li>
 <li>If found, check the APIC ID in details. APIC ID is the number of the logic core that failed. For example, my 5800X have 2 threads per core, so APIC ID 9 means CPU core #floor(9&#x2F;2)&#x3D;#4 (start from #0) failed</li>
 <li>Restart and enter the BIOS, lower the negative value (increase the voltage) of this specific core</li>
 </ol>
 </li>
-<li>Do a fast verification via CoreCycler(with runtimePerCore&#x3D;60, maxIterations&#x3D;3), lower the negative value (increase the voltage) of cores reporting errors</li>
-<li>Everything is ok and passed the CoreCycler: can be more aggressive, raise the negative value (decrease the voltage) of all cores by <code>5</code> or <code>3</code> or <code>1</code>, up to you<ul>
+<li>Unstable - Failed in a fast verification using CoreCycler(with <code>config.ini</code> args set to runtimePerCore&#x3D;60, maxIterations&#x3D;3): lower the negative value (increase the voltage) of cores reporting errors</li>
+<li>Everything is ok and the CoreCycler test passed: can be more aggressive, raise the negative value (decrease the voltage) of all cores by <code>5</code> or <code>3</code> or <code>1</code>, up to you<ul>
 <li>Tips: If you hit the bottom (typically <code>-30</code>), you can change <code>VDDCR CPU Voltage</code> from <code>Auto</code> to <code>Offset</code>, and set negative values for your CPU. In this way you can decrease the voltage even more.</li>
 </ul>
 </li>
