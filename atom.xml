@@ -144,7 +144,7 @@
 &lt;/li&gt;
 &lt;li&gt;Repeat step 5 until you find the best args!&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;Check-Stability-for-Daily-Usage&#34;&gt;&lt;a href=&#34;#Check-Stability-for-Daily-Usage&#34; class=&#34;headerlink&#34; title=&#34;Check Stability for Daily Usage&#34;&gt;&lt;/a&gt;Check Stability for Daily Usage&lt;/h3&gt;&lt;p&gt;If the following condition meets, then you made it!&lt;/p&gt;
+&lt;h3 id=&#34;Verify-Stability&#34;&gt;&lt;a href=&#34;#Verify-Stability&#34; class=&#34;headerlink&#34; title=&#34;Verify Stability&#34;&gt;&lt;/a&gt;Verify Stability&lt;/h3&gt;&lt;p&gt;If the following condition meets, then you made it!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Leave the computer idle (low workload), and open a webpage normally&lt;/li&gt;
 &lt;li&gt;Run corecycler for like 4 hours with no error:&lt;ul&gt;
