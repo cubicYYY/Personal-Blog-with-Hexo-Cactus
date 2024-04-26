@@ -14,7 +14,7 @@
 <meta property="og:description" content="Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&#x2F;5800X&#x2F;5900X&#x2F;5950X overclockingThis guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performan">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-26T17:36:26.000Z">
-<meta property="article:modified_time" content="2024-04-26T19:46:59.641Z">
+<meta property="article:modified_time" content="2024-04-26T19:49:57.295Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Overclocking">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
       
         <time datetime="2024-04-26T17:36:26.000Z" class="dt-published" itemprop="datePublished">2024-04-27</time>
         
-        (Updated: <time datetime="2024-04-26T19:46:59.641Z" class="dt-updated" itemprop="dateModified">2024-04-27</time>)
+        (Updated: <time datetime="2024-04-26T19:49:57.295Z" class="dt-updated" itemprop="dateModified">2024-04-27</time>)
         
       
     </div>
@@ -197,9 +197,9 @@
           (~7 mins to read)
       </span>
       <h1 id="Overclocking-AMD-Zen3-Series-with-PBO2-Ryzen-5600X-5800X-5900X-5950X-overclocking"><a href="#Overclocking-AMD-Zen3-Series-with-PBO2-Ryzen-5600X-5800X-5900X-5950X-overclocking" class="headerlink" title="Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&#x2F;5800X&#x2F;5900X&#x2F;5950X overclocking"></a>Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&#x2F;5800X&#x2F;5900X&#x2F;5950X overclocking</h1><p>This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in single-core score(about <strong>5% - 15%</strong>) while maintaining or even increasing the multi-cores score. The solution may also apply to Zen4 series, but the args cannot be a valid reference.</p>
-<h2 id="Before-the-overcloking"><a href="#Before-the-overcloking" class="headerlink" title="Before the overcloking"></a>Before the overcloking</h2><h3 id="Mindset"><a href="#Mindset" class="headerlink" title="Mindset"></a>Mindset</h3><p>Zen3 series is super hot, so you lower the voltage, you lower the temperature, and more performance can be obtained under the temperature limit. The heat <em>stucks</em> inside the chip, so <strong>a good cooler can help a lot!</strong><br>Ideal idle temperatur: 40-60 Celsius</p>
+<h2 id="Before-the-overcloking"><a href="#Before-the-overcloking" class="headerlink" title="Before the overcloking"></a>Before the overcloking</h2><h3 id="Mindset"><a href="#Mindset" class="headerlink" title="Mindset"></a>Mindset</h3><p>Zen3 series is super hot, so you lower the voltage, you lower the temperature, and more performance can be obtained under the temperature limit. The heat <em>stucks</em> inside the chip, so <strong>a good cooler can help a lot!</strong><br>Ideal idle temperature: 40-60 Celsius</p>
 <p>Although you always overclock with own risks, here’s a point worth mentioning: <strong>PBO2 itself is SAFE,</strong> since it never actually changes the voltage for different cores under different frequencies(the CPU requires a voltage from the motherboard, so it physically cannot allocate different voltage for each core precisely). Instead, it changes the frequency of each core under a certain voltage (i.e. changes the frequency-voltage <em>curve</em>)! We’ll see how to adjust the <em>curve</em> later.</p>
-<h3 id="Know-the-quality-of-your-chip"><a href="#Know-the-quality-of-your-chip" class="headerlink" title="Know the quality of your chip"></a>Know the quality of your chip</h3><p>A specific CPU chip has its own quality, indicating the potential performance gain from overclocking. If you are using a ASUS motherboard, try this before the overclocking to know your silicon quality: <a target="_blank" rel="noopener" href="https://www.cybermania.ws/apps/amd-ryzen-silicon-tester-amd-v-f/">AMD Ryzen Silicon Tester (AMD V&#x2F;F)</a>. Remember to have everything in <strong>default(no overclocking, no PBO2).</strong> and have as few background tasks as possible.<br>Reference table:</p>
+<h3 id="Know-the-quality-of-your-chip"><a href="#Know-the-quality-of-your-chip" class="headerlink" title="Know the quality of your chip"></a>Know the quality of your chip</h3><p>A specific CPU chip has its own quality, indicating the potential performance gain from overclocking. If you are using an ASUS motherboard, try this before the overclocking to know your silicon quality: <a target="_blank" rel="noopener" href="https://www.cybermania.ws/apps/amd-ryzen-silicon-tester-amd-v-f/">AMD Ryzen Silicon Tester (AMD V&#x2F;F)</a>. Remember to have everything in <strong>default(no overclocking, no PBO2).</strong> and have as few background tasks as possible.<br>Reference table:</p>
 <table>
 <thead>
 <tr>
@@ -224,7 +224,7 @@
 <td>Excellent</td>
 </tr>
 </tbody></table>
-<h3 id="All-in-One-Solution"><a href="#All-in-One-Solution" class="headerlink" title="All in One Solution"></a>All in One Solution</h3><p>Go to check <a target="_blank" rel="noopener" href="https://www.techpowerup.com/download/amd-ryzen-clock-tuner-ctr-1usmus/">Clock Tuner</a> !</p>
+<h3 id="All-in-One-Solution"><a href="#All-in-One-Solution" class="headerlink" title="All in One Solution"></a>All in One Solution</h3><p>If you are finding a good start of tweaking,<br>Go to check <a target="_blank" rel="noopener" href="https://www.techpowerup.com/download/amd-ryzen-clock-tuner-ctr-1usmus/">Clock Tuner</a> !</p>
 <h3 id="Software-Tools-to-Prepare"><a href="#Software-Tools-to-Prepare" class="headerlink" title="Software&#x2F;Tools to Prepare"></a>Software&#x2F;Tools to Prepare</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/sp00n/corecycler/releases/tag/v0.9.4.2">Corecycler</a> (To test the stability of your overclock settings)</li>
 <li>AMD Ryzen Master (provided by the AMD)</li>
@@ -255,8 +255,8 @@
 <li>reference for 5600X&#x2F;5800X: 350&#x2F;140&#x2F;160</li>
 <li>reference for 5900X&#x2F;5950X: 350&#x2F;150&#x2F;190</li>
 <li>PPT makes little difference, set it to a reasonable high number (300 is enough, I take 350 here)</li>
-<li>TDC should always be lower than EDC about 20~45.</li>
-<li>EDC is important! If it is too low, no enough energy to feed the chip; if it is too high, the PBO2 algorithm can be extremely aggressive so the CPU are always thermal throttling, leading to worse performance.</li>
+<li>TDC should be lower than EDC about 20~45.</li>
+<li><strong>EDC is important!</strong> If it is too low, no enough energy to feed the chip; if it is too high, the PBO2 algorithm can be extremely aggressive so the CPU are always thermal throttling, leading to worse performance.</li>
 </ul>
 </li>
 <li>PBO Scalar: Manual &#x2F; 10X (If your cooler sucks, make this arg lower)</li>
@@ -274,7 +274,7 @@
 <li>Enter the system, open the Ryzen Master and check for the 1st and 2nd fastest core and remember the core number (start from 1. e.g. #1 and #5)</li>
 <li>Restart and enter the BIOS, find <code>Advanced/PBO/Curve Optimizer</code> or another path if you are using a different motherboard</li>
 <li>Set all the cores to negative <code>-30</code> (if your chip score is not so good, set it to <code>-25</code> or something) except for the 1st and 2nd fastest core. </li>
-<li>For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case please do a trivial convert for the number. e.g. #1-&gt;#0 and #5-&gt;#4), set the value to <code>-20</code>: they need higher voltage to boost higher.</li>
+<li>For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case please do a trivial convert for the number. e.g. #1-&gt;#0 and #5-&gt;#4), set the value to <code>-25</code>(if your chip score is not so good, set it to <code>-20</code> or something): they need higher voltage to boost higher.</li>
 <li>Apply changes and restart, try to enter the system<ul>
 <li>Can even not enter the system: Unstable, lower the negative value (increase the voltage) of all cores</li>
 <li>Entered the system and getting BSoD: Restart and try to finish these steps before a BSoD again: <ol>
