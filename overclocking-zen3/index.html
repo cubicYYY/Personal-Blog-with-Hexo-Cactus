@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://cubicy.icu/overclocking-zen3/curve.jpg">
 <meta property="og:image" content="http://cubicy.icu/overclocking-zen3/Corecycler.png">
 <meta property="article:published_time" content="2024-04-26T17:36:26.000Z">
-<meta property="article:modified_time" content="2024-04-27T20:43:42.624Z">
+<meta property="article:modified_time" content="2024-04-27T20:51:50.158Z">
 <meta property="article:author" content="Cubic Y^3">
 <meta property="article:tag" content="Overclocking">
 <meta name="twitter:card" content="summary">
@@ -177,7 +177,7 @@
       
         <time datetime="2024-04-26T17:36:26.000Z" class="dt-published" itemprop="datePublished">2024-04-27</time>
         
-        (Updated: <time datetime="2024-04-27T20:43:42.624Z" class="dt-updated" itemprop="dateModified">2024-04-28</time>)
+        (Updated: <time datetime="2024-04-27T20:51:50.158Z" class="dt-updated" itemprop="dateModified">2024-04-28</time>)
         
       
     </div>
@@ -278,7 +278,7 @@
 </ul>
 </li>
 <li>Fmax Enhancer: ALWAYS OFF.</li>
-<li><strong>PBO settings under “Ai Tweaker” tab (if exists): ALL <code>Auto</code> !</strong><ul>
+<li><strong>PBO settings under the “Ai Tweaker” tab (if exists): ALL <code>Auto</code> !</strong><ul>
 <li><img src="/overclocking-zen3/ai-tweaker-PBO.jpg" loading="lazy"></li>
 </ul>
 </li>
@@ -318,18 +318,18 @@
 <li>Apply changes and restart, try to enter the system and check stability:</li>
 </ol>
 <ul>
-<li>Unstable - Can even not enter the system: lower the negative value (increase the voltage) of all cores</li>
+<li>Unstable - Can even not enter the system: make the value less negative (increase the voltage) of all cores</li>
 <li>Unstable - Entered the system and got BSoD: Restart and try to finish these steps before a BSoD again: <ol>
 <li>Open the Windows Event Viewer, go to System, and look for errors from WHEA-logger with ID&#x3D;18.</li>
 <li>If found, check the APIC ID in detail. APIC ID is the number of the logic core that failed, so you need to convert it into physical core number. For example, my 5800X has 2 threads per core, so APIC ID 9 means physical CPU core #floor(9&#x2F;2)&#x3D;#4 (start from #0) failed. <img src="/overclocking-zen3/WHEA18.png" loading="lazy"></li>
-<li>Restart and enter the BIOS, lower the negative value (increase the voltage) of this specific core</li>
+<li>Restart and enter the BIOS, make the value less negative (increase the voltage) of this specific core</li>
 </ol>
 </li>
-<li>Unstable - Start a fast verification using CoreCycler(with <code>config.ini</code> args set to runtimePerCore&#x3D;60, maxIterations&#x3D;3), but failed: lower the negative value (increase the voltage) of cores reporting errors<ul>
+<li>Unstable - Start a fast verification using CoreCycler(with <code>config.ini</code> args set to runtimePerCore&#x3D;60, maxIterations&#x3D;3), but failed: make the value less negative (increase the voltage) of cores reporting errors<ul>
 <li>You can check the log files: <img src="/overclocking-zen3/Corecycler-error-log.png" loading="lazy"> <img src="/overclocking-zen3/Corecycler-error-log2.png" loading="lazy"></li>
 </ul>
 </li>
-<li>Everything is ok and the CoreCycler test passed: can be more aggressive, raise the negative value (decrease the voltage) of all cores by a small value (e.g. <code>5</code> or <code>3</code> or <code>1</code>, up to you)<ul>
+<li>Everything is ok and the CoreCycler test passed: can be more aggressive, make the value more negative (decrease the voltage) of all cores by a small value (e.g. <code>5</code> or <code>3</code> or <code>1</code>, up to you)<ul>
 <li>Tips: If you hit the minimum value (typically <code>-30</code>) that you can set in Curve Optimizer, but you still want to dig deeper, then you can change <code>VDDCR CPU Voltage</code> from <code>Auto</code> to <code>Offset</code>, and set negative values for your CPU. In this way, you can decrease the CPU voltage (globally) even more when combined with the Curve Optimizer downvoltaging.</li>
 <li>Note: If your chip sucks, you may even need to set some cores working at <em>positive</em> values (higher voltage than default)</li>
 </ul>
