@@ -175,7 +175,7 @@
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;Repeat step 5 until you find the best args!&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;My results: &lt;code&gt;-15&lt;/code&gt; for the fastest 2 cores and &lt;code&gt;-28&lt;/code&gt;~&lt;code&gt;-30&lt;/code&gt; for others; CPU voltage offset &lt;code&gt;-0.04375&lt;/code&gt;&lt;br&gt;&lt;img src=&#34;/overclocking-zen3/curve.jpg&#34; alt=&#34;Curve Optimizer&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;CPU-Z Score:&lt;/p&gt;
+&lt;p&gt;My results (5800X): &lt;code&gt;-15&lt;/code&gt; for the fastest 2 cores and &lt;code&gt;-28&lt;/code&gt;~&lt;code&gt;-30&lt;/code&gt; for others; CPU voltage offset &lt;code&gt;-0.04375&lt;/code&gt;&lt;br&gt;&lt;img src=&#34;/overclocking-zen3/curve.jpg&#34; alt=&#34;Curve Optimizer&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;CPU-Z Score:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Single-core&amp;#x3D; 676.6&lt;/li&gt;
 &lt;li&gt;Multi-cores&amp;#x3D; 6805.1&lt;/li&gt;
