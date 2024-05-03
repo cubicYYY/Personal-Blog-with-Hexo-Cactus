@@ -44,6 +44,7 @@
     <category term="Yoneda Lemma" />
     <category term="Miscellaneous" />
     <category term="Overclocking" />
+    <category term="English" />
     <entry>
         <id>http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</id>
         <title>ACTF2022 - FFSK - Official WriteUp</title>
@@ -111,6 +112,7 @@
         <category term="Misc" />
         <category term="Write-Up" />
         <category term="出题" />
+        <category term="English" />
         <updated>2022-07-03T15:43:00.000Z</updated>
     </entry>
 </feed>

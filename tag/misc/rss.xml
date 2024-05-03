@@ -53,6 +53,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Yoneda Lemma</category>
         <category>Miscellaneous</category>
         <category>Overclocking</category>
+        <category>English</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2022/07/03/ACTF2022%20-%20FFSK%20-%20Official%20WriteUp/</guid>
             <title>ACTF2022 - FFSK - Official WriteUp</title>
@@ -60,6 +61,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <category>Misc</category>
             <category>Write-Up</category>
             <category>出题</category>
+            <category>English</category>
             <pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;FFSK-WriteUp&#34;&gt;&lt;a href=&#34;#FFSK-WriteUp&#34; class=&#34;headerlink&#34; title=&#34;FFSK - WriteUp&#34;&gt;&lt;/a&gt;FFSK - WriteUp&lt;/h1&gt;&lt;p&gt;&lt;del&gt;众所周知歪歪歪英文很烂求轻喷&lt;/del&gt;  &lt;/p&gt;
 &lt;h3 id=&#34;0-Intro&#34;&gt;&lt;a href=&#34;#0-Intro&#34; class=&#34;headerlink&#34; title=&#34;0. Intro&#34;&gt;&lt;/a&gt;0. Intro&lt;/h3&gt;&lt;p&gt;In the game period, only one team had solved this problem: MapleBacon, a genius team at the University of British Columbia. I’m happy about their praise, but after checking their solution I think what truly “impressive” is their creativity and persistence.&lt;/p&gt;

@@ -44,6 +44,7 @@
     <category term="Yoneda Lemma" />
     <category term="Miscellaneous" />
     <category term="Overclocking" />
+    <category term="English" />
     <entry>
         <id>http://cubicy.icu/overclocking-zen3/</id>
         <title>Overclocking AMD Zen3 with PBO2 Done Right FULL GUIDE</title>
@@ -197,6 +198,7 @@
 &lt;h2 id=&#34;References&#34;&gt;&lt;a href=&#34;#References&#34; class=&#34;headerlink&#34; title=&#34;References&#34;&gt;&lt;/a&gt;References&lt;/h2&gt;&lt;p&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1R7EV/&#34;&gt;AMD RYZEN5000系列体质测试工具分享&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv16285050/&#34;&gt;5800X PBO和Curve Optimizer的测试与优化&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv13796433/&#34;&gt;AMD 5000系Ryzen平台锐龙处理器 全面超频快速调教指南&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv10267893/&#34;&gt;关于EDC对Ryzen5000系列CPU效能的影响&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=QCyZ-QYwsFY&#34;&gt;AMD. What’s New with Precision Boost Overdrive 2.&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Overclocking" />
+        <category term="English" />
         <updated>2024-04-26T17:36:26.000Z</updated>
     </entry>
     <entry>
@@ -1855,6 +1857,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
         <category term="Misc" />
         <category term="Write-Up" />
         <category term="出题" />
+        <category term="English" />
         <updated>2022-07-03T15:43:00.000Z</updated>
     </entry>
     <entry>
@@ -1985,7 +1988,7 @@ B与C显然是等价的。&lt;br&gt;A转B是一种扩展，这种扩展的意义
         <id>http://cubicy.icu/2021/10/30/Hackergame2021%20%E9%83%A8%E5%88%86WriteUp/</id>
         <title>Hackergame2021 部分WriteUp</title>
         <link rel="alternate" href="http://cubicy.icu/2021/10/30/Hackergame2021%20%E9%83%A8%E5%88%86WriteUp/"/>
-        <content type="html">&lt;h1 id=&#34;yyyのWriteUp&#34;&gt;&lt;a href=&#34;#yyyのWriteUp&#34; class=&#34;headerlink&#34; title=&#34;yyyのWriteUp&#34;&gt;&lt;/a&gt;yyyのWriteUp&lt;/h1&gt;&lt;hr&gt;
+        <content type="html">&lt;h1 id=&#34;WriteUp-by-YYY&#34;&gt;&lt;a href=&#34;#WriteUp-by-YYY&#34; class=&#34;headerlink&#34; title=&#34;WriteUp by YYY&#34;&gt;&lt;/a&gt;WriteUp by YYY&lt;/h1&gt;&lt;hr&gt;
 &lt;h2 id=&#34;一点碎碎念&#34;&gt;&lt;a href=&#34;#一点碎碎念&#34; class=&#34;headerlink&#34; title=&#34;一点碎碎念&#34;&gt;&lt;/a&gt;一点碎碎念&lt;/h2&gt;&lt;p&gt;这是我的第一次Hackergame&amp;#x2F;CTF比赛，感觉很有意思。前几天心态有点崩，好在调整过来了。大家还是要把Hackergame当做game。最开心的是认识了好多大佬，抱大腿.jpg  &lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img2020.cnblogs.com/blog/1335480/202110/1335480-20211030161203937-1693462675.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;对自己的吐槽：EasyRSA差点做出来，扩展欧几里得写错弃疗了；RAID0卡在软件没有激活码不让保存；和各种小测撞；各种体调不良，饮食睡眠不佳；晚上学校断电没法做，我又是大夜猫子……奇奇怪怪挡路的东西一直不少，归根结底还是太菜了啦。&lt;br&gt;总之非常感谢@TonyCrane大佬、GodSpeed大佬及群内各成员的鼓励支持帮助（膜不算）。&lt;br&gt;希望我能早日学会binary和math。  &lt;/p&gt;

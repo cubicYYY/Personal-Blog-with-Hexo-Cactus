@@ -44,6 +44,7 @@
     <category term="Yoneda Lemma" />
     <category term="Miscellaneous" />
     <category term="Overclocking" />
+    <category term="English" />
     <entry>
         <id>http://cubicy.icu/2023/09/05/rust-lifetime/</id>
         <title>Rust类型系统中的生命周期</title>
