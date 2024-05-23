@@ -4,12 +4,14 @@
     <title>Cubic Y³ • Posts by &#34;computer hardware&#34; category</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-26T17:36:26.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
     <category term="Hackergame" />
+    <category term="Misc" />
+    <category term="出题" />
+    <category term="English" />
+    <category term="Overclocking" />
     <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
@@ -19,9 +21,9 @@
     <category term="古籍研究社" />
     <category term="Treap" />
     <category term="BST" />
+    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="Stack" />
     <category term="Splay" />
     <category term="数链剖分" />
     <category term="持久化" />
@@ -36,15 +38,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
+    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="Miscellaneous" />
-    <category term="Overclocking" />
-    <category term="English" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/overclocking-zen3/</id>
         <title>Overclocking AMD Zen3 with PBO2 Done Right FULL GUIDE</title>
@@ -149,15 +149,18 @@
 &lt;p&gt;&lt;code&gt;F10&lt;/code&gt; or the key to save the BIOS setting and enter the system to ensure your settings work.&lt;/p&gt;
 &lt;h3 id=&#34;Curve-Optimizer-Downvoltaging&#34;&gt;&lt;a href=&#34;#Curve-Optimizer-Downvoltaging&#34; class=&#34;headerlink&#34; title=&#34;Curve Optimizer: Downvoltaging&#34;&gt;&lt;/a&gt;Curve Optimizer: Downvoltaging&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;The key idea: lower the voltage curve (for each frequency) to have more thermal and power space for boosting.&lt;/strong&gt;&lt;br&gt;So we need negative values here.&lt;br&gt;(We say &lt;code&gt;-25&lt;/code&gt; is more negative than &lt;code&gt;-20&lt;/code&gt;, so you know “make the value more negative” will make a negative number even further from zero)&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Enter the system, open the Ryzen Master, check for the 1st and 2nd fastest core, and remember the core number (start from 1. e.g. #1 and #5) &lt;img src=&#34;/overclocking-zen3/fastest-cores.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Restart and enter the BIOS, find &lt;code&gt;Advanced/PBO/Curve Optimizer&lt;/code&gt; or another path if you are using a different motherboard&lt;/li&gt;
-&lt;li&gt;Set all the cores to negative &lt;code&gt;-30&lt;/code&gt; (if your chip score is not so good, set it to &lt;code&gt;-25&lt;/code&gt; or something) except for the 1st and 2nd fastest core. &lt;/li&gt;
-&lt;li&gt;For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case, please do a trivial convert for the number. e.g. #1-&amp;gt;#0 and #5-&amp;gt;#4), set the value to &lt;code&gt;-25&lt;/code&gt;(if your chip score is not so good, set it to &lt;code&gt;-20&lt;/code&gt; or something): they need higher voltage to boost higher.&lt;/li&gt;
-&lt;li&gt;Apply changes and restart, try to enter the system and check stability:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;Enter the system, open the Ryzen Master, check for the 1st and 2nd fastest core, and remember the core number (start from 1. e.g. #1 and #5) &lt;img src=&#34;/overclocking-zen3/fastest-cores.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Restart and enter the BIOS, find &lt;code&gt;Advanced/PBO/Curve Optimizer&lt;/code&gt; or another path if you are using a different motherboard&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set all the cores to negative &lt;code&gt;-30&lt;/code&gt; (if your chip score is not so good, set it to &lt;code&gt;-25&lt;/code&gt; or something) except for the 1st and 2nd fastest core.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case, please do a trivial convert for the number. e.g. #1-&amp;gt;#0 and #5-&amp;gt;#4), set the value to &lt;code&gt;-25&lt;/code&gt;(if your chip score is not so good, set it to &lt;code&gt;-20&lt;/code&gt; or something): they need higher voltage to boost higher.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Apply changes and restart, try to enter the system and check stability:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Unstable - Can even not enter the system: make the value less negative (increase the voltage) of all cores&lt;/li&gt;
-&lt;li&gt;Unstable - Entered the system and got BSoD: Restart and try to finish these steps before a BSoD again: &lt;ol&gt;
+&lt;li&gt;Unstable - Entered the system and got BSoD: Restart and try to finish these steps before a BSoD again:&lt;ol&gt;
 &lt;li&gt;Open the Windows Event Viewer, go to System, and look for errors from WHEA-logger with ID&amp;#x3D;18.&lt;/li&gt;
 &lt;li&gt;If found, check the APIC ID in detail. APIC ID is the number of the logic core that failed, so you need to convert it into physical core number. For example, my 5800X has 2 threads per core, so APIC ID 9 means physical CPU core #floor(9&amp;#x2F;2)&amp;#x3D;#4 (start from #0) failed. &lt;img src=&#34;/overclocking-zen3/WHEA18.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Restart and enter the BIOS, make the value less negative (increase the voltage) of this specific core&lt;/li&gt;
@@ -173,8 +176,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Repeat step 5 until you find the best args!&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Repeat step 5 until you find the best args!&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;My results (5800X): &lt;code&gt;-15&lt;/code&gt; for the fastest 2 cores and &lt;code&gt;-28&lt;/code&gt;~&lt;code&gt;-30&lt;/code&gt; for others; CPU voltage offset &lt;code&gt;-0.04375&lt;/code&gt;&lt;br&gt;&lt;img src=&#34;/overclocking-zen3/curve.jpg&#34; alt=&#34;Curve Optimizer&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;CPU-Z Score:&lt;/p&gt;
 &lt;ul&gt;
@@ -190,15 +194,15 @@
 &lt;li&gt;&lt;img src=&#34;/overclocking-zen3/Corecycler.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Run CPU-Z for a score! &lt;/li&gt;
+&lt;li&gt;Run CPU-Z for a score!&lt;/li&gt;
 &lt;li&gt;Run a benchmark tool and see the args changing on the Ryzen Master panel&lt;/li&gt;
 &lt;li&gt;Play a game or do what you want without BSoD and WHEA 18 event in your event viewer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If any error occurrs, you know what to do from the paragraph above: increase the voltage.&lt;/p&gt;
 &lt;h2 id=&#34;References&#34;&gt;&lt;a href=&#34;#References&#34; class=&#34;headerlink&#34; title=&#34;References&#34;&gt;&lt;/a&gt;References&lt;/h2&gt;&lt;p&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1R7EV/&#34;&gt;AMD RYZEN5000系列体质测试工具分享&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv16285050/&#34;&gt;5800X PBO和Curve Optimizer的测试与优化&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv13796433/&#34;&gt;AMD 5000系Ryzen平台锐龙处理器 全面超频快速调教指南&lt;/a&gt;&lt;br&gt;[Chinese]&lt;a href=&#34;https://www.bilibili.com/read/cv10267893/&#34;&gt;关于EDC对Ryzen5000系列CPU效能的影响&lt;/a&gt;&lt;br&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=QCyZ-QYwsFY&#34;&gt;AMD. What’s New with Precision Boost Overdrive 2.&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="Overclocking" />
         <category term="English" />
+        <category term="Overclocking" />
         <updated>2024-04-26T17:36:26.000Z</updated>
     </entry>
 </feed>

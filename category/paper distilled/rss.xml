@@ -13,12 +13,14 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Fri, 22 Sep 2023 19:24:29 +0800</pubDate>
         <lastBuildDate>Fri, 22 Sep 2023 19:24:29 +0800</lastBuildDate>
-        <category>Misc</category>
-        <category>Write-Up</category>
-        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Write-Up</category>
         <category>Hackergame</category>
+        <category>Misc</category>
+        <category>出题</category>
+        <category>English</category>
+        <category>Overclocking</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -28,9 +30,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -45,15 +47,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
-        <category>NLP</category>
-        <category>Fuzzing</category>
-        <category>AFL</category>
+        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
-        <category>Miscellaneous</category>
-        <category>Overclocking</category>
-        <category>English</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/carpet-fuzz/</guid>
             <title>论文精炼：CarpetFuzz</title>
@@ -115,7 +115,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;R&amp;#x3D;Relationship&lt;/p&gt;
 &lt;p&gt;数据集来源：&lt;code&gt;man&lt;/code&gt; 命令的说明页面&lt;/p&gt;
 &lt;p&gt;拆分句子→识别包含选项关系的句子（&lt;strong&gt;R句子&lt;/strong&gt;）&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关系：冲突、依赖、（蕴含、相似和取代 &amp;#x3D;冲突，因为复用不能有效增加覆盖率）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;关系：&lt;strong&gt;冲突、依赖、（蕴含、相似和取代 &amp;#x3D;冲突，因为复用不能有效增加覆盖率）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/carpet-fuzz/sentence-search.png&#34; alt=&#34;寻找R句子&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;寻找R句子&lt;/p&gt;
 &lt;p&gt;添加主语是为了避免NLP的解析错误。&lt;/p&gt;
@@ -140,7 +140,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;那这边实际上是Song.的工作的Idea了。&lt;/p&gt;
 &lt;h2 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h2&gt;&lt;p&gt;剩下的主要是一些对实现细节（例如模型超参数、预处理工作）的一些描述。&lt;/p&gt;
 &lt;p&gt;然后还有就是有效性度量，主要是准确率和性能速度。&lt;/p&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q1. CarpetFuzz的性能如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q2. 关系识别的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q3. 关系提取的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;**Q4. CarpetFuzz的优先级排序技术的有效性如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	“结果显示，相比随机抽样，我们的剪枝技术可以减少更多组合（&lt;span class=&#34;number&#34;&gt;98.91&lt;/span&gt;%），&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;同时仅略微损失边的覆盖率（&lt;span class=&#34;number&#34;&gt;2.54&lt;/span&gt;%）”**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q5. 与最先进技术相比，CarpetFuzz的模糊测试性能如何？（那必须好，因为前人的工作看起来确实比较粗糙）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q6. CarpetFuzz能否发现真实世界的漏洞？（事实证明可以）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q1. CarpetFuzz的性能如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q2. 关系识别的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q3. 关系提取的准确性如何？（那必须好）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;**Q4. CarpetFuzz的优先级排序技术的有效性如何？&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  “结果显示，相比随机抽样，我们的剪枝技术可以减少更多组合（&lt;span class=&#34;number&#34;&gt;98.91&lt;/span&gt;%），&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;同时仅略微损失边的覆盖率（&lt;span class=&#34;number&#34;&gt;2.54&lt;/span&gt;%）”**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q5. 与最先进技术相比，CarpetFuzz的模糊测试性能如何？（那必须好，因为前人的工作看起来确实比较粗糙）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Q6. CarpetFuzz能否发现真实世界的漏洞？（事实证明可以）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;在5次48h的fuzzing中，&lt;/p&gt;
 &lt;blockquote&gt;

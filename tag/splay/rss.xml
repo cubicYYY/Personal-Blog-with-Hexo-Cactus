@@ -13,12 +13,14 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Mon, 09 Apr 2018 22:05:00 +0800</pubDate>
         <lastBuildDate>Mon, 09 Apr 2018 22:05:00 +0800</lastBuildDate>
-        <category>Misc</category>
-        <category>Write-Up</category>
-        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Write-Up</category>
         <category>Hackergame</category>
+        <category>Misc</category>
+        <category>出题</category>
+        <category>English</category>
+        <category>Overclocking</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -28,9 +30,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -45,15 +47,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
-        <category>NLP</category>
-        <category>Fuzzing</category>
-        <category>AFL</category>
+        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
-        <category>Miscellaneous</category>
-        <category>Overclocking</category>
-        <category>English</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2018/04/09/%E6%B4%9B%E8%B0%B7P3384%20[HNOI2004]%E5%AE%A0%E7%89%A9%E6%94%B6%E5%85%BB%E5%9C%BA/</guid>
             <title>洛谷:P3384 [HNOI2004]宠物收养场</title>

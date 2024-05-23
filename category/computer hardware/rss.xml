@@ -13,12 +13,14 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Sat, 27 Apr 2024 01:36:26 +0800</pubDate>
         <lastBuildDate>Sat, 27 Apr 2024 01:36:26 +0800</lastBuildDate>
-        <category>Misc</category>
-        <category>Write-Up</category>
-        <category>出题</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Write-Up</category>
         <category>Hackergame</category>
+        <category>Misc</category>
+        <category>出题</category>
+        <category>English</category>
+        <category>Overclocking</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -28,9 +30,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
         <category>Splay</category>
         <category>数链剖分</category>
         <category>持久化</category>
@@ -45,21 +47,19 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Compiler</category>
         <category>Computer Science</category>
         <category>On Going</category>
-        <category>NLP</category>
-        <category>Fuzzing</category>
-        <category>AFL</category>
+        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
-        <category>Miscellaneous</category>
-        <category>Overclocking</category>
-        <category>English</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/overclocking-zen3/</guid>
             <title>Overclocking AMD Zen3 with PBO2 Done Right FULL GUIDE</title>
             <link>http://cubicy.icu/overclocking-zen3/</link>
-            <category>Overclocking</category>
             <category>English</category>
+            <category>Overclocking</category>
             <pubDate>Sat, 27 Apr 2024 01:36:26 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Overclocking-AMD-Zen3-Series-with-PBO2-Ryzen-5600X-5800X-5900X-5950X-overclocking&#34;&gt;&lt;a href=&#34;#Overclocking-AMD-Zen3-Series-with-PBO2-Ryzen-5600X-5800X-5900X-5950X-overclocking&#34; class=&#34;headerlink&#34; title=&#34;Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&amp;#x2F;5800X&amp;#x2F;5900X&amp;#x2F;5950X overclocking&#34;&gt;&lt;/a&gt;Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&amp;#x2F;5800X&amp;#x2F;5900X&amp;#x2F;5950X overclocking&lt;/h1&gt;&lt;p&gt;This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in the single-core score(about &lt;strong&gt;5% - 15%&lt;/strong&gt;) while maintaining or even increasing the multi-core score. The solution may also apply to the Zen4 series, but the args cannot be a valid reference.&lt;/p&gt;
 &lt;h2 id=&#34;Before-the-overclocking&#34;&gt;&lt;a href=&#34;#Before-the-overclocking&#34; class=&#34;headerlink&#34; title=&#34;Before the overclocking&#34;&gt;&lt;/a&gt;Before the overclocking&lt;/h2&gt;&lt;h3 id=&#34;Mindset&#34;&gt;&lt;a href=&#34;#Mindset&#34; class=&#34;headerlink&#34; title=&#34;Mindset&#34;&gt;&lt;/a&gt;Mindset&lt;/h3&gt;&lt;p&gt;Zen3 series is super hot, so you lower the voltage, lower the temperature, and more performance can be obtained under the temperature limit. The heat gets heavily trapped inside the chip, so &lt;strong&gt;a good cooler can help a lot!&lt;/strong&gt;&lt;br&gt;Ideal idle temperature: 40-60 Celsius&lt;/p&gt;
@@ -161,15 +161,18 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;&lt;code&gt;F10&lt;/code&gt; or the key to save the BIOS setting and enter the system to ensure your settings work.&lt;/p&gt;
 &lt;h3 id=&#34;Curve-Optimizer-Downvoltaging&#34;&gt;&lt;a href=&#34;#Curve-Optimizer-Downvoltaging&#34; class=&#34;headerlink&#34; title=&#34;Curve Optimizer: Downvoltaging&#34;&gt;&lt;/a&gt;Curve Optimizer: Downvoltaging&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;The key idea: lower the voltage curve (for each frequency) to have more thermal and power space for boosting.&lt;/strong&gt;&lt;br&gt;So we need negative values here.&lt;br&gt;(We say &lt;code&gt;-25&lt;/code&gt; is more negative than &lt;code&gt;-20&lt;/code&gt;, so you know “make the value more negative” will make a negative number even further from zero)&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Enter the system, open the Ryzen Master, check for the 1st and 2nd fastest core, and remember the core number (start from 1. e.g. #1 and #5) &lt;img src=&#34;/overclocking-zen3/fastest-cores.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Restart and enter the BIOS, find &lt;code&gt;Advanced/PBO/Curve Optimizer&lt;/code&gt; or another path if you are using a different motherboard&lt;/li&gt;
-&lt;li&gt;Set all the cores to negative &lt;code&gt;-30&lt;/code&gt; (if your chip score is not so good, set it to &lt;code&gt;-25&lt;/code&gt; or something) except for the 1st and 2nd fastest core. &lt;/li&gt;
-&lt;li&gt;For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case, please do a trivial convert for the number. e.g. #1-&amp;gt;#0 and #5-&amp;gt;#4), set the value to &lt;code&gt;-25&lt;/code&gt;(if your chip score is not so good, set it to &lt;code&gt;-20&lt;/code&gt; or something): they need higher voltage to boost higher.&lt;/li&gt;
-&lt;li&gt;Apply changes and restart, try to enter the system and check stability:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;Enter the system, open the Ryzen Master, check for the 1st and 2nd fastest core, and remember the core number (start from 1. e.g. #1 and #5) &lt;img src=&#34;/overclocking-zen3/fastest-cores.png&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Restart and enter the BIOS, find &lt;code&gt;Advanced/PBO/Curve Optimizer&lt;/code&gt; or another path if you are using a different motherboard&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set all the cores to negative &lt;code&gt;-30&lt;/code&gt; (if your chip score is not so good, set it to &lt;code&gt;-25&lt;/code&gt; or something) except for the 1st and 2nd fastest core.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the 1st and 2nd fastest core(numbers start from 0 in many BIOS, in that case, please do a trivial convert for the number. e.g. #1-&amp;gt;#0 and #5-&amp;gt;#4), set the value to &lt;code&gt;-25&lt;/code&gt;(if your chip score is not so good, set it to &lt;code&gt;-20&lt;/code&gt; or something): they need higher voltage to boost higher.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Apply changes and restart, try to enter the system and check stability:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Unstable - Can even not enter the system: make the value less negative (increase the voltage) of all cores&lt;/li&gt;
-&lt;li&gt;Unstable - Entered the system and got BSoD: Restart and try to finish these steps before a BSoD again: &lt;ol&gt;
+&lt;li&gt;Unstable - Entered the system and got BSoD: Restart and try to finish these steps before a BSoD again:&lt;ol&gt;
 &lt;li&gt;Open the Windows Event Viewer, go to System, and look for errors from WHEA-logger with ID&amp;#x3D;18.&lt;/li&gt;
 &lt;li&gt;If found, check the APIC ID in detail. APIC ID is the number of the logic core that failed, so you need to convert it into physical core number. For example, my 5800X has 2 threads per core, so APIC ID 9 means physical CPU core #floor(9&amp;#x2F;2)&amp;#x3D;#4 (start from #0) failed. &lt;img src=&#34;/overclocking-zen3/WHEA18.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;Restart and enter the BIOS, make the value less negative (increase the voltage) of this specific core&lt;/li&gt;
@@ -185,8 +188,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Repeat step 5 until you find the best args!&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Repeat step 5 until you find the best args!&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;My results (5800X): &lt;code&gt;-15&lt;/code&gt; for the fastest 2 cores and &lt;code&gt;-28&lt;/code&gt;~&lt;code&gt;-30&lt;/code&gt; for others; CPU voltage offset &lt;code&gt;-0.04375&lt;/code&gt;&lt;br&gt;&lt;img src=&#34;/overclocking-zen3/curve.jpg&#34; alt=&#34;Curve Optimizer&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;CPU-Z Score:&lt;/p&gt;
 &lt;ul&gt;
@@ -202,7 +206,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;&lt;img src=&#34;/overclocking-zen3/Corecycler.png&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Run CPU-Z for a score! &lt;/li&gt;
+&lt;li&gt;Run CPU-Z for a score!&lt;/li&gt;
 &lt;li&gt;Run a benchmark tool and see the args changing on the Ryzen Master panel&lt;/li&gt;
 &lt;li&gt;Play a game or do what you want without BSoD and WHEA 18 event in your event viewer&lt;/li&gt;
 &lt;/ul&gt;

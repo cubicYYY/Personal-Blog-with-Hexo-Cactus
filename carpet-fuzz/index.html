@@ -97,6 +97,8 @@
      --><!--
        --><li><a href="/categories/">分类</a></li><!--
      --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
        --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
      --><!--
        --><li><a href="/search/">搜索</a></li><!--
@@ -258,7 +260,7 @@
 <p>R&#x3D;Relationship</p>
 <p>数据集来源：<code>man</code> 命令的说明页面</p>
 <p>拆分句子→识别包含选项关系的句子（<strong>R句子</strong>）</p>
-<p><strong>关系：冲突、依赖、（蕴含、相似和取代 &#x3D;冲突，因为复用不能有效增加覆盖率）</strong></p>
+<p>关系：<strong>冲突、依赖、（蕴含、相似和取代 &#x3D;冲突，因为复用不能有效增加覆盖率）</strong></p>
 <p><img src="/carpet-fuzz/sentence-search.png" alt="寻找R句子" loading="lazy"></p>
 <p>寻找R句子</p>
 <p>添加主语是为了避免NLP的解析错误。</p>
@@ -283,7 +285,7 @@
 <p>那这边实际上是Song.的工作的Idea了。</p>
 <h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><p>剩下的主要是一些对实现细节（例如模型超参数、预处理工作）的一些描述。</p>
 <p>然后还有就是有效性度量，主要是准确率和性能速度。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Q1. CarpetFuzz的性能如何？</span><br><span class="line">Q2. 关系识别的准确性如何？（那必须好）</span><br><span class="line">Q3. 关系提取的准确性如何？（那必须好）</span><br><span class="line">**Q4. CarpetFuzz的优先级排序技术的有效性如何？</span><br><span class="line">	“结果显示，相比随机抽样，我们的剪枝技术可以减少更多组合（<span class="number">98.91</span>%），</span><br><span class="line">同时仅略微损失边的覆盖率（<span class="number">2.54</span>%）”**</span><br><span class="line">Q5. 与最先进技术相比，CarpetFuzz的模糊测试性能如何？（那必须好，因为前人的工作看起来确实比较粗糙）</span><br><span class="line">Q6. CarpetFuzz能否发现真实世界的漏洞？（事实证明可以）</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Q1. CarpetFuzz的性能如何？</span><br><span class="line">Q2. 关系识别的准确性如何？（那必须好）</span><br><span class="line">Q3. 关系提取的准确性如何？（那必须好）</span><br><span class="line">**Q4. CarpetFuzz的优先级排序技术的有效性如何？</span><br><span class="line">  “结果显示，相比随机抽样，我们的剪枝技术可以减少更多组合（<span class="number">98.91</span>%），</span><br><span class="line">同时仅略微损失边的覆盖率（<span class="number">2.54</span>%）”**</span><br><span class="line">Q5. 与最先进技术相比，CarpetFuzz的模糊测试性能如何？（那必须好，因为前人的工作看起来确实比较粗糙）</span><br><span class="line">Q6. CarpetFuzz能否发现真实世界的漏洞？（事实证明可以）</span><br></pre></td></tr></table></figure>
 
 <p>在5次48h的fuzzing中，</p>
 <blockquote>
@@ -325,6 +327,8 @@
           <li><a href="/archives/">归档</a></li>
         
           <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
         
           <li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li>
         
@@ -390,6 +394,8 @@
        --><li><a href="/archives/">归档</a></li><!--
      --><!--
        --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
      --><!--
        --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
      --><!--
