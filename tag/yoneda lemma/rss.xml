@@ -13,12 +13,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <language>zh-CN</language>
         <pubDate>Mon, 08 Apr 2024 02:38:20 +0800</pubDate>
         <lastBuildDate>Mon, 08 Apr 2024 02:38:20 +0800</lastBuildDate>
-        <category>CISCN</category>
-        <category>web</category>
-        <category>Write-Up</category>
         <category>Misc</category>
+        <category>Write-Up</category>
         <category>出题</category>
         <category>English</category>
+        <category>CISCN</category>
+        <category>web</category>
         <category>Hackergame</category>
         <category>Overclocking</category>
         <category>SchoolBus</category>
@@ -29,14 +29,14 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
         <category>Stack</category>
+        <category>BST</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
-        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
+        <category>数链剖分</category>
         <category>树状数组</category>
         <category>LCA</category>
         <category>分块</category>
@@ -50,10 +50,10 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
-        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Miscellaneous</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/yoneda/</guid>
             <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>
