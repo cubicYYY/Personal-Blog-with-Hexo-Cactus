@@ -1,6 +1,7 @@
 /**
  * Sets up Justified Gallery.
  */
+
 if (!!$.prototype.justifiedGallery) {
   var options = {
     rowHeight: 140,
