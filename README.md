@@ -1,24 +1,17 @@
-A solution for conflicts between LaTex and Hexo regex matching engine:
-In the file of node_modules/marked/lib/marked.js:
+# 基于Hexo cactus theme的个人博客
 
-```
-link: /^!?\[(inside)\]\(href\)/,
-reflink: /^!?\[(inside)\]\s*\[([^\]]*)\]/,
-nolink: /^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,
-strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
-em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-code: /^(`+)([\s\S]*?[^`])\1(?!`)/,
-br: /^ {2,}\n(?!\s*$)/,
-del: noop,
-text: /^[\s\S]+?(?=[\\<!\[_*`]| {2,}\n|$)/
-```
+原cactus主题疏于维护，自行魔改部分内容
+下文是一些技术备忘。
 
-Change the line
+## 魔改
 
-```em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,```
+- 字体：霞鹜文楷阅读版
+  - 修改`themes/cactus/_config.yml`中的cdn部分
+  - 修改`themes/cactus/layout/_partial/styles.ejs` 以导入该CSS
+  - 修改`themes/cactus/source/css/_variables.styl`中的`font-family`
+- 修复了issue: [Post page navigation disappears when scrolling down](https://github.com/probberechts/hexo-theme-cactus/issues/378)
 
-to
-
-```em:  /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,```
-
-This will disable the effort of trying to match _ for the regular expression engine.
+     ```diff
+     - var topDistance = menu.offset().top;
+     + var topDistance = document.documentElement.scrollTop;
+     ```
