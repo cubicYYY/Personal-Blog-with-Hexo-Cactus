@@ -4,12 +4,12 @@
     <title>Cubic Y³ • Posts by &#34;category theory&#34; category</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-07T18:38:20.000Z</updated>
-    <category term="Misc" />
-    <category term="Write-Up" />
-    <category term="出题" />
-    <category term="English" />
     <category term="CISCN" />
     <category term="web" />
+    <category term="Write-Up" />
+    <category term="Misc" />
+    <category term="出题" />
+    <category term="English" />
     <category term="Hackergame" />
     <category term="Overclocking" />
     <category term="SchoolBus" />
@@ -28,10 +28,10 @@
     <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="分块" />
-    <category term="哈希" />
     <category term="树状数组" />
     <category term="LCA" />
+    <category term="分块" />
+    <category term="哈希" />
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
@@ -41,10 +41,10 @@
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
-    <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/yoneda/</id>
         <title>&lt;译&gt;Tai-Danae Bradley: 米田视角→米田嵌入→米田引理</title>

@@ -325,7 +325,7 @@ body .h1 {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 1.8rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -339,17 +339,21 @@ body .h2 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
-body h3 {
+body h3,
+body .h3 {
   color: #eee;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 body h4,
+body .h4,
 body h5,
-body h6 {
+body .h5,
+body h6,
+body .h6 {
   display: inline;
   text-decoration: none;
   color: #ccc;
@@ -357,9 +361,13 @@ body h6 {
   font-size: 0.9rem;
 }
 body h3,
+body .h3,
 body h4,
+body .h4,
 body h5,
-body h6 {
+body .h5,
+body h6,
+body .h6 {
   margin-top: 0.9rem;
   margin-bottom: 0.5rem;
 }
@@ -400,7 +408,7 @@ body abbr {
 body ul,
 body ol,
 body dl {
-  line-height: 1.725;
+  line-height: 1.5;
 }
 body ul ul,
 body ol ul,
@@ -419,7 +427,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
   overflow: auto;
   display: block;
 }
@@ -428,7 +436,7 @@ body th {
   border-bottom: 1px dashed #908d8d;
   color: #eee;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 15px;
 }
 body td {
   padding: 0 8px;
@@ -481,9 +489,9 @@ body {
   background-color: #1d1f21;
   color: #c9cacc;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "LXGW WenKai Screen R", "SourceHanSansCN", "Meslo LG";
-  line-height: 1.725;
+  line-height: 1.5;
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -1409,9 +1417,9 @@ article .content .caption {
   color: #1d1f21;
   font-display: swap;
   font-weight: 400;
-  font-size: 14.4px;
+  font-size: 12.8px;
   font-family: "LXGW WenKai Screen R", "SourceHanSansCN", "Meslo LG";
-  line-height: 1.725;
+  line-height: 1.5;
   text-rendering: geometricPrecision;
   text-align: center;
   word-wrap: break-word;
