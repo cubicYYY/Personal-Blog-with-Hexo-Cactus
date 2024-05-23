@@ -7,10 +7,10 @@
     <category term="CISCN" />
     <category term="web" />
     <category term="Write-Up" />
-    <category term="Hackergame" />
     <category term="Misc" />
     <category term="出题" />
     <category term="English" />
+    <category term="Hackergame" />
     <category term="Overclocking" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -38,13 +38,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/overclocking-zen3/</id>
         <title>Overclocking AMD Zen3 with PBO2 Done Right FULL GUIDE</title>
@@ -207,9 +207,9 @@
     </entry>
     <entry>
         <id>http://cubicy.icu/compiler-construction-principles/</id>
-        <title>编译原理课程笔记</title>
+        <title>编译原理课程笔记（All-in-One速通版）</title>
         <link rel="alternate" href="http://cubicy.icu/compiler-construction-principles/"/>
-        <content type="html">&lt;h1 id=&#34;编译原理&#34;&gt;&lt;a href=&#34;#编译原理&#34; class=&#34;headerlink&#34; title=&#34;编译原理&#34;&gt;&lt;/a&gt;编译原理&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的。&lt;br&gt;文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的。&lt;br&gt;文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
@@ -1277,7 +1277,7 @@
 &lt;li&gt;数组对象，需要通过地址偏移访问&lt;/li&gt;
 &lt;li&gt;寄存器被特殊需要，例如上文提到可能用于传参&lt;/li&gt;
 &lt;li&gt;太多中间值&amp;#x2F;局部变量，有限的寄存器放不下&lt;ul&gt;
-&lt;li&gt;称为**”Spill”**了, 在寄存器分配部分会展开讨论&lt;br&gt;以及有时变量“逃逸(escape)”了（也就是脱离了当前scope&amp;#x2F;无法确定变量有效的生命周期）：&lt;/li&gt;
+&lt;li&gt;称为 &lt;strong&gt;“Spill”&lt;/strong&gt; 了, 在寄存器分配部分会展开讨论&lt;br&gt;以及有时变量“逃逸(escape)”了（也就是脱离了当前scope&amp;#x2F;无法确定变量有效的生命周期）：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;引用传参：需要内存地址（虽然对于现代语言经过优化并不总是需要一个地址）&lt;/li&gt;
@@ -1363,7 +1363,8 @@
 &lt;li&gt;可能丢失少部分机器特定的细节，但不会损失太多&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个好的IR应该简单，然后将复杂的AST翻译为IR代码，最后组合不同代码块。&lt;/p&gt;
-&lt;h3 id=&#34;杂项（不要求掌握）&#34;&gt;&lt;a href=&#34;#杂项（不要求掌握）&#34; class=&#34;headerlink&#34; title=&#34;杂项（不要求掌握）&#34;&gt;&lt;/a&gt;杂项（不要求掌握）&lt;/h3&gt;&lt;ol&gt;
+&lt;h3 id=&#34;IR杂项&#34;&gt;&lt;a href=&#34;#IR杂项&#34; class=&#34;headerlink&#34; title=&#34;IR杂项&#34;&gt;&lt;/a&gt;IR杂项&lt;/h3&gt;&lt;p&gt;（不要求掌握）&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;IR分类：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;高层IR: 提供语言特性的检测（例如borrow checking）&lt;/li&gt;
@@ -1402,9 +1403,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;静态单赋值SSA:&lt;/p&gt;
+&lt;p&gt; Lab3实现过但&lt;strong&gt;不要求掌握&lt;/strong&gt;。&lt;br&gt; SSA是特殊的三地址码：每个变量只能被赋值一次&lt;br&gt; 加速分析优化，被广泛应用（如LLVM）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;  Lab3实现过但&lt;strong&gt;不要求掌握&lt;/strong&gt;。&lt;br&gt;  SSA是特殊的三地址码：每个变量只能被赋值一次&lt;br&gt;  加速分析优化，被广泛应用（如LLVM）&lt;/p&gt;
 &lt;h3 id=&#34;Tiger语言的IR-Tree&#34;&gt;&lt;a href=&#34;#Tiger语言的IR-Tree&#34; class=&#34;headerlink&#34; title=&#34;Tiger语言的IR Tree&#34;&gt;&lt;/a&gt;Tiger语言的IR Tree&lt;/h3&gt;&lt;p&gt;许多现代语言采用多层IR: AST-&amp;gt;IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRk-&amp;gt;机器码&lt;br&gt;Tiger只使用单个IR, 也就是IR Tree: AST-&amp;gt;IR Tree-&amp;gt;汇编-&amp;gt;机器码&lt;/p&gt;
 &lt;p&gt;IR Tree是一种特殊的树形IR, 包含如下指令：&lt;/p&gt;
 &lt;ul&gt;
@@ -1463,11 +1464,10 @@
 &lt;li&gt;&lt;strong&gt;标量(scalar)&lt;/strong&gt;: 只有一个元素（比如单个的变量名）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;结构化的(structured)&lt;/strong&gt;: 例如C中的结构体和数组&lt;ul&gt;
 &lt;li&gt;在这种情况下，从内存中取值的指令&lt;code&gt;MEM(addr)&lt;/code&gt;要修改为&lt;code&gt;MEM(addr, size)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;当然Tiger语言并不需要↓&lt;/li&gt;
+&lt;li&gt;当然Tiger语言并不需要：因为在Tiger语言中所有变量和左值都是标量（Tiger的数组和record本质上只是指针）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt; Tiger语言中所有变量和左值都是标量（因为Tiger的数组和record本质上只是指针）。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;杂项&lt;/p&gt;
 &lt;/li&gt;
@@ -1535,12 +1535,12 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;重定位&lt;/p&gt;
-&lt;p&gt;对于条件跳转或其他跳转指令的目的地址有可能在此时没法直接确定。例如C语言的编译单元是每个&lt;code&gt;.c&lt;/code&gt; &lt;code&gt;.h&lt;/code&gt;文件，并不知道其他文件存在，所以可能：&lt;/p&gt;
+&lt;p&gt;对于条件跳转或其他跳转指令的目的地址有可能在此时没法直接确定。例如C语言的编译单元是每个&lt;code&gt;.c&lt;/code&gt; &lt;code&gt;.h&lt;/code&gt;文件，并不知道其他文件存在，所以可能遇到如下情况：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;需要函数入口&amp;#x2F;变量的绝对地址，但只知道相对地址&lt;/li&gt;
-&lt;li&gt;访问在外部定义函数&amp;#x2F;变量，但尚未进行链接&lt;/li&gt;
+&lt;li&gt;需要函数入口&amp;#x2F;变量的绝对地址，但目前只知道相对地址&lt;/li&gt;
+&lt;li&gt;需要访问在外部定义的函数&amp;#x2F;变量，但尚未进行链接&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;如果都能直接通过偏移找到位置，那么就是&lt;strong&gt;“位置无关代码(PIC)”&lt;/strong&gt;了。&lt;br&gt;我们维护一个表记录需要待确定、需要在之后被填入的地址在哪些位置，留待日后使用。&lt;br&gt;参考ELF的&lt;a href=&#34;https://stackoverflow.com/questions/63672744/why-differentiate-rel-text-and-rel-data-section&#34;&gt;.rel.text&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果都能直接通过偏移找到位置，那么就是 &lt;strong&gt;“位置无关代码(PIC)”&lt;/strong&gt; 了。&lt;br&gt;我们维护一个表记录需要待确定、需要在之后被填入的地址在哪些位置，留待日后使用。&lt;br&gt;参考ELF的&lt;a href=&#34;https://stackoverflow.com/questions/63672744/why-differentiate-rel-text-and-rel-data-section&#34;&gt;.rel.text&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;

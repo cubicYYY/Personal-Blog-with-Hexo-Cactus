@@ -7,10 +7,10 @@
     <category term="CISCN" />
     <category term="web" />
     <category term="Write-Up" />
-    <category term="Hackergame" />
     <category term="Misc" />
     <category term="出题" />
     <category term="English" />
+    <category term="Hackergame" />
     <category term="Overclocking" />
     <category term="SchoolBus" />
     <category term="Rust" />
@@ -38,13 +38,13 @@
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Miscellaneous" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
     <entry>
         <id>http://cubicy.icu/2021/11/09/WriteUp%20%E6%97%A5%E5%93%ADschool-bus%20%E4%B8%8A%E4%BA%86%E9%82%A3%E4%B8%AAwriteup/</id>
         <title>WriteUp 日哭school-bus 上了那个writeup</title>
