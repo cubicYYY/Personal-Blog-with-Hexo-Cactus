@@ -1,0 +1,22 @@
+[
+    {
+       "name":"LC3-Ex Transpiler/Assembler",
+       "url":"https://github.com/cubicYYY/LC3-Ex",
+       "desc":"A simple transpiler/assembler for (extended)LC-3 ISA."
+    },
+    {
+        "name":"Toy Rust Regex Matcher",
+        "url":"https://github.com/cubicYYY/Toy-Rust-Regex",
+        "desc":"Just for fun."
+    },
+    {
+        "name":"Toy Serde",
+        "url":"https://github.com/cubicYYY/toy-serde",
+        "desc":"ZJU OOP-2023 assignment. A (de)serialization utils, supporting binary/XML format."
+    },
+    {
+        "name":"CTF Arsenals",
+        "url":"",
+        "desc":"(TODO) Personal arsenals for CTF 🗡"
+    }
+]

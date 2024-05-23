@@ -1,0 +1,64 @@
+colorscheme: dark
+page_width: 72
+
+language: zh-CN
+nav:
+  home: /
+  about: /about/
+  articles: /archives/
+  category: /categories/
+  tag: /tags/
+  GitHub: https://github.com/cubicYYY/
+  search: /search/
+
+projects_url: https://github.com/cubicYYY/
+
+posts_overview:
+  show_all_posts: true
+
+mathjax: ## LaTex Support 
+  enabled: true
+
+post:
+  show_updated: true
+
+social_links:
+  -
+    icon: github
+    link: https://github.com/cubicYYY/
+  -
+    icon: mail
+    label: "email"
+    link: mailto:yyy2015c01@gmail.com
+
+  -
+    icon: rss
+    label: "rss"
+    link: /rss.xml
+
+disqus:
+  enabled: true
+  shortname: cubicy
+
+tags_overview: false
+category_overview: true
+categories_overview: true
+
+logo:
+  enabled: true
+  width: 50
+  height: 50
+  url: /images/favicon.jpg
+  gravatar: false
+  grayout: false
+
+favicon:
+  desktop:
+    url: /images/favicon.ico
+    gravatar: false
+  android:
+    url: /images/favicon.ico
+    gravatar: false
+  apple:
+    url: /images/favicon.ico
+    gravatar: false
