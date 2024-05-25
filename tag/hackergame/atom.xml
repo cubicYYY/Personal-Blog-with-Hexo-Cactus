@@ -11,23 +11,23 @@
     <category term="出题" />
     <category term="English" />
     <category term="Hackergame" />
-    <category term="Overclocking" />
     <category term="SchoolBus" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
+    <category term="Overclocking" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
     <category term="Programming" />
-    <category term="冰菓" />
-    <category term="古籍研究社" />
     <category term="Treap" />
     <category term="BST" />
-    <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
+    <category term="Stack" />
     <category term="Splay" />
-    <category term="数链剖分" />
     <category term="持久化" />
     <category term="线段树" />
+    <category term="数链剖分" />
     <category term="树状数组" />
     <category term="LCA" />
     <category term="分块" />
@@ -35,15 +35,15 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
-    <category term="Compiler" />
-    <category term="Computer Science" />
-    <category term="On Going" />
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
+    <category term="On Going" />
     <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/2021/10/30/Hackergame2021%20%E9%83%A8%E5%88%86WriteUp/</id>

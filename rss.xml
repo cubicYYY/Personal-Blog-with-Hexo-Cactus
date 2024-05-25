@@ -20,23 +20,23 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>出题</category>
         <category>English</category>
         <category>Hackergame</category>
-        <category>Overclocking</category>
         <category>SchoolBus</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
+        <category>Overclocking</category>
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
         <category>Programming</category>
-        <category>冰菓</category>
-        <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
-        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
+        <category>Stack</category>
         <category>Splay</category>
-        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
+        <category>数链剖分</category>
         <category>树状数组</category>
         <category>LCA</category>
         <category>分块</category>
@@ -44,24 +44,24 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
-        <category>Compiler</category>
-        <category>Computer Science</category>
-        <category>On Going</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>On Going</category>
         <category>Miscellaneous</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/overclocking-zen3/</guid>
-            <title>Overclocking AMD Zen3 with PBO2 Done Right FULL GUIDE</title>
+            <title>Overclocking AMD Zen3 with PBO2 Done Right: A full guide</title>
             <link>http://cubicy.icu/overclocking-zen3/</link>
             <category>English</category>
             <category>Overclocking</category>
             <pubDate>Sat, 27 Apr 2024 01:36:26 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;Overclocking-AMD-Zen3-Series-with-PBO2-Ryzen-5600X-5800X-5900X-5950X-overclocking&#34;&gt;&lt;a href=&#34;#Overclocking-AMD-Zen3-Series-with-PBO2-Ryzen-5600X-5800X-5900X-5950X-overclocking&#34; class=&#34;headerlink&#34; title=&#34;Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&amp;#x2F;5800X&amp;#x2F;5900X&amp;#x2F;5950X overclocking&#34;&gt;&lt;/a&gt;Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X&amp;#x2F;5800X&amp;#x2F;5900X&amp;#x2F;5950X overclocking&lt;/h1&gt;&lt;p&gt;This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in the single-core score(about &lt;strong&gt;5% - 15%&lt;/strong&gt;) while maintaining or even increasing the multi-core score. The solution may also apply to the Zen4 series, but the args cannot be a valid reference.&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;Overclocking-Ryzen-5600X-5800X-5900X-5950X-using-PBO2&#34;&gt;&lt;a href=&#34;#Overclocking-Ryzen-5600X-5800X-5900X-5950X-using-PBO2&#34; class=&#34;headerlink&#34; title=&#34;Overclocking Ryzen 5600X&amp;#x2F;5800X&amp;#x2F;5900X&amp;#x2F;5950X using PBO2&#34;&gt;&lt;/a&gt;Overclocking Ryzen 5600X&amp;#x2F;5800X&amp;#x2F;5900X&amp;#x2F;5950X using PBO2&lt;/h1&gt;&lt;p&gt;This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in the single-core score(about &lt;strong&gt;5% - 15%&lt;/strong&gt;) while maintaining or even increasing the multi-core score. The solution may also apply to the Zen4 series, but the args cannot be a valid reference.&lt;/p&gt;
 &lt;h2 id=&#34;Before-the-overclocking&#34;&gt;&lt;a href=&#34;#Before-the-overclocking&#34; class=&#34;headerlink&#34; title=&#34;Before the overclocking&#34;&gt;&lt;/a&gt;Before the overclocking&lt;/h2&gt;&lt;h3 id=&#34;Mindset&#34;&gt;&lt;a href=&#34;#Mindset&#34; class=&#34;headerlink&#34; title=&#34;Mindset&#34;&gt;&lt;/a&gt;Mindset&lt;/h3&gt;&lt;p&gt;Zen3 series is super hot, so you lower the voltage, lower the temperature, and more performance can be obtained under the temperature limit. The heat gets heavily trapped inside the chip, so &lt;strong&gt;a good cooler can help a lot!&lt;/strong&gt;&lt;br&gt;Ideal idle temperature: 40-60 Celsius&lt;/p&gt;
 &lt;p&gt;Although &lt;strong&gt;you always overclock with your risks&lt;/strong&gt;, here’s a point worth mentioning: &lt;strong&gt;PBO2 itself is SAFE,&lt;/strong&gt; since it never actually changes the voltage for different cores under different frequencies(the CPU requires a voltage from the motherboard, so it physically cannot allocate different voltage for each core precisely). Instead, it changes the frequency of each core under a certain voltage (i.e. changes the frequency-voltage &lt;em&gt;curve&lt;/em&gt;)! We’ll see how to adjust the &lt;em&gt;curve&lt;/em&gt; later.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note: Even though it’s not the voltage that changes, we still use the term “increase&amp;#x2F;decrease voltage” in this article because it’s easier to understand.&lt;/strong&gt;&lt;/p&gt;
@@ -254,8 +254,9 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;NFA&amp;#x2F;DFA：略&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;子集构造法subsetconstruction(NFA-&amp;gt;DFA)&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;子集构造法subset construction&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;用途：NFA-&amp;gt;DFA&lt;/li&gt;
 &lt;li&gt;DFA的每个状态是NFA的状态集合的一个子集&lt;/li&gt;
 &lt;li&gt;读了输入ai后NFA能到达的所有状态：s1,s2,…,sk，则DFA到达一个状态，对应于NFA的{s1,s2,…,sk}&lt;/li&gt;
 &lt;li&gt;NFA状态(集)上的一些操作定义&lt;ul&gt;
@@ -612,6 +613,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;插入：例如，如果左右括号不匹配，我们可以插入一个假装有&lt;/li&gt;
 &lt;li&gt;替换：例如，变量名错误可以替换为最相近的变量名&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;我们之后会细讲错误恢复的策略。&lt;/p&gt;
 &lt;h2 id=&#34;Part-5-语法分析-自底向上&#34;&gt;&lt;a href=&#34;#Part-5-语法分析-自底向上&#34; class=&#34;headerlink&#34; title=&#34;Part 5: 语法分析 - 自底向上&#34;&gt;&lt;/a&gt;Part 5: 语法分析 - 自底向上&lt;/h2&gt;&lt;p&gt;从串w归约为文法开始符号S的过程。规约时，一个与某产生式体&lt;strong&gt;相匹配的特定子串&lt;/strong&gt;被替换为该产生式头部的&lt;strong&gt;非终结符号&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;问题：&lt;/p&gt;
 &lt;ul&gt;
@@ -889,7 +891,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;错误恢复-1&#34;&gt;&lt;a href=&#34;#错误恢复-1&#34; class=&#34;headerlink&#34; title=&#34;错误恢复&#34;&gt;&lt;/a&gt;错误恢复&lt;/h3&gt;&lt;p&gt;动机：一次性报告所有错误，而非遇到第一个就停下。&lt;/p&gt;
+&lt;h3 id=&#34;错误恢复（续）&#34;&gt;&lt;a href=&#34;#错误恢复（续）&#34; class=&#34;headerlink&#34; title=&#34;错误恢复（续）&#34;&gt;&lt;/a&gt;错误恢复（续）&lt;/h3&gt;&lt;p&gt;动机：一次性报告所有错误，而非遇到第一个就停下。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;局部错误恢复：调整Parse过程的栈，使其恢复到正常从而继续进行Parsing&lt;/li&gt;
 &lt;li&gt;全局错误恢复：删除&amp;#x2F;插入尽可能少的字符，使得源字符串成为合法的字符串&lt;/li&gt;
@@ -1025,7 +1027,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;抽象解析树Abstract-Parse-Tree&#34;&gt;&lt;a href=&#34;#抽象解析树Abstract-Parse-Tree&#34; class=&#34;headerlink&#34; title=&#34;抽象解析树Abstract Parse Tree&#34;&gt;&lt;/a&gt;抽象解析树Abstract Parse Tree&lt;/h3&gt;&lt;p&gt;语义动作的一种应用。&lt;/p&gt;
+&lt;h3 id=&#34;抽象解析树APT&#34;&gt;&lt;a href=&#34;#抽象解析树APT&#34; class=&#34;headerlink&#34; title=&#34;抽象解析树APT&#34;&gt;&lt;/a&gt;抽象解析树APT&lt;/h3&gt;&lt;p&gt;APT &amp;#x3D; Abstract Parse Tree 是语义动作的一种应用。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;⚠和抽象语法树(Abstract Syntax Tree)的区别请参阅&lt;a href=&#34;https://stackoverflow.com/questions/5026517/whats-the-difference-between-parse-trees-and-abstract-syntax-trees-asts&#34;&gt;https://stackoverflow.com/questions/5026517/whats-the-difference-between-parse-trees-and-abstract-syntax-trees-asts&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1419,14 +1421,82 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt; Lab3实现过但&lt;strong&gt;不要求掌握&lt;/strong&gt;。&lt;br&gt; SSA是特殊的三地址码：每个变量只能被赋值一次&lt;br&gt; 加速分析优化，被广泛应用（如LLVM）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;Tiger语言的IR-Tree&#34;&gt;&lt;a href=&#34;#Tiger语言的IR-Tree&#34; class=&#34;headerlink&#34; title=&#34;Tiger语言的IR Tree&#34;&gt;&lt;/a&gt;Tiger语言的IR Tree&lt;/h3&gt;&lt;p&gt;许多现代语言采用多层IR: AST-&amp;gt;IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRk-&amp;gt;机器码&lt;br&gt;Tiger只使用单个IR, 也就是IR Tree: AST-&amp;gt;IR Tree-&amp;gt;汇编-&amp;gt;机器码&lt;/p&gt;
-&lt;p&gt;IR Tree是一种特殊的树形IR, 包含如下指令：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;CONST(i)&lt;/li&gt;
-&lt;li&gt;NAME(n)&lt;/li&gt;
-&lt;li&gt;TEMP(t)&lt;/li&gt;
-&lt;li&gt;(TODO)…&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&#34;Tiger语言的IR-Tree及其指令&#34;&gt;&lt;a href=&#34;#Tiger语言的IR-Tree及其指令&#34; class=&#34;headerlink&#34; title=&#34;Tiger语言的IR Tree及其指令&#34;&gt;&lt;/a&gt;Tiger语言的IR Tree及其指令&lt;/h3&gt;&lt;p&gt;许多现代语言采用多层IR: AST-&amp;gt;IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRk-&amp;gt;机器码&lt;br&gt;Tiger只使用单个IR, 也就是IR Tree: AST-&amp;gt;IR Tree-&amp;gt;汇编-&amp;gt;机器码&lt;/p&gt;
+&lt;p&gt;IR Tree是一种特殊的树形IR。指令列举如下：&lt;/p&gt;
+&lt;p&gt;表达式（有值，可能有副作用）：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Syntax&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;CONST(i)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The integer constant i&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;NAME(n)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The symbolic constant n (e.g. a label is a name representing a address)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;TEMP(t)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Temporary t.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;BINOP(o, e1, e2)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The application of binary operator o to operands e1, e2. The integer arithmetic operators are PLUS, MINUS, MUL, DIV; the integer bitwise logical operators are AND, OR, XOR; the integer logical shift operators are LSHIFT, RSHIFT; the integer arithmetic right-shift is ARSHIFT.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;MEM(e)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The contents of wordSize bytes of memory starting at address e. &lt;strong&gt;When MEM is used as the left child of a MOVE, it means “store”, but anywhere else it means “fetch”.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;CALL(f, l)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;A procedure call: the application of function f to argument list l.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ESEQ(s, e)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Statement s is evaluated for side effects, then e is evaluated for the result.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;语句（无值，有副作用）：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Syntax&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;MOVE(TEMP t, e)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Evaluate e and move it into temporary t.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;MOVE(MEM(e1) e2)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Evaluate e1, yielding address a. THEN evaluate e2, and store the result into wordSize bytes of memory starting at a.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;EXP(e)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Evaluate e and discard the result.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;JUMP(e, labs)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Transfer control (jump) to address e. The destination e may be a literal label, as in NAME(lab), or it may be an address calculated by any other kind of expression.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;CJUMP(o, e1, e2, t, f)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Evaluate e1, e2 in that order, yielding values a, b. Then compare a, b using the relational operator o. If the result is true, jump to t; otherwise jump to f.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;SEQ(s1, s2)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The statement s1 followed by s2.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;LABEL(n)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;DEFINE the constant value of name n to be the current machine code address.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;每个指令都对应IR Tree的一颗子树。指令为根，操作数为其子节点。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在这种中间表示中，我们假定有无数个寄存器。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;重要指令：ESEQ(s, e)&lt;/strong&gt;:&lt;/p&gt;
@@ -1556,7 +1626,164 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;如果都能直接通过偏移找到位置，那么就是 &lt;strong&gt;“位置无关代码(PIC)”&lt;/strong&gt; 了。&lt;br&gt;我们维护一个表记录需要待确定、需要在之后被填入的地址在哪些位置，留待日后使用。&lt;br&gt;参考ELF的&lt;a href=&#34;https://stackoverflow.com/questions/63672744/why-differentiate-rel-text-and-rel-data-section&#34;&gt;.rel.text&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;&lt;em&gt;注：这里的许多概念都是针对Tiger语言的，承接上文。&lt;/em&gt;&lt;br&gt;在将IR的AST翻译为机器码的过程中，我们不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。&lt;br&gt;例如：一个包含&lt;code&gt;ESEQ&lt;/code&gt;子结点的&lt;code&gt;BINOP&lt;/code&gt;树代表一个二元运算符表达式。但由于&lt;code&gt;ESEQ&lt;/code&gt;有副作用，这个表达式的值取决于&lt;code&gt;ESEQ&lt;/code&gt;先求值&amp;#x2F;后求值，是存在歧义的。&lt;br&gt;解决方法：将IR Tree变换为 &lt;strong&gt;正规形式(canonical form)&lt;/strong&gt; ，而内部存在很多 &lt;strong&gt;正规树(canonical tree)&lt;/strong&gt; （详见下文）.&lt;/p&gt;
+&lt;h3 id=&#34;正规形式Canonical-Form&#34;&gt;&lt;a href=&#34;#正规形式Canonical-Form&#34; class=&#34;headerlink&#34; title=&#34;正规形式Canonical Form&#34;&gt;&lt;/a&gt;正规形式Canonical Form&lt;/h3&gt;&lt;p&gt;对比IR Tree与canonical form:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IR Tree:&lt;ul&gt;
+&lt;li&gt;容易从源码AST生成&lt;/li&gt;
+&lt;li&gt;难以直接翻译为机器码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Canonical form:&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SEQ&lt;/code&gt;节点都在最右侧一路向下：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/canonical-form.png&#34; alt=&#34;canonical form&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;一个函数就是一个大&lt;code&gt;SEQ&lt;/code&gt;序列：&lt;code&gt;SEQ(s1,s2,s3...)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可以直接生成机器码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IR Tree-&amp;gt;正规形式需要如下三步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IR树被转化&amp;#x2F;重写，或者说线性化为一些正规树。&lt;br&gt;基本上干的事情就是消除&lt;code&gt;ESEQ&lt;/code&gt;以及把&lt;code&gt;CALL&lt;/code&gt;向上挪。最后把树中的&lt;code&gt;SEQ&lt;/code&gt;删去，这棵树就会“破碎”成很多&lt;strong&gt;正规树&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;正规树被组装成一些基本块(basic block), 内部不包含&lt;code&gt;LABEL&lt;/code&gt;与跳转语句。&lt;br&gt;这句话很别扭，更人体工程学的说法应该是“&lt;code&gt;LABEL&lt;/code&gt;和跳转语句把代码（或这些树）分割成了不同基本块。”&lt;/li&gt;
+&lt;li&gt;基本块被排序成一些&lt;strong&gt;trace&lt;/strong&gt;, trace 中的&lt;code&gt;CJUMP&lt;/code&gt;指令后紧跟着条件不成立需要跳转到的&lt;code&gt;false&lt;/code&gt;标签。&lt;br&gt;这是因为在IR Tree中&lt;code&gt;CJUMP&lt;/code&gt;条件为真&amp;#x2F;假分别跳转至两个不同标签，但事实上机器码可以顺着执行下去(fall-through), 只有条件为真才需要跳转到远处，否则直接不跳转往下继续运行即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;正规树Canonical-Tree&#34;&gt;&lt;a href=&#34;#正规树Canonical-Tree&#34; class=&#34;headerlink&#34; title=&#34;正规树Canonical Tree&#34;&gt;&lt;/a&gt;正规树Canonical Tree&lt;/h3&gt;&lt;p&gt;一种中间体。从IR Tree线性化而来，又到正规形式之中去。&lt;br&gt;不要太纠结这个概念。&lt;em&gt;正规树&lt;/em&gt;，不过是因为要重排一些指令，不得不破碎原来的树为森林后，为这些树起的一个过于术语化的名字。&lt;/p&gt;
+&lt;p&gt;性质：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;其他所有节点都是&lt;strong&gt;表达式&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;根节点为**语句(statement)**，所以正规树就对应IR中的一个语句，也就是IR Tree中的一个子树。&lt;ul&gt;
+&lt;li&gt;只不过有额外约束，所以经过了变换结构可能不一样（也可能由于原来的子树已经很纯很“正规”所以没变化）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不存在&lt;code&gt;SEQ&lt;/code&gt;或者&lt;code&gt;ESEQ&lt;/code&gt;。&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SEQ&lt;/code&gt;: 用于分割出这些canonical tree, 自然被删了不存在。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ESEQ&lt;/code&gt;: 被变换成&lt;code&gt;SEQ&lt;/code&gt;然后也被删了（详见下文）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每个&lt;code&gt;CALL&lt;/code&gt;节点的父节点即为canonical tree的根节点，且只能为&lt;code&gt;EXP&lt;/code&gt;或&lt;code&gt;MOVE&lt;/code&gt;.&lt;ul&gt;
+&lt;li&gt;事实上至多只能有一个&lt;code&gt;CALL&lt;/code&gt;节点，因为我们规定&lt;code&gt;EXP&lt;/code&gt;或&lt;code&gt;MOVE&lt;/code&gt;只能包含一个&lt;code&gt;CALL&lt;/code&gt;.&lt;br&gt;这是因为实现上返回值在指定寄存器里保存，如果有两个&lt;code&gt;CALL&lt;/code&gt;就会导致覆写，需要引入新的临时寄存器保存值（详见下文）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些树最后会被组装为canonical form. 具体步骤见下。&lt;/p&gt;
+&lt;h3 id=&#34;Stage-1-线性化为正规树&#34;&gt;&lt;a href=&#34;#Stage-1-线性化为正规树&#34; class=&#34;headerlink&#34; title=&#34;Stage 1: 线性化为正规树&#34;&gt;&lt;/a&gt;Stage 1: 线性化为正规树&lt;/h3&gt;&lt;p&gt;线性化 &amp;#x3D; linearization&lt;br&gt;如果没有特别限定，本部分的“树”指的就是IR Tree.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;消除&lt;code&gt;ESEQ&lt;/code&gt;&lt;br&gt; 首先我们要去除原先树中所有的ESEQ. 总的来说是不断向上“提升”&lt;code&gt;ESEQ&lt;/code&gt;直到它可以转为&lt;code&gt;SEQ&lt;/code&gt;.&lt;br&gt; 部分规则如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Expression&lt;/th&gt;
+&lt;th&gt;Transforms to&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;ESEQ(s1, ESEQ(s2, e))&lt;/td&gt;
+&lt;td&gt;ESEQ(SEQ(s1, s2), e)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BINOP(op, ESEQ(s, e1), e2)&lt;/td&gt;
+&lt;td&gt;ESEQ(s, BINOP(op, e1, e2))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MEM(ESEQ(s, e1))&lt;/td&gt;
+&lt;td&gt;ESEQ(s, MEM(e1))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JUMP(ESEQ(s, e1))&lt;/td&gt;
+&lt;td&gt;SEQ(s, JUMP(e1))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CJUMP(op, ESEQ(s, e1), e2, l1, l2)&lt;/td&gt;
+&lt;td&gt;SEQ(s, CJUMP(op, e1, e2, l1, l2))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BINOP(op, e1, ESEQ(s, e2))&lt;/td&gt;
+&lt;td&gt;ESEQ(MOVE(TEMP t, e1), ESEQ(s, BINOP(op, TEMP t, e2)))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CJUMP(op, e1, ESEQ(s, e2), l1, l2)&lt;/td&gt;
+&lt;td&gt;SEQ(MOVE(TEMP t, e1), SEQ(s, CJUMP(op, TEMP t, e2, l1, l2)))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MOVE(ESEQ(s, e1), e2)&lt;/td&gt;
+&lt;td&gt;SEQ(s, MOVE(e1, e2))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CALL(f, a)&lt;/td&gt;
+&lt;td&gt;ESEQ(MOVE(TEMP t, CALL(f, a)), TEMP(t))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt; 这些变换的成立性是容易验证的，&lt;br&gt; 在这之中，我们要注意副作用的问题：也就是语句执行顺序对结果有影响的情况。例如对于&lt;code&gt;BINOP(op, e1, ESEQ(s, e2))&lt;/code&gt;（&lt;code&gt;e1&lt;/code&gt;先求值，而后执行&lt;code&gt;s&lt;/code&gt;）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果&lt;code&gt;s&lt;/code&gt;会影响&lt;code&gt;e1&lt;/code&gt;的值，那么我们不能调换二者的执行顺序。&lt;/li&gt;
+&lt;li&gt;也就是说&lt;strong&gt;不一定能&lt;/strong&gt;变形为&lt;code&gt;ESEQ(s, BINOP(op, e1, e2))&lt;/code&gt;（&lt;code&gt;s&lt;/code&gt;先执行，而后对&lt;code&gt;e1&lt;/code&gt;求值）&lt;/li&gt;
+&lt;li&gt;解决方法：使用临时变量保存&lt;code&gt;e1&lt;/code&gt;值。这种情况下我们变形为&lt;code&gt;ESEQ(MOVE(TEMP t,e1), ESEQ(s, BINOP(op, TEMP t, e2)))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 可见，取决于&lt;code&gt;s&lt;/code&gt;是否会影响&lt;code&gt;e1&lt;/code&gt;值，我们有不同的变形策略。&lt;br&gt; 事实上，“会不会影响取值”是一种我们称为“可交换性(commutativity)”的属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果&lt;code&gt;s&lt;/code&gt;&lt;strong&gt;不&lt;/strong&gt;影响&lt;code&gt;e1&lt;/code&gt;值，那么我们说&lt;code&gt;s&lt;/code&gt;, &lt;code&gt;e1&lt;/code&gt; commute&lt;/li&gt;
+&lt;li&gt;如果&lt;code&gt;s&lt;/code&gt;&lt;strong&gt;会&lt;/strong&gt;影响&lt;code&gt;e1&lt;/code&gt;值，那么我们说&lt;code&gt;s&lt;/code&gt;, &lt;code&gt;e1&lt;/code&gt; do NOT commute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 如果能判断两者是否commute, 那么我们就可以最大限度避免引入新的临时变量，使得目标代码尽可能短小、高效。遗憾的是由于内存读写等原因，这一判定问题是困难的。不过我们只需要进行保守近似即可。也就是说，如果我们的保守近似策略判定二者commute, 那么他们一定commute; 否则如果策略无法确信二者commute, 我们则保守地认为他们互相有可能影响（不commute）。&lt;/p&gt;
+&lt;p&gt; 一种年轻，简单，有时幼稚(naïve)的策略是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;常量和所有语句commute&lt;/li&gt;
+&lt;li&gt;空语句和所有语句commute&lt;/li&gt;
+&lt;li&gt;其他情况均假定为not commute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 当然，如果能进行别名分析(alias analyses)以判断某个内存地址是否会被两个不同指针指向, 就能确认更多的对象间commute, 得到更精确的近似。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;移动&lt;code&gt;CALL&lt;/code&gt;到顶层&lt;br&gt; 常见的现代编译器都使用指定寄存器保存函数返回值。因此形如&lt;code&gt;BINOP(PLUS, CALL(…), CALL(…))&lt;/code&gt;有多个&lt;code&gt;CALL&lt;/code&gt;子节点的表达式虽然结构正确，但在实现中存在对该寄存器的使用冲突。&lt;br&gt; 解决方法也很简单：对于多余的&lt;code&gt;CALL(fun, args)&lt;/code&gt;直接转化为&lt;code&gt;ESEQ(MOVE(TEMP t, CALL(fun, args)), TEMP t)&lt;/code&gt;, 也就是使用临时变量保存返回值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重排并消除&lt;code&gt;SEQ&lt;/code&gt;&lt;br&gt; 在执行完上述步骤后，整个树可能形如&lt;code&gt;SEQ(SEQ(SEQ(..., sx), sy), sz)&lt;/code&gt;.&lt;br&gt; 我们现在需要把&lt;code&gt;SEQ&lt;/code&gt;变为父节点的最右儿子（类似平衡树的旋转）。这只需要无脑应用&lt;code&gt;SEQ(SEQ(a, b), c)&lt;/code&gt; &amp;#x3D;&amp;gt; &lt;code&gt;SEQ(a, seq(b, c))&lt;/code&gt;即可。&lt;br&gt; 然后树就变成了：&lt;code&gt;SEQ(s1, SEQ(s2, ..., SEQ(sn-1,sn)...))&lt;/code&gt;（也就是让&lt;code&gt;SEQ&lt;/code&gt;集中在树的“右上”部分）&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/seq.png&#34; alt=&#34;seq&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt; 接下来把&lt;code&gt;SEQ&lt;/code&gt;全部去除，只留下这些&lt;code&gt;s1&lt;/code&gt; … &lt;code&gt;sn&lt;/code&gt;: 每个都是一颗不含&lt;code&gt;SEQ&lt;/code&gt;&amp;#x2F;&lt;code&gt;ESEQ&lt;/code&gt;的&lt;strong&gt;正规树&lt;/strong&gt;！&lt;br&gt; 至此第一阶段任务完成。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;Stage-2-3-处理条件跳转&#34;&gt;&lt;a href=&#34;#Stage-2-3-处理条件跳转&#34; class=&#34;headerlink&#34; title=&#34;Stage 2&amp;amp;3: 处理条件跳转&#34;&gt;&lt;/a&gt;Stage 2&amp;amp;3: 处理条件跳转&lt;/h3&gt;&lt;p&gt;大部分机器不具备&lt;code&gt;CJUMP&lt;/code&gt;的两个分支跳转到两个不同块这种功能。通常来讲是一个分支是继续顺序向下执行，另一个分支进行跳转。&lt;br&gt;因此我们需要重排树，让&lt;code&gt;CJUMP&lt;/code&gt;后紧接的就是一个label, 对应其中一个分支跳转到的块。&lt;br&gt;这需要以下两步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Stage 2: 组装为基本块(basic block)&lt;br&gt; 基本块指的是一串代码，进入则一路执行到块末尾。性质：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开头是一个label伪指令&lt;/li&gt;
+&lt;li&gt;最后一个指令是跳转、条件跳转或返回等terminator&lt;/li&gt;
+&lt;li&gt;中间不包含其他label&amp;#x2F;terminator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 本质上，如果没有跳转指令，程序只会一路向下执行。正是跳转指令（JUMP&amp;#x2F;CJUMP&amp;#x2F;RET&amp;#x2F;…）令程序在执行中途跳出，而跳转的目标地址（也就是LABEL）令程序在执行中途跳入，才把原本的代码分割为了多个基本块。&lt;br&gt; 控制流图(Control-Flow Graph &amp;#x3D; CFG)中的节点就是基本块，边就是跳转指令。&lt;del&gt;打开IDA反编译立刻就能见到。&lt;/del&gt;&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/cfg.png&#34; alt=&#34;CFG&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt; 生成的过程是显然的：找到一个&lt;code&gt;LABEL&lt;/code&gt;就新起一块；找到一个&lt;code&gt;JUMP&lt;/code&gt;&amp;#x2F;&lt;code&gt;CJUMP&lt;/code&gt;&amp;#x2F;&lt;code&gt;RET&lt;/code&gt;&amp;#x2F;…就结束当前块并新起一块。有的块缺少&lt;code&gt;LABEL&lt;/code&gt;或者terminator则补上一个。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Stage 3: 生成（许多）trace&lt;br&gt; 基本块如何排列并不影响程序执行结果。&lt;br&gt; 然而我们需要进行一些优化，尽可能减少跳转或提高跳转的效率。例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于&lt;code&gt;CJUMP(cond, true, false)&lt;/code&gt;, 将false label对应的块紧挨着放置在&lt;code&gt;CJUMP&lt;/code&gt;指令后，这样执行时就可以fall through&lt;/li&gt;
+&lt;li&gt;尝试将无条件跳转&lt;code&gt;JUMP&lt;/code&gt;的目标label对应的块直接放在&lt;code&gt;JUMP&lt;/code&gt;后&lt;/li&gt;
+&lt;li&gt;如果可以，甚至可以直接删除部分&lt;code&gt;JUMP&lt;/code&gt;, 例如将函数内联&lt;/li&gt;
+&lt;li&gt;优化缓存命中率:&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/block-ordering.png&#34; alt=&#34;block ordering&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 我们在此定义几个相关概念:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;trace&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;一个可以被按顺序执行完毕的指令序列&lt;/li&gt;
+&lt;li&gt;说人话：几个连接在一起的基本块构成一个trace&lt;/li&gt;
+&lt;li&gt;CFG图中的一条链就是一个trace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;covering set of traces&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;一个集合，元素是许多&lt;strong&gt;无环&lt;/strong&gt;trace&lt;/li&gt;
+&lt;li&gt;每个基本块在且恰好在一个trace中（i.e. 集合能覆盖整个CFG图）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 有一个比较显然的构建方法：从源结点（不叫根节点是因为这只是个图，大概率不是棵树）开始跑一次DFS即可。&lt;br&gt; 每次从一个未被染色的节点开始，递归地对于每个后继节点，如果还未染色则加入当前trace。&lt;br&gt; 重复该过程直到整个图都被染色。&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/covering-set.png&#34; alt=&#34;coloring&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt; 通过这种方式，我们可以去掉不少跳转。&lt;br&gt; 这是因为现在可以转变思维：原先我们有似乎毫无关联的跳转指令，而现在则是把其中一些连在一起成为traces，然后默认代码执行是在一个trace上走到底的。于是只有要切换trace时才需要一个跳转。&lt;br&gt; 可见，其实我们希望被经常执行的一段代码序列要自己成一个trace，这样就可以尽量减少跳转，增加性能。&lt;br&gt; 在某个判据(criteria)下最好的一些trace就可以被称为 &lt;strong&gt;“optimal traces”&lt;/strong&gt; .&lt;br&gt; 例如如果我们的判据是“最少的跳转指令”，对于&lt;code&gt;While&lt;/code&gt;语句，通过合理的重排就可以去掉一个跳转达成：&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/optimal-traces.png&#34; alt=&#34;to be optimal&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/reorder-eg.png&#34; alt=&#34;reorder example&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;IR-机器码：小结&#34;&gt;&lt;a href=&#34;#IR-机器码：小结&#34; class=&#34;headerlink&#34; title=&#34;IR-&amp;gt;机器码：小结&#34;&gt;&lt;/a&gt;IR-&amp;gt;机器码：小结&lt;/h3&gt;&lt;p&gt;一共四步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把IR Tree转成一些canonical trees&lt;/li&gt;
+&lt;li&gt;重排这些canonical trees为traces, 使得&lt;code&gt;CJUMP(cond, :true, :false)&lt;/code&gt;后紧跟着&lt;code&gt;LABEL(:false)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;指令选择&lt;/strong&gt;：从canonical trees产生伪汇编代码&lt;/li&gt;
+&lt;li&gt;对伪汇编代码进行&lt;strong&gt;寄存器分配&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中后两步将在后文展开阐述。&lt;/p&gt;
+&lt;h2 id=&#34;Part-15-指令选择&#34;&gt;&lt;a href=&#34;#Part-15-指令选择&#34; class=&#34;headerlink&#34; title=&#34;Part 15: 指令选择&#34;&gt;&lt;/a&gt;Part 15: 指令选择&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
