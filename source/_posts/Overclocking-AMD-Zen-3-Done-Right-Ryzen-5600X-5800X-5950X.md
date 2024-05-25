@@ -1,5 +1,5 @@
 ---
-title: Overclocking AMD Zen3 with PBO2 Done Right FULL GUIDE
+title: "Overclocking AMD Zen3 with PBO2 Done Right: A full guide"
 date: 2024-04-27 01:36:26
 tags:
 - Overclocking
@@ -9,7 +9,7 @@ categories:
 permalink: overclocking-zen3/
 ---
 
-# Overclocking AMD Zen3 Series with PBO2: Ryzen 5600X/5800X/5900X/5950X overclocking
+# Overclocking Ryzen 5600X/5800X/5900X/5950X using PBO2
 
 This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in the single-core score(about **5% - 15%**) while maintaining or even increasing the multi-core score. The solution may also apply to the Zen4 series, but the args cannot be a valid reference.
 
