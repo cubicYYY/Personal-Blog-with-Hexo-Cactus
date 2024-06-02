@@ -346,7 +346,7 @@ body .h3 {
   color: #eee;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 body h4,
 body .h4,
@@ -502,6 +502,7 @@ body {
   flex-direction: column;
   min-height: 100%;
   overflow-wrap: break-word;
+  z-index: 100;
 }
 .content p {
   hyphens: auto;

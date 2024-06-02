@@ -4,30 +4,30 @@
     <title>Cubic Y³ • Posts by &#34;compiler construction principles&#34; category</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-13T17:10:20.000Z</updated>
-    <category term="CISCN" />
-    <category term="web" />
-    <category term="Write-Up" />
     <category term="Misc" />
+    <category term="Write-Up" />
     <category term="出题" />
     <category term="English" />
+    <category term="CISCN" />
+    <category term="web" />
     <category term="Hackergame" />
-    <category term="SchoolBus" />
-    <category term="冰菓" />
-    <category term="古籍研究社" />
     <category term="Overclocking" />
+    <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
     <category term="Programming" />
+    <category term="冰菓" />
+    <category term="古籍研究社" />
     <category term="Treap" />
     <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
     <category term="Stack" />
+    <category term="数链剖分" />
     <category term="Splay" />
     <category term="持久化" />
     <category term="线段树" />
-    <category term="数链剖分" />
     <category term="树状数组" />
     <category term="LCA" />
     <category term="分块" />
@@ -35,21 +35,22 @@
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
-    <category term="NLP" />
-    <category term="Fuzzing" />
-    <category term="AFL" />
-    <category term="Math" />
-    <category term="Translation" />
-    <category term="Yoneda Lemma" />
     <category term="Compiler" />
     <category term="Computer Science" />
     <category term="On Going" />
+    <category term="NLP" />
+    <category term="Fuzzing" />
+    <category term="AFL" />
     <category term="Miscellaneous" />
+    <category term="Math" />
+    <category term="Translation" />
+    <category term="Yoneda Lemma" />
     <entry>
         <id>http://cubicy.icu/compiler-construction-principles/</id>
         <title>编译原理课程笔记（All-in-One速通版）</title>
         <link rel="alternate" href="http://cubicy.icu/compiler-construction-principles/"/>
-        <content type="html">&lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的。&lt;br&gt;文中部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的。&lt;br&gt;&lt;strong&gt;使用&lt;code&gt;*&lt;/code&gt;标记的部分考试不考察。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
@@ -736,7 +737,7 @@
 &lt;/ul&gt;
 &lt;p&gt; 流程示例：&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/local-recovery.png&#34; alt=&#34;local error recovery&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;全局错误恢复&lt;br&gt; &lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;br&gt; Burke-Fisher 错误恢复: 对于在发生错误处之前的K个token，每一处都允许插入&amp;#x2F;删除&amp;#x2F;修改一个token，直到修复成功。&lt;br&gt; 优势：&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;*全局错误恢复&lt;br&gt; &lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;br&gt; Burke-Fisher 错误恢复: 对于在发生错误处之前的K个token，每一处都允许插入&amp;#x2F;删除&amp;#x2F;修改一个token，直到修复成功。&lt;br&gt; 优势：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不引入新产生式，不改变文法&lt;/li&gt;
 &lt;li&gt;也不改变分析表&lt;/li&gt;
@@ -834,7 +835,7 @@
 &lt;li&gt;实现：例如在先前章节中Yacc等Parser生成器的&lt;strong&gt;语义动作&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;语义动作Semantic-Action&#34;&gt;&lt;a href=&#34;#语义动作Semantic-Action&#34; class=&#34;headerlink&#34; title=&#34;语义动作Semantic Action&#34;&gt;&lt;/a&gt;语义动作Semantic Action&lt;/h3&gt;&lt;p&gt;我们可以给产生式绑定一个语义动作，使得按照这个产生式规约时&amp;#x2F;推导时完成特定操作。&lt;/p&gt;
-&lt;p&gt;每个token都可能有独属于自己的**语义值(Semantic Value)**。每种token的语义值类型可以不同，我们把A的语义值的类型称为“A的关联类型”。&lt;br&gt;例如对于产生式 $A\rightarrow B\ C\ D$&lt;/p&gt;
+&lt;p&gt;每个token都可能有独属于自己的 &lt;strong&gt;语义值(Semantic Value)&lt;/strong&gt; 。每种token的语义值类型可以不同，我们把A的语义值的类型称为“A的关联类型”。&lt;br&gt;例如对于产生式 $A\rightarrow B\ C\ D$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;语义动作返回值必须是&lt;em&gt;A的关联类型&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;这个值可以通过B C D各自的语义值进行运算得出&lt;/li&gt;
@@ -959,7 +960,7 @@
 &lt;li&gt;&lt;code&gt;S_beginScope&lt;/code&gt;: 记下当前符号表的状态&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;S_endScope&lt;/code&gt;: 恢复到最近的、还未被恢复的&lt;code&gt;S_beginScope&lt;/code&gt;记下的状态&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;我们引入一个**辅助栈(Auxiliary stack)**来维护上文提到的必要的额外信息:&lt;/p&gt;
+&lt;p&gt;我们引入一个 &lt;strong&gt;辅助栈(Auxiliary stack)&lt;/strong&gt; 来维护上文提到的必要的额外信息:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;符号入栈时，会将binding联动地插入对应bucket的链表头&lt;/li&gt;
 &lt;li&gt;弹出栈顶符号时，对应bucket的链表头也会联动地被移除&lt;/li&gt;
@@ -1205,7 +1206,7 @@
 &lt;li&gt;可能丢失少部分机器特定的细节，但不会损失太多&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个好的IR应该简单，然后将复杂的AST翻译为IR代码，最后组合不同代码块。&lt;/p&gt;
-&lt;h3 id=&#34;IR杂项&#34;&gt;&lt;a href=&#34;#IR杂项&#34; class=&#34;headerlink&#34; title=&#34;IR杂项&#34;&gt;&lt;/a&gt;IR杂项&lt;/h3&gt;&lt;p&gt;（不要求掌握）&lt;/p&gt;
+&lt;h3 id=&#34;IR杂项&#34;&gt;&lt;a href=&#34;#IR杂项&#34; class=&#34;headerlink&#34; title=&#34;*IR杂项&#34;&gt;&lt;/a&gt;*IR杂项&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;IR分类：&lt;/p&gt;
 &lt;ul&gt;
@@ -1244,7 +1245,7 @@
 &lt;li&gt;也可以记为一个四元组：&lt;code&gt;(op, x, y, z)&lt;/code&gt; &lt;code&gt;(unary_op, x, y, _)&lt;/code&gt; …&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;静态单赋值SSA:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;*静态单赋值SSA:&lt;/p&gt;
 &lt;p&gt; Lab3实现过但&lt;strong&gt;不要求掌握&lt;/strong&gt;。&lt;br&gt; SSA是特殊的三地址码：每个变量只能被赋值一次&lt;br&gt; 加速分析优化，被广泛应用（如LLVM）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -1478,7 +1479,7 @@
 &lt;p&gt;性质：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;其他所有节点都是&lt;strong&gt;表达式&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;根节点为**语句(statement)**，所以正规树就对应IR中的一个语句，也就是IR Tree中的一个子树。&lt;ul&gt;
+&lt;li&gt;根节点为 &lt;strong&gt;语句(statement)&lt;/strong&gt; ，所以正规树就对应IR中的一个语句，也就是IR Tree中的一个子树。&lt;ul&gt;
 &lt;li&gt;只不过有额外约束，所以经过了变换结构可能不一样（也可能由于原来的子树已经很纯很“正规”所以没变化）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1607,11 +1608,240 @@
 &lt;li&gt;把IR Tree转成一些canonical trees&lt;/li&gt;
 &lt;li&gt;重排这些canonical trees为traces, 使得&lt;code&gt;CJUMP(cond, :true, :false)&lt;/code&gt;后紧跟着&lt;code&gt;LABEL(:false)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;指令选择&lt;/strong&gt;：从canonical trees产生伪汇编代码&lt;/li&gt;
-&lt;li&gt;对伪汇编代码进行&lt;strong&gt;寄存器分配&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;对伪汇编代码进行&lt;strong&gt;寄存器分配&lt;/strong&gt;：确定哪些值可以放置在寄存器中&lt;/li&gt;
+&lt;li&gt;指令调度（不在本课程中）：通过重排等操作优化代码、实现指令级并行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;其中后两步将在后文展开阐述。&lt;/p&gt;
-&lt;h2 id=&#34;Part-15-指令选择&#34;&gt;&lt;a href=&#34;#Part-15-指令选择&#34; class=&#34;headerlink&#34; title=&#34;Part 15: 指令选择&#34;&gt;&lt;/a&gt;Part 15: 指令选择&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
-</content>
+&lt;h2 id=&#34;Part-15-指令选择&#34;&gt;&lt;a href=&#34;#Part-15-指令选择&#34; class=&#34;headerlink&#34; title=&#34;Part 15: 指令选择&#34;&gt;&lt;/a&gt;Part 15: 指令选择&lt;/h2&gt;&lt;p&gt;回顾&lt;a href=&#34;#part-13-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BAir&#34;&gt;现代编译器架构&lt;/a&gt;：&lt;strong&gt;指令选择&lt;/strong&gt; 开始，我们进入编译器的后端部分。&lt;br&gt;LLVM支持用tblgen描述后端，从而自动生成指令选择器。&lt;/p&gt;
+&lt;h3 id=&#34;指令选择概述&#34;&gt;&lt;a href=&#34;#指令选择概述&#34; class=&#34;headerlink&#34; title=&#34;指令选择概述&#34;&gt;&lt;/a&gt;指令选择概述&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;任务：&lt;/strong&gt; 把IR转化为 &lt;em&gt;抽象汇编代码&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;抽象汇编代码&amp;#x3D;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;具有有限个寄存器的汇编代码；&lt;/li&gt;
+&lt;li&gt;为中间结果创造新的临时寄存器；&lt;/li&gt;
+&lt;li&gt;在之后的流程中，会把这些寄存器映射到物理寄存器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;指令选择要解决的问题：IR的一个语句有多种可能的实现方式，需要确定为其中“最好”的一种。&lt;br&gt;最好&amp;#x3D; 最快&amp;#x2F;最小&amp;#x2F;最省电……这个判据取决于具体需求。总之我们需要综合考虑操作数&amp;#x2F;结果的访存需求，指令本身的代价等。&lt;/p&gt;
+&lt;p&gt;例如对于&lt;code&gt;MOVE(TEMP(t1), TEMP(t1) + MEM(TEMP(FP)+4))&lt;/code&gt;, 既可以翻译为：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mov t2, rbp&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;add t2, 4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mov r3, [t2]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;add t1, t3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;，也可以翻译为：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;add t1, [rbp + 4]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;指令选择一种可能的实现方式：&lt;strong&gt;对IR进行模式匹配，一个模式匹配一些IR片段，转化为机器指令&lt;/strong&gt;&lt;br&gt;IR Tree 是一种 &lt;em&gt;tree-oriented IR&lt;/em&gt;, 自然需要在树上进行模式匹配。例如基于动态规划(DP)的匹配。&lt;br&gt;同理对于线性IR，就需要一些字符串匹配。例如纯文本匹配。&lt;br&gt;当然，匹配器(matcher)都是因地制宜相差甚远的，我们不需要当一个分类学家。&lt;/p&gt;
+&lt;p&gt;接下来把重心放在树形IR上。&lt;/p&gt;
+&lt;h3 id=&#34;指令选择算法：基于树覆盖&#34;&gt;&lt;a href=&#34;#指令选择算法：基于树覆盖&#34; class=&#34;headerlink&#34; title=&#34;指令选择算法：基于树覆盖&#34;&gt;&lt;/a&gt;指令选择算法：基于树覆盖&lt;/h3&gt;&lt;p&gt;这里的覆盖意指：显然的，整棵 IR Tree 需要被完全覆盖才能完成翻译流程。&lt;br&gt;为了方便起见，我们接下来假设目标机器码是一个简单的架构（指令集）：&lt;code&gt;Jouette&lt;/code&gt;架构。它基本上就是RISC-V的子集。我们约定：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;寄存器&lt;code&gt;r0&lt;/code&gt;永远为0&lt;/li&gt;
+&lt;li&gt;数据&amp;#x2F;地址能直接在寄存器中放得下&lt;/li&gt;
+&lt;li&gt;每时钟周期只有1个指令执行&lt;/li&gt;
+&lt;li&gt;每个指令延迟1时钟周期（&lt;strong&gt;但内存-内存数据拷贝使用的&lt;code&gt;MOVEM&lt;/code&gt;指令除外&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有如下翻译方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;宏展开&amp;#x2F;模板匹配&lt;ul&gt;
+&lt;li&gt;公式化地，把每条IR直接展开成一或多条机器指令&lt;/li&gt;
+&lt;li&gt;缺点：缺乏优化&lt;ul&gt;
+&lt;li&gt;只能1-&amp;gt;1或1-&amp;gt;N, 但多条IR指令有时明明可以合并(N-&amp;gt;1)&lt;/li&gt;
+&lt;li&gt;盲目的，缺乏上下关联&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;通过寻找树上的模式(tree patterns)&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;我们将在下文详细研究。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Tree Pattern: IR Tree的某个片段如果长得符合某个树形的模式(tree pattern)，就可以把这部分对应到一条机器码。&lt;ul&gt;
+&lt;li&gt;这种模式匹配出来的 IR Tree 片段被叫做 &lt;strong&gt;tile&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;tile 是模式匹配到的一个实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;比如&lt;code&gt;LOAD ri &amp;lt;- M[rj+c]&lt;/code&gt;对应的模式就可以是&lt;code&gt;MEM(BINOP(PLUS, _expr_, CONST(_expr_)))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;目标：没有重叠地覆盖整棵IR Tree. 我们把这个过程称为&lt;code&gt;tiling&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;把机器码转为对应的 tree patterns (注意可能有多种模式都可以翻译到这种机器码)。以&lt;code&gt;Jouette&lt;/code&gt;架构为例：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/jouette-patterns.png&#34; alt=&#34;jouette patterns&#34; loading=&#34;lazy&#34;&gt;&lt;ul&gt;
+&lt;li&gt;接下来只需找到一种方式让各种机器指令的 tree pattern 能够覆盖整颗 IR Tree, 就任务完成了。&lt;br&gt;X86的例子：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/tiling.png&#34; alt=&#34;x86 tiling example&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;Jouette的例子，其中&lt;code&gt;a&lt;/code&gt;数组每个元素占据4个储存地址，因此要翻译的IR指令是&lt;code&gt;M[a+i*4]:=x&lt;/code&gt;：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/jouette-tiling.png&#34; alt=&#34;jouette tiling example&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在我们要做的是找到一种方法，使得生成的机器代码跑的比香港记者还快。&lt;br&gt;&lt;strong&gt;注：以下讨论隐含的前提是每个指令速度一致。但是对于RISC指令集（见下一节）来说并非如此，有的指令可能耗费高达数十时钟周期。好消息是&lt;code&gt;Jouette&lt;/code&gt;指令集不仅单发射还固定延迟，所以指令少即是跑得快。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;每个Tile对应一个代价(cost), 反应了生成的目标机器指令运行的代价（功耗&amp;#x2F;延迟&amp;#x2F;速度……取决于你）。&lt;br&gt;我们可以用很多小的tile轻松覆盖整棵树，但是大量tile对应大量目标代码，很长很慢；&lt;br&gt;也可以用一些大块的tile进行覆盖，这样tile量少对应目标代码也较小，跑得快（但是这使得覆盖问题本身变得困难）。&lt;/p&gt;
+&lt;p&gt;为此我们需要区分如下两个概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Optimum tiling&lt;ul&gt;
+&lt;li&gt;全局最优：所有tiles总代价最小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Optimal tiling&lt;ul&gt;
+&lt;li&gt;局部最优：没有相邻的tile可以被合并成一个tile了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;显然全局最优一定局部最优，但反之则不然。&lt;/p&gt;
+&lt;p&gt;接下来就是不同的指令选择算法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maximal Munch: 寻找optimal tiling (局部最优的)&lt;ul&gt;
+&lt;li&gt;自顶向下&lt;/li&gt;
+&lt;li&gt;用可用的最大tile覆盖当前节点&lt;/li&gt;
+&lt;li&gt;递归地对（那些根节点）还未被覆盖的每个子树应用该算法&lt;/li&gt;
+&lt;li&gt;把所有tile对应的指令按照覆盖顺序的&lt;strong&gt;逆序&lt;/strong&gt;收集起来即为目标机器码&lt;ul&gt;
+&lt;li&gt;为何逆序？考虑一个简单的&lt;code&gt;BINOP(PLUS, 1, 5)&lt;/code&gt;, 该算法会先用加法指令对应的tile覆盖，然后再对操作数表达式（&lt;code&gt;1&lt;/code&gt;和&lt;code&gt;5&lt;/code&gt;）递归生成对应的tile. 但显然要先有操作数表达式的值，才能对他们执行加法指令。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;运用贪心思想：更大的tile&amp;#x3D;&amp;gt;更精确的模式匹配&amp;#x3D;&amp;gt;更多指令中的信息被运用&amp;#x3D;&amp;gt;更优的代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;动态规划(dynamic programming): optimum tiling (全局最优的)&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;自底向上&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;每个节点&lt;code&gt;x&lt;/code&gt;都有一个代价，是代价最小的覆盖方案的代价。&lt;br&gt;而每个可用于覆盖节点&lt;code&gt;x&lt;/code&gt;的tile都对应一种方案，该方案的代价为该tile的子树代价之和，加上这个tile &lt;code&gt;T&lt;/code&gt;固有的代价：&lt;br&gt;$ cost(x)&amp;#x3D;\underset{\forall \text{tile } T \text{ that can cover node } x}{min} (cost_T + \underset{\forall \text{child } y \text{ of tile } T}{\sum} cost(y)) $&lt;br&gt;例如，假设&lt;code&gt;ADD&lt;/code&gt;指令对应两种tile,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一种，对应最原始的模式&lt;code&gt;BINOP(PLUS, _expr1_, _expr2_)&lt;/code&gt;，如果使用这个 tile, 该节点的代价自然就是&lt;code&gt;表达式1（左子树）的代价+表达式2（右子树）的代价+1&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;第二种，操作数都是常数可以直接优化为常值，对应模式为&lt;code&gt;BINOP(PLUS, CONST(num), CONST(num))&lt;/code&gt;，那么以该节点为根的子树立刻被完全覆盖，该节点代价就是固定值&lt;code&gt;1&lt;/code&gt; !&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果这两种tile都可用的话，显然应该选择第二种。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;tile 的子树的代价均已知，在可用于覆盖当前节点的tiles中，采用一个使得该节点代价最小的进行覆盖即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;正确性：使得某节点代价最小的 tile, 其子树必然也以代价最小的tile覆盖。否则子树可以替换为更优的覆盖方式，结果一定不会更劣。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;时间复杂度：线性（因为可用 tile 数与IR Tree节点数量都是已知常数）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;自底向上，递归地求出所有子树的代价&lt;/li&gt;
+&lt;li&gt;尝试所有在当前节点可用的tile, 每种tile对应一个覆盖方案&lt;/li&gt;
+&lt;li&gt;找到代价最低的一个方案，记录所用的 tile 和代价在该节点上&lt;/li&gt;
+&lt;li&gt;根节点的最小代价被找到，意味着整棵树的optimum tiling已完成，开始指令发射(instruction emission).&lt;br&gt;也就是从根节点开始，递归地，先发射该节点 tile 子树的指令，而后发射该节点 tile 的指令。&lt;br&gt;例如：&lt;ol&gt;
+&lt;li&gt;寻找&lt;code&gt;CONST 1&lt;/code&gt;与&lt;code&gt;CONST 2&lt;/code&gt;的最小代价与tile（略）&lt;/li&gt;
+&lt;li&gt;寻找&lt;code&gt;+&lt;/code&gt;的最小代价与 tile, 方案2被采用：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/dp-plus-node.png&#34; alt=&#34;dp-plus-node&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;寻找&lt;code&gt;MEM&lt;/code&gt;的最小代价与 tile, 方案3被采用：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/dp-mem-node.png&#34; alt=&#34;dp-mem-node&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;发射指令：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/dp-emit.png&#34; alt=&#34;dp-emit&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里需要特别注意：tile 的子树不是该节点的子树，而是用 tile 覆盖该节点以及部分子节点后，那些没被覆盖到的子树。&lt;br&gt;例如下图中红色的 tile 对应的子树并非两个&lt;code&gt;MEM&lt;/code&gt;子树（因为被这个tile覆盖在内），而是两个&lt;code&gt;PLUS&lt;/code&gt;子树：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/tile-children.png&#34; alt=&#34;children of tile&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;树语法Tree-Grammar&#34;&gt;&lt;a href=&#34;#树语法Tree-Grammar&#34; class=&#34;headerlink&#34; title=&#34;*树语法Tree Grammar&#34;&gt;&lt;/a&gt;*树语法Tree Grammar&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;tree grammar 是一种上下文无关文法。&lt;br&gt;我们可以用 tree grammar 描述这些 tile.&lt;br&gt;我们需要记录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pattern: 模式是什么样的&lt;/li&gt;
+&lt;li&gt;replacement: 这个pattern被替换之后，原来的位置要用什么代替（比如一个加法指令被替换后，要用加法结果所在的寄存器替换该表达式）&lt;/li&gt;
+&lt;li&gt;cost: tile 的固有代价&lt;/li&gt;
+&lt;li&gt;template: 生成的目标代码模板&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;pattern-&amp;gt;replacement&lt;/th&gt;
+&lt;th&gt;cost&lt;/th&gt;
+&lt;th&gt;template&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;+(r1,r2) -&amp;gt; r2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;add r1,r2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;store(r1,load(r2)) -&amp;gt; DONE&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;movem r2,r1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h3 id=&#34;CISC-vs-RISC&#34;&gt;&lt;a href=&#34;#CISC-vs-RISC&#34; class=&#34;headerlink&#34; title=&#34;CISC vs. RISC&#34;&gt;&lt;/a&gt;CISC vs. RISC&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;CISC&lt;ul&gt;
+&lt;li&gt;Complex Instruction Set Computer &amp;#x3D; 复杂指令集计算机&lt;/li&gt;
+&lt;li&gt;可能有多个寄存器类，有的指令只能使用一部分&lt;/li&gt;
+&lt;li&gt;指令不等长&lt;/li&gt;
+&lt;li&gt;计算指令可用内存作为操作数&lt;/li&gt;
+&lt;li&gt;内存寻址方式多样&lt;/li&gt;
+&lt;li&gt;指令可能有副作用&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;li&gt;难以使用tree pattern-based tiling建模！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;RISC&lt;ul&gt;
+&lt;li&gt;Reduced Instruction Set Computer &amp;#x3D; 精简指令集计算机&lt;/li&gt;
+&lt;li&gt;寄存器只有一类&lt;/li&gt;
+&lt;li&gt;指令等长（例如32bit）&lt;/li&gt;
+&lt;li&gt;计算指令只能用寄存器作为操作数&lt;/li&gt;
+&lt;li&gt;内存寻址方式少&lt;/li&gt;
+&lt;li&gt;指令没有副作用（WYSIWYG）&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CISC引入了一些问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;较少的寄存器：用一些临时节点代替，让寄存器分配器干活&lt;/li&gt;
+&lt;li&gt;要求操作数&amp;#x2F;结果放在不同寄存器：多显式move即可&lt;/li&gt;
+&lt;li&gt;使用2地址码，但IR是3地址码：&lt;code&gt;t1&amp;lt;-t2+t3&lt;/code&gt;可转为&lt;code&gt;t1&amp;lt;-t2; t1&amp;lt;-t1+t3;&lt;/code&gt;. 然后让寄存器分配器干活&lt;/li&gt;
+&lt;li&gt;操作数使用了内存值：先放进寄存器即可&lt;/li&gt;
+&lt;li&gt;有副作用（比如某种自增计数器）：无视&amp;#x2F;改写&amp;#x2F;换一套算法然后改用DAG模式匹配……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于CISC, IR Tree中的多个指令可能只需要一个机器指令就能解决，此时 optimal 和 optimum 区别巨大；&lt;br&gt;对于RISC, 很多时候二者没有什么区别，因此只需要最简单的 tiling 算法。&lt;/p&gt;
+&lt;p&gt;现代编译器还需要额外考虑以下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多级流水中指令可以同时发射执行，因此多指令的执行时间并非简单加和即可&lt;/li&gt;
+&lt;li&gt;cost只是一种不错的估计，而不能反应全貌。&lt;ul&gt;
+&lt;li&gt;例如，指令顺序可能影响流水线的 stall 频率从而影响 CPU 的 IPC, 指令间复杂的羁绊显然无法通过cost这一简单数字反应……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Part-16-活跃变量分析&#34;&gt;&lt;a href=&#34;#Part-16-活跃变量分析&#34; class=&#34;headerlink&#34; title=&#34;Part 16: 活跃变量分析&#34;&gt;&lt;/a&gt;Part 16: 活跃变量分析&lt;/h2&gt;&lt;h3 id=&#34;编译器优化&#34;&gt;&lt;a href=&#34;#编译器优化&#34; class=&#34;headerlink&#34; title=&#34;*编译器优化&#34;&gt;&lt;/a&gt;*编译器优化&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;例如GCC的 &lt;code&gt;-O&lt;/code&gt; 系列编译选项。&lt;/p&gt;
+&lt;p&gt;优化可以分为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;空间优化&lt;/li&gt;
+&lt;li&gt;时间优化&lt;/li&gt;
+&lt;li&gt;能耗优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优化可以是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地的：一个basic block里&lt;/li&gt;
+&lt;li&gt;全局的（过程内）：在整个过程（函数&amp;#x2F;方法）中&lt;/li&gt;
+&lt;li&gt;全程序的（跨过程）：多个过程（函数&amp;#x2F;方法）之间，甚至整个程序，甚至多个通过链接器连接起来的源程序间（参见LTO, link time optimization）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;常见优化（闲的话可以在lab里实现一下）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编译期常量求值：常量折叠、常量传播&lt;/li&gt;
+&lt;li&gt;减少计算代价：代数简化、强度折减(strength reduction)&lt;/li&gt;
+&lt;li&gt;消除重复计算：拷贝传播、值编号、消除公因子&lt;/li&gt;
+&lt;li&gt;向量化：超字级并行(superword-level parallelism, SLP)、循环向量化&lt;/li&gt;
+&lt;li&gt;循环优化：循环不变代码外提、循环展开、合并拆分、代码提升(code hoisting)&lt;/li&gt;
+&lt;li&gt;减少函数调用开销：内联、尾递归优化&lt;/li&gt;
+&lt;li&gt;控制流优化：死代码消除、if语句简化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些优化需要一些对代码的分析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;控制流分析：基本块之间的跳转关系&lt;ul&gt;
+&lt;li&gt;例如：死代码消除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数据流分析：数据依赖、引用关系，活跃情况&lt;ul&gt;
+&lt;li&gt;例如：向量化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;别名分析：寻找可能指向同一地址的指针&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;数据流分析Dataflow-Analysis&#34;&gt;&lt;a href=&#34;#数据流分析Dataflow-Analysis&#34; class=&#34;headerlink&#34; title=&#34;数据流分析Dataflow Analysis&#34;&gt;&lt;/a&gt;数据流分析Dataflow Analysis&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;CFG &amp;#x3D; Control-Flow Graph&lt;ul&gt;
+&lt;li&gt;节点代表一个语句&lt;ul&gt;
+&lt;li&gt;一般来说，我们会将多个相邻的不包含跳转指令，也不是跳转指令目的地的多个语句组合为一个基本块&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;有向边代表一个可能的跳转&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以从CFG（或其他类型的中间表示）中&lt;strong&gt;静态（i.e. 不需要真的运行程序）&lt;/strong&gt;推导出一些程序的行为信息。&lt;br&gt;这其中就包括我们马上要研究的话题：&lt;strong&gt;变量的活跃性&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;活跃性分析Liveness-Analysis&#34;&gt;&lt;a href=&#34;#活跃性分析Liveness-Analysis&#34; class=&#34;headerlink&#34; title=&#34;活跃性分析Liveness Analysis&#34;&gt;&lt;/a&gt;活跃性分析Liveness Analysis&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-17-寄存器分配&#34;&gt;&lt;a href=&#34;#Part-17-寄存器分配&#34; class=&#34;headerlink&#34; title=&#34;Part 17: 寄存器分配&#34;&gt;&lt;/a&gt;Part 17: 寄存器分配&lt;/h2&gt;&lt;h2 id=&#34;Part-18-垃圾回收&#34;&gt;&lt;a href=&#34;#Part-18-垃圾回收&#34; class=&#34;headerlink&#34; title=&#34;Part 18: 垃圾回收&#34;&gt;&lt;/a&gt;Part 18: 垃圾回收&lt;/h2&gt;</content>
         <category term="Compiler" />
         <category term="Computer Science" />
         <category term="On Going" />
