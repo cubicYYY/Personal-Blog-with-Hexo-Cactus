@@ -10,8 +10,8 @@
     <category term="English" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Overclocking" />
     <category term="Hackergame" />
+    <category term="Overclocking" />
     <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
@@ -24,8 +24,8 @@
     <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="Splay" />
     <category term="数链剖分" />
+    <category term="Splay" />
     <category term="持久化" />
     <category term="线段树" />
     <category term="树状数组" />
@@ -40,11 +40,11 @@
     <category term="AFL" />
     <category term="Miscellaneous" />
     <category term="On Going" />
-    <category term="Compiler" />
-    <category term="Computer Science" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
     <entry>
         <id>http://cubicy.icu/2021/10/30/Hackergame2021%20%E9%83%A8%E5%88%86WriteUp/</id>
         <title>Hackergame2021 部分WriteUp</title>

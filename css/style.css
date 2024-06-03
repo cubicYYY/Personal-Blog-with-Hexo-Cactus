@@ -714,7 +714,7 @@ body {
   right: 0;
   display: inline-block;
   float: right;
-  z-index: 100;
+  z-index: 1000;
 }
 #header-post a {
   background: none;

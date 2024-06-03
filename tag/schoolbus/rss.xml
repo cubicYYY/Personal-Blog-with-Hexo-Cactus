@@ -19,8 +19,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>English</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Overclocking</category>
         <category>Hackergame</category>
+        <category>Overclocking</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -33,8 +33,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Splay</category>
         <category>数链剖分</category>
+        <category>Splay</category>
         <category>持久化</category>
         <category>线段树</category>
         <category>树状数组</category>
@@ -49,11 +49,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>AFL</category>
         <category>Miscellaneous</category>
         <category>On Going</category>
-        <category>Compiler</category>
-        <category>Computer Science</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2021/11/09/WriteUp%20%E6%97%A5%E5%93%ADschool-bus%20%E4%B8%8A%E4%BA%86%E9%82%A3%E4%B8%AAwriteup/</guid>
             <title>WriteUp 日哭school-bus 上了那个writeup</title>

@@ -10,8 +10,8 @@
     <category term="English" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Overclocking" />
     <category term="Hackergame" />
+    <category term="Overclocking" />
     <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
@@ -24,8 +24,8 @@
     <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="Splay" />
     <category term="数链剖分" />
+    <category term="Splay" />
     <category term="持久化" />
     <category term="线段树" />
     <category term="树状数组" />
@@ -40,11 +40,11 @@
     <category term="AFL" />
     <category term="Miscellaneous" />
     <category term="On Going" />
-    <category term="Compiler" />
-    <category term="Computer Science" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
     <entry>
         <id>http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</id>
         <title>赛博疑难杂症药方</title>

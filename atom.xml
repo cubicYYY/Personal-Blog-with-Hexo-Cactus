@@ -10,8 +10,8 @@
     <category term="English" />
     <category term="CISCN" />
     <category term="web" />
-    <category term="Overclocking" />
     <category term="Hackergame" />
+    <category term="Overclocking" />
     <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
@@ -24,8 +24,8 @@
     <category term="Stack" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="Splay" />
     <category term="数链剖分" />
+    <category term="Splay" />
     <category term="持久化" />
     <category term="线段树" />
     <category term="树状数组" />
@@ -40,11 +40,11 @@
     <category term="AFL" />
     <category term="Miscellaneous" />
     <category term="On Going" />
-    <category term="Compiler" />
-    <category term="Computer Science" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
     <entry>
         <id>http://cubicy.icu/overclocking-zen3/</id>
         <title>Overclocking AMD Zen3 with PBO2 Done Right: A full guide</title>
@@ -228,8 +228,8 @@
 &lt;/ul&gt;
 &lt;p&gt;期末考试：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;半开卷，允许携带 3 张双面&lt;strong&gt;打印或手写&lt;/strong&gt;的 A4 纸入场&lt;/li&gt;
-&lt;li&gt;考试范围：虎书 1-11 13-14 18 章&lt;/li&gt;
+&lt;li&gt;半开卷，允许携带&lt;strong&gt;3 张可双面打印或手写的 A4 纸&lt;/strong&gt;入场&lt;/li&gt;
+&lt;li&gt;考试范围：虎书 1-11 13-14 18 章：&lt;br&gt;Ch.01 Introduction&lt;br&gt;Ch.02 Lexical Analysis&lt;br&gt;Ch.03 Parsing&lt;br&gt;Ch.04 Abstract Syntax&lt;br&gt;Ch.05 Semantic Analysis&lt;br&gt;Ch.06 Activation Record&lt;br&gt;Ch.07 Translating into Intermediate Code&lt;br&gt;Ch.08 Basic Blocks and Traces&lt;br&gt;Ch.09 Instruction Selection&lt;br&gt;Ch.10 Liveness Analysis&lt;br&gt;Ch.11 Register Allocation&lt;br&gt;Ch.13 Garbage Collection&lt;br&gt;Ch.14 Object-oriented Languages&lt;br&gt;Ch.18 Loop Optimizations&lt;/li&gt;
 &lt;li&gt;题型：判断30道*1分 选择20道*1分 大题共50分&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;复习重点：重要概念、算法 提高计算题熟练度 确保掌握作业题&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -2148,7 +2148,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;解方程&#34;&gt;&lt;a href=&#34;#解方程&#34; class=&#34;headerlink&#34; title=&#34;解方程&#34;&gt;&lt;/a&gt;解方程&lt;/h3&gt;&lt;p&gt;应用这两个方程，我们可以给出如下算法求解出in&amp;#x2F;out：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;for each n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  in[n] ←&amp;#123;&amp;#125;; out[n] ←&amp;#123;&amp;#125; // init. to empty set, which is a very rough approximation!&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repeat:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  for each n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    in′[n] ← in[n]; out′[n] ← out[n]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // `U` stands for &amp;quot;union&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    in[n] ← use[n] U (out[n] − def[n]) // use/def is easy to obtain at the very beginning&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    out[n] ← ⋃ in[s], where s in succ[n] &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;until in′[n] = in[n] and out′[n] = out[n] for all n // until no update can be made&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;for each n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  // init. to empty sets, which is a very rough approximation:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  in[n] ←&amp;#123;&amp;#125;; out[n] ←&amp;#123;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repeat:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  for each n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    in&amp;#x27;[n] ← in[n]; out&amp;#x27;[n] ← out[n]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // `⋃` stands for &amp;quot;union&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // use/def is easy to obtain at the very beginning&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    in[n] ← use[n] ⋃ (out[n] − def[n]) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    out[n] ← ⋃&amp;#123; in[s], where s in succ[n] &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;until in&amp;#x27;[n] = in[n] and out&amp;#x27;[n] = out[n] for all n &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// i.e. until no update can be made&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;每次迭代中集合总会&lt;strong&gt;单调地&lt;/strong&gt;变大。&lt;br&gt;对于刚刚的&lt;a href=&#34;#cfg-example&#34;&gt;这个 CFG&lt;/a&gt;, 其求解流程如下，在7步后收敛：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/calc-liveness-forward.png&#34; alt=&#34;calc-liveness-forward&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;似乎每一步能更新的很少。但事实上&lt;strong&gt;想要加速收敛的技巧就藏在&lt;code&gt;for each n&lt;/code&gt;这一句中：只需要反转一下每次迭代遍历节点的顺序即可&lt;/strong&gt;！&lt;/p&gt;
