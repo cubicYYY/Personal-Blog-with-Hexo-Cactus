@@ -19,8 +19,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>English</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Hackergame</category>
         <category>Overclocking</category>
+        <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -30,11 +30,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
-        <category>数链剖分</category>
         <category>Splay</category>
+        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
         <category>树状数组</category>
@@ -44,13 +44,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
-        <category>Compiler</category>
-        <category>Computer Science</category>
-        <category>On Going</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
         <category>Miscellaneous</category>
+        <category>On Going</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
@@ -58,13 +58,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <guid isPermalink="true">http://cubicy.icu/compiler-construction-principles/</guid>
             <title>编译原理课程笔记（All-in-One速通版）</title>
             <link>http://cubicy.icu/compiler-construction-principles/</link>
+            <category>On Going</category>
             <category>Compiler</category>
             <category>Computer Science</category>
-            <category>On Going</category>
             <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的。&lt;br&gt;&lt;strong&gt;使用&lt;code&gt;*&lt;/code&gt;标记的部分考试不考察。&lt;/strong&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的，尽可能对缺乏动机(intuition)的一些概念进行简明解释。&lt;br&gt;标题中使用&lt;code&gt;*&lt;/code&gt;标记的部分为考试&lt;strong&gt;不&lt;/strong&gt;考察的内容。&lt;/p&gt;
 &lt;p&gt;文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
-&lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A 虎书）&lt;/p&gt;
+&lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A. 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://web.stanford.edu/class/cs143/&#34;&gt;Stanford课程主页&lt;/a&gt;&lt;/li&gt;
@@ -78,6 +78,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;期中考试&amp;#x3D; 15%&lt;/li&gt;
 &lt;li&gt;综合性课程设计&amp;#x3D; 25%&lt;/li&gt;
 &lt;li&gt;期末考试&amp;#x3D; 40% （斩杀线40&amp;#x2F;100）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;期末考试：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;半开卷，允许携带 3 张双面&lt;strong&gt;打印或手写&lt;/strong&gt;的 A4 纸入场&lt;/li&gt;
+&lt;li&gt;考试范围：虎书 1-11 13-14 18 章&lt;/li&gt;
+&lt;li&gt;题型：判断30道*1分 选择20道*1分 大题共50分&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复习重点：重要概念、算法 提高计算题熟练度 确保掌握作业题&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;前置知识：计算理论（笔记参考&lt;a href=&#34;https://note.tonycrane.cc/cs/tcs/toc/&#34;&gt;https://note.tonycrane.cc/cs/tcs/toc/&lt;/a&gt;）&lt;/p&gt;
 &lt;h2 id=&#34;Part-1-简介&#34;&gt;&lt;a href=&#34;#Part-1-简介&#34; class=&#34;headerlink&#34; title=&#34;Part 1: 简介&#34;&gt;&lt;/a&gt;Part 1: 简介&lt;/h2&gt;&lt;p&gt;基本概念：&lt;/p&gt;
@@ -269,10 +276,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;&lt;p&gt;判定CFG二义性：不可判定问题&lt;br&gt;但可以通过给定充分条件（无二义文法）确保无二义性：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;自顶向下：LL(1)&lt;/li&gt;
-&lt;li&gt;自底向上：LR(1), LALR(1)&lt;br&gt;&lt;a name=&#34;grammars-set&#34;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/grammars.png&#34; alt=&#34;grammars&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;自底向上：LR(1), LALR(1)&lt;br&gt;&lt;a name=&#34;grammars-set&#34;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/grammars.png&#34; alt=&#34;grammars&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;Part-4-语法分析-自顶向下&#34;&gt;&lt;a href=&#34;#Part-4-语法分析-自顶向下&#34; class=&#34;headerlink&#34; title=&#34;Part 4: 语法分析 - 自顶向下&#34;&gt;&lt;/a&gt;Part 4: 语法分析 - 自顶向下&lt;/h2&gt;&lt;p&gt;自顶向下每一步的推导都需要做出&lt;strong&gt;两个选择&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;替换哪个非终结符？&lt;/li&gt;
@@ -880,7 +888,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;ul&gt;
 &lt;li&gt;缺点：太“啰嗦”。例如括号相关产生式只是为了解析顺序正确才有的，没必要放进树里。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;抽象语法树Abstract-Syntax-Tree&#34;&gt;&lt;a href=&#34;#抽象语法树Abstract-Syntax-Tree&#34; class=&#34;headerlink&#34; title=&#34;抽象语法树Abstract Syntax Tree&#34;&gt;&lt;/a&gt;抽象语法树Abstract Syntax Tree&lt;/h3&gt;&lt;p&gt;可以提供一个&lt;em&gt;干净的&lt;/em&gt;（不包含Parsing的那些繁文缛节）接口用于后续编译流程的实现或优化（编译器后端）。&lt;br&gt;生成方式：用&lt;strong&gt;具体语法&lt;/strong&gt;（Parser生成器能懂的）为&lt;strong&gt;抽象语法&lt;/strong&gt;（我们想要的、更可读的）生成抽象语法树&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/AST.png&#34; alt=&#34;AST&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;抽象语法树AST&#34;&gt;&lt;a href=&#34;#抽象语法树AST&#34; class=&#34;headerlink&#34; title=&#34;抽象语法树AST&#34;&gt;&lt;/a&gt;抽象语法树AST&lt;/h3&gt;&lt;p&gt;AST &amp;#x3D; Abstract Syntax Tree&lt;/p&gt;
+&lt;p&gt;可以提供一个&lt;em&gt;干净的&lt;/em&gt;（不包含Parsing的那些繁文缛节）接口用于后续编译流程的实现或优化（编译器后端）。&lt;br&gt;生成方式：用&lt;strong&gt;具体语法&lt;/strong&gt;（Parser生成器能懂的）为&lt;strong&gt;抽象语法&lt;/strong&gt;（我们想要的、更可读的）生成抽象语法树&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/AST.png&#34; alt=&#34;AST&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;实现：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;为每一个非终结符定义一个类型声明，用于表示其关联类型&lt;/li&gt;
@@ -1090,7 +1099,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;思考：为什么不开启优化的时候如下的写法可以“返回”值？&lt;/p&gt;
 &lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; num)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; var=num+&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;// no return!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; a = &lt;span class=&#34;built_in&#34;&gt;foo&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;114514&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; cout&amp;lt;&amp;lt; a &amp;lt;&amp;lt;endl; &lt;span class=&#34;comment&#34;&gt;// 114515&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;答案：如果有return语句，返回值会被push到栈帧。但是这里并没有return语句，所以本来是返回值的位置就被&lt;code&gt;var&lt;/code&gt;给“冒充”了。当然这是UB, 不能保证这种行为的可重复性（例如开启高优化级别&amp;#x2F;返回常数被编译器内联）。&lt;/p&gt;
+&lt;p&gt;答案：如果有return语句，返回值会被push到栈帧。&lt;br&gt;但是这里并没有return语句，所以本来是返回值的位置就被栈帧里最后一个（也是唯一一个）局部变量&lt;code&gt;var&lt;/code&gt;给“冒充”了。&lt;br&gt;当然这是UB, 不能保证这种行为的可重复性（例如开启高优化级别时，这个现象很容易就被优化坏了，只留下一个0）。&lt;/p&gt;
 &lt;h3 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;基址寄存器&amp;#x3D;FP&lt;br&gt;栈顶寄存器&amp;#x3D;SP&lt;br&gt;如果f调用g(a1, a2, …):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SP指向第一个参数a1&lt;/li&gt;
@@ -1194,7 +1203,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-13-中间表示-IR&#34;&gt;&lt;a href=&#34;#Part-13-中间表示-IR&#34; class=&#34;headerlink&#34; title=&#34;Part 13: 中间表示(IR)&#34;&gt;&lt;/a&gt;Part 13: 中间表示(IR)&lt;/h2&gt;&lt;h3 id=&#34;概述&#34;&gt;&lt;a href=&#34;#概述&#34; class=&#34;headerlink&#34; title=&#34;概述&#34;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;IR &amp;#x3D; Intermediate Representation&lt;/p&gt;
+&lt;h2 id=&#34;Part-13-中间表示-IR&#34;&gt;&lt;a href=&#34;#Part-13-中间表示-IR&#34; class=&#34;headerlink&#34; title=&#34;Part 13: 中间表示(IR)&#34;&gt;&lt;/a&gt;Part 13: 中间表示(IR)&lt;/h2&gt;&lt;p&gt;&lt;a name=&#34;intermediate-representation&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;概述&#34;&gt;&lt;a href=&#34;#概述&#34; class=&#34;headerlink&#34; title=&#34;概述&#34;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;IR &amp;#x3D; Intermediate Representation&lt;/p&gt;
 &lt;p&gt;编译流程划分：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;前端：源代码-&amp;gt;词法分析-&amp;gt;语法分析-&amp;gt;语义分析-&amp;gt;&lt;/li&gt;
@@ -1467,7 +1477,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;如果都能直接通过偏移找到位置，那么就是 &lt;strong&gt;“位置无关代码(PIC)”&lt;/strong&gt; 了。&lt;br&gt;我们维护一个表记录需要待确定、需要在之后被填入的地址在哪些位置，留待日后使用。&lt;br&gt;参考ELF的&lt;a href=&#34;https://stackoverflow.com/questions/63672744/why-differentiate-rel-text-and-rel-data-section&#34;&gt;.rel.text&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;&lt;em&gt;注：这里的许多概念都是针对Tiger语言的，承接上文。&lt;/em&gt;&lt;br&gt;在将IR的AST翻译为机器码的过程中，我们不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。&lt;br&gt;例如：一个包含&lt;code&gt;ESEQ&lt;/code&gt;子结点的&lt;code&gt;BINOP&lt;/code&gt;树代表一个二元运算符表达式。但由于&lt;code&gt;ESEQ&lt;/code&gt;有副作用，这个表达式的值取决于&lt;code&gt;ESEQ&lt;/code&gt;先求值&amp;#x2F;后求值，是存在歧义的。&lt;br&gt;解决方法：将IR Tree变换为 &lt;strong&gt;正规形式(canonical form)&lt;/strong&gt; ，而内部存在很多 &lt;strong&gt;正规树(canonical tree)&lt;/strong&gt; （详见下文）.&lt;/p&gt;
+&lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;&lt;em&gt;注：这里的许多概念都是针对Tiger语言的，承接上文。&lt;/em&gt;&lt;br&gt;在将IR的AST翻译为机器码的过程中，我们不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。&lt;br&gt;例如：一个包含&lt;code&gt;ESEQ&lt;/code&gt;子节点的&lt;code&gt;BINOP&lt;/code&gt;树代表一个二元运算符表达式。但由于&lt;code&gt;ESEQ&lt;/code&gt;有副作用，这个表达式的值取决于&lt;code&gt;ESEQ&lt;/code&gt;先求值&amp;#x2F;后求值，是存在歧义的。&lt;br&gt;解决方法：将IR Tree变换为 &lt;strong&gt;正规形式(canonical form)&lt;/strong&gt; ，而内部存在很多 &lt;strong&gt;正规树(canonical tree)&lt;/strong&gt; （详见下文）.&lt;/p&gt;
 &lt;h3 id=&#34;正规形式Canonical-Form&#34;&gt;&lt;a href=&#34;#正规形式Canonical-Form&#34; class=&#34;headerlink&#34; title=&#34;正规形式Canonical Form&#34;&gt;&lt;/a&gt;正规形式Canonical Form&lt;/h3&gt;&lt;p&gt;对比IR Tree与canonical form:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;IR Tree:&lt;ul&gt;
@@ -1612,7 +1622,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt; 有一个比较显然的构建方法：从源结点（不叫根节点是因为这只是个图，大概率不是棵树）开始跑一次DFS即可。&lt;br&gt; 每次从一个未被染色的节点开始，递归地对于每个后继节点，如果还未染色则加入当前trace。&lt;br&gt; 重复该过程直到整个图都被染色。&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/covering-set.png&#34; alt=&#34;coloring&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt; 有一个比较显然的构建方法：从源节点（不叫根节点是因为这只是个图，大概率不是棵树）开始跑一次DFS即可。&lt;br&gt; 每次从一个未被染色的节点开始，递归地对于每个后继节点，如果还未染色则加入当前trace。&lt;br&gt; 重复该过程直到整个图都被染色。&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/covering-set.png&#34; alt=&#34;coloring&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt; 通过这种方式，我们可以去掉不少跳转。&lt;br&gt; 这是因为现在可以转变思维：原先我们有似乎毫无关联的跳转指令，而现在则是把其中一些连在一起成为traces，然后默认代码执行是在一个trace上走到底的。于是只有要切换trace时才需要一个跳转。&lt;br&gt; 可见，其实我们希望被经常执行的一段代码序列要自己成一个trace，这样就可以尽量减少跳转，增加性能。&lt;br&gt; 在某个判据(criteria)下最好的一些trace就可以被称为 &lt;strong&gt;“optimal traces”&lt;/strong&gt; .&lt;br&gt; 例如如果我们的判据是“最少的跳转指令”，对于&lt;code&gt;While&lt;/code&gt;语句，通过合理的重排就可以去掉一个跳转达成：&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/optimal-traces.png&#34; alt=&#34;to be optimal&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt; &lt;img src=&#34;/compiler-construction-principles/reorder-eg.png&#34; alt=&#34;reorder example&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -1625,7 +1635,7 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;指令调度（不在本课程中）：通过重排等操作优化代码、实现指令级并行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;其中后两步将在后文展开阐述。&lt;/p&gt;
-&lt;h2 id=&#34;Part-15-指令选择&#34;&gt;&lt;a href=&#34;#Part-15-指令选择&#34; class=&#34;headerlink&#34; title=&#34;Part 15: 指令选择&#34;&gt;&lt;/a&gt;Part 15: 指令选择&lt;/h2&gt;&lt;p&gt;回顾&lt;a href=&#34;#part-13-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BAir&#34;&gt;现代编译器架构&lt;/a&gt;：&lt;strong&gt;指令选择&lt;/strong&gt; 开始，我们进入编译器的后端部分。&lt;br&gt;LLVM支持用tblgen描述后端，从而自动生成指令选择器。&lt;/p&gt;
+&lt;h2 id=&#34;Part-15-指令选择&#34;&gt;&lt;a href=&#34;#Part-15-指令选择&#34; class=&#34;headerlink&#34; title=&#34;Part 15: 指令选择&#34;&gt;&lt;/a&gt;Part 15: 指令选择&lt;/h2&gt;&lt;p&gt;回顾&lt;a href=&#34;#intermediate-representation&#34;&gt;现代编译器架构&lt;/a&gt;：&lt;strong&gt;指令选择&lt;/strong&gt; 开始，我们进入编译器的后端部分。&lt;br&gt;LLVM支持用tblgen描述后端，从而自动生成指令选择器。&lt;/p&gt;
 &lt;h3 id=&#34;指令选择概述&#34;&gt;&lt;a href=&#34;#指令选择概述&#34; class=&#34;headerlink&#34; title=&#34;指令选择概述&#34;&gt;&lt;/a&gt;指令选择概述&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;任务：&lt;/strong&gt; 把IR转化为 &lt;em&gt;抽象汇编代码&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;抽象汇编代码&amp;#x3D;&lt;/p&gt;
 &lt;ul&gt;
@@ -1853,8 +1863,170 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;我们可以从CFG（或其他类型的中间表示）中&lt;strong&gt;静态（i.e. 不需要真的运行程序）&lt;/strong&gt;推导出一些程序的行为信息。&lt;br&gt;这其中就包括我们马上要研究的话题：&lt;strong&gt;变量的活跃性&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;活跃性分析Liveness-Analysis&#34;&gt;&lt;a href=&#34;#活跃性分析Liveness-Analysis&#34; class=&#34;headerlink&#34; title=&#34;活跃性分析Liveness Analysis&#34;&gt;&lt;/a&gt;活跃性分析Liveness Analysis&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;Part-17-寄存器分配&#34;&gt;&lt;a href=&#34;#Part-17-寄存器分配&#34; class=&#34;headerlink&#34; title=&#34;Part 17: 寄存器分配&#34;&gt;&lt;/a&gt;Part 17: 寄存器分配&lt;/h2&gt;&lt;h2 id=&#34;Part-18-垃圾回收&#34;&gt;&lt;a href=&#34;#Part-18-垃圾回收&#34; class=&#34;headerlink&#34; title=&#34;Part 18: 垃圾回收&#34;&gt;&lt;/a&gt;Part 18: 垃圾回收&lt;/h2&gt; ]]></description>
+&lt;h3 id=&#34;活跃性分析Liveness-Analysis&#34;&gt;&lt;a href=&#34;#活跃性分析Liveness-Analysis&#34; class=&#34;headerlink&#34; title=&#34;活跃性分析Liveness Analysis&#34;&gt;&lt;/a&gt;活跃性分析Liveness Analysis&lt;/h3&gt;&lt;p&gt;定义变量的liveness: 我们说变量&lt;code&gt;x&lt;/code&gt;在执行到一个语句&lt;code&gt;s&lt;/code&gt;时是活跃(live)的，当且仅当：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;存在某个语句&lt;code&gt;s&amp;#39;&lt;/code&gt;使用了&lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;存在一个执行路径，能从&lt;code&gt;s&lt;/code&gt;执行到&lt;code&gt;s&amp;#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在某个这样的路径上，&lt;code&gt;x&lt;/code&gt;没有被重新赋值&amp;#x2F;定义过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;简单粗暴的理解：活跃变量&amp;#x3D;还有用的变量，需要留着备用；不活跃变量&amp;#x3D;没有用的变量，不再使用，对应的寄存器可以释放。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为什么要进行活跃性分析呢？因为从Low level IR到机器码的翻译过程中，我们需要把有限但很多的抽象寄存器对应到物理寄存器上，也就是&lt;strong&gt;寄存器分配&lt;/strong&gt;。&lt;br&gt;如果能识别不需要使用的变量（i.e. 不活跃变量），那么其对应的物理寄存器就可以被释放，再次用于分配。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们可以把活跃变量分析理解为一种特殊的生命周期分析，只不过除了显式的变量，我们还要考虑那些中间值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;活跃性分析用途：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;指导&amp;#x2F;优化寄存器分配，减少物理寄存器使用&lt;br&gt;例如对于：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1: a = 1; // a lives in 1-2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2: b = a + 2; // b lives in 2-3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3: c = b + 3; // c lives in 3-4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4: return c;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;我们会发现他们的 &lt;strong&gt;活跃区间(live range)&lt;/strong&gt; 并不重叠，可以映射到同一个物理寄存器&lt;code&gt;r&lt;/code&gt;，并据此重写代码：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;r=1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r=r+2;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r=r+3;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;return r;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;消除多余代码：例如删去未被使用的变量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;优化 IR 生成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;提高安全性：检查未初始化的变量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;…&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;活跃性分析的数据流方程&#34;&gt;&lt;a href=&#34;#活跃性分析的数据流方程&#34; class=&#34;headerlink&#34; title=&#34;活跃性分析的数据流方程&#34;&gt;&lt;/a&gt;活跃性分析的数据流方程&lt;/h3&gt;&lt;p&gt;首先要明确一点：我们不可能精确知道一个变量在某处是否活跃，所以我们要做的只是&lt;strong&gt;保守估计&lt;/strong&gt;（i.e. 标记为不活跃的变量一定不活跃，但反之则不然）。&lt;br&gt;这是因为对于代码片段&lt;code&gt;int x=10; f(); return x;&lt;/code&gt;:&lt;br&gt;如果我们能判断x是否在定义并初始化&lt;strong&gt;之后&lt;/strong&gt;依旧活跃，就等于我们能判断&lt;code&gt;f()&lt;/code&gt;是否停机。而众所周知停机问题不可判定，so sad.&lt;/p&gt;
+&lt;p&gt;在本节中，我们需要分析活跃变量。&lt;br&gt;而变量在CFG上，通过有向边“流向”各个节点。&lt;br&gt;所以我们将通过数据流分析，找到每个节点可能会有哪些变量“流过”；换言之，找到每个节点可能会有哪些变量在其上是活跃的。&lt;/p&gt;
+&lt;p&gt;一些CFG上的术语定义（可能很抽象，往后看就行）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;node&amp;#x2F;节点：在本文中均指只包含一个语句的&lt;/li&gt;
+&lt;li&gt;out-edges: 出边，指向后继节点&lt;/li&gt;
+&lt;li&gt;in-edges: 入边，来自前驱节点&lt;/li&gt;
+&lt;li&gt;pred[n]: 节点&lt;code&gt;n&lt;/code&gt;的前驱节点&lt;strong&gt;们&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;succ[n]: 节点&lt;code&gt;n&lt;/code&gt;的后继节点&lt;strong&gt;们&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;fact: 从CFG中能推断出的一些结论&amp;#x2F;信息&amp;#x2F;事实，这些结论是“绑定”在有向边上的&lt;ul&gt;
+&lt;li&gt;例如我们现在研究的变量活跃性(liveness)就是一个fact. 变量是否活跃这一信息是通过这些有向边传递的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;in[n]: 一个集合，包含节点&lt;code&gt;n&lt;/code&gt;的入边(in-edges)上的所有facts&lt;ul&gt;
+&lt;li&gt;对于本节来说，我们要求的是变量的liveness, 所以为在节点&lt;code&gt;n&lt;/code&gt;内 live-in(定义见下文) 的变量。&lt;ul&gt;
+&lt;li&gt;也就是 the live-in set of node &lt;code&gt;n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也就是 the variables that are live-in at node &lt;code&gt;n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;我们可以简单理解为：在节点&lt;code&gt;n&lt;/code&gt;中的语句执行后，哪些变量处于活跃状态，有可能在未来被用到&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;我们稍后会详细解释该集合的含义，以及如何计算它。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;out[n]: 一个集合，包含节点&lt;code&gt;n&lt;/code&gt;的出边(out-edges)上的所有facts&lt;ul&gt;
+&lt;li&gt;对于本节来说，我们要求的是变量的liveness, 所以为在节点&lt;code&gt;n&lt;/code&gt;内 live-out(定义见下文) 的变量。&lt;ul&gt;
+&lt;li&gt;也就是 the live-out set of node &lt;code&gt;n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也就是 the variables that are live-out at node &lt;code&gt;n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;我们可以简单理解为：在节点&lt;code&gt;n&lt;/code&gt;中的代码执行前，哪些变量处于活跃状态，有可能在当前节点&lt;code&gt;n&lt;/code&gt;或未来被用到&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;我们稍后会详细解释该集合的含义，以及如何计算它。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;transfer function: 一个函数，定义一个节点上的信息如何通过传递给另一个节点&lt;ul&gt;
+&lt;li&gt;比如我们稍后会得到的两个in&amp;#x2F;out的方程（等式）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use: 如果一个语句的右侧(RHS)出现了变量&lt;code&gt;x&lt;/code&gt;, 我们说这个语句use了&lt;code&gt;x&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;这意味着变量&lt;code&gt;x&lt;/code&gt;中储存的值被使用了，引入了一个数据依赖。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use of a variable &lt;code&gt;x&lt;/code&gt;: 所有use了&lt;code&gt;x&lt;/code&gt;的节点集合&lt;/li&gt;
+&lt;li&gt;define: 对&lt;code&gt;x&lt;/code&gt;赋值即为define了&lt;code&gt;x&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;注意：这里的 IR 没有类似 C 语言变量定义的语句，而初次赋值其实就是一种“变量定义”，或者叫 define。&lt;/li&gt;
+&lt;li&gt;为何&lt;strong&gt;后续&lt;/strong&gt;再次对&lt;code&gt;x&lt;/code&gt;赋值也是define？这是因为我们如果以一种比较函数式的视角来看，我们并非是“把值&lt;code&gt;val&lt;/code&gt;储存到&lt;code&gt;x&lt;/code&gt;中”，&lt;strong&gt;而是将“名字&lt;code&gt;x&lt;/code&gt;绑定到值&lt;code&gt;val&lt;/code&gt;上”&lt;/strong&gt;。&lt;br&gt;这不难理解：我们关心的是数据之间的依赖性（数据流），&lt;code&gt;x&lt;/code&gt;只是对某个值的一个指代&amp;#x2F;一个记号&amp;#x2F;一个名字。&lt;br&gt;&lt;code&gt;x=1; x=x+1; return x;&lt;/code&gt; 与 &lt;code&gt;x=1; y=x+1; return y;&lt;/code&gt; 是完全等价的。&lt;br&gt;也就是说，每次对&lt;code&gt;x&lt;/code&gt;的赋值都是一个“重绑定”：&lt;strong&gt;原来的旧&lt;code&gt;x&lt;/code&gt;已经死了，新的&lt;code&gt;x&lt;/code&gt;只是恰好名字也叫&lt;code&gt;x&lt;/code&gt;, 但它已经是全新的一个变量了&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;def of a variable &lt;code&gt;x&lt;/code&gt;: 所有define了&lt;code&gt;x&lt;/code&gt;的节点集合&lt;/li&gt;
+&lt;li&gt;def of a node &lt;code&gt;N&lt;/code&gt;: 节点&lt;code&gt;N&lt;/code&gt;定义的变量集合&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt; is &lt;strong&gt;live on an edge:&lt;/strong&gt; 存在一条以这条有向边(edge)开始的路径，终点指向一个use of &lt;code&gt;x&lt;/code&gt;, 且中间经过的节点不包含任何def of &lt;code&gt;x&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;这意味着：&lt;code&gt;x&lt;/code&gt;可能在之后被使用；而且在被使用前没有被重定义&amp;#x2F;赋值过（也就是要保证数据确实可能存在依赖：那个 use 必须真的使用现在这个&lt;code&gt;x&lt;/code&gt;对应的值）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;live-in:&lt;/strong&gt; 如果&lt;code&gt;x&lt;/code&gt; live on 节点的&lt;strong&gt;任意一个&lt;/strong&gt;入边，那么我们说&lt;code&gt;x&lt;/code&gt; live-in 该节点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;live-out:&lt;/strong&gt; 如果&lt;code&gt;x&lt;/code&gt; live on 节点的&lt;strong&gt;任意一个&lt;/strong&gt;出边，那么我们说&lt;code&gt;x&lt;/code&gt; live-out 该节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以把每个节点&lt;code&gt;n&lt;/code&gt;理解为一个工厂，&lt;code&gt;in[n]&lt;/code&gt;是工厂需要购买的材料，&lt;code&gt;out[n]&lt;/code&gt;是工厂需要提供的材料。&lt;br&gt;工厂有时会自己生产新的材料给下游使用（&lt;code&gt;def[n]&lt;/code&gt;），有时会消耗上游提供的材料（&lt;code&gt;use[n]&lt;/code&gt;），其他时候可能只是把上游的材料原封不动地转交给下游工厂（&lt;code&gt;in[n]&lt;/code&gt;和&lt;code&gt;out[n]&lt;/code&gt;的交集*）&lt;/p&gt;
+&lt;p&gt;*严格来说不考虑重绑定，或者说静态单赋值的情况下是&lt;code&gt;in[n]&lt;/code&gt;和&lt;code&gt;out[n]&lt;/code&gt;的交集。&lt;br&gt;如果有重绑定就会有重名的情况：比如对于下图中的节点 3, 由于该节点进行了赋值操作（define）， &lt;code&gt;in[3]&lt;/code&gt;中的&lt;code&gt;c&lt;/code&gt;和&lt;code&gt;out[3]&lt;/code&gt;中的&lt;code&gt;c&lt;/code&gt;看似在交集中，但其实值已经被改变，已经是两个不同的变量了，只是“恰好”名字一样。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a name=&#34;cfg-example&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/cfg-example.png&#34; alt=&#34;cfg example&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;例如对于上图：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如下信息可以直接获得：&lt;ul&gt;
+&lt;li&gt;5的出边有2条，分别指向2和6&lt;/li&gt;
+&lt;li&gt;4只有一条入边，来自3&lt;/li&gt;
+&lt;li&gt;pred[3]&amp;#x3D;{2}&lt;/li&gt;
+&lt;li&gt;succ[5]&amp;#x3D;{2, 6}&lt;/li&gt;
+&lt;li&gt;def(a)&amp;#x3D;{1, 4}&lt;/li&gt;
+&lt;li&gt;use(a)&amp;#x3D;{2, 5}&lt;/li&gt;
+&lt;li&gt;def(3)&amp;#x3D;{c}&lt;/li&gt;
+&lt;li&gt;use(3)&amp;#x3D;{b, c}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如下信息蕴含在图中，但无法直接获得，需要进一步求解：&lt;ul&gt;
+&lt;li&gt;in[1]&amp;#x3D;{c}, out[2]&amp;#x3D;{a, c}&lt;/li&gt;
+&lt;li&gt;in[2]&amp;#x3D;{a, c}, out[2]&amp;#x3D;{b, c}&lt;/li&gt;
+&lt;li&gt;in[6]&amp;#x3D;{c}, out[6]&amp;#x3D;{}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;记住：CFG 中的一个结点是一段代码，但是为了方便起见我们都假设只有一个语句在里面。所以其实你可以很简单地合并一串连续的代码（变成基本块）。&lt;strong&gt;我们说“执行某个节点”，指的就是执行节点里的代码。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们接下来的重点就是找到一种方式计算in&amp;#x2F;out集合。&lt;br&gt;事实上我们可以迭代地不断计算、更新&lt;code&gt;in[n]&lt;/code&gt;以及&lt;code&gt;out[n]&lt;/code&gt;, 直到他们在某次迭代后不再改变变（i.e. 到达了这个算法的&lt;em&gt;不动点&lt;/em&gt;）。&lt;/p&gt;
+&lt;p&gt;要计算 in[n] 与 out[n], 需要用到以下几个规则(rule)：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If $ a \in in[n] $, then $ \forall m \in pred[n], a \in out[m] $&lt;ul&gt;
+&lt;li&gt;解释：每个前驱节点都可能是在该节点执行前的节点（我们在静态分析，无法确定到底是从何处执行到&lt;code&gt;n&lt;/code&gt;的）。&lt;br&gt;如果某个节点&lt;code&gt;n&lt;/code&gt;要求执行前&lt;code&gt;a&lt;/code&gt;是活跃的，我们想要确保无论是从&lt;code&gt;pred[n]&lt;/code&gt;中的哪个前驱节点跳转而来，前驱节点执行完毕时&lt;code&gt;a&lt;/code&gt;都是活跃的（因为我们在做保守估计）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If $ a \in use[n] $, then $ a \in in[n] $&lt;ul&gt;
+&lt;li&gt;解释：如果某个节点&lt;code&gt;n&lt;/code&gt;直接使用了变量&lt;code&gt;a&lt;/code&gt;, 那当然要求&lt;code&gt;a&lt;/code&gt;在节点执行前是活跃的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If $ a \in out[n] $ and $ a \notin def[n] $ , then $ a \in in[n] $&lt;ul&gt;
+&lt;li&gt;解释：如果现在已知某个变量&lt;code&gt;a&lt;/code&gt;必须在节点&lt;code&gt;n&lt;/code&gt;执行完毕时活跃，但是&lt;code&gt;n&lt;/code&gt;自己并没有定义&lt;code&gt;a&lt;/code&gt;, 那显然&lt;code&gt;a&lt;/code&gt;是从之前的前驱节点继承而来。&lt;br&gt;因此，我们要求&lt;code&gt;a&lt;/code&gt;在节点&lt;code&gt;n&lt;/code&gt;执行之前就是活跃的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;从这些规则，我们可以导出如下两个方程（等式），&lt;strong&gt;可直接用于迭代计算并更新 in[n] 与 out[n]&lt;/strong&gt; 这两个&lt;strong&gt;集合&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$ in[n] &amp;#x3D; use[n] \cup (out[n]-def[n]) $&lt;ul&gt;
+&lt;li&gt;解释：节点&lt;code&gt;n&lt;/code&gt;需要向前驱节点索取的活跃变量包括自己需要使用的&lt;code&gt;use&lt;/code&gt; 并上后续别的节点需要使用的&lt;code&gt;out&lt;/code&gt;. 不过如果节点自己定义了一些变量，则不需要向前驱节点索要，所以挖去&lt;code&gt;def&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$ out[n] &amp;#x3D; \underset{s \in succ[n]}{\cup} in[s] $&lt;ul&gt;
+&lt;li&gt;解释：后继节点要什么就给什么，后继节点的总需求就是该节点&lt;code&gt;n&lt;/code&gt;需要供给的活跃变量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;解方程&#34;&gt;&lt;a href=&#34;#解方程&#34; class=&#34;headerlink&#34; title=&#34;解方程&#34;&gt;&lt;/a&gt;解方程&lt;/h3&gt;&lt;p&gt;应用这两个方程，我们可以给出如下算法求解出in&amp;#x2F;out：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;for each n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  in[n] ←&amp;#123;&amp;#125;; out[n] ←&amp;#123;&amp;#125; // init. to empty set, which is a very rough approximation!&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repeat:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  for each n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    in′[n] ← in[n]; out′[n] ← out[n]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // `U` stands for &amp;quot;union&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    in[n] ← use[n] U (out[n] − def[n]) // use/def is easy to obtain at the very beginning&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    out[n] ← ⋃ in[s], where s in succ[n] &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;until in′[n] = in[n] and out′[n] = out[n] for all n // until no update can be made&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;每次迭代中集合总会&lt;strong&gt;单调地&lt;/strong&gt;变大。&lt;br&gt;对于刚刚的&lt;a href=&#34;#cfg-example&#34;&gt;这个 CFG&lt;/a&gt;, 其求解流程如下，在7步后收敛：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/calc-liveness-forward.png&#34; alt=&#34;calc-liveness-forward&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;似乎每一步能更新的很少。但事实上&lt;strong&gt;想要加速收敛的技巧就藏在&lt;code&gt;for each n&lt;/code&gt;这一句中：只需要反转一下每次迭代遍历节点的顺序即可&lt;/strong&gt;！&lt;/p&gt;
+&lt;p&gt;我们原先是顺着CFG中的有向边方向进行更新（1-&amp;gt;6, in-&amp;gt;out）。&lt;br&gt;然而考虑信息在节点间的传递是通过 $ out[n] &amp;#x3D; \underset{s \in succ[n]}{\cup} in[s] $ 完成的，其方向是从后向前的。&lt;br&gt;所以我们可以在每次迭代中，都按照&lt;strong&gt;逆序&lt;/strong&gt;（6-&amp;gt;1, out-&amp;gt;in）进行计算：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/calc-liveness-backward.png&#34; alt=&#34;calc-liveness-backward&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;只需要 3 次迭代就收敛。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本质上，liveness问题是“需求决定供给”的：后续的节点有对变量的使用需求，之前的节点才可能需要提供一个活跃的变量。&lt;br&gt;liveness 就是一种 fact.&lt;br&gt;我们的迭代更新顺序也应遵循这些 facts 的流动方向。而在活跃性分析中，liveness 反向流过这些 CFG 的有向边，并且是先影响 out 再进而影响 in.&lt;br&gt;因此我们迭代的过程也要遵从这一规律，使得一次迭代中，某一个 use 引入的需求能够迅速传遍整个 CFG, 而非每次只影响附近的个别结点，&lt;/p&gt;
+&lt;p&gt;关于迭代方向的重要性，可以类比一下冒泡排序：如果现有数组&lt;code&gt;2 3 4 5 6 7 1&lt;/code&gt;需要排序，那么可以看出&lt;code&gt;1&lt;/code&gt;自然的流动方向就是从右到左。&lt;br&gt;冒泡排序每次迭代会按顺序检查相邻的数字并交换逆序对。&lt;br&gt;如果从右到左，第一次迭代就可以完成排序：&lt;code&gt;1&lt;/code&gt;连续被交换，迅速“上浮”至第一的位置；&lt;br&gt;如果非要从左到右，那么每次迭代&lt;code&gt;1&lt;/code&gt;都只能被交换一次，上浮一位，需要多达6次迭代才能完成！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;杂项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把多个相邻的节点尽可能合并为基本块可以加速。&lt;/li&gt;
+&lt;li&gt;根据变量多少，视具体情况用 bitmap 或有序列表等方式储存集合可以更快。&lt;/li&gt;
+&lt;li&gt;实践中也可以每次专门求解某一变量&lt;code&gt;x&lt;/code&gt;的数据流（in&amp;#x2F;out），因为大部分中间临时值的 live range 很短。&lt;/li&gt;
+&lt;li&gt;这一算法最差的时间复杂度可能为 $ \Omega (N^4)$, 其中N为节点个数。好在这一上界很难达到……&lt;/li&gt;
+&lt;li&gt;算法求解的是“最小不动点”：极端情况下，你当然可以让所有变量都是live的，这也是个不动点，但不是我们想要的。&lt;/li&gt;
+&lt;li&gt;进一步优化算法：可以用队列记录有可能需要被进一步更新的节点（类似BFS）&lt;/li&gt;
+&lt;li&gt;变量活跃性可以分为：&lt;ul&gt;
+&lt;li&gt;动态的dynamic liveness: 运行时判断，显然是一种under-approximation, 因为不能覆盖所有可能执行路径&lt;/li&gt;
+&lt;li&gt;静态的static liveness: 像我们刚刚做的一样在编译期判断，显然是一种over-approximation, 因为估计得很保守，而事实上有些路径不可能被执行到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Part-17-寄存器分配&#34;&gt;&lt;a href=&#34;#Part-17-寄存器分配&#34; class=&#34;headerlink&#34; title=&#34;Part 17: 寄存器分配&#34;&gt;&lt;/a&gt;Part 17: 寄存器分配&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-18-垃圾回收&#34;&gt;&lt;a href=&#34;#Part-18-垃圾回收&#34; class=&#34;headerlink&#34; title=&#34;Part 18: 垃圾回收&#34;&gt;&lt;/a&gt;Part 18: 垃圾回收&lt;/h2&gt; ]]></description>
         </item>
     </channel>
 </rss>

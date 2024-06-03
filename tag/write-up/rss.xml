@@ -19,8 +19,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>English</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Hackergame</category>
         <category>Overclocking</category>
+        <category>Hackergame</category>
         <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
@@ -30,11 +30,11 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
-        <category>数链剖分</category>
         <category>Splay</category>
+        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
         <category>树状数组</category>
@@ -44,13 +44,13 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
-        <category>Compiler</category>
-        <category>Computer Science</category>
-        <category>On Going</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
         <category>Miscellaneous</category>
+        <category>On Going</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
