@@ -4,15 +4,15 @@
     <title>Cubic Y³ • Posts by &#34;on going&#34; tag</title>
     <link href="http://cubicy.icu" />
     <updated>2024-04-13T17:10:20.000Z</updated>
-    <category term="CISCN" />
-    <category term="web" />
-    <category term="Write-Up" />
     <category term="Misc" />
+    <category term="Write-Up" />
     <category term="出题" />
     <category term="English" />
+    <category term="CISCN" />
+    <category term="web" />
     <category term="Hackergame" />
-    <category term="SchoolBus" />
     <category term="Overclocking" />
+    <category term="SchoolBus" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
@@ -20,12 +20,12 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="BST" />
     <category term="Stack" />
+    <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="Splay" />
     <category term="数链剖分" />
+    <category term="Splay" />
     <category term="持久化" />
     <category term="线段树" />
     <category term="树状数组" />
@@ -38,18 +38,18 @@
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
-    <category term="Miscellaneous" />
-    <category term="On Going" />
     <category term="Compiler" />
     <category term="Computer Science" />
+    <category term="On Going" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
+    <category term="Miscellaneous" />
     <entry>
         <id>http://cubicy.icu/compiler-construction-principles/</id>
         <title>编译原理课程笔记（All-in-One速通版）</title>
         <link rel="alternate" href="http://cubicy.icu/compiler-construction-principles/"/>
-        <content type="html">&lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的，尽可能对缺乏动机(intuition)的一些概念进行简明解释。&lt;br&gt;标题中使用&lt;code&gt;*&lt;/code&gt;标记的部分为考试&lt;strong&gt;不&lt;/strong&gt;考察的内容。&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的，尽可能对缺乏动机(intuition)的一些概念&lt;strong&gt;提供课堂外的例子以简明解释&lt;/strong&gt;。&lt;br&gt;标题中使用&lt;code&gt;*&lt;/code&gt;标记的部分为考试&lt;strong&gt;不&lt;/strong&gt;考察的内容。&lt;/p&gt;
 &lt;p&gt;文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A. 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
@@ -1464,7 +1464,8 @@
 &lt;p&gt;如果都能直接通过偏移找到位置，那么就是 &lt;strong&gt;“位置无关代码(PIC)”&lt;/strong&gt; 了。&lt;br&gt;我们维护一个表记录需要待确定、需要在之后被填入的地址在哪些位置，留待日后使用。&lt;br&gt;参考ELF的&lt;a href=&#34;https://stackoverflow.com/questions/63672744/why-differentiate-rel-text-and-rel-data-section&#34;&gt;.rel.text&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;&lt;em&gt;注：这里的许多概念都是针对Tiger语言的，承接上文。&lt;/em&gt;&lt;br&gt;在将IR的AST翻译为机器码的过程中，我们不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。&lt;br&gt;例如：一个包含&lt;code&gt;ESEQ&lt;/code&gt;子节点的&lt;code&gt;BINOP&lt;/code&gt;树代表一个二元运算符表达式。但由于&lt;code&gt;ESEQ&lt;/code&gt;有副作用，这个表达式的值取决于&lt;code&gt;ESEQ&lt;/code&gt;先求值&amp;#x2F;后求值，是存在歧义的。&lt;br&gt;解决方法：将IR Tree变换为 &lt;strong&gt;正规形式(canonical form)&lt;/strong&gt; ，而内部存在很多 &lt;strong&gt;正规树(canonical tree)&lt;/strong&gt; （详见下文）.&lt;/p&gt;
+&lt;h2 id=&#34;Part-14-基本块与traces&#34;&gt;&lt;a href=&#34;#Part-14-基本块与traces&#34; class=&#34;headerlink&#34; title=&#34;Part 14: 基本块与traces&#34;&gt;&lt;/a&gt;Part 14: 基本块与traces&lt;/h2&gt;&lt;p&gt;轨迹 &amp;#x3D; trace&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注：这里的许多概念都是针对Tiger语言的，承接上文。&lt;/em&gt;&lt;br&gt;在将IR的AST翻译为机器码的过程中，我们不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。&lt;br&gt;例如：一个包含&lt;code&gt;ESEQ&lt;/code&gt;子节点的&lt;code&gt;BINOP&lt;/code&gt;树代表一个二元运算符表达式。但由于&lt;code&gt;ESEQ&lt;/code&gt;有副作用，这个表达式的值取决于&lt;code&gt;ESEQ&lt;/code&gt;先求值&amp;#x2F;后求值，是存在歧义的。&lt;br&gt;解决方法：将IR Tree变换为 &lt;strong&gt;正规形式(canonical form)&lt;/strong&gt; ，而内部存在很多 &lt;strong&gt;正规树(canonical tree)&lt;/strong&gt; （详见下文）.&lt;/p&gt;
 &lt;h3 id=&#34;正规形式Canonical-Form&#34;&gt;&lt;a href=&#34;#正规形式Canonical-Form&#34; class=&#34;headerlink&#34; title=&#34;正规形式Canonical Form&#34;&gt;&lt;/a&gt;正规形式Canonical Form&lt;/h3&gt;&lt;p&gt;对比IR Tree与canonical form:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;IR Tree:&lt;ul&gt;
@@ -1856,15 +1857,15 @@
 &lt;li&gt;存在一个执行路径，能从&lt;code&gt;s&lt;/code&gt;执行到&lt;code&gt;s&amp;#39;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;在某个这样的路径上，&lt;code&gt;x&lt;/code&gt;没有被重新赋值&amp;#x2F;定义过&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;简单粗暴的理解：活跃变量&amp;#x3D;还有用的变量，需要留着备用；不活跃变量&amp;#x3D;没有用的变量，不再使用，对应的寄存器可以释放。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;为什么要进行活跃性分析呢？因为从Low level IR到机器码的翻译过程中，我们需要把有限但很多的抽象寄存器对应到物理寄存器上，也就是&lt;strong&gt;寄存器分配&lt;/strong&gt;。&lt;br&gt;如果能识别不需要使用的变量（i.e. 不活跃变量），那么其对应的物理寄存器就可以被释放，再次用于分配。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;简单粗暴的理解：活跃变量&amp;#x3D;还有用的变量，需要留着备用；不活跃变量&amp;#x3D;没有用的变量&amp;#x3D;死变量，不再使用，对应的寄存器可以释放。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为什么要进行活跃性分析呢？因为从Low level IR到机器码的翻译过程中，我们需要把有限但很多的抽象寄存器对应到物理寄存器上，也就是&lt;strong&gt;寄存器分配&lt;/strong&gt;。&lt;br&gt;如果能识别不需要使用的变量（i.e. 不活跃变量），那么其对应的虚拟&amp;#x2F;物理寄存器就可以被释放，再次用于分配。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;我们可以把活跃变量分析理解为一种特殊的生命周期分析，只不过除了显式的变量，我们还要考虑那些中间值。&lt;/p&gt;
+&lt;p&gt;我们可以把活跃变量分析理解为一种特殊的生命周期分析，只不过除了显式的变量，我们还要考虑那些中间值，统称 temporaries. temporaries 其实经常指的就是 IR 中的那些虚拟寄存器。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;活跃性分析用途：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;指导&amp;#x2F;优化寄存器分配，减少物理寄存器使用&lt;br&gt;例如对于：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1: a = 1; // a lives in 1-2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2: b = a + 2; // b lives in 2-3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3: c = b + 3; // c lives in 3-4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4: return c;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;p&gt;指导&amp;#x2F;优化寄存器分配，减少寄存器使用&lt;br&gt;例如对于：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1: a = 1; // a lives in out[1]-&amp;gt;in[2]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2: b = a + 2; // b lives in out[2]-&amp;gt;in[3]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3: c = b + 3; // c lives in out[3]-&amp;gt;in[4]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4: return c;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;我们会发现他们的 &lt;strong&gt;活跃区间(live range)&lt;/strong&gt; 并不重叠，可以映射到同一个物理寄存器&lt;code&gt;r&lt;/code&gt;，并据此重写代码：&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;r=1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r=r+2;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r=r+3;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;return r;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -2005,18 +2006,224 @@
 &lt;li&gt;实践中也可以每次专门求解某一变量&lt;code&gt;x&lt;/code&gt;的数据流（in&amp;#x2F;out），因为大部分中间临时值的 live range 很短。&lt;/li&gt;
 &lt;li&gt;这一算法最差的时间复杂度可能为 $ \Omega (N^4)$, 其中N为节点个数。好在这一上界很难达到……&lt;/li&gt;
 &lt;li&gt;算法求解的是“最小不动点”：极端情况下，你当然可以让所有变量都是live的，这也是个不动点，但不是我们想要的。&lt;/li&gt;
-&lt;li&gt;进一步优化算法：可以用队列记录有可能需要被进一步更新的节点（类似BFS）&lt;/li&gt;
+&lt;li&gt;进一步优化算法：可以用队列记录有可能需要被进一步更新的节点（类似BFS）。&lt;/li&gt;
 &lt;li&gt;变量活跃性可以分为：&lt;ul&gt;
-&lt;li&gt;动态的dynamic liveness: 运行时判断，显然是一种under-approximation, 因为不能覆盖所有可能执行路径&lt;/li&gt;
-&lt;li&gt;静态的static liveness: 像我们刚刚做的一样在编译期判断，显然是一种over-approximation, 因为估计得很保守，而事实上有些路径不可能被执行到&lt;/li&gt;
+&lt;li&gt;动态的dynamic liveness: 运行时判断，显然是一种under-approximation, 因为不能覆盖所有可能执行路径。&lt;/li&gt;
+&lt;li&gt;静态的static liveness: 像我们刚刚做的一样在编译期判断，显然是一种over-approximation, 因为估计得很保守，而事实上有些路径不可能被执行到。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-17-寄存器分配&#34;&gt;&lt;a href=&#34;#Part-17-寄存器分配&#34; class=&#34;headerlink&#34; title=&#34;Part 17: 寄存器分配&#34;&gt;&lt;/a&gt;Part 17: 寄存器分配&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-17-寄存器分配&#34;&gt;&lt;a href=&#34;#Part-17-寄存器分配&#34; class=&#34;headerlink&#34; title=&#34;Part 17: 寄存器分配&#34;&gt;&lt;/a&gt;Part 17: 寄存器分配&lt;/h2&gt;&lt;p&gt;我们当然希望一切储存访问都尽可能通过寄存器完成，因为寄存器的速度远快于内存的速度。&lt;br&gt;之前，在 IR 中可以有任意多的虚拟寄存器，但我们在物理架构上不可能有任意多的寄存器。&lt;br&gt;因此他们中的一些势必要被移动到内存中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;寄存器分配算法的任务：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将 IR 中大量的虚拟寄存器（储存变量或者运算的中间临时结果，&lt;strong&gt;统称 temporaries&lt;/strong&gt;）分配到固定数量的 k 个物理寄存器上，保证代码使用不超过 k 个寄存器&lt;/li&gt;
+&lt;li&gt;使得内存访问、储存尽可能少&lt;/li&gt;
+&lt;li&gt;使得内存上用于储存 spilled 值的空间尽可能小&lt;/li&gt;
+&lt;li&gt;算法需要尽可能高效&lt;ul&gt;
+&lt;li&gt;典型的复杂度：O(n) 或 O(nlogn)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在工程实践中，算法的实现大致分为两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;图染色：&lt;/strong&gt;效果好，但是慢&lt;ul&gt;
+&lt;li&gt;“传统派”：GCC等采用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线性扫描：&lt;/strong&gt;效果也很好，接近图染色的效果；运行速度快&lt;ul&gt;
+&lt;li&gt;“维新派”：LLVM等采用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不同的分配策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Naïve register allocation: 变量（广义的变量，也就是虚拟寄存器储存的 temporaries）一股脑全塞内存里！&lt;/li&gt;
+&lt;li&gt;局部寄存器分配：在 basic block 里进行，无法应对跨越多个块的对寄存器的复用。&lt;/li&gt;
+&lt;li&gt;全局寄存器分配：在函数内进行，经常基于&lt;strong&gt;图染色&lt;/strong&gt;：&lt;ol&gt;
+&lt;li&gt;建立一个&lt;strong&gt;干扰图&lt;/strong&gt;(interference graph &amp;#x2F; conflict graph) 。&lt;ul&gt;
+&lt;li&gt;这是一个无向图，每个边都代表两端的 temporary 同时存在过，不能被分配到同一个寄存器里。我们马上会详细阐述。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对于 k 个&lt;strong&gt;物理&lt;/strong&gt;寄存器，找到这个图的 k-coloring(k染色)：也就是边连接的相邻节点不被染为同一个颜色的情况下，用 k 种颜色染色所有节点。&lt;ul&gt;
+&lt;li&gt;如果染色成功：每种颜色对应一个物理寄存器，分配完成&lt;/li&gt;
+&lt;li&gt;如果染色失败：说明这个图&lt;strong&gt;并非 k-colorable&lt;/strong&gt;，需要修改代码(原文：change the code to a nearby)。&lt;ul&gt;
+&lt;li&gt;会在后文详细阐述。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;干扰图&#34;&gt;&lt;a href=&#34;#干扰图&#34; class=&#34;headerlink&#34; title=&#34;干扰图&#34;&gt;&lt;/a&gt;干扰图&lt;/h3&gt;&lt;p&gt;干扰图 &amp;#x3D; interference graph &amp;#x2F; conflict graph&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果两个虚拟寄存器&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;因为某种约束限制，使得它们&lt;strong&gt;无法被分配到同一个物理寄存器中&lt;/strong&gt;，我们就说&lt;code&gt;a&lt;/code&gt;与&lt;code&gt;b&lt;/code&gt;之间存在**干扰(interference)**，或者说他们”interfere”。&lt;br&gt;这些约束包括但不限于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;live range 有重叠（&lt;strong&gt;最主要的原因！&lt;/strong&gt;）：某个时刻&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;都是活跃的，值需要得到保留，我们自然无法在同一个寄存器中同时保存&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;产出&amp;#x2F;使用&lt;code&gt;a&lt;/code&gt;这个值的指令比较特殊，不能使用某些特定寄存器（比如&lt;code&gt;r1&lt;/code&gt;），那么&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;r1&lt;/code&gt;也 interfere 了。&lt;ul&gt;
+&lt;li&gt;读者可能会疑惑&lt;code&gt;r1&lt;/code&gt;不是物理寄存器吗？其实我们不用太纠结这个：最终都是为了让图染色算法能够“感知”到有这样一个约束存在，所以大可以把物理寄存器添加到虚拟寄存器中，图只要改一改就行。&lt;br&gt;说到底，我们现在要&lt;strong&gt;禁止&lt;code&gt;a&lt;/code&gt;染上&lt;code&gt;r1&lt;/code&gt;对应的颜色&lt;/strong&gt;：&lt;br&gt;想 ban 掉某种颜色，我们可以在一开始就把 k 个物理寄存器加入图中，对应 k 个节点 &lt;code&gt;r1&lt;/code&gt; &lt;code&gt;r2&lt;/code&gt; … &lt;code&gt;rk&lt;/code&gt;, 并在他们之间建立&lt;strong&gt;全连接&lt;/strong&gt;，&lt;br&gt;这将强迫图染色器为他们分配 k 种不同的颜色。&lt;br&gt;建立干涉图的过程中，如果&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;r1&lt;/code&gt; interfere 了，只需要在图中连接&lt;code&gt;a&lt;/code&gt;与对应的节点&lt;code&gt;r1&lt;/code&gt;即可。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/physical-interference.png&#34; alt=&#34;physical interference&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;节点：一个节点就是 IR 中的一个虚拟寄存器，或者说一个 temporary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;无向边：一条边代表一个 interference, 边连接的两个节点&lt;strong&gt;不能&lt;/strong&gt;被分配到同一个物理寄存器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;建图步骤：基本上就是&lt;strong&gt;在同时存在的变量之间连边&lt;/strong&gt;。在变量&lt;code&gt;t&lt;/code&gt;被定义（赋值也是定义）时，把它和所有其他的、当前活跃(live)的变量&lt;code&gt;vi&lt;/code&gt;连边 (&lt;code&gt;b&lt;/code&gt;, &lt;code&gt;vi&lt;/code&gt;) 即可：&lt;br&gt;例如对于如下程序：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Inst.&lt;/th&gt;
+&lt;th&gt;Live vars&lt;/th&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;b&amp;#x3D;a+2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, b&lt;/td&gt;
+&lt;td&gt;link b-a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c&amp;#x3D;b*b&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, c&lt;/td&gt;
+&lt;td&gt;link c-a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;b&amp;#x3D;c+1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, b&lt;/td&gt;
+&lt;td&gt;link b-a (duplicated)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;return b*a&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;最终得到：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/int-graph-abc.png&#34; alt=&#34;interference graph example&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;需要特别处理（或者说优化）涉及&lt;code&gt;MOVE&lt;/code&gt;指令的情况：&lt;br&gt;如果通过&lt;code&gt;MOVE&lt;/code&gt;执行了&lt;code&gt;t:=s&lt;/code&gt;这样的移动操作，由于&lt;code&gt;MOVE&lt;/code&gt;后&lt;code&gt;t&lt;/code&gt;和&lt;code&gt;s&lt;/code&gt;储存的值是相同的，其实我们暂时可以不添加 (s, t) 这条边，而是采用同一寄存器。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;t := s (MOVE)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;x := ... s ... (use of `s`)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// `t` can still be stored in the same register as `s` !&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;y := ... t ... (use of `t`) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;换言之，此时&lt;code&gt;t&lt;/code&gt;只是&lt;code&gt;s&lt;/code&gt;的一个别名。&lt;br&gt;……直到&lt;code&gt;t&lt;/code&gt;被重定义（非&lt;code&gt;MOVE&lt;/code&gt;）时，如果&lt;code&gt;s&lt;/code&gt;此时还 live, 才不得不添加 (s, t) 这条边。&lt;br&gt;如果最终&lt;code&gt;s&lt;/code&gt;和&lt;code&gt;t&lt;/code&gt;在整个分配流程后被证明确实可以使用同一个寄存器，那么这个自己拷贝到自己的&lt;code&gt;MOVE&lt;/code&gt;指令会自然被我们优化掉。&lt;br&gt;这对于单静态赋值SSA这种存在大量&lt;code&gt;MOVE&lt;/code&gt;的 IR 来说是一个很大的优化。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关于如何加边，总结如下 &lt;strong&gt;（有点抽象，可以直接跳过，不会有任何问题）&lt;/strong&gt; （请记得每次赋值、每个运算指令都是一种“定义”；&lt;code&gt;out[n]&lt;/code&gt;即为 live-out 集合，定义在 CFG 部分，有疑惑可以回顾一下）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于定义了&lt;code&gt;t&lt;/code&gt;的&lt;strong&gt;非&lt;code&gt;MOVE&lt;/code&gt;指令&lt;/strong&gt;&lt;code&gt;n&lt;/code&gt;，我们有&lt;code&gt;out[n]=&amp;#123;b1, b2, ..., bj&amp;#125;&lt;/code&gt;, 则添加边(t, b1), (t, b2), …, (t, bj).&lt;/li&gt;
+&lt;li&gt;对于&lt;code&gt;MOVE&lt;/code&gt;指令&lt;code&gt;n&lt;/code&gt;, 记作&lt;code&gt;t:=s&lt;/code&gt;, 有&lt;code&gt;out[n]=&amp;#123;b1, b2, ..., bk&amp;#125;&lt;/code&gt;, 则添加上述边(t, b1), (t, b2), …, (t, bj)中的一部分。具体而言，如果这些边都记作 (t, bi), 我们要求&lt;code&gt;bi&lt;/code&gt;不是&lt;code&gt;s&lt;/code&gt;，也不是某个&lt;code&gt;s&lt;/code&gt;的别名.&lt;br&gt;换言之，如果&lt;code&gt;bi&lt;/code&gt;是&lt;code&gt;s&lt;/code&gt;或是某个&lt;code&gt;s&lt;/code&gt;的别名，储存的值和&lt;code&gt;s&lt;/code&gt;一样，那么现在就不需要在图上连边 (t, bi).&lt;br&gt;例如：&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Inst.&lt;/th&gt;
+&lt;th&gt;Live vars&lt;/th&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, b&lt;/td&gt;
+&lt;td&gt;link a-b (assume no aliasing)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;t&amp;#x3D;a&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, b, t&lt;/td&gt;
+&lt;td&gt;MOVE: link t-b, but not link t-a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;a&amp;#x3D;a*2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, b, t&lt;/td&gt;
+&lt;td&gt;link a-b(dup), a-t&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;t&amp;#x3D;b&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;a, b, t&lt;/td&gt;
+&lt;td&gt;MOVE: link t-a(dup),  but not link t-b(though linked)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;return a*t+b&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;图染色概述&#34;&gt;&lt;a href=&#34;#图染色概述&#34; class=&#34;headerlink&#34; title=&#34;图染色概述&#34;&gt;&lt;/a&gt;图染色概述&lt;/h3&gt;&lt;p&gt;vertex coloring: 对所有节点进行染色，且&lt;strong&gt;对于任何边，两个端点节点的颜色都不一样&lt;/strong&gt;。&lt;br&gt;k染色(k-coloring): 最多使用 k 种颜色的 vertex coloring.&lt;/p&gt;
+&lt;p&gt;著名的四色定理指出：对于任意 &lt;strong&gt;“平面图”&lt;/strong&gt; ，至多只需要 4 种颜色即可完成染色，也就是说所有平面图都是 4-colorable 的。&lt;br&gt;——温馨提示：这个定理和我们的课程内容八竿子打不着边。&lt;/p&gt;
+&lt;p&gt;在得到干扰图后，我们对其进行k染色。&lt;br&gt;染色完毕后，每一种颜色对应一个物理寄存器，节点颜色即为节点所对应的寄存器。&lt;br&gt;当然也有可能染色失败：这意味着需要超过k种颜色才能染色成功。&lt;br&gt;如果需要的颜色种数超过物理寄存器个数，说明 spilling （部分临时寄存器分配不到物理寄存器，不得不“溢出”到内存上）是必要的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;任务：&lt;/strong&gt;找到最小的 k, 使得染色可以成功。-&amp;gt; NP-hard!&lt;br&gt;对应的判定问题：检查图是否 k-colorable. -&amp;gt; NP-Complete!&lt;br&gt;所以我们其实并不需要找到“最小”的k，只需要“较小”的结果即可。也就是需要实现一个&lt;strong&gt;近似算法&lt;/strong&gt;，以及一些启发式的想法。&lt;br&gt;换句话说，我们可以容忍找到的k不是最小的，或是误判一个事实上 k-colorable 的图无法被k染色。&lt;/p&gt;
+&lt;p&gt;接下来引入一种线性时间的算法，能给出不错的结果。大体分为4个部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Build: 建图（我们刚刚已经完成了）&lt;/li&gt;
+&lt;li&gt;Simplify: 对干扰图进行&lt;strong&gt;简化&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Spill: 处理被挤出的寄存器&lt;/li&gt;
+&lt;li&gt;Select&amp;#x2F;Color: 进行节点染色操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我们将在下文详细介绍并改进该算法。&lt;/p&gt;
+&lt;h3 id=&#34;算法1-通过简化进行图染色&#34;&gt;&lt;a href=&#34;#算法1-通过简化进行图染色&#34; class=&#34;headerlink&#34; title=&#34;算法1: 通过简化进行图染色&#34;&gt;&lt;/a&gt;算法1: 通过简化进行图染色&lt;/h3&gt;&lt;p&gt;首先，考虑一个简化版本的、很粗糙的近似算法，用于判断图是否 k-colorable, 并给出染色方案：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Build: 建图，已经完成了。&lt;/li&gt;
+&lt;li&gt;Simplify:&lt;ul&gt;
+&lt;li&gt;如果从图&lt;code&gt;G&lt;/code&gt;中存在一个节点&lt;code&gt;n&lt;/code&gt;，其度数（i.e. 相邻节点数量）小于k, 令图&lt;code&gt;G&amp;#39;&lt;/code&gt;为从&lt;code&gt;G&lt;/code&gt;中移除该节点得到的图。&lt;br&gt;那么如果&lt;code&gt;G&amp;#39;&lt;/code&gt;是 k-colorable 的，则原来的图&lt;code&gt;G&lt;/code&gt;也是。&lt;ul&gt;
+&lt;li&gt;这是显然的：给定一个图&lt;code&gt;G&amp;#39;&lt;/code&gt;的k染色方案，由于相邻节点数量不够多，我们一定有剩余的颜色分配给&lt;code&gt;n&lt;/code&gt;.&lt;br&gt;因此我们把&lt;code&gt;G&lt;/code&gt;的k染色问题简化为了&lt;code&gt;G&amp;#39;&lt;/code&gt;的k染色问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;这就引出&lt;strong&gt;一个自然的启发式的算法：&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;不断地从图中删除度数少于k的节点（并放入栈中）&lt;/strong&gt;。&lt;br&gt;我们可以保证，每次删除的这个节点都有剩余的、可用的颜色分配给他。&lt;br&gt;如此重复删除下去，我们有机会直接把图简化成空图！这样就能直接宣告整个染色过程结束了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Spill: 暂时留白，什么也不做。&lt;/li&gt;
+&lt;li&gt;Select: 接下来要从这个空图重建原图。&lt;strong&gt;每次从栈顶取出一个节点，一定有剩余的、可用的颜色能用于染色。&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;每次简化删除一个节点时，我们都保证如果删除后颜色够用，那么删除前颜色也够用。&lt;/li&gt;
+&lt;li&gt;因此对于每次删除，有删除后的k染色方案，就能推出一个删除前的k染色方案。&lt;/li&gt;
+&lt;li&gt;显然，空图是 k-colorable 的。因此如果图被删空了，我们就可以归纳地推出原图的k染色方案。&lt;/li&gt;
+&lt;li&gt;显然，删除顺序的逆序&amp;#x3D;归纳推理的顺序&amp;#x3D;算法找到的合法的染色顺序（所以我们使用的是栈）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/coloring-k2.png&#34; alt=&#34;coloring-k2&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个算法跑的很快（线性），但很容易误伤无辜：毕竟这只是个近似算法。&lt;br&gt;如果一个近似算法 fail 了，这个图事实上可能还是 k-colorable 的，只是这个算法能力不足以找到可行解。&lt;br&gt;对于现在这个简单的算法来说，fail 就意味着在某一步，所有节点的度数都&amp;gt;&amp;#x3D;k（或者说图中的节点度数都是 &lt;strong&gt;significant&lt;/strong&gt; 的）.&lt;/p&gt;
+&lt;p&gt;此时我们不得不进行刚刚留白的第三步，处理 &lt;strong&gt;spilling&lt;/strong&gt;: 也就是选择图中的一些节点，把他们放在内存（而非寄存器）中。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt; To be continued…&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;Part-18-垃圾回收&#34;&gt;&lt;a href=&#34;#Part-18-垃圾回收&#34; class=&#34;headerlink&#34; title=&#34;Part 18: 垃圾回收&#34;&gt;&lt;/a&gt;Part 18: 垃圾回收&lt;/h2&gt;</content>
-        <category term="On Going" />
         <category term="Compiler" />
         <category term="Computer Science" />
+        <category term="On Going" />
         <updated>2024-04-13T17:10:20.000Z</updated>
     </entry>
     <entry>
@@ -2038,8 +2245,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="Miscellaneous" />
         <category term="On Going" />
+        <category term="Miscellaneous" />
         <updated>2024-04-11T17:45:01.000Z</updated>
     </entry>
 </feed>
