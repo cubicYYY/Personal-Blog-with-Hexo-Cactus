@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="编译原理Speed-run any%以快速复习为目的，尽可能对缺乏动机(intuition)的一些概念提供课堂外的例子以简明解释。标题中使用*标记的部分为考试不考察的内容。 文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn) Part 0: 课程信息使用教材：Modern Compiler Implementation in C, Andrew W. Appel">
+    <meta name="description" content="编译原理Speed-run any%以快速复习为目的，尽可能对缺乏动机(intuition)的一些概念提供课堂外的例子以简明解释。标题中使用*标记的部分为考试不考察的内容。 文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。建议阅读本笔记时配合老师课件&#x2F;讲义作为参照。 Part 0: 课程信息使用教材：Modern Compiler I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理课程笔记（All-in-One速通版）">
 <meta property="og:url" content="http://cubicy.icu/compiler-construction-principles/index.html">
 <meta property="og:site_name" content="Cubic Y³">
-<meta property="og:description" content="编译原理Speed-run any%以快速复习为目的，尽可能对缺乏动机(intuition)的一些概念提供课堂外的例子以简明解释。标题中使用*标记的部分为考试不考察的内容。 文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn) Part 0: 课程信息使用教材：Modern Compiler Implementation in C, Andrew W. Appel">
+<meta property="og:description" content="编译原理Speed-run any%以快速复习为目的，尽可能对缺乏动机(intuition)的一些概念提供课堂外的例子以简明解释。标题中使用*标记的部分为考试不考察的内容。 文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。建议阅读本笔记时配合老师课件&#x2F;讲义作为参照。 Part 0: 课程信息使用教材：Modern Compiler I">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/nfa2dfa.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/DFA-simplify-diverge.png">
@@ -69,12 +69,23 @@
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/physical-interference.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/int-graph-abc.png">
 <meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coloring-k2.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coloring-rebuild-k2.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/optimistic-coloring-success-before.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/optimistic-coloring-success.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/optimistic-coloring-failed.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coloring-k4.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coloring-k4-result.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coalescing.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coalescing-pros.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coloring-algo-full.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/coloring-algo-full-book.png">
+<meta property="og:image" content="http://cubicy.icu/compiler-construction-principles/example-constrainted.png">
 <meta property="article:published_time" content="2024-04-13T17:10:20.000Z">
-<meta property="article:modified_time" content="2024-06-04T17:31:55.519Z">
+<meta property="article:modified_time" content="2024-06-05T20:03:35.161Z">
 <meta property="article:author" content="Cubic Y^3">
+<meta property="article:tag" content="On Going">
 <meta property="article:tag" content="Compiler">
 <meta property="article:tag" content="Computer Science">
-<meta property="article:tag" content="On Going">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://cubicy.icu/compiler-construction-principles/nfa2dfa.png">
     
@@ -195,7 +206,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86Speed-run-any"><span class="toc-number">1.</span> <span class="toc-text">编译原理Speed-run any%</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-0-%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 0: 课程信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">Part 1: 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.3.</span> <span class="toc-text">Part 2: 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">词法分析概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.3.3.</span> <span class="toc-text">有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90"><span class="toc-number">1.3.4.</span> <span class="toc-text">词法分析器自动生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lex%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.5.</span> <span class="toc-text">Lex工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-3-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-CFG-Parsing"><span class="toc-number">1.4.</span> <span class="toc-text">Part 3: 语法分析 - CFG &amp; Parsing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">语法分析器概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95CFG"><span class="toc-number">1.4.2.</span> <span class="toc-text">上下文无关文法CFG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BCDerivation%E5%92%8C%E8%A7%84%E7%BA%A6Reduction"><span class="toc-number">1.4.3.</span> <span class="toc-text">推导Derivation和规约Reduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CFG%E7%9A%84%E5%88%86%E6%9E%90%E6%A0%91Parse-Tree"><span class="toc-number">1.4.4.</span> <span class="toc-text">CFG的分析树Parse Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%96%87%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.5.</span> <span class="toc-text">编程语言的文法设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Part 4: 语法分析 - 自顶向下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E5%92%8C%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">LL(1)和预测分析法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92%E3%80%81%E6%8F%90%E5%B7%A6%E5%85%AC%E5%9B%A0%E5%AD%90"><span class="toc-number">1.5.2.</span> <span class="toc-text">消除左递归、提左公因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D"><span class="toc-number">1.5.3.</span> <span class="toc-text">错误恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-5-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A"><span class="toc-number">1.6.</span> <span class="toc-text">Part 5: 语法分析 - 自底向上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E8%BF%9B-%E8%A7%84%E7%BA%A6-Shift-Reduce"><span class="toc-number">1.6.1.</span> <span class="toc-text">移进-规约 Shift-Reduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-Parsing"><span class="toc-number">1.6.2.</span> <span class="toc-text">LR(0) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-1-Parsing"><span class="toc-number">1.6.3.</span> <span class="toc-text">SLR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-Parsing"><span class="toc-number">1.6.4.</span> <span class="toc-text">LR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LALR-1-Parsing"><span class="toc-number">1.6.5.</span> <span class="toc-text">LALR(1) Parsing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-6-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%9D%82%E9%A1%B9"><span class="toc-number">1.7.</span> <span class="toc-text">Part 6: 语法分析杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%9AYACC"><span class="toc-number">1.7.1.</span> <span class="toc-text">语法分析器的生成器：YACC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D%EF%BC%88%E7%BB%AD%EF%BC%89"><span class="toc-number">1.7.2.</span> <span class="toc-text">错误恢复（续）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%B0%8F%E7%BB%93%EF%BC%9A%E6%96%87%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">1.8.</span> <span class="toc-text">语法分析小结：文法对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-%E4%B8%8E-LR-1"><span class="toc-number">1.8.1.</span> <span class="toc-text">SLR 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E4%B8%8E-LR-1"><span class="toc-number">1.8.2.</span> <span class="toc-text">LL(1) 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-LR-1-SLR"><span class="toc-number">1.8.3.</span> <span class="toc-text">LL(1) LR(1) SLR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-7-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">1.9.</span> <span class="toc-text">Part 7: 抽象语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%96%87%E6%B3%95Attribute-Grammar"><span class="toc-number">1.9.1.</span> <span class="toc-text">属性文法Attribute Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8A%A8%E4%BD%9CSemantic-Action"><span class="toc-number">1.9.2.</span> <span class="toc-text">语义动作Semantic Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%A7%A3%E6%9E%90%E6%A0%91APT"><span class="toc-number">1.9.3.</span> <span class="toc-text">抽象解析树APT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91AST"><span class="toc-number">1.9.4.</span> <span class="toc-text">抽象语法树AST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AEPosition"><span class="toc-number">1.9.5.</span> <span class="toc-text">位置Position</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-8-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.10.</span> <span class="toc-text">Part 8: 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8Symbol-Table"><span class="toc-number">1.10.1.</span> <span class="toc-text">符号表Symbol Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%AC%A6%E5%8F%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">Tiger编译器符号相关的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.10.3.</span> <span class="toc-text">类型检查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-9-%E6%B4%BB%E5%8A%A8%E8%AE%B0%E5%BD%95Activation-Record"><span class="toc-number">1.11.</span> <span class="toc-text">Part 9: 活动记录Activation Record</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-How"><span class="toc-number">1.11.1.</span> <span class="toc-text">Why &amp; How</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.11.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.</span> <span class="toc-text">Part 10: 寄存器与变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.12.2.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80"><span class="toc-number">1.12.3.</span> <span class="toc-text">返回值与返回地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Frame-Resident-Variables"><span class="toc-number">1.12.4.</span> <span class="toc-text">Frame-Resident Variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-%E5%9D%97%E7%BB%93%E6%9E%84Block-Structure"><span class="toc-number">1.13.</span> <span class="toc-text">Part 11: 块结构Block Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Tiger%E8%AF%AD%E8%A8%80%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="toc-number">1.14.</span> <span class="toc-text">Part 12: Tiger语言：一个例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A0%88%E5%B8%A7%E5%B8%83%E5%B1%80-Layout"><span class="toc-number">1.14.1.</span> <span class="toc-text">Tiger语言的栈帧布局(Layout)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.14.2.</span> <span class="toc-text">Tiger语言编译器的栈帧实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E4%B8%A4%E5%B1%82%E6%8A%BD%E8%B1%A1"><span class="toc-number">1.14.3.</span> <span class="toc-text">总结：两层抽象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BA-IR"><span class="toc-number">1.15.</span> <span class="toc-text">Part 13: 中间表示(IR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.15.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81IR"><span class="toc-number">1.15.2.</span> <span class="toc-text">为何需要IR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR%E6%9D%82%E9%A1%B9"><span class="toc-number">1.15.3.</span> <span class="toc-text">*IR杂项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84IR-Tree%E5%8F%8A%E5%85%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">1.15.4.</span> <span class="toc-text">Tiger语言的IR Tree及其指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8EAST%E7%94%9F%E6%88%90IR-Tree"><span class="toc-number">1.15.5.</span> <span class="toc-text">从AST生成IR Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-14-%E5%9F%BA%E6%9C%AC%E5%9D%97%E4%B8%8Etraces"><span class="toc-number">1.16.</span> <span class="toc-text">Part 14: 基本块与traces</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BD%A2%E5%BC%8FCanonical-Form"><span class="toc-number">1.16.1.</span> <span class="toc-text">正规形式Canonical Form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E6%A0%91Canonical-Tree"><span class="toc-number">1.16.2.</span> <span class="toc-text">正规树Canonical Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-1-%E7%BA%BF%E6%80%A7%E5%8C%96%E4%B8%BA%E6%AD%A3%E8%A7%84%E6%A0%91"><span class="toc-number">1.16.3.</span> <span class="toc-text">Stage 1: 线性化为正规树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-2-3-%E5%A4%84%E7%90%86%E6%9D%A1%E4%BB%B6%E8%B7%B3%E8%BD%AC"><span class="toc-number">1.16.4.</span> <span class="toc-text">Stage 2&amp;3: 处理条件跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR-%E6%9C%BA%E5%99%A8%E7%A0%81%EF%BC%9A%E5%B0%8F%E7%BB%93"><span class="toc-number">1.16.5.</span> <span class="toc-text">IR-&gt;机器码：小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9"><span class="toc-number">1.17.</span> <span class="toc-text">Part 15: 指令选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E6%A6%82%E8%BF%B0"><span class="toc-number">1.17.1.</span> <span class="toc-text">指令选择概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%A6%86%E7%9B%96"><span class="toc-number">1.17.2.</span> <span class="toc-text">指令选择算法：基于树覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E8%AF%AD%E6%B3%95Tree-Grammar"><span class="toc-number">1.17.3.</span> <span class="toc-text">*树语法Tree Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISC-vs-RISC"><span class="toc-number">1.17.4.</span> <span class="toc-text">CISC vs. RISC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-16-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.18.</span> <span class="toc-text">Part 16: 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">1.18.1.</span> <span class="toc-text">*编译器优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%88%86%E6%9E%90Dataflow-Analysis"><span class="toc-number">1.18.2.</span> <span class="toc-text">数据流分析Dataflow Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90Liveness-Analysis"><span class="toc-number">1.18.3.</span> <span class="toc-text">活跃性分析Liveness Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.4.</span> <span class="toc-text">活跃性分析的数据流方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.5.</span> <span class="toc-text">解方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-17-%E5%AF%84%E5%AD%98%E5%99%A8%E5%88%86%E9%85%8D"><span class="toc-number">1.19.</span> <span class="toc-text">Part 17: 寄存器分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B2%E6%89%B0%E5%9B%BE"><span class="toc-number">1.19.1.</span> <span class="toc-text">干扰图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%A6%82%E8%BF%B0"><span class="toc-number">1.19.2.</span> <span class="toc-text">图染色概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%951-%E9%80%9A%E8%BF%87%E7%AE%80%E5%8C%96%E8%BF%9B%E8%A1%8C%E5%9B%BE%E6%9F%93%E8%89%B2"><span class="toc-number">1.19.3.</span> <span class="toc-text">算法1: 通过简化进行图染色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-18-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.20.</span> <span class="toc-text">Part 18: 垃圾回收</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86Speed-run-any"><span class="toc-number">1.</span> <span class="toc-text">编译原理Speed-run any%</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-0-%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 0: 课程信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">Part 1: 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.3.</span> <span class="toc-text">Part 2: 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">词法分析概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.3.3.</span> <span class="toc-text">有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90"><span class="toc-number">1.3.4.</span> <span class="toc-text">词法分析器自动生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lex%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.5.</span> <span class="toc-text">Lex工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-3-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-CFG-Parsing"><span class="toc-number">1.4.</span> <span class="toc-text">Part 3: 语法分析 - CFG &amp; Parsing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">语法分析器概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95CFG"><span class="toc-number">1.4.2.</span> <span class="toc-text">上下文无关文法CFG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BCDerivation%E5%92%8C%E8%A7%84%E7%BA%A6Reduction"><span class="toc-number">1.4.3.</span> <span class="toc-text">推导Derivation和规约Reduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CFG%E7%9A%84%E5%88%86%E6%9E%90%E6%A0%91Parse-Tree"><span class="toc-number">1.4.4.</span> <span class="toc-text">CFG的分析树Parse Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%96%87%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.5.</span> <span class="toc-text">编程语言的文法设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Part 4: 语法分析 - 自顶向下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E5%92%8C%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">LL(1)和预测分析法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92%E3%80%81%E6%8F%90%E5%B7%A6%E5%85%AC%E5%9B%A0%E5%AD%90"><span class="toc-number">1.5.2.</span> <span class="toc-text">消除左递归、提左公因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D"><span class="toc-number">1.5.3.</span> <span class="toc-text">错误恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-5-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A"><span class="toc-number">1.6.</span> <span class="toc-text">Part 5: 语法分析 - 自底向上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E8%BF%9B-%E8%A7%84%E7%BA%A6-Shift-Reduce"><span class="toc-number">1.6.1.</span> <span class="toc-text">移进-规约 Shift-Reduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-Parsing"><span class="toc-number">1.6.2.</span> <span class="toc-text">LR(0) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-1-Parsing"><span class="toc-number">1.6.3.</span> <span class="toc-text">SLR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-Parsing"><span class="toc-number">1.6.4.</span> <span class="toc-text">LR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LALR-1-Parsing"><span class="toc-number">1.6.5.</span> <span class="toc-text">LALR(1) Parsing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-6-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%9D%82%E9%A1%B9"><span class="toc-number">1.7.</span> <span class="toc-text">Part 6: 语法分析杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%9AYACC"><span class="toc-number">1.7.1.</span> <span class="toc-text">语法分析器的生成器：YACC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D%EF%BC%88%E7%BB%AD%EF%BC%89"><span class="toc-number">1.7.2.</span> <span class="toc-text">错误恢复（续）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%B0%8F%E7%BB%93%EF%BC%9A%E6%96%87%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">1.8.</span> <span class="toc-text">语法分析小结：文法对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-%E4%B8%8E-LR-1"><span class="toc-number">1.8.1.</span> <span class="toc-text">SLR 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E4%B8%8E-LR-1"><span class="toc-number">1.8.2.</span> <span class="toc-text">LL(1) 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-LR-1-SLR"><span class="toc-number">1.8.3.</span> <span class="toc-text">LL(1) LR(1) SLR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-7-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">1.9.</span> <span class="toc-text">Part 7: 抽象语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%96%87%E6%B3%95Attribute-Grammar"><span class="toc-number">1.9.1.</span> <span class="toc-text">属性文法Attribute Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8A%A8%E4%BD%9CSemantic-Action"><span class="toc-number">1.9.2.</span> <span class="toc-text">语义动作Semantic Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%A7%A3%E6%9E%90%E6%A0%91APT"><span class="toc-number">1.9.3.</span> <span class="toc-text">抽象解析树APT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91AST"><span class="toc-number">1.9.4.</span> <span class="toc-text">抽象语法树AST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AEPosition"><span class="toc-number">1.9.5.</span> <span class="toc-text">位置Position</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-8-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.10.</span> <span class="toc-text">Part 8: 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8Symbol-Table"><span class="toc-number">1.10.1.</span> <span class="toc-text">符号表Symbol Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%AC%A6%E5%8F%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">Tiger编译器符号相关的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.10.3.</span> <span class="toc-text">类型检查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-9-%E6%B4%BB%E5%8A%A8%E8%AE%B0%E5%BD%95Activation-Record"><span class="toc-number">1.11.</span> <span class="toc-text">Part 9: 活动记录Activation Record</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-How"><span class="toc-number">1.11.1.</span> <span class="toc-text">Why &amp; How</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.11.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.</span> <span class="toc-text">Part 10: 寄存器与变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.12.2.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80"><span class="toc-number">1.12.3.</span> <span class="toc-text">返回值与返回地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Frame-Resident-Variables"><span class="toc-number">1.12.4.</span> <span class="toc-text">Frame-Resident Variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-%E5%9D%97%E7%BB%93%E6%9E%84Block-Structure"><span class="toc-number">1.13.</span> <span class="toc-text">Part 11: 块结构Block Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Tiger%E8%AF%AD%E8%A8%80%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="toc-number">1.14.</span> <span class="toc-text">Part 12: Tiger语言：一个例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A0%88%E5%B8%A7%E5%B8%83%E5%B1%80-Layout"><span class="toc-number">1.14.1.</span> <span class="toc-text">Tiger语言的栈帧布局(Layout)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.14.2.</span> <span class="toc-text">Tiger语言编译器的栈帧实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E4%B8%A4%E5%B1%82%E6%8A%BD%E8%B1%A1"><span class="toc-number">1.14.3.</span> <span class="toc-text">总结：两层抽象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BA-IR"><span class="toc-number">1.15.</span> <span class="toc-text">Part 13: 中间表示(IR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.15.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81IR"><span class="toc-number">1.15.2.</span> <span class="toc-text">为何需要IR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR%E6%9D%82%E9%A1%B9"><span class="toc-number">1.15.3.</span> <span class="toc-text">*IR杂项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84IR-Tree%E5%8F%8A%E5%85%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">1.15.4.</span> <span class="toc-text">Tiger语言的IR Tree及其指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8EAST%E7%94%9F%E6%88%90IR-Tree"><span class="toc-number">1.15.5.</span> <span class="toc-text">从AST生成IR Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-14-%E5%9F%BA%E6%9C%AC%E5%9D%97%E4%B8%8Etraces"><span class="toc-number">1.16.</span> <span class="toc-text">Part 14: 基本块与traces</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BD%A2%E5%BC%8FCanonical-Form"><span class="toc-number">1.16.1.</span> <span class="toc-text">正规形式Canonical Form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E6%A0%91Canonical-Tree"><span class="toc-number">1.16.2.</span> <span class="toc-text">正规树Canonical Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-1-%E7%BA%BF%E6%80%A7%E5%8C%96%E4%B8%BA%E6%AD%A3%E8%A7%84%E6%A0%91"><span class="toc-number">1.16.3.</span> <span class="toc-text">Stage 1: 线性化为正规树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-2-3-%E5%A4%84%E7%90%86%E6%9D%A1%E4%BB%B6%E8%B7%B3%E8%BD%AC"><span class="toc-number">1.16.4.</span> <span class="toc-text">Stage 2&amp;3: 处理条件跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR-%E6%9C%BA%E5%99%A8%E7%A0%81%EF%BC%9A%E5%B0%8F%E7%BB%93"><span class="toc-number">1.16.5.</span> <span class="toc-text">IR-&gt;机器码：小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9"><span class="toc-number">1.17.</span> <span class="toc-text">Part 15: 指令选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E6%A6%82%E8%BF%B0"><span class="toc-number">1.17.1.</span> <span class="toc-text">指令选择概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%A6%86%E7%9B%96"><span class="toc-number">1.17.2.</span> <span class="toc-text">指令选择算法：基于树覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E8%AF%AD%E6%B3%95Tree-Grammar"><span class="toc-number">1.17.3.</span> <span class="toc-text">*树语法Tree Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISC-vs-RISC"><span class="toc-number">1.17.4.</span> <span class="toc-text">CISC vs. RISC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-16-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.18.</span> <span class="toc-text">Part 16: 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">1.18.1.</span> <span class="toc-text">*编译器优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%88%86%E6%9E%90Dataflow-Analysis"><span class="toc-number">1.18.2.</span> <span class="toc-text">数据流分析Dataflow Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90Liveness-Analysis"><span class="toc-number">1.18.3.</span> <span class="toc-text">活跃性分析Liveness Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.4.</span> <span class="toc-text">活跃性分析：数据流方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.5.</span> <span class="toc-text">解方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-17-%E5%AF%84%E5%AD%98%E5%99%A8%E5%88%86%E9%85%8D"><span class="toc-number">1.19.</span> <span class="toc-text">Part 17: 寄存器分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B2%E6%89%B0%E5%9B%BEInterference-Graph"><span class="toc-number">1.19.1.</span> <span class="toc-text">干扰图Interference Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%A6%82%E8%BF%B0"><span class="toc-number">1.19.2.</span> <span class="toc-text">图染色概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%9B%BE%E6%9F%93%E8%89%B2%E7%AE%97%E6%B3%95"><span class="toc-number">1.19.3.</span> <span class="toc-text">一个简单的图染色算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%A4%E5%87%BASpilling"><span class="toc-number">1.19.4.</span> <span class="toc-text">挤出Spilling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6Coalescing"><span class="toc-number">1.19.5.</span> <span class="toc-text">合并Coalescing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%BB%E7%BB%93Freeze"><span class="toc-number">1.19.6.</span> <span class="toc-text">冻结Freeze</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%80%BB%E7%BB%93"><span class="toc-number">1.19.7.</span> <span class="toc-text">图染色总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%9D%82%E9%A1%B9"><span class="toc-number">1.19.8.</span> <span class="toc-text">图染色杂项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-18-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.20.</span> <span class="toc-text">Part 18: 垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-19-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-OOP"><span class="toc-number">1.21.</span> <span class="toc-text">Part 19: 面向对象(OOP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-20-%E5%BE%AA%E7%8E%AF%E4%BC%98%E5%8C%96"><span class="toc-number">1.22.</span> <span class="toc-text">Part 20: 循环优化</span></a></li></ol></li></ol>
       </div>
     
   </span>
@@ -225,7 +236,7 @@
       
         <time datetime="2024-04-13T17:10:20.000Z" class="dt-published" itemprop="datePublished">2024-04-14</time>
         
-        (Updated: <time datetime="2024-06-04T17:31:55.519Z" class="dt-updated" itemprop="dateModified">2024-06-05</time>)
+        (Updated: <time datetime="2024-06-05T20:03:35.161Z" class="dt-updated" itemprop="dateModified">2024-06-06</time>)
         
       
     </div>
@@ -256,11 +267,11 @@
         <span id="busuanzi_value_page_pv"></span>views
       </div>
       <span class="post-count">
-        Word count: 29.2k
-          (~111 mins to read)
+        Word count: 31.7k
+          (~120 mins to read)
       </span>
       <h1 id="编译原理Speed-run-any"><a href="#编译原理Speed-run-any" class="headerlink" title="编译原理Speed-run any%"></a>编译原理<code>Speed-run any%</code></h1><p>以<strong>快速复习</strong>为目的，尽可能对缺乏动机(intuition)的一些概念<strong>提供课堂外的例子以简明解释</strong>。<br>标题中使用<code>*</code>标记的部分为考试<strong>不</strong>考察的内容。</p>
-<p>文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)</p>
+<p>文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。<br>建议阅读本笔记时配合老师课件&#x2F;讲义作为参照。</p>
 <h2 id="Part-0-课程信息"><a href="#Part-0-课程信息" class="headerlink" title="Part 0: 课程信息"></a>Part 0: 课程信息</h2><p>使用教材：<em>Modern Compiler Implementation in C</em>, Andrew W. Appel （A.K.A. 虎书）</p>
 <p>相关课程：</p>
 <ul>
@@ -281,7 +292,7 @@
 <li>半开卷，允许携带<strong>3 张可双面打印或手写的 A4 纸</strong>入场</li>
 <li>考试范围：虎书 1-11 13-14 18 章：<br>Ch.01 Introduction<br>Ch.02 Lexical Analysis<br>Ch.03 Parsing<br>Ch.04 Abstract Syntax<br>Ch.05 Semantic Analysis<br>Ch.06 Activation Record<br>Ch.07 Translating into Intermediate Code<br>Ch.08 Basic Blocks and Traces<br>Ch.09 Instruction Selection<br>Ch.10 Liveness Analysis<br>Ch.11 Register Allocation<br>Ch.13 Garbage Collection<br>Ch.14 Object-oriented Languages<br>Ch.18 Loop Optimizations</li>
 <li>题型：判断30道*1分 选择20道*1分 大题共50分</li>
-<li><strong>复习重点：重要概念、算法 提高计算题熟练度 确保掌握作业题</strong></li>
+<li><strong>复习要点：熟悉重要概念、算法；提高计算题熟练度；确保掌握作业题。</strong></li>
 </ul>
 <p>前置知识：计算理论（笔记参考<a target="_blank" rel="noopener" href="https://note.tonycrane.cc/cs/tcs/toc/">https://note.tonycrane.cc/cs/tcs/toc/</a>）</p>
 <h2 id="Part-1-简介"><a href="#Part-1-简介" class="headerlink" title="Part 1: 简介"></a>Part 1: 简介</h2><p>基本概念：</p>
@@ -379,7 +390,7 @@
 </li>
 <li>产生式缩写：左侧一样的产生式可以把右侧使用”|”合并。例如 $E\rightarrow E+E|(E)|id$</li>
 </ul>
-<h3 id="推导Derivation和规约Reduction"><a href="#推导Derivation和规约Reduction" class="headerlink" title="推导Derivation和规约Reduction"></a>推导Derivation和规约Reduction</h3><p>例如有产生式 $A\rightarrow \gamma$，我们可以有 $\alpha A \beta \Rightarrow \alpha \gamma \beta$<br>那么我们说：</p>
+<h3 id="推导Derivation和规约Reduction"><a href="#推导Derivation和规约Reduction" class="headerlink" title="推导Derivation和规约Reduction"></a>推导Derivation和规约Reduction</h3><p>例如有产生式 $A\rightarrow \gamma$，可以有这样的变换： $\alpha A \beta \Rightarrow \alpha \gamma \beta$<br>那么我们说：</p>
 <ul>
 <li>$\alpha A \beta $ <strong>直接推导</strong>到 $ \alpha \gamma \beta$</li>
 <li>$\alpha \gamma \beta $ <strong>直接规约</strong>到 $  \alpha A \beta$<br>不言而喻的<strong>多步推导记号</strong>：$\Rightarrow^5$ $\Rightarrow^+$ $\Rightarrow^*$<br>分别代表五步推导，至少一步推导，0次或更多次推导</li>
@@ -508,7 +519,7 @@
 </ul>
 </li>
 </ul>
-<p>我们至此可以使用两个条件保证产生式的选择是唯一的：<br>对于产生式 $ A\rightarrow \alpha|\beta $ ,</p>
+<p>至此可以使用两个条件保证产生式的选择是唯一的：<br>对于产生式 $ A\rightarrow \alpha|\beta $ ,</p>
 <ol>
 <li>$ \text{First}(\alpha)\cap \text{First}(\beta)&#x3D; \emptyset $ （α和β推导不出以同一个单词为首的串）<ul>
 <li>意义：显然的。这样看终结符是哪个就知道应该用哪个产生式。</li>
@@ -634,7 +645,7 @@
 <li>可能永远卡在”a”里而没机会考虑”b”: $ S \Rightarrow Sa \Rightarrow Saa \Rightarrow Saaa \Rightarrow Saaaa …$</li>
 </ul>
 </li>
-<li><p>解决办法：通过文法变换消除（详见龙书）<br>比如我们可以将这一文法：</p>
+<li><p>解决办法：通过文法变换消除（详见龙书）<br>比如可以将这一文法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A -&gt; A a | b (a,b不以A开头，a不为空)</span><br></pre></td></tr></table></figure>
 
 <p>转为右递归：</p>
@@ -646,7 +657,7 @@
 <li>$ P \rightarrow \alpha \beta | \alpha \gamma$</li>
 <li>问题：同一非终结符的多个候选式存在共同前缀，可能导致回溯</li>
 <li>解决办法：限制文法 或 文法变换<ul>
-<li>例如我们可以提取左公因子来“推迟决定”，这样我们可以在读入更多token后进行决策：<br> 把<br> $$ P \rightarrow \alpha \beta | \alpha \gamma $$<br> 变换为<br> $$ P \rightarrow \alpha Q \\ Q \rightarrow \beta | \gamma $$</li>
+<li>例如可以提取左公因子来“推迟决定”，这样可以在读入更多token后进行决策：<br> 把<br> $$ P \rightarrow \alpha \beta | \alpha \gamma $$<br> 变换为<br> $$ P \rightarrow \alpha Q \\ Q \rightarrow \beta | \gamma $$</li>
 </ul>
 </li>
 </ul>
@@ -656,7 +667,7 @@
 <p>可以通过以下几种方式恢复：</p>
 <ul>
 <li>删除：例如，可以一直跳过token直到遇到当前非终结符对应Follow集中的token</li>
-<li>插入：例如，如果左右括号不匹配，我们可以插入一个假装有</li>
+<li>插入：例如，如果左右括号不匹配，我们可以插入一个括号，暂时假装它是匹配的</li>
 <li>替换：例如，变量名错误可以替换为最相近的变量名</li>
 </ul>
 <p>我们之后会细讲错误恢复的策略。</p>
@@ -824,7 +835,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">S&#x27; -&gt; S $</span><br><span class="line">S -&gt; L = R</span><br><span class="line">S -&gt; R</span><br><span class="line">L -&gt; id</span><br><span class="line">L -&gt; * R</span><br><span class="line">R -&gt; L</span><br></pre></td></tr></table></figure>
 
 <p>由最后两条规则<code>L -&gt; * R</code> <code>R -&gt; L</code>可以看出Follow(R)与Follow(L)两个集合互相包含，即相等，即Follow(R)&#x3D;Follow(L)<br>然而’&#x3D;’在Follow(L)&#x3D;{<code>=</code>,<code>$</code>}中，因此我们遇到’L&#x3D;…’时仍然不知道应该接受等于号进行shift(这样就可以进一步在<code>S-&gt;L=R</code>这个产生式中前进)，还是直接使用<code>R-&gt;L</code>进行reduce.<br><img src="/compiler-construction-principles/slr-conflict.png" alt="slr-conflict" loading="lazy"><br><img src="/compiler-construction-principles/slr-conflict-table.png" alt="slr-conflict-table" loading="lazy"></p>
-<p>我们需要更多、更精确的限制才能进一步降低冲突的可能。</p>
+<p>需要更多、更精确的限制才能进一步降低冲突的可能。</p>
 <h3 id="LR-1-Parsing"><a href="#LR-1-Parsing" class="headerlink" title="LR(1) Parsing"></a>LR(1) Parsing</h3><p>包含更多信息（后继token）来消除一些归约动作。<br>相当于“分裂”一些LR(0)状态，精确指明何时应该归约。</p>
 <p><strong>LR(1)项(item)的形式：$ A \rightarrow \alpha \bullet \beta,\ a$</strong></p>
 <p>逗号后的a是 <strong>向前看符号(lookahead symbol)</strong> 即表明向前看一个终结符，可以是<code>$</code>.<br>和LR(0)对比，处理ε-move时记录合法的向前看符号w.</p>
@@ -832,7 +843,7 @@
 <ul>
 <li><p>计算Closure<br>对于状态I中的一个item $$A\rightarrow \alpha \bullet X \beta,\ z$$ 以及一个产生式 $$X\rightarrow \gamma$$<br>我们<strong>递归地</strong>寻找所有 $w\in \text{First}(\beta z)$ 然后加入I：$I\cup&#x3D;{(X\rightarrow \bullet \gamma,\ w) | \forall w\in \text{First}(\beta z) }$（直到不动点为止）<br>起始状态是 $S’\rightarrow \bullet S \$,\ ?$ 的闭包</p>
 <ul>
-<li>我们不关心”?”处是什么，因为我们永远不会移进<code>$</code>.<br>所以一种可行的表示是把<code>$</code>都移到产生式外部，而非真的要产生一个<code>$</code>符号： $S’\rightarrow \bullet S,\ \$$）<br>或者你也可以直接写作：$S’\rightarrow \bullet S\$,\ ?$ （推荐）</li>
+<li>我们不关心”?”处是什么，因为永远不会移进<code>$</code>.<br>所以一种可行的表示是把<code>$</code>都移到产生式外部，而非真的要产生一个<code>$</code>符号： $S’\rightarrow \bullet S,\ \$$）<br>或者你也可以直接写作：$S’\rightarrow \bullet S\$,\ ?$ （推荐）</li>
 </ul>
 </li>
 <li><p>计算Goto表<br>基本和LR(0)算法保持相同，移入动作不考虑向前看符号z<br>也就是对于转移X，转移前后项的变换是：<br>$$A \rightarrow \alpha \bullet X \beta,\ z \ \ \Rightarrow\ \ A \rightarrow \alpha X \bullet \beta,\ z$$</p>
@@ -1026,20 +1037,20 @@
 <li>LL(1): 对于多个可选产生式 $A\rightarrow \alpha_1|\alpha_2|…$ 向前看下一个输入根据First,Follow确定使用哪条产生式推导</li>
 <li>LR(1): 对于多个可选产生式 $A\rightarrow \alpha,\ B\rightarrow \alpha,… $ 在识别出整个$\alpha$后，再往前看1个符号，然后确定使用哪条产生式归约</li>
 </ul>
-<h3 id="LL-1-LR-1-SLR"><a href="#LL-1-LR-1-SLR" class="headerlink" title="LL(1) LR(1) SLR"></a>LL(1) LR(1) SLR</h3><p><img src="/compiler-construction-principles/grammar-compare.png" loading="lazy"></p>
+<h3 id="LL-1-LR-1-SLR"><a href="#LL-1-LR-1-SLR" class="headerlink" title="LL(1) LR(1) SLR"></a>LL(1) LR(1) SLR</h3><p><img src="/compiler-construction-principles/grammar-compare.png" alt="grammar-compare" loading="lazy"></p>
 <h2 id="Part-7-抽象语法"><a href="#Part-7-抽象语法" class="headerlink" title="Part 7: 抽象语法"></a>Part 7: 抽象语法</h2><p>编程语言 &#x3D; 语法（识别一个合法的程序） + 语义（这个合法的程序对应的实际行为）</p>
 <ul>
 <li>语法：已经在之前章节讨论过。</li>
 <li>语义：<ul>
 <li>操作语义：如何执行程序？</li>
-<li><del>公理语义：我们可以证明程序的那些性质？</del>（该部分不在本课讨论）</li>
+<li><del>公理语义：可以证明程序的那些性质？</del> （该部分不在本课讨论）</li>
 <li>指称语义：程序是做什么的？</li>
 </ul>
 </li>
 </ul>
 <h3 id="属性文法Attribute-Grammar"><a href="#属性文法Attribute-Grammar" class="headerlink" title="属性文法Attribute Grammar"></a>属性文法Attribute Grammar</h3><p>属性文法&#x3D;<strong>上下文无关文法+属性+属性计算规则</strong></p>
 <ul>
-<li>属性:&#x3D; 描述文法符号的语义特征，比如表达式E的值我们可以记为E.val</li>
+<li>属性:&#x3D; 描述文法符号的语义特征，比如表达式E的值可以记为E.val</li>
 <li>属性计算规则(语义规则):&#x3D; 与产生式相关联、反映文法符号属性之间关系的规则，比如在乘法表达式中左侧的E.val要如何计算<ul>
 <li>仅表明属性间“抽象”关系，不涉及计算次序等具体实现细节</li>
 </ul>
@@ -1058,10 +1069,10 @@
 <li>语义动作返回值必须是<em>A的关联类型</em></li>
 <li>这个值可以通过B C D各自的语义值进行运算得出</li>
 </ul>
-<p>例如我们通过如下语义动作可以在编译期直接evaluate表达式的值：</p>
+<p>例如通过如下语义动作可以在编译期直接evaluate表达式的值：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">E-&gt;E1 + T   &#123; E.val= E1.val + T.val &#125;</span><br><span class="line">E-&gt;E1 – T   &#123; E.val= E1.val - T.val &#125;</span><br><span class="line">E-&gt;T        &#123; E.val= T.val &#125;</span><br><span class="line">T-&gt;(E)      &#123; T.val= E.val &#125;</span><br><span class="line">T-&gt;num      &#123; T.val= num.val &#125;</span><br></pre></td></tr></table></figure>
 
-<p>在递归下降法中，语义动作体现为每个符号对应的parsing函数。这里我们同时关心函数的<strong>返回值</strong>与<strong>副作用</strong>。<br>因此假设T和F两个token的关联类型都是<code>int</code>，对于表达式 $T\rightarrow T * F$ 我们可以如此实现语义动作：</p>
+<p>在递归下降法中，语义动作体现为每个符号对应的parsing函数。这里我们同时关心函数的<strong>返回值</strong>与<strong>副作用</strong>。<br>因此假设T和F两个token的关联类型都是<code>int</code>，对于表达式 $T\rightarrow T * F$ 可以如此实现语义动作：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a= T();</span><br><span class="line">eat(TIMES); <span class="comment">// &#x27;*&#x27;</span></span><br><span class="line"><span class="type">int</span> b= F();</span><br><span class="line"><span class="keyword">return</span> a*b;</span><br></pre></td></tr></table></figure>
 
 <p>而对于Parser生成器来说，其实现方式有所不同，以Yacc为例：</p>
@@ -1085,14 +1096,14 @@
 <ul>
 <li>缺点：太“啰嗦”。例如括号相关产生式只是为了解析顺序正确才有的，没必要放进树里。</li>
 </ul>
-<h3 id="抽象语法树AST"><a href="#抽象语法树AST" class="headerlink" title="抽象语法树AST"></a>抽象语法树AST</h3><p>AST &#x3D; Abstract Syntax Tree</p>
-<p>可以提供一个<em>干净的</em>（不包含Parsing的那些繁文缛节）接口用于后续编译流程的实现或优化（编译器后端）。<br>生成方式：用<strong>具体语法</strong>（Parser生成器能懂的）为<strong>抽象语法</strong>（我们想要的、更可读的）生成抽象语法树<br><img src="/compiler-construction-principles/AST.png" alt="AST" loading="lazy"></p>
+<h3 id="抽象语法树AST"><a href="#抽象语法树AST" class="headerlink" title="抽象语法树AST"></a>抽象语法树AST</h3><p>AST &#x3D; Abstract Syntax Tree<br>可以提供一个<em>干净的</em>（不包含Parsing的那些繁文缛节）接口用于后续编译流程的实现或优化（编译器后端）。</p>
+<p>生成方式：用<strong>具体语法</strong>（Parser生成器能懂的）为<strong>抽象语法</strong>（我们想要的、更可读的）生成抽象语法树：<br><img src="/compiler-construction-principles/AST.png" alt="AST" loading="lazy"></p>
 <p>实现：</p>
 <ul>
-<li>为每一个非终结符定义一个类型声明，用于表示其关联类型</li>
-<li>产生式统一放进一个union（如果是Rust就是Option直接解决，<del>C语言太坏了</del>）里，每一个产生式就是union里的一个结构体，这个结构体用于储存其子节点 <img src="/compiler-construction-principles/AST-def.png" loading="lazy"></li>
-<li>为每个产生式定义一个函数，除了计算需要的语义值返回以外，还将申请空间、分配新的树节点并设置好其子节点 <img src="/compiler-construction-principles/AST-impl.png" loading="lazy"></li>
-<li>以Yacc为例，把这些函数放入对应产生式的语义动作块中即可在规约时自动调用。随着Parsing的逐步推进，每次规约都可以产生一个新的内部节点，最终逐步构建出整颗AST</li>
+<li>为每一个非终结符定义一个类型声明，用于表示其关联类型。</li>
+<li>产生式统一放进一个union（如果是Rust就是Option直接解决，<del>C语言太坏了</del>）里，每一个产生式就是union里的一个结构体，这个结构体用于储存其子节点：<br><img src="/compiler-construction-principles/AST-def.png" alt="AST definition" loading="lazy"></li>
+<li>为每个产生式定义一个函数，除了计算需要的语义值返回以外，还将申请空间、分配新的树节点并设置好其子节点：<br><img src="/compiler-construction-principles/AST-impl.png" alt="AST implementation" loading="lazy"></li>
+<li>以Yacc为例，把这些函数放入对应产生式的语义动作块中即可在规约时自动调用。随着Parsing的逐步推进，每次规约都可以产生一个新的内部节点，最终逐步构建出整颗AST。</li>
 </ul>
 <p>此外，通过遍历AST还能做很多：</p>
 <ul>
@@ -1111,18 +1122,18 @@
 <li><p>parser维护<em>位置栈</em>与<em>语义值栈</em>，这样语义操作就知道位置信息了</p>
 <ul>
 <li>不是所有的Parser生成器都可以做到这一点：例如Bison可以但Yacc不行</li>
-<li>对于Yacc等无法直接实现的，可以引入新的非终结符pos（其语义值包含需要的位置信息）并改写文法。例如我们可以如此改写PLUS表达式以利用位置信息：</li>
+<li>对于Yacc等无法直接实现的，可以引入新的非终结符pos（其语义值包含需要的位置信息）并改写文法。例如可以如此改写PLUS表达式以利用位置信息：</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">%&#123; extern A_OpExp(A_exp, A_binop, A_exp, position); %&#125;</span><br><span class="line"></span><br><span class="line">%union &#123;</span><br><span class="line">    int num;</span><br><span class="line">    string id;</span><br><span class="line">    position pos;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">%type &lt;pos&gt; pos</span><br><span class="line"></span><br><span class="line">pos: &#123; $$ = EM_tokpos; &#125;</span><br><span class="line"></span><br><span class="line">exp: exp PLUS pos exp &#123; $$ = A_OpExp($1, A_plus, $4, $3); &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="Part-8-语义分析"><a href="#Part-8-语义分析" class="headerlink" title="Part 8: 语义分析"></a>Part 8: 语义分析</h2><p>我们注意到上述的属性文法等内容只适用于上下文无关文法CFG.<br>然而CFG有很多不足，例如我们不可能完成：</p>
+<h2 id="Part-8-语义分析"><a href="#Part-8-语义分析" class="headerlink" title="Part 8: 语义分析"></a>Part 8: 语义分析</h2><p>注意到：上述的属性文法等内容只适用于上下文无关文法CFG.<br>然而CFG有很多不足，例如不可能完成：</p>
 <ul>
 <li>检查数组引用的维度是否匹配</li>
 <li>检查数组越界</li>
 <li>确定变量应储存于栈上还是堆上</li>
 <li>…</li>
 </ul>
-<p>这是因为，这些检查和值有关（涉及语义），而非语法本身。因此我们需要通过检查、遍历<strong>程序表示(Program Representation)<strong>来完成</strong>（广义的）语义分析</strong>。<br>常用的程序表示：</p>
+<p>这是因为，这些检查和值有关（涉及语义），而非语法本身。因此我们需要通过检查、遍历 <strong>程序表示(Program Representation)</strong> 来完成 <strong>（广义的）语义分析</strong>。<br>常用的程序表示：</p>
 <ul>
 <li>abstract syntax tree (AST)</li>
 <li>control flow graph (CFG)</li>
@@ -1138,7 +1149,7 @@
 <li>寄存器分配</li>
 <li>…</li>
 </ul>
-<p>在本课中，我们重点关注的（狭义的）语义分析指的是通过检查AST获知程序的静态属性，包括：</p>
+<p>本课重点关注的（狭义的）语义分析指的是通过检查AST获知程序的静态属性，包括：</p>
 <ul>
 <li>作用域(Scope)与变量可见性</li>
 <li>变量、函数、表达式的类型<br>以及将AST转为中间代码(Intermediate Code)</li>
@@ -1153,17 +1164,17 @@
 </ul>
 <p>在Java等语言中，可能有多个环境同时活跃（对应不同的module, class等），他们都需要一个符号表。这被称为多符号表。</p>
 <ul>
-<li>符号表的实现：<br>绑定时，如果遇到了符号已经存在的情况，我们有两种策略：<ul>
-<li>Imperative Style: 直接覆盖旧的绑定，这样我们不可能lookup到旧的信息。当这个新的绑定不再有效时，需要复原旧的绑定。<ul>
-<li>如何快速lookup且支持删除和复原(restore): 使用哈希表套链表储存每对binding. 我们称哈希表中的元素为bucket</li>
-<li>insert: 直接插入对应bucket的链表头。如果已经存在，由于这使得新的binding关系更靠前，这样做可以成功覆盖</li>
-<li>restore: 对应bucket的链表头弹出头部的一些元素</li>
-<li>我们会发现需要维护一些必要的额外信息（比如scope变化时应该要弹出几次）</li>
+<li>符号表的实现：<br>绑定时，如果遇到了符号已经存在的情况，有两种策略：<ul>
+<li>Imperative Style: 直接覆盖旧的绑定，这样就不可能lookup到旧的信息。当这个新的绑定不再有效时，需要复原旧的绑定。<ul>
+<li>如何快速lookup且支持删除和复原(restore): 使用哈希表套链表储存每对binding. 我们称哈希表中的元素为bucket.</li>
+<li>insert: 直接插入对应bucket的链表头。如果已经存在，由于这使得新的binding关系更靠前，这样做可以成功覆盖。</li>
+<li>restore: 对应bucket的链表头弹出头部的一些元素。</li>
+<li>我们会发现需要维护一些必要的额外信息（比如scope变化时应该要弹出几次）。</li>
 </ul>
 </li>
 <li>Functional Style: 永远保留老的，只是查询时做一些额外处理（可以理解为只是renaming）。这样还原更简单。<ul>
-<li>直接使用BST（红黑树等）实现查找</li>
-<li>可以使用可持久化数据结构完成删除、复原等操作，进一步降低单次操作的空间复杂度，非常方便</li>
+<li>直接使用BST（红黑树等）实现查找。</li>
+<li>可以使用可持久化数据结构完成删除、复原等操作，进一步降低单次操作的空间复杂度，非常方便。</li>
 </ul>
 </li>
 </ul>
@@ -1174,7 +1185,7 @@
 <ul>
 <li>解决办法：使用新的数据结构将符号对象关联到一个整数上（哈希值）</li>
 </ul>
-<p>Tiger编译器的environment是destructive-update的。也就是说，我们有两个函数：</p>
+<p>Tiger编译器的environment是destructive-update的。也就是说，有两个函数：</p>
 <ul>
 <li><code>S_beginScope</code>: 记下当前符号表的状态</li>
 <li><code>S_endScope</code>: 恢复到最近的、还未被恢复的<code>S_beginScope</code>记下的状态</li>
@@ -1185,7 +1196,7 @@
 <li>弹出栈顶符号时，对应bucket的链表头也会联动地被移除</li>
 <li>beginScope: 压入一个特殊标记到辅助栈中</li>
 <li>endScope: 一直弹出符号直到弹出了一个特殊标记<ul>
-<li>我们可以由此标记推断：此次因为退出scope引发的restore操作可以就此结束</li>
+<li>可以由此标记推断：此次因为退出scope引发的restore操作可以就此结束</li>
 </ul>
 </li>
 </ul>
@@ -1207,7 +1218,7 @@
 <li>…</li>
 </ul>
 <blockquote>
-<p>事实上，我们可以理解为每引入一种类型就能<strong>完全</strong>消除某一类特定错误。</p>
+<p>事实上，可以理解为每引入一种类型就能<strong>完全</strong>消除某一类特定错误。</p>
 </blockquote>
 <p> 形式化的类型系统可用于数学领域，参见Coq以及<a target="_blank" rel="noopener" href="https://leanprover-community.github.io/">LEAN</a></p>
 </li>
@@ -1347,7 +1358,7 @@
 <li>被嵌套函数访问（Tiger语言不需要考虑）</li>
 </ul>
 <p>这些变量就是 <em>frame-resident</em> 的，也就是它们不得不被分配在栈帧上。</p>
-<h2 id="Part-11-块结构Block-Structure"><a href="#Part-11-块结构Block-Structure" class="headerlink" title="Part 11: 块结构Block Structure"></a>Part 11: 块结构Block Structure</h2><p>Intuition: 在允许函数嵌套定义的语言（比如Tiger）中，内部函数可能使用外部函数中的局部变量。<br><img src="/compiler-construction-principles/nested-funcs.png" loading="lazy"><br>我们可以通过FP访问（因为定义的变量内存地址在编译时未知，<strong>但相对当前函数的FP偏移值(offset)是已知的</strong>）。</p>
+<h2 id="Part-11-块结构Block-Structure"><a href="#Part-11-块结构Block-Structure" class="headerlink" title="Part 11: 块结构Block Structure"></a>Part 11: 块结构Block Structure</h2><p>Intuition: 在允许函数嵌套定义的语言（比如Tiger）中，内部函数可能使用外部函数中的局部变量。<br><img src="/compiler-construction-principles/nested-funcs.png" alt="nested-funcs" loading="lazy"><br>变量可以通过FP访问（因为定义的变量内存地址在编译时未知，<strong>但相对当前函数的FP偏移值(offset)是已知的</strong>）。</p>
 <p>在编译时，如何使得内部函数访问非局部定义的外部变量呢？有以下几种方法：</p>
 <ul>
 <li><strong>静态链接Static Link</strong>: 当内部函数<code>g</code>被调用时，调用者<code>f</code>传入一个指针指向<code>f</code>的栈帧（或者说活动记录）<ul>
@@ -1356,11 +1367,11 @@
 <li>每个函数记录自己的嵌套深度<code>n</code></li>
 <li>如果访问了在深度<code>m</code>的变量，只需沿着该链向上<code>n-m</code>次就可以找到该变量所在的栈帧</li>
 <li>优缺点：Overhead小，但是因为要通过链表向上经过多层速度较慢</li>
-<li><img src="/compiler-construction-principles/static-link-nested.png" loading="lazy"></li>
+<li><img src="/compiler-construction-principles/static-link-nested.png" alt="static-link-nested" loading="lazy"></li>
 <li><strong>注意：有时<code>f</code>中嵌套的函数<code>g</code>不直接引用外部变量，而更里面的函数<code>h</code>可能才会；这时<code>h</code>的static link可以越过<code>g</code></strong></li>
 </ul>
 </li>
-<li>Lamda lifting: 从最深的一层叶过程开始，把所有<code>g(a1)</code>用到的外部变量<code>o1</code> <code>o2</code>改写为真正传入的参数，于是变为<code>g(o1, o2, a1)</code>. 如此逐渐向上改写每一层即可。<br><img src="/compiler-construction-principles/lambda-lifting.png" loading="lazy"></li>
+<li>Lamda lifting: 从最深的一层叶过程开始，把所有<code>g(a1)</code>用到的外部变量<code>o1</code> <code>o2</code>改写为真正传入的参数，于是变为<code>g(o1, o2, a1)</code>. 如此逐渐向上改写每一层即可。<br><img src="/compiler-construction-principles/lambda-lifting.png" alt="lambda-lifting" loading="lazy"></li>
 <li>Display数组：一个全局数组，记录当前每个嵌套深度<code>i</code>对应的栈帧地址。这样不需要经过链表即可直接找到变量对应的栈帧。</li>
 </ul>
 <h2 id="Part-12-Tiger语言：一个例子"><a href="#Part-12-Tiger语言：一个例子" class="headerlink" title="Part 12: Tiger语言：一个例子"></a>Part 12: Tiger语言：一个例子</h2><h3 id="Tiger语言的栈帧布局-Layout"><a href="#Tiger语言的栈帧布局-Layout" class="headerlink" title="Tiger语言的栈帧布局(Layout)"></a>Tiger语言的栈帧布局(Layout)</h3><p><img src="/compiler-construction-principles/layout.png" alt="layout" loading="lazy"></p>
@@ -1380,9 +1391,9 @@
 <li>记录变量是否逃逸(escape)</li>
 <li>…</li>
 </ul>
-<p>进入被调用函数的上下文&#x3D;新的栈帧&#x3D;“视角切换(view shift)”, 这是不同机器&#x2F;指令集的实现需要完成的。<br><img src="/compiler-construction-principles/view-shift.png" loading="lazy"></p>
+<p>进入被调用函数的上下文&#x3D;新的栈帧&#x3D;“视角切换(view shift)”, 这是不同机器&#x2F;指令集的实现需要完成的。<br><img src="/compiler-construction-principles/view-shift.png" alt="view-shift" loading="lazy"></p>
 <blockquote>
-<p>💡本质上，我们在做的事和Lab3里为每一个参数分配地址，把一切读写放在内存里是一样的。只是为了效率，有时这个“地址”并不存在而是储存在寄存器中；此外有的变量会逃逸。因此我们需要实现访问的接口，对在寄存器的变量或者会逃逸的变量进行一些额外处理。</p>
+<p>💡本质上，我们在做的事和Lab3里为每一个参数分配地址，把一切读写放在内存里是一样的。<br>只是为了效率，有时这个“地址”并不存在而是储存在寄存器中；此外有的变量会逃逸。<br>因此需要实现访问的接口，对在寄存器的变量或者会逃逸的变量进行一些额外处理。</p>
 </blockquote>
 <p>其他trivial话题：</p>
 <ul>
@@ -1392,7 +1403,7 @@
 </li>
 <li>Label: 标记还不能确定的机器静态的、物理的地址</li>
 </ul>
-<h3 id="总结：两层抽象"><a href="#总结：两层抽象" class="headerlink" title="总结：两层抽象"></a>总结：两层抽象</h3><p><img src="/compiler-construction-principles/two-layers.png" loading="lazy"></p>
+<h3 id="总结：两层抽象"><a href="#总结：两层抽象" class="headerlink" title="总结：两层抽象"></a>总结：两层抽象</h3><p><img src="/compiler-construction-principles/two-layers.png" alt="2 layers: abstraction" loading="lazy"></p>
 <ul>
 <li><code>frame.h</code> <code>temp.h</code> 封装了<strong>机器无关</strong>的变量视角，我们无需关心是在内存还是在寄存器中</li>
 <li><code>Translate</code>模块用于在上述封装的基础上将高级语言翻译为有层次的、用static link连接起来的各个函数，维护函数间的层次关系；找到跨层次的、对外部变量的访问，并把每个访问定位到具体某一层函数的某一个变量上。<ul>
@@ -1574,7 +1585,7 @@
 <ul>
 <li>普通变量<ul>
 <li>相对FP的便宜是固定的。假设偏移量为<code>k</code>，则内存中变量的值为：<code>MEM(BINOP(PLUS,TEMP fp, CONST k))</code></li>
-<li>注意，对于一些常见的操作（例如加法）我们有如下简写：<code>BINOP(PLUS, a, b) = +(a, b)</code></li>
+<li>注意，对于一些常见的操作（例如加法）有如下简写：<code>BINOP(PLUS, a, b) = +(a, b)</code></li>
 <li>因此若变量<code>a</code>在内存中为<code>InFrame(k)</code>, 则<code>F_Exp(a,T_Temp(F_FP())</code>翻译为<code>MEM(BINOP(PLUS,TEMPFP,CONST(k)))</code></li>
 <li>而如果变量<code>b</code>在寄存器中为<code>InReg(t_832)</code>, 则直接翻译为<code>TEMP(t_832)</code></li>
 </ul>
@@ -1675,7 +1686,7 @@
 </li>
 </ul>
 <h2 id="Part-14-基本块与traces"><a href="#Part-14-基本块与traces" class="headerlink" title="Part 14: 基本块与traces"></a>Part 14: 基本块与traces</h2><p>轨迹 &#x3D; trace</p>
-<p><em>注：这里的许多概念都是针对Tiger语言的，承接上文。</em><br>在将IR的AST翻译为机器码的过程中，我们不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。<br>例如：一个包含<code>ESEQ</code>子节点的<code>BINOP</code>树代表一个二元运算符表达式。但由于<code>ESEQ</code>有副作用，这个表达式的值取决于<code>ESEQ</code>先求值&#x2F;后求值，是存在歧义的。<br>解决方法：将IR Tree变换为 <strong>正规形式(canonical form)</strong> ，而内部存在很多 <strong>正规树(canonical tree)</strong> （详见下文）.</p>
+<p><em>注：这里的许多概念都是针对Tiger语言的，承接上文。</em><br>在将IR的AST翻译为机器码的过程中，不可避免地需要解决将“树形的”AST转换到“线性的”机器码这一问题。<br>例如：一个包含<code>ESEQ</code>子节点的<code>BINOP</code>树代表一个二元运算符表达式。但由于<code>ESEQ</code>有副作用，这个表达式的值取决于<code>ESEQ</code>先求值&#x2F;后求值，是存在歧义的。<br>解决方法：将IR Tree变换为 <strong>正规形式(canonical form)</strong> ，而内部存在很多 <strong>正规树(canonical tree)</strong> （详见下文）.</p>
 <h3 id="正规形式Canonical-Form"><a href="#正规形式Canonical-Form" class="headerlink" title="正规形式Canonical Form"></a>正规形式Canonical Form</h3><p>对比IR Tree与canonical form:</p>
 <ul>
 <li>IR Tree:<ul>
@@ -1717,7 +1728,7 @@
 <p>这些树最后会被组装为canonical form. 具体步骤见下。</p>
 <h3 id="Stage-1-线性化为正规树"><a href="#Stage-1-线性化为正规树" class="headerlink" title="Stage 1: 线性化为正规树"></a>Stage 1: 线性化为正规树</h3><p>线性化 &#x3D; linearization<br>如果没有特别限定，本部分的“树”指的就是IR Tree.</p>
 <ol>
-<li><p>消除<code>ESEQ</code><br> 首先我们要去除原先树中所有的ESEQ. 总的来说是不断向上“提升”<code>ESEQ</code>直到它可以转为<code>SEQ</code>.<br> 部分规则如下：</p>
+<li><p>消除<code>ESEQ</code><br> 首先要去除原先树中所有的ESEQ. 总的来说是不断向上“提升”<code>ESEQ</code>直到它可以转为<code>SEQ</code>.<br> 部分规则如下：</p>
 <table>
 <thead>
 <tr>
@@ -1762,18 +1773,18 @@
 <td>ESEQ(MOVE(TEMP t, CALL(f, a)), TEMP(t))</td>
 </tr>
 </tbody></table>
-<p> 这些变换的成立性是容易验证的，<br> 在这之中，我们要注意副作用的问题：也就是语句执行顺序对结果有影响的情况。例如对于<code>BINOP(op, e1, ESEQ(s, e2))</code>（<code>e1</code>先求值，而后执行<code>s</code>）：</p>
+<p> 这些变换的成立性是容易验证的，<br> 在这之中，要注意副作用的问题，也就是语句执行顺序对结果有影响的情况：例如对于<code>BINOP(op, e1, ESEQ(s, e2))</code>（<code>e1</code>先求值，而后执行<code>s</code>）：</p>
 <ul>
-<li>如果<code>s</code>会影响<code>e1</code>的值，那么我们不能调换二者的执行顺序。</li>
+<li>如果<code>s</code>会影响<code>e1</code>的值，那么不能调换二者的执行顺序。</li>
 <li>也就是说<strong>不一定能</strong>变形为<code>ESEQ(s, BINOP(op, e1, e2))</code>（<code>s</code>先执行，而后对<code>e1</code>求值）</li>
-<li>解决方法：使用临时变量保存<code>e1</code>值。这种情况下我们变形为<code>ESEQ(MOVE(TEMP t,e1), ESEQ(s, BINOP(op, TEMP t, e2)))</code></li>
+<li>解决方法：使用临时变量保存<code>e1</code>值。这种情况下则变形为<code>ESEQ(MOVE(TEMP t,e1), ESEQ(s, BINOP(op, TEMP t, e2)))</code></li>
 </ul>
-<p> 可见，取决于<code>s</code>是否会影响<code>e1</code>值，我们有不同的变形策略。<br> 事实上，“会不会影响取值”是一种我们称为“可交换性(commutativity)”的属性：</p>
+<p> 可见，取决于<code>s</code>是否会影响<code>e1</code>值，有不同的变形策略。<br> 事实上，“会不会影响取值”是一种称为“可交换性(commutativity)”的属性：</p>
 <ul>
 <li>如果<code>s</code><strong>不</strong>影响<code>e1</code>值，那么我们说<code>s</code>, <code>e1</code> commute</li>
 <li>如果<code>s</code><strong>会</strong>影响<code>e1</code>值，那么我们说<code>s</code>, <code>e1</code> do NOT commute</li>
 </ul>
-<p> 如果能判断两者是否commute, 那么我们就可以最大限度避免引入新的临时变量，使得目标代码尽可能短小、高效。遗憾的是由于内存读写等原因，这一判定问题是困难的。不过我们只需要进行保守近似即可。也就是说，如果我们的保守近似策略判定二者commute, 那么他们一定commute; 否则如果策略无法确信二者commute, 我们则保守地认为他们互相有可能影响（不commute）。</p>
+<p> 如果能判断两者是否commute, 就可以最大限度避免引入新的临时变量，使得目标代码尽可能短小、高效。遗憾的是由于内存读写等原因，这一判定问题是困难的。不过我们只需要进行保守近似即可。也就是说，如果我们的保守近似策略判定二者commute, 那么他们一定commute; 否则如果策略无法确信二者commute, 则保守地认为他们互相有可能影响（不commute）。</p>
 <p> 一种年轻，简单，有时幼稚(naïve)的策略是：</p>
 <ul>
 <li>常量和所有语句commute</li>
@@ -1784,11 +1795,11 @@
 </li>
 <li><p>移动<code>CALL</code>到顶层<br> 常见的现代编译器都使用指定寄存器保存函数返回值。因此形如<code>BINOP(PLUS, CALL(…), CALL(…))</code>有多个<code>CALL</code>子节点的表达式虽然结构正确，但在实现中存在对该寄存器的使用冲突。<br> 解决方法也很简单：对于多余的<code>CALL(fun, args)</code>直接转化为<code>ESEQ(MOVE(TEMP t, CALL(fun, args)), TEMP t)</code>, 也就是使用临时变量保存返回值。</p>
 </li>
-<li><p>重排并消除<code>SEQ</code><br> 在执行完上述步骤后，整个树可能形如<code>SEQ(SEQ(SEQ(..., sx), sy), sz)</code>.<br> 我们现在需要把<code>SEQ</code>变为父节点的最右儿子（类似平衡树的旋转）。这只需要无脑应用<code>SEQ(SEQ(a, b), c)</code> &#x3D;&gt; <code>SEQ(a, seq(b, c))</code>即可。<br> 然后树就变成了：<code>SEQ(s1, SEQ(s2, ..., SEQ(sn-1,sn)...))</code>（也就是让<code>SEQ</code>集中在树的“右上”部分）<br> <img src="/compiler-construction-principles/seq.png" alt="seq" loading="lazy"></p>
+<li><p>重排并消除<code>SEQ</code><br> 在执行完上述步骤后，整个树可能形如<code>SEQ(SEQ(SEQ(..., sx), sy), sz)</code>.<br> 现在需要把<code>SEQ</code>变为父节点的最右儿子（类似平衡树的旋转）。这只需要无脑应用<code>SEQ(SEQ(a, b), c)</code> &#x3D;&gt; <code>SEQ(a, seq(b, c))</code>即可。<br> 然后树就变成了：<code>SEQ(s1, SEQ(s2, ..., SEQ(sn-1,sn)...))</code>（也就是让<code>SEQ</code>集中在树的“右上”部分）<br> <img src="/compiler-construction-principles/seq.png" alt="seq" loading="lazy"></p>
 <p> 接下来把<code>SEQ</code>全部去除，只留下这些<code>s1</code> … <code>sn</code>: 每个都是一颗不含<code>SEQ</code>&#x2F;<code>ESEQ</code>的<strong>正规树</strong>！<br> 至此第一阶段任务完成。</p>
 </li>
 </ol>
-<h3 id="Stage-2-3-处理条件跳转"><a href="#Stage-2-3-处理条件跳转" class="headerlink" title="Stage 2&amp;3: 处理条件跳转"></a>Stage 2&amp;3: 处理条件跳转</h3><p>大部分机器不具备<code>CJUMP</code>的两个分支跳转到两个不同块这种功能。通常来讲是一个分支是继续顺序向下执行，另一个分支进行跳转。<br>因此我们需要重排树，让<code>CJUMP</code>后紧接的就是一个label, 对应其中一个分支跳转到的块。<br>这需要以下两步：</p>
+<h3 id="Stage-2-3-处理条件跳转"><a href="#Stage-2-3-处理条件跳转" class="headerlink" title="Stage 2&amp;3: 处理条件跳转"></a>Stage 2&amp;3: 处理条件跳转</h3><p>大部分机器不具备<code>CJUMP</code>的两个分支跳转到两个不同块这种功能。通常来讲是一个分支是继续顺序向下执行，另一个分支进行跳转。<br>因此需要重排树，让<code>CJUMP</code>后紧接的就是一个label, 对应其中一个分支跳转到的块。<br>这需要以下两步：</p>
 <ol>
 <li><p>Stage 2: 组装为基本块(basic block)<br> 基本块指的是一串代码，进入则一路执行到块末尾。性质：</p>
 <ul>
@@ -1798,7 +1809,7 @@
 </ul>
 <p> 本质上，如果没有跳转指令，程序只会一路向下执行。正是跳转指令（JUMP&#x2F;CJUMP&#x2F;RET&#x2F;…）令程序在执行中途跳出，而跳转的目标地址（也就是LABEL）令程序在执行中途跳入，才把原本的代码分割为了多个基本块。<br> 控制流图(Control-Flow Graph &#x3D; CFG)中的节点就是基本块，边就是跳转指令。<del>打开IDA反编译立刻就能见到。</del><br> <img src="/compiler-construction-principles/cfg.png" alt="CFG" loading="lazy"><br> 生成的过程是显然的：找到一个<code>LABEL</code>就新起一块；找到一个<code>JUMP</code>&#x2F;<code>CJUMP</code>&#x2F;<code>RET</code>&#x2F;…就结束当前块并新起一块。有的块缺少<code>LABEL</code>或者terminator则补上一个。</p>
 </li>
-<li><p>Stage 3: 生成（许多）trace<br> 基本块如何排列并不影响程序执行结果。<br> 然而我们需要进行一些优化，尽可能减少跳转或提高跳转的效率。例如：</p>
+<li><p>Stage 3: 生成轨迹(traces)<br> 基本块如何排列并不影响程序执行结果。<br> 然而我们需要进行一些优化，尽可能减少跳转或提高跳转的效率。例如：</p>
 <ul>
 <li>对于<code>CJUMP(cond, true, false)</code>, 将false label对应的块紧挨着放置在<code>CJUMP</code>指令后，这样执行时就可以fall through</li>
 <li>尝试将无条件跳转<code>JUMP</code>的目标label对应的块直接放在<code>JUMP</code>后</li>
@@ -1806,9 +1817,9 @@
 <li>优化缓存命中率:<br><img src="/compiler-construction-principles/block-ordering.png" alt="block ordering" loading="lazy"></li>
 <li>…</li>
 </ul>
-<p> 我们在此定义几个相关概念:</p>
+<p> 在此定义几个相关概念:</p>
 <ul>
-<li><strong>trace</strong><ul>
+<li><strong>轨迹trace</strong><ul>
 <li>一个可以被按顺序执行完毕的指令序列</li>
 <li>说人话：几个连接在一起的基本块构成一个trace</li>
 <li>CFG图中的一条链就是一个trace</li>
@@ -1821,7 +1832,7 @@
 </li>
 </ul>
 <p> 有一个比较显然的构建方法：从源节点（不叫根节点是因为这只是个图，大概率不是棵树）开始跑一次DFS即可。<br> 每次从一个未被染色的节点开始，递归地对于每个后继节点，如果还未染色则加入当前trace。<br> 重复该过程直到整个图都被染色。<br> <img src="/compiler-construction-principles/covering-set.png" alt="coloring" loading="lazy"></p>
-<p> 通过这种方式，我们可以去掉不少跳转。<br> 这是因为现在可以转变思维：原先我们有似乎毫无关联的跳转指令，而现在则是把其中一些连在一起成为traces，然后默认代码执行是在一个trace上走到底的。于是只有要切换trace时才需要一个跳转。<br> 可见，其实我们希望被经常执行的一段代码序列要自己成一个trace，这样就可以尽量减少跳转，增加性能。<br> 在某个判据(criteria)下最好的一些trace就可以被称为 <strong>“optimal traces”</strong> .<br> 例如如果我们的判据是“最少的跳转指令”，对于<code>While</code>语句，通过合理的重排就可以去掉一个跳转达成：<br> <img src="/compiler-construction-principles/optimal-traces.png" alt="to be optimal" loading="lazy"><br> <img src="/compiler-construction-principles/reorder-eg.png" alt="reorder example" loading="lazy"></p>
+<p> 通过这种方式可以去掉不少跳转。<br> 这是因为现在可以转变思维：原先的跳转指令似乎毫无关联，而现在则是把其中一些连在一起成为traces，然后默认代码执行是在一个trace上走到底的。于是只有要切换trace时才需要一个跳转。<br> 可见，其实我们希望被经常执行的一段代码序列要自己成一个trace，这样就可以尽量减少跳转，增加性能。<br> 在某个判据(criteria)下最好的一些trace就可以被称为 <strong>“optimal traces”</strong> .<br> 例如如果我们的判据是“最少的跳转指令”，对于<code>While</code>语句，通过合理的重排就可以去掉一个跳转达成：<br> <img src="/compiler-construction-principles/optimal-traces.png" alt="to be optimal" loading="lazy"><br> <img src="/compiler-construction-principles/reorder-eg.png" alt="reorder example" loading="lazy"></p>
 </li>
 </ol>
 <h3 id="IR-机器码：小结"><a href="#IR-机器码：小结" class="headerlink" title="IR-&gt;机器码：小结"></a>IR-&gt;机器码：小结</h3><p>一共四步：</p>
@@ -1833,7 +1844,7 @@
 <li>指令调度（不在本课程中）：通过重排等操作优化代码、实现指令级并行</li>
 </ol>
 <p>其中后两步将在后文展开阐述。</p>
-<h2 id="Part-15-指令选择"><a href="#Part-15-指令选择" class="headerlink" title="Part 15: 指令选择"></a>Part 15: 指令选择</h2><p>回顾<a href="#intermediate-representation">现代编译器架构</a>：<strong>指令选择</strong> 开始，我们进入编译器的后端部分。<br>LLVM支持用tblgen描述后端，从而自动生成指令选择器。</p>
+<h2 id="Part-15-指令选择"><a href="#Part-15-指令选择" class="headerlink" title="Part 15: 指令选择"></a>Part 15: 指令选择</h2><p>回顾<a href="#intermediate-representation">现代编译器架构</a>：<strong>指令选择</strong> 开始是编译器的后端部分。<br>LLVM支持用tblgen描述后端，从而自动生成指令选择器。</p>
 <h3 id="指令选择概述"><a href="#指令选择概述" class="headerlink" title="指令选择概述"></a>指令选择概述</h3><p><strong>任务：</strong> 把IR转化为 <em>抽象汇编代码</em>。</p>
 <p>抽象汇编代码&#x3D;</p>
 <ul>
@@ -1841,7 +1852,7 @@
 <li>为中间结果创造新的临时寄存器；</li>
 <li>在之后的流程中，会把这些寄存器映射到物理寄存器。</li>
 </ul>
-<p>指令选择要解决的问题：IR的一个语句有多种可能的实现方式，需要确定为其中“最好”的一种。<br>最好&#x3D; 最快&#x2F;最小&#x2F;最省电……这个判据取决于具体需求。总之我们需要综合考虑操作数&#x2F;结果的访存需求，指令本身的代价等。</p>
+<p>指令选择要解决的问题：IR的一个语句有多种可能的实现方式，需要确定为其中“最好”的一种。<br>最好&#x3D; 最快&#x2F;最小&#x2F;最省电……这个判据取决于具体需求。总之需要综合考虑操作数&#x2F;结果的访存需求，指令本身的代价等。</p>
 <p>例如对于<code>MOVE(TEMP(t1), TEMP(t1) + MEM(TEMP(FP)+4))</code>, 既可以翻译为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov t2, rbp</span><br><span class="line">add t2, 4</span><br><span class="line">mov r3, [t2]</span><br><span class="line">add t1, t3</span><br></pre></td></tr></table></figure>
 
@@ -1850,7 +1861,7 @@
 
 <p>指令选择一种可能的实现方式：<strong>对IR进行模式匹配，一个模式匹配一些IR片段，转化为机器指令</strong><br>IR Tree 是一种 <em>tree-oriented IR</em>, 自然需要在树上进行模式匹配。例如基于动态规划(DP)的匹配。<br>同理对于线性IR，就需要一些字符串匹配。例如纯文本匹配。<br>当然，匹配器(matcher)都是因地制宜相差甚远的，我们不需要当一个分类学家。</p>
 <p>接下来把重心放在树形IR上。</p>
-<h3 id="指令选择算法：基于树覆盖"><a href="#指令选择算法：基于树覆盖" class="headerlink" title="指令选择算法：基于树覆盖"></a>指令选择算法：基于树覆盖</h3><p>这里的覆盖意指：显然的，整棵 IR Tree 需要被完全覆盖才能完成翻译流程。<br>为了方便起见，我们接下来假设目标机器码是一个简单的架构（指令集）：<code>Jouette</code>架构。它基本上就是RISC-V的子集。我们约定：</p>
+<h3 id="指令选择算法：基于树覆盖"><a href="#指令选择算法：基于树覆盖" class="headerlink" title="指令选择算法：基于树覆盖"></a>指令选择算法：基于树覆盖</h3><p>这里的覆盖意指：显然的，整棵 IR Tree 需要被完全覆盖才能完成翻译流程。<br>为了方便起见，接下来假设目标机器码是一个简单的架构（指令集）：<code>Jouette</code>架构。它基本上就是RISC-V的子集。我们约定：</p>
 <ul>
 <li>寄存器<code>r0</code>永远为0</li>
 <li>数据&#x2F;地址能直接在寄存器中放得下</li>
@@ -1869,14 +1880,14 @@
 </ul>
 </li>
 <li>通过寻找树上的模式(tree patterns)<ul>
-<li><strong>我们将在下文详细研究。</strong></li>
+<li><strong>将在下文详细研究。</strong></li>
 <li>Tree Pattern: IR Tree的某个片段如果长得符合某个树形的模式(tree pattern)，就可以把这部分对应到一条机器码。<ul>
 <li>这种模式匹配出来的 IR Tree 片段被叫做 <strong>tile</strong>.</li>
 <li>tile 是模式匹配到的一个实例。</li>
 </ul>
 </li>
 <li>比如<code>LOAD ri &lt;- M[rj+c]</code>对应的模式就可以是<code>MEM(BINOP(PLUS, _expr_, CONST(_expr_)))</code></li>
-<li>目标：没有重叠地覆盖整棵IR Tree. 我们把这个过程称为<code>tiling</code></li>
+<li>目标：没有重叠地覆盖整棵IR Tree. 这个过程称为<code>tiling</code></li>
 <li>把机器码转为对应的 tree patterns (注意可能有多种模式都可以翻译到这种机器码)。以<code>Jouette</code>架构为例：<br><img src="/compiler-construction-principles/jouette-patterns.png" alt="jouette patterns" loading="lazy"><ul>
 <li>接下来只需找到一种方式让各种机器指令的 tree pattern 能够覆盖整颗 IR Tree, 就任务完成了。<br>X86的例子：<br><img src="/compiler-construction-principles/tiling.png" alt="x86 tiling example" loading="lazy"><br>Jouette的例子，其中<code>a</code>数组每个元素占据4个储存地址，因此要翻译的IR指令是<code>M[a+i*4]:=x</code>：<br><img src="/compiler-construction-principles/jouette-tiling.png" alt="jouette tiling example" loading="lazy"></li>
 </ul>
@@ -1884,8 +1895,12 @@
 </ul>
 </li>
 </ul>
-<p>现在我们要做的是找到一种方法，使得生成的机器代码跑的比香港记者还快。<br><strong>注：以下讨论隐含的前提是每个指令速度一致。但是对于RISC指令集（见下一节）来说并非如此，有的指令可能耗费高达数十时钟周期。好消息是<code>Jouette</code>指令集不仅单发射还固定延迟，所以指令少即是跑得快。</strong></p>
-<p>每个Tile对应一个代价(cost), 反应了生成的目标机器指令运行的代价（功耗&#x2F;延迟&#x2F;速度……取决于你）。<br>我们可以用很多小的tile轻松覆盖整棵树，但是大量tile对应大量目标代码，很长很慢；<br>也可以用一些大块的tile进行覆盖，这样tile量少对应目标代码也较小，跑得快（但是这使得覆盖问题本身变得困难）。</p>
+<p>现在要做的是找到一种方法，使得生成的机器代码跑的比香港记者还快。<br><strong>注：以下讨论隐含的前提是每个指令速度一致。但是对于RISC指令集（见下一节）来说并非如此，有的指令可能耗费高达数十时钟周期。好消息是<code>Jouette</code>指令集不仅单发射还固定延迟，所以指令少即是跑得快。</strong></p>
+<p>每个Tile对应一个代价(cost), 反应了生成的目标机器指令运行的代价（功耗&#x2F;延迟&#x2F;速度……取决于你）。</p>
+<ul>
+<li>可以用很多小的tile轻松覆盖整棵树，但是大量tile对应大量目标代码，很长很慢；</li>
+<li>也可以用一些大块的tile进行覆盖，这样tile量少对应目标代码也较小，跑得快（但是这使得覆盖问题本身变得困难）。</li>
+</ul>
 <p>为此我们需要区分如下两个概念：</p>
 <ul>
 <li>Optimum tiling<ul>
@@ -1900,8 +1915,8 @@
 <p>显然全局最优一定局部最优，但反之则不然。</p>
 <p>接下来就是不同的指令选择算法：</p>
 <ul>
-<li>Maximal Munch: 寻找optimal tiling (局部最优的)<ul>
-<li>自顶向下</li>
+<li>Maximal Munch: 寻找optimal tiling (<strong>局部最优的</strong>)<ul>
+<li><strong>自顶向下</strong></li>
 <li>用可用的最大tile覆盖当前节点</li>
 <li>递归地对（那些根节点）还未被覆盖的每个子树应用该算法</li>
 <li>把所有tile对应的指令按照覆盖顺序的<strong>逆序</strong>收集起来即为目标机器码<ul>
@@ -1911,8 +1926,8 @@
 <li>运用贪心思想：更大的tile&#x3D;&gt;更精确的模式匹配&#x3D;&gt;更多指令中的信息被运用&#x3D;&gt;更优的代码</li>
 </ul>
 </li>
-<li>动态规划(dynamic programming): optimum tiling (全局最优的)<ul>
-<li><p>自底向上</p>
+<li>动态规划(dynamic programming, DP): optimum tiling (<strong>全局最优的</strong>)<ul>
+<li><p><strong>自底向上</strong></p>
 </li>
 <li><p>每个节点<code>x</code>都有一个代价，是代价最小的覆盖方案的代价。<br>而每个可用于覆盖节点<code>x</code>的tile都对应一种方案，该方案的代价为该tile的子树代价之和，加上这个tile <code>T</code>固有的代价：<br>$ cost(x)&#x3D;\underset{\forall \text{tile } T \text{ that can cover node } x}{min} (cost_T + \underset{\forall \text{child } y \text{ of tile } T}{\sum} cost(y)) $<br>例如，假设<code>ADD</code>指令对应两种tile,</p>
 <ul>
@@ -1948,7 +1963,8 @@
 <p>这里需要特别注意：tile 的子树不是该节点的子树，而是用 tile 覆盖该节点以及部分子节点后，那些没被覆盖到的子树。<br>例如下图中红色的 tile 对应的子树并非两个<code>MEM</code>子树（因为被这个tile覆盖在内），而是两个<code>PLUS</code>子树：<br><img src="/compiler-construction-principles/tile-children.png" alt="children of tile" loading="lazy"></p>
 </blockquote>
 <h3 id="树语法Tree-Grammar"><a href="#树语法Tree-Grammar" class="headerlink" title="*树语法Tree Grammar"></a>*树语法Tree Grammar</h3><p><strong>不要求掌握。</strong></p>
-<p>tree grammar 是一种上下文无关文法。<br>我们可以用 tree grammar 描述这些 tile.<br>我们需要记录：</p>
+<p>tree grammar 是一种上下文无关文法。<br>可以用 tree grammar 描述这些 tile.</p>
+<p>需要记录：</p>
 <ul>
 <li>pattern: 模式是什么样的</li>
 <li>replacement: 这个pattern被替换之后，原来的位置要用什么代替（比如一个加法指令被替换后，要用加法结果所在的寄存器替换该表达式）</li>
@@ -2060,7 +2076,7 @@
 </ul>
 </li>
 </ul>
-<p>我们可以从CFG（或其他类型的中间表示）中<strong>静态（i.e. 不需要真的运行程序）</strong>推导出一些程序的行为信息。<br>这其中就包括我们马上要研究的话题：<strong>变量的活跃性</strong>。</p>
+<p>我们可以从CFG（或其他类型的中间表示）中<strong>静态（i.e. 不需要真的运行程序）</strong>推导出一些程序的行为信息。<br>这其中就包括马上要研究的话题：<strong>变量的活跃性</strong>。</p>
 <h3 id="活跃性分析Liveness-Analysis"><a href="#活跃性分析Liveness-Analysis" class="headerlink" title="活跃性分析Liveness Analysis"></a>活跃性分析Liveness Analysis</h3><p>定义变量的liveness: 我们说变量<code>x</code>在执行到一个语句<code>s</code>时是活跃(live)的，当且仅当：</p>
 <ul>
 <li>存在某个语句<code>s&#39;</code>使用了<code>x</code></li>
@@ -2068,9 +2084,9 @@
 <li>在某个这样的路径上，<code>x</code>没有被重新赋值&#x2F;定义过</li>
 </ul>
 <p><strong>简单粗暴的理解：活跃变量&#x3D;还有用的变量，需要留着备用；不活跃变量&#x3D;没有用的变量&#x3D;死变量，不再使用，对应的寄存器可以释放。</strong></p>
-<p>为什么要进行活跃性分析呢？因为从Low level IR到机器码的翻译过程中，我们需要把有限但很多的抽象寄存器对应到物理寄存器上，也就是<strong>寄存器分配</strong>。<br>如果能识别不需要使用的变量（i.e. 不活跃变量），那么其对应的虚拟&#x2F;物理寄存器就可以被释放，再次用于分配。</p>
+<p>为什么要进行活跃性分析呢？因为从Low level IR到机器码的翻译过程中，需要把有限但很多的抽象寄存器对应到物理寄存器上，也就是<strong>寄存器分配</strong>。<br>如果能识别不需要使用的变量（i.e. 不活跃变量），那么其对应的虚拟&#x2F;物理寄存器就可以被释放，再次用于分配。</p>
 <blockquote>
-<p>我们可以把活跃变量分析理解为一种特殊的生命周期分析，只不过除了显式的变量，我们还要考虑那些中间值，统称 temporaries. temporaries 其实经常指的就是 IR 中的那些虚拟寄存器。</p>
+<p>可以把活跃变量分析理解为一种特殊的生命周期分析，只不过除了显式的变量，还要考虑那些中间值，统称 temporaries.<br>temporaries 其实经常指的就是 IR 中的那些虚拟寄存器。</p>
 </blockquote>
 <p>活跃性分析用途：</p>
 <ul>
@@ -2089,8 +2105,8 @@
 <li><p>…</p>
 </li>
 </ul>
-<h3 id="活跃性分析的数据流方程"><a href="#活跃性分析的数据流方程" class="headerlink" title="活跃性分析的数据流方程"></a>活跃性分析的数据流方程</h3><p>首先要明确一点：我们不可能精确知道一个变量在某处是否活跃，所以我们要做的只是<strong>保守估计</strong>（i.e. 标记为不活跃的变量一定不活跃，但反之则不然）。<br>这是因为对于代码片段<code>int x=10; f(); return x;</code>:<br>如果我们能判断x是否在定义并初始化<strong>之后</strong>依旧活跃，就等于我们能判断<code>f()</code>是否停机。而众所周知停机问题不可判定，so sad.</p>
-<p>在本节中，我们需要分析活跃变量。<br>而变量在CFG上，通过有向边“流向”各个节点。<br>所以我们将通过数据流分析，找到每个节点可能会有哪些变量“流过”；换言之，找到每个节点可能会有哪些变量在其上是活跃的。</p>
+<h3 id="活跃性分析：数据流方程"><a href="#活跃性分析：数据流方程" class="headerlink" title="活跃性分析：数据流方程"></a>活跃性分析：数据流方程</h3><p>首先要明确一点：不可能精确知道一个变量在某处是否活跃，所以我们要做的只是<strong>保守估计</strong>（i.e. 标记为不活跃的变量一定不活跃，但反之则不然）。<br>这是因为对于代码片段<code>int x=10; f(); return x;</code>:<br>如果能判断x是否在定义并初始化<strong>之后</strong>依旧活跃，就等于能判断<code>f()</code>是否停机。而众所周知停机问题不可判定，so sad.</p>
+<p>在本节中，我们需要分析的是活跃变量。<br>而变量在CFG上，通过有向边“流向”各个节点。<br>所以我们将通过数据流分析，找到每个节点可能会有哪些变量“流过”；换言之，找到每个节点可能会有哪些变量在其上是活跃的。</p>
 <p>一些CFG上的术语定义（可能很抽象，往后看就行）：</p>
 <ul>
 <li>node&#x2F;节点：在本文中均指只包含一个语句的</li>
@@ -2099,31 +2115,32 @@
 <li>pred[n]: 节点<code>n</code>的前驱节点<strong>们</strong></li>
 <li>succ[n]: 节点<code>n</code>的后继节点<strong>们</strong></li>
 <li>fact: 从CFG中能推断出的一些结论&#x2F;信息&#x2F;事实，这些结论是“绑定”在有向边上的<ul>
-<li>例如我们现在研究的变量活跃性(liveness)就是一个fact. 变量是否活跃这一信息是通过这些有向边传递的。</li>
+<li>例如现在要研究的**变量活跃性(liveness)**就是一个fact.</li>
+<li>变量是否活跃这一信息是通过这些有向边传递的。</li>
 </ul>
 </li>
 <li>in[n]: 一个集合，包含节点<code>n</code>的入边(in-edges)上的所有facts<ul>
 <li>对于本节来说，我们要求的是变量的liveness, 所以为在节点<code>n</code>内 live-in(定义见下文) 的变量。<ul>
 <li>也就是 the live-in set of node <code>n</code></li>
 <li>也就是 the variables that are live-in at node <code>n</code></li>
-<li><strong>我们可以简单理解为：在节点<code>n</code>中的语句执行后，哪些变量处于活跃状态，有可能在未来被用到</strong></li>
+<li><strong>可以简单理解为：在节点<code>n</code>中的语句执行后，哪些变量处于活跃状态，有可能在未来被用到</strong></li>
 </ul>
 </li>
-<li>我们稍后会详细解释该集合的含义，以及如何计算它。</li>
+<li>稍后会详细解释该集合的含义，以及如何计算它。</li>
 </ul>
 </li>
 <li>out[n]: 一个集合，包含节点<code>n</code>的出边(out-edges)上的所有facts<ul>
 <li>对于本节来说，我们要求的是变量的liveness, 所以为在节点<code>n</code>内 live-out(定义见下文) 的变量。<ul>
 <li>也就是 the live-out set of node <code>n</code></li>
 <li>也就是 the variables that are live-out at node <code>n</code></li>
-<li><strong>我们可以简单理解为：在节点<code>n</code>中的代码执行前，哪些变量处于活跃状态，有可能在当前节点<code>n</code>或未来被用到</strong></li>
+<li><strong>可以简单理解为：在节点<code>n</code>中的代码执行前，哪些变量处于活跃状态，有可能在当前节点<code>n</code>或未来被用到</strong></li>
 </ul>
 </li>
-<li>我们稍后会详细解释该集合的含义，以及如何计算它。</li>
+<li>稍后会详细解释该集合的含义，以及如何计算它。</li>
 </ul>
 </li>
 <li>transfer function: 一个函数，定义一个节点上的信息如何通过传递给另一个节点<ul>
-<li>比如我们稍后会得到的两个in&#x2F;out的方程（等式）</li>
+<li>比如稍后会得到的两个in&#x2F;out的方程（等式）</li>
 </ul>
 </li>
 <li>use: 如果一个语句的右侧(RHS)出现了变量<code>x</code>, 我们说这个语句use了<code>x</code><ul>
@@ -2171,7 +2188,7 @@
 </li>
 </ul>
 <p>记住：CFG 中的一个结点是一段代码，但是为了方便起见我们都假设只有一个语句在里面。所以其实你可以很简单地合并一串连续的代码（变成基本块）。<strong>我们说“执行某个节点”，指的就是执行节点里的代码。</strong></p>
-<p>我们接下来的重点就是找到一种方式计算in&#x2F;out集合。<br>事实上我们可以迭代地不断计算、更新<code>in[n]</code>以及<code>out[n]</code>, 直到他们在某次迭代后不再改变变（i.e. 到达了这个算法的<em>不动点</em>）。</p>
+<p>接下来的重点就是找到一种方式计算in&#x2F;out集合。<br>事实上可以迭代地不断计算、更新<code>in[n]</code>以及<code>out[n]</code>, 直到他们在某次迭代后不再改变变（i.e. 到达了这个算法的<em>不动点</em>）。</p>
 <p>要计算 in[n] 与 out[n], 需要用到以下几个规则(rule)：</p>
 <ol>
 <li>If $ a \in in[n] $, then $ \forall m \in pred[n], a \in out[m] $<ul>
@@ -2183,11 +2200,11 @@
 </ul>
 </li>
 <li>If $ a \in out[n] $ and $ a \notin def[n] $ , then $ a \in in[n] $<ul>
-<li>解释：如果现在已知某个变量<code>a</code>必须在节点<code>n</code>执行完毕时活跃，但是<code>n</code>自己并没有定义<code>a</code>, 那显然<code>a</code>是从之前的前驱节点继承而来。<br>因此，我们要求<code>a</code>在节点<code>n</code>执行之前就是活跃的。</li>
+<li>解释：如果现在已知某个变量<code>a</code>必须在节点<code>n</code>执行完毕时活跃，但是<code>n</code>自己并没有定义<code>a</code>, 那显然<code>a</code>是从之前的前驱节点继承而来。<br>因此，要求<code>a</code>在节点<code>n</code>执行之前就是活跃的。</li>
 </ul>
 </li>
 </ol>
-<p>从这些规则，我们可以导出如下两个方程（等式），<strong>可直接用于迭代计算并更新 in[n] 与 out[n]</strong> 这两个<strong>集合</strong>:</p>
+<p>从这些规则可以导出如下两个方程（等式），<strong>可直接用于迭代计算并更新 in[n] 与 out[n]</strong> 这两个<strong>集合</strong>:</p>
 <ul>
 <li>$ in[n] &#x3D; use[n] \cup (out[n]-def[n]) $<ul>
 <li>解释：节点<code>n</code>需要向前驱节点索取的活跃变量包括自己需要使用的<code>use</code> 并上后续别的节点需要使用的<code>out</code>. 不过如果节点自己定义了一些变量，则不需要向前驱节点索要，所以挖去<code>def</code></li>
@@ -2198,7 +2215,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="解方程"><a href="#解方程" class="headerlink" title="解方程"></a>解方程</h3><p>应用这两个方程，我们可以给出如下算法求解出in&#x2F;out：</p>
+<h3 id="解方程"><a href="#解方程" class="headerlink" title="解方程"></a>解方程</h3><p>应用这两个方程可以给出如下算法求解出in&#x2F;out：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">for each n</span><br><span class="line">  // init. to empty sets, which is a very rough approximation:</span><br><span class="line">  in[n] ←&#123;&#125;; out[n] ←&#123;&#125; </span><br><span class="line">repeat:</span><br><span class="line">  for each n</span><br><span class="line">    in&#x27;[n] ← in[n]; out&#x27;[n] ← out[n]</span><br><span class="line">    </span><br><span class="line">    // `⋃` stands for &quot;union&quot;</span><br><span class="line"></span><br><span class="line">    // use/def is easy to obtain at the very beginning</span><br><span class="line">    in[n] ← use[n] ⋃ (out[n] − def[n]) </span><br><span class="line"></span><br><span class="line">    out[n] ← ⋃&#123; in[s], where s in succ[n] &#125;</span><br><span class="line"></span><br><span class="line">until in&#x27;[n] = in[n] and out&#x27;[n] = out[n] for all n </span><br><span class="line">// i.e. until no update can be made</span><br></pre></td></tr></table></figure>
 
 <p>每次迭代中集合总会<strong>单调地</strong>变大。<br>对于刚刚的<a href="#cfg-example">这个 CFG</a>, 其求解流程如下，在7步后收敛：<br><img src="/compiler-construction-principles/calc-liveness-forward.png" alt="calc-liveness-forward" loading="lazy"></p>
@@ -2206,7 +2223,7 @@
 <p>我们原先是顺着CFG中的有向边方向进行更新（1-&gt;6, in-&gt;out）。<br>然而考虑信息在节点间的传递是通过 $ out[n] &#x3D; \underset{s \in succ[n]}{\cup} in[s] $ 完成的，其方向是从后向前的。<br>所以我们可以在每次迭代中，都按照<strong>逆序</strong>（6-&gt;1, out-&gt;in）进行计算：<br><img src="/compiler-construction-principles/calc-liveness-backward.png" alt="calc-liveness-backward" loading="lazy"></p>
 <p>只需要 3 次迭代就收敛。</p>
 <blockquote>
-<p>本质上，liveness问题是“需求决定供给”的：后续的节点有对变量的使用需求，之前的节点才可能需要提供一个活跃的变量。<br>liveness 就是一种 fact.<br>我们的迭代更新顺序也应遵循这些 facts 的流动方向。而在活跃性分析中，liveness 反向流过这些 CFG 的有向边，并且是先影响 out 再进而影响 in.<br>因此我们迭代的过程也要遵从这一规律，使得一次迭代中，某一个 use 引入的需求能够迅速传遍整个 CFG, 而非每次只影响附近的个别结点，</p>
+<p>本质上，liveness问题是“需求决定供给”的：后续的节点有对变量的使用需求，之前的节点才可能需要提供一个活跃的变量。<br>liveness 就是一种 fact.<br>迭代更新顺序也应遵循这些 facts 的流动方向。而在活跃性分析中，liveness 反向流过这些 CFG 的有向边，并且是先影响 out 再进而影响 in.<br>因此我们迭代的过程也要遵从这一规律，使得一次迭代中，某一个 use 引入的需求能够迅速传遍整个 CFG, 而非每次只影响附近的个别结点，</p>
 <p>关于迭代方向的重要性，可以类比一下冒泡排序：如果现有数组<code>2 3 4 5 6 7 1</code>需要排序，那么可以看出<code>1</code>自然的流动方向就是从右到左。<br>冒泡排序每次迭代会按顺序检查相邻的数字并交换逆序对。<br>如果从右到左，第一次迭代就可以完成排序：<code>1</code>连续被交换，迅速“上浮”至第一的位置；<br>如果非要从左到右，那么每次迭代<code>1</code>都只能被交换一次，上浮一位，需要多达6次迭代才能完成！</p>
 </blockquote>
 <p>杂项：</p>
@@ -2219,7 +2236,7 @@
 <li>进一步优化算法：可以用队列记录有可能需要被进一步更新的节点（类似BFS）。</li>
 <li>变量活跃性可以分为：<ul>
 <li>动态的dynamic liveness: 运行时判断，显然是一种under-approximation, 因为不能覆盖所有可能执行路径。</li>
-<li>静态的static liveness: 像我们刚刚做的一样在编译期判断，显然是一种over-approximation, 因为估计得很保守，而事实上有些路径不可能被执行到。</li>
+<li>静态的static liveness: 像刚刚做的一样在编译期判断，显然是一种over-approximation, 因为估计得很保守，而事实上有些路径不可能被执行到。</li>
 </ul>
 </li>
 </ul>
@@ -2236,11 +2253,11 @@
 </ul>
 <p>在工程实践中，算法的实现大致分为两种：</p>
 <ul>
-<li><strong>图染色：</strong>效果好，但是慢<ul>
+<li><strong>图染色：</strong> 效果好，但是慢<ul>
 <li>“传统派”：GCC等采用</li>
 </ul>
 </li>
-<li><strong>线性扫描：</strong>效果也很好，接近图染色的效果；运行速度快<ul>
+<li><strong>线性扫描：</strong> 效果也很好，接近图染色的效果；运行速度快<ul>
 <li>“维新派”：LLVM等采用</li>
 </ul>
 </li>
@@ -2250,7 +2267,7 @@
 <li>Naïve register allocation: 变量（广义的变量，也就是虚拟寄存器储存的 temporaries）一股脑全塞内存里！</li>
 <li>局部寄存器分配：在 basic block 里进行，无法应对跨越多个块的对寄存器的复用。</li>
 <li>全局寄存器分配：在函数内进行，经常基于<strong>图染色</strong>：<ol>
-<li>建立一个<strong>干扰图</strong>(interference graph &#x2F; conflict graph) 。<ul>
+<li>建立一个<strong>干扰图&#x2F;相交图</strong> 。<ul>
 <li>这是一个无向图，每个边都代表两端的 temporary 同时存在过，不能被分配到同一个寄存器里。我们马上会详细阐述。</li>
 </ul>
 </li>
@@ -2265,13 +2282,13 @@
 </ol>
 </li>
 </ul>
-<h3 id="干扰图"><a href="#干扰图" class="headerlink" title="干扰图"></a>干扰图</h3><p>干扰图 &#x3D; interference graph &#x2F; conflict graph</p>
+<h3 id="干扰图Interference-Graph"><a href="#干扰图Interference-Graph" class="headerlink" title="干扰图Interference Graph"></a>干扰图Interference Graph</h3><p>相交图 &#x3D; 干扰图 &#x3D; interference graph &#x3D; conflict graph</p>
 <ul>
-<li><p>如果两个虚拟寄存器<code>a</code>和<code>b</code>因为某种约束限制，使得它们<strong>无法被分配到同一个物理寄存器中</strong>，我们就说<code>a</code>与<code>b</code>之间存在**干扰(interference)**，或者说他们”interfere”。<br>这些约束包括但不限于：</p>
+<li><p>如果两个虚拟寄存器<code>a</code>和<code>b</code>因为某种约束限制，使得它们<strong>无法被分配到同一个物理寄存器中</strong>，我们就说<code>a</code>与<code>b</code>之间存在 <strong>干扰(interference)</strong> ，或者说他们”interfere”。<br>这些约束包括但不限于：</p>
 <ul>
 <li>live range 有重叠（<strong>最主要的原因！</strong>）：某个时刻<code>a</code>和<code>b</code>都是活跃的，值需要得到保留，我们自然无法在同一个寄存器中同时保存<code>a</code>和<code>b</code>；</li>
 <li>产出&#x2F;使用<code>a</code>这个值的指令比较特殊，不能使用某些特定寄存器（比如<code>r1</code>），那么<code>a</code>和<code>r1</code>也 interfere 了。<ul>
-<li>读者可能会疑惑<code>r1</code>不是物理寄存器吗？其实我们不用太纠结这个：最终都是为了让图染色算法能够“感知”到有这样一个约束存在，所以大可以把物理寄存器添加到虚拟寄存器中，图只要改一改就行。<br>说到底，我们现在要<strong>禁止<code>a</code>染上<code>r1</code>对应的颜色</strong>：<br>想 ban 掉某种颜色，我们可以在一开始就把 k 个物理寄存器加入图中，对应 k 个节点 <code>r1</code> <code>r2</code> … <code>rk</code>, 并在他们之间建立<strong>全连接</strong>，<br>这将强迫图染色器为他们分配 k 种不同的颜色。<br>建立干涉图的过程中，如果<code>a</code>和<code>r1</code> interfere 了，只需要在图中连接<code>a</code>与对应的节点<code>r1</code>即可。<br><img src="/compiler-construction-principles/physical-interference.png" alt="physical interference" loading="lazy"></li>
+<li>读者可能会疑惑<code>r1</code>不是物理寄存器吗？其实我们不用太纠结这个：最终都是为了让图染色算法能够“感知”到有这样一个约束存在，所以大可以把物理寄存器添加到虚拟寄存器中，图只要改一改就行。<br>说到底，现在要<strong>禁止<code>a</code>染上<code>r1</code>对应的颜色</strong>：<br>试图 ban 掉某种颜色：可以在一开始就把 k 个物理寄存器加入图中，对应 k 个节点 <code>r1</code> <code>r2</code> … <code>rk</code>, 并在他们之间建立全连接（<strong>注意！更高效的做法参见后文 <em>预染色</em> 部分</strong>），<br>这将强迫图染色器为他们分配 k 种不同的颜色。<br>建立干涉图的过程中，如果<code>a</code>和<code>r1</code> interfere 了，只需要在图中连接<code>a</code>与对应的节点<code>r1</code>即可。<br><img src="/compiler-construction-principles/physical-interference.png" alt="physical interference" loading="lazy"></li>
 </ul>
 </li>
 </ul>
@@ -2332,16 +2349,19 @@
 </tbody></table>
 <p>最终得到：<br><img src="/compiler-construction-principles/int-graph-abc.png" alt="interference graph example" loading="lazy"></p>
 <ul>
-<li><p>需要特别处理（或者说优化）涉及<code>MOVE</code>指令的情况：<br>如果通过<code>MOVE</code>执行了<code>t:=s</code>这样的移动操作，由于<code>MOVE</code>后<code>t</code>和<code>s</code>储存的值是相同的，其实我们暂时可以不添加 (s, t) 这条边，而是采用同一寄存器。</p>
+<li><p>需要特别处理（或者说优化）涉及<code>MOVE</code>指令的情况：<br>如果通过<code>MOVE</code>执行了<code>t:=s</code>这样的移动操作，由于<code>MOVE</code>后<code>t</code>和<code>s</code>储存的值是相同的，其实暂时可以不添加 <code>(s, t)</code> 这条边，而是采用同一寄存器。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t := s (MOVE)</span><br><span class="line">...</span><br><span class="line">x := ... s ... (use of `s`)</span><br><span class="line">...</span><br><span class="line">// `t` can still be stored in the same register as `s` !</span><br><span class="line">y := ... t ... (use of `t`) </span><br></pre></td></tr></table></figure>
 
-<p>换言之，此时<code>t</code>只是<code>s</code>的一个别名。<br>……直到<code>t</code>被重定义（非<code>MOVE</code>）时，如果<code>s</code>此时还 live, 才不得不添加 (s, t) 这条边。<br>如果最终<code>s</code>和<code>t</code>在整个分配流程后被证明确实可以使用同一个寄存器，那么这个自己拷贝到自己的<code>MOVE</code>指令会自然被我们优化掉。<br>这对于单静态赋值SSA这种存在大量<code>MOVE</code>的 IR 来说是一个很大的优化。</p>
+<p>换言之，此时<code>t</code>只是<code>s</code>的一个别名。<br>……直到<code>t</code>被重定义（非<code>MOVE</code>）时，如果<code>s</code>此时还 live, 才不得不添加 <code>(s, t)</code> 这条边。<br>如果最终<code>s</code>和<code>t</code>在整个分配流程后被证明确实可以使用同一个寄存器，那么这个<strong>自己拷贝到自己的<code>MOVE</code>指令会自然在生成机器码的过程中被我们优化掉</strong>。<br>这对于单静态赋值SSA这种存在大量<code>MOVE</code>的 IR 来说是一个很大的优化。</p>
+<ul>
+<li>这种关系被称为<strong>移动关联(move-related)<strong>，在干扰图中可以用</strong>虚线</strong>表示。</li>
+</ul>
 </li>
 </ul>
 <p>关于如何加边，总结如下 <strong>（有点抽象，可以直接跳过，不会有任何问题）</strong> （请记得每次赋值、每个运算指令都是一种“定义”；<code>out[n]</code>即为 live-out 集合，定义在 CFG 部分，有疑惑可以回顾一下）：</p>
 <ul>
-<li>对于定义了<code>t</code>的<strong>非<code>MOVE</code>指令</strong><code>n</code>，我们有<code>out[n]=&#123;b1, b2, ..., bj&#125;</code>, 则添加边(t, b1), (t, b2), …, (t, bj).</li>
-<li>对于<code>MOVE</code>指令<code>n</code>, 记作<code>t:=s</code>, 有<code>out[n]=&#123;b1, b2, ..., bk&#125;</code>, 则添加上述边(t, b1), (t, b2), …, (t, bj)中的一部分。具体而言，如果这些边都记作 (t, bi), 我们要求<code>bi</code>不是<code>s</code>，也不是某个<code>s</code>的别名.<br>换言之，如果<code>bi</code>是<code>s</code>或是某个<code>s</code>的别名，储存的值和<code>s</code>一样，那么现在就不需要在图上连边 (t, bi).<br>例如：<table>
+<li>对于定义了<code>t</code>的<strong>非<code>MOVE</code>指令</strong><code>n</code>，我们有<code>out[n]=&#123;b1, b2, ..., bj&#125;</code>, 则添加边<code>(t, b1)</code>, <code>(t, b2)</code>, …, <code>(t, bj)</code>.</li>
+<li>对于<code>MOVE</code>指令<code>n</code>, 记作<code>t:=s</code>, 有<code>out[n]=&#123;b1, b2, ..., bk&#125;</code>, 则添加上述边<code>(t, b1)</code>, <code>(t, b2)</code>, …, <code>(t, bj)</code>中的一部分。具体而言，如果这些边都记作 <code>(t, bi)</code>, 我们要求<code>bi</code>不是<code>s</code>，也不是某个<code>s</code>的别名.<br>换言之，如果<code>bi</code>是<code>s</code>或是某个<code>s</code>的别名，储存的值和<code>s</code>一样，那么现在就不需要在图上连边 <code>(t, bi)</code>.<br><a name="program-eg-constrained"></a><br>例如：<table>
 <thead>
 <tr>
 <th>Inst.</th>
@@ -2397,40 +2417,219 @@
 <h3 id="图染色概述"><a href="#图染色概述" class="headerlink" title="图染色概述"></a>图染色概述</h3><p>vertex coloring: 对所有节点进行染色，且<strong>对于任何边，两个端点节点的颜色都不一样</strong>。<br>k染色(k-coloring): 最多使用 k 种颜色的 vertex coloring.</p>
 <p>著名的四色定理指出：对于任意 <strong>“平面图”</strong> ，至多只需要 4 种颜色即可完成染色，也就是说所有平面图都是 4-colorable 的。<br>——温馨提示：这个定理和我们的课程内容八竿子打不着边。</p>
 <p>在得到干扰图后，我们对其进行k染色。<br>染色完毕后，每一种颜色对应一个物理寄存器，节点颜色即为节点所对应的寄存器。<br>当然也有可能染色失败：这意味着需要超过k种颜色才能染色成功。<br>如果需要的颜色种数超过物理寄存器个数，说明 spilling （部分临时寄存器分配不到物理寄存器，不得不“溢出”到内存上）是必要的。</p>
-<p><strong>任务：</strong>找到最小的 k, 使得染色可以成功。-&gt; NP-hard!<br>对应的判定问题：检查图是否 k-colorable. -&gt; NP-Complete!<br>所以我们其实并不需要找到“最小”的k，只需要“较小”的结果即可。也就是需要实现一个<strong>近似算法</strong>，以及一些启发式的想法。<br>换句话说，我们可以容忍找到的k不是最小的，或是误判一个事实上 k-colorable 的图无法被k染色。</p>
+<p><strong>任务：</strong> 找到最小的 k, 使得染色可以成功。-&gt; <strong>NP-hard!</strong><br>对应的判定问题：检查图是否 k-colorable. -&gt; <strong>NP-Complete!</strong><br>所以其实并不需要找到“最小”的k，只需要“较小”的结果即可。也就是需要实现一个<strong>近似算法</strong>，以及一些启发式的想法。<br>换句话说，可以容忍找到的k不是最小的，或是误判一个事实上 k-colorable 的图无法被k染色。</p>
 <p>接下来引入一种线性时间的算法，能给出不错的结果。大体分为4个部分：</p>
 <ol>
-<li>Build: 建图（我们刚刚已经完成了）</li>
+<li>Build: 建图（刚刚已经完成了）</li>
 <li>Simplify: 对干扰图进行<strong>简化</strong></li>
 <li>Spill: 处理被挤出的寄存器</li>
 <li>Select&#x2F;Color: 进行节点染色操作</li>
 </ol>
 <p>我们将在下文详细介绍并改进该算法。</p>
-<h3 id="算法1-通过简化进行图染色"><a href="#算法1-通过简化进行图染色" class="headerlink" title="算法1: 通过简化进行图染色"></a>算法1: 通过简化进行图染色</h3><p>首先，考虑一个简化版本的、很粗糙的近似算法，用于判断图是否 k-colorable, 并给出染色方案：</p>
+<blockquote>
+<p>请注意：我们提到的“变量”“temporary”“虚拟寄存器”“节点”其实基本上是同一个东西。<br><strong>temporary</strong> 是更广义的变量，包含运算的中间值。IR 里的 temporary <strong>有时也用“变量”称呼</strong>。<br>在 IR 里的这些 temporary 之后要进行寄存器分配。所以现在先假设有无数虚拟的寄存器，每个 temporary 都存在一个<strong>虚拟寄存器</strong>里。<br>而干扰图上的<strong>节点</strong>就代表这些虚拟寄存器。</p>
+</blockquote>
+<h3 id="一个简单的图染色算法"><a href="#一个简单的图染色算法" class="headerlink" title="一个简单的图染色算法"></a>一个简单的图染色算法</h3><p>首先，考虑一个简化版本的、很粗糙的近似算法，用于判断图是否 k-colorable, 并给出染色方案：</p>
 <ol>
 <li>Build: 建图，已经完成了。</li>
 <li>Simplify:<ul>
 <li>如果从图<code>G</code>中存在一个节点<code>n</code>，其度数（i.e. 相邻节点数量）小于k, 令图<code>G&#39;</code>为从<code>G</code>中移除该节点得到的图。<br>那么如果<code>G&#39;</code>是 k-colorable 的，则原来的图<code>G</code>也是。<ul>
-<li>这是显然的：给定一个图<code>G&#39;</code>的k染色方案，由于相邻节点数量不够多，我们一定有剩余的颜色分配给<code>n</code>.<br>因此我们把<code>G</code>的k染色问题简化为了<code>G&#39;</code>的k染色问题。</li>
+<li>这是显然的：给定一个图<code>G&#39;</code>的k染色方案，由于相邻节点数量不够多，一定有剩余的颜色分配给<code>n</code>.<br>因此把<code>G</code>的k染色问题简化为了<code>G&#39;</code>的k染色问题。</li>
 </ul>
 </li>
-<li>这就引出<strong>一个自然的启发式的算法：</strong><br><strong>不断地从图中删除度数少于k的节点（并放入栈中）</strong>。<br>我们可以保证，每次删除的这个节点都有剩余的、可用的颜色分配给他。<br>如此重复删除下去，我们有机会直接把图简化成空图！这样就能直接宣告整个染色过程结束了。</li>
+<li>这就引出<strong>一个自然的启发式的算法：</strong><br><strong>不断地从图中删除度数少于k的节点（并放入栈中）</strong>。<br>可以保证，每次删除的这个节点都有剩余的、可用的颜色分配给他。<br>如此重复删除下去，有机会直接把图简化成空图！这样就能直接宣告整个染色过程结束了。</li>
 </ul>
 </li>
 <li>Spill: 暂时留白，什么也不做。</li>
 <li>Select: 接下来要从这个空图重建原图。<strong>每次从栈顶取出一个节点，一定有剩余的、可用的颜色能用于染色。</strong><ul>
-<li>每次简化删除一个节点时，我们都保证如果删除后颜色够用，那么删除前颜色也够用。</li>
+<li>每次简化删除一个节点时，都保证如果删除后颜色够用，那么删除前颜色也够用。</li>
 <li>因此对于每次删除，有删除后的k染色方案，就能推出一个删除前的k染色方案。</li>
 <li>显然，空图是 k-colorable 的。因此如果图被删空了，我们就可以归纳地推出原图的k染色方案。</li>
-<li>显然，删除顺序的逆序&#x3D;归纳推理的顺序&#x3D;算法找到的合法的染色顺序（所以我们使用的是栈）。</li>
+<li>显然，删除顺序的逆序&#x3D;归纳推理的顺序&#x3D;算法找到的合法的染色顺序（所以使用的是栈）。</li>
 </ul>
 </li>
 </ol>
-<p><img src="/compiler-construction-principles/coloring-k2.png" alt="coloring-k2" loading="lazy"></p>
+<p><img src="/compiler-construction-principles/coloring-k2.png" alt="coloring-k2" loading="lazy"><br><img src="/compiler-construction-principles/coloring-rebuild-k2.png" alt="coloring-rebuild" loading="lazy"></p>
 <p>这个算法跑的很快（线性），但很容易误伤无辜：毕竟这只是个近似算法。<br>如果一个近似算法 fail 了，这个图事实上可能还是 k-colorable 的，只是这个算法能力不足以找到可行解。<br>对于现在这个简单的算法来说，fail 就意味着在某一步，所有节点的度数都&gt;&#x3D;k（或者说图中的节点度数都是 <strong>significant</strong> 的）.</p>
-<p>此时我们不得不进行刚刚留白的第三步，处理 <strong>spilling</strong>: 也就是选择图中的一些节点，把他们放在内存（而非寄存器）中。</p>
-<p><em>&gt;&gt;&gt; To be continued…</em></p>
-<h2 id="Part-18-垃圾回收"><a href="#Part-18-垃圾回收" class="headerlink" title="Part 18: 垃圾回收"></a>Part 18: 垃圾回收</h2>
+<p>此时不得不考虑如何实现刚刚留白的第三步，也就是处理 <strong>spilling</strong>: 也就是选择图中的一些节点，把他们放在内存（而非寄存器）中。</p>
+<h3 id="挤出Spilling"><a href="#挤出Spilling" class="headerlink" title="挤出Spilling"></a>挤出Spilling</h3><p>如果上述算法在某一步无法继续下去，也就是说图中所有节点的度数都&gt;&#x3D;k, 无法继续简化。<br>这就意味着染色失败了吗？其实并不一定：<strong>相邻节点数量少于k一定能染色成功；但这不代表邻居超过k个就一定失败。</strong><br>如果相邻节点重复使用了部分颜色，那么该节点依旧可以使用剩下的。所以可以当作无事发生，继续删除该节点并压入栈中，该算法继续运行。</p>
+<p>这就是 Chaitin-Briggs 提出的<strong>乐观染色(optimistic coloring)</strong>: 如果遇到有 spill 可能的节点（i.e. 度数&gt;&#x3D;k）<code>ns</code>时，先乐观地假设它其实可以被染色成功，不会 spill, 依旧删除并压入栈中，继续该算法。<br>不过这就使得后续的 select 部分需要做出修改：</p>
+<ul>
+<li>染色成功：把<code>ns</code>弹出栈时，邻居使用的颜色种数少于 k, 有剩余的颜色分配给<code>ns</code>. 这说明刚刚作出的乐观假设确实成立，万事大吉<br><img src="/compiler-construction-principles/optimistic-coloring-success-before.png" alt="optimistic-coloring-success-before" loading="lazy"><br><img src="/compiler-construction-principles/optimistic-coloring-success.png" alt="optimistic-coloring-success" loading="lazy"></li>
+<li>染色失败：把<code>ns</code>弹出栈时，邻居已经使用了 k 种颜色, <code>ns</code>无法染色成功。这说明刚刚的乐观假设过度乐观了，需要进行 spill 操作<br><img src="/compiler-construction-principles/optimistic-coloring-failed.png" alt="optimistic-coloring-failed" loading="lazy"><ul>
+<li>此时不为<code>ns</code>染色，也不终止这个算法，而是继续进行 select 直到所有像<code>ns</code>这样无法被染色成功，需要 spill 的节点都找出来。</li>
+</ul>
+</li>
+</ul>
+<p>现在，改进版的染色算法如下：</p>
+<ol>
+<li>Build: 建立干扰图。</li>
+<li>Simplify: 不断执行简化，如果找到可能 spill 的节点（度数&gt;&#x3D;k）则标记，并按照乐观染色策略继续进行，直到简化为空图。最终，我们就标记了许多无法被染色的节点。</li>
+<li>Select: 当 select 算法运行一轮后，我们会发现：<ul>
+<li>这些无法被染色的节点中的一部分确实 spilled, 需要 do actual spills, 也就是改写和这部分变量读写相关的代码，继续执行第4步↓</li>
+<li>不发生 actual spill, 染色成功！算法结束。</li>
+</ul>
+</li>
+<li>Rewrite: 改写代码，将每个 spilled 变量(actual spilled variables)移动到内存上：<ol>
+<li>为 spilled 变量<code>f</code>分配内存地址<code>fa</code>(一般在栈帧上，除非太大或者有什么别的情况)</li>
+<li>引入新的<code>fx</code>系列 temporaries: <code>f1</code> <code>f2</code> … <code>fn</code>, 用于在每次使用&#x2F;定义<code>f</code>时临时储存<code>f</code>的值。这些临时变量的 live range 较短，减少了 interference.</li>
+<li>在所有使用<code>f</code>的指令前加入<code>fx:=load fa</code>（读的时候先从内存载入）。</li>
+<li>在所有定义<code>f</code>的指令后加入<code>store fx, fa</code>（写的时候需要写进内存）。</li>
+</ol>
+</li>
+<li>使用改写后的代码，返回步骤1进行 Rebuild. 由于引入了一系列 temporaries, 需要重建干扰图。在 spilling 后，这个干扰图相比原先的会更简化，更容易被染色成功。</li>
+</ol>
+<p>这个循环一般来说只需要一到两次就能结束。<br>下面来看一个例子，假设有4个物理寄存器（i.e. k&#x3D;4）：<br><img src="/compiler-construction-principles/coloring-k4.png" alt="coloring k4" loading="lazy"><br>图中虚线代表<code>MOVE</code>.</p>
+<p>入栈顺序：g h k d j e f b c m<br>染色：</p>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>m</td>
+<td>1</td>
+</tr>
+<tr>
+<td>c</td>
+<td>3</td>
+</tr>
+<tr>
+<td>b</td>
+<td>2</td>
+</tr>
+<tr>
+<td>f</td>
+<td>2</td>
+</tr>
+<tr>
+<td>e</td>
+<td>4</td>
+</tr>
+<tr>
+<td>j</td>
+<td>3</td>
+</tr>
+<tr>
+<td>d</td>
+<td>4</td>
+</tr>
+<tr>
+<td>k</td>
+<td>1</td>
+</tr>
+<tr>
+<td>h</td>
+<td>2</td>
+</tr>
+<tr>
+<td>g</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<p><img src="/compiler-construction-principles/coloring-k4-result.png" alt="coloring-k4-result" loading="lazy"></p>
+<h3 id="合并Coalescing"><a href="#合并Coalescing" class="headerlink" title="合并Coalescing"></a>合并Coalescing</h3><p>现在要进一步改进这个算法：在 simplify 后合并部分节点。</p>
+<p>之前，我们说到对于<code>t:=s</code>这样的<code>MOVE</code>指令需要特殊处理：并不立刻为<code>(t, s)</code>, <code>(t, s1)</code>, <code>(t, s2)</code>…（其中s1, s2, … 代表目前活跃的 s 的别名，保存的值和 s 相同）这些点对添加边。因为此时 t 只是 s 的又一个别名，可以共享一个寄存器。<br>等到某个定义改变了其中一方的值，破坏了这种别名关系时，才真正连边。<br>而如果整个算法运行完毕后，发现<code>MOVE</code>指令对应的这些点对之间确实还没有边，就说明这些节点事实上可以被 <strong>合并(coalesce)</strong> 为同一个节点。<br><img src="/compiler-construction-principles/coalescing.png" alt="coalescing" loading="lazy"></p>
+<ul>
+<li>好处👍：可能使得原图更容易染色，例如合并的这两个节点共用大部分的相邻节点<br><img src="/compiler-construction-principles/coalescing-pros.png" alt="coalescing-pros" loading="lazy"></li>
+<li>坏处👎：可能使得原图无法染色：极端情况下，合并后的节点的度数可能是合并前两个节点度数之和！</li>
+</ul>
+<p>在此引入<strong>保守合并策略</strong>。当某些条件成立时才合并节点<code>a</code>和<code>b</code>.</p>
+<p>有如下的策略可用：</p>
+<ul>
+<li><strong>Briggs:</strong> 确保合并出的新节点<code>ab</code>的相邻节点中，<strong>significant 节点（i.e. 度数&lt;&#x3D;k的节点）</strong> 数量少于 k 个。<ul>
+<li>避免创造新的 significant 节点。</li>
+<li>这样在执行 simplify 时，<code>ab</code>相邻节点中的 non-significant 节点被去掉后，<code>ab</code>自己也成为 non-significant 节点。 因此不会降低可染色性。</li>
+</ul>
+</li>
+<li><strong>George:</strong> 对于<code>a</code>的每个相邻节点<code>t</code>, 要么<code>t</code>是 non-significant 节点，要么<code>t</code>和<code>b</code>之间本来就有 interference 边。<ul>
+<li>non-significant 的邻居会被 simplify 掉。</li>
+<li><code>(a, t)</code>与<code>(b, t)</code>合并得到新边<code>(ab, t)</code>, 不会增加任何节点的度数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="冻结Freeze"><a href="#冻结Freeze" class="headerlink" title="冻结Freeze"></a>冻结Freeze</h3><p>要明确一点：<strong>合并操作是一把双刃剑</strong>。合并的不止是寄存器，还有节点对应 temporaries 的 live range. 新的节点，也就是新的 temporary 能“活更久”，对寄存器分配造成更大压力。如果因此造成了更多 spill, 那么得不偿失：与其进行内存读写，还不如不要自作主张“优化”掉<code>MOVE</code>指令。</p>
+<p>如果 simplify 和 coalesce 都无法进行，我们寻找<code>MOVE</code>指令引入的<strong>低度数</strong>节点（也就是 non-significant 节点），或者说找一些低度数的 move-related 节点。<br>我们将这些节点“冻结”，也就是去除这些节点相关的移动关联(move-related)关系，不再试图让这些节点参与合并。<br>然后就可以再次尝试 simplify 和 coalesce.</p>
+<p>可参阅：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AANA/p/16315859.html">图着色寄存器分配 - anna - 博客园</a></p>
+<h3 id="图染色总结"><a href="#图染色总结" class="headerlink" title="图染色总结"></a>图染色总结</h3><p>引入了一些新东西，因此算法许多部分都有些微调。<br>最终梳理一下我们的算法。包含如下几个模块↓</p>
+<ol>
+<li>Build: 建图<ul>
+<li>建立干扰图</li>
+<li>标记节点是否是移动关联(move-related)节点（i.e. <code>MOVE</code>的源&#x2F;目标）</li>
+</ul>
+</li>
+<li>Simplify: 简化图<ul>
+<li>每次去除一个 non-significant 的<strong>非</strong>移动关联节点</li>
+</ul>
+</li>
+<li>Coalesce: 合并<code>MOVE</code>引入的移动关联节点<ul>
+<li>进行保守合并，得到的新节点标记为<strong>非移动关联节点</strong>，可用于下一次 simplify</li>
+</ul>
+</li>
+<li>Freeze: 冻结部分移动关联节点，放弃合并<ul>
+<li>simplify 和 coalesce 交替进行。如果两者都无法进行，则尝试放弃合并部分 non-significant 移动关联节点。</li>
+<li>放弃合并的节点不再视为 move-related 节点</li>
+</ul>
+</li>
+<li>Spill: 处理需要挤出到内存的变量<ul>
+<li>万策尽：确实存在需要 spill 的 temporaries, 找到所有这样的一起进行 spilling</li>
+<li>Do actual spilling: 改写 IR 代码以把它们移动到内存中，重新开始整个算法。</li>
+</ul>
+</li>
+<li>Select: 不断弹栈，为出栈节点分配可用颜色，直到只剩下<strong>预染色节点</strong>（见下文）。</li>
+</ol>
+<p>全流程：<br><img src="/compiler-construction-principles/coloring-algo-full.png" alt="coloring-algo-full" loading="lazy"><br><img src="/compiler-construction-principles/coloring-algo-full-book.png" alt="coloring-algo-full-book" loading="lazy"></p>
+<p>图中可以看出，simplify 和 coalesce 交替进行直到图为空或无法继续后，再进行 freeze 等操作。</p>
+<p>课件上有一个很好的例子，展示了如何把一个程序在一个 3 个寄存器(2 caller-save + 1 callee-save)的机器上进行编译。<br>有条件的同学建议参阅课件： ch11. 寄存器分配 第124页。</p>
+<h3 id="图染色杂项"><a href="#图染色杂项" class="headerlink" title="图染色杂项"></a>图染色杂项</h3><ul>
+<li><p><strong>预染色(pre-colored)</strong> 节点：</p>
+<ul>
+<li><p>栈顶指针寄存器、参数寄存器等 special purposed 寄存器不是通用的。</p>
+</li>
+<li><p>可以把这些物理寄存器一一对应成虚拟寄存器，或者说为每个 special purposed 寄存器分配一个专属 temporary &#x2F; node.</p>
+</li>
+<li><p>需要通过预先染色，以告诉染色器这种一一对应的关系：</p>
+<ul>
+<li>每个 pre-colored node 的颜色是唯一的</li>
+<li>pre-colored nodes 之间互相两两 interfere （不一定需要真的全连接，也可以特殊处理）</li>
+</ul>
+</li>
+<li><p>预染色节点<strong>不能</strong>被 simplify 掉。</p>
+</li>
+<li><p>预染色节点<strong>不能</strong>被 spill 到内存上。</p>
+</li>
+<li><p>预染色节点<strong>能</strong>参与合并(coalescing).</p>
+</li>
+<li><p>普通的 temporary &#x2F; node 可以使用预染色的颜色（只要不 interfere）</p>
+<ul>
+<li>例如，calling-convention register 可以在函数里当作临时寄存器使用。使用时，这个临时值(temporary)对应的节点颜色即为 calling-convention register 对应的预染色节点的颜色</li>
+</ul>
+</li>
+<li><p>编译器前端需要保证预染色 temporary 的 live range 足够短：多多使用<code>MOVE</code><br>最佳实践：</p>
+<ul>
+<li>temporary 的 live range 如果不需要跨越某个函数调用，<strong>最好</strong>放置在 caller-save 寄存器中</li>
+<li>temporary 的 live range 如果需要跨越某个或多个函数调用，<strong>只能</strong>放置在 callee-save 寄存器中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>受限的(constrained)节点：如果两个节点之间同时有移动关联（虚线边）又有冲突（实线边），那么需要忽略这个移动关联关系。</p>
+<ul>
+<li>某个变量被多次<code>MOVE</code>进不同的值，合并后就会这样。</li>
+<li>例如上文<a href="#program-eg-constrained">这个程序</a>：<br><img src="/compiler-construction-principles/example-constrainted.png" alt="example-constrainted" loading="lazy"><br>如果<code>a</code>和<code>t</code>合并为<code>at</code>, 就不能和<code>b</code>共用寄存器。<br>同理，如果<code>b</code>和<code>t</code>合并为<code>bt</code>, 就不能和<code>a</code>共用寄存器。</li>
+</ul>
+</li>
+<li><p>需要 spilling 时如何选择节点进行 spill 呢？优先选择：</p>
+<ul>
+<li>较少使用的 temporary ：例如在循环外的。</li>
+<li>高度数的节点：它们是“罪魁祸首”，我们应当“擒贼先擒王”。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Part-18-垃圾回收"><a href="#Part-18-垃圾回收" class="headerlink" title="Part 18: 垃圾回收"></a>Part 18: 垃圾回收</h2><p><em>&gt;&gt;&gt;To be continued…</em></p>
+<h2 id="Part-19-面向对象-OOP"><a href="#Part-19-面向对象-OOP" class="headerlink" title="Part 19: 面向对象(OOP)"></a>Part 19: 面向对象(OOP)</h2><h2 id="Part-20-循环优化"><a href="#Part-20-循环优化" class="headerlink" title="Part 20: 循环优化"></a>Part 20: 循环优化</h2>
     </div>
 </article>
 
@@ -2468,7 +2667,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86Speed-run-any"><span class="toc-number">1.</span> <span class="toc-text">编译原理Speed-run any%</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-0-%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 0: 课程信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">Part 1: 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.3.</span> <span class="toc-text">Part 2: 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">词法分析概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.3.3.</span> <span class="toc-text">有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90"><span class="toc-number">1.3.4.</span> <span class="toc-text">词法分析器自动生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lex%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.5.</span> <span class="toc-text">Lex工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-3-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-CFG-Parsing"><span class="toc-number">1.4.</span> <span class="toc-text">Part 3: 语法分析 - CFG &amp; Parsing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">语法分析器概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95CFG"><span class="toc-number">1.4.2.</span> <span class="toc-text">上下文无关文法CFG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BCDerivation%E5%92%8C%E8%A7%84%E7%BA%A6Reduction"><span class="toc-number">1.4.3.</span> <span class="toc-text">推导Derivation和规约Reduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CFG%E7%9A%84%E5%88%86%E6%9E%90%E6%A0%91Parse-Tree"><span class="toc-number">1.4.4.</span> <span class="toc-text">CFG的分析树Parse Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%96%87%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.5.</span> <span class="toc-text">编程语言的文法设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Part 4: 语法分析 - 自顶向下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E5%92%8C%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">LL(1)和预测分析法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92%E3%80%81%E6%8F%90%E5%B7%A6%E5%85%AC%E5%9B%A0%E5%AD%90"><span class="toc-number">1.5.2.</span> <span class="toc-text">消除左递归、提左公因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D"><span class="toc-number">1.5.3.</span> <span class="toc-text">错误恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-5-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A"><span class="toc-number">1.6.</span> <span class="toc-text">Part 5: 语法分析 - 自底向上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E8%BF%9B-%E8%A7%84%E7%BA%A6-Shift-Reduce"><span class="toc-number">1.6.1.</span> <span class="toc-text">移进-规约 Shift-Reduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-Parsing"><span class="toc-number">1.6.2.</span> <span class="toc-text">LR(0) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-1-Parsing"><span class="toc-number">1.6.3.</span> <span class="toc-text">SLR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-Parsing"><span class="toc-number">1.6.4.</span> <span class="toc-text">LR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LALR-1-Parsing"><span class="toc-number">1.6.5.</span> <span class="toc-text">LALR(1) Parsing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-6-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%9D%82%E9%A1%B9"><span class="toc-number">1.7.</span> <span class="toc-text">Part 6: 语法分析杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%9AYACC"><span class="toc-number">1.7.1.</span> <span class="toc-text">语法分析器的生成器：YACC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D%EF%BC%88%E7%BB%AD%EF%BC%89"><span class="toc-number">1.7.2.</span> <span class="toc-text">错误恢复（续）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%B0%8F%E7%BB%93%EF%BC%9A%E6%96%87%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">1.8.</span> <span class="toc-text">语法分析小结：文法对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-%E4%B8%8E-LR-1"><span class="toc-number">1.8.1.</span> <span class="toc-text">SLR 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E4%B8%8E-LR-1"><span class="toc-number">1.8.2.</span> <span class="toc-text">LL(1) 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-LR-1-SLR"><span class="toc-number">1.8.3.</span> <span class="toc-text">LL(1) LR(1) SLR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-7-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">1.9.</span> <span class="toc-text">Part 7: 抽象语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%96%87%E6%B3%95Attribute-Grammar"><span class="toc-number">1.9.1.</span> <span class="toc-text">属性文法Attribute Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8A%A8%E4%BD%9CSemantic-Action"><span class="toc-number">1.9.2.</span> <span class="toc-text">语义动作Semantic Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%A7%A3%E6%9E%90%E6%A0%91APT"><span class="toc-number">1.9.3.</span> <span class="toc-text">抽象解析树APT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91AST"><span class="toc-number">1.9.4.</span> <span class="toc-text">抽象语法树AST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AEPosition"><span class="toc-number">1.9.5.</span> <span class="toc-text">位置Position</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-8-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.10.</span> <span class="toc-text">Part 8: 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8Symbol-Table"><span class="toc-number">1.10.1.</span> <span class="toc-text">符号表Symbol Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%AC%A6%E5%8F%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">Tiger编译器符号相关的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.10.3.</span> <span class="toc-text">类型检查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-9-%E6%B4%BB%E5%8A%A8%E8%AE%B0%E5%BD%95Activation-Record"><span class="toc-number">1.11.</span> <span class="toc-text">Part 9: 活动记录Activation Record</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-How"><span class="toc-number">1.11.1.</span> <span class="toc-text">Why &amp; How</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.11.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.</span> <span class="toc-text">Part 10: 寄存器与变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.12.2.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80"><span class="toc-number">1.12.3.</span> <span class="toc-text">返回值与返回地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Frame-Resident-Variables"><span class="toc-number">1.12.4.</span> <span class="toc-text">Frame-Resident Variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-%E5%9D%97%E7%BB%93%E6%9E%84Block-Structure"><span class="toc-number">1.13.</span> <span class="toc-text">Part 11: 块结构Block Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Tiger%E8%AF%AD%E8%A8%80%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="toc-number">1.14.</span> <span class="toc-text">Part 12: Tiger语言：一个例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A0%88%E5%B8%A7%E5%B8%83%E5%B1%80-Layout"><span class="toc-number">1.14.1.</span> <span class="toc-text">Tiger语言的栈帧布局(Layout)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.14.2.</span> <span class="toc-text">Tiger语言编译器的栈帧实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E4%B8%A4%E5%B1%82%E6%8A%BD%E8%B1%A1"><span class="toc-number">1.14.3.</span> <span class="toc-text">总结：两层抽象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BA-IR"><span class="toc-number">1.15.</span> <span class="toc-text">Part 13: 中间表示(IR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.15.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81IR"><span class="toc-number">1.15.2.</span> <span class="toc-text">为何需要IR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR%E6%9D%82%E9%A1%B9"><span class="toc-number">1.15.3.</span> <span class="toc-text">*IR杂项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84IR-Tree%E5%8F%8A%E5%85%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">1.15.4.</span> <span class="toc-text">Tiger语言的IR Tree及其指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8EAST%E7%94%9F%E6%88%90IR-Tree"><span class="toc-number">1.15.5.</span> <span class="toc-text">从AST生成IR Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-14-%E5%9F%BA%E6%9C%AC%E5%9D%97%E4%B8%8Etraces"><span class="toc-number">1.16.</span> <span class="toc-text">Part 14: 基本块与traces</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BD%A2%E5%BC%8FCanonical-Form"><span class="toc-number">1.16.1.</span> <span class="toc-text">正规形式Canonical Form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E6%A0%91Canonical-Tree"><span class="toc-number">1.16.2.</span> <span class="toc-text">正规树Canonical Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-1-%E7%BA%BF%E6%80%A7%E5%8C%96%E4%B8%BA%E6%AD%A3%E8%A7%84%E6%A0%91"><span class="toc-number">1.16.3.</span> <span class="toc-text">Stage 1: 线性化为正规树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-2-3-%E5%A4%84%E7%90%86%E6%9D%A1%E4%BB%B6%E8%B7%B3%E8%BD%AC"><span class="toc-number">1.16.4.</span> <span class="toc-text">Stage 2&amp;3: 处理条件跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR-%E6%9C%BA%E5%99%A8%E7%A0%81%EF%BC%9A%E5%B0%8F%E7%BB%93"><span class="toc-number">1.16.5.</span> <span class="toc-text">IR-&gt;机器码：小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9"><span class="toc-number">1.17.</span> <span class="toc-text">Part 15: 指令选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E6%A6%82%E8%BF%B0"><span class="toc-number">1.17.1.</span> <span class="toc-text">指令选择概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%A6%86%E7%9B%96"><span class="toc-number">1.17.2.</span> <span class="toc-text">指令选择算法：基于树覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E8%AF%AD%E6%B3%95Tree-Grammar"><span class="toc-number">1.17.3.</span> <span class="toc-text">*树语法Tree Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISC-vs-RISC"><span class="toc-number">1.17.4.</span> <span class="toc-text">CISC vs. RISC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-16-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.18.</span> <span class="toc-text">Part 16: 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">1.18.1.</span> <span class="toc-text">*编译器优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%88%86%E6%9E%90Dataflow-Analysis"><span class="toc-number">1.18.2.</span> <span class="toc-text">数据流分析Dataflow Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90Liveness-Analysis"><span class="toc-number">1.18.3.</span> <span class="toc-text">活跃性分析Liveness Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.4.</span> <span class="toc-text">活跃性分析的数据流方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.5.</span> <span class="toc-text">解方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-17-%E5%AF%84%E5%AD%98%E5%99%A8%E5%88%86%E9%85%8D"><span class="toc-number">1.19.</span> <span class="toc-text">Part 17: 寄存器分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B2%E6%89%B0%E5%9B%BE"><span class="toc-number">1.19.1.</span> <span class="toc-text">干扰图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%A6%82%E8%BF%B0"><span class="toc-number">1.19.2.</span> <span class="toc-text">图染色概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%951-%E9%80%9A%E8%BF%87%E7%AE%80%E5%8C%96%E8%BF%9B%E8%A1%8C%E5%9B%BE%E6%9F%93%E8%89%B2"><span class="toc-number">1.19.3.</span> <span class="toc-text">算法1: 通过简化进行图染色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-18-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.20.</span> <span class="toc-text">Part 18: 垃圾回收</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86Speed-run-any"><span class="toc-number">1.</span> <span class="toc-text">编译原理Speed-run any%</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-0-%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 0: 课程信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">Part 1: 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.3.</span> <span class="toc-text">Part 2: 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">词法分析概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.3.3.</span> <span class="toc-text">有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90"><span class="toc-number">1.3.4.</span> <span class="toc-text">词法分析器自动生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lex%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.5.</span> <span class="toc-text">Lex工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-3-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-CFG-Parsing"><span class="toc-number">1.4.</span> <span class="toc-text">Part 3: 语法分析 - CFG &amp; Parsing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">语法分析器概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95CFG"><span class="toc-number">1.4.2.</span> <span class="toc-text">上下文无关文法CFG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BCDerivation%E5%92%8C%E8%A7%84%E7%BA%A6Reduction"><span class="toc-number">1.4.3.</span> <span class="toc-text">推导Derivation和规约Reduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CFG%E7%9A%84%E5%88%86%E6%9E%90%E6%A0%91Parse-Tree"><span class="toc-number">1.4.4.</span> <span class="toc-text">CFG的分析树Parse Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%96%87%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.5.</span> <span class="toc-text">编程语言的文法设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Part 4: 语法分析 - 自顶向下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E5%92%8C%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">LL(1)和预测分析法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92%E3%80%81%E6%8F%90%E5%B7%A6%E5%85%AC%E5%9B%A0%E5%AD%90"><span class="toc-number">1.5.2.</span> <span class="toc-text">消除左递归、提左公因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D"><span class="toc-number">1.5.3.</span> <span class="toc-text">错误恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-5-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A"><span class="toc-number">1.6.</span> <span class="toc-text">Part 5: 语法分析 - 自底向上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E8%BF%9B-%E8%A7%84%E7%BA%A6-Shift-Reduce"><span class="toc-number">1.6.1.</span> <span class="toc-text">移进-规约 Shift-Reduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-Parsing"><span class="toc-number">1.6.2.</span> <span class="toc-text">LR(0) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-1-Parsing"><span class="toc-number">1.6.3.</span> <span class="toc-text">SLR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-Parsing"><span class="toc-number">1.6.4.</span> <span class="toc-text">LR(1) Parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LALR-1-Parsing"><span class="toc-number">1.6.5.</span> <span class="toc-text">LALR(1) Parsing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-6-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%9D%82%E9%A1%B9"><span class="toc-number">1.7.</span> <span class="toc-text">Part 6: 语法分析杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%9AYACC"><span class="toc-number">1.7.1.</span> <span class="toc-text">语法分析器的生成器：YACC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%81%A2%E5%A4%8D%EF%BC%88%E7%BB%AD%EF%BC%89"><span class="toc-number">1.7.2.</span> <span class="toc-text">错误恢复（续）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%B0%8F%E7%BB%93%EF%BC%9A%E6%96%87%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">1.8.</span> <span class="toc-text">语法分析小结：文法对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-%E4%B8%8E-LR-1"><span class="toc-number">1.8.1.</span> <span class="toc-text">SLR 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E4%B8%8E-LR-1"><span class="toc-number">1.8.2.</span> <span class="toc-text">LL(1) 与 LR(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-LR-1-SLR"><span class="toc-number">1.8.3.</span> <span class="toc-text">LL(1) LR(1) SLR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-7-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">1.9.</span> <span class="toc-text">Part 7: 抽象语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%96%87%E6%B3%95Attribute-Grammar"><span class="toc-number">1.9.1.</span> <span class="toc-text">属性文法Attribute Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8A%A8%E4%BD%9CSemantic-Action"><span class="toc-number">1.9.2.</span> <span class="toc-text">语义动作Semantic Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%A7%A3%E6%9E%90%E6%A0%91APT"><span class="toc-number">1.9.3.</span> <span class="toc-text">抽象解析树APT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91AST"><span class="toc-number">1.9.4.</span> <span class="toc-text">抽象语法树AST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AEPosition"><span class="toc-number">1.9.5.</span> <span class="toc-text">位置Position</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-8-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.10.</span> <span class="toc-text">Part 8: 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8Symbol-Table"><span class="toc-number">1.10.1.</span> <span class="toc-text">符号表Symbol Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%AC%A6%E5%8F%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">Tiger编译器符号相关的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.10.3.</span> <span class="toc-text">类型检查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-9-%E6%B4%BB%E5%8A%A8%E8%AE%B0%E5%BD%95Activation-Record"><span class="toc-number">1.11.</span> <span class="toc-text">Part 9: 活动记录Activation Record</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-How"><span class="toc-number">1.11.1.</span> <span class="toc-text">Why &amp; How</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.11.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.</span> <span class="toc-text">Part 10: 寄存器与变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.12.1.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.12.2.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80"><span class="toc-number">1.12.3.</span> <span class="toc-text">返回值与返回地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Frame-Resident-Variables"><span class="toc-number">1.12.4.</span> <span class="toc-text">Frame-Resident Variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-%E5%9D%97%E7%BB%93%E6%9E%84Block-Structure"><span class="toc-number">1.13.</span> <span class="toc-text">Part 11: 块结构Block Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Tiger%E8%AF%AD%E8%A8%80%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="toc-number">1.14.</span> <span class="toc-text">Part 12: Tiger语言：一个例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A0%88%E5%B8%A7%E5%B8%83%E5%B1%80-Layout"><span class="toc-number">1.14.1.</span> <span class="toc-text">Tiger语言的栈帧布局(Layout)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.14.2.</span> <span class="toc-text">Tiger语言编译器的栈帧实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E4%B8%A4%E5%B1%82%E6%8A%BD%E8%B1%A1"><span class="toc-number">1.14.3.</span> <span class="toc-text">总结：两层抽象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-%E4%B8%AD%E9%97%B4%E8%A1%A8%E7%A4%BA-IR"><span class="toc-number">1.15.</span> <span class="toc-text">Part 13: 中间表示(IR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.15.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81IR"><span class="toc-number">1.15.2.</span> <span class="toc-text">为何需要IR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR%E6%9D%82%E9%A1%B9"><span class="toc-number">1.15.3.</span> <span class="toc-text">*IR杂项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tiger%E8%AF%AD%E8%A8%80%E7%9A%84IR-Tree%E5%8F%8A%E5%85%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">1.15.4.</span> <span class="toc-text">Tiger语言的IR Tree及其指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8EAST%E7%94%9F%E6%88%90IR-Tree"><span class="toc-number">1.15.5.</span> <span class="toc-text">从AST生成IR Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-14-%E5%9F%BA%E6%9C%AC%E5%9D%97%E4%B8%8Etraces"><span class="toc-number">1.16.</span> <span class="toc-text">Part 14: 基本块与traces</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BD%A2%E5%BC%8FCanonical-Form"><span class="toc-number">1.16.1.</span> <span class="toc-text">正规形式Canonical Form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E6%A0%91Canonical-Tree"><span class="toc-number">1.16.2.</span> <span class="toc-text">正规树Canonical Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-1-%E7%BA%BF%E6%80%A7%E5%8C%96%E4%B8%BA%E6%AD%A3%E8%A7%84%E6%A0%91"><span class="toc-number">1.16.3.</span> <span class="toc-text">Stage 1: 线性化为正规树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-2-3-%E5%A4%84%E7%90%86%E6%9D%A1%E4%BB%B6%E8%B7%B3%E8%BD%AC"><span class="toc-number">1.16.4.</span> <span class="toc-text">Stage 2&amp;3: 处理条件跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR-%E6%9C%BA%E5%99%A8%E7%A0%81%EF%BC%9A%E5%B0%8F%E7%BB%93"><span class="toc-number">1.16.5.</span> <span class="toc-text">IR-&gt;机器码：小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9"><span class="toc-number">1.17.</span> <span class="toc-text">Part 15: 指令选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E6%A6%82%E8%BF%B0"><span class="toc-number">1.17.1.</span> <span class="toc-text">指令选择概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%A0%91%E8%A6%86%E7%9B%96"><span class="toc-number">1.17.2.</span> <span class="toc-text">指令选择算法：基于树覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E8%AF%AD%E6%B3%95Tree-Grammar"><span class="toc-number">1.17.3.</span> <span class="toc-text">*树语法Tree Grammar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CISC-vs-RISC"><span class="toc-number">1.17.4.</span> <span class="toc-text">CISC vs. RISC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-16-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.18.</span> <span class="toc-text">Part 16: 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">1.18.1.</span> <span class="toc-text">*编译器优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%88%86%E6%9E%90Dataflow-Analysis"><span class="toc-number">1.18.2.</span> <span class="toc-text">数据流分析Dataflow Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90Liveness-Analysis"><span class="toc-number">1.18.3.</span> <span class="toc-text">活跃性分析Liveness Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.4.</span> <span class="toc-text">活跃性分析：数据流方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%96%B9%E7%A8%8B"><span class="toc-number">1.18.5.</span> <span class="toc-text">解方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-17-%E5%AF%84%E5%AD%98%E5%99%A8%E5%88%86%E9%85%8D"><span class="toc-number">1.19.</span> <span class="toc-text">Part 17: 寄存器分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B2%E6%89%B0%E5%9B%BEInterference-Graph"><span class="toc-number">1.19.1.</span> <span class="toc-text">干扰图Interference Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%A6%82%E8%BF%B0"><span class="toc-number">1.19.2.</span> <span class="toc-text">图染色概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%9B%BE%E6%9F%93%E8%89%B2%E7%AE%97%E6%B3%95"><span class="toc-number">1.19.3.</span> <span class="toc-text">一个简单的图染色算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%A4%E5%87%BASpilling"><span class="toc-number">1.19.4.</span> <span class="toc-text">挤出Spilling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6Coalescing"><span class="toc-number">1.19.5.</span> <span class="toc-text">合并Coalescing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%BB%E7%BB%93Freeze"><span class="toc-number">1.19.6.</span> <span class="toc-text">冻结Freeze</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%80%BB%E7%BB%93"><span class="toc-number">1.19.7.</span> <span class="toc-text">图染色总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%9F%93%E8%89%B2%E6%9D%82%E9%A1%B9"><span class="toc-number">1.19.8.</span> <span class="toc-text">图染色杂项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-18-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.20.</span> <span class="toc-text">Part 18: 垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-19-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-OOP"><span class="toc-number">1.21.</span> <span class="toc-text">Part 19: 面向对象(OOP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-20-%E5%BE%AA%E7%8E%AF%E4%BC%98%E5%8C%96"><span class="toc-number">1.22.</span> <span class="toc-text">Part 20: 循环优化</span></a></li></ol></li></ol>
       </div>
     
 

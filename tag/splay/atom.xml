@@ -11,8 +11,8 @@
     <category term="CISCN" />
     <category term="web" />
     <category term="Hackergame" />
-    <category term="Overclocking" />
     <category term="SchoolBus" />
+    <category term="Overclocking" />
     <category term="Rust" />
     <category term="Lifetime" />
     <category term="Code" />
@@ -20,31 +20,31 @@
     <category term="冰菓" />
     <category term="古籍研究社" />
     <category term="Treap" />
-    <category term="Stack" />
     <category term="BST" />
     <category term="图论" />
     <category term="Kruskal" />
-    <category term="数链剖分" />
+    <category term="Stack" />
     <category term="Splay" />
-    <category term="持久化" />
-    <category term="线段树" />
+    <category term="数链剖分" />
     <category term="树状数组" />
     <category term="LCA" />
     <category term="分块" />
     <category term="哈希" />
+    <category term="持久化" />
+    <category term="线段树" />
     <category term="Phar" />
     <category term="反序列化" />
     <category term="PHP" />
     <category term="NLP" />
     <category term="Fuzzing" />
     <category term="AFL" />
-    <category term="Compiler" />
-    <category term="Computer Science" />
+    <category term="Miscellaneous" />
     <category term="On Going" />
     <category term="Math" />
     <category term="Translation" />
     <category term="Yoneda Lemma" />
-    <category term="Miscellaneous" />
+    <category term="Compiler" />
+    <category term="Computer Science" />
     <entry>
         <id>http://cubicy.icu/2018/04/09/%E6%B4%9B%E8%B0%B7P3384%20[HNOI2004]%E5%AE%A0%E7%89%A9%E6%94%B6%E5%85%BB%E5%9C%BA/</id>
         <title>洛谷:P3384 [HNOI2004]宠物收养场</title>
