@@ -4,7 +4,7 @@ type: about
 ---
 CubicYYY
 别名：YYY, CubicY
-前（~~混子~~荣誉）洛谷管理员  
+前（~~混子~~荣誉）[洛谷](https://www.luogu.com.cn)管理员  
 CTF Web/Misc @Team AAA`Azure Assassin Alliance`  
 Undergraduate @ZJU, majoring in CS  
 FrontEnd/DevOp @ZJU X-Lab  
@@ -14,7 +14,9 @@ FrontEnd/DevOp @ZJU X-Lab
 
 ### 以下为胡言乱语/排版测试
 
-喜欢吃饭，睡觉与-菫時-小姐。  
+学マス P-ID: `74J5Z3SH`
+
+![kotone](kotone.jpg)
 
 ```javascript
 world.execute(me);
