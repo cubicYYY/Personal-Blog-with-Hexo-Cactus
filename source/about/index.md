@@ -3,7 +3,7 @@ title: about
 type: about
 ---
 CubicYYY
-别名：YYY, CubicY
+Aliases: YYY, CubicY
 前（~~混子~~荣誉）[洛谷](https://www.luogu.com.cn)管理员  
 CTF Web/Misc @Team AAA`Azure Assassin Alliance`  
 Undergraduate @ZJU, majoring in CS  
