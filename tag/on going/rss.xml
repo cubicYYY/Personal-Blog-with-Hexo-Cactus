@@ -6,10 +6,10 @@
         <description>Notes, CTF, DIY, thoughts and waifus.
 
 I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
-Learning: Electric guitar
-❤❤❤ CTF, toy projects, anime
+❤❤❤ CTF, toy projects, electric guitar
 ✖✖✖ Technological supremacy
-Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+
+Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
         <language>zh-CN</language>
         <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
         <lastBuildDate>Sun, 14 Apr 2024 01:10:20 +0800</lastBuildDate>
@@ -63,7 +63,8 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
             <category>Computer Science</category>
             <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的，尽可能对缺乏动机(intuition)的一些概念&lt;strong&gt;提供课堂外的例子以简明解释&lt;/strong&gt;。&lt;br&gt;标题中使用&lt;code&gt;*&lt;/code&gt;标记的部分为考试&lt;strong&gt;不&lt;/strong&gt;考察的内容。&lt;/p&gt;
-&lt;p&gt;文中大部分图片与文字来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。&lt;br&gt;建议阅读本笔记时配合老师课件&amp;#x2F;讲义作为参照。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;包含浙江大学编译原理课程课改后新增部分。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;文中大部分图片来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。&lt;br&gt;建议阅读本笔记时配合老师课件&amp;#x2F;讲义作为参照。&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A. 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
@@ -94,13 +95,20 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;li&gt;语法分析&amp;#x3D;Parsing&amp;#x2F;SyntaxAnalysis&lt;/li&gt;
 &lt;li&gt;中间表示&amp;#x3D;IR&amp;#x3D;Intermediate Representation&lt;/li&gt;
 &lt;li&gt;树型中间表示&amp;#x3D;IR Tree&lt;/li&gt;
-&lt;li&gt;前端，后端&lt;br&gt;略。&lt;/li&gt;
+&lt;li&gt;前端，后端&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-2-词法分析&#34;&gt;&lt;a href=&#34;#Part-2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析&#34;&gt;&lt;/a&gt;Part 2: 词法分析&lt;/h2&gt;&lt;h3 id=&#34;词法分析概述&#34;&gt;&lt;a href=&#34;#词法分析概述&#34; class=&#34;headerlink&#34; title=&#34;词法分析概述&#34;&gt;&lt;/a&gt;词法分析概述&lt;/h3&gt;&lt;p&gt;将输入字符串识别为有意义的子串。（把基本单元划分好）&lt;br&gt;(Token单词, Lexeme词素(可选)) e.g. (IF, ) (ELSE, ) (BINARY_OP, &amp;gt;&amp;#x3D;) (UNARY_OP, &amp;amp;)&lt;/p&gt;
-&lt;h3 id=&#34;正则表达式&#34;&gt;&lt;a href=&#34;#正则表达式&#34; class=&#34;headerlink&#34; title=&#34;正则表达式&#34;&gt;&lt;/a&gt;正则表达式&lt;/h3&gt;&lt;p&gt;Regex Expression &amp;#x3D; RE&lt;br&gt;运算：连接concatenation + 幂Power&lt;br&gt;e.g.: $ ab(a|b)^3c^* $&lt;br&gt;下略。&lt;/p&gt;
-&lt;h3 id=&#34;有穷自动机&#34;&gt;&lt;a href=&#34;#有穷自动机&#34; class=&#34;headerlink&#34; title=&#34;有穷自动机&#34;&gt;&lt;/a&gt;有穷自动机&lt;/h3&gt;&lt;p&gt;相关概念：&lt;/p&gt;
+&lt;h2 id=&#34;Part-2-词法分析&#34;&gt;&lt;a href=&#34;#Part-2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Part 2: 词法分析&#34;&gt;&lt;/a&gt;Part 2: 词法分析&lt;/h2&gt;&lt;h3 id=&#34;词法分析概述&#34;&gt;&lt;a href=&#34;#词法分析概述&#34; class=&#34;headerlink&#34; title=&#34;词法分析概述&#34;&gt;&lt;/a&gt;词法分析概述&lt;/h3&gt;&lt;p&gt;使用分词器(parser &amp;#x2F; tokenizer)将输入字符串切割、识别为有意义的子串（把基本单元划分好）。&lt;br&gt;&lt;code&gt;(单词Token, 词素Lexeme(可选))&lt;/code&gt;&lt;br&gt;e.g.:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;NFA&amp;#x2F;DFA：略&lt;/p&gt;
+&lt;li&gt;&lt;code&gt;(IF, )&lt;/code&gt; &lt;code&gt;(ELSE, )&lt;/code&gt; &lt;code&gt;(BINARY_OP, &amp;gt;=)&lt;/code&gt; &lt;code&gt;(UNARY_OP, &amp;amp;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;正则表达式&#34;&gt;&lt;a href=&#34;#正则表达式&#34; class=&#34;headerlink&#34; title=&#34;正则表达式&#34;&gt;&lt;/a&gt;正则表达式&lt;/h3&gt;&lt;p&gt;&lt;em&gt;读者应当已经在前置课程中掌握了该部分内容。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Regex Expression &amp;#x3D; RE&lt;br&gt;运算：连接concatenation + 幂Power&lt;br&gt;e.g.: $ ab(a|b)^3c^* $&lt;/p&gt;
+&lt;h3 id=&#34;有穷自动机&#34;&gt;&lt;a href=&#34;#有穷自动机&#34; class=&#34;headerlink&#34; title=&#34;有穷自动机&#34;&gt;&lt;/a&gt;有穷自动机&lt;/h3&gt;&lt;p&gt;&lt;em&gt;读者应当已经在前置课程中掌握了该部分内容。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;相关概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;NFA: 非确定有限状态自动机&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DFA: 确定有限状态自动机&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;子集构造法subset construction&lt;/p&gt;
 &lt;ul&gt;
@@ -1947,12 +1955,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/li&gt;
 &lt;li&gt;def of a variable &lt;code&gt;x&lt;/code&gt;: 所有define了&lt;code&gt;x&lt;/code&gt;的节点集合&lt;/li&gt;
 &lt;li&gt;def of a node &lt;code&gt;N&lt;/code&gt;: 节点&lt;code&gt;N&lt;/code&gt;定义的变量集合&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;x&lt;/code&gt; is &lt;strong&gt;live on an edge:&lt;/strong&gt; 存在一条以这条有向边(edge)开始的路径，终点指向一个use of &lt;code&gt;x&lt;/code&gt;, 且中间经过的节点不包含任何def of &lt;code&gt;x&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt; is &lt;strong&gt;live on an edge&lt;/strong&gt;: 存在一条以这条有向边(edge)开始的路径，终点指向一个use of &lt;code&gt;x&lt;/code&gt;, 且中间经过的节点不包含任何def of &lt;code&gt;x&lt;/code&gt;&lt;ul&gt;
 &lt;li&gt;这意味着：&lt;code&gt;x&lt;/code&gt;可能在之后被使用；而且在被使用前没有被重定义&amp;#x2F;赋值过（也就是要保证数据确实可能存在依赖：那个 use 必须真的使用现在这个&lt;code&gt;x&lt;/code&gt;对应的值）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;live-in:&lt;/strong&gt; 如果&lt;code&gt;x&lt;/code&gt; live on 节点的&lt;strong&gt;任意一个&lt;/strong&gt;入边，那么我们说&lt;code&gt;x&lt;/code&gt; live-in 该节点&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;live-out:&lt;/strong&gt; 如果&lt;code&gt;x&lt;/code&gt; live on 节点的&lt;strong&gt;任意一个&lt;/strong&gt;出边，那么我们说&lt;code&gt;x&lt;/code&gt; live-out 该节点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;live-in&lt;/strong&gt;: 如果&lt;code&gt;x&lt;/code&gt; live on 节点的&lt;strong&gt;任意一个&lt;/strong&gt;入边，那么我们说&lt;code&gt;x&lt;/code&gt; live-in 该节点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;live-out&lt;/strong&gt;: 如果&lt;code&gt;x&lt;/code&gt; live on 节点的&lt;strong&gt;任意一个&lt;/strong&gt;出边，那么我们说&lt;code&gt;x&lt;/code&gt; live-out 该节点&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;可以把每个节点&lt;code&gt;n&lt;/code&gt;理解为一个工厂，&lt;code&gt;in[n]&lt;/code&gt;是工厂需要购买的材料，&lt;code&gt;out[n]&lt;/code&gt;是工厂需要提供的材料。&lt;br&gt;工厂有时会自己生产新的材料给下游使用（&lt;code&gt;def[n]&lt;/code&gt;），有时会消耗上游提供的材料（&lt;code&gt;use[n]&lt;/code&gt;），其他时候可能只是把上游的材料原封不动地转交给下游工厂（&lt;code&gt;in[n]&lt;/code&gt;和&lt;code&gt;out[n]&lt;/code&gt;的交集*）&lt;/p&gt;
@@ -2331,12 +2339,12 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;p&gt;在此引入&lt;strong&gt;保守合并策略&lt;/strong&gt;。当某些条件成立时才合并节点&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;有如下的策略可用：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Briggs:&lt;/strong&gt; 确保合并出的新节点&lt;code&gt;ab&lt;/code&gt;的相邻节点中，&lt;strong&gt;significant 节点（i.e. 度数&amp;lt;&amp;#x3D;k的节点）&lt;/strong&gt; 数量少于 k 个。&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Briggs&lt;/strong&gt;: 确保合并出的新节点&lt;code&gt;ab&lt;/code&gt;的相邻节点中，&lt;strong&gt;significant 节点（i.e. 度数&amp;lt;&amp;#x3D;k的节点）&lt;/strong&gt; 数量少于 k 个。&lt;ul&gt;
 &lt;li&gt;避免创造新的 significant 节点。&lt;/li&gt;
 &lt;li&gt;这样在执行 simplify 时，&lt;code&gt;ab&lt;/code&gt;相邻节点中的 non-significant 节点被去掉后，&lt;code&gt;ab&lt;/code&gt;自己也成为 non-significant 节点。 因此不会降低可染色性。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;George:&lt;/strong&gt; 对于&lt;code&gt;a&lt;/code&gt;的每个相邻节点&lt;code&gt;t&lt;/code&gt;, 要么&lt;code&gt;t&lt;/code&gt;是 non-significant 节点，要么&lt;code&gt;t&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;之间本来就有 interference 边。&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;George&lt;/strong&gt;: 对于&lt;code&gt;a&lt;/code&gt;的每个相邻节点&lt;code&gt;t&lt;/code&gt;, 要么&lt;code&gt;t&lt;/code&gt;是 non-significant 节点，要么&lt;code&gt;t&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;之间本来就有 interference 边。&lt;ul&gt;
 &lt;li&gt;non-significant 的邻居会被 simplify 掉。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;(a, t)&lt;/code&gt;与&lt;code&gt;(b, t)&lt;/code&gt;合并得到新边&lt;code&gt;(ab, t)&lt;/code&gt;, 不会增加任何节点的度数。&lt;/li&gt;
 &lt;/ul&gt;
@@ -2420,8 +2428,137 @@ Resume is [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-18-垃圾回收&#34;&gt;&lt;a href=&#34;#Part-18-垃圾回收&#34; class=&#34;headerlink&#34; title=&#34;Part 18: 垃圾回收&#34;&gt;&lt;/a&gt;Part 18: 垃圾回收&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;Part-19-面向对象-OOP&#34;&gt;&lt;a href=&#34;#Part-19-面向对象-OOP&#34; class=&#34;headerlink&#34; title=&#34;Part 19: 面向对象(OOP)&#34;&gt;&lt;/a&gt;Part 19: 面向对象(OOP)&lt;/h2&gt;&lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt; ]]></description>
+&lt;h2 id=&#34;Part-18-垃圾回收&#34;&gt;&lt;a href=&#34;#Part-18-垃圾回收&#34; class=&#34;headerlink&#34; title=&#34;Part 18: 垃圾回收&#34;&gt;&lt;/a&gt;Part 18: 垃圾回收&lt;/h2&gt;&lt;h3 id=&#34;运行时Runtime&#34;&gt;&lt;a href=&#34;#运行时Runtime&#34; class=&#34;headerlink&#34; title=&#34;运行时Runtime&#34;&gt;&lt;/a&gt;运行时Runtime&lt;/h3&gt;&lt;p&gt;运行时 &amp;#x3D; Runtime &amp;#x3D; (Language) Runtime System &amp;#x3D; 程序默认的、不在编写时描述的builtin 方法等运行时环境信息。可能有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;POSIX 信号处理&lt;/li&gt;
+&lt;li&gt;任务智能分配到多核 CPU 的不同核心&lt;/li&gt;
+&lt;li&gt;虚拟机（比如 JVM）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能内存管理&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;比如：&lt;strong&gt;垃圾回收&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;内存管理概述&#34;&gt;&lt;a href=&#34;#内存管理概述&#34; class=&#34;headerlink&#34; title=&#34;内存管理概述&#34;&gt;&lt;/a&gt;内存管理概述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;手动内存管理&lt;/strong&gt;带来许多安全隐患，是最主要的漏洞来源之一。可能的问题：&lt;ul&gt;
+&lt;li&gt;内存泄漏：不再使用的内存未释放，可用内存越来越少，消耗系统资源。&lt;/li&gt;
+&lt;li&gt;Double-free: 重复释放同一块内存。可能导致程序崩溃，或是被攻击者以此误导 glibc 等实现未授权的内存写入。&lt;/li&gt;
+&lt;li&gt;Use-After-Free(UAF): 使用已经被释放的内存区域（例如通过悬空指针）。如果在释放后这块区域被攻击者修改了，之后再次使用时可能误导程序做出恶意行为。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;内存管理需要平衡性能、安全以及开发难度。&lt;/li&gt;
+&lt;li&gt;内存区域划分：&lt;ul&gt;
+&lt;li&gt;Static area&lt;ul&gt;
+&lt;li&gt;编译期分配&lt;/li&gt;
+&lt;li&gt;全局变量、字符串字面量等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Runtime stack&lt;ul&gt;
+&lt;li&gt;也就是栈，储存许多栈帧 &amp;#x2F; 活动记录(activation record)&lt;/li&gt;
+&lt;li&gt;包含局部变量、函数调用返回地址等信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;堆(heap)&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;通过&lt;code&gt;malloc&lt;/code&gt; &lt;code&gt;new&lt;/code&gt; 等方式在程序中动态分配的对象&lt;/li&gt;
+&lt;li&gt;如果这些对象不再使用则称之为 &lt;strong&gt;垃圾(garbage)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;垃圾回收(garbage collection, GC)：自动清理不被使用的垃圾。&lt;ul&gt;
+&lt;li&gt;是运行时的一部分。&lt;/li&gt;
+&lt;li&gt;在 LISP 里第一个应用。&lt;/li&gt;
+&lt;li&gt;两个阶段：&lt;ol&gt;
+&lt;li&gt;garbage detection: 检测已经成为垃圾的内存对象&lt;/li&gt;
+&lt;li&gt;garbage reclamation: 释放这些垃圾对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;理想的垃圾回收器：&lt;ul&gt;
+&lt;li&gt;安全：不会回收还没成为垃圾的对象 &lt;strong&gt;（必须）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;完善(Complete)：应回收尽回收&lt;/li&gt;
+&lt;li&gt;Low overhead: 时空占用小&lt;/li&gt;
+&lt;li&gt;Fast: short &lt;strong&gt;pause time(程序为了等待垃圾回收时阻塞的时间)&lt;/strong&gt; + 并行化&lt;/li&gt;
+&lt;li&gt;简单：做梦呢？&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如何判断一块内存&lt;code&gt;M&lt;/code&gt;之后是否会被继续使用？考虑程序&lt;code&gt;/* here */ Call P; Use M;&lt;/code&gt;:&lt;br&gt;如果能在&lt;code&gt;here&lt;/code&gt;处判断&lt;code&gt;M&lt;/code&gt;是否会被继续使用，就意味着能判定&lt;code&gt;P&lt;/code&gt;是否停机……这是个&lt;strong&gt;不可判定问题！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因此，我们需要再次使用&lt;strong&gt;保守估计&lt;/strong&gt;的策略，只回收那些确信是垃圾的对象，确保垃圾回收器是安全的。&lt;br&gt;我们通过判断内存对象的&lt;strong&gt;可达性(reachability)&lt;strong&gt;来找出哪些对象可以 &amp;#x2F; 无法通过指针，或是指针链访问到。&lt;/strong&gt;不可达的对象一定不可用。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接下来的任务：使用某种方式获取内存对象的可达性信息。方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引用计数Reference Count: 统计每个内存单元被引用的次数&lt;ul&gt;
+&lt;li&gt;直接追踪哪些内存单元是活跃的。&lt;/li&gt;
+&lt;li&gt;分配堆上空间时，GC 介入。&lt;/li&gt;
+&lt;li&gt;无法检测所有垃圾。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Tracing&lt;ul&gt;
+&lt;li&gt;当分配堆上空间&lt;strong&gt;失败时&lt;/strong&gt;，GC 介入并检测活跃的内存单元。&lt;/li&gt;
+&lt;li&gt;Mark-sweep&lt;/li&gt;
+&lt;li&gt;Copy-collection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其他现代方法：generational GC 等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来我们会详细讨论这些方法。&lt;/p&gt;
+&lt;h3 id=&#34;基础数据结构：有向图&#34;&gt;&lt;a href=&#34;#基础数据结构：有向图&#34; class=&#34;headerlink&#34; title=&#34;基础数据结构：有向图&#34;&gt;&lt;/a&gt;基础数据结构：有向图&lt;/h3&gt;&lt;p&gt;对象间的引用关系构成一个有向图。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点：&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;变量&amp;#x2F;寄存器&lt;/strong&gt;：在图中是一些指向内存对象的 &lt;strong&gt;“根节点”&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;内存对象（例如一个 struct &amp;#x2F; record）：被指向，也可能指向其他内存对象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;有向边：指针，&lt;code&gt;a&lt;/code&gt;储存了指向&lt;code&gt;b&lt;/code&gt;的指针，则对应一条有向边&lt;code&gt;a-&amp;gt;b&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/directed-graph.png&#34; alt=&#34;directed-graph&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在图上，我们可以更好地描述可达性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无法从任一“根节点”&lt;code&gt;r&lt;/code&gt;出发，通过一条链&lt;code&gt;r-&amp;gt;a-&amp;gt;b-&amp;gt;c-&amp;gt;...-&amp;gt;x&lt;/code&gt;到达的内存对象&lt;code&gt;x&lt;/code&gt;，就是不可达的对象。&lt;/li&gt;
+&lt;li&gt;例如，如果内存对象&lt;code&gt;x&lt;/code&gt;的入度为0, 则&lt;code&gt;x&lt;/code&gt;一定不可达（但反之不然）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Mark-and-Sweep&#34;&gt;&lt;a href=&#34;#Mark-and-Sweep&#34; class=&#34;headerlink&#34; title=&#34;Mark-and-Sweep&#34;&gt;&lt;/a&gt;Mark-and-Sweep&lt;/h3&gt;&lt;p&gt;一种朴素的垃圾回收方式。有如下两步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Mark: 从各个根节点出发，搜索并标记能到达的全部节点。&lt;/li&gt;
+&lt;li&gt;Sweep: 线性扫描整个堆，把未被标记的节点（不可达节点）链接到 &lt;strong&gt;freelist&lt;/strong&gt; 中, 最后清除标记。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/graph-marks.png&#34; alt=&#34;graph-marks&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;图中蓝色的节点即为&lt;strong&gt;未&lt;/strong&gt;被标记的节点。&lt;br&gt;图中的&lt;code&gt;·&lt;/code&gt;即为变量或是 record 中的字段。如有出边，则代表它是个指针，指向一个 record.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;freelist&lt;/strong&gt;: 储存所有可用的(free)内存块，&lt;strong&gt;是一个链表&lt;/strong&gt;。程序开始运行，没有进行任何堆内存分配时，这个链表自然包含了程序内存中的所有块。&lt;/p&gt;
+&lt;p&gt;当程序需要在堆上分配一个 record 时，从 freelist 中取出一块。&lt;br&gt;如果此时 freelist 空了或是不足以满足 record 的空间需求，则重新进行一次 Mark-and-Sweep 尝试找到垃圾并回收入 freelist, 然后再分配.&lt;br&gt;如果找不到任何垃圾回收，或是回收后 freelist 仍空间不足，则分配失败。&lt;/p&gt;
+&lt;p&gt;Mark-and-Sweep 方案的代价分析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;H: 堆的总块数&lt;/li&gt;
+&lt;li&gt;R: 可达的数据块数&lt;/li&gt;
+&lt;li&gt;时间花费：&lt;ul&gt;
+&lt;li&gt;Mark: 遍历可达对象，代价为 $ c_1 R $.&lt;/li&gt;
+&lt;li&gt;Sweep: 遍历整个堆，代价为 $ c_2 H $.&lt;/li&gt;
+&lt;li&gt;填充 freelist, 大小变为 H-R:&lt;ul&gt;
+&lt;li&gt;长期来看，分配对象数&amp;#x3D;回收对象数。&lt;/li&gt;
+&lt;li&gt;摊还后的代价 &amp;#x3D; 单次代价&amp;#x2F;回收对象数 &amp;#x3D; $ (c_1 R + c_2 H)&amp;#x2F;(H-R) $.&lt;/li&gt;
+&lt;li&gt;如果堆一直接近满（H接近R），则时间花费极大！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;该方案的问题与改进：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;问题：遍历可达对象时 DFS, 在极端情况下容易递归过深爆栈。&lt;ul&gt;
+&lt;li&gt;解决方法：使用显式的栈(explicit stack): 手动模拟一个栈，初始时压入所有 roots; 每次弹出栈顶节点&lt;code&gt;t&lt;/code&gt;，标记&lt;code&gt;t&lt;/code&gt;, 把&lt;code&gt;t&lt;/code&gt;指向的所有节点压入栈中；重复执行直到栈空。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;问题：即使如此，栈的大小太大了&lt;ul&gt;
+&lt;li&gt;解决方法：Deutsch-Schorr-Waite (DSW) pointer reversal&lt;ul&gt;
+&lt;li&gt;不使用显式的栈，而是复用图中的元素（节点与边）。&lt;/li&gt;
+&lt;li&gt;!! TODO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;引用计数Reference-Count&#34;&gt;&lt;a href=&#34;#引用计数Reference-Count&#34; class=&#34;headerlink&#34; title=&#34;引用计数Reference Count&#34;&gt;&lt;/a&gt;引用计数Reference Count&lt;/h3&gt;&lt;h3 id=&#34;Copying-Collection&#34;&gt;&lt;a href=&#34;#Copying-Collection&#34; class=&#34;headerlink&#34; title=&#34;Copying Collection&#34;&gt;&lt;/a&gt;Copying Collection&lt;/h3&gt;&lt;h3 id=&#34;编译器可用的接口&#34;&gt;&lt;a href=&#34;#编译器可用的接口&#34; class=&#34;headerlink&#34; title=&#34;编译器可用的接口&#34;&gt;&lt;/a&gt;编译器可用的接口&lt;/h3&gt;&lt;h2 id=&#34;Part-19-面向对象-OOP&#34;&gt;&lt;a href=&#34;#Part-19-面向对象-OOP&#34; class=&#34;headerlink&#34; title=&#34;Part 19: 面向对象(OOP)&#34;&gt;&lt;/a&gt;Part 19: 面向对象(OOP)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</guid>
