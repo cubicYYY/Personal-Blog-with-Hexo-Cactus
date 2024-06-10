@@ -115,13 +115,13 @@
 &lt;li&gt;在DFA中，只要状态集合S包含至少一个原来NFA中的终止状态，就把S标记为终止状态&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;示例（TODO）&lt;ul&gt;
+&lt;li&gt;示例：&lt;ul&gt;
 &lt;li&gt;&lt;img src=&#34;/compiler-construction-principles/nfa2dfa.png&#34; alt=&#34;nfa2dfa&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Thumpson构造法(RE-&amp;gt;NFA)：略&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Thumpson构造法(RE-&amp;gt;NFA)：略。只需要注意&lt;strong&gt;不要自作主张省去一些 ε-move 与状态&lt;/strong&gt;即可。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;词法分析器自动生成&#34;&gt;&lt;a href=&#34;#词法分析器自动生成&#34; class=&#34;headerlink&#34; title=&#34;词法分析器自动生成&#34;&gt;&lt;/a&gt;词法分析器自动生成&lt;/h3&gt;&lt;ul&gt;
@@ -138,7 +138,7 @@
 &lt;li&gt;此时等价类中的每个集合即对应最小DFA的一个状态。在其上可以轻松构建min-DFA，该过程是trivial的（可以每个组中选择一个状态作代表）。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;示例（TODO）&lt;ul&gt;
+&lt;li&gt;示例：&lt;ul&gt;
 &lt;li&gt;&lt;img src=&#34;/compiler-construction-principles/DFA-simplify-diverge.png&#34; alt=&#34;DFA-simplify-diverge&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;/compiler-construction-principles/DFA-simplify.png&#34; alt=&#34;DFA-simplify&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -2572,12 +2572,20 @@
 &lt;p&gt;关于 &lt;strong&gt;内存碎片&lt;/strong&gt; 这一概念，我们会在该部分的最后进行说明。&lt;/p&gt;
 &lt;h3 id=&#34;引用计数Reference-Count&#34;&gt;&lt;a href=&#34;#引用计数Reference-Count&#34; class=&#34;headerlink&#34; title=&#34;引用计数Reference Count&#34;&gt;&lt;/a&gt;引用计数Reference Count&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;Copying-Collection&#34;&gt;&lt;a href=&#34;#Copying-Collection&#34; class=&#34;headerlink&#34; title=&#34;Copying Collection&#34;&gt;&lt;/a&gt;Copying Collection&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;编译器可用的接口&#34;&gt;&lt;a href=&#34;#编译器可用的接口&#34; class=&#34;headerlink&#34; title=&#34;编译器可用的接口&#34;&gt;&lt;/a&gt;编译器可用的接口&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;内存碎片&#34;&gt;&lt;a href=&#34;#内存碎片&#34; class=&#34;headerlink&#34; title=&#34;内存碎片&#34;&gt;&lt;/a&gt;内存碎片&lt;/h3&gt;&lt;p&gt;内存碎片意味着浪费了内存中的空间，内存不是“最密堆积”的。&lt;/p&gt;
-&lt;p&gt;有两种内存碎片：&lt;/p&gt;
+&lt;h3 id=&#34;垃圾回收：编译器相关接口-机制&#34;&gt;&lt;a href=&#34;#垃圾回收：编译器相关接口-机制&#34; class=&#34;headerlink&#34; title=&#34;垃圾回收：编译器相关接口&amp;#x2F;机制&#34;&gt;&lt;/a&gt;垃圾回收：编译器相关接口&amp;#x2F;机制&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;内存碎片：意味着浪费了内存中的空间，内存不是“最密堆积”的。&lt;br&gt;有两种内存碎片：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;外部碎片(external fragmentation): 当程序要求分配一块内存时，尽管堆中看起来可用空间足够，但由于这些可用空间零散、碎片化地分布在各个位置，成为了外部碎片，我们找不到足够大的一段连续内存分配给程序，分配失败。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/external-fragment.png&#34; alt=&#34;external-fragment&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;内部碎片(internal fragmentation): 当程序要求分配一块内存时，由于地址对齐等原因，内存管理管理器可能返回一块比要求的更大的内存，用不完的部分即为内部碎片，将不可避免地被浪费。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/internal-fragment.png&#34; alt=&#34;internal-fragment&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;内存分配方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear allocation: &lt;img src=&#34;/compiler-construction-principles/linear-alloc.png&#34; alt=&#34;linear&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Freelist allocation: &lt;img src=&#34;/compiler-construction-principles/freelist-alloc.png&#34; alt=&#34;freelist&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Part-19-面向对象-OOP&#34;&gt;&lt;a href=&#34;#Part-19-面向对象-OOP&#34; class=&#34;headerlink&#34; title=&#34;Part 19: 面向对象(OOP)&#34;&gt;&lt;/a&gt;Part 19: 面向对象(OOP)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt;</content>
