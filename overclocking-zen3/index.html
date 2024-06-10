@@ -214,6 +214,9 @@
         Word count: 1.5k
           (~9 mins to read)
       </span>
+      <span class="last-updated">
+        Last updated: <time datetime="2024-05-24T16:15:06.568Z" class="dt-updated" itemprop="dateModified">2024-05-25 00:15:06</time>
+      </span>
       <h1 id="Overclocking-Ryzen-5600X-5800X-5900X-5950X-using-PBO2"><a href="#Overclocking-Ryzen-5600X-5800X-5900X-5950X-using-PBO2" class="headerlink" title="Overclocking Ryzen 5600X&#x2F;5800X&#x2F;5900X&#x2F;5950X using PBO2"></a>Overclocking Ryzen 5600X&#x2F;5800X&#x2F;5900X&#x2F;5950X using PBO2</h1><p>This guide aims to overclock Zen3 CPUs with Precision Boost Overdrive 2 (PBO2), gaining extra performance in the single-core score(about <strong>5% - 15%</strong>) while maintaining or even increasing the multi-core score. The solution may also apply to the Zen4 series, but the args cannot be a valid reference.</p>
 <h2 id="Before-the-overclocking"><a href="#Before-the-overclocking" class="headerlink" title="Before the overclocking"></a>Before the overclocking</h2><h3 id="Mindset"><a href="#Mindset" class="headerlink" title="Mindset"></a>Mindset</h3><p>Zen3 series is super hot, so you lower the voltage, lower the temperature, and more performance can be obtained under the temperature limit. The heat gets heavily trapped inside the chip, so <strong>a good cooler can help a lot!</strong><br>Ideal idle temperature: 40-60 Celsius</p>
 <p>Although <strong>you always overclock with your risks</strong>, here’s a point worth mentioning: <strong>PBO2 itself is SAFE,</strong> since it never actually changes the voltage for different cores under different frequencies(the CPU requires a voltage from the motherboard, so it physically cannot allocate different voltage for each core precisely). Instead, it changes the frequency of each core under a certain voltage (i.e. changes the frequency-voltage <em>curve</em>)! We’ll see how to adjust the <em>curve</em> later.</p>

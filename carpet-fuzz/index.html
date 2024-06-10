@@ -207,6 +207,9 @@
         Word count: 2.2k
           (~7 mins to read)
       </span>
+      <span class="last-updated">
+        Last updated: <time datetime="2024-04-13T17:10:20.000Z" class="dt-updated" itemprop="dateModified">2024-04-14 01:10:20</time>
+      </span>
       <h1 id="论文精炼：CarpetFuzz"><a href="#论文精炼：CarpetFuzz" class="headerlink" title="论文精炼：CarpetFuzz"></a>论文精炼：CarpetFuzz</h1><h1 id="CarpetFuzz"><a href="#CarpetFuzz" class="headerlink" title="CarpetFuzz"></a>CarpetFuzz</h1><h2 id="Automatic-Program-Option-Constraint-Extraction-from"><a href="#Automatic-Program-Option-Constraint-Extraction-from" class="headerlink" title="Automatic Program Option Constraint Extraction from"></a>Automatic Program Option Constraint Extraction from</h2><p>Documentation for Fuzzing</p>
 <h2 id="核心Idea"><a href="#核心Idea" class="headerlink" title="核心Idea"></a>核心Idea</h2><p>现代的大规模软件项目往往存在大量程序选项。有些漏洞需要特定参数的组合触发。然而我们不能简单地穷举这些参数的排列组合，因为这会导致工作量指数级别的膨胀。我们注意到许多参数之间存在互斥、依赖等关系，而这些关系正记录在Manual中。因此本篇文章通过NLP的手段从文档中提取参数关系并应用于Fuzzing（基于AFL）中（名为CarpetFuzz，<strong>开源</strong>）。</p>
 <p>关键参数：</p>

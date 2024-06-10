@@ -200,6 +200,9 @@
         Word count: 547
           (~2 mins to read)
       </span>
+      <span class="last-updated">
+        Last updated: <time datetime="2023-07-03T13:12:17.035Z" class="dt-updated" itemprop="dateModified">2023-07-03 21:12:17</time>
+      </span>
       <p>原题地址：<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P2234">https://www.luogu.org/problemnew/show/P2234</a></p>
 <h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>给定一个序列，对于每一个数都要查询：序列中在这个数前与这个数最接近的数是什么？然后将最接近的数字与这个数字的差累加。（序列第一个数字直接加自己）  </p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>查询在这个数之前与这个数最接近的数，我们很容易想到用二叉搜索树（BST）来做。<br><del>虽然数据略水暴力排序每次查询从一个数往左右找也能过。</del><br>每次插入一个数字，然后查询，我用Treap实现（还是弱化版的，只有插入查询）。<br>Treap的核心其实就是打乱顺序插入防止被卡（粗糙理解）。具体实现方法不难，请百度。（我之后会写一篇专门介绍下各种BST的。）<br>PS：Treap树完整版之后写。这题用STL的vector也行，vector理论每次插入渐进时间复杂度是O(n)但是听说实际是对数级别的？   </p>
