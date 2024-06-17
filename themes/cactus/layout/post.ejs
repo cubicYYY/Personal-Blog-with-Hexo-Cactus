@@ -25,6 +25,9 @@
         Word count: <%= wordcount(page.content) %>
           (~<%= min2read(page.content) %> mins to read)
       </span>
+      <span class="last-updated">
+        Last updated: <time datetime="<%= date_xml(page.updated) %>" class="dt-updated" itemprop="dateModified"><%= date(page.updated, "YYYY-MM-DD HH:mm:ss") %></time>
+      </span>
       <%- page.content %>
     </div>
 </article>
