@@ -17,11 +17,11 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>Write-Up</category>
         <category>出题</category>
         <category>English</category>
+        <category>Hackergame</category>
         <category>CISCN</category>
         <category>web</category>
-        <category>Hackergame</category>
-        <category>SchoolBus</category>
         <category>Overclocking</category>
+        <category>SchoolBus</category>
         <category>Rust</category>
         <category>Lifetime</category>
         <category>Code</category>
@@ -30,30 +30,30 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>古籍研究社</category>
         <category>Treap</category>
         <category>BST</category>
+        <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>Stack</category>
-        <category>Splay</category>
         <category>数链剖分</category>
-        <category>树状数组</category>
-        <category>LCA</category>
-        <category>分块</category>
-        <category>哈希</category>
+        <category>Splay</category>
         <category>持久化</category>
         <category>线段树</category>
+        <category>分块</category>
+        <category>哈希</category>
+        <category>树状数组</category>
+        <category>LCA</category>
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
-        <category>Miscellaneous</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
         <category>On Going</category>
+        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
-        <category>Compiler</category>
-        <category>Computer Science</category>
         <item>
             <guid isPermalink="true">http://cubicy.icu/overclocking-zen3/</guid>
             <title>Overclocking AMD Zen3 with PBO2 Done Right: A full guide</title>
@@ -218,13 +218,13 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
             <guid isPermalink="true">http://cubicy.icu/compiler-construction-principles/</guid>
             <title>编译原理课程笔记（All-in-One速通版）</title>
             <link>http://cubicy.icu/compiler-construction-principles/</link>
-            <category>On Going</category>
             <category>Compiler</category>
             <category>Computer Science</category>
+            <category>On Going</category>
             <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的，尽可能对缺乏动机(intuition)的一些概念&lt;strong&gt;提供课堂外的例子以简明解释&lt;/strong&gt;。&lt;br&gt;如果读者能通过这些例子意会到某种 sense 就最好不过了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;包含浙江大学编译原理课程课改后新增部分。&lt;/strong&gt;&lt;br&gt;标题中使用&lt;code&gt;*&lt;/code&gt;标记的部分为考试&lt;strong&gt;不&lt;/strong&gt;考察的内容。&lt;/p&gt;
-&lt;p&gt;文中大部分图片来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。&lt;br&gt;建议阅读本笔记时配合老师课件&amp;#x2F;讲义作为参照。&lt;/p&gt;
+&lt;p&gt;文中大部分图片来自于姚老师(ZJU, pyaoaa at zju.edu.cn)，在此表示感谢。&lt;br&gt;建议阅读本笔记时配合老师课件&amp;#x2F;讲义作为参照。&lt;br&gt;如果忘记了某个术语的意思，还请活用&lt;code&gt;Ctrl+F&lt;/code&gt;调用网页搜索功能。&lt;/p&gt;
 &lt;h2 id=&#34;Part-0-课程信息&#34;&gt;&lt;a href=&#34;#Part-0-课程信息&#34; class=&#34;headerlink&#34; title=&#34;Part 0: 课程信息&#34;&gt;&lt;/a&gt;Part 0: 课程信息&lt;/h2&gt;&lt;p&gt;使用教材：&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel （A.K.A. 虎书）&lt;/p&gt;
 &lt;p&gt;相关课程：&lt;/p&gt;
 &lt;ul&gt;
@@ -246,8 +246,11 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;li&gt;&lt;strong&gt;题量较大！&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;考试范围：虎书 1-11 13-14 18 章：&lt;br&gt;Ch.01 Introduction&lt;br&gt;Ch.02 Lexical Analysis&lt;br&gt;Ch.03 Parsing&lt;br&gt;Ch.04 Abstract Syntax&lt;br&gt;Ch.05 Semantic Analysis&lt;br&gt;Ch.06 Activation Record&lt;br&gt;Ch.07 Translating into Intermediate Code&lt;br&gt;Ch.08 Basic Blocks and Traces&lt;br&gt;Ch.09 Instruction Selection&lt;br&gt;Ch.10 Liveness Analysis&lt;br&gt;Ch.11 Register Allocation&lt;br&gt;Ch.13 Garbage Collection&lt;br&gt;Ch.14 Object-oriented Languages (无大题)&lt;br&gt;Ch.18 Loop Optimizations (无大题)&lt;/li&gt;
 &lt;li&gt;题型：判断20道*1&amp;#x3D;20分 选择20道*1.5&amp;#x3D;30分 大题7题共50分&lt;/li&gt;
-&lt;li&gt;复习要点（大部分都考过，&lt;strong&gt;粗体为侧重点&lt;/strong&gt;）&lt;ul&gt;
-&lt;li&gt;重点关注 &lt;strong&gt;编译器前端部分（课改前已有的教学内容）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;前置知识：计算理论（笔记参考&lt;a href=&#34;https://note.tonycrane.cc/cs/tcs/toc/&#34;&gt;https://note.tonycrane.cc/cs/tcs/toc/&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;复习要点-Cheat-Sheet&#34;&gt;&lt;a href=&#34;#复习要点-Cheat-Sheet&#34; class=&#34;headerlink&#34; title=&#34;复习要点 &amp;#x2F; Cheat Sheet&#34;&gt;&lt;/a&gt;复习要点 &amp;#x2F; Cheat Sheet&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;重点关注 &lt;strong&gt;编译器前端部分（课改前已有的教学内容）&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;大部分都考过，&lt;strong&gt;粗体为侧重点&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;重要概念包括但不限于：&lt;ul&gt;
 &lt;li&gt;lexer&amp;#x3D;scanner, parser&lt;/li&gt;
 &lt;li&gt;derivation, reduction&lt;/li&gt;
@@ -270,42 +273,76 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;li&gt;liveness, live-in, live-out, use of…, def of…&lt;/li&gt;
 &lt;li&gt;canonical form, canonical tree&lt;/li&gt;
 &lt;li&gt;basic block, trace, covering set of traces&lt;/li&gt;
-&lt;li&gt;commute, side-effect&lt;/li&gt;
-&lt;li&gt;optimum tiling, optimal tiling&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;commute&lt;/strong&gt; , side-effect&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;optimum tiling&lt;/strong&gt; V.S. &lt;strong&gt;optimal tiling&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;maximum&lt;/strong&gt; V.S. &lt;strong&gt;maximal&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;internal fragmentation, external fragmentation&lt;/li&gt;
+&lt;li&gt;dominance, loop-invariant&lt;/li&gt;
+&lt;li&gt;imperative, functional&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;提高涉及各算法的&lt;strong&gt;计算题熟练度&lt;/strong&gt;与&lt;strong&gt;概念辨析能力&lt;/strong&gt;。可能题型包括但不限于：&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;计算 liveness&lt;/strong&gt;: 算出每个指令的&lt;code&gt;in[n]&lt;/code&gt; &lt;code&gt;out[n]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;计算 First, Follow, Nullable 集&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;构造各个文法的状态图&amp;#x2F;预测分析表&lt;/strong&gt;，并据此判断给定的文法（一些产生式）是否属于该文法（i.e. 判断有无 conflict）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;实现块结构的不同方法&lt;/strong&gt;：static link, display, &lt;del&gt;lambda-lifting&lt;/del&gt;&lt;br&gt;一些快速判断方法：&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;计算 First, Follow, Nullable 集&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;构造各个文法的状态图&amp;#x2F;预测分析表&lt;/strong&gt;，并据此判断给定的文法（一些产生式）是否属于该文法（i.e. 判断有无 conflict）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;不排除&lt;/strong&gt;会考 LALR(1) 大题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;实现块结构（嵌套函数）的不同方法&lt;/strong&gt;：static link, display, &lt;del&gt;lambda-lifting&lt;/del&gt;&lt;br&gt;一些快速判断方法：&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;利用文法的包含关系快速判断&lt;/li&gt;
 &lt;li&gt;有左递归&amp;#x2F;左公因子 -&amp;gt; 不是LL(1)&lt;/li&gt;
 &lt;li&gt;……&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;对 IR Tree 进行树覆盖&lt;/strong&gt;：使用 &lt;strong&gt;Maximal Munch&lt;/strong&gt; &amp;#x2F; 动态规划&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mark-and-Sweep&lt;/strong&gt;, Reference count, Copying collection (Stop-and-Copy) 各自的垃圾回收流程&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Briggs &amp;#x2F; George 各自的 coalesce 策略&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Do actual spill 时具体如何 rewrite 代码&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Do actual spill 时通过计算 $ \frac{循环外 use&amp;#x2F;def 次数 + 循环次数 \times 循环内 use&amp;#x2F;def 次数}{节点度数} $ 计算哪个节点需要被spill&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Liveness analysis&lt;/strong&gt;: 算出每个指令的&lt;code&gt;in[n]&lt;/code&gt; &lt;code&gt;out[n]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;根据 liveness analysis 的结果画出 interference graph&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同时存在的变量之间两两连边&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MOVE&lt;/code&gt;操作时，对&lt;code&gt;t:=s&lt;/code&gt;中的&lt;code&gt;t&lt;/code&gt;和&lt;code&gt;s&lt;/code&gt;连虚边&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;对 IR Tree 进行树覆盖&lt;/strong&gt;：使用 &lt;strong&gt;Maximal Munch&lt;/strong&gt; &amp;#x2F; 动态规划，并且转为代码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将各个 tile &lt;strong&gt;分别转写为一块代码&lt;/strong&gt;，而后按自底向上的顺序，把每块代码拼接成整个程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Mark-and-Sweep, Reference count, Copying collection (Stop-and-Copy) 各自的垃圾回收流程&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;三种方式的优缺点比较：&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Fragmentation 问题&lt;/li&gt;
+&lt;li&gt;Cache 友好性&lt;/li&gt;
+&lt;li&gt;能&amp;#x2F;不能清理哪种垃圾&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Briggs &amp;#x2F; George 各自的 coalesce 策略&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Do actual spill 时具体如何 rewrite 代码&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Do actual spill 时通过计算 $ \frac{循环外 use&amp;#x2F;def 次数 + 循环次数 \times 循环内 use&amp;#x2F;def 次数}{节点度数} $ 计算哪个节点需要被spill&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;该判据的值&lt;strong&gt;越小则越优先&lt;/strong&gt;被 spill&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;给定功能需求写出NFA&amp;#x2F;DFA 或 给定 NFA&amp;#x2F;DFA 描述其功能&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;给定功能需求写出NFA&amp;#x2F;DFA 或 给定 NFA&amp;#x2F;DFA 描述其功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;识别能被5整除的二进制数：5个状态表示 mod 5 余数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;寄存器分配图染色全过程&lt;/strong&gt;（build, simplify, coalesce, freeze, spill, select, rewrite）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Thumpson构造法&lt;/strong&gt;：RE-&amp;gt;NFA&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;寄存器分配图染色全过程&lt;/strong&gt;（build, simplify, coalesce, freeze, spill, select, rewrite）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Thumpson构造法&lt;/strong&gt;：RE-&amp;gt;NFA&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;如果题目 &lt;strong&gt;明确表示需要用 Thumpson 构造法&lt;/strong&gt; ，只需要注意&lt;strong&gt;不要自作主张省去一些 ε-move 与状态&lt;/strong&gt;即可。&lt;/li&gt;
 &lt;li&gt;如果题目没有明确说明，可以直接手动构造，可以省略一些 ε-moves.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;子集构造法：NFA-&amp;gt;DFA&lt;/strong&gt;, 使用状态转换表&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Hopcroft’s algorithm: 简化 DFA&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Frame-resident variables&lt;/strong&gt;: 必须放置到内存上的变量&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Frame-resident variables&lt;/strong&gt;: 必须放置到内存上的变量&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;对象过大&lt;/li&gt;
 &lt;li&gt;数组&lt;/li&gt;
 &lt;li&gt;Spill&lt;/li&gt;
@@ -314,14 +351,44 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;li&gt;……&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;变量逃逸(escape)的三种情况：引用、取地址、嵌套函数访问&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;各个文法识别字符串的过程，判断是否被接受&lt;/li&gt;
-&lt;li&gt;符号表的不同实现方式（ &lt;strong&gt;imperative&lt;/strong&gt; or &lt;strong&gt;functional&lt;/strong&gt; ）以及优势劣势&lt;/li&gt;
-&lt;li&gt;函数调用时 活动记录&amp;#x2F;栈帧 的布局变化，FP&amp;#x2F;SP 的变化&lt;/li&gt;
-&lt;li&gt;Interference graph 的 simplify &amp;#x2F; coalesce &amp;#x2F; …&lt;/li&gt;
-&lt;li&gt;IR Tree 线性化为 canonical trees, 组装成 basic blocks, 排序为 traces, 最后生成目标机器代码的全过程&lt;/li&gt;
-&lt;li&gt;Deutsch-Schorr-Waite (DSW) pointer reversal 流程？&lt;/li&gt;
-&lt;li&gt;循环优化：外提变量的前提&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;变量逃逸(escape)的三种情况：引用、取地址、嵌套函数访问&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Yacc &amp;#x2F; Bison 语义动作和文法的对应关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;factor : &amp;#x27;(&amp;#x27; expr &amp;#x27;)&amp;#x27;    &amp;#123; $$ = $2; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;| NUMBER          &amp;#123; $$ = atoi(yytext); &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;判断给定的树是否为 Canonical tree&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;给定程序，写出对应的 Tiger IR&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Statements 和 expressions 之间判定两两是否 commutes&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;构造 basic blocks 和 traces, 并找出最长的 trace&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Maximum 和 Maximal 的区别&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Tree grammar 的作用：描述各个 tile, 详见正文&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;循环优化部分 dominance, loop-invariant 的概念定义&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;子集构造法：NFA-&amp;gt;DFA, 使用状态转换表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hopcroft’s algorithm: 简化 DFA&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;各个文法识别字符串的过程，判断是否被接受&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;符号表的不同实现方式（ &lt;strong&gt;imperative&lt;/strong&gt; or &lt;strong&gt;functional&lt;/strong&gt; ）以及优势劣势&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数调用时 活动记录&amp;#x2F;栈帧 的布局变化，FP&amp;#x2F;SP 的变化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IR Tree 线性化为 canonical trees, 组装成 basic blocks, 排序为 traces, 最后生成目标机器代码的全过程&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Deutsch-Schorr-Waite (DSW) pointer reversal 流程？估计不考&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;循环优化：外提变量的前提&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;确保掌握作业题：和历年大题重复度高，可能出现升级版题甚至“原题”&lt;ul&gt;
@@ -329,9 +396,6 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;前置知识：计算理论（笔记参考&lt;a href=&#34;https://note.tonycrane.cc/cs/tcs/toc/&#34;&gt;https://note.tonycrane.cc/cs/tcs/toc/&lt;/a&gt;）&lt;/p&gt;
 &lt;h2 id=&#34;Part-1-简介&#34;&gt;&lt;a href=&#34;#Part-1-简介&#34; class=&#34;headerlink&#34; title=&#34;Part 1: 简介&#34;&gt;&lt;/a&gt;Part 1: 简介&lt;/h2&gt;&lt;p&gt;基本概念：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;中间代码&amp;#x3D;Intermediate Code&lt;/li&gt;
@@ -2026,8 +2090,7 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;blockquote&gt;
 &lt;p&gt;这里需要特别注意：tile 的子树不是指该节点的子树，而是用 tile 覆盖该节点以及部分子节点后，那些没被覆盖到的子树。&lt;br&gt;例如下图中红色的 tile 对应的子树并非两个&lt;code&gt;MEM&lt;/code&gt;子树（因为被这个tile覆盖在内），而是两个&lt;code&gt;PLUS&lt;/code&gt;子树：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/tile-children.png&#34; alt=&#34;children of tile&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;树语法Tree-Grammar&#34;&gt;&lt;a href=&#34;#树语法Tree-Grammar&#34; class=&#34;headerlink&#34; title=&#34;*树语法Tree Grammar&#34;&gt;&lt;/a&gt;*树语法Tree Grammar&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;不要求掌握。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;tree grammar 是一种上下文无关文法。&lt;br&gt;可以用 tree grammar 描述这些 tile.&lt;/p&gt;
+&lt;h3 id=&#34;树语法Tree-Grammar&#34;&gt;&lt;a href=&#34;#树语法Tree-Grammar&#34; class=&#34;headerlink&#34; title=&#34;树语法Tree Grammar&#34;&gt;&lt;/a&gt;树语法Tree Grammar&lt;/h3&gt;&lt;p&gt;tree grammar 是一种上下文无关文法。&lt;br&gt;可以用 tree grammar 描述这些 tile.&lt;/p&gt;
 &lt;p&gt;需要记录：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;pattern: 模式是什么样的&lt;/li&gt;
@@ -2809,11 +2872,13 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/ul&gt;
 &lt;p&gt;该方案的问题与改进：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;问题：遍历可达对象时如果直接 DFS, 在极端情况下容易递归过深爆栈。&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;问题：遍历可达对象时如果直接 DFS, 在极端情况下容易递归过深爆栈。&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;解决方法：使用显式的栈(explicit stack)进行 DFS: 手动模拟一个栈，初始时压入所有 roots; 每次弹出栈顶节点&lt;code&gt;t&lt;/code&gt;，标记&lt;code&gt;t&lt;/code&gt;, 把&lt;code&gt;t&lt;/code&gt;指向的所有节点压入栈中；重复执行直到栈空。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;问题：即使如此，栈的大小太大了&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;问题：即使如此，栈的大小太大了&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;解决方法：&lt;strong&gt;Deutsch-Schorr-Waite (DSW) pointer reversal&lt;/strong&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;不使用显式的栈，而是复用图中的元素（节点与边），&lt;strong&gt;把栈“放在”图中：在图中用指针串起来一连串节点，也可以充当栈！&lt;/strong&gt;&lt;br&gt;当搜索某个节点（也就是内存中的一个对象，或者说 record）&lt;code&gt;x&lt;/code&gt;时：&lt;/p&gt;
 &lt;ol&gt;
@@ -2843,8 +2908,9 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Mark-and-Sweep 优缺点总结：&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Mark-and-Sweep 总结：&lt;/p&gt;
 &lt;figure class=&#34;highlight diff&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 垃圾数量较少时很高效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 可以回收循环引用（A-&amp;gt;B-&amp;gt;C-&amp;gt;A...）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 对象在内存中不需要移动，也就是其位置不需要更改（有时影响程序正确性：参考隔壁 Rust 的 std::pin）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 垃圾数量多时很低效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- GC 过程会阻塞程序运行，程序必须暂停以回收垃圾&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 容易导致堆的碎片化，尤其是会产生许多内存（外部）碎片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;关于 &lt;strong&gt;内存碎片&lt;/strong&gt; 这一概念，我们会在该部分的最后进行说明。&lt;/p&gt;
@@ -2859,10 +2925,172 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;Copying-Collection&#34;&gt;&lt;a href=&#34;#Copying-Collection&#34; class=&#34;headerlink&#34; title=&#34;Copying Collection&#34;&gt;&lt;/a&gt;Copying Collection&lt;/h3&gt;&lt;p&gt;也叫做 &lt;strong&gt;Stop-and-Copy&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;垃圾回收：编译器相关接口&#34;&gt;&lt;a href=&#34;#垃圾回收：编译器相关接口&#34; class=&#34;headerlink&#34; title=&#34;垃圾回收：编译器相关接口&#34;&gt;&lt;/a&gt;垃圾回收：编译器相关接口&lt;/h3&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;杂项&#34;&gt;&lt;a href=&#34;#杂项&#34; class=&#34;headerlink&#34; title=&#34;杂项&#34;&gt;&lt;/a&gt;杂项&lt;/h3&gt;&lt;ul&gt;
+&lt;p&gt;具体而言，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当执行&lt;code&gt;x.fi:= p&lt;/code&gt;时，我们需要维护 RC(reference count) 值：&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;的 RC 值+&amp;#x3D;1 .&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x.fi&lt;/code&gt;之前指向的对象 RC 值-&amp;#x3D;1 .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如果此时发现某个对象&lt;code&gt;r&lt;/code&gt;的 RC 值变为 0, 也就是无人指向它时：&lt;ul&gt;
+&lt;li&gt;将&lt;code&gt;r&lt;/code&gt;加入 freelist.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt;的各个 fields 指向的对象 RC 值-&amp;#x3D;1 .&lt;/li&gt;
+&lt;li&gt;这可能会使得其他对象 RC 值也下降到 0, 从而触发一连串回收过程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实很多语言都有类似的设计，例如 C++ 中的智能指针就利用 RC 避免了裸指针带来的许多内存安全问题。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reference Count 优缺点总结：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight diff&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ GC 带来的开销(overhead)是渐进式的：不需要专门为了进行 GC 暂停程序执行，而是融合到程序执行过程中（无需 stop-and-collection）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 实现简单&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 可以和手动内存管理并存（例如同时使用裸指针和智能指针）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 内存局部性好：RC 值和对象储存在一起&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 垃圾能被立即回收（而不是等待直到下一批统一回收）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;两个严重问题：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 不能回收循环引用（A-&amp;gt;B-&amp;gt;C-&amp;gt;A...）。相互引用可能导致它们的 RC 值都不为 0, 成为一个永远不可达的”孤岛“&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 增加/减少 RC 值是非常频繁的，带来非常昂贵的开销&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 增加/减少 RC 值需要在目标代码中加入大量指令&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;Copying-Collection&#34;&gt;&lt;a href=&#34;#Copying-Collection&#34; class=&#34;headerlink&#34; title=&#34;Copying Collection&#34;&gt;&lt;/a&gt;Copying Collection&lt;/h3&gt;&lt;p&gt;也叫做 &lt;strong&gt;Stop-and-Copy&lt;/strong&gt;.&lt;br&gt;核心思想：&lt;strong&gt;用两个 heap space, 用完一个就切换到另一个。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;from-space&lt;/strong&gt;: 程序使用的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;to-space&lt;/strong&gt;: 在进行垃圾回收前不使用&lt;/li&gt;
+&lt;li&gt;GC 流程：每个 heap space 有&lt;code&gt;next&lt;/code&gt;和&lt;code&gt;limit&lt;/code&gt;指针，分别表示可分配空间的起点；可分配空间的终点。如果 from-space 用完了，就开始进行 GC:&lt;ol&gt;
+&lt;li&gt;遍历 from-space 并把其中可达的对象一一拷贝到 to-space, 占据 to-space 开头一段连续的空间，这个过程中&lt;code&gt;next&lt;/code&gt;指针不断移动，使其始终指向可用空间的起点。&lt;/li&gt;
+&lt;li&gt;这样一来，不可达的垃圾自然就留在原先的 from-space 中被无视并抛弃了。&lt;/li&gt;
+&lt;li&gt;拷贝完毕，此时新空间中&lt;code&gt;next&lt;/code&gt;指针紧跟在这些拷贝过来的对象后。如果程序在之后的运行中需要分配新的内存空间，就从&lt;code&gt;next&lt;/code&gt;开始分配，并根据分配空间大小移动。&lt;/li&gt;
+&lt;li&gt;然后，自然地， from-space 和 to-space 角色互换。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/copy-collect.png&#34; alt=&#34;copy-collect&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此外，我们还需要进行 &lt;strong&gt;指针转发(pointer forwarding)&lt;/strong&gt; . 这是因为我们移动了一些对象，改变了其内存地址，因此原先指向这些对象的指针地址也需要相应地被修改。&lt;br&gt;……但这样做需要在找到、储存每个对象对应的新地址，开销太大了，因此我们在每次拷贝时，直接把新对象&lt;code&gt;x&amp;#39;&lt;/code&gt;的地址储存在 from-space 已经用不到的对象&lt;code&gt;x&lt;/code&gt;开头：&lt;code&gt;x.f1:= &amp;amp;x&amp;#39;&lt;/code&gt;&lt;br&gt;然后在拷贝时，每次访问指针&lt;code&gt;p&lt;/code&gt;时，通过&lt;code&gt;forward(p)&lt;/code&gt;翻译到真实地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;指向 to-space 中：这就是真实地址，直接返回&lt;code&gt;p&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;指向 from-space 中：&lt;ul&gt;
+&lt;li&gt;如果&lt;code&gt;p-&amp;gt;f1&lt;/code&gt;指向 to-space: 这是对象被拷贝后转发后的指针，返回&lt;code&gt;p-&amp;gt;f1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果&lt;code&gt;p-&amp;gt;f1&lt;/code&gt;指向 from-space: 对象还未被拷贝，&lt;ul&gt;
+&lt;li&gt;拷贝&lt;code&gt;p&lt;/code&gt;指向对象的所有 fields: &lt;code&gt;p-&amp;gt;f1&lt;/code&gt; &lt;code&gt;p-&amp;gt;f2&lt;/code&gt; …&lt;/li&gt;
+&lt;li&gt;拷贝&lt;code&gt;p&lt;/code&gt;指向的对象&lt;code&gt;*p&lt;/code&gt;到&lt;code&gt;next&lt;/code&gt;处&lt;/li&gt;
+&lt;li&gt;在 from-space 记录转发的指针：&lt;code&gt;p-&amp;gt;f1:= next&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;移动&lt;code&gt;next&lt;/code&gt;指针&lt;/li&gt;
+&lt;li&gt;返回新地址&lt;code&gt;p-&amp;gt;f1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;利用这个函数，我们可以导出一个 from-to 拷贝的算法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cheney’s Algorithm&lt;/strong&gt;: 使用 &lt;strong&gt;BFS&lt;/strong&gt; 遍历可达对象并拷贝。&lt;br&gt;简而言之，就是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;初始时，拷贝根变量(roots)指向的内存对象，这些对象进入 copied 队列。&lt;/li&gt;
+&lt;li&gt;处理 copied 队列中对象内部的指针，这些对象指向的内存对象被拷贝，进入 copied 队列；这些对象本身成为 copied-and-scanned 对象，移出队列。&lt;/li&gt;
+&lt;li&gt;重复以上两步直到队列空。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;把 to-space 切割成三个连续段，依次为：&lt;ul&gt;
+&lt;li&gt;copied and scanned: 包含的对象已经复制，且对象中的指针被检查&amp;#x2F;转发过了。&lt;/li&gt;
+&lt;li&gt;copied: 包含的对象已经复制，但还没检查过对象内部的指针。&lt;ul&gt;
+&lt;li&gt;其实这段空间就是 BFS 过程的待处理 copied 队列。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;empty: 可用空间。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/cheney-layout.png&#34; alt=&#34;cheney-layout&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;scan ← next ← beginning of to-space&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;for each root r&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  r ← Forward(r)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;while scan &amp;lt; next&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  for each field fi of record at scan&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    scan.fi ← Forward(scan.fi)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  scan ← scan + size of record at scan&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;然而，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;BFS算法的内存局部性较差&lt;/strong&gt;：&lt;code&gt;x&lt;/code&gt;中的指针&lt;code&gt;x.fi&lt;/code&gt;指向的对象可能地址离&lt;code&gt;x&lt;/code&gt;很远！这导致无法很好的利用虚拟内存，也会造成许多 cache misses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DFS算法的内存局部性较好，但需要 pointer-reversal, 也很慢，且麻烦。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此我们可以提出一种混合式(hybrid)算法：复制对象时使用 BFS, 但是复制时顺带使用 DFS 递归地检查对象内部的指针，如果有还未被拷贝的对象则拷贝。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/hybrid-algo.png&#34; alt=&#34;hybrid-algo&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copying Collection 优缺点总结：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight diff&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 实现简单：无需用栈或 pointer-reversal&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 跑得比香港记者快，时间复杂度优秀：和活跃对象数量成正比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 可用的 free space 在内存上连续：每次 GC 时自动进行了“压缩”，去除了内存碎片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 是更新的一些算法的基础范式，起到了示范作用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 高达一半的空间被浪费了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 内存局部性差：Cheney&amp;#x27;s algorithm &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 需要精确的类型信息标出所有指针（如果不知道某个 field 是否为指针，就无法在移动对象后转发该指针）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;编译器：实现快速分配&#34;&gt;&lt;a href=&#34;#编译器：实现快速分配&#34; class=&#34;headerlink&#34; title=&#34;编译器：实现快速分配&#34;&gt;&lt;/a&gt;编译器：实现快速分配&lt;/h3&gt;&lt;p&gt;虽然在本部分开头指出“GC 属于 runtime”, 但这不意味着编译器不能参与该过程。编译器可能通过如下方式和垃圾回收器进行交互：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在内存上&lt;strong&gt;分配&lt;/strong&gt; records&lt;/li&gt;
+&lt;li&gt;GC 时，为垃圾回收器描述 roots 变量有哪些&lt;/li&gt;
+&lt;li&gt;描述内存布局（例如指出某个 record 各个 field 的大小）&lt;/li&gt;
+&lt;li&gt;读写屏障(barrier)，防止 GC 造成条件竞争&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中，内存分配是最为重要的环节：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;函数式编程语言不鼓励更新，而是创建新的不可变对象&lt;/li&gt;
+&lt;li&gt;内存密集型程序在循环中可能需要访问几乎所有内存对象一次&lt;/li&gt;
+&lt;li&gt;经验告诉我们平均每条指令在内存上分配 1&amp;#x2F;7 word&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了高效分配内存，我们可&lt;strong&gt;采用 Copying Collection&lt;/strong&gt;: 可分配空间连续，且起始位置(&lt;code&gt;next&lt;/code&gt;)、区域末尾(&lt;code&gt;limit&lt;/code&gt;)已知。&lt;br&gt;每次在内存上分配一个大小为&lt;code&gt;N&lt;/code&gt;的 record 时，有如下开销与对应优化：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;del&gt;Call the allocate function&lt;/del&gt;&lt;ul&gt;
+&lt;li&gt;通过内联展开，可消除函数调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Test next + N &amp;lt; limit ? (If the test fails, call GC)&lt;/li&gt;
+&lt;li&gt;Move next to result&lt;ul&gt;
+&lt;li&gt;可以和 A(见下)合并：&lt;strong&gt;Move next into some computationally useful place&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Clear M[next], M[next+1], …, M[next + N - 1]&lt;/del&gt;&lt;ul&gt;
+&lt;li&gt;可以通过和 B(见下)合并消除（或者干脆不初始化）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;next &amp;lt;- next + N&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Return from the allocate function&lt;/del&gt;&lt;ul&gt;
+&lt;li&gt;通过内联展开，可消除函数调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以及如下不属于分配过程的开销：&lt;br&gt;&lt;del&gt;A. Move result into some computationally useful place&lt;/del&gt; (Done in step#3)&lt;br&gt;B. Store useful values into the record&lt;/p&gt;
+&lt;p&gt;综合分析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果保持&lt;code&gt;next&lt;/code&gt;和&lt;code&gt;limit&lt;/code&gt;在寄存器中，step#2 和 step#5 可以在 3 条指令内完成。&lt;/li&gt;
+&lt;li&gt;每次分配的总开销通过这些优化方式降低到大约 4 条指令。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;编译器的-GC-接口&#34;&gt;&lt;a href=&#34;#编译器的-GC-接口&#34; class=&#34;headerlink&#34; title=&#34;编译器的 GC 接口&#34;&gt;&lt;/a&gt;编译器的 GC 接口&lt;/h3&gt;&lt;p&gt;编译器需要为垃圾回收器提供部分信息。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编译器的任务：&lt;ul&gt;
+&lt;li&gt;为不同类型的 record 提示长度信息，用于 scan 阶段&lt;/li&gt;
+&lt;li&gt;为不同类型的 field 提示类型信息（是&amp;#x2F;不是指针），用于 Forward 函数&lt;/li&gt;
+&lt;li&gt;对于 Tiger, Pascal 等静态类型语言，或 Java 等 OOP 语言，可以在每个对象开头放置一个指针，指向一个特殊类型 &lt;code&gt;type-descriptor&lt;/code&gt; 的 record.&lt;ul&gt;
+&lt;li&gt;对象总大小&lt;/li&gt;
+&lt;li&gt;指针 field 的地址&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;为 GC 提示哪些根变量包含指针，从而作为每次 GC 的起点：&lt;ul&gt;
+&lt;li&gt;根变量可能是栈上的指针，或是 callee-saved 寄存器中的指针&lt;/li&gt;
+&lt;li&gt;approximate GC: 栈上看起来像指针的就当作指针，尽管可能会把一些整数当作指针&lt;/li&gt;
+&lt;li&gt;Tiger 语言的解决方法：使用 &lt;strong&gt;pointer map&lt;/strong&gt;, 编译期就能知道哪些 temporary 是指针。&lt;ul&gt;
+&lt;li&gt;如果垃圾回收器在分配时调用：在执行每次分配 record 的指令前生成 pointer map&lt;/li&gt;
+&lt;li&gt;递归调用时：每次调用函数&lt;code&gt;CALL&lt;/code&gt;前生成 pointer map&lt;/li&gt;
+&lt;li&gt;由于我们调用函数&lt;code&gt;CALL&lt;/code&gt;前生成 pointer map, 所以通过每个返回地址可以索引到下个（被调用函数）栈帧的 pointer map.&lt;/li&gt;
+&lt;li&gt;垃圾收集器通过从栈顶向下扫描调用栈,依次处理每个栈帧。每处理完一个栈帧,就可以通过该栈帧的返回地址来获取下一个栈帧的 pointer map, 识别出栈帧中的指针。&lt;/li&gt;
+&lt;li&gt;需要特殊处理 callee-save 寄存器：考虑调用链 f-&amp;gt;g-&amp;gt;h, g 在调用 h 前，对于这些 callee-save 寄存器，必须在 pointer map 中额外记录哪些是 g 自己使用的，哪些是从 f “继承”来的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Derived Pointer:&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;有的指针可能指向某个 record 中间，或者根本不指向一个 record.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;例如，假设我们需要在循环中访问&lt;code&gt;a[i-2024]&lt;/code&gt;, 则该地址可以表示为&lt;code&gt;M[a-2024+i]&lt;/code&gt;:&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;t1 &amp;lt;- a-2000&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;t2 &amp;lt;- t1+i&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;t3 &amp;lt;- M[t2]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;而编译器可能会把&lt;code&gt;t1&lt;/code&gt;提升(hoist, 见后文循环优化章节)到循环外避免重复计算。&lt;br&gt;如果循环中有分配指令触发了 GC 操作，垃圾回收器可能会错误地以为&lt;code&gt;t1&lt;/code&gt;不引用对象；或是以为&lt;code&gt;t1&lt;/code&gt;指向了某个别的对象（如果运气不好）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在刚刚的那个例子中，我们就称&lt;code&gt;t1&lt;/code&gt;是从基(base)指针&lt;strong&gt;派生(derived)&lt;/strong&gt; 出的指针。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pointer map 必须识别出每个 derived pointer 并把信息“告诉” base pointer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果&lt;code&gt;a&lt;/code&gt;的地址在 GC 过程中发生了改变，则&lt;code&gt;t1&lt;/code&gt;的地址也需要被修正；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt;至少要比&lt;code&gt;t1&lt;/code&gt;活得久（参见 Rust 中引用(references)的生命周期控制）；否则在 GC 时 pointer map 就无法有足够的信息修正 derived pointer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;GC-杂项&#34;&gt;&lt;a href=&#34;#GC-杂项&#34; class=&#34;headerlink&#34; title=&#34;GC 杂项&#34;&gt;&lt;/a&gt;GC 杂项&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;内存碎片：意味着浪费了内存中的空间，内存不是“最密堆积”的。&lt;br&gt;有两种内存碎片：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;外部碎片(external fragmentation): 当程序要求分配一块内存时，尽管堆中看起来可用空间足够，但由于这些可用空间零散、碎片化地分布在各个位置，成为了外部碎片，我们找不到足够大的一段连续内存分配给程序，分配失败。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/external-fragment.png&#34; alt=&#34;external-fragment&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
@@ -2875,28 +3103,51 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;li&gt;Freelist allocation: &lt;img src=&#34;/compiler-construction-principles/freelist-alloc.png&#34; alt=&#34;freelist&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;总结：GC 有代价，但可以通过优化减少开销。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;阅读 Appel 第13章，文中对不同 GC 机制进行了分析、比较。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Part-19-面向对象-OOP&#34;&gt;&lt;a href=&#34;#Part-19-面向对象-OOP&#34; class=&#34;headerlink&#34; title=&#34;Part 19: 面向对象(OOP)&#34;&gt;&lt;/a&gt;Part 19: 面向对象(OOP)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt; ]]></description>
+&lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</guid>
             <title>赛博疑难杂症药方</title>
             <link>http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</link>
-            <category>Miscellaneous</category>
             <category>On Going</category>
+            <category>Miscellaneous</category>
             <pubDate>Fri, 12 Apr 2024 01:45:01 +0800</pubDate>
             <description><![CDATA[ &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;可能是submodule导致，即使删除子模块的&lt;code&gt;.git&lt;/code&gt;文件夹也不足够，还需要&lt;code&gt;git rm --cached&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;电脑怎样都没有声音，声卡等硬件均无问题，驱动没有更改过&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;电脑怎样都没有声音，声卡等硬件均无问题，驱动没有更改过&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;检查是否是Windows更新导致，可以回滚&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;远程桌面出现奇奇怪怪的渲染问题&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;远程桌面出现奇奇怪怪的渲染问题&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;可能是由于远程设备没有连接屏幕，需要保持屏幕开启；或者使用虚拟显示器（Virtual display）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;WSL2 手动设置 NAT 模式下的网络适配器，给 WSL2 分配静态 IP:&lt;/p&gt;
+&lt;figure class=&#34;highlight powershell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netsh winsock reset&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root ip addr &lt;span class=&#34;built_in&#34;&gt;del&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$&lt;/span&gt;(ip addr show eth0 ^| grep &lt;span class=&#34;string&#34;&gt;&amp;#x27;inet\b&amp;#x27;&lt;/span&gt; ^| awk &lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#123;print $2&amp;#125;&amp;#x27;&lt;/span&gt; ^| head &lt;span class=&#34;literal&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;) dev eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root ip addr add &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.2&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;24&lt;/span&gt; broadcast &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.255&lt;/span&gt; dev eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root ip route add &lt;span class=&#34;number&#34;&gt;0.0&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;0.0&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; via &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.1&lt;/span&gt; dev eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.1&lt;/span&gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;8.8&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;8.8&lt;/span&gt;^&amp;gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;10.0&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;0.21&lt;/span&gt;^&amp;gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;114.114&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;114.114&lt;/span&gt;^&amp;gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;powershell &lt;span class=&#34;literal&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Get-NetAdapter -IncludeHidden &amp;#x27;vEthernet (WSL)&amp;#x27; | Get-NetIPAddress | Remove-NetIPAddress -Confirm:&lt;span class=&#34;variable&#34;&gt;$False&lt;/span&gt;; New-NetIPAddress -IPAddress 192.168.50.1 -PrefixLength 24 -InterfaceAlias &amp;#x27;vEthernet (WSL)&amp;#x27;; Get-NetNat | ? Name -Eq WSLNat | Remove-NetNat -Confirm:&lt;span class=&#34;variable&#34;&gt;$False&lt;/span&gt;; New-NetNat -Name WSLNat -InternalIPInterfaceAddressPrefix 192.168.50.0/24;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每次开机启动都需要在管理员权限下运行（需要 UAC）&lt;/li&gt;
+&lt;li&gt;其中对于 WSL2 内部来说，宿主的地址：&lt;code&gt;192.168.50.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对宿主机来说，WSL2 的地址：&lt;code&gt;192.168.50.2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在 WSL2 中，&lt;code&gt;.wslconfig&lt;/code&gt; 中 &lt;code&gt;networkingMode=nat&lt;/code&gt; 时通过代理使用 Gradle 的正确姿势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./gradlew -Dhttp.proxyHost=192.168.50.1 -Dhttp.proxyPort=7777 -Dhttps.proxyHost=192.168.50.1 -Dhttps.proxyPort=7777 &amp;quot;-Dhttp.nonProxyHosts=*.nonproxyrepos.com|localhost&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;有时需要重启一下 daemon: &lt;code&gt;gradle --stop&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
