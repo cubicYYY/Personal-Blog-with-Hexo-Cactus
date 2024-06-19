@@ -29,16 +29,16 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>冰菓</category>
         <category>古籍研究社</category>
         <category>Treap</category>
-        <category>BST</category>
         <category>Stack</category>
+        <category>BST</category>
         <category>图论</category>
         <category>Kruskal</category>
         <category>Splay</category>
         <category>数链剖分</category>
-        <category>持久化</category>
-        <category>线段树</category>
         <category>树状数组</category>
         <category>LCA</category>
+        <category>持久化</category>
+        <category>线段树</category>
         <category>分块</category>
         <category>哈希</category>
         <category>Phar</category>
@@ -2153,7 +2153,7 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;记住：CFG 中的一个结点是一段代码，但是为了方便起见我们都假设只有一个语句在里面。所以其实你可以很简单地合并一串连续的代码（变成基本块）。&lt;strong&gt;我们说“执行某个节点”，指的就是执行节点里的代码。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;记住：CFG 中的一个节点是一段代码，但是为了方便起见我们都假设只有一个语句在里面。所以其实你可以很简单地合并一串连续的代码（变成基本块）。&lt;strong&gt;我们说“执行某个节点”，指的就是执行节点里的代码。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;接下来的重点就是找到一种方式计算in&amp;#x2F;out集合。&lt;br&gt;事实上可以迭代地不断计算、更新&lt;code&gt;in[n]&lt;/code&gt;以及&lt;code&gt;out[n]&lt;/code&gt;, 直到他们在某次迭代后不再改变变（i.e. 到达了这个算法的&lt;em&gt;不动点&lt;/em&gt;）。&lt;/p&gt;
 &lt;p&gt;要计算 in[n] 与 out[n], 需要用到以下几个规则(rule)：&lt;/p&gt;
 &lt;ol&gt;
@@ -2189,7 +2189,7 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;p&gt;我们原先是顺着CFG中的有向边方向进行更新（1-&amp;gt;6, in-&amp;gt;out）。&lt;br&gt;然而考虑信息在节点间的传递是通过 $ out[n] &amp;#x3D; \underset{s \in succ[n]}{\cup} in[s] $ 完成的，其方向是从后向前的。&lt;br&gt;所以我们可以在每次迭代中，都按照&lt;strong&gt;逆序&lt;/strong&gt;（6-&amp;gt;1, out-&amp;gt;in）进行计算：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/calc-liveness-backward.png&#34; alt=&#34;calc-liveness-backward&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;只需要 3 次迭代就收敛。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;本质上，liveness问题是“需求决定供给”的：后续的节点有对变量的使用需求，之前的节点才可能需要提供一个活跃的变量。&lt;br&gt;liveness 就是一种 fact.&lt;br&gt;迭代更新顺序也应遵循这些 facts 的流动方向。而在活跃性分析中，liveness 反向流过这些 CFG 的有向边，并且是先影响 out 再进而影响 in.&lt;br&gt;因此我们迭代的过程也要遵从这一规律，使得一次迭代中，某一个 use 引入的需求能够迅速传遍整个 CFG, 而非每次只影响附近的个别结点，&lt;/p&gt;
+&lt;p&gt;本质上，liveness问题是“需求决定供给”的：后续的节点有对变量的使用需求，之前的节点才可能需要提供一个活跃的变量。&lt;br&gt;liveness 就是一种 fact.&lt;br&gt;迭代更新顺序也应遵循这些 facts 的流动方向。而在活跃性分析中，liveness 反向流过这些 CFG 的有向边，并且是先影响 out 再进而影响 in.&lt;br&gt;因此我们迭代的过程也要遵从这一规律，使得一次迭代中，某一个 use 引入的需求能够迅速传遍整个 CFG, 而非每次只影响附近的个别节点，&lt;/p&gt;
 &lt;p&gt;关于迭代方向的重要性，可以类比一下冒泡排序：如果现有数组&lt;code&gt;2 3 4 5 6 7 1&lt;/code&gt;需要排序，那么可以看出&lt;code&gt;1&lt;/code&gt;自然的流动方向就是从右到左。&lt;br&gt;冒泡排序每次迭代会按顺序检查相邻的数字并交换逆序对。&lt;br&gt;如果从右到左，第一次迭代就可以完成排序：&lt;code&gt;1&lt;/code&gt;连续被交换，迅速“上浮”至第一的位置；&lt;br&gt;如果非要从左到右，那么每次迭代&lt;code&gt;1&lt;/code&gt;都只能被交换一次，上浮一位，需要多达6次迭代才能完成！&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;最终， &lt;strong&gt;&lt;code&gt;out[n]&lt;/code&gt;会被用于寄存器分配&lt;/strong&gt;：毕竟最终要决定的是&lt;strong&gt;执行语句之后需要保留哪些变量&lt;/strong&gt; （供给侧）。&lt;/p&gt;
@@ -2505,7 +2505,7 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;p&gt;在此引入&lt;strong&gt;保守合并策略&lt;/strong&gt;。当某些条件成立时才合并节点&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;有如下的策略可用：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Briggs&lt;/strong&gt;: 确保合并出的新节点&lt;code&gt;ab&lt;/code&gt;的相邻节点中，&lt;strong&gt;significant 节点（i.e. 度数&amp;lt;&amp;#x3D;k的节点）&lt;/strong&gt; 数量少于 k 个。&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Briggs&lt;/strong&gt;: 确保合并出的新节点&lt;code&gt;ab&lt;/code&gt;的相邻节点中，&lt;strong&gt;significant 节点（i.e. 度数&amp;gt;&amp;#x3D;k的节点）&lt;/strong&gt; 数量少于 k 个。&lt;ul&gt;
 &lt;li&gt;避免创造新的 significant 节点。&lt;/li&gt;
 &lt;li&gt;这样在执行 simplify 时，&lt;code&gt;ab&lt;/code&gt;相邻节点中的 non-significant 节点被去掉后，&lt;code&gt;ab&lt;/code&gt;自己也成为 non-significant 节点。 因此不会降低可染色性。&lt;/li&gt;
 &lt;/ul&gt;
@@ -3156,7 +3156,238 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt;&lt;p&gt;循环结构在程序中随处可见；程序执行时间有很大一部分都是在循环中度过的。我们需要对循环做出一些优化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Low level: 针对单个循环&lt;ul&gt;
+&lt;li&gt;loop invariant code motion: 把循环中不变化的代码移动到循环外&lt;/li&gt;
+&lt;li&gt;strength reduction: 强度折减，用代价低的运算取代代价高的运算&lt;/li&gt;
+&lt;li&gt;loop unrolling: 循环展开，增加每次循环迭代的元素个数，减少小循环的循环开销&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;High level: 重构、修改多个循环&lt;ul&gt;
+&lt;li&gt;loop fusion: 融合多个循环，减少循环开销&lt;/li&gt;
+&lt;li&gt;loop interchange: 调换内外循环顺序，提高内存局部性等&lt;/li&gt;
+&lt;li&gt;loop tiling: 循环遍历数组时，通过适当的重新分块，提高内存局部性等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;CFG-图中的循环结构&#34;&gt;&lt;a href=&#34;#CFG-图中的循环结构&#34; class=&#34;headerlink&#34; title=&#34;CFG 图中的循环结构&#34;&gt;&lt;/a&gt;CFG 图中的循环结构&lt;/h3&gt;&lt;p&gt;循环在控制流图(CFG)体现为 &lt;strong&gt;一个节点集合 &lt;code&gt;S&lt;/code&gt;, 包含 header node &lt;code&gt;h&lt;/code&gt;&lt;/strong&gt;, 并且对于&lt;code&gt;S&lt;/code&gt;中的任何节点&lt;code&gt;x&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;都有一条从&lt;code&gt;x&lt;/code&gt;到&lt;code&gt;h&lt;/code&gt;的路径&lt;/li&gt;
+&lt;li&gt;都有一条从&lt;code&gt;h&lt;/code&gt;到&lt;code&gt;x&lt;/code&gt;的路径&lt;/li&gt;
+&lt;li&gt;除了&lt;code&gt;h&lt;/code&gt;, 没有任何其他&lt;code&gt;S&lt;/code&gt;以外的节点能到达&lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重要概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Loop entry: &lt;code&gt;h&lt;/code&gt;是唯一一个能从外部到达的节点，是循环的&lt;strong&gt;唯一入口&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Loop exit: 可以有多个节点能跳出循环（i.e. 后继节点不都属于&lt;code&gt;S&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Predecessor: pred, 前驱节点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Successor: succ, 后继节点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Dominator: 如果 CFG 的入口节点&lt;code&gt;s0&lt;/code&gt;到节点&lt;code&gt;n&lt;/code&gt;的&lt;strong&gt;所有路径&lt;/strong&gt;都经过节点&lt;code&gt;d&lt;/code&gt;, 我们就称&lt;code&gt;d&lt;/code&gt;是&lt;code&gt;n&lt;/code&gt;的支配节点(dominator)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;记作&lt;code&gt;d dom n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可以理解为简单版的图论中的“割点”&lt;/li&gt;
+&lt;li&gt;每个节点都支配(dominate)自己&lt;/li&gt;
+&lt;li&gt;节点可以有多个 dominators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/dominator.png&#34; alt=&#34;dominator&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;求解每个节点的 dominators &lt;code&gt;D[n]&lt;/code&gt;:&lt;ul&gt;
+&lt;li&gt;入口节点的唯一 dominator 就是自己：&lt;code&gt;D[s0]=&amp;#123;s0&amp;#125;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;对于其它节点：$ D[n] &amp;#x3D; {n} \cup  \left( \underset{p\in pred[n]}{\cap} D[p] \right) \text{for }n\neq s_0 $&lt;/li&gt;
+&lt;li&gt;求解过程：一开始时令&lt;code&gt;D[s0]=&amp;#123;s0&amp;#125;&lt;/code&gt;, 其余节点&lt;code&gt;D[x]=所有节点&lt;/code&gt;；然后使用上面的式子不断迭代更新直到不动点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Immediate dominator: 直接支配节点，支配&lt;code&gt;n&lt;/code&gt;的节点中距离&lt;code&gt;n&lt;/code&gt;最近（但不是自己）的节点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;也就是从入口结点到达&lt;code&gt;n&lt;/code&gt;的任何路径(不含&lt;code&gt;n&lt;/code&gt;) 中，路径中最后一个支配n的结点。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt;的直接支配节点记作&lt;code&gt;idom(n)&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;除了初始节点&lt;code&gt;s0&lt;/code&gt;以外，每个节点有且仅有一个直接支配节点。&lt;ul&gt;
+&lt;li&gt;可以证明，如果&lt;code&gt;d&lt;/code&gt;和&lt;code&gt;e&lt;/code&gt;都支配&lt;code&gt;n&lt;/code&gt;, 那么要么&lt;code&gt;d&lt;/code&gt;支配&lt;code&gt;e&lt;/code&gt;, 要么&lt;code&gt;e&lt;/code&gt;支配&lt;code&gt;d&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;因此对于某个节点&lt;code&gt;n&lt;/code&gt;的支配节点集合&lt;code&gt;D[n]&lt;/code&gt;, &lt;code&gt;D[n]&lt;/code&gt;中的 dominators 上有全序关系。&lt;/li&gt;
+&lt;li&gt;而&lt;code&gt;idom(n)&lt;/code&gt;就是“最小”的那个 dominator: 不支配&lt;code&gt;D[n]&lt;/code&gt;中任何其他的 dominator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Dominator tree: 支配节点树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对于每个节点&lt;code&gt;n&lt;/code&gt;, 连接边：&lt;code&gt;idom(n)&lt;/code&gt;-&amp;gt;&lt;code&gt;n&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/dom-tree.png&#34; alt=&#34;dom-tree&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;每个节点支配以自己为根的子树中的所有节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Natural loop: 自然循环&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;我们并不关心循环具体代码形式（for, while, goto, …），而是关心能否提取出易于优化的循环结构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Back edge: 如果边 &lt;code&gt;n&lt;/code&gt;-&amp;gt;&lt;code&gt;h&lt;/code&gt; 满足 &lt;code&gt;h dom n&lt;/code&gt;, 则这是一个 back edge&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Back edge 指向的节点 &lt;code&gt;h&lt;/code&gt; 称为 loop header.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;我们可以基于 back edge 严谨地定义 CFG 图中的一个自然循环：&lt;br&gt;每个 back edge &lt;code&gt;n&lt;/code&gt;-&amp;gt;&lt;code&gt;h&lt;/code&gt; 对应一个 natural loop (但可以有多个 back edge 对应一个 natural loop: 例如 for 语句中的每个 &lt;code&gt;continue&lt;/code&gt; 都给这个 natural loop 新增了一个 back edge).&lt;br&gt;这个 natural loop 中的节点集合包含一些节点&lt;code&gt;x&lt;/code&gt;满足：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;h dom x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;存在一条从&lt;code&gt;x&lt;/code&gt;到&lt;code&gt;n&lt;/code&gt;的路径不经过&lt;code&gt;h&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;说人话就是 back edge 是从循环尾回到循环头(loop header)的边；循环体就是中间那些被 loop header 支配的节点。&lt;/strong&gt; 而 back edge 的意义是保证至少有一条路径能返回首节点&lt;code&gt;h&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;循环可以嵌套：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/nested-loop.png&#34; alt=&#34;nested-loop&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;图中外层循环”5-8-9-10”嵌套了内层循环”8-9”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;循环可以共享首节点：见上图”2-3” “2-4”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;除了共享首节点的情况外，两个循环要么完全不相交，要么一个完全嵌入另一个（或者说后者包含前者）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;最内循环(innermost loop)&lt;/strong&gt;: 最“里”的循环，不包含其他循环（不被其他循环嵌入）。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/innermost-loops.png&#34; alt=&#34;innermost-loops&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Loop-nest tree: 表达循环的嵌套关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;树中每个节点对应一个 loop header 及其对应的 natural loops 节点集合。&lt;/li&gt;
+&lt;li&gt;如果这个 loop heder 对应多个 natural loops (共享首节点)，也合并到同一个节点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/loop-nest-tree&#34; alt=&#34;loop-nest-tree&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点的上半部分表示该节点对应的 loop header.&lt;/li&gt;
+&lt;li&gt;可以把整个 procedure 视为在一个假想的大循环中，作为树的根节点。&lt;/li&gt;
+&lt;li&gt;叶节点即对应最内循环。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Loop preheader: 前置首节点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;许多优化操作会在进入循环前进行一些准备工作，也就是在紧挨着循环头之前插入一些语句。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;因此我们可以在 loop header 之前插入一个 loop preheader 用来安置这些语句。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;loop preheader 的唯一后继就是 loop header&lt;/li&gt;
+&lt;li&gt;循环&lt;code&gt;L&lt;/code&gt;里到达首节点的边&lt;code&gt;x-&amp;gt;h&lt;/code&gt;改为进入前置首节点：&lt;code&gt;x-&amp;gt;p&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;循环&lt;code&gt;L&lt;/code&gt;外到达首节点的边不变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/preheader.png&#34; alt=&#34;preheader&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;循环不变代码外提Loop-Invariant-Hoisting&#34;&gt;&lt;a href=&#34;#循环不变代码外提Loop-Invariant-Hoisting&#34; class=&#34;headerlink&#34; title=&#34;循环不变代码外提Loop Invariant Hoisting&#34;&gt;&lt;/a&gt;循环不变代码外提Loop Invariant Hoisting&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Loop-invariant: 如果某个表达式的值在循环中不会改变，对循环来讲是固定值，则称表达式 loop-invariant.&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;显然，所有常数都 loop-invariant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;赋值语句 &lt;code&gt;x := v1 OP v2&lt;/code&gt; 是 invariant 的当且仅当其操作数&lt;code&gt;v1&lt;/code&gt;和&lt;code&gt;v2&lt;/code&gt;都满足：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;操作数是常数，或是&lt;/li&gt;
+&lt;li&gt;对于操作数中使用到的变量，其 def 都在循环外，或是&lt;/li&gt;
+&lt;li&gt;对于操作数中使用到的变量，在执行赋值语句时其 def 唯一，且 loop-invariant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;……说人话就是操作数及其使用的变量也得 loop-invariant, 而且不能在循环中因为控制流跳转等原因导致变量 def 不唯一（反例：&lt;code&gt;for...&amp;#123;a=1; if (random()&amp;gt;0.5) continue; a=2;&amp;#125;&lt;/code&gt;）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;我们可以归纳地检查赋值语句 &lt;code&gt;x := v1 OP v2&lt;/code&gt; 的操作数是否 invariant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Base cases:&lt;ul&gt;
+&lt;li&gt;常数：一定是 invariant 的。&lt;/li&gt;
+&lt;li&gt;变量的 use: 该变量所有 defs 都在循环外则 invariant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Inductive cases:&lt;ul&gt;
+&lt;li&gt;表达式：多个 invariant 表达式进行运算仍然 invariant.&lt;/li&gt;
+&lt;li&gt;变量的 use: 要求在执行该语句时只可能有唯一的 def 有效，且这个 def 的右侧(RHS) 是 loop-invariant 的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;优化：这样的表达式在循环外就可以求值，而非每轮循环都计算一次。这就是 loop-invariant code motion.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Code hoisting: 如果这样的表达式在循环中需要使用，则可以将求值提升到循环开始前。&lt;/li&gt;
+&lt;li&gt;Code sinking: 如果这样的表达式在循环结束后需要使用，则可以将求值下沉到循环结束后。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来我们重点关注 hoisting.&lt;/p&gt;
+&lt;p&gt;例如，对于如下代码：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//before&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L0: t := 0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L1: i := i + 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    t := a + b // hoist!!!&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    *i := t // ...hoist?&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    if i&amp;lt;N goto L1 else L2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L2: x := t&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;我们注意到&lt;code&gt;t := a+b&lt;/code&gt;这个赋值语句是 loop-invariant 的（&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;的 defs 均在循环外）。因此我们对其进行提升：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//after&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L0: t := 0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    t := a + b //!!!&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L1: i := i + 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    *i := t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    if i&amp;lt;N goto L1 else L2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L2: x := t&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;但并非所有的 hoisting 都是合法的。例如对于原先的程序，尽管&lt;code&gt;t&lt;/code&gt;的 def 是 loop-invariant 的，但我们仍然不能提升&lt;code&gt;*i := t&lt;/code&gt;.&lt;br&gt;这是因为在循环中&lt;code&gt;t&lt;/code&gt;的值在之后会被改变，从而改变之后要写入内存的地址。&lt;br&gt;这说明，表达式的值是 loop-invariant 的不代表 hoisting 就是合法的：归根结底，这相当于我们只关心了 &lt;em&gt;表达式&lt;/em&gt; 的值，但忽视了其副作用；盲目上提会破坏代码的语义(semantics)信息。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;（划重点）hoisting 的判据&lt;/strong&gt;：当且仅当满足如下所有条件时可以提升形如&lt;code&gt;t := a OP b&lt;/code&gt;的赋值语句（赋值语句就是 def）&lt;code&gt;d&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt; 必须支配所有&lt;code&gt;t&lt;/code&gt;在其上 live-out 的循环出口(loop exits).&lt;ul&gt;
+&lt;li&gt;人话：如果可能在不执行这条赋值语句的情况下提前跳出循环，显然不能上提（上提后相当于变成一定会执行的）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;在循环中&lt;code&gt;t&lt;/code&gt;只能有唯一的 def.&lt;ul&gt;
+&lt;li&gt;人话：不能在循环中先后给&lt;code&gt;t&lt;/code&gt;赋不同的值并使用这些不同的值。如果&lt;code&gt;t&lt;/code&gt;的值在每轮循环中都要不断改变，这就不是 hoisting 能优化掉的需求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t&lt;/code&gt;不属于 loop preheader 的 live-out 集合；换句话说，&lt;code&gt;t&lt;/code&gt;在进入循环前不是活跃的。&lt;ul&gt;
+&lt;li&gt;人话：如果在循环体中，要提升的这个赋值语句前还有别的语句&lt;code&gt;o&lt;/code&gt;用到了&lt;code&gt;t&lt;/code&gt;, 那么错误的 hoisting 就会导致在循环的一开始&lt;code&gt;o&lt;/code&gt;就得到了错误的&lt;code&gt;t&lt;/code&gt;值。我们要避免这种情况就要保证&lt;code&gt;t&lt;/code&gt;只能通过当前赋值语句“激活”，在那之前不能被使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以验证一下这些判据：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/hoist-criteria.png&#34; alt=&#34;hoist-criteria&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;杂项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果这个赋值语句有一定的副作用，那么上述规则就不足够，需要添加更多判断、约束。例如：&lt;ul&gt;
+&lt;li&gt;可能抛出算术异常：例如除法可能触发&lt;code&gt;Div-by-zero&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可能有副作用：例如 Python 的海象运算符&lt;code&gt;:=&lt;/code&gt;会在表达式中引入副作用（变得不“纯”）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;将 while 转写为 for 有助于优化：拷贝一份条件判断块到循环体末尾即可。&lt;ul&gt;
+&lt;li&gt;这是由于 while 特殊的控制流结构可能会导致判据中最后一条要求无人能达到，要把 while 转化为我们刚刚研究的 repeat-until 这种模式的 natural loops.&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/while2for.png&#34; alt=&#34;while2for&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;其他循环优化&#34;&gt;&lt;a href=&#34;#其他循环优化&#34; class=&#34;headerlink&#34; title=&#34;*其他循环优化&#34;&gt;&lt;/a&gt;*其他循环优化&lt;/h3&gt;&lt;p&gt;&lt;em&gt;本部分内容不属于考试范围。&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Stength reduction: 强度折减，用开销低的操作代替开销高的操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;2.0 * x&lt;/code&gt; -&amp;gt; &lt;code&gt;x + x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x / 2&lt;/code&gt; -&amp;gt; &lt;code&gt;x * 0.5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Induction variable: 循环中一种常见的模式是在每次循环执行&lt;code&gt;i := i+c&lt;/code&gt;; 我们可以在不依赖每轮循环中&lt;code&gt;i&lt;/code&gt;的情况下，推导部分这样的变量的值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear induction variable: 每轮循环中以固定量改变的变量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/induction-var.png&#34; alt=&#34;induction-var&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上图展示了这种优化：basci induction variable &lt;code&gt;i&lt;/code&gt;直接被省去了，而使用 derived induction variable &lt;code&gt;k&lt;/code&gt; 代替。&lt;/li&gt;
+&lt;li&gt;结合 strength reduction: 例如&lt;code&gt;j := a + i * b&lt;/code&gt; 可以被优化成 &lt;code&gt;j&amp;#39; := a&lt;/code&gt;, 而后每轮循环中 &lt;code&gt;j&amp;#39; := j&amp;#39; + b&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Elimination: 消除无用代码，例如删除没有被其他变量使用的变量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Rewriting comparisons: 改写部分比较表达式，识别出更多的无用变量进而删除。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果某个变量只和 loop-invariant variable 比较，则称它 “almost useless”. 经过改写即可彻底变得 “useless” 而删除。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/rewrite-comp.png&#34; alt=&#34;rewrite-comp&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Loop unrolling: 循环展开，把多次循环做的工作合并到一个循环中完成。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要有某个 induction variable 在每次循环中都 &lt;code&gt;i := i + delta&lt;/code&gt; (这个语句要 dominate 这个循环的每一个 back edge, 也就是每次循环都不能跳过这条语句)&lt;/li&gt;
+&lt;li&gt;例如，假设每次循环处理一个数组的某一行；合并后则可以在每次循环中批量处理8行。如此一来总循环次数减少了，循环带来的开销也就降低了。对于小循环优化效果好。&lt;/li&gt;
+&lt;li&gt;需要特殊处理边界情况：在刚刚的例子中，循环展开后的版本只能处理行数为 8 的倍数的情况。&lt;br&gt;因此我们应当只对剩余行数足够的部分进行循环展开优化（批量处理），而剩余行数不足时在”epilogue”部分进行收尾工作：按照原先做法一次一行地处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/unrolling-epilogue.png&#34; alt=&#34;unrolling-epilogue&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果编译器可以证明部分数组边界检查是不需要的，则可以省去。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
  ]]></description>
         </item>
         <item>
