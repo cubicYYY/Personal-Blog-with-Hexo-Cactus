@@ -17,9 +17,9 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>Write-Up</category>
         <category>出题</category>
         <category>English</category>
-        <category>Hackergame</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Hackergame</category>
         <category>Overclocking</category>
         <category>SchoolBus</category>
         <category>Rust</category>
@@ -33,24 +33,24 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>数链剖分</category>
         <category>Splay</category>
+        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
-        <category>分块</category>
-        <category>哈希</category>
         <category>树状数组</category>
         <category>LCA</category>
+        <category>分块</category>
+        <category>哈希</category>
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
+        <category>Miscellaneous</category>
+        <category>On Going</category>
         <category>Compiler</category>
         <category>Computer Science</category>
-        <category>On Going</category>
-        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
@@ -58,9 +58,9 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
             <guid isPermalink="true">http://cubicy.icu/compiler-construction-principles/</guid>
             <title>编译原理课程笔记（All-in-One速通版）</title>
             <link>http://cubicy.icu/compiler-construction-principles/</link>
+            <category>On Going</category>
             <category>Compiler</category>
             <category>Computer Science</category>
-            <category>On Going</category>
             <pubDate>Sun, 14 Apr 2024 01:10:20 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;编译原理Speed-run-any&#34;&gt;&lt;a href=&#34;#编译原理Speed-run-any&#34; class=&#34;headerlink&#34; title=&#34;编译原理Speed-run any%&#34;&gt;&lt;/a&gt;编译原理&lt;code&gt;Speed-run any%&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;以&lt;strong&gt;快速复习&lt;/strong&gt;为目的，尽可能对缺乏动机(intuition)的一些概念&lt;strong&gt;提供课堂外的例子以简明解释&lt;/strong&gt;。&lt;br&gt;如果读者能通过这些例子意会到某种 sense 就最好不过了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;包含浙江大学编译原理课程课改后新增部分。&lt;/strong&gt;&lt;br&gt;标题中使用&lt;code&gt;*&lt;/code&gt;标记的部分为考试&lt;strong&gt;不&lt;/strong&gt;考察的内容。&lt;/p&gt;
@@ -100,7 +100,6 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;li&gt;data段，text段&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Bruke-Fisher&lt;/li&gt;
 &lt;li&gt;解析树，二义性，结合性，左递归文法&lt;/li&gt;
 &lt;li&gt;sentential form, sentence, language, Chomsky form&lt;/li&gt;
 &lt;li&gt;reduce-reduce conflict, shift-reduce conflict&lt;/li&gt;
@@ -2844,19 +2843,22 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;/ul&gt;
 &lt;figure class=&#34;highlight diff&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 实现简单：无需用栈或 pointer-reversal&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 跑得比香港记者快，时间复杂度优秀：和活跃对象数量成正比&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 可用的 free space 在内存上连续：每次 GC 时自动进行了“压缩”，去除了内存碎片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;addition&#34;&gt;+ 是更新的一些算法的基础范式，起到了示范作用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 高达一半的空间被浪费了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 内存局部性差：Cheney&amp;#x27;s algorithm &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;deletion&#34;&gt;- 需要精确的类型信息标出所有指针（如果不知道某个 field 是否为指针，就无法在移动对象后转发该指针）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h3 id=&#34;编译器：实现快速分配&#34;&gt;&lt;a href=&#34;#编译器：实现快速分配&#34; class=&#34;headerlink&#34; title=&#34;编译器：实现快速分配&#34;&gt;&lt;/a&gt;编译器：实现快速分配&lt;/h3&gt;&lt;p&gt;虽然在本部分开头指出“GC 属于 runtime”, 但这不意味着编译器不能参与该过程。编译器可能通过如下方式和垃圾回收器进行交互：&lt;/p&gt;
+&lt;h3 id=&#34;编译器：实现快速分配&#34;&gt;&lt;a href=&#34;#编译器：实现快速分配&#34; class=&#34;headerlink&#34; title=&#34;编译器：实现快速分配&#34;&gt;&lt;/a&gt;编译器：实现快速分配&lt;/h3&gt;&lt;p&gt;虽然在本部分开头指出“GC 属于 runtime”, 但这不意味着编译器不能参与该过程。&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;编译器可能通过如下方式和垃圾回收器进行交互：&lt;ul&gt;
 &lt;li&gt;在内存上&lt;strong&gt;分配&lt;/strong&gt; records&lt;/li&gt;
 &lt;li&gt;GC 时，为垃圾回收器描述 roots 变量有哪些&lt;/li&gt;
 &lt;li&gt;描述内存布局（例如指出某个 record 各个 field 的大小）&lt;/li&gt;
 &lt;li&gt;读写屏障(barrier)，防止 GC 造成条件竞争&lt;/li&gt;
 &lt;li&gt;……&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;其中，内存分配是最为重要的环节：&lt;/p&gt;
-&lt;ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其中，内存分配是最为重要的环节：&lt;ul&gt;
 &lt;li&gt;函数式编程语言不鼓励更新，而是创建新的不可变对象&lt;/li&gt;
 &lt;li&gt;内存密集型程序在循环中可能需要访问几乎所有内存对象一次&lt;/li&gt;
 &lt;li&gt;经验告诉我们平均每条指令在内存上分配 1&amp;#x2F;7 word&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;为了高效分配内存，我们可&lt;strong&gt;采用 Copying Collection&lt;/strong&gt;: 可分配空间连续，且起始位置(&lt;code&gt;next&lt;/code&gt;)、区域末尾(&lt;code&gt;limit&lt;/code&gt;)已知。&lt;br&gt;每次在内存上分配一个大小为&lt;code&gt;N&lt;/code&gt;的 record 时，有如下开销与对应优化：&lt;/p&gt;
 &lt;ol&gt;
@@ -2948,7 +2950,212 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
 &lt;li&gt;&lt;p&gt;阅读 Appel 第13章，文中对不同 GC 机制进行了分析、比较。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Part-19-面向对象-OOP&#34;&gt;&lt;a href=&#34;#Part-19-面向对象-OOP&#34; class=&#34;headerlink&#34; title=&#34;Part 19: 面向对象(OOP)&#34;&gt;&lt;/a&gt;Part 19: 面向对象(OOP)&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Part-19-面向对象-OOP&#34;&gt;&lt;a href=&#34;#Part-19-面向对象-OOP&#34; class=&#34;headerlink&#34; title=&#34;Part 19: 面向对象(OOP)&#34;&gt;&lt;/a&gt;Part 19: 面向对象(OOP)&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;面向对象语言&amp;#x3D; object-oriented language &amp;#x3D; OO language &amp;#x3D; class-based language&lt;ul&gt;
+&lt;li&gt;（几乎）所有值都是对象(object)（例如 Python）&lt;/li&gt;
+&lt;li&gt;对象属于某个类，或者说对象是某个类的实例(instance)&lt;/li&gt;
+&lt;li&gt;对象封装了状态（也就是成员变量 fields）与行为（也就是成员方法 methods）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;重要概念：&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;继承(inheritance)&lt;/strong&gt; : 派生类继承基类的特性（例如假设基类&lt;code&gt;Rocket&lt;/code&gt;具有方法&lt;code&gt;fire()&lt;/code&gt;, 则子类&lt;code&gt;Spaceship&lt;/code&gt;自然也有&lt;code&gt;fire()&lt;/code&gt;方法）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;封装(encapsulation)&lt;/strong&gt; : 隐藏不该被外部接触到的接口&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多态(polymorphism)&lt;/strong&gt; : 对象可以以不同形态呈现（例如，由于&lt;code&gt;Cat&lt;/code&gt;继承自&lt;code&gt;Animal&lt;/code&gt;，一个&lt;code&gt;Cat&lt;/code&gt;实例也可以被看作是一个&lt;code&gt;Animal&lt;/code&gt;实例）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Tiger-语言中的类&#34;&gt;&lt;a href=&#34;#Tiger-语言中的类&#34; class=&#34;headerlink&#34; title=&#34;Tiger 语言中的类&#34;&gt;&lt;/a&gt;Tiger 语言中的类&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;语法：&lt;code&gt;class B extends A &amp;#123;...&amp;#125;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;子类&lt;code&gt;B&lt;/code&gt;继承自父类&lt;code&gt;A&lt;/code&gt;, 或者称派生(derived)类&lt;code&gt;B&lt;/code&gt;继承自基类&lt;code&gt;A&lt;/code&gt;. 出于避免偏见的目的，建议使用后者。&lt;ul&gt;
+&lt;li&gt;传递性：如果&lt;code&gt;C&lt;/code&gt;继承了&lt;code&gt;B&lt;/code&gt;, &lt;code&gt;B&lt;/code&gt;继承了&lt;code&gt;A&lt;/code&gt;, 我们可以说&lt;code&gt;C&lt;/code&gt;继承了&lt;code&gt;A&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;B&lt;/code&gt;隐式地继承&lt;code&gt;A&lt;/code&gt;的所有 fields(成员变量) 和 methods(成员方法).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;B&lt;/code&gt;可以&lt;strong&gt;重写(override)&lt;/strong&gt; 部分 methods. 注意和&lt;strong&gt;重载(overload)&lt;/strong&gt; 区分：&lt;ul&gt;
+&lt;li&gt;重写(override): 函数名相同，且函数签名必须一致；派生类重写某个 method 以添加和基类不同的实现。&lt;/li&gt;
+&lt;li&gt;重载(overload): 函数名相同，且函数传入参数必须不同；可以为某个函数在不同传参下的多个版本、多个实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;fields 不能被重写(override).&lt;/strong&gt; 派生类中定义的所有 fields 都是&lt;strong&gt;在派生类中新定义的&lt;/strong&gt;.&lt;ul&gt;
+&lt;li&gt;例如基类&lt;code&gt;A&lt;/code&gt;有一个 field &lt;code&gt;name&lt;/code&gt;, 而派生类&lt;code&gt;B&lt;/code&gt;也有一个 field &lt;code&gt;name&lt;/code&gt;, 则实际上它们是不同的 fields &lt;code&gt;A.name&lt;/code&gt; 与 &lt;code&gt;B.name&lt;/code&gt;. 并非重写基类的 field!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;所有类都是预定义的&lt;code&gt;Object&lt;/code&gt;类的派生类，&lt;code&gt;Object&lt;/code&gt;类没有 field 或 method.&lt;ul&gt;
+&lt;li&gt;这被称为 &lt;em&gt;singly rooted class hierarchy&lt;/em&gt;, Python 和 Java 都采用了，但 C++ 并不。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;关于&lt;code&gt;self&lt;/code&gt;: 在 Tiger 中不是关键字，而是每个 method 都有的隐式的参数。在运行时自动传入，指向当前实例，用以引用当前实例对应的 fields 和 methods。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用例：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;let&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Class Car extends Vehicle &amp;#123; // declaration&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    …&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    method await(/*self: Car,*/ v: Vehicle) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      if (v.position &amp;lt; position)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      then v.move(position – v.position) // access a field &amp;quot;position&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      else self.move(10) // access a method &amp;quot;move&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  var c := new Car // instantiate a new instance called &amp;quot;c&amp;quot; with type &amp;quot;Car&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;in&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  c.move(60); // equals to: move(c, 60);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;类的层次结构&#34;&gt;&lt;a href=&#34;#类的层次结构&#34; class=&#34;headerlink&#34; title=&#34;类的层次结构&#34;&gt;&lt;/a&gt;类的层次结构&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;可以用图表示继承关系（这里就不画了）。主要分为两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;单继承single-inheritance(SI): 每个类最多只能继承一个基类，因此继承关系图是一棵树。&lt;ul&gt;
+&lt;li&gt;例如 Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;多继承multiple-inheritance(MI): 每个类可以继承多个基类，因此继承关系图是有向无环图(DAG).&lt;ul&gt;
+&lt;li&gt;例如 C++, Perl, Python&lt;/li&gt;
+&lt;li&gt;实现起来更 tricky&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在 Tiger 中实现类需要解决如下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Field layout: 某个类的各个 fields 在内存中如何放置、访问？换句话说，&lt;strong&gt;如何确定某个实例的 field 内存地址相对这个实例初始地址的偏移量？&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Method dispatch: 调用某个实例的方法时，如何找到正确的方法位于何地址？是派生类的实现，还是基类的实现，还是基类的基类的实现，……？&lt;/li&gt;
+&lt;li&gt;Membership test: 如何检查给定实例是否是给定类的实例？例如 Java 中的 &lt;code&gt;instanceof&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;单继承Single-Inheritance&#34;&gt;&lt;a href=&#34;#单继承Single-Inheritance&#34; class=&#34;headerlink&#34; title=&#34;单继承Single-Inheritance&#34;&gt;&lt;/a&gt;单继承Single-Inheritance&lt;/h3&gt;&lt;p&gt;每个类最多只能继承一个基类。&lt;br&gt;单继承下的部分实现会相对容易一些。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Field layout: 使用 *&lt;em&gt;prefixing&lt;/em&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/prefixing.png&#34; alt=&#34;prefixing&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/si-layout.png&#34; alt=&#34;si-layout&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;派生类新增的 fields 跟在基类的后面。&lt;br&gt;这使得我们可以正确处理多态：例如把&lt;code&gt;Cat&lt;/code&gt;当作&lt;code&gt;Animal&lt;/code&gt;看待，访问&lt;code&gt;Animal&lt;/code&gt;的 fields 时相当于屏蔽了新增的 fields; 基类的各个 fields 偏移量不会因为这是个派生类实例发生变化，仍然是已知的。&lt;br&gt;这避免了不安全的内存访问。&lt;/li&gt;
+&lt;li&gt;Method dispatch: 如果熟悉 Rust 可以不用看这段了，完全一致&lt;ul&gt;
+&lt;li&gt;每个 method 编译成一段代码（称为 method instance），编译方式和普通函数几乎无异。&lt;ul&gt;
+&lt;li&gt;比如&lt;code&gt;A&lt;/code&gt;中的&lt;code&gt;f()&lt;/code&gt;就编译为一段代码，可用&lt;code&gt;A_f&lt;/code&gt;这样 label 标记函数地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;机器码中，函数起始地址使用一个&lt;code&gt;LABEL&lt;/code&gt;标出。&lt;/li&gt;
+&lt;li&gt;每个类都对应一个 class decriptor, 里面包含了描述这个类的一些必要信息：&lt;ul&gt;
+&lt;li&gt;一个指向基类的指针&lt;/li&gt;
+&lt;li&gt;一个列表，包含这个类所有的 method instances&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对于 &lt;strong&gt;static method&lt;/strong&gt; 的调用&lt;code&gt;x.f()&lt;/code&gt;, 编译器将会：&lt;ol&gt;
+&lt;li&gt;找到对象&lt;code&gt;x&lt;/code&gt;对应的类，记为&lt;code&gt;C&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;如果&lt;code&gt;C&lt;/code&gt;中有&lt;code&gt;f&lt;/code&gt;, 则直接得出&lt;code&gt;x.f()&lt;/code&gt;翻译结果为&lt;code&gt;C_f&lt;/code&gt;; 否则继续向上（在基类中）寻找。&lt;/li&gt;
+&lt;li&gt;假设&lt;code&gt;C&lt;/code&gt;的基类为&lt;code&gt;B&lt;/code&gt;, 在&lt;code&gt;B&lt;/code&gt;中查找&lt;code&gt;f&lt;/code&gt;, 如找到则得出&lt;code&gt;x.f()&lt;/code&gt;翻译结果为&lt;code&gt;B_f&lt;/code&gt;; 否则继续向上（在基类中）寻找。&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;li&gt;直到在某个祖先中找到为止（或是一路找到&lt;code&gt;Object&lt;/code&gt;还没有则报错），调用它。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;对于 &lt;strong&gt;dynamic method&lt;/strong&gt; 的处理略复杂:&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;每个类维护一个 &lt;strong&gt;dispatch vector&lt;/strong&gt; (例如 C++ 中的虚表 vtable &amp;#x3D; &lt;strong&gt;virtual table&lt;/strong&gt; &amp;#x3D; &lt;strong&gt;VMT&lt;/strong&gt; &amp;#x3D; &lt;strong&gt;virtual methods table&lt;/strong&gt;) 储存每个 method 的地址。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建立方式类似 prefixing: 派生类中新声明的方法跟在基类 dispatch vector 的后面；&lt;strong&gt;不过如果有基类的 method 被重写了，也要替换成自己重写后 method 的地址&lt;/strong&gt;。&lt;br&gt;这样，每个方法的偏移量是确定的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;每个对象都关联某个 vtable: &lt;strong&gt;对象的开头储存一个指针指向对应 class descriptor&lt;/strong&gt; , 里面就有 vtable。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/vtable.png&#34; alt=&#34;vtable&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;需要动态查找(lookup), 有额外的开销。&lt;del&gt;（虽然你可以说像 Rust 那样直接 monomorphization 就不需要动态开销了，但是 Rust 甚至都不是 OO 的啊！）&lt;/del&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对于 &lt;strong&gt;dynamic method&lt;/strong&gt; 的调用&lt;code&gt;x.f()&lt;/code&gt;, 编译器将会：&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;x&lt;/code&gt;的0偏移处（开头）找到 class descriptor &lt;code&gt;d&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;由于方法&lt;code&gt;f&lt;/code&gt;的偏移量是确定的（记为&lt;code&gt;F&lt;/code&gt;），从&lt;code&gt;d&lt;/code&gt;中&lt;code&gt;F&lt;/code&gt;偏移处获取&lt;code&gt;f&lt;/code&gt;的函数地址。&lt;/li&gt;
+&lt;li&gt;调用&lt;code&gt;f&lt;/code&gt;.&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/si-dispatch.png&#34; alt=&#34;si-dispatch&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;多继承Multiple-Inheritance&#34;&gt;&lt;a href=&#34;#多继承Multiple-Inheritance&#34; class=&#34;headerlink&#34; title=&#34;多继承Multiple-Inheritance&#34;&gt;&lt;/a&gt;多继承Multiple-Inheritance&lt;/h3&gt;&lt;p&gt;每个类可以继承多个基类。&lt;br&gt;&lt;del&gt;笔者认为多继承是纯纯的方向错误，C++为了多继承打了一堆补丁最后还是破破烂烂。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;引入了经典的&lt;strong&gt;菱形继承&amp;#x2F;钻石继承&lt;/strong&gt;问题：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/diamond.png&#34; alt=&#34;diamond&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;歧义：如果&lt;code&gt;B1&lt;/code&gt;和&lt;code&gt;B2&lt;/code&gt;中都有 method &lt;code&gt;m&lt;/code&gt;, 那么&lt;code&gt;C&lt;/code&gt;的实例&lt;code&gt;c&lt;/code&gt;上调用&lt;code&gt;c.m()&lt;/code&gt;时应该调用哪个&lt;code&gt;m&lt;/code&gt;? 无法确定。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;field replication: 对于&lt;code&gt;A&lt;/code&gt;中的一个 field &lt;code&gt;x&lt;/code&gt;, 由于&lt;code&gt;B1&lt;/code&gt;和&lt;code&gt;B2&lt;/code&gt;中都继承了&lt;code&gt;A.x&lt;/code&gt;, 最终&lt;code&gt;C&lt;/code&gt;中会有重复的两个&lt;code&gt;x&lt;/code&gt;都来自&lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Field layout: 通过&lt;strong&gt;图染色&lt;/strong&gt;获取。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;目标：静态分析所有类，为每个 field 的找到一个固定偏移量。如果不同 field 在同一个类中出现，则不能共享同一个偏移量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/fields-coloring.png&#34; alt=&#34;fields-coloring&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点：不同的 field 名&lt;/li&gt;
+&lt;li&gt;边：同时在某个类中出现的 field 则连边&lt;/li&gt;
+&lt;li&gt;颜色：最终偏移量(0, 1, 2, …)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如从上图我们将得到：&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/field-layout.png&#34; alt=&#34;field-layout&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;优化：可以看出存在许多空的 slot 被浪费了。我们可以把 fields 在内存上合并，转而在每个类的 class descriptors 中记录各个 field 的真实偏移量。&lt;br&gt;&lt;img src=&#34;/compiler-construction-principles/field-compact-layout.png&#34; alt=&#34;field-compact-layout&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;由于类的数量远少于对象（类的实例）数量，所以这样能节省空间。&lt;br&gt;不过这种优化导致每个 field 的具体偏移不固定了，因此需要在运行时在 class descriptor 中动态查找(lookup) field 的真实偏移量.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Method dispatch: 仍然使用图染色。我们可以直接把 method 名混合进上述的图中，一起染色；也就是不仅记录 field 的偏移量，也记录 method 的地址。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;也有动态查找的开销。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不过，并非所有时候都可以静态知晓所有类的存在并统筹规划。例如我们知道在 Java 里类可以被动态加载。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;解决方案：Hashing&lt;/strong&gt;&lt;br&gt;其实就是又包了一层新表，允许通过 field&amp;#x2F;method 的名字本身索引到 field offset 或 method address.&lt;br&gt;更简单地说，原先是&lt;code&gt;OffsetOrAddr[]&lt;/code&gt;，现在是&lt;code&gt;hashmap&amp;lt;Name, OffsetOrAddr&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ftab(field table): field offset 或 method address （之前就有的）&lt;/li&gt;
+&lt;li&gt;Ktab(key-table): 记录注册过的名字（因为有哈希冲突的问题，需要确认名字是否真的匹配）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/compiler-construction-principles/hashing-sol.png&#34; alt=&#34;hashing-sol&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;基于类的类型系统&#34;&gt;&lt;a href=&#34;#基于类的类型系统&#34; class=&#34;headerlink&#34; title=&#34;基于类的类型系统&#34;&gt;&lt;/a&gt;基于类的类型系统&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;每个类都是一种类型。派生类可以看作一种 sub-type. 在进行类型转换时：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;upcast: 派生类转为基类。永远是安全的。例如&lt;code&gt;Cat&lt;/code&gt;实例一定也是&lt;code&gt;Animal&lt;/code&gt;实例, 所以随时都可以将&lt;code&gt;Cat*&lt;/code&gt;转为&lt;code&gt;Animal*&lt;/code&gt;.&lt;ul&gt;
+&lt;li&gt;有时被叫做“裁剪” “narrow”之类的：因为在这种转换中相当于“丢失”了一些信息，upcast 后能调用&amp;#x2F;访问的 method&amp;#x2F;field 变少了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;downcast: 反之，基类转为派生类不一定安全。例如&lt;code&gt;Animal&lt;/code&gt;很可能不是&lt;code&gt;Cat&lt;/code&gt;, 所以冒然转换就可能通过错误的 offset 访问到错误的、越界的内存，很危险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Membership test&lt;/strong&gt;: 为了安全的类型转换，需要测试某个对象是否是某个类的实例。参见：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java: &lt;code&gt;instanceof&lt;/code&gt; 操作符&lt;/li&gt;
+&lt;li&gt;C++: &lt;code&gt;dynamic_cast&lt;/code&gt; vs &lt;code&gt;static_cast&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如何判断&lt;code&gt;x&lt;/code&gt;是不是类&lt;code&gt;C&lt;/code&gt;的实例？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;朴素（慢）的做法：&lt;ul&gt;
+&lt;li&gt;递归地检查&lt;code&gt;x&lt;/code&gt; 的 class descriptor (记作&lt;code&gt;x.0&lt;/code&gt;) 开始的继承链 &lt;code&gt;x.0&lt;/code&gt;, &lt;code&gt;x.0.super&lt;/code&gt;, &lt;code&gt;x.0.super.super&lt;/code&gt;, &lt;code&gt;x.0.super.super.super&lt;/code&gt;, …&lt;/li&gt;
+&lt;li&gt;如果发现某个是&lt;code&gt;C&lt;/code&gt;的 class descriptor 则&lt;code&gt;x&lt;/code&gt;是&lt;code&gt;C&lt;/code&gt;的实例；否则如果到最上层（&lt;code&gt;...super==NIL&lt;/code&gt;）仍未发现，则说明不是&lt;code&gt;C&lt;/code&gt;的实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;更快的做法：&lt;strong&gt;display&lt;/strong&gt;.&lt;ul&gt;
+&lt;li&gt;每个 class descriptor 储存一个 &lt;em&gt;display&lt;/em&gt;, 也就是一个足够长（比最长继承链长）的定长列表，记录对象的整条继承链。就像：&lt;ul&gt;
+&lt;li&gt;0: Object&lt;/li&gt;
+&lt;li&gt;1: GrandparentClass&lt;/li&gt;
+&lt;li&gt;2: ParentClass&lt;/li&gt;
+&lt;li&gt;3: MeClass&lt;/li&gt;
+&lt;li&gt;4: (nil)&lt;/li&gt;
+&lt;li&gt;5: (nil)&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;我们可以给每个类一个专属的数字 ID (例如对于 SI, 可以按照继承关系树的 BFS 序为每个类编号), 然后 display 中储存这些 ID 代表类。&lt;/li&gt;
+&lt;li&gt;由于对每个类，其继承关系的嵌套深度在编译期已知，因此可以立刻找到需要比较 display 中的哪一项。&lt;ul&gt;
+&lt;li&gt;例如，假设&lt;code&gt;MeClass&lt;/code&gt;的继承深度是第 3 层，要检查&lt;code&gt;x&lt;/code&gt;是否为&lt;code&gt;MeClass&lt;/code&gt;的实例，只需检查&lt;code&gt;x&lt;/code&gt;的继承深度是否大于等于 5, 且&lt;code&gt;x.0.display[5]&lt;/code&gt;是否指向&lt;code&gt;MeClass&lt;/code&gt;的 class descriptor 即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;私有-field-method&#34;&gt;&lt;a href=&#34;#私有-field-method&#34; class=&#34;headerlink&#34; title=&#34;私有 field&amp;#x2F;method&#34;&gt;&lt;/a&gt;私有 field&amp;#x2F;method&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;private field&amp;#x2F;method: 私有的 field&amp;#x2F;method 只能被类的其他 method 访问&amp;#x2F;调用，而不能被外部调用。&lt;ul&gt;
+&lt;li&gt;这是封装思想的体现：调用者不该知道内部实现细节。&lt;/li&gt;
+&lt;li&gt;通过类型检查确保私密性(privacy)：每个访问&amp;#x2F;调用处检查是否 private.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其他语言中 private field&amp;#x2F;method 的实现：&lt;ul&gt;
+&lt;li&gt;和 Tiger 一样，只允许声明它的类访问。&lt;/li&gt;
+&lt;li&gt;C++ 的&lt;code&gt;protected&lt;/code&gt;: 只允许类或派生类访问，介于&lt;code&gt;public&lt;/code&gt;和&lt;code&gt;private&lt;/code&gt;中间。&lt;/li&gt;
+&lt;li&gt;通过&lt;code&gt;package&lt;/code&gt; &lt;code&gt;namespace&lt;/code&gt;等划分不同包、命名空间。&lt;/li&gt;
+&lt;li&gt;外部可见，但是是只读的；修改必须通过&lt;code&gt;public&lt;/code&gt;的公共方法、接口进行。&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;Part-20-循环优化&#34;&gt;&lt;a href=&#34;#Part-20-循环优化&#34; class=&#34;headerlink&#34; title=&#34;Part 20: 循环优化&#34;&gt;&lt;/a&gt;Part 20: 循环优化&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&amp;gt;&amp;gt;&amp;gt;To be continued…&lt;/em&gt;&lt;/p&gt;
  ]]></description>
         </item>

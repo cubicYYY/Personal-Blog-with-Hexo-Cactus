@@ -17,9 +17,9 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>Write-Up</category>
         <category>出题</category>
         <category>English</category>
-        <category>Hackergame</category>
         <category>CISCN</category>
         <category>web</category>
+        <category>Hackergame</category>
         <category>Overclocking</category>
         <category>SchoolBus</category>
         <category>Rust</category>
@@ -33,24 +33,24 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
         <category>Stack</category>
         <category>图论</category>
         <category>Kruskal</category>
-        <category>数链剖分</category>
         <category>Splay</category>
+        <category>数链剖分</category>
         <category>持久化</category>
         <category>线段树</category>
-        <category>分块</category>
-        <category>哈希</category>
         <category>树状数组</category>
         <category>LCA</category>
+        <category>分块</category>
+        <category>哈希</category>
         <category>Phar</category>
         <category>反序列化</category>
         <category>PHP</category>
         <category>NLP</category>
         <category>Fuzzing</category>
         <category>AFL</category>
+        <category>Miscellaneous</category>
+        <category>On Going</category>
         <category>Compiler</category>
         <category>Computer Science</category>
-        <category>On Going</category>
-        <category>Miscellaneous</category>
         <category>Math</category>
         <category>Translation</category>
         <category>Yoneda Lemma</category>
@@ -58,8 +58,8 @@ Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicY
             <guid isPermalink="true">http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</guid>
             <title>赛博疑难杂症药方</title>
             <link>http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</link>
-            <category>On Going</category>
             <category>Miscellaneous</category>
+            <category>On Going</category>
             <pubDate>Fri, 12 Apr 2024 01:45:01 +0800</pubDate>
             <description><![CDATA[ &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;/p&gt;
