@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="原题地址:https:&#x2F;&#x2F;www.luogu.org&#x2F;problem&#x2F;P5072   题目简述给定一个序列，每次查询一个区间[l,r]中所有子序列分别去重后的和mod p  思路我们考虑每个数的贡献。即该区间内含有这个数的子序列个数。用补集转化为不含这个数的子序列个数。那么，假设这个数在[l,r]内出现了k次，则一共有2^(r-l+1) -2^(r-l+1-k)个子序列包含这个数。本题可以离线，因">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷:P5072 [Ynoi2015]盼君勿忘">
+<meta property="og:url" content="http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/index.html">
+<meta property="og:site_name" content="Cubic Y³">
+<meta property="og:description" content="原题地址:https:&#x2F;&#x2F;www.luogu.org&#x2F;problem&#x2F;P5072   题目简述给定一个序列，每次查询一个区间[l,r]中所有子序列分别去重后的和mod p  思路我们考虑每个数的贡献。即该区间内含有这个数的子序列个数。用补集转化为不含这个数的子序列个数。那么，假设这个数在[l,r]内出现了k次，则一共有2^(r-l+1) -2^(r-l+1-k)个子序列包含这个数。本题可以离线，因">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-08T12:13:00.000Z">
+<meta property="article:modified_time" content="2023-07-03T13:14:05.608Z">
+<meta property="article:author" content="Cubic Y^3">
+<meta property="article:tag" content="分块">
+<meta property="article:tag" content="哈希">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+        
+      
+    
+    <!-- title -->
+    <title>洛谷:P5072 [Ynoi2015]盼君勿忘</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2021/10/30/Hackergame2021%20%E9%83%A8%E5%88%86WriteUp/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2018/10/28/%E6%B4%9B%E8%B0%B7P3950%20%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/"><i class="fa fa-external-link " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&text=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&is_video=false&description=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" href="mailto:?subject=洛谷:P5072 [Ynoi2015]盼君勿忘&body=Check out this article: http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-digg " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&name=洛谷:P5072 [Ynoi2015]盼君勿忘&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&t=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        洛谷:P5072 [Ynoi2015]盼君勿忘
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+      
+        <time datetime="2019-10-08T12:13:00.000Z" class="dt-published" itemprop="datePublished">2019-10-08</time>
+        
+        (Updated: <time datetime="2023-07-03T13:14:05.608Z" class="dt-updated" itemprop="dateModified">2023-07-03</time>)
+        
+      
+    </div>
+
+
+          
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/OI/">OI</a>
+    </div>
+
+
+            
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E5%88%86%E5%9D%97/" rel="tag">分块</a>, <a class="p-category" href="/tags/%E5%93%88%E5%B8%8C/" rel="tag">哈希</a>
+    </div>
+
+
+      </div>
+  </header>
+  
+
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+        Word count: 1.2k
+          (~5 mins to read)
+      </span>
+      <span class="last-updated">
+        Last updated: <time datetime="2023-07-03T13:14:05.608Z" class="dt-updated" itemprop="dateModified">2023-07-03 21:14:05</time>
+      </span>
+      <p>原题地址:<a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P5072">https://www.luogu.org/problem/P5072</a>  </p>
+<h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>给定一个序列，每次查询一个区间[l,r]中所有子序列分别去重后的和mod p</p>
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们考虑每个数的贡献。即该区间内含有这个数的子序列个数。用补集转化为不含这个数的子序列个数。<br>那么，假设这个数在[l,r]内出现了k次，则一共有2^(r-l+1) -2^(r-l+1-k)个子序列包含这个数。<br>本题可以离线，因此选择使用莫队，过程中维护cnt[k]表示区间内恰好出现k次的数字个数，维护sum[j]表示区间内恰好出现j次的数字之和（区间内出现次数相同的数，对于这些数，区间中包含这些数的子序列个数都相同，因此存数字之和就行）。<br>然而这样时间复杂度为O(询问次数*单次询问复杂度)&#x3D;O(n*max(sqrt(n),n))&#x3D;O(nm)，并不可行。我们发现时间瓶颈不在莫队的sqrt(n)，而是在单次查询中求解的复杂度n。<br>有2个套路可供使用：出现次数大于sqrt(n)的数不超过sqrt(n)个，值不为0的cnt[k]少于2*sqrt(n)个（反证易得，本质类似）。 </p>
+<ul>
+<li>对于第一个套路，我们分类讨论：出现次数小于等于sqrt(n)，则统计每个出现次数的数字之和；大于sqrt(n)的用哈希表(unordered_set,C++11)存下具体的数字和其出现次数。这样每次查询是sqrt(n)。  </li>
+<li>笔者使用的则是第二个套路：val[x]表示出现次数恰好为x的数字之和（同上文的sum[j]）。随着莫队l,r指针的移动，把所有可能变为非0的val[x]记下来，指针移动完毕后再对其进行筛选，把确实非0的val[x]保留，其他去除。这样计算单次答案的复杂度就等同于单次查询中莫队指针移动的平均步数：都是sqrt(n)级别。这样做不需要用到哈希表之类的，常数小了很多，甚至不需要读入优化也能轻松过。</li>
+</ul>
+<p>还没完。我们发现模数是不定的，为了保证单次查询的复杂度压在sqrt(n)以内，我们还有最后一件事情要做：在sqrt(n)的时间内求出2^(r-l+1) 和所有的2^(r-l+1-k)。这里安利一个神奇的方式：每次查询只需要做一次时间复杂度为sqrt(n)的预处理就可以O(1)查询了。<br>假设查询区间长度为len(len&#x3D;r-l+1)，我们记siz&#x3D;sqrt(len)，而后计算2^0 , 2^1 , 2^2 … 2^sqrt(len)，存在数组pow1中；再计算2^sqrt(len) , 2^(2*sqrt(len)) , 2^(3*sqrt(len)) , 2^(4*sqrt(len))… , 2^(sqrt(len)*sqrt(len))，存在数组pow[2]中。以上计算都在mod p意义下进行。<br>这样求2的任意次方都可以O(1)出解:2^k &#x3D;2^(k&#x2F;siz) *2^(k%siz)&#x3D;pow2[k&#x2F;siz]*pow1[k%siz]（记得模p）。</p>
+<hr>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXN 100005 </span></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> a[MAXN],val[MAXN*<span class="number">2</span>],cnt[MAXN],ans[MAXN];</span><br><span class="line"><span class="type">int</span> tot,blosiz,powsiz;</span><br><span class="line"><span class="type">int</span> bel[MAXN],pow1[MAXN],pow2[MAXN];</span><br><span class="line"><span class="type">bool</span> calced[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> sum[MAXN];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">query</span> &#123;</span><br><span class="line">	<span class="type">int</span> id,l,r,p;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> query &amp;sb) <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> bel[l]!=bel[sb.l] ? bel[l]&lt;bel[sb.l] : (bel[l]&amp;<span class="number">1</span> ? r&lt;sb.r : r&gt;sb.r);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; q[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sum[cnt[x]]-=x;</span><br><span class="line">	cnt[x]++;</span><br><span class="line">	sum[cnt[x]]+=x;</span><br><span class="line">	++tot;</span><br><span class="line">	val[tot]=cnt[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">(<span class="type">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sum[cnt[x]]-=x;</span><br><span class="line">	cnt[x]--;</span><br><span class="line">	sum[cnt[x]]+=x;</span><br><span class="line">	++tot;</span><br><span class="line">	val[tot]=cnt[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">power</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1LL</span>*pow1[x%powsiz]*pow2[x/powsiz]%p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">	blosiz=<span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),bel[i]=(i<span class="number">-1</span>)/blosiz;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;q[i].l,&amp;q[i].r,&amp;q[i].p),q[i].id=i;</span><br><span class="line">	<span class="built_in">sort</span>(q+<span class="number">1</span>,q+m+<span class="number">1</span>);</span><br><span class="line">	<span class="type">int</span> l=<span class="number">1</span>,r=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (l&gt;q[i].l) <span class="built_in">add</span>(a[--l]);</span><br><span class="line">        <span class="keyword">while</span> (r&lt;q[i].r) <span class="built_in">add</span>(a[++r]);</span><br><span class="line">        <span class="keyword">while</span> (l&lt;q[i].l) <span class="built_in">del</span>(a[l++]);</span><br><span class="line">        <span class="keyword">while</span> (r&gt;q[i].r) <span class="built_in">del</span>(a[r--]);</span><br><span class="line">        </span><br><span class="line">		<span class="type">int</span> newtot=<span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> len=r-l+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot;j++) </span><br><span class="line">			<span class="keyword">if</span> (val[j]&amp;&amp;sum[val[j]]!=<span class="number">0</span>&amp;&amp;!calced[val[j]]) </span><br><span class="line">				calced[val[j]]=<span class="number">1</span>,val[++newtot]=val[j];</span><br><span class="line">		tot=newtot;</span><br><span class="line">		</span><br><span class="line">		powsiz=<span class="built_in">sqrt</span>(len)+<span class="number">1</span>;</span><br><span class="line">		pow1[<span class="number">0</span>]=pow2[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=powsiz;j++) </span><br><span class="line">			pow1[j]=(pow1[j<span class="number">-1</span>]+pow1[j<span class="number">-1</span>])%q[i].p;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j*powsiz&lt;=len;j++) </span><br><span class="line">			pow2[j]=<span class="number">1LL</span>*pow2[j<span class="number">-1</span>]*pow1[powsiz]%q[i].p;</span><br><span class="line">			</span><br><span class="line">		<span class="type">int</span> powLen=<span class="built_in">power</span>(len,q[i].p);</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot;j++) &#123;</span><br><span class="line">			<span class="type">long</span> <span class="type">long</span> num=sum[val[j]]%q[i].p;</span><br><span class="line">			ans[q[i].id]=(ans[q[i].id]+num*(powLen-<span class="built_in">power</span>(len-val[j],q[i].p)))%q[i].p;</span><br><span class="line">			calced[val[j]]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans[q[i].id]+=q[i].p;</span><br><span class="line">		ans[q[i].id]%=q[i].p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/"><i class="fa fa-external-link fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&text=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&is_video=false&description=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" href="mailto:?subject=洛谷:P5072 [Ynoi2015]盼君勿忘&body=Check out this article: http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&title=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&name=洛谷:P5072 [Ynoi2015]盼君勿忘&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2019/10/08/%E6%B4%9B%E8%B0%B7P5072%20[Ynoi2015]%E7%9B%BC%E5%90%9B%E5%8B%BF%E5%BF%98/&t=洛谷:P5072 [Ynoi2015]盼君勿忘"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Cubic Y^3
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.5.0/lxgwwenkaiscreenr.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cubicy';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+</body>
+</html>

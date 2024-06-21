@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Cubic Y³ • Posts by &#34;miscellaneous&#34; category</title>
+        <link>http://cubicy.icu</link>
+        <description>Notes, CTF, DIY, thoughts and waifus.
+
+I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
+❤❤❤ CTF, toy projects, electric guitar
+✖✖✖ Technological supremacy
+
+Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 12 Apr 2024 01:45:01 +0800</pubDate>
+        <lastBuildDate>Fri, 12 Apr 2024 01:45:01 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
+        <category>English</category>
+        <category>CISCN</category>
+        <category>web</category>
+        <category>Hackergame</category>
+        <category>Overclocking</category>
+        <category>SchoolBus</category>
+        <category>Rust</category>
+        <category>Lifetime</category>
+        <category>Code</category>
+        <category>Programming</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
+        <category>Treap</category>
+        <category>Stack</category>
+        <category>BST</category>
+        <category>图论</category>
+        <category>Kruskal</category>
+        <category>Splay</category>
+        <category>数链剖分</category>
+        <category>树状数组</category>
+        <category>LCA</category>
+        <category>持久化</category>
+        <category>线段树</category>
+        <category>分块</category>
+        <category>哈希</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
+        <category>Miscellaneous</category>
+        <category>On Going</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>Math</category>
+        <category>Translation</category>
+        <category>Yoneda Lemma</category>
+        <item>
+            <guid isPermalink="true">http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</guid>
+            <title>赛博疑难杂症药方</title>
+            <link>http://cubicy.icu/2024/04/12/%E8%B5%9B%E5%8D%9A%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%8D%AF%E6%96%B9/</link>
+            <category>Miscellaneous</category>
+            <category>On Going</category>
+            <pubDate>Fri, 12 Apr 2024 01:45:01 +0800</pubDate>
+            <description><![CDATA[ &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;git add .&lt;/code&gt; 仍有文件无法加入&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可能是submodule导致，即使删除子模块的&lt;code&gt;.git&lt;/code&gt;文件夹也不足够，还需要&lt;code&gt;git rm --cached&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;电脑怎样都没有声音，声卡等硬件均无问题，驱动没有更改过&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查是否是Windows更新导致，可以回滚&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;远程桌面出现奇奇怪怪的渲染问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可能是由于远程设备没有连接屏幕，需要保持屏幕开启；或者使用虚拟显示器（Virtual display）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;WSL2 手动设置 NAT 模式下的网络适配器，给 WSL2 分配静态 IP:&lt;/p&gt;
+&lt;figure class=&#34;highlight powershell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netsh winsock reset&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root ip addr &lt;span class=&#34;built_in&#34;&gt;del&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$&lt;/span&gt;(ip addr show eth0 ^| grep &lt;span class=&#34;string&#34;&gt;&amp;#x27;inet\b&amp;#x27;&lt;/span&gt; ^| awk &lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#123;print $2&amp;#125;&amp;#x27;&lt;/span&gt; ^| head &lt;span class=&#34;literal&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;) dev eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root ip addr add &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.2&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;24&lt;/span&gt; broadcast &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.255&lt;/span&gt; dev eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root ip route add &lt;span class=&#34;number&#34;&gt;0.0&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;0.0&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; via &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.1&lt;/span&gt; dev eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;50.1&lt;/span&gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;8.8&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;8.8&lt;/span&gt;^&amp;gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;10.0&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;0.21&lt;/span&gt;^&amp;gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wsl &lt;span class=&#34;literal&#34;&gt;-d&lt;/span&gt; Ubuntu &lt;span class=&#34;literal&#34;&gt;-u&lt;/span&gt; root &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; nameserver &lt;span class=&#34;number&#34;&gt;114.114&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;114.114&lt;/span&gt;^&amp;gt;^&amp;gt; /etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;powershell &lt;span class=&#34;literal&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Get-NetAdapter -IncludeHidden &amp;#x27;vEthernet (WSL)&amp;#x27; | Get-NetIPAddress | Remove-NetIPAddress -Confirm:&lt;span class=&#34;variable&#34;&gt;$False&lt;/span&gt;; New-NetIPAddress -IPAddress 192.168.50.1 -PrefixLength 24 -InterfaceAlias &amp;#x27;vEthernet (WSL)&amp;#x27;; Get-NetNat | ? Name -Eq WSLNat | Remove-NetNat -Confirm:&lt;span class=&#34;variable&#34;&gt;$False&lt;/span&gt;; New-NetNat -Name WSLNat -InternalIPInterfaceAddressPrefix 192.168.50.0/24;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每次开机启动都需要在管理员权限下运行（需要 UAC）&lt;/li&gt;
+&lt;li&gt;其中对于 WSL2 内部来说，宿主的地址：&lt;code&gt;192.168.50.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对宿主机来说，WSL2 的地址：&lt;code&gt;192.168.50.2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在 WSL2 中，&lt;code&gt;.wslconfig&lt;/code&gt; 中 &lt;code&gt;networkingMode=nat&lt;/code&gt; 时通过代理使用 Gradle 的正确姿势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./gradlew -Dhttp.proxyHost=192.168.50.1 -Dhttp.proxyPort=7777 -Dhttps.proxyHost=192.168.50.1 -Dhttps.proxyPort=7777 &amp;quot;-Dhttp.nonProxyHosts=*.nonproxyrepos.com|localhost&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;有时需要重启一下 daemon: &lt;code&gt;gradle --stop&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

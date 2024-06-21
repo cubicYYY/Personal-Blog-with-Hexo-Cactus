@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="原题地址：https:&#x2F;&#x2F;www.luogu.org&#x2F;problemnew&#x2F;show&#x2F;P2234 题目简述给定一个序列，对于每一个数都要查询：序列中在这个数前与这个数最接近的数是什么？然后将最接近的数字与这个数字的差累加。（序列第一个数字直接加自己）   思路查询在这个数之前与这个数最接近的数，我们很容易想到用二叉搜索树（BST）来做。虽然数据略水暴力排序每次查询从一个数往左右找也能过。每次插入一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷:P2234  [HNOI2002]营业额统计">
+<meta property="og:url" content="http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/index.html">
+<meta property="og:site_name" content="Cubic Y³">
+<meta property="og:description" content="原题地址：https:&#x2F;&#x2F;www.luogu.org&#x2F;problemnew&#x2F;show&#x2F;P2234 题目简述给定一个序列，对于每一个数都要查询：序列中在这个数前与这个数最接近的数是什么？然后将最接近的数字与这个数字的差累加。（序列第一个数字直接加自己）   思路查询在这个数之前与这个数最接近的数，我们很容易想到用二叉搜索树（BST）来做。虽然数据略水暴力排序每次查询从一个数往左右找也能过。每次插入一">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-02-27T15:58:00.000Z">
+<meta property="article:modified_time" content="2023-07-03T13:12:17.035Z">
+<meta property="article:author" content="Cubic Y^3">
+<meta property="article:tag" content="Treap">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+        
+      
+    
+    <!-- title -->
+    <title>洛谷:P2234  [HNOI2002]营业额统计</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2018/02/28/%E6%B4%9B%E8%B0%B7%E5%86%AC%E4%BB%A4%E8%90%A5%E9%9A%8F%E6%83%B3/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2018/02/22/%E6%B4%9B%E8%B0%B7P3391%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%96%87%E8%89%BA%E5%B9%B3%E8%A1%A1%E6%A0%91%EF%BC%88Splay%EF%BC%89/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fa fa-external-link " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&text=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&is_video=false&description=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" href="mailto:?subject=洛谷:P2234  [HNOI2002]营业额统计&body=Check out this article: http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-digg " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&name=洛谷:P2234  [HNOI2002]营业额统计&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&t=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        洛谷:P2234  [HNOI2002]营业额统计
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+      
+        <time datetime="2018-02-27T15:58:00.000Z" class="dt-published" itemprop="datePublished">2018-02-27</time>
+        
+        (Updated: <time datetime="2023-07-03T13:12:17.035Z" class="dt-updated" itemprop="dateModified">2023-07-03</time>)
+        
+      
+    </div>
+
+
+          
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/OI/">OI</a>
+    </div>
+
+
+            
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Treap/" rel="tag">Treap</a>
+    </div>
+
+
+      </div>
+  </header>
+  
+
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+        Word count: 547
+          (~2 mins to read)
+      </span>
+      <span class="last-updated">
+        Last updated: <time datetime="2023-07-03T13:12:17.035Z" class="dt-updated" itemprop="dateModified">2023-07-03 21:12:17</time>
+      </span>
+      <p>原题地址：<a target="_blank" rel="noopener" href="//www.luogu.org/problemnew/show/P2234">https://www.luogu.org/problemnew/show/P2234</a></p>
+<h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>给定一个序列，对于每一个数都要查询：序列中在这个数前与这个数最接近的数是什么？然后将最接近的数字与这个数字的差累加。（序列第一个数字直接加自己）  </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>查询在这个数之前与这个数最接近的数，我们很容易想到用二叉搜索树（BST）来做。<br><del>虽然数据略水暴力排序每次查询从一个数往左右找也能过。</del><br>每次插入一个数字，然后查询，我用Treap实现（还是弱化版的，只有插入查询）。<br>Treap的核心其实就是打乱顺序插入防止被卡（粗糙理解）。具体实现方法不难，请百度。（我之后会写一篇专门介绍下各种BST的。）<br>PS：Treap树完整版之后写。这题用STL的vector也行，vector理论每次插入渐进时间复杂度是O(n)但是听说实际是对数级别的？   </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">randad</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> seed=<span class="number">114</span>; <span class="comment">//seed可以随便取</span></span><br><span class="line">    <span class="keyword">return</span> seed=<span class="built_in">int</span>(seed*<span class="number">48271LL</span>%<span class="number">2147483647</span>);<span class="comment">//48271使得其有完全周期，即2147483647内取遍不重复 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Treap</span> &#123;</span><br><span class="line">    <span class="type">int</span> key,pri,son[<span class="number">2</span>];</span><br><span class="line">&#125;T[<span class="number">33333</span>];</span><br><span class="line"><span class="type">int</span> cnt=<span class="number">1</span>,rt=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rotate</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> &amp;rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> y=T[rt].son[p];</span><br><span class="line">    T[rt].son[p]=T[y].son[!p];</span><br><span class="line">    T[y].son[!p]=rt;</span><br><span class="line">    rt=y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ins</span><span class="params">(<span class="type">int</span> key,<span class="type">int</span> &amp;rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rt==<span class="number">0</span>)</span><br><span class="line">    	T[rt=cnt++] = (Treap)&#123;key,<span class="built_in">randad</span>()&#125;;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> p=key&gt;T[rt].key;</span><br><span class="line">        <span class="built_in">ins</span>(key,T[rt].son[p]);</span><br><span class="line">        <span class="keyword">if</span>(T[T[rt].son[p]].pri&gt;T[rt].pri)</span><br><span class="line">        	<span class="built_in">rotate</span>(p,rt);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">nowMin</span><span class="params">(<span class="type">int</span> key,<span class="type">int</span> rt)</span><span class="comment">//查询现在最接近key的数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rt==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">666666666</span>;</span><br><span class="line">    <span class="type">int</span> res=<span class="built_in">abs</span>(key-T[rt].key);</span><br><span class="line">    <span class="keyword">if</span>(key&gt;T[rt].key) res=<span class="built_in">min</span>(res,<span class="built_in">nowMin</span>(key,T[rt].son[<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(key&lt;T[rt].key) res=<span class="built_in">min</span>(res,<span class="built_in">nowMin</span>(key,T[rt].son[<span class="number">0</span>]));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> n,tot=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="type">int</span> num;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="keyword">if</span> (i==<span class="number">1</span>) tot+=num;</span><br><span class="line">        <span class="keyword">else</span> tot+=<span class="built_in">nowMin</span>(num,rt);<span class="comment">//rt是当前根</span></span><br><span class="line">        <span class="built_in">ins</span>(num,rt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,tot);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fa fa-external-link fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&text=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&is_video=false&description=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" href="mailto:?subject=洛谷:P2234  [HNOI2002]营业额统计&body=Check out this article: http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&title=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&name=洛谷:P2234  [HNOI2002]营业额统计&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2018/02/27/%E6%B4%9B%E8%B0%B7P2234%20%20[HNOI2002]%E8%90%A5%E4%B8%9A%E9%A2%9D%E7%BB%9F%E8%AE%A1/&t=洛谷:P2234  [HNOI2002]营业额统计"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Cubic Y^3
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.5.0/lxgwwenkaiscreenr.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cubicy';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+</body>
+</html>

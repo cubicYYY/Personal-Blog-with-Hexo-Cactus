@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Cubic Y³ • Posts by &#34;stack&#34; tag</title>
+        <link>http://cubicy.icu</link>
+        <description>Notes, CTF, DIY, thoughts and waifus.
+
+I&#39;m CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.
+❤❤❤ CTF, toy projects, electric guitar
+✖✖✖ Technological supremacy
+
+Résumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&amp;target=resume.tex&amp;command=xelatex).</description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 28 Sep 2018 13:11:00 +0800</pubDate>
+        <lastBuildDate>Fri, 28 Sep 2018 13:11:00 +0800</lastBuildDate>
+        <category>Misc</category>
+        <category>Write-Up</category>
+        <category>出题</category>
+        <category>English</category>
+        <category>CISCN</category>
+        <category>web</category>
+        <category>Hackergame</category>
+        <category>Overclocking</category>
+        <category>SchoolBus</category>
+        <category>Rust</category>
+        <category>Lifetime</category>
+        <category>Code</category>
+        <category>Programming</category>
+        <category>冰菓</category>
+        <category>古籍研究社</category>
+        <category>Treap</category>
+        <category>Stack</category>
+        <category>BST</category>
+        <category>图论</category>
+        <category>Kruskal</category>
+        <category>Splay</category>
+        <category>数链剖分</category>
+        <category>树状数组</category>
+        <category>LCA</category>
+        <category>持久化</category>
+        <category>线段树</category>
+        <category>分块</category>
+        <category>哈希</category>
+        <category>Phar</category>
+        <category>反序列化</category>
+        <category>PHP</category>
+        <category>NLP</category>
+        <category>Fuzzing</category>
+        <category>AFL</category>
+        <category>Miscellaneous</category>
+        <category>On Going</category>
+        <category>Compiler</category>
+        <category>Computer Science</category>
+        <category>Math</category>
+        <category>Translation</category>
+        <category>Yoneda Lemma</category>
+        <item>
+            <guid isPermalink="true">http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1901%20%E5%8F%91%E5%B0%84%E7%AB%99/</guid>
+            <title>洛谷:P1901 发射站</title>
+            <link>http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1901%20%E5%8F%91%E5%B0%84%E7%AB%99/</link>
+            <category>Stack</category>
+            <pubDate>Fri, 28 Sep 2018 13:11:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;原题地址:&lt;a href&gt;https://www.luogu.org/problemnew/show/P1901&lt;/a&gt;  &lt;/p&gt;
+&lt;h3 id=&#34;题目简述&#34;&gt;&lt;a href=&#34;#题目简述&#34; class=&#34;headerlink&#34; title=&#34;题目简述&#34;&gt;&lt;/a&gt;题目简述&lt;/h3&gt;&lt;p&gt;有 N 个能量发射站排成一行，每个都有**不相同的高度 $H_i$**，能向两边（当然两端的只能向一边）同时发射能量值为$V_i$ 的能量，并且发出的能量只被两边最近的且比它高的发射站接收。&lt;/p&gt;
+&lt;p&gt;显然，每个发射站发来的能量有可能被0或1或2个其他发射站所接受，求接收最多能量的发射站接收的能量是多少。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;思路&#34;&gt;&lt;a href=&#34;#思路&#34; class=&#34;headerlink&#34; title=&#34;思路&#34;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;每个能量塔射出的能量被左右第一个比其高的塔所拦截。隐隐约约觉得可以用单调栈搞……&lt;br&gt;维护一个高度单调不升栈，考虑&lt;strong&gt;依次&lt;/strong&gt;将能量塔i加入栈：  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果高度比栈顶元素大或栈空，栈顶元素能量加上$V_i$，压入栈;  &lt;/li&gt;
+&lt;li&gt;如果高度比栈顶元素小（栈顶元素编号记为top），当前能量塔i接收的能量加上$V_{top}$，弹出栈顶元素。重复执行直到符合情况1，按1的处理方法处理。&lt;br&gt;最后直接扫描一遍最大值，输出。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;代码&#34;&gt;&lt;a href=&#34;#代码&#34; class=&#34;headerlink&#34; title=&#34;代码&#34;&gt;&lt;/a&gt;代码&lt;/h3&gt;&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; s1[&lt;span class=&#34;number&#34;&gt;1000010&lt;/span&gt;],h[&lt;span class=&#34;number&#34;&gt;1000010&lt;/span&gt;],v[&lt;span class=&#34;number&#34;&gt;1000010&lt;/span&gt;],sum[&lt;span class=&#34;number&#34;&gt;1000010&lt;/span&gt;],ans,n,top;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;scanf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;,&amp;amp;n);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;i&amp;lt;=n;i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;scanf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d%d&amp;quot;&lt;/span&gt;,&amp;amp;h[i],&amp;amp;v[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(top&amp;amp;&amp;amp;h[s1[top]]&amp;lt;h[i])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            sum[i]+=v[s1[top]],top--;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        sum[s1[top]]+=v[i];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        top++;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s1[top]=i;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;i&amp;lt;=n;i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        ans=&lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(ans,sum[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;,ans);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

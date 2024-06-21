@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="原题地址:https:&#x2F;&#x2F;www.luogu.org&#x2F;problemnew&#x2F;show&#x2F;P1902   题目简述给定一个n个点m条边的无向带权图，每次询问2点u,v的联通情况，不联通则输出-1。如果联通，不妨将一条联通u,v的路径上的最小权值记为w，则该次询问输出所有可能的w中的最大值。共有q次询问。  思路对于任意两点u&amp;v，我们需要找出能使得w最大的一条最优路径。因此需要生成一个新图，使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷:P1967 货车运输">
+<meta property="og:url" content="http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/index.html">
+<meta property="og:site_name" content="Cubic Y³">
+<meta property="og:description" content="原题地址:https:&#x2F;&#x2F;www.luogu.org&#x2F;problemnew&#x2F;show&#x2F;P1902   题目简述给定一个n个点m条边的无向带权图，每次询问2点u,v的联通情况，不联通则输出-1。如果联通，不妨将一条联通u,v的路径上的最小权值记为w，则该次询问输出所有可能的w中的最大值。共有q次询问。  思路对于任意两点u&amp;v，我们需要找出能使得w最大的一条最优路径。因此需要生成一个新图，使">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-09-28T05:48:00.000Z">
+<meta property="article:modified_time" content="2023-07-03T13:12:21.562Z">
+<meta property="article:author" content="Cubic Y^3">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="Kruskal">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+        
+      
+    
+    <!-- title -->
+    <title>洛谷:P1967 货车运输</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2018/10/28/%E6%B4%9B%E8%B0%B7P3950%20%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2018/09/28/%E6%B4%9B%E8%B0%B7P1901%20%E5%8F%91%E5%B0%84%E7%AB%99/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/"><i class="fa fa-external-link " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&text=洛谷:P1967 货车运输"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&is_video=false&description=洛谷:P1967 货车运输"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" href="mailto:?subject=洛谷:P1967 货车运输&body=Check out this article: http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-digg " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&name=洛谷:P1967 货车运输&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&t=洛谷:P1967 货车运输"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        洛谷:P1967 货车运输
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">
+            Cubic Y^3
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+      
+        <time datetime="2018-09-28T05:48:00.000Z" class="dt-published" itemprop="datePublished">2018-09-28</time>
+        
+        (Updated: <time datetime="2023-07-03T13:12:21.562Z" class="dt-updated" itemprop="dateModified">2023-07-03</time>)
+        
+      
+    </div>
+
+
+          
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/OI/">OI</a>
+    </div>
+
+
+            
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Kruskal/" rel="tag">Kruskal</a>, <a class="p-category" href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a>
+    </div>
+
+
+      </div>
+  </header>
+  
+
+    <div class="content e-content" itemprop="articleBody">
+      <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+      <div class="views" style="display: flex; text-align:center; gap: 8px;">
+        <i class="fa-solid fa-eye" style="align-content: center; margin-right: 12px;"></i>
+        <span id="busuanzi_value_page_pv"></span>views
+      </div>
+      <span class="post-count">
+        Word count: 1.1k
+          (~5 mins to read)
+      </span>
+      <span class="last-updated">
+        Last updated: <time datetime="2023-07-03T13:12:21.562Z" class="dt-updated" itemprop="dateModified">2023-07-03 21:12:21</time>
+      </span>
+      <p>原题地址:<a href>https://www.luogu.org/problemnew/show/P1902</a>  </p>
+<h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>给定一个n个点m条边的无向带权图，每次询问2点u,v的联通情况，不联通则输出-1。<br>如果联通，不妨将一条联通u,v的路径上的最小权值记为w，则该次询问输出所有可能的w中的最大值。<br>共有q次询问。</p>
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于任意两点u&amp;v，我们需要找出能使得w最大的一条最优路径。<br>因此需要生成一个新图，使得原图中联通<strong>任意两点之间只存在一条</strong>能使得w最大的最优路径。<br>因此这是一棵树……<br>又因为要使w最大，应尽量选择边权大的边作为路径……  然后就突然发觉：这不就是Kruskal算法的过程吗？只不过最小生成树优先选择边权小的边，此时优先选择边权大的。<br>因此要求的新图就是一颗<strong>最大生成树</strong>……Kruskal可破。<br>然后就是求任意两点LCA了。此处使用倍增，也方便维护某节点向树根爬的时候路上的最小权值。<br>（用树链剖分+线段树维护也行…………）<br>更具体的看代码注释。</p>
+<hr>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> inf 1000000005</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> u,v,w;<span class="comment">//两点u&amp;v以及边权</span></span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> Node &amp;b) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> w&lt;b.w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">vector &lt;Node&gt; e[<span class="number">50005</span>];<span class="comment">//e[u]储存节点u相连的边集。</span></span><br><span class="line">priority_queue &lt;Node&gt; Q;<span class="comment">//边权越大的优先级越高</span></span><br><span class="line"><span class="type">int</span> fa[<span class="number">50005</span>];<span class="comment">//Kruskal的御用并查集，fa[u]代表u点所处集合</span></span><br><span class="line"><span class="type">bool</span> vis[<span class="number">50005</span>];<span class="comment">//是否已经被dfs过程访问过</span></span><br><span class="line"><span class="type">int</span> fas[<span class="number">50005</span>][<span class="number">21</span>],minw[<span class="number">50005</span>][<span class="number">21</span>],deep[<span class="number">50005</span>];</span><br><span class="line"><span class="comment">//fas[u][j]代表u点在所处树中的第2^j级父亲编号</span></span><br><span class="line"><span class="comment">//minw[u][j]代表u点在所处树中至第2^j级父亲的路径上最小边权</span></span><br><span class="line"><span class="comment">//deep[u]代表u点在所处树中深度</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span><span class="comment">//查找x所在集合编号</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x==fa[x]) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> fa[x]=<span class="built_in">find</span>(fa[x]);<span class="comment">//路径压缩</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">uni</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> <span class="comment">//合并a,b所在集合</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    fa[<span class="built_in">find</span>(a)]=<span class="built_in">find</span>(b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v,<span class="type">int</span> w)</span> <span class="comment">//添加新图边</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node one;</span><br><span class="line">    one.u=u;</span><br><span class="line">    one.v=v;</span><br><span class="line">    one.w=w;</span><br><span class="line">    e[u].<span class="built_in">push_back</span>(one);</span><br><span class="line">    <span class="built_in">uni</span>(u,v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> f,<span class="type">int</span> k)</span><span class="comment">//dfs，u代表当前点，f为当前点父亲，k为深度</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vis[u]=<span class="number">1</span>;</span><br><span class="line">    deep[u]=k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;e[u].<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (e[u][i].v==f) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">dfs</span>(e[u][i].v,u,k+<span class="number">1</span>);</span><br><span class="line">            fas[e[u][i].v][<span class="number">0</span>]=u;</span><br><span class="line">            minw[e[u][i].v][<span class="number">0</span>]=e[u][i].w;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> n,m,q;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Kruskal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> linked=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!Q.<span class="built_in">empty</span>()&amp;&amp;linked&lt;n<span class="number">-1</span>) &#123;<span class="comment">//边数m可能少于n-1，因此需要注意Q是否为空</span></span><br><span class="line">        Node now=Q.<span class="built_in">top</span>();</span><br><span class="line">        Q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> a=now.u,b=now.v;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">find</span>(a)==<span class="built_in">find</span>(b)) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            linked++;</span><br><span class="line">            <span class="built_in">add</span>(a,b,now.w);</span><br><span class="line">            <span class="built_in">add</span>(b,a,now.w);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lca</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span><span class="comment">//求x，y的lca</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">find</span>(x)!=<span class="built_in">find</span>(y)) <span class="keyword">return</span> <span class="number">-1</span>;<span class="comment">//不在一个树里</span></span><br><span class="line">    <span class="type">int</span> ans=inf;</span><br><span class="line">    <span class="keyword">if</span> (deep[y] &gt;deep[x]) <span class="built_in">swap</span>(x,y);<span class="comment">//较深的标记为x</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">20</span>;i&gt;=<span class="number">0</span>;i--)<span class="comment">//令x跳到与y相同高度</span></span><br><span class="line">        <span class="keyword">if</span>(deep[fas[x][i]]&gt;=deep[y])&#123;</span><br><span class="line">            ans=<span class="built_in">min</span>(ans,minw[x][i]);</span><br><span class="line">            x=fas[x][i];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (x==y) <span class="keyword">return</span> ans;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">20</span>; i&gt;=<span class="number">0</span>; i--)<span class="comment">//让x,y一起跳到lca节点下方</span></span><br><span class="line">        <span class="keyword">if</span>(fas[x][i]!=fas[y][i])&#123;</span><br><span class="line">            ans=<span class="built_in">min</span>(ans,<span class="built_in">min</span>(minw[x][i],minw[y][i]));</span><br><span class="line">            x=fas[x][i]; </span><br><span class="line">            y=fas[y][i];</span><br><span class="line">        &#125;</span><br><span class="line">    ans=<span class="built_in">min</span>(ans,<span class="built_in">min</span>(minw[x][<span class="number">0</span>],minw[y][<span class="number">0</span>]));<span class="comment">//统计最小边权</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        fa[i]=i;<span class="comment">//并查集预处理，各个点都处于自己所代表的集合</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        <span class="type">int</span> x,y,z;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line">        Node one;</span><br><span class="line">        one.u=x;</span><br><span class="line">        one.v=y;</span><br><span class="line">        one.w=z;</span><br><span class="line">        Q.<span class="built_in">push</span>(one);<span class="comment">//加入Kruskal御用队列Q</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Kruskal</span>();<span class="comment">//最大生成树</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;<span class="comment">//倍增数组初始化&amp;dfs</span></span><br><span class="line">        <span class="keyword">if</span> (!vis[i]) &#123;</span><br><span class="line">            <span class="built_in">dfs</span>(i,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">            fas[i][<span class="number">0</span>]=i;</span><br><span class="line">            minw[i][<span class="number">0</span>]=inf;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">20</span>;i++) &#123;<span class="comment">//倍增预处理</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">            fas[j][i]=fas[fas[j][i<span class="number">-1</span>]][i<span class="number">-1</span>];</span><br><span class="line">            minw[j][i]=<span class="built_in">min</span>(minw[j][i<span class="number">-1</span>],minw[fas[j][i<span class="number">-1</span>]][i<span class="number">-1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;q);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;i++) &#123;</span><br><span class="line">        <span class="type">int</span> a,b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">lca</span>(a,b));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/"><i class="fa fa-external-link fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&text=洛谷:P1967 货车运输"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&is_video=false&description=洛谷:P1967 货车运输"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" href="mailto:?subject=洛谷:P1967 货车运输&body=Check out this article: http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&title=洛谷:P1967 货车运输"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&name=洛谷:P1967 货车运输&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li> -->
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cubicy.icu/2018/09/28/%E6%B4%9B%E8%B0%B7P1967%20%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/&t=洛谷:P1967 货车运输"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Cubic Y^3
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cubicYYY/">GitHub</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.5.0/lxgwwenkaiscreenr.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cubicy';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+</body>
+</html>
