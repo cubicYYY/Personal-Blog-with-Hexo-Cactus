@@ -218,6 +218,7 @@ cdn:
   justified_gallery_css: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css
   justified_gallery_js: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
   lxgw_font_css: https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.5.0/lxgwwenkaiscreenr.min.css
+  firacode_font_css: https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css
 
 # RSS
 feed:
