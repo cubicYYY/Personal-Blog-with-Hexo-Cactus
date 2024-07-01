@@ -62,31 +62,35 @@ updated: 2024-04-14 1:04:42
     - 将f: F->D转化为f': I->D
     - 将f: F->F转化为f': I->F
     以及
-    - 将g: I->I转化为g': F->I 
+    - 将g: I->I转化为g': F->I
     - 将g: I->D转化为g': F->D
-    - 将g: I->F转化为g': F->F 
+    - 将g: I->F转化为g': F->F
     六种转化的具体方式确定下来。
   - 对于任何F->D的函数，我们可以...
   - 对于任何F->F的函数，我们可以...
   （如果你觉得怪怪的，那也许是因为协变与逆变的小问题）
   例如，对于函数downcast: Double->Float，我们能将取整函数floorF: Float->Int转为取整函数floorD: Double->Int.
   所以对于如下三个代码片段，他们是等价的，可以互相转换：
+
   ```java
   //A
   Double a
   Int c = floorD(a)
   ```
+
   ```java
   //B
   Double a
   Float b = downcast(a)
   Int c = floorF(b)
   ```
+
   ```java
   //C
   Double a
   Int c = floorF(downcast(a))
   ```
+
   B与C显然是等价的。
   A转B是一种扩展，这种扩展的意义是：Float这种类型可以通过在Double和Int间定义这些函数的转换关系创造出来。
   B转A是一种缩减，这种缩减的意义是：我们不需要Float类型的具体中间值，也能运算出结果！
@@ -106,29 +110,29 @@ updated: 2024-04-14 1:04:42
 
 *本部分翻译自 [https://www.math3ma.com/blog/the-yoneda-perspective](https://www.math3ma.com/blog/the-yoneda-perspective)*
 
-[Dan Piponi](http://blog.sigfpe.com/2006/11/yoneda-lemma.html?m=1) 说这是“数学中最难的 trivial 玩意”；[nLab](https://ncatlab.org/nlab/show/Yoneda+lemma) 对它的看法是“初等的，深刻的，核心的”；而 [Emily Riehl](http://www.math.jhu.edu/~eriehl/context.pdf) 则将其提名为“可以说是范畴论中最重要的结果”。然而，正如 [Tom Leinster](http://www.maths.ed.ac.uk/~tl/categories/yoneda.ps) 所指出的，“许多人觉得它非常令人困惑。”
+[Dan Piponi](http://blog.sigfpe.com/2006/11/yoneda-lemma.html?m=1) 说这是“数学界细碎(trivial)玩意中最难的”；[nLab](https://ncatlab.org/nlab/show/Yoneda+lemma) 认为它是“初等的，深刻的，核心的”；而 [Emily Riehl](http://www.math.jhu.edu/~eriehl/context.pdf) 则提名它为“可以说是范畴论中最重要的结果”。然而，正如 [Tom Leinster](http://www.maths.ed.ac.uk/~tl/categories/yoneda.ps) 所指出的，“许多人觉得它非常令人困惑。”
 他们谈论的是什么？
 **正是米田引理(Yoneda lemma)。**
 
-![](yoneda.jpg)
+![yoneda](yoneda.jpg)
 
-“但……”你问道，“米田引理是啥？如果它还只是一个引理，那么……天哪……定理是什么？”
+“但……”你问道，“米田引理是啥？如果这还只是一个引理，那么……天哪……那定理又是什么？”
 
-在回答问题之前，我想通过“悠闲地漫步”(leisurely stroll)于其中的两个推论来诱导出这个结果。实际上，话说在前头，我没有在范畴学领域的任何部分“漫步”的资质（译者注：作者的自谦）。的确，有资格为我们展示 Yoneda 引理（译者注：后文我们均如此称呼，因为更常用）这颗闪闪发光的精切钻石的，按理说是范畴学家们，而我不是范畴学家（译者注：依然是作者的自谦）。不过，我就是喜欢跟你讲述一些我所喜欢的事物，而Yoneda引理正是我喜欢的。因此，我们还是于此处相遇了！
+在回答问题之前，我想通过“悠闲地漫步”(leisurely stroll)于其中的两个推论来诱导出这个结果。实际上，话说在前头，我没有在范畴学领域的任何部分“漫步”的资质（译者注：作者的自谦）。的确，有资格为我们展示 Yoneda 引理这颗闪闪发光的精切钻石的，按理说是范畴学家们，而我并不是范畴学家（译者注：依然是自谦）。不过，我就是喜欢跟你们讲述一些我喜欢的事物，而Yoneda引理恰恰是我喜欢的事物。因此，我们还是在这相遇了！
 
-现在我可以选择简单地告诉你推论在我眼里的样子，也可以选择简单地把引理甩给你。但正如 [Joseph Maher](http://www.math.csi.cuny.edu/~maher/) 曾经说过的那样：
+现在，我可以简单地告诉你在我看来这些推论是什么，也可以简单地把引理甩给你。但正如 [Joseph Maher](http://www.math.csi.cuny.edu/~maher/) 曾说的：
 
 > 数学是喜剧的反面，是反笑话(anti-joke)\*。我们先告诉你笑点，然后费力地向你解释为什么这个笑点是对的。
 
-所以，首先我要告诉你们一个笑点——关于 Yoneda 引理两个推论的总结。[我之前在这个博客上提到过它](http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property)，但我在这个系列中的目标是将它锚定在一个更正规严谨的数学基础上——也就是在费力地解释为什么它是正确的笑点。它是这样一个概念：
+所以，首先我要告诉你们一个笑点——关于 Yoneda 引理两个推论的总结。[我之前在这个博客上提到过它](http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property)，但我在这个系列文章中的目标是将这个总结锚定在一个更正规、更严谨的数学基础上——也就是费力地解释为什么它是正确的笑点。它是这样一个概念：
 > 数学对象完全由它们与其他对象的关系所决定。
 
-让我们称其为*Yoneda视角*。简而言之，它表明，如果你想理解对象（集合、群、拓扑空间等等），那么用[Barry Mazur](http://www.math.harvard.edu/~mazur/preprints/when_is_one.pdf)的话来说，你会想要理解“它们与同类的、所有其他对象之间的关系网”。我们已经在几篇帖子中探讨了该理念——[The Most Obvious Secret in Mathematics](http://www.math3ma.com/mathema/2016/9/12/the-most-obvious-secret-in-mathematics)和[The Sierpinski Space and its Special Property](http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property)——所以我就不在这详细展开了。（如果你还没看过，请务必去看一看！你可以认为这些帖子是本文的前传。）但是我想提一嘴，Yoneda 视角启发了一种观点，一些数学家——还有这个博客\*\*也越来越多地采纳了这种观点，也即
+让我们称其为*Yoneda视角*。简而言之，它表明如果你想理解对象（集合、群、拓扑空间等等），那么用[Barry Mazur](http://www.math.harvard.edu/~mazur/preprints/when_is_one.pdf)的话来说，你会想要理解“它们与同类的、所有其他对象之间的关系网”。我们已经在几篇帖子中探讨了该理念——[The Most Obvious Secret in Mathematics](http://www.math3ma.com/mathema/2016/9/12/the-most-obvious-secret-in-mathematics)和[The Sierpinski Space and its Special Property](http://www.math3ma.com/mathema/2016/10/6/the-sierpinski-space-and-its-special-property)——所以我就不在这详细展开了。（如果你还没看过，请务必去看一看！你可以认为这些帖子是本文的前传。）但是我想提一嘴，Yoneda 视角启发了一种观点，一些数学家——还有这个博客\*\*也越来越多地采纳了这种观点，也即
 > 数学对象的性质比它的定义更重要。
 
-为什么要采用这种观点？因为脱口而出背诵定义很容易：笛卡尔乘积是...，集合生成的自由群是...，商拓扑是...但定义并不总是能说明一切。积是天然带有*目标为它*或*从它出发*的映射的吗？如果一个自由群的生成集位于另一个群内，这两个群在某种程度上存在联系吗？商空间上的连续函数是什么样子的？这些问题都研究对象的属性——而正是属性定义了对象的特征。一旦我们拓宽视角，从对象所存在的范畴这一视角检视对象，答案就会水落石出。
+为什么要采用这种观点？因为很容易脱口而出地背诵那些定义：笛卡尔乘积是...，集合生成的自由群是...，商拓扑是...然而，定义并不总能说明一切。积是生来就带有*到达它*或*源于它*的映射的吗？如果一个自由群的生成集位于另一个群内，这两个群在某种程度上存在联系吗？商空间上的连续函数是什么样子的？这些问题都研究对象的属性——而正是属性定义了对象的特征。一旦我们拓宽视角，从对象所存在的范畴这一视角检视对象，答案就会水落石出。
 
-我想表达的含义是什么呢？
+我想表达的是什么含义呢？
 
 假设你想探索对象 X 的性质。现在想象一下，把自己带入另一个对象 Y 的视角。然后问：“从 Y 的视点(vantage point)看起来，X 是什么样的？” 然后现在走到另一个对象 Z 旁，同样设身身处地问：“现在呢？从 Z 这里看，X 是什么样？”一直这么做下去，直到你站在范畴中每个对象的角度都剖析了 X 一遍。最后，你就会收集到大量关于 X 的信息。
 
