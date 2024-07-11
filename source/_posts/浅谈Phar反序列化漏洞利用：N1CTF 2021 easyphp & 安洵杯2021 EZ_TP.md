@@ -7,6 +7,7 @@ tags:
 - PHP
 categories: 
 - CTF
+permalink: phar-deserialization-intro/
 ---
 # Phar
 
