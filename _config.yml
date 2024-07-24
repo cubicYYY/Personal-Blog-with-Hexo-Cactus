@@ -124,7 +124,7 @@ marked:
 deploy:
   type: 'git'
   repository:
-    aliyun: git@101.132.222.48:/home/git/blog.git,master
+    aliyun: git@${SSH_GIT_HOST}:${GIT_FOLDER},master
 
 
 math:

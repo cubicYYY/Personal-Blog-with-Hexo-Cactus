@@ -53,3 +53,6 @@ jobs:
 
     - name: Deploy to Server
       run: hexo deploy
+      env:
+        SSH_GIT_HOST: ${{ secrets.SSH_GIT_HOST }}
+        GIT_FOLDER: ${{ secrets.GIT_FOLDER }}
