@@ -127,7 +127,6 @@ deploy:
     aliyun: git@101.132.222.48:/home/git/blog.git,master
 
 
-
 math:
   engine: 'mathjax'
   katex:
