@@ -5,7 +5,7 @@
 # Site
 title: Cubic Y³
 subtitle: '暁の瞬き'
-description: "Notes, CTF, DIY, thoughts and waifus.\n\nI'm CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.\n❤❤❤ CTF, toy projects, electric guitar\n✖✖✖ Technological supremacy\n\nRésumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&target=resume.tex&command=xelatex)."
+description: "Notes, CTF, DIY, thoughts and waifus.\n\nI'm CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.\n❤❤❤ CTF, toy projects, electric guitar\n✖✖✖ Technological supremacy\n\nRésumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&target=CV.tex&command=xelatex)."
 keywords: CTF, Tech, Geek, DIY
 author: Cubic Y^3
 language: zh-CN

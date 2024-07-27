@@ -10,6 +10,10 @@ Undergraduate @ZJU, majoring in CS
 FrontEnd/DevOp @ZJU X-Lab  
 不会在白天审视晚上写的东西。  
 
+## GPG Key
+Use `gpg --recv-keys 0x017234BE3124B924` to fetch my public key.
+Please verify the GPG fingerprint: `2B84 F728 5EA1 4902 EECB  D436 0172 34BE 3124 B924`
+
 ---
 
 ### 以下为胡言乱语/排版测试
