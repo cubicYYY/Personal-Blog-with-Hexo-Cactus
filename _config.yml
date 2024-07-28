@@ -126,6 +126,12 @@ deploy:
   repository:
     aliyun: git@${SSH_GIT_HOST}:${GIT_FOLDER},master
 
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  tags: true
+  categories: true
 
 math:
   engine: 'mathjax'

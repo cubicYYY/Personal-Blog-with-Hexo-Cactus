@@ -103,6 +103,7 @@ server{
     listen 80; # 也可以加一句 default_server, 不过记得全局只能有一个 default_server
     listen [::]:80;
     root /var/www/html/; # 上文提到的根目录
+    # error_page 404 /404.html;
 
     index index.html index.htm index.nginx-debian.html; # 默认提供的文件
 
@@ -110,9 +111,15 @@ server{
     location /{ 
         try_files $uri $uri/ =404; # 如果既不是文件也不是文件夹，返回 404 Not Found
     }
+
+    # location = /404.html {
+    #   internal;
+    # }
 }
 ```
-你也可以为其他子域名创建更多`.conf`文件，每个文件只有 `server_name` 不同。
+
+就像这样。
+你也可以为其他子域名创建更多`.conf`文件，其中每个文件只有 `server_name` 不同，这样你就可以从不同子域名访问你的博客：`my_blog_server.com`, `www.my_blog_server.com`, `blog.my_blog_server.com`, etc.
 不过我直接选择在 DNS 服务器上配置 CNAME.
 
 接下来，我们需要告诉 Nginx 把这个 `blog_vhost` 文件夹的配置文件 include 进来：`vim /etc/nginx/nginx.conf`.
