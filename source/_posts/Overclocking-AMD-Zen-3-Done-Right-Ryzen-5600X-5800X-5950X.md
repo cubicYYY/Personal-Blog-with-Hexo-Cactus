@@ -4,8 +4,9 @@ date: 2024-04-27 01:36:26
 tags:
 - Overclocking
 - English
+- Tutorial
 categories: 
-- Computer Hardware
+- Hardware
 permalink: overclocking-zen3/
 ---
 
