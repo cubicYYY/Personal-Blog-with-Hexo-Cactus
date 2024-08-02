@@ -31,9 +31,12 @@ Now, let's start our journey with asynchronous programming.
 
 ---
 
-### What is Asynchronous Programming: Understand Key Concepts
+## Asynchronous Programming
 
 **"Async" stands for asynchronous.**
+
+### Understand Key Concepts Related to
+
 In general, asynchronous programming is a paradigm that allows a program to execute other tasks while waiting for an operation to complete rather than blocking or waiting for those operations to finish.
 
 ...That's a mouthful. So here's an analogy for it.
@@ -123,12 +126,14 @@ Figures will make it much easier to understand. Suppose we have some tasks to do
 
 ---
 
-### How Async Programming Works: The Underlying Mechanisms
+## How Async Programming Works
 
 Humans are born to act asynchronously (I hope so, especially for people with driving licenses).
 
 However, this becomes tricky in programming: How does a computer "know" something happened and continue processing?
-The key challenge is, for example, that after the program calls a function to issue an I/O request, it needs to be notified when the request is ready and react correctly to this.
+The key **challenge** is, for example, that after the program calls a function to issue an I/O request, it needs to be notified when the request is ready and react correctly to this.
+
+### The Underlying Mechanisms
 
 Models/styles able to achieve this goal include:
 
@@ -161,14 +166,14 @@ This is the event-driven style, and it utilizes interrupts or other low-level te
 
 Is the callback gone here? Yes and no. A "general callback" is implicitly implemented in your system: the thread scheduler. Various events result in the same callback: wake the corresponding thread up. Then, your thread should check if it can really continue processing. If not, just go to sleep again (this is called a "spurious wakeup").
 
+![low-level mechanisms](low-level-async.svg)
+
 **Spoiler**: If the scheduler is implemented not in the kernel but in the user space, you get [green threads](https://en.wikipedia.org/wiki/Green_thread), which belongs to asynchronous programming.
 
 ---
 
 ...We talked a lot about underlying mechanisms. Luckily, you don't need to be bothered with those trivial details! You, the API user, will probably get a "handle" immediately so you can continue doing other things (it is asynchronous).
 You can check the current state of your requested tasks (fulfilled or not) manually via handles at any time. You can also use this handle to *wait* for a task: to *wait* for a task is to manually block the program until the task finishes.
-
-![low-level mechanisms](low-level-async.svg)
 
 ---
 
@@ -272,12 +277,12 @@ In the next article, we'll discover Rust's asynchronous infrastructure, and expe
 [Concurrency, Parallelism, Threads, Processes, Async, and Sync — Related? 🤔 | by G. Abhisek | Swift India | Medium](https://medium.com/swift-india/concurrency-parallelism-threads-processes-async-and-sync-related-39fd951bc61d)
 [Introducing asynchronous JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
 
-Images are created using [Excalidraw](https://excalidraw.com/).
+Figures are created using [Excalidraw](https://excalidraw.com/).
 
 ---
 
 In *Rust Async Demystified* series:
 
-- Part 1 - Basic Concepts of Async Programming
+- [Part 1 - Basic Concepts of Async Programming](/rust-async-demystified-p1)
 - Part 2 - Async Infrastructure in Rust and Other Languages (TODO)
 - Part 3 - Build Yourself a Minimal Runtime from Scratch (TODO)
