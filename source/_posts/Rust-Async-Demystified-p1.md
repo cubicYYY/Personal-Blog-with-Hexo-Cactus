@@ -13,7 +13,7 @@ date: 2024-08-01 20:36:30
 ---
 
 
-> Author: CubicYYY.
+> Author: CUBIC Y^3
 > Feel free to share, but please credit the source and include a link to the original article. Thanks! :)
 
 ## Intro
