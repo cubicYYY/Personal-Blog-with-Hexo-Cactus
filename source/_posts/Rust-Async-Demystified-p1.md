@@ -196,7 +196,7 @@ But why we still need to introduce a **new** model: asynchronous programming?
 
 - **Async programming**: A concurrent programming model to run many tasks on few threads, preserving the programming experience of coding synchronous codes, usually providing `async` `await` syntax. Advantages:
   - Easy to use: alleviates the mind burden for developers. We can do this by abstraction or adding [syntax sugars](https://en.wikipedia.org/wiki/Syntactic_sugar), so you can write asynchronous codes basically the same way you write synchronous codes (i.e., the async version has a similar "shape" to sync codes).
-  - Easy to compose: is easy to compose multiple sub-tasks (steps) into a huge task, while some styles/models may not achieve it ergonomically.
+  - Easy to composite: is easy to composite multiple sub-tasks (steps) into a huge task, while some styles/models may not achieve it ergonomically.
   - Flexible: can be adapted to various environments(single-threaded/multi-threaded) or combined with other paradigms.
 
 These advantages of async programming make it widely applied in practice.
