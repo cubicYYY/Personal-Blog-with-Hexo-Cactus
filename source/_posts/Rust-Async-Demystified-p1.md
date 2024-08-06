@@ -20,6 +20,8 @@ date: 2024-08-01 20:36:30
 
 This is the first article in the *Rust Async Demystified* series, a comprehensive guide that will equip you with the knowledge and skills to help you master asynchronous programming in Rust.
 
+This book: [*Asynchronous Programming in Rust*](https://rust-lang.github.io/async-book/) shows "how asynchronous programming in Rust looks like", and I recommend reading it. On the other hand, this series is more focused on showing the idea of asynchronous programming itself, and Rust is a tool I chose for implementation. I would say they complement each other.
+
 In this series, I will introduce fundamental concepts about asynchronous programming.
 Next, we will delve into the practical application of asynchronous infrastructures in Rust and other languages. By comparing the pros and cons of different asynchronous system designs, we will extend our understanding of asynchronous programming in real-world scenarios.
 Our final task is to build a minimum asynchronous runtime in Rust from scratch!
@@ -45,7 +47,7 @@ Imagine that you are making the dinner for your family:
 - **Parallelism**: If you are always busy doing something, you have nothing to complain about: the faster you are, the quicker you'll finish the dinner. Of course, you can ask other people to help you, with some extra cost of coordinating.
 Yes, that is basically the exact solution for CPU-bounded tasks in programming: to utilize multi-core resources, we can introduce **parallelism** mechanisms like multi-threading or multi-processing, though at the cost of coordinating different threads/processes.
 
-- **Concurrency**: The ability to make multiple tasks "seem like" they are running simultaneously. Asynchronous programming is one way, but not the only way, to achieve concurrency. For example, threading systems also provide concurrency even in a single-threaded environment. Parallelism is executing tasks physically simultaneously, so, of course, it is done with concurrency.
+- **Concurrency**: The ability to make multiple tasks "seem like" they are running simultaneously. Asynchronous programming is one way, but not the only way, to achieve concurrency. For example, threads in OS also provide concurrency even in a single-threaded environment. Parallelism is executing tasks *physically* simultaneously, so, of course, it always brings concurrency.
 
 ... But wait. What if you spend most of your time waiting? For example, you may always wait for the water to boil or the microwave to complete.
 What will you do? Sit there doing nothing else, waiting for the water to boil since it is unfinished?
@@ -79,8 +81,8 @@ Here's the conclusion:
 
 Takeaways:
 
-- I/O-bounded 👉 add concurrency 👉 use asynchronous programming to avoid idling in waiting
-- CPU-bounded 👉 add parallelism 👉 introduce multi-threading / multi-processing to execute more calculations/instructions
+- I/O-bounded 👉 add concurrency 👉 may use asynchronous programming to avoid idling in waiting
+- CPU-bounded 👉 add parallelism 👉 need to introduce multi-threading / multi-processing to execute more calculations/instructions
 - **Parallelism is a method to achieve concurrency, which is only available in a multi-threaded environment.**
 - **Implementing concurrency can make a single-threaded system seem to have parallelism (but actually not).**
 
@@ -122,29 +124,33 @@ Figures will make it much easier to understand. Suppose we have some tasks to do
   - Even though some tasks may have internal parallelism, all tasks have to run sequentially.
 - Async + Parallelism: full parallelism.
    ![full parallelism](async-multi.svg)
-  - As soon as the current task is completed or needs to wait, the thread is immediately idle and ready to receive a task ready to be executed.
+  - As soon as the current task is completed or needs to wait, the thread is immediately idle and ready to receive a ready task.
 
 ---
 
-## How Async Programming Works
+## How to Achieve Concurrency
 
-Humans are born to act asynchronously (I hope so, especially for people with driving licenses).
+Humans are born to act concurrently (I hope so, especially for people with driving licenses).
+However, you have only one brain, single-core, single-threaded. So to achieve concurrency it requires you to notice changes in the environment, and possibly pause your current task for another one.
 
 However, this becomes tricky in programming: How does a computer "know" something happened and continue processing?
-The key **challenge** is, for example, that after the program calls a function to issue an I/O request, it needs to be notified when the request is ready and react correctly to this.
+The key **challenge** is, for example, that after the program calls a function to issue an I/O request, it needs to be notified when the request is ready and react correctly.
 
 ### The Underlying Mechanisms
 
 Models/styles able to achieve this goal include:
 
-- **Polling**: The program repeatedly checks the task status at regular time intervals. However, it occupies the CPU and blocks the program. It's not good, but sometimes you have to, especially in synchronous codes.
-- **Callbacks**: To avoid polling, we can directly tell the I/O function what it should do after the I/O operation is finished by passing a **callback**, which is something like a function pointer. Callback is a kind of asynchronous programming. Understanding callbacks can be the *foundation\** for learning asynchronous programming systems.
-- **Event-Driven**: The program's flow is determined by events such as user actions, timer expirations, etc. An **event loop** repeatedly checks for events and dispatches them to appropriate handlers.
-- ...
+- Polling: The program repeatedly checks the task status at regular time intervals. However, it occupies the CPU and blocks the program, providing **NO** concurrency. It's not good, but sometimes you have to, especially in synchronous codes.
+- Callbacks: To avoid polling, we can directly tell the I/O function what it should do after the I/O operation is finished by passing a **callback**, which is something like a function pointer. Callback is a kind of implementation of asynchronous programming. Understanding callbacks can be the *foundation\** for learning other asynchronous programming models.
+- Event-Driven: The program's flow is determined by events such as user actions, hardware interrupts, etc. An **event loop** repeatedly checks for events and dispatches them to appropriate handlers.
+- Threading System: Essentially an event-driven system, but built in the kernel and the event loop is replaced with the thread scheduler.
 
-Here are some conceptual trivial discussions; you don't need them to write codes, but they are inspiring:
+#### All that Callbacks?
 
-The use of the word *foundation* is apt here because many implementations of asynchronous programming can be seen as special cases of callbacks. Essentially, calling a function involves jumping to a specific location in memory, and callbacks specify where the function should jump to after completing a task. This can be explicit, as with a defined callback function, or implicit, as with a "callback location", which might be in the middle of a function.
+> Here are some conceptual trivial discussions; you don't need them to write codes, but they are inspiring and worth reading.
+
+The use of the word *foundation* is apt because many implementations of asynchronous programming can be seen as special cases of callbacks. Essentially, calling a function involves jumping to a specific location in memory, and callbacks specify where the function should jump to after completing a task. This can be explicit, as with a defined callback function so we jump to the entrance of that function; or implicit, as with a "callback location", which might be in the middle of a task's code.
+Wait, if the location rests in the middle, is there still a "function" starts with that location? Yes, it is the "continuation" of the task!
 
 The key takeaway is: **To react correctly, a program needs to know where to jump next**. Therefore, managing control flow is crucial in asynchronous programming.
 
@@ -154,26 +160,48 @@ The key takeaway is: **To react correctly, a program needs to know where to jump
 
 ---
 
-To clarify, though we can implement callbacks ourselves, they are possibly "synchronous callbacks": the function still blocks the program until it finishes its job, then calls the callback you passed in and returns. Synchronous callbacks may make your functions more flexible but will not increase concurrency.
+Though we can implement callbacks ourselves, they are possibly "synchronous callbacks": the function still blocks the program until it finishes its job, then calls the callback you passed in and returns. Synchronous callbacks may make your functions more flexible but will not increase concurrency.
 On the other hand, "asynchronous callbacks" require involving some "magic" API functions in underlying libraries or provided by the operating system: down to the earth, it may register the program in some inner components, and the system will get notified when the operation is completed (via some mechanisms like interrupts or system event notifications), then trigger the callback you set (if any).
-You can see many explicit asynchronous callbacks in JavaScript since it has a language built-in asynchronous runtime: it automatically finds the corresponding callback function (for each event) to call after complete synchronous codes in each [event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop).
+You can see many explicit asynchronous callbacks in JavaScript since it has a language built-in asynchronous runtime: after complete synchronous codes in each [event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop), it automatically finds the corresponding callback function (for each event) to call.
 
 ---
 
-Languages like C/C++ and Rust, however, are not equipped with a built-in asynchronous runtime for [some reasons](https://stackoverflow.com/questions/66281348/why-does-cs-async-await-not-need-an-event-loop), so you can hardly see those callbacks (though they are possible).
-In this case, many asynchronous I/O interfaces (e.g., `io_uring`) provided by the OS work like this: you issue an I/O request, which registers your program inside the system, and the program continues; when your program needs the result of that request to continue processing, just call a function like `wait()`. If the result is not yielded yet, the current thread cannot continue, so it will be parked and yield the CPU to other threads, so there is no blocking here; when the request is fulfilled, your program will be re-scheduled(woken up) by the OS to continue.
-This is the event-driven style, and it utilizes interrupts or other low-level techniques to sense events effectively.
+### Event-Driven Style
 
-Is the callback gone here? Yes and no. A "general callback" is implicitly implemented in your system: the thread scheduler. Various events result in the same callback: wake the corresponding thread up. Then, your thread should check if it can really continue processing. If not, just go to sleep again (this is called a "spurious wakeup").
+Languages like C/C++ and Rust, however, are not equipped with a built-in asynchronous runtime for [some reasons](https://stackoverflow.com/questions/66281348/why-does-cs-async-await-not-need-an-event-loop), so you can hardly see those explicit asynchronous callbacks (though they are possible).
+In this case, many asynchronous I/O interfaces (e.g., `io_uring`) provided by the OS work like this:
+
+1. You issue an I/O request, which registers your thread inside the system and returns immediately so the thread continues normally.
+2. When your thread needs the result of that request to continue processing, just call a function like `wait()`. If the result is not yielded yet, the current thread cannot continue, so it will be parked and yield the CPU to other threads, so there is no blocking here.
+3. When the request is fulfilled, your program will be re-scheduled(woken up) by the OS to continue.
+
+This is the event-driven style (as we mentioned), and it utilizes interrupts or other low-level techniques to sense events effectively.
 
 ![low-level mechanisms](low-level-async.svg)
 
-**Spoiler**: If the scheduler is implemented not in the kernel but in the user space, you get [green threads](https://en.wikipedia.org/wiki/Green_thread), which belongs to asynchronous programming.
+> Is the callback gone here? Yes and no. A "general callback" is implicitly implemented in your system: the thread scheduler. Various events result in the same callback behavior: waking up the corresponding(registered) thread. Then, the thread should check if it can really continue processing. If not, just go to sleep again (this is called a "spurious wakeup").
+
+**Spoiler**: If the scheduler is implemented not in the kernel but in the user space, you get [green threads](https://en.wikipedia.org/wiki/Green_thread), which belongs to asynchronous programming. E.g. `goroutine` in Golang.
+
+Luckily, you don't need to be bothered with those trivial details! You, the API user, will probably get a "handle" immediately so you can continue doing other things (it is asynchronous).
+You can check the current state of your requested tasks (fulfilled or not) manually via handles at any time. You can also use this handle to *wait* for a task: to *wait* for a task is to manually block the program until the task finishes.
 
 ---
 
-...We talked a lot about underlying mechanisms. Luckily, you don't need to be bothered with those trivial details! You, the API user, will probably get a "handle" immediately so you can continue doing other things (it is asynchronous).
-You can check the current state of your requested tasks (fulfilled or not) manually via handles at any time. You can also use this handle to *wait* for a task: to *wait* for a task is to manually block the program until the task finishes.
+## So... Why Async?
+
+We talked a lot about underlying mechanisms to achieve concurrency. Seems like tons of models or styles are available.
+But why we still need to introduce a **new** model: asynchronous programming?
+(Neither callbacks nor event-driven style is what we usually called "asynchronous programming" in daily.)
+
+- **Async programming**: A concurrent programming model to run many tasks on few threads, preserving the programming experience of coding synchronous codes, usually providing `async` `await` syntax. Advantages:
+  - Easy to use: alleviates the mind burden for developers. We can do this by abstraction or adding [syntax sugars](https://en.wikipedia.org/wiki/Syntactic_sugar), so you can write asynchronous codes basically the same way you write synchronous codes (i.e., the async version has a similar "shape" to sync codes).
+  - Easy to compose: is easy to compose multiple sub-tasks (steps) into a huge task, while some styles/models may not achieve it ergonomically.
+  - Flexible: can be adapted to various environments(single-threaded/multi-threaded) or combined with other paradigms.
+
+These advantages of async programming make it widely applied in practice.
+
+As a comparison, here's a counterexample below: callbacks, where composition leads to nested ugly codes, and is totally different from normal codes.
 
 ---
 
@@ -276,6 +304,7 @@ In the next article, we'll discover Rust's asynchronous infrastructure, and expe
 
 [Concurrency, Parallelism, Threads, Processes, Async, and Sync — Related? 🤔 | by G. Abhisek | Swift India | Medium](https://medium.com/swift-india/concurrency-parallelism-threads-processes-async-and-sync-related-39fd951bc61d)
 [Introducing asynchronous JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+[Why Async? Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/02_why_async.html)
 
 Figures are created using [Excalidraw](https://excalidraw.com/).
 

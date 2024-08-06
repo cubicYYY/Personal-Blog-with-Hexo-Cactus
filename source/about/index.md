@@ -25,7 +25,7 @@ Research Interests: Programming Languages, Software Engineering, and Cyber Secur
 
 ## Experiences
 
-### `Azure Assassin Alliance` (AAA)
+### `Azure Assassin Alliance`
 
 - ZJU CTF Team, A.K.A. `AAA`
 - Specialised in Web / Miscellaneous challenges
@@ -66,3 +66,5 @@ Please verify the GPG fingerprint: `2B84 F728 5EA1 4902 EECB  D436 0172 34BE 312
 
 学マス P-ID: `74J5Z3SH`
 ![kotone](kotone.jpg)
+
+Wish you a good day.
