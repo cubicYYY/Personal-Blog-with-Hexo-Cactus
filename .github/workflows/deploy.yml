@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -12,10 +13,10 @@ jobs:
 
     steps:
     - name: Checkout source code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
 
@@ -23,7 +24,7 @@ jobs:
       run: npm install -g hexo-cli
     
     - name: Cache node modules
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       id: cache
       with:
         path: ~/.npm
