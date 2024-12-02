@@ -1,0 +1,69 @@
+nav:
+  home: Home/首页
+  about: About/关于
+  articles: Archives/归档
+  projects: Projects/项目
+  tag: Tags/标签
+  category: Categories/分类
+  search: Search/搜索
+  
+icons:
+  menu: Menu/目录
+  top: Top/顶部
+
+footer:
+  copyright: Copyright
+
+index:
+  find_me_on: Contact me/联系我：
+  enum_comma: '  '
+  enum_and: ' '
+  articles: Articles/文章
+  projects: Projects/项目
+  topics: Topics/主题
+  most_recent: Latest/最新发布
+
+post:
+  desktop:
+    previous: Prev/上一篇
+    next: Next/下一篇
+    back_to_top: Back to Top/返回顶部
+    share: Share/分享文章
+  mobile:
+    menu: Menu/菜单
+    toc: Titles/目录
+    back_to_top: Back to Top/返回顶部
+    share: Share/分享
+
+search:
+  search: Search/搜索...
+  no_results: No result/抱歉，没有符合您搜索条件的结果。请换其它关键词再试。
+
+tag_cloud:
+  zero: Empty/没有标签
+
+pagination:
+  page: "%d / %d Pages"
+ 
+counter:
+  tag_cloud:
+    zero: Empty Tags/没有标签
+    one: ""
+    other: ""
+
+  categories:
+    zero: Empty Categories/没有分类
+    one: ""
+    other: ""
+
+  archive_posts:
+    zero: Empty Archives/没有归档
+    one: ""
+    other: ""
+
+comments:
+  no_js: JavaScript is not enabled. / 加载评论需要在浏览器启用 JavaScript 脚本支持。
+
+tooltip:
+  copy_tip: Copy/复制到粘贴板！
+  copied: Copied/复制成功！
