@@ -1,0 +1,67 @@
+name: Deploy Hexo Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    name: Build and deploy Hexo Site
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install Hexo CLI Tools
+      run: npm install -g hexo-cli
+    
+    - name: Cache node modules
+      uses: actions/cache@v4
+      id: cache
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: SSH Key Setups
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+
+    - name: SSH Fingerprint Registration
+      run: |
+        touch ~/.ssh/known_hosts
+        chmod 600 ~/.ssh/known_hosts
+        echo "${{ secrets.SSH_FINGERPRINT }}" >> ~/.ssh/known_hosts
+
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Generate static files
+      run: hexo generate
+
+    - name: Set Bot Info for Git
+      run: |
+        git config --global user.email "cicd@example.com"
+        git config --global user.name "CICD Bot"
+
+    - name: Set Deploy Target
+      run: |
+        sed -i "s#\${SSH_GIT_HOST}#$SSH_GIT_HOST#g" _config.yml
+        sed -i "s#\${GIT_FOLDER}#$GIT_FOLDER#g" _config.yml
+      env:
+        SSH_GIT_HOST: ${{ secrets.SSH_GIT_HOST }}
+        GIT_FOLDER: ${{ secrets.GIT_FOLDER }}
+
+    - name: Deploy to Server
+      run: hexo deploy

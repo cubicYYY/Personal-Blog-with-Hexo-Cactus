@@ -5,10 +5,10 @@
 # Site
 title: Cubic Y³
 subtitle: '暁の瞬き'
-description: "Notes, CTF, DIY, thoughts and waifus.\n\nI'm CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.\n❤❤❤ CTF, toy projects, electric guitar\n✖✖✖ Technological supremacy\n\nRésumé👉 [here](https://latexonline.cc/compile?git=https://github.com/cubicYYY/resume&target=resume.tex&command=xelatex)."
+description: "Notes, CTF, DIY, thoughts and waifus.\n\nI'm CubicYYY, an undergraduate student majoring in Computer Science at Zhejiang University.\n❤❤❤ CTF, toy projects, electric guitar\n\n"
 keywords: CTF, Tech, Geek, DIY
 author: Cubic Y^3
-language: zh-CN
+language: EN-CN-bilingual
 timezone: 'Asia/Shanghai'
 
 hide_posts:
@@ -124,9 +124,14 @@ marked:
 deploy:
   type: 'git'
   repository:
-    aliyun: git@101.132.222.48:/home/git/blog.git,master
+    aliyun: git@${SSH_GIT_HOST}:${GIT_FOLDER},master
 
-
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  tags: true
+  categories: true
 
 math:
   engine: 'mathjax'

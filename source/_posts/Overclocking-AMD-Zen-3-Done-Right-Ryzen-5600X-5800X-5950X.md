@@ -4,8 +4,9 @@ date: 2024-04-27 01:36:26
 tags:
 - Overclocking
 - English
+- Tutorial
 categories: 
-- Computer Hardware
+- Hardware
 permalink: overclocking-zen3/
 ---
 
@@ -114,7 +115,7 @@ So we need negative values here.
    - Unstable - Can even not enter the system: make the value less negative (increase the voltage) of all cores
    - Unstable - Entered the system and got BSoD: Restart and try to finish these steps before a BSoD again:
        1. Open the Windows Event Viewer, go to System, and look for errors from WHEA-logger with ID=18.
-       2. If found, check the APIC ID in detail. APIC ID is the number of the logic core that failed, so you need to convert it into physical core number. For example, my 5800X has 2 threads per core, so APIC ID 9 means physical CPU core #floor(9/2)=#4 (start from #0) failed. ![](WHEA18.png)
+       2. If found, check the APIC ID in detail. APIC ID is the number of the logic core that failed, so you need to convert it into a physical core number. For example, my 5800X has 2 threads per core, so APIC ID 9 means physical CPU core #floor(9/2)=#4 (start from #0) failed. ![](WHEA18.png)
        3. Restart and enter the BIOS, make the value less negative (increase the voltage) of this specific core
    - Unstable - Start a fast verification using CoreCycler(with `config.ini` args set to runtimePerCore=60, maxIterations=3), but failed: make the value less negative (increase the voltage) of cores reporting errors
      - You can check the log files: ![](Corecycler-error-log.png) ![](Corecycler-error-log2.png)
@@ -144,7 +145,7 @@ If the following condition is met, then you made it!
 - Run a benchmark tool and see the args changing on the Ryzen Master panel
 - Play a game or do what you want without BSoD and WHEA 18 event in your event viewer
 
-If any error occurrs, you know what to do from the paragraph above: increase the voltage.
+If any error occurs, you know what to do from the paragraph above: increase the voltage.
 
 ## References
 
