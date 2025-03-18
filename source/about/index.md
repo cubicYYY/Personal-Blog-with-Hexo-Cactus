@@ -1,5 +1,5 @@
 ---
-title: about
+title: About/关于
 type: about
 ---
 

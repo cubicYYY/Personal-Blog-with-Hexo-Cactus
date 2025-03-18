@@ -5,7 +5,7 @@
  *     <%- page_title() %>
  */
 hexo.extend.helper.register("page_title", function () {
-  var title = this.page.title ? this.page.title : this.config.title;
+  var title = this.page.title ? this.page.title + " | " + this.config.title : this.config.title;
 
   if (this.is_archive()) {
     title = this.__("nav.articles");

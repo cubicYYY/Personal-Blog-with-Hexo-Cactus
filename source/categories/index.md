@@ -1,4 +1,4 @@
 ---
-title: categories
+title: Categories/分类
 type: categories
 ---
