@@ -234,3 +234,6 @@ feed:
         enable: true
         template: "themes/layout/template/atom.ejs"
         output: "atom.xml"
+
+# GitHub Corner
+github_corner_url: "https://github.com/cubicYYY/Personal-Blog-with-Hexo-Cactus"

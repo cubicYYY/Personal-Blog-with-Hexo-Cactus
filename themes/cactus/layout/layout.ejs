@@ -18,4 +18,9 @@
     <%- partial('_partial/styles') %>
     <%- partial('_partial/scripts') %>
 </body>
+
+<% if (is_home()) { %>
+  <%- partial('_partial/github_corner') %>
+<% } %>
+
 </html>
