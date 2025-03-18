@@ -3,20 +3,15 @@ title: about
 type: about
 ---
 
+## About Me
+
+[Resume (webpage)](https://self.cubicy.icu/)
+[Resume (PDF file)](https://self.cubicy.icu/Resume.pdf)
+
 ## Contacts
 
-**Yaoyang Ye**
-[CV(webpage)](https://self.cubicy.icu/)
-[github.com/cubicYYY/](https://github.com/cubicYYY/)
-[makise@zju.edu.cn](mailto:makise@zju.edu.cn)
-
-## Status
-
-Currently I am an Undergraduate from Zhejiang University (ZJU), College of Computer Science and Technology.
-I'm seeking for Ph.D. opportunities :)
-[CV(file)](https://self.cubicy.icu/CV.pdf)
-
-Research Interests: Programming Languages, Software Engineering, and Cyber Security
+[GitHub: cubicYYY](https://github.com/cubicYYY/)
+[Email: makise@zju.edu.cn](mailto:makise@zju.edu.cn)
 
 ## GPG Key
 
