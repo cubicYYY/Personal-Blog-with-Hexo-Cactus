@@ -22,7 +22,7 @@ Please verify the GPG fingerprint: `2B84 F728 5EA1 4902 EECB  D436 0172 34BE 312
 
 ### JapanEx Visiting Map
 
-![JapanEx](japanex.jpg)
+![JapanEx](japanex.png)
 
 Source: [JapanEx 制縣等級/制県レベル](https://zhung.com.tw/japanex)
 
