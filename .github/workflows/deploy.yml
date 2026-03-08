@@ -40,9 +40,7 @@ jobs:
 
     - name: SSH Fingerprint Registration
       run: |
-        touch ~/.ssh/known_hosts
-        chmod 600 ~/.ssh/known_hosts
-        echo "${{ secrets.SSH_FINGERPRINT }}" >> ~/.ssh/known_hosts
+        ssh-keyscan -H ${{ secrets.SSH_GIT_HOST }} >> ~/.ssh/known_hosts
 
     - name: Install dependencies
       run: npm ci
