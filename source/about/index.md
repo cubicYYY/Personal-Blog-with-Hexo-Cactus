@@ -10,10 +10,8 @@ type: about
 
 ## Contacts
 
-**Yaoyang Ye**
-
 Currently I am an PhD student at Purdue University.
-**Research Interests: Programming Languages, Agentic AI for Cybersecurity**
+**Research Areas: Programming Languages, Agentic AI for Cybersecurity**
 
 [CV(webpage)](https://self.cubicy.icu/)
 [GitHub: cubicYYY](https://github.com/cubicYYY/)
