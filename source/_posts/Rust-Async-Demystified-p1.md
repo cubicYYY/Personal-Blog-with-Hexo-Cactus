@@ -214,39 +214,27 @@ Ordering, waiting, getting your coffee, and leaving are the only steps in this t
 Here is a JavaScript to demonstrate it:
 
 ```javascript
-// Define the callback function that will be called when the coffee is ready
-function onCoffeeReady() {
-    console.log("The buzzer buzzes! Come to get your coffee.");
-
-    // Getting the coffee...
-
-    console.log("You got your coffee. Enjoy!");
-}
-
-// Function to simulate ordering coffee
+// Simulate ordering coffee: the callback fires when the coffee is ready.
 function orderCoffee(callback) {
-    console.log("You order a coffee.");
-    console.log("The barista gives you a buzzer.");
-    console.log("You can do something else while waiting...");
+    console.log("You order a coffee. The barista gives you a buzzer.");
 
-    // Here comes the asynchronous part 
-    setTimeout(() => {
-        // When the coffee is ready, the callback is called
-        callback();
- }, 3000); // Simulate a 3-second waiting time for coffee preparation
+    // The asynchronous part: setTimeout returns immediately,
+    // and the callback is called 3 seconds later.
+    setTimeout(callback, 3000);
 }
 
 function visitCoffeeShop() {
     console.log("You enter the coffee shop.");
-    
-    // Order coffee and pass the callback for when it's ready
-    orderCoffee(onCoffeeReady);
 
-    // You are doing other things while waiting for the coffee
+    // Pass a callback — what to do when the buzzer buzzes
+    orderCoffee(() => {
+        console.log("The buzzer buzzes! You pick up your coffee. Enjoy!");
+    });
+
+    // This line runs immediately — you don't wait for the coffee!
     console.log("You are browsing a blog while waiting...");
 }
 
-// Start the process
 visitCoffeeShop();
 ```
 
@@ -255,28 +243,18 @@ For example, there are many stages in HTTP connection establishment, and transit
 In situations like this, callbacks start to nest into each other, and you can see the code becomes like this:
 
 ```javascript
-function step1(callback) {
-    setTimeout(() => {
-        console.log("Step 1 complete");
-        callback();
- }, 1000); // Takes 1 second to complete
-}
+// Each step simulates an async operation that calls `callback` when done.
+function step1(callback) { setTimeout(() => { console.log("Step 1 done"); callback(); }, 1000); }
+function step2(callback) { setTimeout(() => { console.log("Step 2 done"); callback(); }, 1000); }
+function step3(callback) { setTimeout(() => { console.log("Step 3 done"); callback(); }, 1000); }
+function step4(callback) { setTimeout(() => { console.log("Step 4 done"); callback(); }, 1000); }
 
-function step2(callback) {
-    setTimeout(() => {
-        console.log("Step 2 complete");
-        callback();
- }, 1000); // Takes 1 second to complete
-}
-
-// step3, step4, step5, ...
-
-// Execute the task:
+// Now chain them together:
 step1(() => {
     step2(() => {
         step3(() => {
             step4(() => {
-                console.log("Task completed.");
+                console.log("All steps completed.");
             });
         });
     });
@@ -313,5 +291,5 @@ Figures are created using [Excalidraw](https://excalidraw.com/).
 In *Rust Async Demystified* series:
 
 - [Part 1 - Basic Concepts of Async Programming](/rust-async-demystified-p1)
-- Part 2 - Async Infrastructure in Rust and Other Languages (TODO)
+- [Part 2 - Async Infrastructure in Rust and Other Languages](/rust-async-demystified-p2)
 - Part 3 - Build Yourself a Minimal Runtime from Scratch (TODO)
