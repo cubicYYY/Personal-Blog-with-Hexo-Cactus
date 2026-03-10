@@ -806,11 +806,9 @@ Figures are created using [Excalidraw](https://excalidraw.com/).
 
 ---
 
-## Appendix: Async Across Languages
+## Appendix: Async Across Languages: Rust, C++, JavaScript and Golang
 
 All four languages below let you write code that "pauses" and "resumes" - but the machinery underneath varies dramatically.
-
-### Comparison Table
 
 | | **Rust** | **C++20** | **Go** | **JavaScript** |
 | - | - | - | - | - |
@@ -826,11 +824,7 @@ All four languages below let you write code that "pauses" and "resumes" - but th
 
 Every row represents a trade-off, not a winner. Rust consistently chooses **explicitness and zero-cost abstractions**, accepting a steeper learning curve in exchange for fine-grained control. Go consistently chooses **implicit runtime management**, accepting per-goroutine overhead in exchange for a uniform programming model. C++ exposes **maximum flexibility** in the coroutine protocol, accepting API complexity. JavaScript provides a **built-in event loop**, accepting the single-threaded constraint. The right choice depends on the constraints of your project.
 
-### The Same Example in Four Languages
-
-The task: **fetch data from a URL, then write it to a file**.
-
-#### Rust: `async fn` → compiler-generated state machine (pulled by a runtime)
+### Rust: `async fn` → compiler-generated state machine (pulled by a runtime)
 
 ```rust
 // What you write:
@@ -886,7 +880,7 @@ impl Future for FetchAndSaveFuture {
 }
 ```
 
-#### C++20: `co_await` → compiler-generated coroutine frame (pulled by a library)
+### C++20: `co_await` → compiler-generated coroutine frame (pulled by a library)
 
 ```cpp
 // What you write:
@@ -994,7 +988,7 @@ void fetch_and_save_resume(fetch_and_save_frame* f) {
 }
 ```
 
-#### JavaScript: `async`/`await` → Promise chain (pushed by the built-in event loop)
+### JavaScript: `async`/`await` → Promise chain (pushed by the built-in event loop)
 
 In JS, the analogue of Rust's Future is a **Promise**—the value you `await` and that runs on the event loop.
 
@@ -1028,7 +1022,7 @@ function fetchAndSave(url, path) {
 // just a chain of callbacks managed by the runtime.
 ```
 
-#### Go: implicit goroutine (pushed by the built-in scheduler)
+### Go: implicit goroutine (pushed by the built-in scheduler)
 
 ```go
 // What you write - no special keywords at all:
