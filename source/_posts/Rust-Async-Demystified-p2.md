@@ -292,7 +292,7 @@ The key takeaway: **`async fn` is just syntactic sugar**. Every `async fn` becom
 
 Both Rust and C++20 use stackless (we'll discuss this concept later) coroutines, which means they are all compiled into state machines. But they take opposite approaches to **how a parent coroutine drives its children**. This distinction shapes their respective APIs. (For a deeper treatment, see [this article](https://blog.howardlau.me/programming/coroutines-rust-cpp20.html).)
 
-#### Top-Down (Rust): The Parent Drives
+---
 
 In Rust, the parent coroutine calls `poll()` on its child. If the child returns `Pending`, the parent also returns `Pending`. Next time the executor polls the parent, the parent re-enters the child by calling `poll()` again.
 
@@ -310,9 +310,9 @@ impl Future for ChildFuture {
 }
 ```
 
-#### Bottom-Up (C/C++20): The Child Resumes the Parent
+---
 
-In the bottom-up model, when a child coroutine finishes or suspends, this child itself is responsible for telling the system what to call next. The child must store a pointer (or handle) to its parent so it can resume it.
+In C++, when a child coroutine finishes or suspends, this child itself is responsible for telling the system what to call next. The child must store a pointer (or handle) to its parent so it can resume it. This is a bottom-up model.
 
 Here's a simplified C example (adapted from [howardlau](https://blog.howardlau.me/programming/coroutines-rust-cpp20.html)) that shows the essence of this approach. Imagine `serve_http` needs to call a sub-coroutine `write_response`:
 
@@ -403,7 +403,7 @@ C++:
     - **Inside the Main Task:** Now awake, the `Main Task` calls `io.await_resume()` to extract the result from the child's promise, and then `~io()` destroys the temporary awaiter object.
 7. **Return to Executor:** The `Main Task` finishes processing the data and returns control back to the executor.
 
-#### The Trade-Off
+### The Trade-Off
 
 | | **Top-down (Rust)** | **Bottom-up (C/C++20)** |
 | - | - | - |
