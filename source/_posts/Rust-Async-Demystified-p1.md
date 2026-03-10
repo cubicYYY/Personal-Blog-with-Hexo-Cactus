@@ -290,6 +290,6 @@ Figures are created using [Excalidraw](https://excalidraw.com/).
 
 In *Rust Async Demystified* series:
 
-- [Part 1 - Basic Concepts of Async Programming](/rust-async-demystified-p1)
+- Part 1 - Basic Concepts of Async Programming
 - [Part 2 - Async Infrastructure in Rust and Other Languages](/rust-async-demystified-p2)
 - Part 3 - Build Yourself a Minimal Runtime from Scratch (TODO)
