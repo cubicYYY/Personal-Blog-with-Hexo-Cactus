@@ -198,7 +198,7 @@ While many languages use similar keywords like `await` and `async`, each languag
 
 You may have noticed something: the state machine doesn't run itself. The `poll()` function doesn't call itself - someone from the outside must keep calling it, checking whether it returned `Ready` or `Pending`, and deciding when to call it again. That "someone" is what we call an async **runtime** (or an "executor" in some runtimes). Without it, your `async fn` is just a data structure sitting in memory doing nothing.
 
-This is a critical distinction: `async`/`await` defines the *what* (the state machine, i.e. the Future), but the runtime decides the *when* (when to poll, which task to run next, how to wait for I/O). Different languages make very different choices about this runtime, how they represent coroutines (Future, Promise, Task, etc.), and whether the programmer sees any of this at all. If you're curious how Rust, C++20, Go, and JavaScript compare side by side - with the same example implemented in all four - see [Appendix: Async Across Languages](#appendix-async-across-languages) at the end of this article.
+This is a critical distinction: `async`/`await` defines the *what* (the state machine, i.e. the Future), but the runtime decides the *when* (when to poll, which task to run next, how to wait for I/O). Different languages make very different choices about this runtime, how they represent coroutines (Future, Promise, Task, etc.), and whether the programmer sees any of this at all. If you're curious how Rust, C++20, Go, and JavaScript compare side by side - with the same example implemented in all four - see [Appendix: Async Across Languages](#Appendix-Async-Across-Languages-Rust-C-JavaScript-and-Golang) at the end of this article.
 
 Now, let's dive into Rust's machinery piece by piece.
 
@@ -261,7 +261,7 @@ What are the trade-offs between these two models?
 
 > **Contrast with Go:** A goroutine starts running immediately when you `go func()`. It's push-based - the Go scheduler drives it. No explicit polling or awaiting required, but every goroutine allocates a stack (~2-8 KB initially) and is managed by the runtime's scheduler. Rust's poll model trades that implicit execution for explicit control and avoids the per-coroutine stack cost.
 
-For more comparison, see [Appendix: Async Across Languages](#appendix-async-across-languages).
+For more comparison, see [Appendix: Async Across Languages](#Appendix-Async-Across-Languages-Rust-C-JavaScript-and-Golang).
 
 ---
 
@@ -278,7 +278,7 @@ async fn fetch_data(url: &str) -> Data {
 }
 ```
 
-The compiler desugars this into an anonymous struct that implements `Future` - exactly the same transformation we saw in  [Piece 1](#piece-1-from-callbacks-to-coroutines). The recipe is mechanical:
+The compiler desugars this into an anonymous struct that implements `Future` - exactly the same transformation we saw in  [Piece 1](#Piece-1-From-Callbacks-to-Coroutines). The recipe is mechanical:
 
 - Only local variables that **live across an `.await` point** are saved in the struct (variables used entirely within one state stay on the normal stack). The compiler may let variables with non-overlapping lifetimes share memory (like a union), so the struct's size can be the max across states rather than the sum.
 - A `_state` discriminant tracking which `.await` we're at.
@@ -721,7 +721,7 @@ async fn fixed() {
 }
 ```
 
-A particularly common trap is holding a `MutexGuard` across an `.await` - see [Async-Aware Synchronization](#async-aware-synchronization) below.
+A particularly common trap is holding a `MutexGuard` across an `.await` - see [Async-Aware Synchronization](#Async-Aware-Synchronization) below.
 
 > **Contrast:** Go's garbage collector ensures references remain valid as long as they're reachable - no lifetime issues. C++ has the same self-reference problem as Rust, but without compile-time enforcement - dangling references are possible and are not caught until runtime (if at all).
 
@@ -1074,5 +1074,5 @@ If you'd like to go deeper into some of the design trade-offs we touched on, the
 In *Rust Async Demystified* series:
 
 - [Part 1 - Basic Concepts of Async Programming](/rust-async-demystified-p1)
-- [Part 2 - Async Infrastructure in Rust and Other Languages](/rust-async-demystified-p2)
+- Part 2 - Async Infrastructure in Rust and Other Languages
 - Part 3 - Build Yourself a Minimal Runtime from Scratch (TODO)
