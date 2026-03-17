@@ -1074,5 +1074,5 @@ If you'd like to go deeper into some of the design trade-offs we touched on, the
 In *Rust Async Demystified* series:
 
 - [Part 1 - Basic Concepts of Async Programming](/rust-async-demystified-p1)
-- Part 2 - Async Infrastructure in Rust and Other Languages
-- Part 3 - Build Yourself a Minimal Runtime from Scratch (TODO)
+- Part 2 - Async Infrastructure in Rust and Other Languages (this article)
+- [Part 3 - Build Yourself a Minimal Runtime from Scratch](/rust-async-demystified-p3)
