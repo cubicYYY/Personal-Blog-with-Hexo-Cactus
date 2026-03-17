@@ -6,7 +6,7 @@ tags:
   - Tutorial
   - Rust Async Demystified
 categories:
-  - Programming-Languages
+  - Programming Languages
   - Rust
 permalink: rust-async-demystified-p2/
 date: 2026-03-08 20:00:00
