@@ -115,7 +115,7 @@ theme: cactus
 marked:
   lazyload: true
   prependRoot: true
-  postAsset: false
+  postAsset: true
   sanitizeUrl: false
   dompurify: false
 
