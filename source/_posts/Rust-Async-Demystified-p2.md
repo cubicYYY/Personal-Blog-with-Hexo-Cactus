@@ -10,6 +10,8 @@ categories:
   - Rust
 permalink: rust-async-demystified-p2/
 date: 2026-03-08 20:00:00
+lang: en
+
 ---
 
 

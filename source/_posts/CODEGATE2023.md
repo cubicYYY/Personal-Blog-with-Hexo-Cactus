@@ -5,6 +5,8 @@ tags:
 - Write-Up
 categories:
 - CTF
+lang: zh-CN
+
 ---
 # Codegate 2023 部分Write-Up (Web/Misc)
 

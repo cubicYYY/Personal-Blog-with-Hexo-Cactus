@@ -8,6 +8,8 @@ tags:
 - English
 categories: 
 - CTF
+lang: en
+
 ---
 
 ~~众所周知歪歪歪英文很烂求轻喷~~  

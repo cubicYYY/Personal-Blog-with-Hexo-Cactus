@@ -7,6 +7,8 @@ categories:
 - Miao
 hidden: true
 sitemap: false
+lang: zh-CN
+
 ---
 这是个测试页面。  
 又是一个我的新博客^_^希望这次认真对待。  

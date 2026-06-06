@@ -6,6 +6,8 @@ tags:
 - Write-Up
 categories: 
 - CTF
+lang: zh-CN
+
 ---
 密钥请找本人索取^_^
 AES CBC Zero padding 128bits/block IV=0  UTF-8  

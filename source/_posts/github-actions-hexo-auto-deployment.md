@@ -9,6 +9,8 @@ categories:
   - Tutorials
 permalink: github-actions-hexo-auto-deployment/
 date: 2024-07-28 21:04:54
+lang: zh-CN
+
 ---
 
 

@@ -7,6 +7,8 @@ tags:
 - Write-Up
 categories: 
 - CTF
+lang: zh-CN
+
 ---
 # CISCN 2023 部分 Write-Up 及patch妙妙小技巧
 ## Web

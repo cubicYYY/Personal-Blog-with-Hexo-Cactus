@@ -6,6 +6,8 @@ tags:
 - Write-Up
 categories: 
 - CTF
+lang: zh-CN
+
 ---
 
 # WriteUp by YYY

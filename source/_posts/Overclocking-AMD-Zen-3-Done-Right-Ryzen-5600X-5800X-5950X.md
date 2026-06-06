@@ -8,6 +8,8 @@ tags:
 categories: 
 - Hardware
 permalink: overclocking-zen3/
+lang: en
+
 ---
 
 # Overclocking Ryzen 5600X/5800X/5900X/5950X using PBO2

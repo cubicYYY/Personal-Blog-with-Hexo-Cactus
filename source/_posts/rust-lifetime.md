@@ -10,6 +10,8 @@ tags:
 categories: 
 - Programming Languages
 - Rust
+lang: zh-CN
+
 ---
 # Rust 生命周期系统：类型系统
 

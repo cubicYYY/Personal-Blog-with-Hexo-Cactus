@@ -10,6 +10,8 @@ categories:
 permalink: yoneda/
 date: 2024-04-08 02:38:20
 updated: 2024-04-14 1:04:42
+lang: zh-CN
+
 ---
 
 

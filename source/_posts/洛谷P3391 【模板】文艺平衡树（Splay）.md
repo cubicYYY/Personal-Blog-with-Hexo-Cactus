@@ -5,6 +5,8 @@ tags:
 - Splay
 categories: 
 - OI
+lang: zh-CN
+
 ---
 原题地址:[https://www.luogu.org/problemnew/show/P3391](//www.luogu.org/problemnew/show/P3391)  
 ### 题目简述  
