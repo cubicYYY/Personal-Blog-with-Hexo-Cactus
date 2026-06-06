@@ -43,13 +43,18 @@ But when the need is new or vague, the defaults are rarely the *right* values. A
 
 There is a deeper reason a model cannot pick the right default for you: it does not have the facts. If all relevant information truly flowed freely and could be processed instantly, the stock market would be a flat line — every fact already priced in. It isn't, because not all facts are public, and the ones that are public keep changing. The knowledge that drives software decisions behaves the same way: what your users actually did this quarter, why the previous architect picked option B over A, which competitor just changed pricing, what the on-call engineer learned at 3am last night. None of that is in any training set, and most of it will be different next month. An LLM trained on yesterday's *open* knowledge cannot make today's *private* decision for you.
 
-## Essential Complexity and The Mythical Man-Month
+## A Lesson From Half a Century Ago
 
-Two ideas from Fred Brooks's *The Mythical Man-Month*, written fifty years ago, explain why LLMs hit a ceiling on real software work.
+The dream of an automatic code-generating machine is not new. Fred Brooks's *The Mythical Man-Month* — the foundational work of software engineering, written fifty years ago — already mapped out the limits of such a machine.
 
-**Essential vs. accidental complexity.** Accidental complexity is the friction of *how* — boilerplate, plumbing, syntax, repetitive glue. LLMs eat through that effortlessly. Essential complexity is the friction of *what* — the irreducible difficulty of the problem itself, the constraints that contradict each other, the requirements no one wrote down. Nothing about generating tokens makes that friction smaller.
+### Essential Complexity vs. Accidental Complexity
 
-**The mythical man-month.** Brooks's titular point is that man-hours and calendar time are not interchangeable: adding people to a late project makes it later, because communication overhead grows faster than headcount. An army of agents is no different. The bottleneck has never been hands — it is the small number of people who actually understand what is being built and why, and that group does not get cheaper to coordinate when you add more workers to it, biological or otherwise.
+- Accidental complexity is the friction of *how* — boilerplate, plumbing, syntax, repetitive glue. LLMs eat through that effortlessly.
+- Essential complexity is the friction of *what* — the irreducible difficulty of the problem itself, the ambiguities that demand resolution, the implicit and undiscovered requirements. Nothing about generating tokens makes that friction smaller.
+
+### The Mythical Man-Month
+
+Brooks's titular point is that man-hours and calendar time are not interchangeable: adding people to a late project makes it later, because communication overhead grows faster than headcount. An army of agents is no different. The bottleneck has never been hands or the size of agent team — it is the small number of people who actually understand what is being built and why, and that group does not get cheaper to coordinate when you add more workers to it, biological or otherwise.
 
 ## There Is No Real Zero-Human-in-the-Loop: The Sim2Real Problem
 
@@ -73,6 +78,6 @@ That means oracles are easy to design. Anyone working in machine learning knows 
 
 ## Final Words
 
-This is not meant to reassure software engineers. Many tasks do not require human interaction, and many users only want a "good enough" answer; LLMs serve those needs. And the things LLMs cannot do are not automatically things *you* can do.
+This is not meant to reassure software engineers. Many tasks do not require human interaction, and many users only want a "good enough" answer; LLMs serve those needs. Besides, are the things LLMs cannot do automatically things a software engineer *can* do? And are the things a software engineer can do automatically beyond a product manager's reach? SDE roles will definitely shrink massively and rapidly.
 
 The narrower claim is this: there is still a place where humans add irreducible value — at the boundary where vague intent becomes concrete software — and you have to find your own way to live there, while the machines keep getting better at everything else.
