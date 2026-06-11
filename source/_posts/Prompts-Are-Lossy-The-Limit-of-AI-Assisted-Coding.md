@@ -43,6 +43,10 @@ But when the need is new or vague, the defaults are rarely the *right* values. A
 
 There is a deeper reason a model cannot pick the right default for you: it does not have the facts. If all relevant information truly flowed freely and could be processed instantly, the stock market would be a flat line — every fact already priced in. It isn't, because not all facts are public, and the ones that are public keep changing. The knowledge that drives software decisions behaves the same way: what your users actually did this quarter, why the previous architect picked option B over A, which competitor just changed pricing, what the on-call engineer learned at 3am last night. None of that is in any training set, and most of it will be different next month. An LLM trained on yesterday's *open* knowledge cannot make today's *private* decision for you.
 
+![prompt2product](prompt2product.svg)
+
+Unless your prompt is precise enough to fully describe the final product (which is extremely hard), or the product happens to align with the LLM's prior (which usually means it is a toy), you will rarely land on the "ideal product." And the ideal is not a fixed target: it shifts with human needs.
+
 ## A Lesson From Half a Century Ago
 
 The dream of an automatic code-generating machine is not new. Fred Brooks's *The Mythical Man-Month* — the foundational work of software engineering, written fifty years ago — already mapped out the limits of such a machine.
