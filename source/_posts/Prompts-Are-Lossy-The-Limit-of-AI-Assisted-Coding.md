@@ -11,7 +11,7 @@ hidden: false
 sitemap: true
 lang: en
 date: 2026-06-06 23:27:56
-categories:
+categories: ["Deep Thinking"]
 ---
 
 

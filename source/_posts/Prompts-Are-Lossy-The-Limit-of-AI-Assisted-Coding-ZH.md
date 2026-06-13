@@ -11,7 +11,7 @@ hidden: false
 sitemap: true
 lang: zh-CN
 date: 2026-06-06 23:27:53
-categories:
+categories: ["Deep Thinking"]
 ---
 
 
