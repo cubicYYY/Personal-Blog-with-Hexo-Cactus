@@ -1,15 +1,12 @@
 ---
 title: ACTF2022 - FFSK - Official WriteUp
 date: 2022-07-03 23:43
-tags:
-- Misc
-- Write-Up
-- 出题
-- English
-categories: 
-- CTF
 lang: en
-
+tags:
+  - Write-Up
+  - CTF
+categories:
+  - Cybersecurity
 ---
 
 ~~众所周知歪歪歪英文很烂求轻喷~~  

@@ -1,17 +1,17 @@
 ---
 title: 'Prompts Are Lossy: The Limit of AI-Assisted Coding'
-tags:
-  - LLM
-  - AI
-  - Software Engineering
-  - Thoughts
-  - Opinion
 permalink: prompts-are-lossy/
 hidden: false
 sitemap: true
 lang: en
 date: 2026-06-06 23:27:56
-categories: ["Deep Thinking"]
+tags:
+  - LLM
+  - Opinion
+  - Agent
+  - DeepThinking
+categories:
+  - AI & Software Engineering
 ---
 
 

@@ -1,10 +1,12 @@
 ---
 title: OI中的IO优化
 date: 2018-02-20 21:09	
-categories: 
-- OI
 lang: zh-CN
-
+tags:
+  - Notes
+  - C++
+categories:
+  - Competitive Programming
 ---
 本文主要讲述常用的2种读入优化方法。  
 输出优化很少使用，在此简单提一下：也就是把输出的东西先放进字符串，再一次性puts\printf出去。提升不大，不常用。  

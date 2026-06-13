@@ -1,13 +1,12 @@
 ---
 title: Hackergame2021 部分WriteUp
 date: 2021-10-30 16:11
-tags:
-- Hackergame
-- Write-Up
-categories: 
-- CTF
 lang: zh-CN
-
+tags:
+  - Write-Up
+  - CTF
+categories:
+  - Cybersecurity
 ---
 
 # WriteUp by YYY

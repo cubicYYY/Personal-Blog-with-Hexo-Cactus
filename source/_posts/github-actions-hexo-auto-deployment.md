@@ -1,16 +1,15 @@
 ---
 title: 如何搭建 Hexo 博客并使用 Github Actions 自动部署到自己服务器
-tags:
-  - Tutorial
-  - GitHub
-  - Hexo
-  - CICD
-categories:
-  - Tutorials
 permalink: github-actions-hexo-auto-deployment/
 date: 2024-07-28 21:04:54
 lang: zh-CN
-
+tags:
+  - Hexo
+  - GitHub Actions
+  - CICD
+  - Tutorial
+categories:
+  - Hardware & Tooling
 ---
 
 

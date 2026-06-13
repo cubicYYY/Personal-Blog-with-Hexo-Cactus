@@ -1,17 +1,14 @@
 ---
 title: 'Rust Async Demystified: Part 3 - Build Yourself a Minimal Runtime from Scratch'
-tags:
-  - Rust
-  - Asynchronous Programming
-  - Tutorial
-  - Rust Async Demystified
-categories:
-  - Programming Languages
-  - Rust
 permalink: rust-async-demystified-p3/
 date: 2026-03-16 00:41:05
 lang: en
-
+tags:
+  - Rust
+  - Async
+  - Tutorial
+categories:
+  - Computer Science
 ---
 
 

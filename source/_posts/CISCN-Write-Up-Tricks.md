@@ -1,14 +1,13 @@
 ---
 title: CISCN 2023 Write-Up & Tricks
 date: 2023-07-07 00:28:12
-tags:
-- CISCN
-- web
-- Write-Up
-categories: 
-- CTF
 lang: zh-CN
-
+tags:
+  - Write-Up
+  - CTF
+  - Web
+categories:
+  - Cybersecurity
 ---
 # CISCN 2023 部分 Write-Up 及patch妙妙小技巧
 ## Web

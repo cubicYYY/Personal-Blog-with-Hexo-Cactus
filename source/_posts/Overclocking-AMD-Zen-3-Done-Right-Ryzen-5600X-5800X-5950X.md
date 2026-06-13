@@ -1,15 +1,14 @@
 ---
 title: "Overclocking AMD Zen3 with PBO2 Done Right: A full guide"
 date: 2024-04-27 01:36:26
-tags:
-- Overclocking
-- English
-- Tutorial
-categories: 
-- Hardware
 permalink: overclocking-zen3/
 lang: en
-
+tags:
+  - Overclocking
+  - AMD
+  - Tutorial
+categories:
+  - Hardware & Tooling
 ---
 
 # Overclocking Ryzen 5600X/5800X/5900X/5950X using PBO2

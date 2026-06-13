@@ -1,17 +1,14 @@
 ---
 title: 'Rust Async Demystified: Part 1 - Basic Concepts of Asynchronous Programming'
-tags:
-  - Rust
-  - Asynchronous Programming
-  - Tutorial
-  - Rust Async Demystified
-categories:
-  - Programming Languages
-  - Rust
 permalink: rust-async-demystified-p1/
 date: 2024-08-01 20:36:30
 lang: en
-
+tags:
+  - Rust
+  - Async
+  - Tutorial
+categories:
+  - Computer Science
 ---
 
 

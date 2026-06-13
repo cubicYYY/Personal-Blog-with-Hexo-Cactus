@@ -1,17 +1,17 @@
 ---
 title: Prompt 是一种有损压缩：AI 辅助编程的边界
-tags:
-  - LLM
-  - AI
-  - Software Engineering
-  - Thoughts
-  - Opinion
 permalink: prompts-are-lossy-zh/
 hidden: false
 sitemap: true
 lang: zh-CN
 date: 2026-06-06 23:27:53
-categories: ["Deep Thinking"]
+tags:
+  - LLM
+  - Opinion
+  - Agent
+  - DeepThinking
+categories:
+  - AI & Software Engineering
 ---
 
 

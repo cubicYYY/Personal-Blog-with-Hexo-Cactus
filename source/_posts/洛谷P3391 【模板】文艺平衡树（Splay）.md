@@ -1,12 +1,12 @@
 ---
 title: 洛谷:P3391 【模板】文艺平衡树（Splay）
 date: 2018-02-22 23:43	
-tags:
-- Splay
-categories: 
-- OI
 lang: zh-CN
-
+tags:
+  - Write-Up
+  - Splay
+categories:
+  - Competitive Programming
 ---
 原题地址:[https://www.luogu.org/problemnew/show/P3391](//www.luogu.org/problemnew/show/P3391)  
 ### 题目简述  

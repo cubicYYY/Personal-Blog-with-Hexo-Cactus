@@ -1,17 +1,15 @@
 ---
 title: '<译>Tai-Danae Bradley: 米田视角→米田嵌入→米田引理'
-tags:
-  - Math
-  - Translation
-  - Yoneda Lemma
-categories:
-  - Computer Science and Math
-  - Category Theory
 permalink: yoneda/
 date: 2024-04-08 02:38:20
 updated: 2024-04-14 1:04:42
 lang: zh-CN
-
+tags:
+  - Translation
+  - Category Theory
+  - Yoneda Lemma
+categories:
+  - Computer Science
 ---
 
 

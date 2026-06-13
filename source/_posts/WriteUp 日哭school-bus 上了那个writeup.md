@@ -1,13 +1,12 @@
 ---
 title: WriteUp 日哭school-bus 上了那个writeup
 date: 2021-11-09 11:08
-tags:
-- SchoolBus
-- Write-Up
-categories: 
-- CTF
 lang: zh-CN
-
+tags:
+  - Write-Up
+  - CTF
+categories:
+  - Cybersecurity
 ---
 密钥请找本人索取^_^
 AES CBC Zero padding 128bits/block IV=0  UTF-8  

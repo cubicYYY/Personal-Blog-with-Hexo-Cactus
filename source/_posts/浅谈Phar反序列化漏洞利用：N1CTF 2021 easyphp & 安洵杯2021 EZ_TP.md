@@ -1,15 +1,15 @@
 ---
 title: 浅谈Phar反序列化漏洞利用：N1CTF 2021 easyphp & 安洵杯2021 EZ_TP
 date: 2021-11-28 13:35
-tags:
-- Phar
-- 反序列化
-- PHP
-categories: 
-- CTF
 permalink: phar-deserialization-intro/
 lang: zh-CN
-
+tags:
+  - Write-Up
+  - Phar
+  - PHP
+  - Deserialization
+categories:
+  - Cybersecurity
 ---
 # Phar
 

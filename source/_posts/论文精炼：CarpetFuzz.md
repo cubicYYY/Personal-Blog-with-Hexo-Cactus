@@ -1,16 +1,16 @@
 ---
 title: 论文精炼：CarpetFuzz
-tags:
-  - NLP
-  - Fuzzing
-  - AFL
-categories:
-  - Paper Distilled
 permalink: carpet-fuzz/
 date: 2023-09-22 19:24:29
 updated: 2024-04-14 01:10:20
 lang: zh-CN
-
+tags:
+  - Paper
+  - Fuzzing
+  - AFL
+  - NLP
+categories:
+  - Cybersecurity
 ---
 
 

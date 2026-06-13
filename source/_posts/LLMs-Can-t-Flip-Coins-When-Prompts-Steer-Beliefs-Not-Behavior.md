@@ -3,10 +3,15 @@ title: "LLMs Can't Flip Coins: When Prompts Steer Beliefs, Not Behavior(ZH-CN)"
 hidden: false
 sitemap: true
 date: 2026-06-13 21:06:35
-tags: ['AI', 'Agent Engineering']
-categories: "Deep Thinking"
 permalink: llms-cannot-flip-coins/
 lang: en
+tags:
+  - LLM
+  - Experiment
+  - Opinion
+  - DeepThinking
+categories:
+  - AI & Software Engineering
 ---
 
 > 中文版本: [大模型不会扔硬币:Prompt 改得动想法,改不动行为](/llms-cannot-flip-coins-cn)

@@ -1,12 +1,13 @@
 ---
 title: Codegate 2023 Partial Write-Up (Web/Misc)
 date: 2023-08-29 15:05:06
-tags:
-- Write-Up
-categories:
-- CTF
 lang: zh-CN
-
+tags:
+  - Write-Up
+  - CTF
+  - Web
+categories:
+  - Cybersecurity
 ---
 # Codegate 2023 部分Write-Up (Web/Misc)
 

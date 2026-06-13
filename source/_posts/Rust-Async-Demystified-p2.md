@@ -1,17 +1,14 @@
 ---
 title: 'Rust Async Demystified: Part 2 - Async Infrastructure in Rust and Other Languages'
-tags:
-  - Rust
-  - Asynchronous Programming
-  - Tutorial
-  - Rust Async Demystified
-categories:
-  - Programming Languages
-  - Rust
 permalink: rust-async-demystified-p2/
 date: 2026-03-08 20:00:00
 lang: en
-
+tags:
+  - Rust
+  - Async
+  - Tutorial
+categories:
+  - Computer Science
 ---
 
 

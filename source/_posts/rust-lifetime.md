@@ -2,16 +2,13 @@
 title: 深入浅出理解 Rust 生命周期系统
 date: 2023-09-05 00:14:45
 updated: 2024-07-02 5:15:45
-tags:
-- Rust
-- Lifetime
-- Code
-- Programming
-categories: 
-- Programming Languages
-- Rust
 lang: zh-CN
-
+tags:
+  - Rust
+  - Lifetime
+  - Tutorial
+categories:
+  - Computer Science
 ---
 # Rust 生命周期系统：类型系统
 
