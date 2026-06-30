@@ -1,5 +1,5 @@
 ---
-title: "LLMs Can't Flip Coins: When Prompts Steer Beliefs, Not Behavior(ZH-CN)"
+title: "LLMs Can't Flip Coins: When Prompts Steer Beliefs, Not Behavior"
 hidden: false
 sitemap: true
 date: 2026-06-13 21:06:35
